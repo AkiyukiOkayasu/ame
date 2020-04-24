@@ -5,11 +5,11 @@
 #ifndef _NXPLIB_NXPLIB_H_
 #define _NXPLIB_NXPLIB_H_
 
-#include <stdint.h>
-
 #if defined(__cplusplus)
 extern "C" {
 #endif
+
+#include <stdint.h>
 
 
 
