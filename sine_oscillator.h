@@ -30,7 +30,7 @@ namespace nxplib
             phaseIncrement = freq * twoPi<float> * (1.0 / sampleRate);
         }
 
-        float nextSample()
+        float nextSample() noexcept
         {
             phase = addModulo2Pi(phase, phaseIncrement);
             return phase;
