@@ -18,7 +18,7 @@ namespace nxplib
     class SineOscillator
     {
     public:
-        SineOscillator(float sampleRate, float frequency)
+        SineOscillator(const float sampleRate, const float frequency)
             : sampleRate(sampleRate)
         {
             setFrequency(frequency);
