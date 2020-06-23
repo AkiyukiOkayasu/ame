@@ -27,7 +27,7 @@ namespace nxplib
 
         void setFrequency(float freq)
         {
-            phaseIncrement = freq * pi<float> * (1.0 / sampleRate);
+            phaseIncrement = freq * twoPi<float> * (1.0 / sampleRate);
         }
 
         float nextSample()
