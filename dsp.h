@@ -21,12 +21,9 @@ namespace nxplib
     constexpr float addModulo2Pi(float value, const float increment) noexcept
     {
         value += increment;
-        if (value > twoPi<float>)
+        while (value > twoPi<float>)
         {
-            do
-            {
-                value -= twoPi<float>;
-            } while (value > twoPi<float>);
+            value -= twoPi<float>;
         }
         return value;
     }
