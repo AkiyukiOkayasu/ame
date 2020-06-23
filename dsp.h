@@ -41,6 +41,16 @@ namespace nxplib
     }
     static_assert((freqToPeriod(1000.0f) - 0.001f) <= fEpsilon,
                   "error: freqToPeriod()");
+
+    // periodToFreq
+    // 周期→周波数
+    constexpr float periodToFreq(const float period) noexcept
+    {
+        return 1.0f / period;
+    }
+    static_assert((periodToFreq(5.0f) - 0.2f) <= fEpsilon,
+                  "error: periodToFreq()");
+
 } // namespace nxplib
 
 #endif //_NXPLIB_DSP_H_
