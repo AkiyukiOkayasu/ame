@@ -1,0 +1,46 @@
+// Copyright 2020 Akiyuki Okayasu.
+//
+// Author: Akiyuki Okayasu (akiyuki.okayasu@gmail.com)
+//
+// -------------------------------------------------------
+//
+// Sine wave oscillator. Generates a sine between -1.0~1.0.
+
+#ifndef _NXPLIB_SINE_OSCILLATOR_H_
+#define _NXPLIB_SINE_OSCILLATOR_H_
+
+#include "nxplib.h"
+#include "constant.h"
+#include "dsp.h"
+
+namespace nxplib
+{
+    class SineOscillator
+    {
+    public:
+        SineOscillator(float sampleRate, float frequency)
+            : sampleRate(sampleRate)
+        {
+            setFrequency(frequency);
+        };
+        ~SineOscillator(){};
+
+        void setFrequency(float freq)
+        {
+            phaseIncrement = freq * pi<float> * (1.0 / sampleRate);
+        }
+
+        float nextSample()
+        {
+            phase = addModulo2Pi(phase, phaseIncrement);
+            return phase;
+        }
+
+    private:
+        float sampleRate;
+        float phaseIncrement;
+        float phase = 0.0f;
+    };
+} // namespace nxplib
+
+#endif //_NXPLIB_SINE_OSCILLATOR_H_
