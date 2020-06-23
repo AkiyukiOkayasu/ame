@@ -8,6 +8,6 @@
 /// コピーコンストラクタ、代入演算子禁止
 #define DISALLOW_COPY_AND_ASSIGN(TypeName) \
     TypeName(const TypeName &) = delete;   \
-    void operator=(const TypeName &) = delete;
+    TypeName &operator=(const TypeName &) = delete;
 
 #endif /* _NXPLIB_NXPLIB_H_ */
