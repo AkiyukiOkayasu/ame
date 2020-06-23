@@ -15,4 +15,4 @@ template<typename T, size_t channels, size_t samples>
 using AudioBuffer = std::array<std::array<T, samples>, channels>;
 }
 
-#endif /* _NXPLIB_BUFFER_H_ */
+#endif // _NXPLIB_BUFFER_H_
