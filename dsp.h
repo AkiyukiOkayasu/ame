@@ -33,6 +33,14 @@ namespace nxplib
     static_assert((addModulo2Pi(twoPi<float>, pi<float>) - pi<float>) <= fEpsilon,
                   "error: addModulo2Pi()");
 
+    // freqToPeriod
+    // 周波数→周期
+    constexpr float freqToPeriod(const float freq) noexcept
+    {
+        return 1.0f / freq;
+    }
+    static_assert((freqToPeriod(1000.0f) - 0.001f) <= fEpsilon,
+                  "error: freqToPeriod()");
 } // namespace nxplib
 
 #endif //_NXPLIB_DSP_H_
