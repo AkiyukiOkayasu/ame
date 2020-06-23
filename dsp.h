@@ -11,9 +11,12 @@
 #define _NXPLIB_DSP_H_
 
 #include "constant.h"
+#include <limits>
 
 namespace nxplib
 {
+    constexpr float fEpsilon = std::numeric_limits<float>::epsilon();
+
     // addModulo2Pi
     // value: value to add and modulo 2pi
     // increment:
@@ -27,6 +30,8 @@ namespace nxplib
         }
         return value;
     }
+    static_assert((addModulo2Pi(twoPi<float>, pi<float>) - pi<float>) <= fEpsilon,
+                  "error: addModulo2Pi()");
 
 } // namespace nxplib
 
