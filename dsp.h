@@ -10,7 +10,6 @@
 #ifndef _NXPLIB_DSP_H_
 #define _NXPLIB_DSP_H_
 
-#include "nxplib.h"
 #include "constant.h"
 
 namespace nxplib
