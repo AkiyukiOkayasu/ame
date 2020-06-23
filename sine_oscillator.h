@@ -40,6 +40,8 @@ namespace nxplib
         float sampleRate;
         float phaseIncrement;
         float phase = 0.0f;
+
+        DISALLOW_COPY_AND_ASSIGN(SineOscillator);
     };
 } // namespace nxplib
 
