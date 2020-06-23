@@ -13,6 +13,8 @@
 #include "constant.h"
 #include "dsp.h"
 
+#include <cmath>
+
 namespace nxplib
 {
     class SineOscillator
@@ -33,7 +35,7 @@ namespace nxplib
         float nextSample() noexcept
         {
             phase = addModulo2Pi(phase, phaseIncrement);
-            return phase;
+            return std::sin(phase);
         }
 
     private:
