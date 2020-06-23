@@ -33,8 +33,8 @@ namespace nxplib
     inline float gainToDecibels(const float gain,
                                 const float minusInfinityDb = defaultMinusInfinitydB) noexcept
     {
-        gain > 0.0f ? std::max(minusInfinityDb, std::log10(gain) * 20.0f)
-                    : minusInfinityDb;
+        return gain > 0.0f ? std::max(minusInfinityDb, std::log10(gain) * 20.0f)
+                           : minusInfinityDb;
     }
 
 } // namespace nxplib
