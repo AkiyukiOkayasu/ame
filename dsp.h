@@ -18,7 +18,7 @@ namespace nxplib
     // value: value to add and modulo 2pi
     // increment:
     // return: 0~2pi
-    inline float addModulo2Pi(float value, const float increment) noexcept
+    constexpr float addModulo2Pi(float value, const float increment) noexcept
     {
         value += increment;
         if (value > twoPi<float>)
