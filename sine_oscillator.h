@@ -13,7 +13,7 @@
 #include "constant.h"
 #include "dsp.h"
 
-#include <cmath>
+#include "arm_math.h"
 
 namespace nxplib
 {
@@ -35,7 +35,7 @@ namespace nxplib
         float nextSample() noexcept
         {
             phase = addModulo2Pi(phase, phaseIncrement);
-            return std::sin(phase);
+            return arm_sin_f32(phase);
         }
 
     private:
