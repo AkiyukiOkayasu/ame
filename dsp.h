@@ -1,4 +1,3 @@
-
 // Copyright 2020 Akiyuki Okayasu.
 //
 // Author: Akiyuki Okayasu (akiyuki.okayasu@gmail.com)
