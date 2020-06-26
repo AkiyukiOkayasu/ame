@@ -1,11 +1,14 @@
 // Copyright 2020 Akiyuki Okayasu.
 //
 // Author: Akiyuki Okayasu (akiyuki.okayasu@gmail.com)
+//
+// -------------------------------------------------------
+//
+// Buffer
+// TODO モノラル用のバッファー、インターリーブ用のマルチバッファーを追加
 
 #ifndef _NXPLIB_BUFFER_H_
 #define _NXPLIB_BUFFER_H_
-
-#include "nxplib.h"
 
 #include <array>
 

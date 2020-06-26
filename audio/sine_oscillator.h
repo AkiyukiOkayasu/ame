@@ -9,9 +9,8 @@
 #ifndef _NXPLIB_SINE_OSCILLATOR_H_
 #define _NXPLIB_SINE_OSCILLATOR_H_
 
-#include "nxplib.h"
-#include "constant.h"
-#include "dsp.h"
+#include "../math/constants.h"
+#include "dspHelpers.h"
 
 #include "arm_math.h"
 
