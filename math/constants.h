@@ -5,9 +5,6 @@
 #ifndef _NXPLIB_CONSTANT_H
 #define _NXPLIB_CONSTANT_H
 
-#include "nxplib.h"
-#include "math.h"
-
 namespace nxplib
 {
     template <typename T>
