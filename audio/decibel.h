@@ -5,11 +5,11 @@
 // -------------------------------------------------------
 //
 // Decibel
+// TODO std::pow, std::max, std::log10をより高速かコンパイル時に実行できるものに置き換える
 
 #ifndef _NXPLIB_DECIBEL_H_
 #define _NXPLIB_DECIBEL_H_
 
-#include "nxplib.h"
 #include <cmath>
 #include <algorithm>
 
@@ -41,8 +41,9 @@ namespace nxplib
     private:
         static constexpr float defaultMinusInfinitydB = -100.0f; //-100dB以下は振幅ゼロにする
 
-        Decibels() = delete; // This class can't be instantiated, it's just a holder for static methods..
-        DISALLOW_COPY_AND_ASSIGN(Decibels);
+        Decibels() = delete;                            // Disallow instantiate, this class is a holder for static methods.
+        Decibels(const Decibels &) = delete;            // Disallow copy constructor
+        Decibels &operator=(const Decibels &) = delete; // Disallow assign
     };
 
 } // namespace nxplib
