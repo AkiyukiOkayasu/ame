@@ -41,9 +41,11 @@ namespace nxplib
     private:
         static constexpr float defaultMinusInfinitydB = -100.0f; //-100dB以下は振幅ゼロにする
 
-        Decibels() = delete;                            // Disallow instantiate, this class is a holder for static methods.
-        Decibels(const Decibels &) = delete;            // Disallow copy constructor
-        Decibels &operator=(const Decibels &) = delete; // Disallow assign
+        // Disallow instantiate, this class is a holder for static methods.
+        Decibels() = delete;
+        // Disallow copy constructor and assignment
+        Decibels(const Decibels &) = delete;
+        Decibels &operator=(const Decibels &) = delete;
     };
 
 } // namespace nxplib

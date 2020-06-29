@@ -42,7 +42,9 @@ namespace nxplib
         float phaseIncrement;
         float phase = 0.0f;
 
-        DISALLOW_COPY_AND_ASSIGN(SineOscillator);
+        // Disallow copy constructor and assignment
+        SineOscillator(const SineOscillator &) = delete;
+        SineOscillator &operator=(const SineOscillator &) = delete;
     };
 } // namespace nxplib
 
