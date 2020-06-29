@@ -20,15 +20,15 @@ namespace nxplib
     {
     public:
         SineOscillator(const float sampleRate, const float frequency)
-            : sampleRate(sampleRate)
+            : samplingPeriod(1.0f/sampleRate)
         {
             setFrequency(frequency);
         };
         ~SineOscillator(){};
 
-        void setFrequency(float freq)
+        void setFrequency(const float freq) noexcept
         {
-            phaseIncrement = freq * twoPi<float> * (1.0 / sampleRate);
+            phaseIncrement = freq * twoPi<float> * samplingPeriod;
         }
 
         float nextSample() noexcept
@@ -38,7 +38,7 @@ namespace nxplib
         }
 
     private:
-        float sampleRate;
+        float samplingPeriod;// サンプリング周期: 1 /sampleRate
         float phaseIncrement;
         float phase = 0.0f;
 
