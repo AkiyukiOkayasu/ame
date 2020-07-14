@@ -1,0 +1,33 @@
+// Copyright 2020 Akiyuki Okayasu.
+//
+// Author: Akiyuki Okayasu (akiyuki.okayasu@gmail.com)
+//
+// -------------------------------------------------------
+//
+// MIDI helper functions
+
+#ifndef _NXPLIB_MIDI_HELPERS_H_
+#define _NXPLIB_MIDI_HELPERS_H_
+
+#include <cmath>
+
+namespace nxplib
+{
+    class MIDItoFreq
+    {
+    public:
+        /** Calculate MIDI note from frequency
+         * Max/MSPのftomオブジェクト
+         */
+        static inline int freqToMidi(float freq)
+        {
+            return std::nearbyint(12.0 * log2(freq / A3_Hz)) + A3_MIDINote;
+        }
+
+    private:
+        static constexpr float A3_Hz = 440.0; // A3(MIDI note 69)の周波数
+        static constexpr int A3_MIDINote = 69;
+    };
+} // namespace nxplib
+
+#endif
