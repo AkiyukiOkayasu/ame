@@ -29,8 +29,8 @@ namespace nxplib
         }
 
         /** Calculate dB from amplitude(gain)
-        * Max/MSPのatodbオブジェクト
-        */
+         * Max/MSPのatodbオブジェクト
+         */
         static inline float gainToDecibels(const float gain,
                                            const float minusInfinityDb = defaultMinusInfinitydB) noexcept
         {
