@@ -65,7 +65,15 @@ Temporary Items
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,cmake,c++
 
+
+
+### Manually added configurations ###
+
 ### VSCode ###
 .vscode/
 
+### CMSIS DSP ###
+# For development on the Mac, 
+# I have cloned CMSIS_5 (https://github. com/ARM-software/CMSIS_5) in the project root folder.
+# It's not needed for development on MCUXpresso, so it will not be managed by Git.
 CMSIS_5/
