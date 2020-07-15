@@ -28,6 +28,12 @@ namespace nxplib
     private:
         static constexpr float A3_Hz = 440.0; // A3(MIDI note 69)の周波数
         static constexpr int A3_MIDINote = 69;
+
+        // Disallow instantiate, this class is a holder for static methods.
+        MIDItoFreq() = delete;
+        // Disallow copy constructor and assignment
+        MIDItoFreq(const MIDItoFreq &) = delete;
+        MIDItoFreq &operator=(const MIDItoFreq &) = delete;
     };
 } // namespace nxplib
 
