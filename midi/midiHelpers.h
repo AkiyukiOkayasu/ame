@@ -19,9 +19,10 @@ namespace nxplib
         /** Calculate MIDI note from frequency
          * Max/MSPのftomオブジェクト
          */
-        static inline int freqToMidi(float freq)
+        static constexpr int freqToMidi(const float freq,
+                                        const float A3Pitch = A3_Hz)
         {
-            return std::nearbyint(12.0 * log2(freq / A3_Hz)) + A3_MIDINote;
+            return std::nearbyint(12.0 * log2(freq / A3Pitch)) + A3_MIDINote;
         }
 
     private:
