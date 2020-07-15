@@ -21,8 +21,8 @@ namespace nxplib
         /** Caliculate amplitude(gain) from dB
          * Max/MSPのdbtoaオブジェクト
          */
-        static inline float decibelsToGain(const float dB,
-                                           const float minusInfinityDb = defaultMinusInfinitydB) noexcept
+        static constexpr float decibelsToGain(const float dB,
+                                              const float minusInfinityDb = defaultMinusInfinitydB) noexcept
         {
             return dB > minusInfinityDb ? std::pow(10.0f, dB * 0.05f)
                                         : 0.0f;
@@ -31,8 +31,8 @@ namespace nxplib
         /** Calculate dB from amplitude(gain)
          * Max/MSPのatodbオブジェクト
          */
-        static inline float gainToDecibels(const float gain,
-                                           const float minusInfinityDb = defaultMinusInfinitydB) noexcept
+        static constexpr float gainToDecibels(const float gain,
+                                              const float minusInfinityDb = defaultMinusInfinitydB) noexcept
         {
             return gain > 0.0f ? std::max(minusInfinityDb, std::log10(gain) * 20.0f)
                                : minusInfinityDb;
