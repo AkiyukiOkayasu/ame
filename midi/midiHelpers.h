@@ -1,17 +1,15 @@
-// Copyright 2020 Akiyuki Okayasu.
-//
+// Copyright (c) 2020 Akiyuki Okayasu
 // Author: Akiyuki Okayasu (akiyuki.okayasu@gmail.com)
-//
+// AME is released under the MIT license.
 // -------------------------------------------------------
-//
 // MIDI helper functions
 
-#ifndef _NXPLIB_MIDI_HELPERS_H_
-#define _NXPLIB_MIDI_HELPERS_H_
+#ifndef _AME_MIDI_HELPERS_H_
+#define _AME_MIDI_HELPERS_H_
 
 #include <cmath>
 
-namespace nxplib
+namespace ame
 {
     class MIDItoFreq
     {
@@ -35,6 +33,6 @@ namespace nxplib
         MIDItoFreq(const MIDItoFreq &) = delete;
         MIDItoFreq &operator=(const MIDItoFreq &) = delete;
     };
-} // namespace nxplib
+} // namespace ame
 
-#endif
+#endif //_AME_MIDI_HELPERS_H_

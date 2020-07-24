@@ -1,19 +1,17 @@
-// Copyright 2020 Akiyuki Okayasu.
-//
+// Copyright (c) 2020 Akiyuki Okayasu
 // Author: Akiyuki Okayasu (akiyuki.okayasu@gmail.com)
-//
+// AME is released under the MIT license.
 // -------------------------------------------------------
-//
 // DSP helper functions
 
-#ifndef _NXPLIB_DSP_HELPERS_H_
-#define _NXPLIB_DSP_HELPERS_H_
+#ifndef _AME_DSP_HELPERS_H_
+#define _AME_DSP_HELPERS_H_
 
 #include <limits>
 
 #include "../math/constants.h"
 
-namespace nxplib
+namespace ame
 {
     /**
      * add value and modulo 2p
@@ -31,13 +29,13 @@ namespace nxplib
     static_assert((addModulo2Pi(twoPi<float>, pi<float>) - pi<float>) <= std::numeric_limits<float>::epsilon(),
                   "error: addModulo2Pi()");
 
-} // namespace nxplib
+} // namespace ame
 
 /**
  * Freq  / Period
  * 周波数 /  周期
  */
-namespace nxplib
+namespace ame
 {
     /** freqToPeriod
      * 周波数→周期
@@ -58,6 +56,6 @@ namespace nxplib
     }
     static_assert((periodToFreq(5.0f) - 0.2f) <= std::numeric_limits<float>::epsilon(),
                   "error: periodToFreq()");
-} // namespace nxplib
+} // namespace ame
 
-#endif // _NXPLIB_DSP_HELPERS_H_
+#endif // _AME_DSP_HELPERS_H_

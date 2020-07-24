@@ -1,19 +1,17 @@
-// Copyright 2020 Akiyuki Okayasu.
-//
+// Copyright (c) 2020 Akiyuki Okayasu
 // Author: Akiyuki Okayasu (akiyuki.okayasu@gmail.com)
-//
+// AME is released under the MIT license.
 // -------------------------------------------------------
-//
 // Decibel
 // TODO std::pow, std::max, std::log10をより高速かコンパイル時に実行できるものに置き換える
 
-#ifndef _NXPLIB_DECIBEL_H_
-#define _NXPLIB_DECIBEL_H_
+#ifndef _AME_DECIBEL_H_
+#define _AME_DECIBEL_H_
 
 #include <cmath>
 #include <algorithm>
 
-namespace nxplib
+namespace ame
 {
     class Decibels
     {
@@ -48,6 +46,6 @@ namespace nxplib
         Decibels &operator=(const Decibels &) = delete;
     };
 
-} // namespace nxplib
+} // namespace ame
 
-#endif //_NXPLIB_DECIBEL_H_
+#endif // _AME_DECIBEL_H_

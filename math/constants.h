@@ -1,11 +1,13 @@
-// Copyright 2020 Akiyuki Okayasu.
-//
+// Copyright (c) 2020 Akiyuki Okayasu
 // Author: Akiyuki Okayasu (akiyuki.okayasu@gmail.com)
+// AME is released under the MIT license.
+// -------------------------------------------------------
+// Math constants
 
-#ifndef _NXPLIB_CONSTANT_H
-#define _NXPLIB_CONSTANT_H
+#ifndef _AME_CONSTANT_H
+#define _AME_CONSTANT_H
 
-namespace nxplib
+namespace ame
 {
     template <typename T>
     constexpr T pi = static_cast<T>(3.141592653589793238L);
@@ -21,6 +23,6 @@ namespace nxplib
 
     template <typename T>
     constexpr T sqrt2 = static_cast<T>(1.4142135623730950488L);
-} // namespace nxplib
+} // namespace ame
 
-#endif // _NXPLIB_CONSTANT_H
+#endif // _AME_CONSTANT_H

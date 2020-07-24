@@ -1,26 +1,24 @@
-// Copyright 2020 Akiyuki Okayasu.
-//
+// Copyright (c) 2020 Akiyuki Okayasu
 // Author: Akiyuki Okayasu (akiyuki.okayasu@gmail.com)
-//
+// AME is released under the MIT license.
 // -------------------------------------------------------
-//
 // Sine wave oscillator. Generates a sine between -1.0~1.0.
 
-#ifndef _NXPLIB_SINE_OSCILLATOR_H_
-#define _NXPLIB_SINE_OSCILLATOR_H_
+#ifndef _AME_SINE_OSCILLATOR_H_
+#define _AME_SINE_OSCILLATOR_H_
 
 #include "../math/constants.h"
 #include "dspHelpers.h"
 
 #include "arm_math.h"
 
-namespace nxplib
+namespace ame
 {
     class SineOscillator
     {
     public:
         SineOscillator(const float sampleRate, const float frequency)
-            : samplingPeriod(1.0f/sampleRate)
+            : samplingPeriod(1.0f / sampleRate)
         {
             setFrequency(frequency);
         };
@@ -38,7 +36,7 @@ namespace nxplib
         }
 
     private:
-        float samplingPeriod;// サンプリング周期: 1 /sampleRate
+        float samplingPeriod; // サンプリング周期: 1 /sampleRate
         float phaseIncrement;
         float phase = 0.0f;
 
@@ -46,6 +44,6 @@ namespace nxplib
         SineOscillator(const SineOscillator &) = delete;
         SineOscillator &operator=(const SineOscillator &) = delete;
     };
-} // namespace nxplib
+} // namespace ame
 
-#endif //_NXPLIB_SINE_OSCILLATOR_H_
+#endif // _AME_SINE_OSCILLATOR_H_
