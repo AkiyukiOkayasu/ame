@@ -1,11 +1,10 @@
-= nxplib
+= AME - C++ header-only audio library for Cortex-M
 
-Header only audio library for Cortex-M, such as I.MXRT. +
-It aims to be a safe and fast library using C++17.
+AME is an open source C++ header-only library focused on fast audio processing on Cortex-M, such as i.MXRT. +
 
 == Dependencies
-https://arm-software.github.io/CMSIS_5/DSP/html/index.html[ARM CMSIS-DSP] +
-In the future, changes are being considered to make it less dependent on CMSIS-DSP.
+AME has no dependencies except C++14 and https://arm-software.github.io/CMSIS_5/DSP/html/index.html[ARM CMSIS-DSP]. +
+In the future, it might become no longer dependent on CMSIS-DSP.
 
 == TODO  
 * Audio buffer (mono and interleave) and various conversion functions
