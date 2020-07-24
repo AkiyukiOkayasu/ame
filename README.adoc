@@ -15,5 +15,4 @@ In the future, it might become no longer dependent on CMSIS-DSP.
 * LPF, HPF filter
 
 == LICENSE
-MIT +
-See LICENSE[LICENSE]
+MIT
