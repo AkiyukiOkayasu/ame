@@ -1,4 +1,4 @@
-= AME - C++ header-only audio library for Cortex-M
+= AME - C++ header-only DSP library for Cortex-M
 
 AME is an open source C++ header-only library focused on fast audio processing on Cortex-M, such as i.MXRT. +
 
