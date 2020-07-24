@@ -35,4 +35,4 @@ namespace ame
     };
 } // namespace ame
 
-#endif //_AME_MIDI_HELPERS_H_
+#endif // _AME_MIDI_HELPERS_H_
