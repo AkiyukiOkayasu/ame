@@ -9,6 +9,26 @@
 #define _AME_BUFFER_H_
 
 #include <array>
+#include <algorithm>
+
+namespace ame
+{
+    constexpr void float_to_q15(const float src[], int16_t dest[], uint32_t blockSize)
+    {
+        for (uint32_t i = 0; i < blockSize; ++i)
+        {
+            dest[i] = std::clamp((int16_t)(src[i] * 32768.0f), (int16_t)-32768, (int16_t)32767);
+        }
+    }
+
+    constexpr void float_to_q24(const float src[], int32_t dest[], uint32_t blockSize)
+    {
+        for (uint32_t i = 0; i < blockSize; ++i)
+        {
+            dest[i] = std::clamp((int32_t)(src[i] * 8388608.0f), (int32_t)-8388608, (int32_t)8388607);
+        }
+    }
+} // namespace ame
 
 namespace ame
 {
