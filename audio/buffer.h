@@ -28,6 +28,15 @@ namespace ame
             dest[i] = std::clamp((int32_t)(src[i] * 8388608.0f), (int32_t)-8388608, (int32_t)8388607);
         }
     }
+
+    constexpr void float_to_q31(const float src[], int32_t dest[], uint32_t blockSize)
+    {
+        for (uint32_t i = 0; i < blockSize; ++i)
+        {
+            dest[i] = std::clamp((int32_t)(src[i] * 2147483648.0f), (int32_t)-2147483648, (int32_t)2147483647);
+        }
+    }
+
 } // namespace ame
 
 namespace ame
