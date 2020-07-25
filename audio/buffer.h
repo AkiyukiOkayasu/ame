@@ -21,7 +21,7 @@ namespace ame
         }
     }
 
-    constexpr void float_to_q24(const float src[], int32_t dest[], uint32_t blockSize)
+    constexpr void float_to_q23(const float src[], int32_t dest[], uint32_t blockSize)
     {
         for (uint32_t i = 0; i < blockSize; ++i)
         {
