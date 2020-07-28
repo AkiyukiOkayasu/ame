@@ -11,6 +11,8 @@
 #include <array>
 #include <algorithm>
 
+// 浮動小数点から固定小数点への変換
+// TODO テンプレートにして、よくつかうものだけusingでエイリアスにした方がいいかも
 namespace ame
 {
     constexpr void float_to_q15(const float src[], int16_t dest[], uint32_t blockSize)
@@ -39,6 +41,7 @@ namespace ame
 
 } // namespace ame
 
+// buffer
 namespace ame
 {
     // AudioBuffer
