@@ -16,4 +16,4 @@ In the future, it might become no longer dependent on CMSIS-DSP.
 
 == LICENSE
 MIT +
-See link:LICENSE[LICENSE]
+link:LICENSE[LICENSE]
