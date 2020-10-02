@@ -17,6 +17,11 @@ namespace ame
 
     constexpr void float_to_q23(const float src[], int32_t dest[], const uint32_t blockSize)
     {
+#ifdef __GNUC__
+#if __GNUC__ >= 8
+#pragma GCC unroll 4
+#endif
+#endif
         for (uint32_t i = 0; i < blockSize; ++i)
         {
             dest[i] = std::clamp(static_cast<int32_t>(src[i] * Q23_MAX),
@@ -27,6 +32,11 @@ namespace ame
 
     constexpr void q23_to_float(const int32_t src[], float dest[], const uint32_t blockSize)
     {
+#ifdef __GNUC__
+#if __GNUC__ >= 8
+#pragma GCC unroll 4
+#endif
+#endif
         for (uint32_t i = 0; i < blockSize; ++i)
         {
             dest[i] = src[i] / 8388608.0f;
