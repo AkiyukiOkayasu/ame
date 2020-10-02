@@ -4,7 +4,7 @@ AME is an open source C++ header-only library focused on fast audio processing o
 
 == Dependencies
 AME has no dependencies except C++17 and https://arm-software.github.io/CMSIS_5/DSP/html/index.html[ARM CMSIS-DSP]. +
-In the future, it might become no longer dependent on CMSIS-DSP.
+It implements frequently used features in audio processing that are not included in the CMSIS-DSP.
 
 == TODO  
 * Audio buffer (mono and interleave) and various conversion functions
