@@ -9,37 +9,6 @@
 #define _AME_BUFFER_H_
 
 #include <array>
-#include <algorithm>
-
-// 浮動小数点から固定小数点への変換
-// TODO テンプレートにして、よくつかうものだけusingでエイリアスにした方がいいかも
-namespace ame
-{
-    constexpr void float_to_q15(const float src[], int16_t dest[], uint32_t blockSize)
-    {
-        for (uint32_t i = 0; i < blockSize; ++i)
-        {
-            dest[i] = std::clamp((int16_t)(src[i] * 32768.0f), (int16_t)-32768, (int16_t)32767);
-        }
-    }
-
-    constexpr void float_to_q23(const float src[], int32_t dest[], uint32_t blockSize)
-    {
-        for (uint32_t i = 0; i < blockSize; ++i)
-        {
-            dest[i] = std::clamp((int32_t)(src[i] * 8388608.0f), (int32_t)-8388608, (int32_t)8388607);
-        }
-    }
-
-    constexpr void float_to_q31(const float src[], int32_t dest[], uint32_t blockSize)
-    {
-        for (uint32_t i = 0; i < blockSize; ++i)
-        {
-            dest[i] = std::clamp((int32_t)(src[i] * 2147483648.0f), (int32_t)-2147483648, (int32_t)2147483647);
-        }
-    }
-
-} // namespace ame
 
 // buffer
 namespace ame
