@@ -18,13 +18,13 @@ namespace ame
          * Max/MSPのftomオブジェクト
          */
         static constexpr int freqToMidi(const float freq,
-                                        const float A3Pitch = A3_Hz)
+                                        const float A3Freq = A3_Hz)
         {
-            return std::nearbyint(12.0 * log2(freq / A3Pitch)) + A3_MIDINote;
+            return std::nearbyint(12.0 * log2(freq / A3Freq)) + A3_MIDINote;
         }
 
     private:
-        static constexpr float A3_Hz = 440.0; // A3(MIDI note 69)の周波数
+        static constexpr float A3_Hz = 440.0; // A3(MIDI note 69)のデフォルト周波数
         static constexpr int A3_MIDINote = 69;
 
         // Disallow instantiate, this class is a holder for static methods.
