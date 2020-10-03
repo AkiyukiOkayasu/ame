@@ -26,7 +26,7 @@ namespace ame
 
         void setFrequency(const float freq) noexcept
         {
-            phaseIncrement = freq * twoPi<float> * samplingPeriod;
+            phaseIncrement = freq * twoPi<> * samplingPeriod;
         }
 
         float nextSample() noexcept
