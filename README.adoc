@@ -1,18 +1,24 @@
 = AME - C++ header-only DSP library for Cortex-M
 
-AME is an open source C++ header-only library focused on fast audio processing on Cortex-M, such as i.MXRT. +
+AME is a C++ header-only library focused on fast audio processing on Cortex-M, such as i.MXRT. +
+Specifically, AME provides a function that is missing from the CMSIS-DSP for audio processing. +
+
+This is my back up project and also in the early stages of the project.  +
+Major changes may be added to this project. +
 
 == Dependencies
-AME has no dependencies except C++17 and https://arm-software.github.io/CMSIS_5/DSP/html/index.html[ARM CMSIS-DSP]. +
-It implements frequently used features in audio processing that are not included in the CMSIS-DSP.
+* C++17
+* https://arm-software.github.io/CMSIS_5/DSP/html/index.html[ARM CMSIS-DSP] +
+
+== Feautures
+* Conversion between float and Q23
 
 == TODO  
-* Audio buffer (mono and interleave) and various conversion functions
-* Single writer/reader FIFO  
+* Audio buffer (mono and interleave)
 * WAV writer/reader
 * MIDI
 * Sample rate conversion
-* LPF, HPF filter
+* LPF, HPF, BPF filter
 
 == LICENSE
 MIT +
