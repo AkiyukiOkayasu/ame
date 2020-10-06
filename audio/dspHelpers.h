@@ -9,6 +9,7 @@
 
 #include <limits>
 
+// #include "../test.h"
 #include "../math/constants.h"
 
 namespace ame
@@ -26,9 +27,8 @@ namespace ame
         }
         return value;
     }
-    static_assert((addModulo2Pi(twoPi<float>, pi<float>) - pi<float>) <= std::numeric_limits<float>::epsilon(),
-                  "error: addModulo2Pi()");
-
+    // TODO add unit test
+    // AME_ASSERT_EQ(addModulo2Pi(twoPi<>, pi<>), pi<>);
 } // namespace ame
 
 /**
@@ -44,8 +44,8 @@ namespace ame
     {
         return 1.0f / freq;
     }
-    static_assert((freqToPeriod(1000.0f) - 0.001f) <= std::numeric_limits<float>::epsilon(),
-                  "error: freqToPeriod()");
+    // TODO add unit test
+    AME_ASSERT_EQ(freqToPeriod(1000.0f), 0.001f);
 
     /** periodToFreq
      * 周期→周波数
@@ -54,8 +54,8 @@ namespace ame
     {
         return 1.0f / period;
     }
-    static_assert((periodToFreq(5.0f) - 0.2f) <= std::numeric_limits<float>::epsilon(),
-                  "error: periodToFreq()");
+    // TODO add unit test
+    // AME_ASSERT_EQ(periodToFreq(5.0f), 0.2f);
 } // namespace ame
 
 #endif // _AME_DSP_HELPERS_H_
