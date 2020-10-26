@@ -77,3 +77,5 @@ Temporary Items
 # I have cloned CMSIS_5 (https://github. com/ARM-software/CMSIS_5) in the project root folder.
 # It's not needed for development on MCUXpresso, so it will not be managed by Git.
 CMSIS_5/
+
+build/
