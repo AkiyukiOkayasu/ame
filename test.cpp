@@ -1,10 +1,7 @@
 #define CATCH_CONFIG_MAIN
 #include <catch2/catch.hpp>
 
-#include "audio/decibel.h"
-#include "audio/dspHelpers.h"
-#include "math/constants.h"
-#include "midi/midiHelpers.h"
+#include "ame.hpp"
 
 TEST_CASE("Decibels")
 {
