@@ -11,7 +11,7 @@
 
 namespace ame
 {
-    class MIDItoFreq
+    class MIDI
     {
     public:
         /** Calculate MIDI note from frequency
