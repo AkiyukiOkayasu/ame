@@ -25,7 +25,15 @@ namespace ame
             value -= twoPi<float>;
         }
         return value;
-    }    
+    }
+
+    /*    
+    Same function as the Max/MSP scale object.
+    */
+    constexpr float scale(const float sourceValue, const float sourceRangeMin, const float sourceRangeMax, const float targetRangeMin, const float targetRangeMax)
+    {
+        return targetRangeMin + ((targetRangeMax - targetRangeMin) * (sourceValue - sourceRangeMin)) / (sourceRangeMax - sourceRangeMin);
+    }
 } // namespace ame
 
 /**
@@ -48,7 +56,7 @@ namespace ame
     constexpr float periodToFreq(const float period) noexcept
     {
         return 1.0f / period;
-    }    
+    }
 } // namespace ame
 
 #endif // _AME_DSP_HELPERS_H_
