@@ -36,7 +36,7 @@ namespace ame
 #endif
         for (uint32_t i = 0; i < blockSize; ++i)
         {
-            dest[i] = src[i] / Q23_ABSMAX;
+            dest[i] = static_cast<float>(src[i]) / Q23_ABSMAX;
         }
     }
 } // namespace ame
