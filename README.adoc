@@ -12,6 +12,9 @@ Major changes may be added to this project. +
 
 == Feautures
 * Conversion between float and Q23
+* Conversion between **Decibel and Amplitude**
+* Conversion between **Frequency and Period**
+* Conversion between **MIDI note and Frequency**
 
 == TODO  
 * Audio buffer (mono and interleave)
