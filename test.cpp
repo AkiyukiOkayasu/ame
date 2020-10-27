@@ -2,6 +2,9 @@
 #include <catch2/catch.hpp>
 
 #include "audio/decibel.h"
+#include "audio/dspHelpers.h"
+#include "math/constants.h"
+#include "midi/midiHelpers.h"
 
 TEST_CASE("Decibels")
 {
@@ -18,5 +21,41 @@ TEST_CASE("Decibels")
         REQUIRE(ame::Decibels::gainToDecibels(0.501187) == Approx(-6.0f));
         REQUIRE(ame::Decibels::gainToDecibels(0.1f) == Approx(-20.0f));
         REQUIRE(ame::Decibels::gainToDecibels(1.412538) == Approx(3.0f));
+    }
+}
+
+TEST_CASE("dspHelpers")
+{
+    SECTION("addModule2Pi()")
+    {
+        REQUIRE(ame::addModulo2Pi(6.28318530717958647692f, 0.1f) == Approx(0.1f));
+        REQUIRE(ame::addModulo2Pi(6.28318530717958647692f, 2.5f) == Approx(2.5f));
+    }
+    SECTION("freqToPeriod()")
+    {
+        REQUIRE(ame::freqToPeriod(440.0f) == Approx(0.002272727));
+        REQUIRE(ame::freqToPeriod(44100.0f) == Approx(0.000022676));
+    }
+    SECTION("periodToFreq()")
+    {
+        REQUIRE(ame::periodToFreq(0.002272727) == Approx(440.0f));
+        REQUIRE(ame::periodToFreq(0.000022676) == Approx(44100.0f));
+    }
+    SECTION("scale()")
+    {
+        REQUIRE(ame::scale(0.5f, 0.0f, 1.0f, -100.0f, 100.0f) == Approx(0.0f));
+        REQUIRE(ame::scale(0.0f, 0.0f, 1.0f, -100.0f, 100.0f) == Approx(-100.0f));
+    }
+}
+
+TEST_CASE("MIDI")
+{
+    SECTION("ftom()")
+    {
+        REQUIRE(ame::MIDI::freqToMidi(440.0f) == Approx(69));
+    }
+    SECTION("mtof()")
+    {
+        REQUIRE(ame::MIDI::midiToFreq(69) == Approx(440.0f));
     }
 }

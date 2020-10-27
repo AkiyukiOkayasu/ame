@@ -23,15 +23,21 @@ namespace ame
             return std::nearbyintf(12.0 * log2(freq / A3Freq)) + A3_MIDINote;
         }
 
+        static int midiToFreq(const float midiNote,
+                              const float A3Freq = A3_Hz)
+        {
+            return A3Freq * std::powf(2.0f, (midiNote - A3_MIDINote) / 12.0f);
+        }
+
     private:
         static constexpr float A3_Hz = 440.0; // A3(MIDI note 69)のデフォルト周波数
         static constexpr int A3_MIDINote = 69;
 
         // Disallow instantiate, this class is a holder for static methods.
-        MIDItoFreq() = delete;
+        MIDI() = delete;
         // Disallow copy constructor and assignment
-        MIDItoFreq(const MIDItoFreq &) = delete;
-        MIDItoFreq &operator=(const MIDItoFreq &) = delete;
+        MIDI(const MIDI &) = delete;
+        MIDI &operator=(const MIDI &) = delete;
     };
 } // namespace ame
 
