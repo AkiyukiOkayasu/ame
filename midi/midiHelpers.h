@@ -17,10 +17,10 @@ namespace ame
         /** Calculate MIDI note from frequency
          * Max/MSPのftomオブジェクト
          */
-        static constexpr int freqToMidi(const float freq,
-                                        const float A3Freq = A3_Hz)
+        static int freqToMidi(const float freq,
+                              const float A3Freq = A3_Hz)
         {
-            return std::nearbyint(12.0 * log2(freq / A3Freq)) + A3_MIDINote;
+            return std::nearbyintf(12.0 * log2(freq / A3Freq)) + A3_MIDINote;
         }
 
     private:
