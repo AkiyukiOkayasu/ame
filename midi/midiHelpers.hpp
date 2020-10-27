@@ -19,13 +19,13 @@ namespace ame
         static int freqToMidi(const float freq,
                               const float A3Freq = A3_Hz)
         {
-            return static_cast<int>(std::nearbyintf(12.0f * log2(freq / A3Freq))) + A3_MIDINote;
+            return static_cast<int>(std::nearbyint(12.0f * log2(freq / A3Freq))) + A3_MIDINote;
         }
 
         static float midiToFreq(const float midiNote,
                                 const float A3Freq = A3_Hz)
         {
-            return static_cast<float>(A3Freq) * std::powf(2.0f, (midiNote - A3_MIDINote) / 12.0f);
+            return static_cast<float>(A3Freq) * std::pow(2.0f, (midiNote - A3_MIDINote) / 12.0f);
         }
 
     private:
