@@ -14,7 +14,7 @@
 namespace ame
 {
     /**
-     * add value and modulo 2p
+     * add value and modulo 2pi
      * return: 0.0f ~ 2pi
      */
     constexpr float addModulo2Pi(float value, const float increment) noexcept
@@ -25,9 +25,7 @@ namespace ame
             value -= twoPi<float>;
         }
         return value;
-    }
-    // TODO add unit test
-    // AME_ASSERT_EQ(addModulo2Pi(twoPi<>, pi<>), pi<>);
+    }    
 } // namespace ame
 
 /**
@@ -43,8 +41,6 @@ namespace ame
     {
         return 1.0f / freq;
     }
-    // TODO add unit test
-    AME_ASSERT_EQ(freqToPeriod(1000.0f), 0.001f);
 
     /** periodToFreq
      * 周期→周波数
@@ -52,9 +48,7 @@ namespace ame
     constexpr float periodToFreq(const float period) noexcept
     {
         return 1.0f / period;
-    }
-    // TODO add unit test
-    // AME_ASSERT_EQ(periodToFreq(5.0f), 0.2f);
+    }    
 } // namespace ame
 
 #endif // _AME_DSP_HELPERS_H_
