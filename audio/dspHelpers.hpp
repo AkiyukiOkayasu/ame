@@ -4,12 +4,11 @@
 // -------------------------------------------------------
 // DSP helper functions
 
-#ifndef _AME_DSP_HELPERS_H_
-#define _AME_DSP_HELPERS_H_
+#pragma once
 
 #include <limits>
 
-#include "../math/constants.h"
+#include "../math/constants.hpp"
 
 namespace ame
 {
@@ -20,9 +19,9 @@ namespace ame
     constexpr float addModulo2Pi(float value, const float increment) noexcept
     {
         value += increment;
-        while (value > twoPi<float>)
+        while (value > twoPi)
         {
-            value -= twoPi<float>;
+            value -= twoPi;
         }
         return value;
     }
@@ -34,14 +33,7 @@ namespace ame
     {
         return targetRangeMin + ((targetRangeMax - targetRangeMin) * (sourceValue - sourceRangeMin)) / (sourceRangeMax - sourceRangeMin);
     }
-} // namespace ame
 
-/**
- * Freq  / Period
- * 周波数 /  周期
- */
-namespace ame
-{
     /** freqToPeriod
      * 周波数→周期
      */
@@ -58,5 +50,3 @@ namespace ame
         return 1.0f / period;
     }
 } // namespace ame
-
-#endif // _AME_DSP_HELPERS_H_

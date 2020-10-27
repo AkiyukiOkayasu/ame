@@ -5,8 +5,7 @@
 // Decibel
 // TODO std::pow, std::max, std::log10をより高速かコンパイル時に実行できるものに置き換える
 
-#ifndef _AME_DECIBEL_H_
-#define _AME_DECIBEL_H_
+#pragma once
 
 #include <cmath>
 #include <algorithm>
@@ -47,5 +46,3 @@ namespace ame
     };
 
 } // namespace ame
-
-#endif // _AME_DECIBEL_H_

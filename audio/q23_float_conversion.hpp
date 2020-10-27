@@ -5,8 +5,7 @@
 // Convert 32-bit float and Q23
 // Complements the missing Q23 in the CMSIS-DSP's Convert 32-bit floating point value ( https://www.keil.com/pack/doc/CMSIS/DSP/html/group__float__to__x.html )
 
-#ifndef _AME_Q23_FLOAT_CONVERSION_H_
-#define _AME_Q23_FLOAT_CONVERSION_H_
+#pragma once
 
 #include <algorithm>
 
@@ -40,5 +39,3 @@ namespace ame
         }
     }
 } // namespace ame
-
-#endif // Q23_FLOAT_CONVERSION

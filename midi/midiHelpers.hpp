@@ -4,8 +4,7 @@
 // -------------------------------------------------------
 // MIDI helper functions
 
-#ifndef _AME_MIDI_HELPERS_H_
-#define _AME_MIDI_HELPERS_H_
+#pragma once
 
 #include <cmath>
 
@@ -20,13 +19,13 @@ namespace ame
         static int freqToMidi(const float freq,
                               const float A3Freq = A3_Hz)
         {
-            return std::nearbyintf(12.0 * log2(freq / A3Freq)) + A3_MIDINote;
+            return static_cast<int>(std::nearbyintf(12.0f * log2(freq / A3Freq))) + A3_MIDINote;
         }
 
-        static int midiToFreq(const float midiNote,
-                              const float A3Freq = A3_Hz)
+        static float midiToFreq(const float midiNote,
+                                const float A3Freq = A3_Hz)
         {
-            return A3Freq * std::powf(2.0f, (midiNote - A3_MIDINote) / 12.0f);
+            return static_cast<float>(A3Freq) * std::powf(2.0f, (midiNote - A3_MIDINote) / 12.0f);
         }
 
     private:
@@ -40,5 +39,3 @@ namespace ame
         MIDI &operator=(const MIDI &) = delete;
     };
 } // namespace ame
-
-#endif // _AME_MIDI_HELPERS_H_

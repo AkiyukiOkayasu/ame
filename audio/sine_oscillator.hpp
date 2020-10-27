@@ -4,11 +4,10 @@
 // -------------------------------------------------------
 // Sine wave oscillator. Generates a sine between -1.0~1.0.
 
-#ifndef _AME_SINE_OSCILLATOR_H_
-#define _AME_SINE_OSCILLATOR_H_
+#pragma once
 
-#include "../math/constants.h"
-#include "dspHelpers.h"
+#include "../math/constants.hpp"
+#include "dspHelpers.hpp"
 
 #include "arm_math.h"
 
@@ -26,7 +25,7 @@ namespace ame
 
         void setFrequency(const float freq) noexcept
         {
-            phaseIncrement = freq * twoPi<> * samplingPeriod;
+            phaseIncrement = freq * twoPi * samplingPeriod;
         }
 
         float nextSample() noexcept
@@ -45,5 +44,3 @@ namespace ame
         SineOscillator &operator=(const SineOscillator &) = delete;
     };
 } // namespace ame
-
-#endif // _AME_SINE_OSCILLATOR_H_

@@ -5,8 +5,7 @@
 // Buffer
 // TODO モノラル用のバッファー、インターリーブ用のマルチバッファーを追加
 
-#ifndef _AME_BUFFER_H_
-#define _AME_BUFFER_H_
+#pragma once
 
 #include <array>
 
@@ -25,5 +24,3 @@ namespace ame
     template <typename T, size_t samples>
     using AudioMonoBuffer = AudioBuffer<T, samples, 1>;
 } // namespace ame
-
-#endif // _AME_BUFFER_H_
