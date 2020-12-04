@@ -9,7 +9,7 @@
 #include "../math/constants.hpp"
 #include "dspHelpers.hpp"
 
-#if __has_include("arm_math.h")
+#ifndef UNIT_TEST
 #include "arm_math.h"
 #else
 #include "math.h"
@@ -35,7 +35,7 @@ namespace ame
         float nextSample() noexcept
         {
             phase = addModulo2Pi(phase, phaseIncrement);
-#if __has_include("arm_math.h")
+#ifndef UNIT_TEST
             return arm_sin_f32(phase);
 #else
             return sinf(phase);
