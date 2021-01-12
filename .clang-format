@@ -1,39 +1,10 @@
-BasedOnStyle: 'Google'
-AccessModifierOffset: -4
-AlignAfterOpenBracket: Align
-AlignConsecutiveAssignments: true
-AlignConsecutiveDeclarations: true
-AlignTrailingComments: true
-AllowShortBlocksOnASingleLine: false
-AllowShortCaseLabelsOnASingleLine: false
-AllowShortFunctionsOnASingleLine: None
-AllowShortIfStatementsOnASingleLine: false
-AllowShortLoopsOnASingleLine: false
-AlwaysBreakTemplateDeclarations: true
-BinPackArguments: false
-BinPackParameters: false
-BreakBeforeBinaryOperators: None
-BreakBeforeBraces: Allman
-BreakConstructorInitializersBeforeComma: false
-ColumnLimit: 0
-ConstructorInitializerAllOnOneLineOrOnePerLine: true
-ConstructorInitializerIndentWidth: 4
-ContinuationIndentWidth: 4
-IndentCaseLabels: true
-IndentWidth: 4
-Language: Cpp
-MaxEmptyLinesToKeep: 1
+---
+BasedOnStyle: Microsoft
+AlignConsecutiveAssignments: 'true'
+Cpp11BracedListStyle: 'true'
 NamespaceIndentation: All
 PointerAlignment: Left
-SortIncludes: true
-SpaceAfterCStyleCast: true
-SpaceAfterLogicalNot: true
-SpaceBeforeAssignmentOperators: true
-SpaceBeforeInheritanceColon: true
-SpacesInAngles: false
-SpacesInCStyleCastParentheses: false
-SpacesInParentheses: false
-SpacesInSquareBrackets: false
+SpaceAfterTemplateKeyword: 'false'
 Standard: "c++17"
-TabWidth: 4
-UseTab: Never
+
+...
