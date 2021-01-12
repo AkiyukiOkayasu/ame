@@ -29,8 +29,8 @@ namespace ame
         }
 
     private:
-        static constexpr float A3_Hz = 440.0; // A3(MIDI note 69)のデフォルト周波数
-        static constexpr int A3_MIDINote = 69;
+        static constexpr float A3_Hz       = 440.0;  // A3(MIDI note 69)のデフォルト周波数
+        static constexpr int   A3_MIDINote = 69;
 
         // Disallow instantiate, this class is a holder for static methods.
         MIDI() = delete;
@@ -38,4 +38,4 @@ namespace ame
         MIDI(const MIDI &) = delete;
         MIDI &operator=(const MIDI &) = delete;
     };
-} // namespace ame
+}  // namespace ame

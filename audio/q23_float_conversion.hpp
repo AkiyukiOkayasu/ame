@@ -11,9 +11,9 @@
 
 namespace ame
 {
-    constexpr int32_t Q23_MAX = 8388607;
-    constexpr int32_t Q23_MIN = -8388608;
-    constexpr float Q23_ABSMAX = 8388608.0f;
+    constexpr int32_t Q23_MAX    = 8388607;
+    constexpr int32_t Q23_MIN    = -8388608;
+    constexpr float   Q23_ABSMAX = 8388608.0f;
 
     constexpr void float_to_q23(const float src[], int32_t dest[], const uint32_t blockSize)
     {
@@ -38,4 +38,4 @@ namespace ame
             dest[i] = static_cast<float>(src[i]) / Q23_ABSMAX;
         }
     }
-} // namespace ame
+}  // namespace ame

@@ -29,7 +29,11 @@ namespace ame
     /*    
     Same function as the Max/MSP scale object.
     */
-    constexpr float scale(const float sourceValue, const float sourceRangeMin, const float sourceRangeMax, const float targetRangeMin, const float targetRangeMax)
+    constexpr float scale(const float sourceValue,
+                          const float sourceRangeMin,
+                          const float sourceRangeMax,
+                          const float targetRangeMin,
+                          const float targetRangeMax)
     {
         return targetRangeMin + ((targetRangeMax - targetRangeMin) * (sourceValue - sourceRangeMin)) / (sourceRangeMax - sourceRangeMin);
     }
@@ -49,4 +53,4 @@ namespace ame
     {
         return 1.0f / period;
     }
-} // namespace ame
+}  // namespace ame

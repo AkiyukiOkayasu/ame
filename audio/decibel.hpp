@@ -7,8 +7,8 @@
 
 #pragma once
 
-#include <cmath>
 #include <algorithm>
+#include <cmath>
 
 namespace ame
 {
@@ -36,7 +36,7 @@ namespace ame
         }
 
     private:
-        static constexpr float defaultMinusInfinitydB = -100.0f; //-100dB以下は振幅ゼロにする
+        static constexpr float defaultMinusInfinitydB = -100.0f;  //-100dB以下は振幅ゼロにする
 
         // Disallow instantiate, this class is a holder for static methods.
         Decibels() = delete;
@@ -45,4 +45,4 @@ namespace ame
         Decibels &operator=(const Decibels &) = delete;
     };
 
-} // namespace ame
+}  // namespace ame

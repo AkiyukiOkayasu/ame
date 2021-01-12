@@ -43,7 +43,7 @@ namespace ame
         }
 
     private:
-        float samplingPeriod; // サンプリング周期: 1 /sampleRate
+        float samplingPeriod;  // サンプリング周期: 1 /sampleRate
         float phaseIncrement;
         float phase = 0.0f;
 
@@ -51,4 +51,4 @@ namespace ame
         SineOscillator(const SineOscillator &) = delete;
         SineOscillator &operator=(const SineOscillator &) = delete;
     };
-} // namespace ame
+}  // namespace ame
