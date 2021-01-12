@@ -19,9 +19,8 @@ namespace ame
 {
     class SineOscillator
     {
-    public:
-        SineOscillator(const float sampleRate, const float frequency)
-            : samplingPeriod(1.0f / sampleRate)
+      public:
+        SineOscillator(const float sampleRate, const float frequency) : samplingPeriod(1.0f / sampleRate)
         {
             setFrequency(frequency);
         };
@@ -42,13 +41,13 @@ namespace ame
 #endif
         }
 
-    private:
-        float samplingPeriod;  // サンプリング周期: 1 /sampleRate
+      private:
+        float samplingPeriod; // サンプリング周期: 1 /sampleRate
         float phaseIncrement;
         float phase = 0.0f;
 
         // Disallow copy constructor and assignment
-        SineOscillator(const SineOscillator &) = delete;
-        SineOscillator &operator=(const SineOscillator &) = delete;
+        SineOscillator(const SineOscillator&) = delete;
+        SineOscillator& operator=(const SineOscillator&) = delete;
     };
-}  // namespace ame
+} // namespace ame

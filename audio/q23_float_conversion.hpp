@@ -3,7 +3,8 @@
 // AME is released under the MIT license.
 // -------------------------------------------------------
 // Convert 32-bit float and Q23
-// Complements the missing Q23 in the CMSIS-DSP's Convert 32-bit floating point value ( https://www.keil.com/pack/doc/CMSIS/DSP/html/group__float__to__x.html )
+// Complements the missing Q23 in the CMSIS-DSP's Convert 32-bit floating point value (
+// https://www.keil.com/pack/doc/CMSIS/DSP/html/group__float__to__x.html )
 
 #pragma once
 
@@ -11,9 +12,9 @@
 
 namespace ame
 {
-    constexpr int32_t Q23_MAX    = 8388607;
-    constexpr int32_t Q23_MIN    = -8388608;
-    constexpr float   Q23_ABSMAX = 8388608.0f;
+    constexpr int32_t Q23_MAX  = 8388607;
+    constexpr int32_t Q23_MIN  = -8388608;
+    constexpr float Q23_ABSMAX = 8388608.0f;
 
     constexpr void float_to_q23(const float src[], int32_t dest[], const uint32_t blockSize)
     {
@@ -22,9 +23,7 @@ namespace ame
 #endif
         for (uint32_t i = 0; i < blockSize; ++i)
         {
-            dest[i] = std::clamp(static_cast<int32_t>(src[i] * Q23_MAX),
-                                 Q23_MIN,
-                                 Q23_MAX);
+            dest[i] = std::clamp(static_cast<int32_t>(src[i] * Q23_MAX), Q23_MIN, Q23_MAX);
         }
     }
 
@@ -38,4 +37,4 @@ namespace ame
             dest[i] = static_cast<float>(src[i]) / Q23_ABSMAX;
         }
     }
-}  // namespace ame
+} // namespace ame

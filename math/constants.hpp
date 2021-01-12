@@ -13,4 +13,4 @@ namespace ame
     static constexpr float halfPi = 1.57079632f;
     static constexpr float euler  = 2.71828182f;
     static constexpr float sqrt2  = 1.41421356f;
-}  // namespace ame
+} // namespace ame
