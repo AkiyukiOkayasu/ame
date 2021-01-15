@@ -23,6 +23,9 @@ Major changes may be added to this project. +
 * Sample rate conversion
 * LPF, HPF, BPF filter
 
+== Document
+https://akiyukiokayasu.github.io/ame/[document]
+
 == LICENSE
 MIT +
 link:LICENSE[LICENSE]
