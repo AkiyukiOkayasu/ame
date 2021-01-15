@@ -1,0 +1,28 @@
+var dir_dd258a5183ccefa5c1b9a3a251c9fd3e =
+[
+    [ "avgpooling", "dir_6672a3f5987ac06f57a166457122dff1.html", "dir_6672a3f5987ac06f57a166457122dff1" ],
+    [ "avgpooling_1", "dir_2cadf9a3e9ab53442b8e428287eae886.html", "dir_2cadf9a3e9ab53442b8e428287eae886" ],
+    [ "avgpooling_2", "dir_812c677d6fbf32255a7e468566e1a322.html", "dir_812c677d6fbf32255a7e468566e1a322" ],
+    [ "avgpooling_3", "dir_7e4be51d2cb5fe9a086e4163bc1ba921.html", "dir_7e4be51d2cb5fe9a086e4163bc1ba921" ],
+    [ "avgpooling_4", "dir_ca17369737d298bbccefb450788b6fa5.html", "dir_ca17369737d298bbccefb450788b6fa5" ],
+    [ "basic", "dir_cd4c74c1971903be34e7361928b35375.html", "dir_cd4c74c1971903be34e7361928b35375" ],
+    [ "conv_1_x_n_1", "dir_913863b9d412ca9fafdff40ec2eb21d4.html", "dir_913863b9d412ca9fafdff40ec2eb21d4" ],
+    [ "conv_1_x_n_2", "dir_67f13ad19577ddb913eddccaedb5f67a.html", "dir_67f13ad19577ddb913eddccaedb5f67a" ],
+    [ "conv_1_x_n_3", "dir_6eb3f5e26a152cf6b0fa4c80084d12db.html", "dir_6eb3f5e26a152cf6b0fa4c80084d12db" ],
+    [ "conv_2", "dir_0636735c5ef658ee6a1dc656fa85066a.html", "dir_0636735c5ef658ee6a1dc656fa85066a" ],
+    [ "conv_3", "dir_95a37d4f64f5c43dd08aeb013de22fd6.html", "dir_95a37d4f64f5c43dd08aeb013de22fd6" ],
+    [ "conv_4", "dir_6d05c07d1767eaac1e1fa0712292506e.html", "dir_6d05c07d1767eaac1e1fa0712292506e" ],
+    [ "depthwise_2", "dir_900bf988bfcb01dcffca1084141b7008.html", "dir_900bf988bfcb01dcffca1084141b7008" ],
+    [ "depthwise_eq_in_out_ch", "dir_b114f6bcc14355107a033d0ed0251c2b.html", "dir_b114f6bcc14355107a033d0ed0251c2b" ],
+    [ "depthwise_kernel_3x3", "dir_b348327f7a68d396ad39d50c4164168e.html", "dir_b348327f7a68d396ad39d50c4164168e" ],
+    [ "fully_connected", "dir_1d083e014a6484577a9f8aeeedb16e8b.html", "dir_1d083e014a6484577a9f8aeeedb16e8b" ],
+    [ "kernel1x1", "dir_438ad57fe10c29d5e7748d3f4c6066ae.html", "dir_438ad57fe10c29d5e7748d3f4c6066ae" ],
+    [ "maxpooling", "dir_112db62dac1d0261cf2a46622bbc1f1e.html", "dir_112db62dac1d0261cf2a46622bbc1f1e" ],
+    [ "maxpooling_1", "dir_f4b6bd5efe64fdbf0909ba3a82b1ceaf.html", "dir_f4b6bd5efe64fdbf0909ba3a82b1ceaf" ],
+    [ "maxpooling_2", "dir_6cf3ab05bdc31ccb8d3474ee4a0db995.html", "dir_6cf3ab05bdc31ccb8d3474ee4a0db995" ],
+    [ "maxpooling_3", "dir_6219faea56105b7ac1f09b054261ded6.html", "dir_6219faea56105b7ac1f09b054261ded6" ],
+    [ "maxpooling_4", "dir_a26bfe758ccce4b31d47cafa4c55464d.html", "dir_a26bfe758ccce4b31d47cafa4c55464d" ],
+    [ "maxpooling_5", "dir_43c2fde0e6632b3fa580a589e572bf3e.html", "dir_43c2fde0e6632b3fa580a589e572bf3e" ],
+    [ "maxpooling_6", "dir_bbfc46b0471d8f6883304e9767f7ec12.html", "dir_bbfc46b0471d8f6883304e9767f7ec12" ],
+    [ "stride2pad1", "dir_9e9174b43368de2021eb1fa933f7ccce.html", "dir_9e9174b43368de2021eb1fa933f7ccce" ]
+];

@@ -1,0 +1,25 @@
+var struct___a_r_m___u_s_a_r_t___c_a_p_a_b_i_l_i_t_i_e_s =
+[
+    [ "asynchronous", "struct___a_r_m___u_s_a_r_t___c_a_p_a_b_i_l_i_t_i_e_s.html#a5a4808e94743e7c6c669c997f1f9300c", null ],
+    [ "cts", "struct___a_r_m___u_s_a_r_t___c_a_p_a_b_i_l_i_t_i_e_s.html#a7ef7466e5eae9b8d90fc54dd0d5e6937", null ],
+    [ "dcd", "struct___a_r_m___u_s_a_r_t___c_a_p_a_b_i_l_i_t_i_e_s.html#a1c4d85dcf56f969747563c237e1e4b31", null ],
+    [ "dsr", "struct___a_r_m___u_s_a_r_t___c_a_p_a_b_i_l_i_t_i_e_s.html#a1de823df831ed25bd459f2ba56b62dad", null ],
+    [ "dtr", "struct___a_r_m___u_s_a_r_t___c_a_p_a_b_i_l_i_t_i_e_s.html#abd96664fc5892bf742439bd2b6464913", null ],
+    [ "event_cts", "struct___a_r_m___u_s_a_r_t___c_a_p_a_b_i_l_i_t_i_e_s.html#a9c6ff107c641b00139480622525ae840", null ],
+    [ "event_dcd", "struct___a_r_m___u_s_a_r_t___c_a_p_a_b_i_l_i_t_i_e_s.html#a56d929505139141344010d86ef7026aa", null ],
+    [ "event_dsr", "struct___a_r_m___u_s_a_r_t___c_a_p_a_b_i_l_i_t_i_e_s.html#a87d963bc38a89f5df5200d787f790fed", null ],
+    [ "event_ri", "struct___a_r_m___u_s_a_r_t___c_a_p_a_b_i_l_i_t_i_e_s.html#a4912b5452c6f622c3912bee176fab915", null ],
+    [ "event_rx_timeout", "struct___a_r_m___u_s_a_r_t___c_a_p_a_b_i_l_i_t_i_e_s.html#a9d8db0674fd3b85bfa91955318d1ab68", null ],
+    [ "event_tx_complete", "struct___a_r_m___u_s_a_r_t___c_a_p_a_b_i_l_i_t_i_e_s.html#ae8b045527fe1e1f2ed3207bf7542fb3d", null ],
+    [ "flow_control_cts", "struct___a_r_m___u_s_a_r_t___c_a_p_a_b_i_l_i_t_i_e_s.html#aee2d61c2f7bdd94136a50e263dea3688", null ],
+    [ "flow_control_rts", "struct___a_r_m___u_s_a_r_t___c_a_p_a_b_i_l_i_t_i_e_s.html#a405e2073783a323ffe3fcc37a879c2ae", null ],
+    [ "irda", "struct___a_r_m___u_s_a_r_t___c_a_p_a_b_i_l_i_t_i_e_s.html#a127e0010c29b4f6ce7dc4baa2d49a17a", null ],
+    [ "reserved", "struct___a_r_m___u_s_a_r_t___c_a_p_a_b_i_l_i_t_i_e_s.html#ab933940b0d3f68108d26ace6cf5b1d7a", null ],
+    [ "ri", "struct___a_r_m___u_s_a_r_t___c_a_p_a_b_i_l_i_t_i_e_s.html#a46aee0abaee684a61a7c35be74b5a9b0", null ],
+    [ "rts", "struct___a_r_m___u_s_a_r_t___c_a_p_a_b_i_l_i_t_i_e_s.html#a6e9301c26dbef0247bb50ce9fdbb9e62", null ],
+    [ "single_wire", "struct___a_r_m___u_s_a_r_t___c_a_p_a_b_i_l_i_t_i_e_s.html#aacc54c661d0f9ad6ebde4215ed850aeb", null ],
+    [ "smart_card", "struct___a_r_m___u_s_a_r_t___c_a_p_a_b_i_l_i_t_i_e_s.html#a23712a917e0ee9f8f35d26fc8afb034f", null ],
+    [ "smart_card_clock", "struct___a_r_m___u_s_a_r_t___c_a_p_a_b_i_l_i_t_i_e_s.html#abfe0ef4c972273f656e7326c8d02823f", null ],
+    [ "synchronous_master", "struct___a_r_m___u_s_a_r_t___c_a_p_a_b_i_l_i_t_i_e_s.html#a411f499dbaeb3232b11edf52a8e9a889", null ],
+    [ "synchronous_slave", "struct___a_r_m___u_s_a_r_t___c_a_p_a_b_i_l_i_t_i_e_s.html#a083cf1ee437aee3e104559c8c2070ae1", null ]
+];

@@ -1,0 +1,26 @@
+var group__mci__interface__gr =
+[
+    [ "MCI Events", "group__mci__event__gr.html", "group__mci__event__gr" ],
+    [ "MCI Control Codes", "group__mci__control__gr.html", "group__mci__control__gr" ],
+    [ "MCI Send Command Flags", "group__mci__send__command__flags__ctrls.html", null ],
+    [ "MCI Transfer Controls", "group__mci__transfer__ctrls.html", null ],
+    [ "MCI Card Power Controls", "group__mci__card__power__ctrls.html", null ],
+    [ "ARM_DRIVER_MCI", "struct_a_r_m___d_r_i_v_e_r___m_c_i.html", null ],
+    [ "ARM_MCI_CAPABILITIES", "struct_a_r_m___m_c_i___c_a_p_a_b_i_l_i_t_i_e_s.html", null ],
+    [ "ARM_MCI_STATUS", "struct_a_r_m___m_c_i___s_t_a_t_u_s.html", null ],
+    [ "ARM_MCI_SignalEvent_t", "group__mci__interface__gr.html#ga0d14651f6788c1ffd81544602565faf1", null ],
+    [ "ARM_MCI_AbortTransfer", "group__mci__interface__gr.html#ga3dfcf7b7186b711f9b63a096be816fe5", null ],
+    [ "ARM_MCI_CardPower", "group__mci__interface__gr.html#gab161f80e0eda2815f3e0ebbba1314ff0", null ],
+    [ "ARM_MCI_Control", "group__mci__interface__gr.html#gaec0506a2aa4ae75cf6bc02528f36fe30", null ],
+    [ "ARM_MCI_GetCapabilities", "group__mci__interface__gr.html#ga7e5a78b6e6409189833a0b72a0a3c48a", null ],
+    [ "ARM_MCI_GetStatus", "group__mci__interface__gr.html#ga8d61aa42ce78d1864fa928c1f273cbd9", null ],
+    [ "ARM_MCI_GetVersion", "group__mci__interface__gr.html#ga3418183015dbf3025b94eebaedb00ab1", null ],
+    [ "ARM_MCI_Initialize", "group__mci__interface__gr.html#ga6f34d4ab362e596ddaf23aac093268cf", null ],
+    [ "ARM_MCI_PowerControl", "group__mci__interface__gr.html#ga19752749d04ed22dc91c4294645e0244", null ],
+    [ "ARM_MCI_ReadCD", "group__mci__interface__gr.html#ga012fca8f1ce5366fce14b708c771c635", null ],
+    [ "ARM_MCI_ReadWP", "group__mci__interface__gr.html#ga3d70286918405ac81fa795c7d09dc6fd", null ],
+    [ "ARM_MCI_SendCommand", "group__mci__interface__gr.html#ga5a431da89feabc2b4bc0c27943dff6f2", null ],
+    [ "ARM_MCI_SetupTransfer", "group__mci__interface__gr.html#gaaec681bcd8e6811c5743e33ee0f35ed1", null ],
+    [ "ARM_MCI_SignalEvent", "group__mci__interface__gr.html#gaac2dbd1c1a98436938c5d0d6248cb700", null ],
+    [ "ARM_MCI_Uninitialize", "group__mci__interface__gr.html#gaef8183e77797e74997551d03646d42c2", null ]
+];

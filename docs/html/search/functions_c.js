@@ -1,0 +1,12 @@
+var searchData=
+[
+  ['os_5ftick_5facknowledgeirq_6221',['OS_Tick_AcknowledgeIRQ',['../os__tick_8h.html#a14c430d2b363ebd9f904b0822a9314e7',1,'OS_Tick_AcknowledgeIRQ(void):&#160;os_tick_gtim.c'],['../os__tick__gtim_8c.html#a14c430d2b363ebd9f904b0822a9314e7',1,'OS_Tick_AcknowledgeIRQ(void):&#160;os_tick_gtim.c']]],
+  ['os_5ftick_5fdisable_6222',['OS_Tick_Disable',['../os__tick_8h.html#a50fc040b66fabd1945d2bd1d0d05661d',1,'OS_Tick_Disable(void):&#160;os_tick_gtim.c'],['../os__tick__gtim_8c.html#a50fc040b66fabd1945d2bd1d0d05661d',1,'OS_Tick_Disable(void):&#160;os_tick_gtim.c']]],
+  ['os_5ftick_5fenable_6223',['OS_Tick_Enable',['../os__tick_8h.html#aaa0d6ddef6816e8e5650fde3daf191e7',1,'OS_Tick_Enable(void):&#160;os_tick_gtim.c'],['../os__tick__gtim_8c.html#aaa0d6ddef6816e8e5650fde3daf191e7',1,'OS_Tick_Enable(void):&#160;os_tick_gtim.c']]],
+  ['os_5ftick_5fgetclock_6224',['OS_Tick_GetClock',['../os__tick_8h.html#a936217ea28236fb57648973e0d8f627a',1,'OS_Tick_GetClock(void):&#160;os_tick_gtim.c'],['../os__tick__gtim_8c.html#a936217ea28236fb57648973e0d8f627a',1,'OS_Tick_GetClock(void):&#160;os_tick_gtim.c']]],
+  ['os_5ftick_5fgetcount_6225',['OS_Tick_GetCount',['../os__tick_8h.html#aa64a145a554f1e5077848938d7f39c92',1,'OS_Tick_GetCount(void):&#160;os_tick_gtim.c'],['../os__tick__gtim_8c.html#aa64a145a554f1e5077848938d7f39c92',1,'OS_Tick_GetCount(void):&#160;os_tick_gtim.c']]],
+  ['os_5ftick_5fgetinterval_6226',['OS_Tick_GetInterval',['../os__tick_8h.html#a123151dc19d5a94a68f12cdbf61a9bb5',1,'OS_Tick_GetInterval(void):&#160;os_tick_gtim.c'],['../os__tick__gtim_8c.html#a123151dc19d5a94a68f12cdbf61a9bb5',1,'OS_Tick_GetInterval(void):&#160;os_tick_gtim.c']]],
+  ['os_5ftick_5fgetirqn_6227',['OS_Tick_GetIRQn',['../os__tick_8h.html#aa8b4eca23e3ffe2df403291958cdc905',1,'OS_Tick_GetIRQn(void):&#160;os_tick_gtim.c'],['../os__tick__gtim_8c.html#aa8b4eca23e3ffe2df403291958cdc905',1,'OS_Tick_GetIRQn(void):&#160;os_tick_gtim.c']]],
+  ['os_5ftick_5fgetoverflow_6228',['OS_Tick_GetOverflow',['../os__tick_8h.html#a8a30df14420fb3372dbce9f91de46a88',1,'OS_Tick_GetOverflow(void):&#160;os_tick_gtim.c'],['../os__tick__gtim_8c.html#a8a30df14420fb3372dbce9f91de46a88',1,'OS_Tick_GetOverflow(void):&#160;os_tick_gtim.c']]],
+  ['os_5ftick_5fsetup_6229',['OS_Tick_Setup',['../os__tick_8h.html#a5eeffb4d9dc6c6802fee8898096d9a59',1,'OS_Tick_Setup(uint32_t freq, IRQHandler_t handler):&#160;os_tick_gtim.c'],['../os__tick__gtim_8c.html#a5eeffb4d9dc6c6802fee8898096d9a59',1,'OS_Tick_Setup(uint32_t freq, IRQHandler_t handler):&#160;os_tick_gtim.c']]]
+];
