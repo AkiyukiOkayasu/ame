@@ -132,7 +132,7 @@ $(document).ready(function(){initNavTree('sine__oscillator_8hpp_source.html','')
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        {</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            phase = addModulo2Pi(phase, phaseIncrement);</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#if !defined(UNIT_TEST) &amp;&amp; __has_include(&quot;arm_math.h&quot;</span>)</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="group__sin.html#gae164899c4a3fc0e946dc5d55555fe541">arm_sin_f32</a>(phase);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="keywordflow">return</span> arm_sin_f32(phase);</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="keywordflow">return</span> sinf(phase);</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#endif</span></div>
@@ -149,7 +149,6 @@ $(document).ready(function(){initNavTree('sine__oscillator_8hpp_source.html','')
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    };</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;} <span class="comment">// namespace ame</span></div>
 <div class="ttc" id="aclassame_1_1_sine_oscillator_html"><div class="ttname"><a href="classame_1_1_sine_oscillator.html">ame::SineOscillator</a></div><div class="ttdef"><b>Definition:</b> sine_oscillator.hpp:21</div></div>
-<div class="ttc" id="agroup__sin_html_gae164899c4a3fc0e946dc5d55555fe541"><div class="ttname"><a href="group__sin.html#gae164899c4a3fc0e946dc5d55555fe541">arm_sin_f32</a></div><div class="ttdeci">float32_t arm_sin_f32(float32_t x)</div><div class="ttdoc">Fast approximation to the trigonometric sine function for floating-point data.</div><div class="ttdef"><b>Definition:</b> arm_sin_f32.c:71</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
