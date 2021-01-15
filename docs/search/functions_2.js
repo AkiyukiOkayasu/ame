@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['gaintodecibels_15',['gainToDecibels',['../classame_1_1_decibels.html#a5a45f2394a9f7289489c189c0cd68607',1,'ame::Decibels']]]
+  ['gaintodecibels_17',['gainToDecibels',['../classame_1_1_decibels.html#a5a45f2394a9f7289489c189c0cd68607',1,'ame::Decibels']]]
 ];

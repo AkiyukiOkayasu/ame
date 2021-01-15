@@ -16,6 +16,7 @@ var NAVTREEINDEX0 =
 "classame_1_1_sine_oscillator.html#ae3e9f889ed1c34ba7d45134071cfb9e3":[0,0,0,1,0],
 "classes.html":[0,1],
 "constants_8hpp_source.html":[1,0,1,0],
+"decibel_8hpp.html":[1,0,0,1],
 "decibel_8hpp_source.html":[1,0,0,1],
 "dir_296d53ceaeaa7e099814a6def439fe8a.html":[1,0,1],
 "dir_54810e17a903f725653bf795c77b69e5.html":[1,0,2],

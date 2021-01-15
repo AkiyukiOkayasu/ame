@@ -98,15 +98,24 @@ $(document).ready(function(){initNavTree('classame_1_1_decibels.html',''); initR
 <div class="title">ame::Decibels Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>dB - amplitude convertion  
+ <a href="classame_1_1_decibels.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="decibel_8hpp_source.html">decibel.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a0123ee00aac6f767fba9b3acf61dc128"><td class="memItemLeft" align="right" valign="top">static constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_decibels.html#a0123ee00aac6f767fba9b3acf61dc128">decibelsToGain</a> (const float dB, const float minusInfinityDb=defaultMinusInfinitydB) noexcept</td></tr>
+<tr class="memdesc:a0123ee00aac6f767fba9b3acf61dc128"><td class="mdescLeft">&#160;</td><td class="mdescRight">dB to amplitude  <a href="classame_1_1_decibels.html#a0123ee00aac6f767fba9b3acf61dc128">More...</a><br /></td></tr>
 <tr class="separator:a0123ee00aac6f767fba9b3acf61dc128"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a45f2394a9f7289489c189c0cd68607"><td class="memItemLeft" align="right" valign="top">static constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_decibels.html#a5a45f2394a9f7289489c189c0cd68607">gainToDecibels</a> (const float gain, const float minusInfinityDb=defaultMinusInfinitydB) noexcept</td></tr>
+<tr class="memdesc:a5a45f2394a9f7289489c189c0cd68607"><td class="mdescLeft">&#160;</td><td class="mdescRight">amplitude to dB  <a href="classame_1_1_decibels.html#a5a45f2394a9f7289489c189c0cd68607">More...</a><br /></td></tr>
 <tr class="separator:a5a45f2394a9f7289489c189c0cd68607"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>dB - amplitude convertion </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a0123ee00aac6f767fba9b3acf61dc128"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0123ee00aac6f767fba9b3acf61dc128">&#9670;&nbsp;</a></span>decibelsToGain()</h2>
 
@@ -140,7 +149,16 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Caliculate amplitude(gain) from dB Max/MSPのdbtoaオブジェクト </p>
+
+<p>dB to amplitude </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dB</td><td></td></tr>
+    <tr><td class="paramname">minusInfinityDb</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>constexpr float amplitude </dd></dl>
 
 </div>
 </div>
@@ -177,7 +195,17 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Calculate dB from amplitude(gain) Max/MSPのatodbオブジェクト </p>
+
+<p>amplitude to dB </p>
+<p>Calculate dB from amplitude(gain) Max/MSPのatodbオブジェクト</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gain</td><td></td></tr>
+    <tr><td class="paramname">minusInfinityDb</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>constexpr float dB </dd></dl>
 
 </div>
 </div>

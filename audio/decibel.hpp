@@ -1,8 +1,10 @@
-// Copyright (c) 2020 Akiyuki Okayasu
-// Author: Akiyuki Okayasu (akiyuki.okayasu@gmail.com)
-// AME is released under the MIT license.
-// -------------------------------------------------------
-// Decibel
+/**
+ * @file decibel.hpp
+ * @brief Audio buffer
+ * @author Akiyuki Okayasu (akiyuki.okayasu@gmail.com)
+ * Copyright (c) 2020 Akiyuki Okayasu
+ * AME is released under the MIT license.
+ */
 // TODO std::pow, std::max, std::log10をより高速かコンパイル時に実行できるものに置き換える
 
 #pragma once
@@ -12,11 +14,19 @@
 
 namespace ame
 {
+    /**
+     * @brief dB - amplitude convertion
+     *
+     */
     class Decibels
     {
       public:
-        /** Caliculate amplitude(gain) from dB
-         * Max/MSPのdbtoaオブジェクト
+        /**
+         * @brief dB to amplitude
+         *
+         * @param dB
+         * @param minusInfinityDb
+         * @return constexpr float amplitude
          */
         static constexpr float decibelsToGain(const float dB,
                                               const float minusInfinityDb = defaultMinusInfinitydB) noexcept
@@ -26,6 +36,14 @@ namespace ame
 
         /** Calculate dB from amplitude(gain)
          * Max/MSPのatodbオブジェクト
+         */
+
+        /**
+         * @brief amplitude to dB
+         *
+         * @param gain
+         * @param minusInfinityDb
+         * @return constexpr float dB
          */
         static constexpr float gainToDecibels(const float gain,
                                               const float minusInfinityDb = defaultMinusInfinitydB) noexcept
