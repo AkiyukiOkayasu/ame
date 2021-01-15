@@ -9,12 +9,8 @@
 #include "../math/constants.hpp"
 #include "dspHelpers.hpp"
 
-#ifndef UNIT_TEST
-#if __has_include("arm_math.h")
+#if !defined(UNIT_TEST) && __has_include("arm_math.h")
 #include "arm_math.h"
-#else
-#include "math.h" //TODO cmathにするか検討
-#else
 #else
 #include "math.h" //TODO cmathにするか検討
 #endif
@@ -38,7 +34,7 @@ namespace ame
         float nextSample() noexcept
         {
             phase = addModulo2Pi(phase, phaseIncrement);
-#ifndef UNIT_TEST
+#if !defined(UNIT_TEST) && __has_include("arm_math.h")
             return arm_sin_f32(phase);
 #else
             return sinf(phase);
