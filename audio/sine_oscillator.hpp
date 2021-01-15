@@ -27,8 +27,8 @@ namespace ame
         SineOscillator(const float sampleRate, const float frequency) : samplingPeriod(1.0f / sampleRate)
         {
             setFrequency(frequency);
-        };
-        ~SineOscillator(){};
+        }
+        ~SineOscillator(){}
 
         void setFrequency(const float freq) noexcept
         {
