@@ -27,6 +27,7 @@ namespace ame
          * @param dB
          * @param minusInfinityDb
          * @return constexpr float amplitude
+         * @note Cycling'74 Max / dbtoa object
          */
         static constexpr float decibelsToGain(const float dB,
                                               const float minusInfinityDb = defaultMinusInfinitydB) noexcept
@@ -34,16 +35,12 @@ namespace ame
             return dB > minusInfinityDb ? std::pow(10.0f, dB * 0.05f) : 0.0f;
         }
 
-        /** Calculate dB from amplitude(gain)
-         * Max/MSPのatodbオブジェクト
-         */
-
         /**
-         * @brief amplitude to dB
-         *
+         * @brief amplitude to dB.
          * @param gain
          * @param minusInfinityDb
          * @return constexpr float dB
+         * @note Cycling'74 Max / atodb object
          */
         static constexpr float gainToDecibels(const float gain,
                                               const float minusInfinityDb = defaultMinusInfinitydB) noexcept
