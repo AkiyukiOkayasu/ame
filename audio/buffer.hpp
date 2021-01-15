@@ -1,9 +1,10 @@
-// Copyright (c) 2020 Akiyuki Okayasu
-// Author: Akiyuki Okayasu (akiyuki.okayasu@gmail.com)
-// AME is released under the MIT license.
-// -------------------------------------------------------
-// Buffer
-// TODO モノラル用のバッファー、インターリーブ用のマルチバッファーを追加
+/**
+ * @file buffer.hpp
+ * @brief Audio buffer
+ * @author Akiyuki Okayasu (akiyuki.okayasu@gmail.com)
+ * Copyright (c) 2020 Akiyuki Okayasu
+ * AME is released under the MIT license.
+ */
 
 #pragma once
 

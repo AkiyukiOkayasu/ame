@@ -1,8 +1,10 @@
-// Copyright (c) 2020 Akiyuki Okayasu
-// Author: Akiyuki Okayasu (akiyuki.okayasu@gmail.com)
-// AME is released under the MIT license.
-// -------------------------------------------------------
-// ame.hpp
+/**
+ * @file ame.hpp
+ * @brief Main header file
+ * @author Akiyuki Okayasu (akiyuki.okayasu@gmail.com)
+ * Copyright (c) 2020 Akiyuki Okayasu
+ * AME is released under the MIT license.
+ */
 
 #pragma once
 
