@@ -1,10 +1,11 @@
 /**
  * @file decibel.hpp
- * @brief Audio buffer
+ * @brief Converting between decibels and amplitude
  * @author Akiyuki Okayasu (akiyuki.okayasu@gmail.com)
  * Copyright (c) 2020 Akiyuki Okayasu
  * AME is released under the MIT license.
  */
+
 // TODO std::pow, std::max, std::log10をより高速かコンパイル時に実行できるものに置き換える
 
 #pragma once
@@ -15,19 +16,16 @@
 namespace ame
 {
     /**
-     * @brief dB - amplitude convertion
-     *
+     * @brief Converting between decibels and amplitude
      */
     class Decibels
     {
       public:
         /**
-         * @brief dB to amplitude
-         *
+         * @brief dB to amplitude convertion. @n This works like Cycling'74 Max's dbtoa object.
          * @param dB
-         * @param minusInfinityDb
-         * @return constexpr float amplitude
-         * @note Cycling'74 Max / dbtoa object
+         * @param minusInfinityDb The decibel value at which the amplitude is considered to be zero.
+         * @return amplitude
          */
         static constexpr float decibelsToGain(const float dB,
                                               const float minusInfinityDb = defaultMinusInfinitydB) noexcept
@@ -36,10 +34,10 @@ namespace ame
         }
 
         /**
-         * @brief amplitude to dB.
+         * @brief Amplitude to dB convertion. @n This works like Cycling'74 Max's atodb object.
          * @param gain
-         * @param minusInfinityDb
-         * @return constexpr float dB
+         * @param minusInfinityDb The decibel value at which the amplitude is considered to be zero.
+         * @return dB
          * @note Cycling'74 Max / atodb object
          */
         static constexpr float gainToDecibels(const float gain,
@@ -49,7 +47,8 @@ namespace ame
         }
 
       private:
-        static constexpr float defaultMinusInfinitydB = -100.0f; //-100dB以下は振幅ゼロにする
+        /** The default decibel value, which considers the amplitude to be zero is -100 dB. */
+        static constexpr float defaultMinusInfinitydB = -100.0f;
 
         // Disallow instantiate, this class is a holder for static methods.
         Decibels() = delete;

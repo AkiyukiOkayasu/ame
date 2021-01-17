@@ -99,7 +99,7 @@ $(document).ready(function(){initNavTree('classame_1_1_decibels.html',''); initR
 </div><!--header-->
 <div class="contents">
 
-<p>dB - amplitude convertion  
+<p>Converting between decibels and amplitude.  
  <a href="classame_1_1_decibels.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="decibel_8hpp_source.html">decibel.hpp</a>&gt;</code></p>
@@ -107,14 +107,16 @@ $(document).ready(function(){initNavTree('classame_1_1_decibels.html',''); initR
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a0123ee00aac6f767fba9b3acf61dc128"><td class="memItemLeft" align="right" valign="top">static constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_decibels.html#a0123ee00aac6f767fba9b3acf61dc128">decibelsToGain</a> (const float dB, const float minusInfinityDb=defaultMinusInfinitydB) noexcept</td></tr>
-<tr class="memdesc:a0123ee00aac6f767fba9b3acf61dc128"><td class="mdescLeft">&#160;</td><td class="mdescRight">dB to amplitude  <a href="classame_1_1_decibels.html#a0123ee00aac6f767fba9b3acf61dc128">More...</a><br /></td></tr>
+<tr class="memdesc:a0123ee00aac6f767fba9b3acf61dc128"><td class="mdescLeft">&#160;</td><td class="mdescRight">dB to amplitude convertion. <br  />
+ This works like Cycling'74 Max's dbtoa object.  <a href="classame_1_1_decibels.html#a0123ee00aac6f767fba9b3acf61dc128">More...</a><br /></td></tr>
 <tr class="separator:a0123ee00aac6f767fba9b3acf61dc128"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a45f2394a9f7289489c189c0cd68607"><td class="memItemLeft" align="right" valign="top">static constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_decibels.html#a5a45f2394a9f7289489c189c0cd68607">gainToDecibels</a> (const float gain, const float minusInfinityDb=defaultMinusInfinitydB) noexcept</td></tr>
-<tr class="memdesc:a5a45f2394a9f7289489c189c0cd68607"><td class="mdescLeft">&#160;</td><td class="mdescRight">amplitude to dB.  <a href="classame_1_1_decibels.html#a5a45f2394a9f7289489c189c0cd68607">More...</a><br /></td></tr>
+<tr class="memdesc:a5a45f2394a9f7289489c189c0cd68607"><td class="mdescLeft">&#160;</td><td class="mdescRight">Amplitude to dB convertion. <br  />
+ This works like Cycling'74 Max's atodb object.  <a href="classame_1_1_decibels.html#a5a45f2394a9f7289489c189c0cd68607">More...</a><br /></td></tr>
 <tr class="separator:a5a45f2394a9f7289489c189c0cd68607"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>dB - amplitude convertion </p>
+<div class="textblock"><p>Converting between decibels and amplitude. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a0123ee00aac6f767fba9b3acf61dc128"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0123ee00aac6f767fba9b3acf61dc128">&#9670;&nbsp;</a></span>decibelsToGain()</h2>
@@ -150,16 +152,16 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>dB to amplitude </p>
+<p>dB to amplitude convertion. <br  />
+ This works like Cycling'74 Max's dbtoa object. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">dB</td><td></td></tr>
-    <tr><td class="paramname">minusInfinityDb</td><td></td></tr>
+    <tr><td class="paramname">minusInfinityDb</td><td>The decibel value at which the amplitude is considered to be zero. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>constexpr float amplitude </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>Cycling'74 Max / dbtoa object </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>amplitude </dd></dl>
 
 </div>
 </div>
@@ -197,15 +199,16 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>amplitude to dB. </p>
+<p>Amplitude to dB convertion. <br  />
+ This works like Cycling'74 Max's atodb object. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">gain</td><td></td></tr>
-    <tr><td class="paramname">minusInfinityDb</td><td></td></tr>
+    <tr><td class="paramname">minusInfinityDb</td><td>The decibel value at which the amplitude is considered to be zero. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>constexpr float dB </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>dB </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>Cycling'74 Max / atodb object </dd></dl>
 
 </div>
