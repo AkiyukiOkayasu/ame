@@ -102,9 +102,12 @@ $(document).ready(function(){initNavTree('classame_1_1_m_i_d_i.html',''); initRe
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:aed776c5248be840716a6b141e88ceb78"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_m_i_d_i.html#aed776c5248be840716a6b141e88ceb78">freqToMidi</a> (const float freq, const float A3Freq=A3_Hz)</td></tr>
+<tr class="memdesc:aed776c5248be840716a6b141e88ceb78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert frequency to <a class="el" href="classame_1_1_m_i_d_i.html">MIDI</a> note number. <br  />
+ Same function as the Cycling'74 Max [ftom] object.  <a href="classame_1_1_m_i_d_i.html#aed776c5248be840716a6b141e88ceb78">More...</a><br /></td></tr>
 <tr class="separator:aed776c5248be840716a6b141e88ceb78"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c2eff36e1763a8ce242974d7c72afaf"><td class="memItemLeft" align="right" valign="top"><a id="a9c2eff36e1763a8ce242974d7c72afaf"></a>
-static float&#160;</td><td class="memItemRight" valign="bottom"><b>midiToFreq</b> (const float midiNote, const float A3Freq=A3_Hz)</td></tr>
+<tr class="memitem:a9c2eff36e1763a8ce242974d7c72afaf"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_m_i_d_i.html#a9c2eff36e1763a8ce242974d7c72afaf">midiToFreq</a> (const float midiNote, const float A3Freq=A3_Hz)</td></tr>
+<tr class="memdesc:a9c2eff36e1763a8ce242974d7c72afaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert <a class="el" href="classame_1_1_m_i_d_i.html">MIDI</a> note number to frequency. <br  />
+ Same function as the Cycling'74 Max [mtof] object.  <a href="classame_1_1_m_i_d_i.html#a9c2eff36e1763a8ce242974d7c72afaf">More...</a><br /></td></tr>
 <tr class="separator:a9c2eff36e1763a8ce242974d7c72afaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -141,7 +144,64 @@ static float&#160;</td><td class="memItemRight" valign="bottom"><b>midiToFreq</b
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Calculate <a class="el" href="classame_1_1_m_i_d_i.html">MIDI</a> note from frequency Max/MSPのftomオブジェクト </p>
+
+<p>Convert frequency to <a class="el" href="classame_1_1_m_i_d_i.html">MIDI</a> note number. <br  />
+ Same function as the Cycling'74 Max [ftom] object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">frequency</td><td></td></tr>
+    <tr><td class="paramname">A3Freq</td><td>Frequency for A3 (<a class="el" href="classame_1_1_m_i_d_i.html">MIDI</a> note 69). 440Hz is the most common. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classame_1_1_m_i_d_i.html">MIDI</a> note </dd></dl>
+
+</div>
+</div>
+<a id="a9c2eff36e1763a8ce242974d7c72afaf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c2eff36e1763a8ce242974d7c72afaf">&#9670;&nbsp;</a></span>midiToFreq()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static float ame::MIDI::midiToFreq </td>
+          <td>(</td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>midiNote</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>A3Freq</em> = <code>A3_Hz</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convert <a class="el" href="classame_1_1_m_i_d_i.html">MIDI</a> note number to frequency. <br  />
+ Same function as the Cycling'74 Max [mtof] object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">midiNote</td><td></td></tr>
+    <tr><td class="paramname">A3Freq</td><td>Frequency for A3 (<a class="el" href="classame_1_1_m_i_d_i.html">MIDI</a> note 69). 440Hz is the most common. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>frequency in Hz </dd></dl>
 
 </div>
 </div>

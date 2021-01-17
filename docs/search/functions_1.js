@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['freqtomidi_22',['freqToMidi',['../classame_1_1_m_i_d_i.html#aed776c5248be840716a6b141e88ceb78',1,'ame::MIDI']]]
+  ['decibelstogain_35',['decibelsToGain',['../classame_1_1_decibels.html#a0123ee00aac6f767fba9b3acf61dc128',1,'ame::Decibels']]]
 ];

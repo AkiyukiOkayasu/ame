@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['freqtomidi_5',['freqToMidi',['../classame_1_1_m_i_d_i.html#aed776c5248be840716a6b141e88ceb78',1,'ame::MIDI']]]
+  ['decibel_2ehpp_4',['decibel.hpp',['../decibel_8hpp.html',1,'']]],
+  ['decibels_5',['Decibels',['../classame_1_1_decibels.html',1,'ame']]],
+  ['decibelstogain_6',['decibelsToGain',['../classame_1_1_decibels.html#a0123ee00aac6f767fba9b3acf61dc128',1,'ame::Decibels']]],
+  ['dsphelpers_2ehpp_7',['dspHelpers.hpp',['../dsp_helpers_8hpp.html',1,'']]]
 ];

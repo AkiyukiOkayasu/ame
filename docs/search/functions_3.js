@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['nextsample_24',['nextSample',['../classame_1_1_sine_oscillator.html#a2ac7efb5c12f0877f39b36cc56f02c41',1,'ame::SineOscillator']]]
+  ['gaintodecibels_38',['gainToDecibels',['../classame_1_1_decibels.html#a5a45f2394a9f7289489c189c0cd68607',1,'ame::Decibels']]]
 ];

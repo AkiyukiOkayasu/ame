@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['sine_5foscillator_2ehpp_19',['sine_oscillator.hpp',['../sine__oscillator_8hpp.html',1,'']]],
-  ['specialfunctions_2ehpp_20',['specialFunctions.hpp',['../special_functions_8hpp.html',1,'']]]
+  ['decibel_2ehpp_28',['decibel.hpp',['../decibel_8hpp.html',1,'']]],
+  ['dsphelpers_2ehpp_29',['dspHelpers.hpp',['../dsp_helpers_8hpp.html',1,'']]]
 ];

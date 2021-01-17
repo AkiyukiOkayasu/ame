@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['gaintodecibels_23',['gainToDecibels',['../classame_1_1_decibels.html#a5a45f2394a9f7289489c189c0cd68607',1,'ame::Decibels']]]
+  ['freqtomidi_36',['freqToMidi',['../classame_1_1_m_i_d_i.html#aed776c5248be840716a6b141e88ceb78',1,'ame::MIDI']]],
+  ['freqtoperiod_37',['freqToPeriod',['../dsp_helpers_8hpp.html#aa31fd9c4839dd2a12db428f44832b0aa',1,'ame']]]
 ];
