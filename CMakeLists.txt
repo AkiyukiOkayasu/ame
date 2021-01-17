@@ -4,9 +4,6 @@ project(ametest VERSION 0.1.0)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_FLAGS "-O1 -Wall -Wconversion -Wunsuffixed-float-constants")
 
-# 単体テスト用define
-add_compile_options(-D UNIT_TEST)
-
 # Include directories
 set(INCLUDE_DIR
     ${PROJECT_SOURCE_DIR}/CMSIS_5/CMSIS/DSP/Include

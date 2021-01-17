@@ -95,66 +95,57 @@ $(document).ready(function(){initNavTree('sine__oscillator_8hpp_source.html','')
 <div class="title">sine_oscillator.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// Copyright (c) 2020 Akiyuki Okayasu</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// Author: Akiyuki Okayasu (akiyuki.okayasu@gmail.com)</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// AME is released under the MIT license.</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">// -------------------------------------------------------</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">// Sine wave oscillator. Generates a sine between -1.0~1.0.</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;../math/constants.hpp&quot;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;dspHelpers.hpp&quot;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#if !defined(UNIT_TEST) &amp;&amp; __has_include(&quot;arm_math.h&quot;</span>)</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;arm_math.h&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;math.h&quot;</span> <span class="comment">//TODO cmathにするか検討</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">namespace </span>ame</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classame_1_1_sine_oscillator.html">   20</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classame_1_1_sine_oscillator.html">SineOscillator</a></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    {</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;      <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="code" href="classame_1_1_sine_oscillator.html">SineOscillator</a>(<span class="keyword">const</span> <span class="keywordtype">float</span> sampleRate, <span class="keyword">const</span> <span class="keywordtype">float</span> frequency) : samplingPeriod(1.0f / sampleRate)</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            setFrequency(frequency);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        }</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        ~<a class="code" href="classame_1_1_sine_oscillator.html">SineOscillator</a>(){}</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordtype">void</span> setFrequency(<span class="keyword">const</span> <span class="keywordtype">float</span> freq) noexcept</div>
+<a href="sine__oscillator_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;../math/constants.hpp&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;../math/specialFunctions.hpp&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;dspHelpers.hpp&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;atomic&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">namespace </span>ame</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classame_1_1_sine_oscillator.html">   22</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classame_1_1_sine_oscillator.html">SineOscillator</a></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;      <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <a class="code" href="classame_1_1_sine_oscillator.html">SineOscillator</a>(<span class="keyword">const</span> <span class="keywordtype">float</span> sampleRate, <span class="keyword">const</span> <span class="keywordtype">float</span> frequency) : samplingPeriod(1.0f / sampleRate)</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <a class="code" href="classame_1_1_sine_oscillator.html#aa733e87a8bb4d568767fda009a074162">setFrequency</a>(frequency);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        }</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        ~<a class="code" href="classame_1_1_sine_oscillator.html">SineOscillator</a>()</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            phaseIncrement = freq * twoPi * samplingPeriod;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        }</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordtype">float</span> nextSample() noexcept</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            phase = addModulo2Pi(phase, phaseIncrement);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#if !defined(UNIT_TEST) &amp;&amp; __has_include(&quot;arm_math.h&quot;</span>)</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="keywordflow">return</span> arm_sin_f32(phase);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="keywordflow">return</span> sinf(phase);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        }</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;      <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordtype">float</span> samplingPeriod; <span class="comment">// サンプリング周期: 1 /sampleRate</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordtype">float</span> phaseIncrement;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordtype">float</span> phase = 0.0f;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="comment">// Disallow copy constructor and assignment</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <a class="code" href="classame_1_1_sine_oscillator.html">SineOscillator</a>(<span class="keyword">const</span> <a class="code" href="classame_1_1_sine_oscillator.html">SineOscillator</a>&amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <a class="code" href="classame_1_1_sine_oscillator.html">SineOscillator</a>&amp; operator=(<span class="keyword">const</span> <a class="code" href="classame_1_1_sine_oscillator.html">SineOscillator</a>&amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    };</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;} <span class="comment">// namespace ame</span></div>
-<div class="ttc" id="aclassame_1_1_sine_oscillator_html"><div class="ttname"><a href="classame_1_1_sine_oscillator.html">ame::SineOscillator</a></div><div class="ttdef"><b>Definition:</b> sine_oscillator.hpp:21</div></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        }</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classame_1_1_sine_oscillator.html#aa733e87a8bb4d568767fda009a074162">   37</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classame_1_1_sine_oscillator.html#aa733e87a8bb4d568767fda009a074162">setFrequency</a>(<span class="keyword">const</span> <span class="keywordtype">float</span> freq) noexcept</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            phaseIncrement = freq * twoPi * samplingPeriod;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        }</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classame_1_1_sine_oscillator.html#a2ac7efb5c12f0877f39b36cc56f02c41">   46</a></span>&#160;        <span class="keywordtype">float</span> <a class="code" href="classame_1_1_sine_oscillator.html#a2ac7efb5c12f0877f39b36cc56f02c41">nextSample</a>() noexcept</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            phase = addModulo2Pi(phase, phaseIncrement);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keywordflow">return</span> ame::sinf(phase);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        }</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;      <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordtype">float</span> samplingPeriod; <span class="comment">// サンプリング周期 1 /sampleRate</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        std::atomic&lt;float&gt; phaseIncrement{0.0f};</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        std::atomic&lt;float&gt; phase{0.0f};</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="comment">// Disallow copy constructor and assignment</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        SineOscillator(<span class="keyword">const</span> SineOscillator&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        SineOscillator&amp; operator=(<span class="keyword">const</span> SineOscillator&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    };</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;} <span class="comment">// namespace ame</span></div>
+<div class="ttc" id="aclassame_1_1_sine_oscillator_html"><div class="ttname"><a href="classame_1_1_sine_oscillator.html">ame::SineOscillator</a></div><div class="ttdoc">Sine wave generator.</div><div class="ttdef"><b>Definition:</b> sine_oscillator.hpp:23</div></div>
+<div class="ttc" id="aclassame_1_1_sine_oscillator_html_a2ac7efb5c12f0877f39b36cc56f02c41"><div class="ttname"><a href="classame_1_1_sine_oscillator.html#a2ac7efb5c12f0877f39b36cc56f02c41">ame::SineOscillator::nextSample</a></div><div class="ttdeci">float nextSample() noexcept</div><div class="ttdoc">generate one sample</div><div class="ttdef"><b>Definition:</b> sine_oscillator.hpp:46</div></div>
+<div class="ttc" id="aclassame_1_1_sine_oscillator_html_aa733e87a8bb4d568767fda009a074162"><div class="ttname"><a href="classame_1_1_sine_oscillator.html#aa733e87a8bb4d568767fda009a074162">ame::SineOscillator::setFrequency</a></div><div class="ttdeci">void setFrequency(const float freq) noexcept</div><div class="ttdoc">Set the sine wave frequency.</div><div class="ttdef"><b>Definition:</b> sine_oscillator.hpp:37</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_a5f32cf82ad289a7dac212f63f40f55b.html">audio</a></li><li class="navelem"><b>sine_oscillator.hpp</b></li>
+    <li class="navelem"><a class="el" href="dir_a5f32cf82ad289a7dac212f63f40f55b.html">audio</a></li><li class="navelem"><a class="el" href="sine__oscillator_8hpp.html">sine_oscillator.hpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>

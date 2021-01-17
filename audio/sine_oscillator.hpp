@@ -1,22 +1,24 @@
-// Copyright (c) 2020 Akiyuki Okayasu
-// Author: Akiyuki Okayasu (akiyuki.okayasu@gmail.com)
-// AME is released under the MIT license.
-// -------------------------------------------------------
-// Sine wave oscillator. Generates a sine between -1.0~1.0.
+/**
+ * @file sine_oscillator.hpp
+ * @brief Sine wave oscillator. Generates a sine between -1.0~1.0.
+ * @author Akiyuki Okayasu (akiyuki.okayasu@gmail.com)
+ * Copyright (c) 2020 Akiyuki Okayasu
+ * AME is released under the MIT license.
+ */
 
 #pragma once
 
 #include "../math/constants.hpp"
+#include "../math/specialFunctions.hpp"
 #include "dspHelpers.hpp"
-
-#if !defined(UNIT_TEST) && __has_include("arm_math.h")
-#include "arm_math.h"
-#else
-#include "math.h" //TODO cmathにするか検討
-#endif
+#include <atomic>
 
 namespace ame
 {
+    /**
+     * @brief Sine wave generator
+     *
+     */
     class SineOscillator
     {
       public:
@@ -24,27 +26,33 @@ namespace ame
         {
             setFrequency(frequency);
         }
-        ~SineOscillator(){}
+        ~SineOscillator()
+        {
+        }
 
+        /**
+         * @brief Set the sine wave frequency
+         * @param freq frequency in Hz
+         */
         void setFrequency(const float freq) noexcept
         {
             phaseIncrement = freq * twoPi * samplingPeriod;
         }
 
+        /**
+         * @brief generate one sample
+         * @return generated latest sample
+         */
         float nextSample() noexcept
         {
             phase = addModulo2Pi(phase, phaseIncrement);
-#if !defined(UNIT_TEST) && __has_include("arm_math.h")
-            return arm_sin_f32(phase);
-#else
-            return sinf(phase);
-#endif
+            return ame::sinf(phase);
         }
 
       private:
-        float samplingPeriod; // サンプリング周期: 1 /sampleRate
-        float phaseIncrement;
-        float phase = 0.0f;
+        float samplingPeriod; // サンプリング周期 1 /sampleRate
+        std::atomic<float> phaseIncrement{0.0f};
+        std::atomic<float> phase{0.0f};
 
         // Disallow copy constructor and assignment
         SineOscillator(const SineOscillator&) = delete;

@@ -98,19 +98,89 @@ $(document).ready(function(){initNavTree('classame_1_1_sine_oscillator.html','')
 <div class="title">ame::SineOscillator Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Sine wave generator.  
+ <a href="classame_1_1_sine_oscillator.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="sine__oscillator_8hpp_source.html">sine_oscillator.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ae3e9f889ed1c34ba7d45134071cfb9e3"><td class="memItemLeft" align="right" valign="top"><a id="ae3e9f889ed1c34ba7d45134071cfb9e3"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>SineOscillator</b> (const float sampleRate, const float frequency)</td></tr>
 <tr class="separator:ae3e9f889ed1c34ba7d45134071cfb9e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa733e87a8bb4d568767fda009a074162"><td class="memItemLeft" align="right" valign="top"><a id="aa733e87a8bb4d568767fda009a074162"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setFrequency</b> (const float freq) noexcept</td></tr>
+<tr class="memitem:aa733e87a8bb4d568767fda009a074162"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_sine_oscillator.html#aa733e87a8bb4d568767fda009a074162">setFrequency</a> (const float freq) noexcept</td></tr>
+<tr class="memdesc:aa733e87a8bb4d568767fda009a074162"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the sine wave frequency.  <a href="classame_1_1_sine_oscillator.html#aa733e87a8bb4d568767fda009a074162">More...</a><br /></td></tr>
 <tr class="separator:aa733e87a8bb4d568767fda009a074162"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2ac7efb5c12f0877f39b36cc56f02c41"><td class="memItemLeft" align="right" valign="top"><a id="a2ac7efb5c12f0877f39b36cc56f02c41"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>nextSample</b> () noexcept</td></tr>
+<tr class="memitem:a2ac7efb5c12f0877f39b36cc56f02c41"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_sine_oscillator.html#a2ac7efb5c12f0877f39b36cc56f02c41">nextSample</a> () noexcept</td></tr>
+<tr class="memdesc:a2ac7efb5c12f0877f39b36cc56f02c41"><td class="mdescLeft">&#160;</td><td class="mdescRight">generate one sample  <a href="classame_1_1_sine_oscillator.html#a2ac7efb5c12f0877f39b36cc56f02c41">More...</a><br /></td></tr>
 <tr class="separator:a2ac7efb5c12f0877f39b36cc56f02c41"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Sine wave generator. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a2ac7efb5c12f0877f39b36cc56f02c41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ac7efb5c12f0877f39b36cc56f02c41">&#9670;&nbsp;</a></span>nextSample()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float ame::SineOscillator::nextSample </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>generate one sample </p>
+<dl class="section return"><dt>Returns</dt><dd>generated latest sample </dd></dl>
+
+</div>
+</div>
+<a id="aa733e87a8bb4d568767fda009a074162"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa733e87a8bb4d568767fda009a074162">&#9670;&nbsp;</a></span>setFrequency()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ame::SineOscillator::setFrequency </td>
+          <td>(</td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>freq</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the sine wave frequency. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">freq</td><td>frequency in Hz </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>audio/<a class="el" href="sine__oscillator_8hpp_source.html">sine_oscillator.hpp</a></li>
 </ul>

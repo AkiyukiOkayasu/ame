@@ -22,7 +22,7 @@ namespace ame
     {
       public:
         /**
-         * @brief dB to amplitude convertion. @n This works like Cycling'74 Max's dbtoa object.
+         * @brief Convert dB to amplitude. @n Same function as the Cycling'74 Max [dbtoa] object.
          * @param dB
          * @param minusInfinityDb The decibel value at which the amplitude is considered to be zero.
          * @return amplitude
@@ -34,11 +34,10 @@ namespace ame
         }
 
         /**
-         * @brief Amplitude to dB convertion. @n This works like Cycling'74 Max's atodb object.
+         * @brief Convert amplitude to dB. @n Same function as the Cycling'74 Max [atodb] object.
          * @param gain
          * @param minusInfinityDb The decibel value at which the amplitude is considered to be zero.
          * @return dB
-         * @note Cycling'74 Max / atodb object
          */
         static constexpr float gainToDecibels(const float gain,
                                               const float minusInfinityDb = defaultMinusInfinitydB) noexcept

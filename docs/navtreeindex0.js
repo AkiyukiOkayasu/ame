@@ -30,5 +30,10 @@ var NAVTREEINDEX0 =
 "pages.html":[],
 "pcm_8hpp_source.html":[1,0,0,3],
 "q23__float__conversion_8hpp_source.html":[1,0,0,4],
-"sine__oscillator_8hpp_source.html":[1,0,0,5]
+"sine__oscillator_8hpp.html":[1,0,0,5],
+"sine__oscillator_8hpp_source.html":[1,0,0,5],
+"special_functions_8hpp.html":[1,0,1,1],
+"special_functions_8hpp.html#a0e71b9868ce97cbcfa06c896385b60f6":[1,0,1,1,1],
+"special_functions_8hpp.html#a2237db9c6f95b677ae9c1248ae996767":[1,0,1,1,0],
+"special_functions_8hpp_source.html":[1,0,1,1]
 };
