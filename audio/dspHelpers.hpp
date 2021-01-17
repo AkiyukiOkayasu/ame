@@ -17,6 +17,20 @@
 namespace ame
 {
     /**
+     * @brief Linear interpolation between a and b.
+     * @note Function as same as std::lerp() implemented in C++20.
+     *
+     * @param a Start point
+     * @param b Target point
+     * @param t It expects a value of 0~1 to be entered, but specifications exceeding 1 are allowed.
+     * @return linear interpolated value
+     */
+    constexpr float lerp(float a, float b, float t) noexcept
+    {
+        return a + t * (b - a);
+    }
+
+    /**
      * @brief Increment the phase and returns in the range of 0~2pi.
      *
      * @param phase
