@@ -21,18 +21,39 @@
 
 namespace ame
 {
-// sin
-#ifdef USE_CMSIS_DSP
-    constexpr auto sinf = arm_sin_f32();
-#else
-    constexpr auto sinf = std::sinf();
-#endif
+    // sin
 
-// cos
+    /**
+     * @brief sine
+     * @details When CMSIS-DSP is available, use arm_sin_f32() of CMSIS-DSP; when not, use std::sinf()
+     *
+     * @param x
+     * @return float
+     */
+    inline float sinf(float x)
+    {
 #ifdef USE_CMSIS_DSP
-    constexpr auto cosf = arm_cos_f32();
+        return arm_sin_f32(x);
 #else
-    constexpr auto cosf = std::cosf();
+        return std::sinf(x);
 #endif
+    }
 
+    // cos
+
+    /**
+     * @brief cosine
+     * @details When CMSIS-DSP is available, use arm_cos_f32() of CMSIS-DSP; when not, use std::cosf()
+     *
+     * @param x
+     * @return float
+     */
+    inline float cosf(float x)
+    {
+#ifdef USE_CMSIS_DSP
+        return arm_cos_f32(x);
+#else
+        return std::cosf(x);
+#endif
+    }
 } // namespace ame
