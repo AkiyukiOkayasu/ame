@@ -116,16 +116,16 @@ $(document).ready(function(){initNavTree('midi_helpers_8hpp_source.html',''); in
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        }</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;      <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keyword">static</span> constexpr <span class="keywordtype">float</span> A3_Hz     = 440.0; <span class="comment">// A3(MIDI note 69)のデフォルト周波数</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keyword">static</span> constexpr <span class="keywordtype">int</span> A3_MIDINote = 69;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="comment">// Disallow instantiate, this class is a holder for static methods.</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <a class="code" href="classame_1_1_m_i_d_i.html">MIDI</a>() = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="comment">// Disallow copy constructor and assignment</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <a class="code" href="classame_1_1_m_i_d_i.html">MIDI</a>(<span class="keyword">const</span> <a class="code" href="classame_1_1_m_i_d_i.html">MIDI</a>&amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <a class="code" href="classame_1_1_m_i_d_i.html">MIDI</a>&amp; operator=(<span class="keyword">const</span> <a class="code" href="classame_1_1_m_i_d_i.html">MIDI</a>&amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    };</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;} <span class="comment">// namespace ame</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keyword">static</span> constexpr <span class="keywordtype">float</span> A3_Hz     = 440.0;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keyword">static</span> constexpr <span class="keywordtype">int</span> A3_MIDINote = 69;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="comment">// Disallow instantiate, this class is a holder for static methods.</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <a class="code" href="classame_1_1_m_i_d_i.html">MIDI</a>() = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="comment">// Disallow copy constructor and assignment</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <a class="code" href="classame_1_1_m_i_d_i.html">MIDI</a>(<span class="keyword">const</span> <a class="code" href="classame_1_1_m_i_d_i.html">MIDI</a>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <a class="code" href="classame_1_1_m_i_d_i.html">MIDI</a>&amp; operator=(<span class="keyword">const</span> <a class="code" href="classame_1_1_m_i_d_i.html">MIDI</a>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    };</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;} <span class="comment">// namespace ame</span></div>
 <div class="ttc" id="aclassame_1_1_m_i_d_i_html"><div class="ttname"><a href="classame_1_1_m_i_d_i.html">ame::MIDI</a></div><div class="ttdef"><b>Definition:</b> midiHelpers.hpp:18</div></div>
 <div class="ttc" id="aclassame_1_1_m_i_d_i_html_a9c2eff36e1763a8ce242974d7c72afaf"><div class="ttname"><a href="classame_1_1_m_i_d_i.html#a9c2eff36e1763a8ce242974d7c72afaf">ame::MIDI::midiToFreq</a></div><div class="ttdeci">static float midiToFreq(const float midiNote, const float A3Freq=A3_Hz)</div><div class="ttdoc">Convert MIDI note number to frequency.   Same function as the Cycling'74 Max [mtof] object.</div><div class="ttdef"><b>Definition:</b> midiHelpers.hpp:39</div></div>
 <div class="ttc" id="aclassame_1_1_m_i_d_i_html_aed776c5248be840716a6b141e88ceb78"><div class="ttname"><a href="classame_1_1_m_i_d_i.html#aed776c5248be840716a6b141e88ceb78">ame::MIDI::freqToMidi</a></div><div class="ttdeci">static int freqToMidi(const float freq, const float A3Freq=A3_Hz)</div><div class="ttdoc">Convert frequency to MIDI note number.   Same function as the Cycling'74 Max [ftom] object.</div><div class="ttdef"><b>Definition:</b> midiHelpers.hpp:27</div></div>

@@ -42,7 +42,10 @@ namespace ame
         }
 
       private:
-        static constexpr float A3_Hz     = 440.0; // A3(MIDI note 69)のデフォルト周波数
+        /**
+         * @brief A3 (MIDI note 69) default frequency 440Hz.
+         */
+        static constexpr float A3_Hz     = 440.0;
         static constexpr int A3_MIDINote = 69;
 
         // Disallow instantiate, this class is a holder for static methods.
