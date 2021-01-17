@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['miditofreq_49',['midiToFreq',['../classame_1_1_m_i_d_i.html#a9c2eff36e1763a8ce242974d7c72afaf',1,'ame::MIDI']]]
+  ['lerp_50',['lerp',['../dsp_helpers_8hpp.html#ab54fe577a7c14cfab3820540e56e05a7',1,'ame']]]
 ];

@@ -107,6 +107,9 @@ $(document).ready(function(){initNavTree('dsp_helpers_8hpp.html',''); initResiza
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:ab54fe577a7c14cfab3820540e56e05a7"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dsp_helpers_8hpp.html#ab54fe577a7c14cfab3820540e56e05a7">ame::lerp</a> (float a, float b, float t) noexcept</td></tr>
+<tr class="memdesc:ab54fe577a7c14cfab3820540e56e05a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Linear interpolation between a and b.  <a href="dsp_helpers_8hpp.html#ab54fe577a7c14cfab3820540e56e05a7">More...</a><br /></td></tr>
+<tr class="separator:ab54fe577a7c14cfab3820540e56e05a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a10eba5dc5108d4a9c2d0f52193925c0e"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dsp_helpers_8hpp.html#a10eba5dc5108d4a9c2d0f52193925c0e">ame::addModulo2Pi</a> (float phase, const float increment) noexcept</td></tr>
 <tr class="memdesc:a10eba5dc5108d4a9c2d0f52193925c0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increment the phase and returns in the range of 0~2pi.  <a href="dsp_helpers_8hpp.html#a10eba5dc5108d4a9c2d0f52193925c0e">More...</a><br /></td></tr>
 <tr class="separator:a10eba5dc5108d4a9c2d0f52193925c0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -205,6 +208,60 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>period </dd></dl>
+
+</div>
+</div>
+<a id="ab54fe577a7c14cfab3820540e56e05a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab54fe577a7c14cfab3820540e56e05a7">&#9670;&nbsp;</a></span>lerp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr float ame::lerp </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>t</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Linear interpolation between a and b. </p>
+<dl class="section note"><dt>Note</dt><dd>Function as same as <a class="el" href="dsp_helpers_8hpp.html#ab54fe577a7c14cfab3820540e56e05a7" title="Linear interpolation between a and b.">std::lerp()</a> implemented in C++20.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>Start point </td></tr>
+    <tr><td class="paramname">b</td><td>Target point </td></tr>
+    <tr><td class="paramname">t</td><td>It expects a value of 0~1 to be entered, but specifications exceeding 1 are allowed. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>linear interpolated value </dd></dl>
 
 </div>
 </div>
