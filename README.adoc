@@ -8,6 +8,8 @@ Major changes may be added to this project. +
 
 == Dependencies
 * C++17
+
+==== Optional
 * https://arm-software.github.io/CMSIS_5/DSP/html/index.html[ARM CMSIS-DSP] +
 
 == Feautures
@@ -15,6 +17,8 @@ Major changes may be added to this project. +
 * Conversion between **Decibel and Amplitude**
 * Conversion between **Frequency and Period**
 * Conversion between **MIDI note and Frequency**
+* Filters for smooth interpolation of values
+* Some utility functions
 
 == TODO  
 * Audio buffer (mono and interleave)
