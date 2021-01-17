@@ -1,8 +1,12 @@
-// Copyright (c) 2020 Akiyuki Okayasu
-// Author: Akiyuki Okayasu (akiyuki.okayasu@gmail.com)
-// AME is released under the MIT license.
-// -------------------------------------------------------
-// Math constants
+/**
+ * @file constants.hpp
+ * @author Akiyuki Okayasu (akiyuki.okayasu@gmail.com)
+ * @brief Math constants
+ *
+ * @copyright Copyright (c) 2021 Akiyuki Okayasu
+ *
+ * AME is released under the MIT license.
+ */
 
 #pragma once
 

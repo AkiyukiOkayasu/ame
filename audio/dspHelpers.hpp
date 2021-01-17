@@ -1,8 +1,12 @@
-// Copyright (c) 2020 Akiyuki Okayasu
-// Author: Akiyuki Okayasu (akiyuki.okayasu@gmail.com)
-// AME is released under the MIT license.
-// -------------------------------------------------------
-// DSP helper functions
+/**
+ * @file dspHelpers.hpp
+ * @author Akiyuki Okayasu (akiyuki.okayasu@gmail.com)
+ * @brief DSP helper functions
+ *
+ * @copyright Copyright (c) 2021 Akiyuki Okayasu
+ *
+ * AME is released under the MIT license.
+ */
 
 #pragma once
 
@@ -13,22 +17,21 @@
 namespace ame
 {
     /**
-     * @brief add value and modulo 2pi
-     * @return 0.0f ~ 2pi
+     * @brief Increment the phase and returns in the range of 0~2pi.
+     *
+     * @param phase
+     * @param increment Amount to add to phase
+     * @return 0~2pi
      */
-    constexpr float addModulo2Pi(float value, const float increment) noexcept
+    constexpr float addModulo2Pi(float phase, const float increment) noexcept
     {
-        value += increment;
-        while (value > twoPi)
+        phase += increment;
+        while (phase > twoPi)
         {
-            value -= twoPi;
+            phase -= twoPi;
         }
-        return value;
+        return phase;
     }
-
-    /*
-
-    */
 
     /**
      * @brief Map values to an output range. @n Same function as the Cycling'74 Max [scale] object.
@@ -56,10 +59,6 @@ namespace ame
     {
         return 1.0f / freq;
     }
-
-    /** periodToFreq
-     * 周期→周波数
-     */
 
     /**
      * @brief Convert period to frequency.

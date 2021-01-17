@@ -1,8 +1,10 @@
 /**
  * @file sine_oscillator.hpp
- * @brief Sine wave oscillator. Generates a sine between -1.0~1.0.
  * @author Akiyuki Okayasu (akiyuki.okayasu@gmail.com)
- * Copyright (c) 2020 Akiyuki Okayasu
+ * @brief Sine wave oscillator.
+ *
+ * @copyright Copyright (c) 2021 Akiyuki Okayasu
+ *
  * AME is released under the MIT license.
  */
 
@@ -16,7 +18,7 @@
 namespace ame
 {
     /**
-     * @brief Sine wave generator
+     * @brief Sine wave oscillator. Generates a sine between -1.0~1.0.
      *
      */
     class SineOscillator

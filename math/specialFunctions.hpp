@@ -1,8 +1,10 @@
 /**
  * @file specialFunctions.hpp
- * @brief Math special functins
  * @author Akiyuki Okayasu (akiyuki.okayasu@gmail.com)
- * Copyright (c) 2020 Akiyuki Okayasu
+ * @brief Math special functins
+ *
+ * @copyright Copyright (c) 2021 Akiyuki Okayasu
+ *
  * AME is released under the MIT license.
  */
 

@@ -1,8 +1,10 @@
 /**
  * @file ame.hpp
- * @brief Main header file
  * @author Akiyuki Okayasu (akiyuki.okayasu@gmail.com)
- * Copyright (c) 2020 Akiyuki Okayasu
+ * @brief Main header file
+ *
+ * @copyright Copyright (c) 2021 Akiyuki Okayasu
+ *
  * AME is released under the MIT license.
  */
 
@@ -14,4 +16,5 @@
 #include "audio/q23_float_conversion.hpp"
 #include "audio/sine_oscillator.hpp"
 #include "math/constants.hpp"
+#include "math/specialFunctions.hpp"
 #include "midi/midiHelpers.hpp"

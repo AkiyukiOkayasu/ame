@@ -1,10 +1,15 @@
-// Copyright (c) 2020 Akiyuki Okayasu
-// Author: Akiyuki Okayasu (akiyuki.okayasu@gmail.com)
-// AME is released under the MIT license.
-// -------------------------------------------------------
-// Convert 32-bit float and Q23
-// Complements the missing Q23 in the CMSIS-DSP's Convert 32-bit floating point value (
-// https://www.keil.com/pack/doc/CMSIS/DSP/html/group__float__to__x.html )
+/**
+ * @file q23_float_conversion.hpp
+ * @author Akiyuki Okayasu (akiyuki.okayasu@gmail.com)
+ * @brief Convert 32-bit float and Q23
+ * @details Complements the missing Q23 in the CMSIS-DSP's Convert 32-bit floating point value
+ https://www.keil.com/pack/doc/CMSIS/DSP/html/group__float__to__x.html
+
+ *
+ * @copyright Copyright (c) 2021 Akiyuki Okayasu
+ *
+ * AME is released under the MIT license.
+ */
 
 #pragma once
 

@@ -1,8 +1,10 @@
 /**
  * @file decibel.hpp
- * @brief Converting between decibels and amplitude
  * @author Akiyuki Okayasu (akiyuki.okayasu@gmail.com)
- * Copyright (c) 2020 Akiyuki Okayasu
+ * @brief Converting between decibels and amplitude
+ *
+ * @copyright Copyright (c) 2021 Akiyuki Okayasu
+ *
  * AME is released under the MIT license.
  */
 

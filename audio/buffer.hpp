@@ -1,8 +1,11 @@
+
 /**
  * @file buffer.hpp
- * @brief Audio buffer
  * @author Akiyuki Okayasu (akiyuki.okayasu@gmail.com)
- * Copyright (c) 2020 Akiyuki Okayasu
+ * @brief Audio buffer
+ *
+ * @copyright Copyright (c) 2021 Akiyuki Okayasu
+ *
  * AME is released under the MIT license.
  */
 
@@ -10,7 +13,6 @@
 
 #include <array>
 
-// buffer
 namespace ame
 {
     // AudioBuffer
