@@ -15,6 +15,7 @@
 #include "audio/dspHelpers.hpp"
 #include "audio/q23_float_conversion.hpp"
 #include "audio/sine_oscillator.hpp"
+#include "audio/slide.hpp"
 #include "math/constants.hpp"
 #include "math/specialFunctions.hpp"
 #include "midi/midiHelpers.hpp"
