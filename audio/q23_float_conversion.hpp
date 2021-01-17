@@ -2,7 +2,7 @@
  * @file q23_float_conversion.hpp
  * @author Akiyuki Okayasu (akiyuki.okayasu@gmail.com)
  * @brief Convert 32-bit float and Q23
- * @details Complements the missing Q23 in the CMSIS-DSP's Convert 32-bit floating point value
+ * @details Complements the missing Q23 in the CMSIS-DSP's Convert 32-bit floating point value @n
  https://www.keil.com/pack/doc/CMSIS/DSP/html/group__float__to__x.html
 
  *
