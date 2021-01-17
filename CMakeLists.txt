@@ -6,7 +6,7 @@ set(CMAKE_CXX_FLAGS "-O1 -Wall -Wconversion -Wunsuffixed-float-constants")
 
 # Include directories
 set(INCLUDE_DIR
-    ${PROJECT_SOURCE_DIR}/CMSIS_5/CMSIS/DSP/Include
+    ${PROJECT_SOURCE_DIR}
 )
 include_directories("${INCLUDE_DIR}")
 
