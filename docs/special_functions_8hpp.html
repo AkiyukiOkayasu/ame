@@ -92,7 +92,7 @@ $(document).ready(function(){initNavTree('special_functions_8hpp.html',''); init
 
 <div class="header">
   <div class="summary">
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">specialFunctions.hpp File Reference</div>  </div>
 </div><!--header-->
@@ -104,21 +104,94 @@ $(document).ready(function(){initNavTree('special_functions_8hpp.html',''); init
 </div>
 <p><a href="special_functions_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:a0e71b9868ce97cbcfa06c896385b60f6"><td class="memItemLeft" align="right" valign="top"><a id="a0e71b9868ce97cbcfa06c896385b60f6"></a>
-constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><b>ame::sinf</b> = std::sinf()</td></tr>
-<tr class="separator:a0e71b9868ce97cbcfa06c896385b60f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2237db9c6f95b677ae9c1248ae996767"><td class="memItemLeft" align="right" valign="top"><a id="a2237db9c6f95b677ae9c1248ae996767"></a>
-constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><b>ame::cosf</b> = std::cosf()</td></tr>
-<tr class="separator:a2237db9c6f95b677ae9c1248ae996767"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a04a55b89aafb7536f4f731002eb232ea"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="special_functions_8hpp.html#a04a55b89aafb7536f4f731002eb232ea">ame::sinf</a> (float x)</td></tr>
+<tr class="memdesc:a04a55b89aafb7536f4f731002eb232ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">sine  <a href="special_functions_8hpp.html#a04a55b89aafb7536f4f731002eb232ea">More...</a><br /></td></tr>
+<tr class="separator:a04a55b89aafb7536f4f731002eb232ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65e6b4905b7324b6c8b266ad3d47290c"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="special_functions_8hpp.html#a65e6b4905b7324b6c8b266ad3d47290c">ame::cosf</a> (float x)</td></tr>
+<tr class="memdesc:a65e6b4905b7324b6c8b266ad3d47290c"><td class="mdescLeft">&#160;</td><td class="mdescRight">cosine  <a href="special_functions_8hpp.html#a65e6b4905b7324b6c8b266ad3d47290c">More...</a><br /></td></tr>
+<tr class="separator:a65e6b4905b7324b6c8b266ad3d47290c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Math special functins. </p>
 <dl class="section author"><dt>Author</dt><dd>Akiyuki Okayasu (<a href="#" onclick="location.href='mai'+'lto:'+'aki'+'yu'+'ki.'+'ok'+'aya'+'su'+'@gm'+'ai'+'l.c'+'om'; return false;">akiyu<span style="display: none;">.nosp@m.</span>ki.o<span style="display: none;">.nosp@m.</span>kayas<span style="display: none;">.nosp@m.</span>u@gm<span style="display: none;">.nosp@m.</span>ail.c<span style="display: none;">.nosp@m.</span>om</a>)</dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2021 Akiyuki Okayasu</dd></dl>
 <p>AME is released under the MIT license. </p>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="a65e6b4905b7324b6c8b266ad3d47290c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65e6b4905b7324b6c8b266ad3d47290c">&#9670;&nbsp;</a></span>cosf()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float ame::cosf </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>cosine </p>
+<p>When CMSIS-DSP is available, use arm_cos_f32() of CMSIS-DSP; when not, use <a class="el" href="special_functions_8hpp.html#a65e6b4905b7324b6c8b266ad3d47290c" title="cosine">std::cosf()</a></p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>float </dd></dl>
+
+</div>
+</div>
+<a id="a04a55b89aafb7536f4f731002eb232ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04a55b89aafb7536f4f731002eb232ea">&#9670;&nbsp;</a></span>sinf()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float ame::sinf </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>sine </p>
+<p>When CMSIS-DSP is available, use arm_sin_f32() of CMSIS-DSP; when not, use <a class="el" href="special_functions_8hpp.html#a04a55b89aafb7536f4f731002eb232ea" title="sine">std::sinf()</a></p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>float </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

@@ -54,7 +54,7 @@ var NAVTREEINDEX0 =
 "slide_8hpp.html":[1,0,0,6],
 "slide_8hpp_source.html":[1,0,0,6],
 "special_functions_8hpp.html":[1,0,1,1],
-"special_functions_8hpp.html#a0e71b9868ce97cbcfa06c896385b60f6":[1,0,1,1,1],
-"special_functions_8hpp.html#a2237db9c6f95b677ae9c1248ae996767":[1,0,1,1,0],
+"special_functions_8hpp.html#a04a55b89aafb7536f4f731002eb232ea":[1,0,1,1,1],
+"special_functions_8hpp.html#a65e6b4905b7324b6c8b266ad3d47290c":[1,0,1,1,0],
 "special_functions_8hpp_source.html":[1,0,1,1]
 };

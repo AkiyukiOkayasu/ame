@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['miditofreq_46',['midiToFreq',['../classame_1_1_m_i_d_i.html#a9c2eff36e1763a8ce242974d7c72afaf',1,'ame::MIDI']]]
+  ['gaintodecibels_48',['gainToDecibels',['../classame_1_1_decibels.html#a5a45f2394a9f7289489c189c0cd68607',1,'ame::Decibels']]]
 ];
