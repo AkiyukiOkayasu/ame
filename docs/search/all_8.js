@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['nextsample_19',['nextSample',['../classame_1_1_sine_oscillator.html#a2ac7efb5c12f0877f39b36cc56f02c41',1,'ame::SineOscillator']]],
-  ['notevalue_20',['NoteValue',['../bpm_8hpp.html#a9b7c5ea587f6c099d08812417ad322cc',1,'bpm.hpp']]]
+  ['nextsample_20',['nextSample',['../classame_1_1_sine_oscillator.html#a2ac7efb5c12f0877f39b36cc56f02c41',1,'ame::SineOscillator']]],
+  ['notevalue_21',['NoteValue',['../bpm_8hpp.html#a7585c74ea4475a4b0750597223e0410d',1,'ame']]]
 ];
