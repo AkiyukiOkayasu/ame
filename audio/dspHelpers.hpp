@@ -16,6 +16,7 @@
 
 namespace ame
 {
+    // TODO mapping.hppへ移動？
     /**
      * @brief Linear interpolation between a and b.
      * @note Function as same as std::lerp() implemented in C++20.
@@ -30,6 +31,7 @@ namespace ame
         return a + t * (b - a);
     }
 
+    // TODO phase.hppへ移動？
     /**
      * @brief Increment the phase and returns in the range of 0~2pi.
      *
@@ -47,6 +49,7 @@ namespace ame
         return phase;
     }
 
+    // mapping.hppへ移動？
     /**
      * @brief Map values to an output range. @n Same function as the Cycling'74 Max [scale] object.
      *
@@ -64,6 +67,7 @@ namespace ame
                ((targetRangeMax - targetRangeMin) * (sourceValue - sourceRangeMin)) / (sourceRangeMax - sourceRangeMin);
     }
 
+    // Frequency.hppへ移動？
     /**
      * @brief Convert frequency to period.
      * @param freq frequency in Hz
@@ -74,6 +78,7 @@ namespace ame
         return 1.0f / freq;
     }
 
+    // Frequency.hppへ移動？
     /**
      * @brief Convert period to frequency.
      * @param period period

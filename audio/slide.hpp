@@ -6,7 +6,6 @@
  * @copyright Copyright (c) 2021 Akiyuki Okayasu
  *
  * AME is released under the MIT license.
- *
  */
 
 #include <atomic>

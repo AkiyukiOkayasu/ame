@@ -1,7 +1,7 @@
 /**
  * @file decibel.hpp
  * @author Akiyuki Okayasu (akiyuki.okayasu@gmail.com)
- * @brief Converting between decibels and amplitude
+ * @brief Convert decibels and amplitude
  *
  * @copyright Copyright (c) 2021 Akiyuki Okayasu
  *
@@ -20,7 +20,7 @@ namespace ame
     /**
      * @brief Converting between decibels and amplitude
      */
-    class Decibels
+    class Decibels // TODO クラスを使わずにnamespaceだけで実装することを検討
     {
       public:
         /**

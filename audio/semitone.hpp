@@ -3,8 +3,9 @@
  * @author Akiyuki Okayasu (akiyuki.okayasu@gmail.com)
  * @brief Converting between semitone and frequency ratio
  *
- * @copyright Copyright (c) 2021
+ * @copyright Copyright (c) 2021 Akiyuki Okayasu
  *
+ * AME is released under the MIT license.
  */
 
 #pragma once

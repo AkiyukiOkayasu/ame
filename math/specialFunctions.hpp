@@ -1,7 +1,7 @@
 /**
  * @file specialFunctions.hpp
  * @author Akiyuki Okayasu (akiyuki.okayasu@gmail.com)
- * @brief Math special functins
+ * @brief Special functins
  *
  * @copyright Copyright (c) 2021 Akiyuki Okayasu
  *
