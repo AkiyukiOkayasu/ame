@@ -1,5 +1,6 @@
 var dir_a5f32cf82ad289a7dac212f63f40f55b =
 [
+    [ "bpm.hpp", "bpm_8hpp.html", "bpm_8hpp" ],
     [ "buffer.hpp", "buffer_8hpp.html", "buffer_8hpp" ],
     [ "decibel.hpp", "decibel_8hpp.html", [
       [ "Decibels", "classame_1_1_decibels.html", null ]

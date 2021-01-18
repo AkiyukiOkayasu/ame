@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['cosf_45',['cosf',['../special_functions_8hpp.html#a65e6b4905b7324b6c8b266ad3d47290c',1,'ame']]]
+  ['bpmtoms_50',['bpmToMs',['../bpm_8hpp.html#ab2283f5b4e3f4431a6151db90251264d',1,'bpm.hpp']]]
 ];

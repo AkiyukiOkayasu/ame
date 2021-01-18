@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['lerp_12',['lerp',['../dsp_helpers_8hpp.html#ab54fe577a7c14cfab3820540e56e05a7',1,'ame']]]
+  ['lerp_14',['lerp',['../dsp_helpers_8hpp.html#ab54fe577a7c14cfab3820540e56e05a7',1,'ame']]]
 ];
