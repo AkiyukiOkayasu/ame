@@ -5,6 +5,7 @@
  *
  * @copyright Copyright (c) 2021
  *
+ * AME is released under the MIT license.
  */
 
 #pragma once

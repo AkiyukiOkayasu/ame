@@ -1,7 +1,7 @@
 /**
  * @file semitone.hpp
  * @author Akiyuki Okayasu (akiyuki.okayasu@gmail.com)
- * @brief Converting between semitone and frequency ratio
+ * @brief Convert semitone and frequency ratio
  *
  * @copyright Copyright (c) 2021 Akiyuki Okayasu
  *
