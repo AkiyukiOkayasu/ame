@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['bpmtoms_53',['bpmToMs',['../bpm_8hpp.html#ae401917ad29908d9743f7728e086a962',1,'ame']]]
+  ['bpmtoms_56',['bpmToMs',['../bpm_8hpp.html#ae401917ad29908d9743f7728e086a962',1,'ame']]]
 ];

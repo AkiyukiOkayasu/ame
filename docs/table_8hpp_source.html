@@ -115,9 +115,25 @@ $(document).ready(function(){initNavTree('table_8hpp_source.html',''); initResiz
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordflow">return</span> a;</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    }</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="comment">// TODO hamming窓とかの実装追加</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="comment">// TODO hamming窓や矩形波などの実装追加</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;} <span class="comment">// namespace ame</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">より汎用的な実装</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">https://www.it-swarm-ja.tech/ja/c++/%E6%9C%80%E6%96%B0%E3%81%AEc-%EF%BC%9Aconstexpr%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB%E3%81%AE%E5%88%9D%E6%9C%9F%E5%8C%96/835602258/</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">template&lt;class T, size_t N, class F&gt;</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">constexpr auto make_table(F func, T first)</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">{</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">    std::array&lt;T, N&gt; a {first};</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">    for (size_t i = 1; i &lt; N; ++i)</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">    {</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">        a[i] = func(a[i - 1]);</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">    }</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">    return a;</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">}</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">*/</span></div>
 <div class="ttc" id="aconstants_8hpp_html"><div class="ttname"><a href="constants_8hpp.html">constants.hpp</a></div><div class="ttdoc">Math constants.</div></div>
 <div class="ttc" id="aspecial_functions_8hpp_html"><div class="ttname"><a href="special_functions_8hpp.html">specialFunctions.hpp</a></div><div class="ttdoc">Math special functins.</div></div>
 <div class="ttc" id="aspecial_functions_8hpp_html_a04a55b89aafb7536f4f731002eb232ea"><div class="ttname"><a href="special_functions_8hpp.html#a04a55b89aafb7536f4f731002eb232ea">ame::sinf</a></div><div class="ttdeci">float sinf(float x)</div><div class="ttdoc">sine</div><div class="ttdef"><b>Definition:</b> specialFunctions.hpp:33</div></div>
