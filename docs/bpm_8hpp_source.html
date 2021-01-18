@@ -96,51 +96,51 @@ $(document).ready(function(){initNavTree('bpm_8hpp_source.html',''); initResizab
 </div><!--header-->
 <div class="contents">
 <a href="bpm_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">namespace </span>ame</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="bpm_8hpp.html#a7585c74ea4475a4b0750597223e0410d">   18</a></span>&#160;    <span class="keyword">enum class</span> <a class="code" href="bpm_8hpp.html#a7585c74ea4475a4b0750597223e0410d">NoteValue</a></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        N1_DOT      = 2880,</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        N1          = 1920,</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        N1_TRIPLET  = 1280,</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        N2_DOT      = 1440,</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        N2          = 960,</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        N4_TRIPLET  = 640,</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        N4_DOT      = 720,</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        N4          = 480, <span class="comment">// 4n = 480 tick</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        N4_TRIPLET  = 320,</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        N8_DOT      = 360,</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        N8          = 240,</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        N8_TRIPLET  = 160,</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        N16_DOT     = 180,</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        N16         = 120,</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        N16_TRIPLET = 80,</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        N32_DOT     = 90,</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        N32         = 60,</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        N32_TRIPLET = 40,</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        N64_DOT     = 45,</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        N64         = 30,</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        N64_TRIPLET = 20,</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="comment">// N128_DOT cannot be expressed as an integer number of ticks</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        N128         = 15,</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        N128_TRIPLET = 10</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    };</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="bpm_8hpp.html#ae401917ad29908d9743f7728e086a962">   52</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="bpm_8hpp.html#ae401917ad29908d9743f7728e086a962">bpmToMs</a>(<span class="keywordtype">float</span> bpm)</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordflow">return</span> 60000.0f / bpm;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    }</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="bpm_8hpp.html#a05ac90e7456ab63ba99f126dbf99421a">   63</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="bpm_8hpp.html#a05ac90e7456ab63ba99f126dbf99421a">msToBpm</a>(<span class="keywordtype">float</span> ms)</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">return</span> 60000.0f / ms;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;} <span class="comment">// namespace ame</span></div>
-<div class="ttc" id="abpm_8hpp_html_a05ac90e7456ab63ba99f126dbf99421a"><div class="ttname"><a href="bpm_8hpp.html#a05ac90e7456ab63ba99f126dbf99421a">ame::msToBpm</a></div><div class="ttdeci">float msToBpm(float ms)</div><div class="ttdoc">Convert ms to BPM.</div><div class="ttdef"><b>Definition:</b> bpm.hpp:63</div></div>
-<div class="ttc" id="abpm_8hpp_html_a7585c74ea4475a4b0750597223e0410d"><div class="ttname"><a href="bpm_8hpp.html#a7585c74ea4475a4b0750597223e0410d">ame::NoteValue</a></div><div class="ttdeci">NoteValue</div><div class="ttdoc">Enum that associates note values with MIDI ticks.</div><div class="ttdef"><b>Definition:</b> bpm.hpp:19</div></div>
-<div class="ttc" id="abpm_8hpp_html_ae401917ad29908d9743f7728e086a962"><div class="ttname"><a href="bpm_8hpp.html#ae401917ad29908d9743f7728e086a962">ame::bpmToMs</a></div><div class="ttdeci">float bpmToMs(float bpm)</div><div class="ttdoc">Convert BPM to ms.</div><div class="ttdef"><b>Definition:</b> bpm.hpp:52</div></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">namespace </span>ame</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="bpm_8hpp.html#a7585c74ea4475a4b0750597223e0410d">   19</a></span>&#160;    <span class="keyword">enum class</span> <a class="code" href="bpm_8hpp.html#a7585c74ea4475a4b0750597223e0410d">NoteValue</a></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        N1_DOT      = 2880,</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        N1          = 1920,</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        N1_TRIPLET  = 1280,</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        N2_DOT      = 1440,</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        N2          = 960,</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        N4_TRIPLET  = 640,</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        N4_DOT      = 720,</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        N4          = 480, <span class="comment">// 4n = 480 tick</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        N4_TRIPLET  = 320,</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        N8_DOT      = 360,</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        N8          = 240,</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        N8_TRIPLET  = 160,</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        N16_DOT     = 180,</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        N16         = 120,</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        N16_TRIPLET = 80,</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        N32_DOT     = 90,</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        N32         = 60,</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        N32_TRIPLET = 40,</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        N64_DOT     = 45,</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        N64         = 30,</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        N64_TRIPLET = 20,</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="comment">// N128_DOT cannot be expressed as an integer number of ticks</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        N128         = 15,</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        N128_TRIPLET = 10</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    };</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="bpm_8hpp.html#ae401917ad29908d9743f7728e086a962">   53</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="bpm_8hpp.html#ae401917ad29908d9743f7728e086a962">bpmToMs</a>(<span class="keywordtype">float</span> bpm)</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">return</span> 60000.0f / bpm;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="bpm_8hpp.html#a05ac90e7456ab63ba99f126dbf99421a">   64</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="bpm_8hpp.html#a05ac90e7456ab63ba99f126dbf99421a">msToBpm</a>(<span class="keywordtype">float</span> ms)</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordflow">return</span> 60000.0f / ms;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;} <span class="comment">// namespace ame</span></div>
+<div class="ttc" id="abpm_8hpp_html_a05ac90e7456ab63ba99f126dbf99421a"><div class="ttname"><a href="bpm_8hpp.html#a05ac90e7456ab63ba99f126dbf99421a">ame::msToBpm</a></div><div class="ttdeci">float msToBpm(float ms)</div><div class="ttdoc">Convert ms to BPM.</div><div class="ttdef"><b>Definition:</b> bpm.hpp:64</div></div>
+<div class="ttc" id="abpm_8hpp_html_a7585c74ea4475a4b0750597223e0410d"><div class="ttname"><a href="bpm_8hpp.html#a7585c74ea4475a4b0750597223e0410d">ame::NoteValue</a></div><div class="ttdeci">NoteValue</div><div class="ttdoc">Enum that associates note values with MIDI ticks.</div><div class="ttdef"><b>Definition:</b> bpm.hpp:20</div></div>
+<div class="ttc" id="abpm_8hpp_html_ae401917ad29908d9743f7728e086a962"><div class="ttname"><a href="bpm_8hpp.html#ae401917ad29908d9743f7728e086a962">ame::bpmToMs</a></div><div class="ttdeci">float bpmToMs(float bpm)</div><div class="ttdoc">Convert BPM to ms.</div><div class="ttdef"><b>Definition:</b> bpm.hpp:53</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

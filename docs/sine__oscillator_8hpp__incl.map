@@ -1,7 +1,7 @@
 <map id="audio/sine_oscillator.hpp" name="audio/sine_oscillator.hpp">
 <area shape="rect" id="node1" title="Sine wave oscillator." alt="" coords="199,5,363,32"/>
 <area shape="rect" id="node2" href="$constants_8hpp.html" title="Math constants." alt="" coords="159,155,309,181"/>
-<area shape="rect" id="node3" href="$special_functions_8hpp.html" title="Math special functins." alt="" coords="5,80,196,107"/>
+<area shape="rect" id="node3" href="$special_functions_8hpp.html" title="Special functins." alt="" coords="5,80,196,107"/>
 <area shape="rect" id="node5" href="$dsp_helpers_8hpp.html" title="DSP helper functions." alt="" coords="272,80,385,107"/>
 <area shape="rect" id="node7" title=" " alt="" coords="410,80,471,107"/>
 <area shape="rect" id="node4" title=" " alt="" coords="71,155,130,181"/>

@@ -1,6 +1,6 @@
 <map id="math/specialFunctions.hpp" name="math/specialFunctions.hpp">
-<area shape="rect" id="node1" title="Math special functins." alt="" coords="15,5,194,32"/>
-<area shape="rect" id="node2" href="$ame_8hpp.html" title="Main header file." alt="" coords="9,155,81,181"/>
-<area shape="rect" id="node3" href="$sine__oscillator_8hpp.html" title="Sine wave oscillator." alt="" coords="23,80,187,107"/>
-<area shape="rect" id="node4" href="$table_8hpp.html" title="Compile time wave table generators." alt="" coords="211,80,319,107"/>
+<area shape="rect" id="node1" title="Special functins." alt="" coords="15,5,194,32"/>
+<area shape="rect" id="node2" href="$ame_8hpp.html" title="Main header file." alt="" coords="68,155,140,181"/>
+<area shape="rect" id="node3" href="$sine__oscillator_8hpp.html" title="Sine wave oscillator." alt="" coords="22,80,186,107"/>
+<area shape="rect" id="node4" href="$table_8hpp.html" title="Compile time wave table generators." alt="" coords="210,80,318,107"/>
 </map>

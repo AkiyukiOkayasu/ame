@@ -70,6 +70,7 @@ var NAVTREEINDEX0 =
 "midi_helpers_8hpp.html":[1,0,2,0],
 "midi_helpers_8hpp_source.html":[1,0,2,0],
 "pages.html":[],
+"pcm_8hpp.html":[1,0,0,4],
 "pcm_8hpp_source.html":[1,0,0,4],
 "q23__float__conversion_8hpp.html":[1,0,0,5],
 "q23__float__conversion_8hpp.html#a00053b81d9a26a531b3068d80b18b648":[1,0,0,5,4],
