@@ -1,7 +1,7 @@
 /**
  * @file table.hpp
  * @author Akiyuki Okayasu (akiyuki.okayasu@gmail.com)
- * @brief
+ * @brief Compile time wave table generators
  *
  * @copyright Copyright (c) 2021
  *
