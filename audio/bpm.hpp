@@ -1,7 +1,7 @@
 /**
  * @file bpm.hpp
  * @author Akiyuki Okayasu (akiyuki.okayasu@gmail.com)
- * @brief
+ * @brief Converting between BPM and ms
  *
  * @copyright Copyright (c) 2021 Akiyuki Okayasu
  *
