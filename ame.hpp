@@ -22,3 +22,4 @@
 #include "math/specialFunctions.hpp"
 #include "math/table.hpp"
 #include "midi/midiHelpers.hpp"
+#include "system/bytes.hpp"
