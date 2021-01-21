@@ -1,7 +1,7 @@
 var NAVTREEINDEX0 =
 {
-"ame_8hpp.html":[1,0,3],
-"ame_8hpp_source.html":[1,0,3],
+"ame_8hpp.html":[1,0,4],
+"ame_8hpp_source.html":[1,0,4],
 "annotated.html":[0,0],
 "bpm_8hpp.html":[1,0,0,0],
 "bpm_8hpp.html#a05ac90e7456ab63ba99f126dbf99421a":[1,0,0,0,2],
@@ -35,6 +35,9 @@ var NAVTREEINDEX0 =
 "buffer_8hpp.html#a55ff4261c7a5f6312d0d1939b6a1f94b":[1,0,0,1,1],
 "buffer_8hpp.html#adf110715a3f55fc8350ca9829c4bc35d":[1,0,0,1,0],
 "buffer_8hpp_source.html":[1,0,0,1],
+"bytes_8hpp.html":[1,0,3,0],
+"bytes_8hpp.html#a4f4cdcc2539bb0796615567cf5a22e51":[1,0,3,0,0],
+"bytes_8hpp_source.html":[1,0,3,0],
 "classame_1_1_decibels.html":[0,0,0,0],
 "classame_1_1_m_i_d_i.html":[0,0,0,3],
 "classame_1_1_sine_oscillator.html":[0,0,0,1],
@@ -56,6 +59,7 @@ var NAVTREEINDEX0 =
 "dir_296d53ceaeaa7e099814a6def439fe8a.html":[1,0,1],
 "dir_54810e17a903f725653bf795c77b69e5.html":[1,0,2],
 "dir_a5f32cf82ad289a7dac212f63f40f55b.html":[1,0,0],
+"dir_e8522150b400a43ebfdbd1fed060b8e2.html":[1,0,3],
 "dsp_helpers_8hpp.html":[1,0,0,3],
 "dsp_helpers_8hpp.html#a10eba5dc5108d4a9c2d0f52193925c0e":[1,0,0,3,0],
 "dsp_helpers_8hpp.html#a3a8b9197b6b9f6928e410219c22fd08e":[1,0,0,3,4],
