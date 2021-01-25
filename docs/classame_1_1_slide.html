@@ -99,8 +99,7 @@ $(document).ready(function(){initNavTree('classame_1_1_slide.html',''); initResi
 </div><!--header-->
 <div class="contents">
 
-<p>Smooth values logarithmically. <br  />
- Same function as the Cycling'74 Max [slide] object.  
+<p>Smooth values logarithmically.  
  <a href="classame_1_1_slide.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="slide_8hpp_source.html">slide.hpp</a>&gt;</code></p>
@@ -108,7 +107,7 @@ $(document).ready(function(){initNavTree('classame_1_1_slide.html',''); initResi
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ac538d8f438b0638f45146a9d7a581f51"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_slide.html#ac538d8f438b0638f45146a9d7a581f51">Slide</a> (const float slownessOfIncrease, const float slownessOfDecrease)</td></tr>
-<tr class="memdesc:ac538d8f438b0638f45146a9d7a581f51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classame_1_1_slide.html" title="Smooth values logarithmically.   Same function as the Cycling&#39;74 Max [slide] object.">Slide</a> object.  <a href="classame_1_1_slide.html#ac538d8f438b0638f45146a9d7a581f51">More...</a><br /></td></tr>
+<tr class="memdesc:ac538d8f438b0638f45146a9d7a581f51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an <a class="el" href="classame_1_1_slide.html" title="Smooth values logarithmically.">Slide</a> object.  <a href="classame_1_1_slide.html#ac538d8f438b0638f45146a9d7a581f51">More...</a><br /></td></tr>
 <tr class="separator:ac538d8f438b0638f45146a9d7a581f51"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad3bba919f1b1123704542652e2e76ebd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_slide.html#ad3bba919f1b1123704542652e2e76ebd">setSlideUp</a> (const float newSlideUp)</td></tr>
 <tr class="memdesc:ad3bba919f1b1123704542652e2e76ebd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the slowness of the increase.  <a href="classame_1_1_slide.html#ad3bba919f1b1123704542652e2e76ebd">More...</a><br /></td></tr>
@@ -121,8 +120,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a9c31482318c3e70b569f38fb359bebd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Smooth values logarithmically. <br  />
- Same function as the Cycling'74 Max [slide] object. </p>
+<div class="textblock"><p>Smooth values logarithmically. </p>
+<p>Same function as the Cycling'74 Max [slide] object. <a href="https://docs.cycling74.com/max8/refpages/slide?q=slide">https://docs.cycling74.com/max8/refpages/slide?q=slide</a> </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ac538d8f438b0638f45146a9d7a581f51"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac538d8f438b0638f45146a9d7a581f51">&#9670;&nbsp;</a></span>Slide()</h2>
@@ -158,15 +157,15 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Construct a new <a class="el" href="classame_1_1_slide.html" title="Smooth values logarithmically.   Same function as the Cycling&#39;74 Max [slide] object.">Slide</a> object. </p>
-<p>The formula is y (n) = y (n-1) + ((x (n) - y (n-1))/slide). </p><dl class="section note"><dt>Note</dt><dd>slownessOfIncrease and slownessOfDecrease are affected by the update interval.</dd></dl>
+<p>Create an <a class="el" href="classame_1_1_slide.html" title="Smooth values logarithmically.">Slide</a> object. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">slownessOfIncrease</td><td>The larger the value, the more slowly the increase. DO NOT set less than 1. </td></tr>
-    <tr><td class="paramname">slownessOfDecrease</td><td>The larger the value, the more slowly the decrease. DO NOT set less than 1. </td></tr>
+    <tr><td class="paramname">slownessOfIncrease</td><td>The larger the value, the more slowly the increase. If 1, no effect is applied to the input. </td></tr>
+    <tr><td class="paramname">slownessOfDecrease</td><td>The larger the value, the more slowly the decrease. If 1, no effect is applied to the input. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section note"><dt>Note</dt><dd>DO NOT set less than 1. </dd></dl>
 
 </div>
 </div>
@@ -197,6 +196,13 @@ Public Member Functions</h2></td></tr>
 
 <p>Filter an input value. </p>
 <p>y (n) = y (n-1) + ((x (n) - y (n-1))/slide) </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">input</td><td>Value to smooth </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Smoothed value Filter an input value </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">input</td><td>Value to smooth </td></tr>
   </table>

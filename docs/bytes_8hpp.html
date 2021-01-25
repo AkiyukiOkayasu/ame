@@ -97,6 +97,9 @@ $(document).ready(function(){initNavTree('bytes_8hpp.html',''); initResizable();
 <div class="title">bytes.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Byte operations.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;array&gt;</code><br />
 <code>#include &lt;cstddef&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -104,9 +107,18 @@ Include dependency graph for bytes.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="bytes_8hpp__incl.png" border="0" usemap="#asystem_2bytes_8hpp" alt=""/></div>
 <map name="asystem_2bytes_8hpp" id="asystem_2bytes_8hpp">
-<area shape="rect" title=" " alt="" coords="9,5,135,32"/>
+<area shape="rect" title="Byte operations." alt="" coords="9,5,135,32"/>
 <area shape="rect" title=" " alt="" coords="5,80,56,107"/>
 <area shape="rect" title=" " alt="" coords="81,80,146,107"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><img src="bytes_8hpp__dep__incl.png" border="0" usemap="#asystem_2bytes_8hppdep" alt=""/></div>
+<map name="asystem_2bytes_8hppdep" id="asystem_2bytes_8hppdep">
+<area shape="rect" title="Byte operations." alt="" coords="5,5,132,32"/>
+<area shape="rect" href="ame_8hpp.html" title="Main header file." alt="" coords="33,80,105,107"/>
 </map>
 </div>
 </div>
@@ -117,12 +129,12 @@ Functions</h2></td></tr>
 <tr class="memitem:a4f4cdcc2539bb0796615567cf5a22e51"><td class="memTemplParams" colspan="2">template&lt;typename... Ts&gt; </td></tr>
 <tr class="memitem:a4f4cdcc2539bb0796615567cf5a22e51"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::array&lt; std::byte, sizeof...(Ts)&gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="bytes_8hpp.html#a4f4cdcc2539bb0796615567cf5a22e51">ame::make_bytes</a> (Ts &amp;&amp;... args) noexcept</td></tr>
 <tr class="memdesc:a4f4cdcc2539bb0796615567cf5a22e51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a std::array&lt;std::byte, N&gt; <br  />
-std::array&lt;std::byte, 4&gt; b = {0, 1, 2, 3}; will cause an error due to implicit casting from int to std::byte. <br  />
-std::array&lt;std::byte, 4&gt; b = {std::byte{0}, std::byte{1}, std::byte{2}, std::byte{3}}; does not cause an error, but it is tedious, so make_bytes(0, 1, 2, 3) can be used to generate it.  <a href="bytes_8hpp.html#a4f4cdcc2539bb0796615567cf5a22e51">More...</a><br /></td></tr>
+std::array&lt;std::byte, 2&gt; b = {0x00, 0xFF}; will cause an error due to implicit casting from int to std::byte.  <a href="bytes_8hpp.html#a4f4cdcc2539bb0796615567cf5a22e51">More...</a><br /></td></tr>
 <tr class="separator:a4f4cdcc2539bb0796615567cf5a22e51"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><dl class="section author"><dt>Author</dt><dd>Akiyuki Okayasu (<a href="#" onclick="location.href='mai'+'lto:'+'aki'+'yu'+'ki.'+'ok'+'aya'+'su'+'@gm'+'ai'+'l.c'+'om'; return false;">akiyu<span style="display: none;">.nosp@m.</span>ki.o<span style="display: none;">.nosp@m.</span>kayas<span style="display: none;">.nosp@m.</span>u@gm<span style="display: none;">.nosp@m.</span>ail.c<span style="display: none;">.nosp@m.</span>om</a>) </dd></dl>
+<div class="textblock"><p>Byte operations. </p>
+<dl class="section author"><dt>Author</dt><dd>Akiyuki Okayasu (<a href="#" onclick="location.href='mai'+'lto:'+'aki'+'yu'+'ki.'+'ok'+'aya'+'su'+'@gm'+'ai'+'l.c'+'om'; return false;">akiyu<span style="display: none;">.nosp@m.</span>ki.o<span style="display: none;">.nosp@m.</span>kayas<span style="display: none;">.nosp@m.</span>u@gm<span style="display: none;">.nosp@m.</span>ail.c<span style="display: none;">.nosp@m.</span>om</a>)</dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2021 Akiyuki Okayasu</dd></dl>
 <p>AME is released under the MIT license. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
@@ -153,22 +165,22 @@ template&lt;typename... Ts&gt; </div>
 </div><div class="memdoc">
 
 <p>Generate a std::array&lt;std::byte, N&gt; <br  />
-std::array&lt;std::byte, 4&gt; b = {0, 1, 2, 3}; will cause an error due to implicit casting from int to std::byte. <br  />
-std::array&lt;std::byte, 4&gt; b = {std::byte{0}, std::byte{1}, std::byte{2}, std::byte{3}}; does not cause an error, but it is tedious, so make_bytes(0, 1, 2, 3) can be used to generate it. </p>
-<div class="fragment"><div class="line"><span class="comment">// usage</span></div>
-<div class="line">constexpr std::array&lt;std::byte, 4&gt; arr = <a class="code" href="bytes_8hpp.html#a4f4cdcc2539bb0796615567cf5a22e51">make_bytes</a>(0, 1, 2, 3);</div>
+std::array&lt;std::byte, 2&gt; b = {0x00, 0xFF}; will cause an error due to implicit casting from int to std::byte. </p>
+<p><br  />
+std::array&lt;std::byte, 2&gt; b = {std::byte{0x00}, std::byte{0xFF}}; does not cause an error, but it is tedious, so make_bytes(0x00, 0xFF) can be used to generate it. </p><div class="fragment"><div class="line"><span class="comment">// usage</span></div>
+<div class="line">constexpr std::array&lt;std::byte, 2&gt; arr = <a class="code" href="bytes_8hpp.html#a4f4cdcc2539bb0796615567cf5a22e51">make_bytes</a>(0x00, 0xFF);</div>
 <div class="line"><span class="comment">// or</span></div>
-<div class="line">constexpr <span class="keyword">auto</span> arr = <a class="code" href="bytes_8hpp.html#a4f4cdcc2539bb0796615567cf5a22e51">make_bytes</a>(0, 1, 2, 3);</div>
-<div class="ttc" id="abytes_8hpp_html_a4f4cdcc2539bb0796615567cf5a22e51"><div class="ttname"><a href="bytes_8hpp.html#a4f4cdcc2539bb0796615567cf5a22e51">ame::make_bytes</a></div><div class="ttdeci">constexpr std::array&lt; std::byte, sizeof...(Ts)&gt; make_bytes(Ts &amp;&amp;... args) noexcept</div><div class="ttdoc">Generate a std::array&lt;std::byte, N&gt;  std::array&lt;std::byte, 4&gt; b = {0, 1, 2, 3}; will cause an error d...</div><div class="ttdef"><b>Definition:</b> bytes.hpp:33</div></div>
+<div class="line">constexpr <span class="keyword">auto</span> arr = <a class="code" href="bytes_8hpp.html#a4f4cdcc2539bb0796615567cf5a22e51">make_bytes</a>(0x00, 0xFF);</div>
+<div class="ttc" id="abytes_8hpp_html_a4f4cdcc2539bb0796615567cf5a22e51"><div class="ttname"><a href="bytes_8hpp.html#a4f4cdcc2539bb0796615567cf5a22e51">ame::make_bytes</a></div><div class="ttdeci">constexpr std::array&lt; std::byte, sizeof...(Ts)&gt; make_bytes(Ts &amp;&amp;... args) noexcept</div><div class="ttdoc">Generate a std::array&lt;std::byte, N&gt;  std::array&lt;std::byte, 2&gt; b = {0x00, 0xFF}; will cause an error d...</div><div class="ttdef"><b>Definition:</b> bytes.hpp:33</div></div>
 </div><!-- fragment --> <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">Ts</td><td></td></tr>
+    <tr><td class="paramname">Ts</td><td>Integer types. It must be able to be cast to std::byte. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">args</td><td></td></tr>
+    <tr><td class="paramname">args</td><td>Integers to convert to std::byte array </td></tr>
   </table>
   </dd>
 </dl>
