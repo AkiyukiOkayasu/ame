@@ -16,7 +16,7 @@
 namespace ame
 {
 // TODO mapping.hppへ移動？
-/** Linear interpolation between a and b
+/** Linear interpolation between a and b.
     @note Function as same as std::lerp() implemented in C++20.
     @param a Start point
     @param b Target point
@@ -26,7 +26,7 @@ namespace ame
 constexpr float lerp(float a, float b, float t) noexcept { return a + t * (b - a); }
 
 // TODO phase.hppへ移動？
-/** Increment the phase and returns in the range of 0~2pi
+/** Increment the phase and returns in the range of 0~2pi.
     @param phase
     @param increment Amount to add to phase
     @return 0~2pi
@@ -42,7 +42,7 @@ constexpr float addModulo2Pi(float phase, const float increment) noexcept
 }
 
 // mapping.hppへ移動？
-/** Map values to an output range
+/** Map values to an output range.
     @param sourceValue input value
     @param sourceRangeMin input range min
     @param sourceRangeMax input range Max
@@ -61,7 +61,7 @@ constexpr float scale(const float sourceValue,
 }
 
 // Frequency.hppへ移動？
-/** Convert frequency to period
+/** Convert frequency to period.
     @param freq frequency in Hz
     @return period
 */

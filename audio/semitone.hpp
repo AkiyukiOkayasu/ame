@@ -1,4 +1,6 @@
 /** 
+    Convert semitones and frequency ratio
+    
     @file semitone.hpp
     @author Akiyuki Okayasu (akiyuki.okayasu@gmail.com)
     @copyright Copyright (c) 2021 - Akiyuki Okayasu
@@ -12,7 +14,7 @@
 
 namespace ame
 {
-/** Convert semitones to frequency ratios
+/** Convert semitones to frequency ratio
     Convert using twelve-tone equal temperament
     @param semitone
     @return frequency ratio
