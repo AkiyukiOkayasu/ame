@@ -17,8 +17,7 @@ namespace ame
 class MIDI
 {
 public:
-    /** Convert frequency to MIDI note number
-        Same function as the Cycling'74 Max [ftom] object
+    /** Convert frequency to MIDI note number.
         @param frequency
         @param A3Freq Frequency for A3 (MIDI note 69). 440Hz is the most common.
         @return MIDI note
@@ -28,8 +27,7 @@ public:
         return static_cast<int>(std::nearbyint(12.0f * log2(freq / A3Freq))) + A3_MIDINote;
     }
 
-    /** Convert MIDI note number to frequency
-        Same function as the Cycling'74 Max [mtof] object.
+    /** Convert MIDI note number to frequency.
         @param midiNote
         @param A3Freq Frequency for A3 (MIDI note 69). 440Hz is the most common.
         @return frequency in Hz

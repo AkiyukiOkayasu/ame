@@ -19,8 +19,10 @@
 
 namespace ame
 {
-/** sinf
+/** sinf.
+
     When CMSIS-DSP is available, use arm_sin_f32() of CMSIS-DSP; when not, use std::sinf()
+
     @param x phase
     @return float
 */
@@ -33,10 +35,10 @@ inline float sinf(float x)
 #endif
 }
 
-// cos
+/** cosf.
 
-/** cosf     
     When CMSIS-DSP is available, use arm_cos_f32() of CMSIS-DSP; when not, use std::cosf()
+    
     @param x phase
     @return float
 */

@@ -15,9 +15,6 @@ namespace ame
 
     y (n) = y (n-1) + ((x (n) - y (n-1))/slide)
 
-    Same function as the Cycling'74 Max [slide] object.
-    https://docs.cycling74.com/max8/refpages/slide?q=slide
-
     @note SlideUp and SlideDown are affected by the update interval of the process.
 */
 class Slide
@@ -47,7 +44,7 @@ public:
 
     /** Set the slowness of the decrease
         @param newSlideDown The larger the value, the more slowly the decrease. @n When set to 1, no change is made to the decrease.
-        @note DO NOT set newSlideDown to less than 1.
+        @attention DO NOT set newSlideDown to less than 1.
     */
     void setSlideDown(const float newSlideDown)
     {

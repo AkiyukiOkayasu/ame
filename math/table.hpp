@@ -17,12 +17,10 @@
 
 namespace ame
 {
-/**
-     * @brief Compile time sine wave table generator
-     *
-     * @tparam N Num samples
-     * @return constexpr std::array<float, N> sine wave table
-     */
+/** Compile time sine wave table generator
+    @tparam N Num samples
+    @return constexpr std::array<float, N> sine wave table
+*/
 template <size_t N>
 constexpr std::array<float, N> make_sineTable()
 {
