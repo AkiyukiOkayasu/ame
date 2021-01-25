@@ -103,12 +103,13 @@ $(document).ready(function(){initNavTree('bytes_8hpp_source.html',''); initResiz
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">namespace </span>ame</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="bytes_8hpp.html#a4f4cdcc2539bb0796615567cf5a22e51">   33</a></span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span>... Ts&gt; constexpr std::array&lt;std::byte, <span class="keyword">sizeof</span>...(Ts)&gt; <a class="code" href="bytes_8hpp.html#a4f4cdcc2539bb0796615567cf5a22e51">make_bytes</a>(Ts&amp;&amp;... args) noexcept</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordflow">return</span> {std::byte(std::forward&lt;Ts&gt;(args))...};</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    }</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;} <span class="comment">// namespace ame</span></div>
-<div class="ttc" id="abytes_8hpp_html_a4f4cdcc2539bb0796615567cf5a22e51"><div class="ttname"><a href="bytes_8hpp.html#a4f4cdcc2539bb0796615567cf5a22e51">ame::make_bytes</a></div><div class="ttdeci">constexpr std::array&lt; std::byte, sizeof...(Ts)&gt; make_bytes(Ts &amp;&amp;... args) noexcept</div><div class="ttdoc">Generate a std::array&lt;std::byte, N&gt;  std::array&lt;std::byte, 2&gt; b = {0x00, 0xFF}; will cause an error d...</div><div class="ttdef"><b>Definition:</b> bytes.hpp:33</div></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span>... Ts&gt;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="bytes_8hpp.html#a4f4cdcc2539bb0796615567cf5a22e51">   33</a></span>&#160;constexpr std::array&lt;std::byte, <span class="keyword">sizeof</span>...(Ts)&gt; <a class="code" href="bytes_8hpp.html#a4f4cdcc2539bb0796615567cf5a22e51">make_bytes</a>(Ts&amp;&amp;... args) noexcept</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">return</span> {std::byte(std::forward&lt;Ts&gt;(args))...};</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}<span class="comment">// namespace ame</span></div>
+<div class="ttc" id="abytes_8hpp_html_a4f4cdcc2539bb0796615567cf5a22e51"><div class="ttname"><a href="bytes_8hpp.html#a4f4cdcc2539bb0796615567cf5a22e51">ame::make_bytes</a></div><div class="ttdeci">constexpr std::array&lt; std::byte, sizeof...(Ts)&gt; make_bytes(Ts &amp;&amp;... args) noexcept</div><div class="ttdoc">Generate a std::array&lt;std::byte, N&gt; std::array&lt;std::byte, 2&gt; b = {0x00, 0xFF}; will cause an error du...</div><div class="ttdef"><b>Definition:</b> bytes.hpp:33</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

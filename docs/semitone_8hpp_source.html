@@ -96,21 +96,20 @@ $(document).ready(function(){initNavTree('semitone_8hpp_source.html',''); initRe
 </div><!--header-->
 <div class="contents">
 <a href="semitone_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;cmath&gt;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;cmath&gt;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">namespace </span>ame</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="semitone_8hpp.html#a8b31e4517e783b663825105c5543f584">   27</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="semitone_8hpp.html#a8b31e4517e783b663825105c5543f584">semitoneToRatio</a>(<span class="keyword">const</span> <span class="keywordtype">float</span> semitone)</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="comment">// TODO constexpr化 std::powの置き換えが必要だが、semitoneは負数も含むので難しい</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="comment">// TODO powを高速, 軽量なものに置き換えたい</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordflow">return</span> std::pow(2.0f, semitone / 12.0f);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    }</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;} <span class="comment">// namespace ame</span></div>
-<div class="ttc" id="asemitone_8hpp_html_a8b31e4517e783b663825105c5543f584"><div class="ttname"><a href="semitone_8hpp.html#a8b31e4517e783b663825105c5543f584">ame::semitoneToRatio</a></div><div class="ttdeci">float semitoneToRatio(const float semitone)</div><div class="ttdoc">Convert semitones to frequency ratios.</div><div class="ttdef"><b>Definition:</b> semitone.hpp:27</div></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">namespace </span>ame</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="semitone_8hpp.html#a8b31e4517e783b663825105c5543f584">   24</a></span>&#160;<span class="keywordtype">float</span> <a class="code" href="semitone_8hpp.html#a8b31e4517e783b663825105c5543f584">semitoneToRatio</a>(<span class="keyword">const</span> <span class="keywordtype">float</span> semitone)</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="comment">// TODO constexpr化 std::powの置き換えが必要だが、semitoneは負数も含むので難しい</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="comment">// TODO powを高速, 軽量なものに置き換えたい</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">return</span> std::pow(2.0f, semitone / 12.0f);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}<span class="comment">// namespace ame</span></div>
+<div class="ttc" id="asemitone_8hpp_html_a8b31e4517e783b663825105c5543f584"><div class="ttname"><a href="semitone_8hpp.html#a8b31e4517e783b663825105c5543f584">ame::semitoneToRatio</a></div><div class="ttdeci">float semitoneToRatio(const float semitone)</div><div class="ttdoc">Convert semitones to frequency ratios Convert using twelve-tone equal temperament.</div><div class="ttdef"><b>Definition:</b> semitone.hpp:24</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

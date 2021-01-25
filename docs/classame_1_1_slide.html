@@ -116,12 +116,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:abc2dbee329c7f26ff75d1eb0e4fbb7a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the slowness of the decrease.  <a href="classame_1_1_slide.html#abc2dbee329c7f26ff75d1eb0e4fbb7a7">More...</a><br /></td></tr>
 <tr class="separator:abc2dbee329c7f26ff75d1eb0e4fbb7a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c31482318c3e70b569f38fb359bebd2"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_slide.html#a9c31482318c3e70b569f38fb359bebd2">process</a> (const float input)</td></tr>
-<tr class="memdesc:a9c31482318c3e70b569f38fb359bebd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filter an input value.  <a href="classame_1_1_slide.html#a9c31482318c3e70b569f38fb359bebd2">More...</a><br /></td></tr>
+<tr class="memdesc:a9c31482318c3e70b569f38fb359bebd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filter an input value <br  />
+  <a href="classame_1_1_slide.html#a9c31482318c3e70b569f38fb359bebd2">More...</a><br /></td></tr>
 <tr class="separator:a9c31482318c3e70b569f38fb359bebd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Smooth values logarithmically. </p>
-<p>Same function as the Cycling'74 Max [slide] object. <a href="https://docs.cycling74.com/max8/refpages/slide?q=slide">https://docs.cycling74.com/max8/refpages/slide?q=slide</a> </p>
+<p>y (n) = y (n-1) + ((x (n) - y (n-1))/slide)</p>
+<p>Same function as the Cycling'74 Max [slide] object. <a href="https://docs.cycling74.com/max8/refpages/slide?q=slide">https://docs.cycling74.com/max8/refpages/slide?q=slide</a></p>
+<dl class="section note"><dt>Note</dt><dd>SlideUp and SlideDown are affected by the update interval of the process. </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ac538d8f438b0638f45146a9d7a581f51"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac538d8f438b0638f45146a9d7a581f51">&#9670;&nbsp;</a></span>Slide()</h2>
@@ -165,7 +168,7 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section note"><dt>Note</dt><dd>DO NOT set less than 1. </dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd>DO NOT set less than 1. </dd></dl>
 
 </div>
 </div>
@@ -194,14 +197,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Filter an input value. </p>
-<p>y (n) = y (n-1) + ((x (n) - y (n-1))/slide) </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">input</td><td>Value to smooth </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Smoothed value Filter an input value </dd></dl>
+<p>Filter an input value <br  />
+ </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">input</td><td>Value to smooth </td></tr>
@@ -280,7 +277,7 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section note"><dt>Note</dt><dd>DO NOT set newSlideUp to less than 1. </dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd>DO NOT set newSlideUp to less than 1. </dd></dl>
 
 </div>
 </div>
