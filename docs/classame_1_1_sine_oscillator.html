@@ -106,20 +106,66 @@ $(document).ready(function(){initNavTree('classame_1_1_sine_oscillator.html','')
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae3e9f889ed1c34ba7d45134071cfb9e3"><td class="memItemLeft" align="right" valign="top"><a id="ae3e9f889ed1c34ba7d45134071cfb9e3"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>SineOscillator</b> (const float sampleRate, const float frequency)</td></tr>
+<tr class="memitem:ae3e9f889ed1c34ba7d45134071cfb9e3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_sine_oscillator.html#ae3e9f889ed1c34ba7d45134071cfb9e3">SineOscillator</a> (const float sampleRate, const float frequency)</td></tr>
+<tr class="memdesc:ae3e9f889ed1c34ba7d45134071cfb9e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create sine wave ocillator instance.  <a href="classame_1_1_sine_oscillator.html#ae3e9f889ed1c34ba7d45134071cfb9e3">More...</a><br /></td></tr>
 <tr class="separator:ae3e9f889ed1c34ba7d45134071cfb9e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa733e87a8bb4d568767fda009a074162"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_sine_oscillator.html#aa733e87a8bb4d568767fda009a074162">setFrequency</a> (const float freq) noexcept</td></tr>
 <tr class="memdesc:aa733e87a8bb4d568767fda009a074162"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the sine wave frequency.  <a href="classame_1_1_sine_oscillator.html#aa733e87a8bb4d568767fda009a074162">More...</a><br /></td></tr>
 <tr class="separator:aa733e87a8bb4d568767fda009a074162"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ac7efb5c12f0877f39b36cc56f02c41"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_sine_oscillator.html#a2ac7efb5c12f0877f39b36cc56f02c41">nextSample</a> () noexcept</td></tr>
-<tr class="memdesc:a2ac7efb5c12f0877f39b36cc56f02c41"><td class="mdescLeft">&#160;</td><td class="mdescRight">generate one sample  <a href="classame_1_1_sine_oscillator.html#a2ac7efb5c12f0877f39b36cc56f02c41">More...</a><br /></td></tr>
+<tr class="memdesc:a2ac7efb5c12f0877f39b36cc56f02c41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate single sample.  <a href="classame_1_1_sine_oscillator.html#a2ac7efb5c12f0877f39b36cc56f02c41">More...</a><br /></td></tr>
 <tr class="separator:a2ac7efb5c12f0877f39b36cc56f02c41"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Sine wave oscillator. </p>
 <p>Generates a sine between -1.0~1.0. </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ae3e9f889ed1c34ba7d45134071cfb9e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3e9f889ed1c34ba7d45134071cfb9e3">&#9670;&nbsp;</a></span>SineOscillator()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ame::SineOscillator::SineOscillator </td>
+          <td>(</td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>sampleRate</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>frequency</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Create sine wave ocillator instance. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sampleRate</td><td>The sample rate that will be used for calclate the oscillator phase increment. </td></tr>
+    <tr><td class="paramname">frequency</td><td>Initial frequency </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
 <a id="a2ac7efb5c12f0877f39b36cc56f02c41"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2ac7efb5c12f0877f39b36cc56f02c41">&#9670;&nbsp;</a></span>nextSample()</h2>
 
@@ -143,7 +189,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>generate one sample </p>
+<p>Generate single sample. </p>
 <dl class="section return"><dt>Returns</dt><dd>generated latest sample </dd></dl>
 
 </div>

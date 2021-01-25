@@ -128,7 +128,7 @@ This graph shows which files directly or indirectly include this file:</div>
 Functions</h2></td></tr>
 <tr class="memitem:a4f4cdcc2539bb0796615567cf5a22e51"><td class="memTemplParams" colspan="2">template&lt;typename... Ts&gt; </td></tr>
 <tr class="memitem:a4f4cdcc2539bb0796615567cf5a22e51"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::array&lt; std::byte, sizeof...(Ts)&gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="bytes_8hpp.html#a4f4cdcc2539bb0796615567cf5a22e51">ame::make_bytes</a> (Ts &amp;&amp;... args) noexcept</td></tr>
-<tr class="memdesc:a4f4cdcc2539bb0796615567cf5a22e51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a std::array&lt;std::byte, N&gt; std::array&lt;std::byte, 2&gt; b = {0x00, 0xFF}; will cause an error due to implicit casting from int to std::byte.  <a href="bytes_8hpp.html#a4f4cdcc2539bb0796615567cf5a22e51">More...</a><br /></td></tr>
+<tr class="memdesc:a4f4cdcc2539bb0796615567cf5a22e51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a std::array&lt;std::byte, N&gt; .  <a href="bytes_8hpp.html#a4f4cdcc2539bb0796615567cf5a22e51">More...</a><br /></td></tr>
 <tr class="separator:a4f4cdcc2539bb0796615567cf5a22e51"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -163,12 +163,13 @@ template&lt;typename... Ts&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Generate a std::array&lt;std::byte, N&gt; std::array&lt;std::byte, 2&gt; b = {0x00, 0xFF}; will cause an error due to implicit casting from int to std::byte. </p>
-<p>std::array&lt;std::byte, 2&gt; b = {std::byte{0x00}, std::byte{0xFF}}; does not cause an error, but it is tedious, so make_bytes(0x00, 0xFF) can be used to generate it. </p><div class="fragment"><div class="line"><span class="comment">// usage</span></div>
+<p>Generate a std::array&lt;std::byte, N&gt; . </p>
+<p>std::array&lt;std::byte, 2&gt; b = {0x00, 0xFF}; will cause an error due to implicit casting from int to std::byte. std::array&lt;std::byte, 2&gt; b = {std::byte{0x00}, std::byte{0xFF}}; does not cause an error, but it is tedious, so make_bytes(0x00, 0xFF) can be used to generate it.</p>
+<div class="fragment"><div class="line"><span class="comment">// usage</span></div>
 <div class="line">constexpr std::array&lt;std::byte, 2&gt; arr = <a class="code" href="bytes_8hpp.html#a4f4cdcc2539bb0796615567cf5a22e51">make_bytes</a>(0x00, 0xFF);</div>
 <div class="line"><span class="comment">// or</span></div>
 <div class="line">constexpr <span class="keyword">auto</span> arr = <a class="code" href="bytes_8hpp.html#a4f4cdcc2539bb0796615567cf5a22e51">make_bytes</a>(0x00, 0xFF);</div>
-<div class="ttc" id="abytes_8hpp_html_a4f4cdcc2539bb0796615567cf5a22e51"><div class="ttname"><a href="bytes_8hpp.html#a4f4cdcc2539bb0796615567cf5a22e51">ame::make_bytes</a></div><div class="ttdeci">constexpr std::array&lt; std::byte, sizeof...(Ts)&gt; make_bytes(Ts &amp;&amp;... args) noexcept</div><div class="ttdoc">Generate a std::array&lt;std::byte, N&gt; std::array&lt;std::byte, 2&gt; b = {0x00, 0xFF}; will cause an error du...</div><div class="ttdef"><b>Definition:</b> bytes.hpp:33</div></div>
+<div class="ttc" id="abytes_8hpp_html_a4f4cdcc2539bb0796615567cf5a22e51"><div class="ttname"><a href="bytes_8hpp.html#a4f4cdcc2539bb0796615567cf5a22e51">ame::make_bytes</a></div><div class="ttdeci">constexpr std::array&lt; std::byte, sizeof...(Ts)&gt; make_bytes(Ts &amp;&amp;... args) noexcept</div><div class="ttdoc">Generate a std::array&lt;std::byte, N&gt; .</div><div class="ttdef"><b>Definition:</b> bytes.hpp:35</div></div>
 </div><!-- fragment --> <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">Ts</td><td>Integer types. It must be able to be cast to std::byte. </td></tr>

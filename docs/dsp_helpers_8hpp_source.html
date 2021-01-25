@@ -96,56 +96,50 @@ $(document).ready(function(){initNavTree('dsp_helpers_8hpp_source.html',''); ini
 </div><!--header-->
 <div class="contents">
 <a href="dsp_helpers_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;limits&gt;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;../math/constants.hpp&quot;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">namespace </span>ame</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="comment">// TODO mapping.hppへ移動？</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="dsp_helpers_8hpp.html#ab54fe577a7c14cfab3820540e56e05a7">   29</a></span>&#160;<span class="comment"></span>    constexpr <span class="keywordtype">float</span> <a class="code" href="dsp_helpers_8hpp.html#ab54fe577a7c14cfab3820540e56e05a7">lerp</a>(<span class="keywordtype">float</span> a, <span class="keywordtype">float</span> b, <span class="keywordtype">float</span> t) noexcept</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordflow">return</span> a + t * (b - a);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    }</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">// TODO phase.hppへ移動？</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="dsp_helpers_8hpp.html#a10eba5dc5108d4a9c2d0f52193925c0e">   42</a></span>&#160;<span class="comment"></span>    constexpr <span class="keywordtype">float</span> <a class="code" href="dsp_helpers_8hpp.html#a10eba5dc5108d4a9c2d0f52193925c0e">addModulo2Pi</a>(<span class="keywordtype">float</span> phase, <span class="keyword">const</span> <span class="keywordtype">float</span> increment) noexcept</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        phase += increment;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordflow">while</span> (phase &gt; twoPi)</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            phase -= twoPi;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        }</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordflow">return</span> phase;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="comment">// mapping.hppへ移動？</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="dsp_helpers_8hpp.html#a3a8b9197b6b9f6928e410219c22fd08e">   63</a></span>&#160;<span class="comment"></span>    constexpr <span class="keywordtype">float</span> <a class="code" href="dsp_helpers_8hpp.html#a3a8b9197b6b9f6928e410219c22fd08e">scale</a>(<span class="keyword">const</span> <span class="keywordtype">float</span> sourceValue, <span class="keyword">const</span> <span class="keywordtype">float</span> sourceRangeMin, <span class="keyword">const</span> <span class="keywordtype">float</span> sourceRangeMax,</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                          <span class="keyword">const</span> <span class="keywordtype">float</span> targetRangeMin, <span class="keyword">const</span> <span class="keywordtype">float</span> targetRangeMax)</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordflow">return</span> targetRangeMin +</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;               ((targetRangeMax - targetRangeMin) * (sourceValue - sourceRangeMin)) / (sourceRangeMax - sourceRangeMin);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    }</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;../math/constants.hpp&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;limits&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">namespace </span>ame</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">// TODO mapping.hppへ移動？</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="dsp_helpers_8hpp.html#ab54fe577a7c14cfab3820540e56e05a7">   26</a></span>&#160;<span class="comment"></span>constexpr <span class="keywordtype">float</span> <a class="code" href="dsp_helpers_8hpp.html#ab54fe577a7c14cfab3820540e56e05a7">lerp</a>(<span class="keywordtype">float</span> a, <span class="keywordtype">float</span> b, <span class="keywordtype">float</span> t) noexcept { <span class="keywordflow">return</span> a + t * (b - a); }</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">// TODO phase.hppへ移動？</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="dsp_helpers_8hpp.html#a10eba5dc5108d4a9c2d0f52193925c0e">   34</a></span>&#160;<span class="comment"></span>constexpr <span class="keywordtype">float</span> <a class="code" href="dsp_helpers_8hpp.html#a10eba5dc5108d4a9c2d0f52193925c0e">addModulo2Pi</a>(<span class="keywordtype">float</span> phase, <span class="keyword">const</span> <span class="keywordtype">float</span> increment) noexcept</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    phase += increment;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">while</span> (phase &gt; twoPi)</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        phase -= twoPi;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    }</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">return</span> phase;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">// mapping.hppへ移動？</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="dsp_helpers_8hpp.html#a3a8b9197b6b9f6928e410219c22fd08e">   53</a></span>&#160;<span class="comment"></span>constexpr <span class="keywordtype">float</span> <a class="code" href="dsp_helpers_8hpp.html#a3a8b9197b6b9f6928e410219c22fd08e">scale</a>(<span class="keyword">const</span> <span class="keywordtype">float</span> sourceValue,</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                      <span class="keyword">const</span> <span class="keywordtype">float</span> sourceRangeMin,</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                      <span class="keyword">const</span> <span class="keywordtype">float</span> sourceRangeMax,</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                      <span class="keyword">const</span> <span class="keywordtype">float</span> targetRangeMin,</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                      <span class="keyword">const</span> <span class="keywordtype">float</span> targetRangeMax)</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;{</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">return</span> targetRangeMin</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;           + ((targetRangeMax - targetRangeMin) * (sourceValue - sourceRangeMin)) / (sourceRangeMax - sourceRangeMin);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">// Frequency.hppへ移動？</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="dsp_helpers_8hpp.html#aa31fd9c4839dd2a12db428f44832b0aa">   68</a></span>&#160;<span class="comment"></span>constexpr <span class="keywordtype">float</span> <a class="code" href="dsp_helpers_8hpp.html#aa31fd9c4839dd2a12db428f44832b0aa">freqToPeriod</a>(<span class="keyword">const</span> <span class="keywordtype">float</span> freq) noexcept { <span class="keywordflow">return</span> 1.0f / freq; }</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">// Frequency.hppへ移動？</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="dsp_helpers_8hpp.html#aa31fd9c4839dd2a12db428f44832b0aa">   76</a></span>&#160;<span class="comment"></span>    constexpr <span class="keywordtype">float</span> <a class="code" href="dsp_helpers_8hpp.html#aa31fd9c4839dd2a12db428f44832b0aa">freqToPeriod</a>(<span class="keyword">const</span> <span class="keywordtype">float</span> freq) noexcept</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    {</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordflow">return</span> 1.0f / freq;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    }</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="comment">// Frequency.hppへ移動？</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="dsp_helpers_8hpp.html#ab591aa8a6792fdc6fd5e8c3838e875a8">   87</a></span>&#160;<span class="comment"></span>    constexpr <span class="keywordtype">float</span> <a class="code" href="dsp_helpers_8hpp.html#ab591aa8a6792fdc6fd5e8c3838e875a8">periodToFreq</a>(<span class="keyword">const</span> <span class="keywordtype">float</span> period) noexcept</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    {</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordflow">return</span> 1.0f / period;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    }</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;} <span class="comment">// namespace ame</span></div>
-<div class="ttc" id="adsp_helpers_8hpp_html_a10eba5dc5108d4a9c2d0f52193925c0e"><div class="ttname"><a href="dsp_helpers_8hpp.html#a10eba5dc5108d4a9c2d0f52193925c0e">ame::addModulo2Pi</a></div><div class="ttdeci">constexpr float addModulo2Pi(float phase, const float increment) noexcept</div><div class="ttdoc">Increment the phase and returns in the range of 0~2pi.</div><div class="ttdef"><b>Definition:</b> dspHelpers.hpp:42</div></div>
-<div class="ttc" id="adsp_helpers_8hpp_html_a3a8b9197b6b9f6928e410219c22fd08e"><div class="ttname"><a href="dsp_helpers_8hpp.html#a3a8b9197b6b9f6928e410219c22fd08e">ame::scale</a></div><div class="ttdeci">constexpr float scale(const float sourceValue, const float sourceRangeMin, const float sourceRangeMax, const float targetRangeMin, const float targetRangeMax)</div><div class="ttdoc">Map values to an output range.</div><div class="ttdef"><b>Definition:</b> dspHelpers.hpp:63</div></div>
-<div class="ttc" id="adsp_helpers_8hpp_html_aa31fd9c4839dd2a12db428f44832b0aa"><div class="ttname"><a href="dsp_helpers_8hpp.html#aa31fd9c4839dd2a12db428f44832b0aa">ame::freqToPeriod</a></div><div class="ttdeci">constexpr float freqToPeriod(const float freq) noexcept</div><div class="ttdoc">Convert frequency to period.</div><div class="ttdef"><b>Definition:</b> dspHelpers.hpp:76</div></div>
-<div class="ttc" id="adsp_helpers_8hpp_html_ab54fe577a7c14cfab3820540e56e05a7"><div class="ttname"><a href="dsp_helpers_8hpp.html#ab54fe577a7c14cfab3820540e56e05a7">ame::lerp</a></div><div class="ttdeci">constexpr float lerp(float a, float b, float t) noexcept</div><div class="ttdoc">Linear interpolation between a and b.</div><div class="ttdef"><b>Definition:</b> dspHelpers.hpp:29</div></div>
-<div class="ttc" id="adsp_helpers_8hpp_html_ab591aa8a6792fdc6fd5e8c3838e875a8"><div class="ttname"><a href="dsp_helpers_8hpp.html#ab591aa8a6792fdc6fd5e8c3838e875a8">ame::periodToFreq</a></div><div class="ttdeci">constexpr float periodToFreq(const float period) noexcept</div><div class="ttdoc">Convert period to frequency.</div><div class="ttdef"><b>Definition:</b> dspHelpers.hpp:87</div></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">// Frequency.hppへ移動？</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="dsp_helpers_8hpp.html#ab591aa8a6792fdc6fd5e8c3838e875a8">   75</a></span>&#160;<span class="comment"></span>constexpr <span class="keywordtype">float</span> <a class="code" href="dsp_helpers_8hpp.html#ab591aa8a6792fdc6fd5e8c3838e875a8">periodToFreq</a>(<span class="keyword">const</span> <span class="keywordtype">float</span> period) noexcept { <span class="keywordflow">return</span> 1.0f / period; }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}<span class="comment">// namespace ame</span></div>
+<div class="ttc" id="adsp_helpers_8hpp_html_a10eba5dc5108d4a9c2d0f52193925c0e"><div class="ttname"><a href="dsp_helpers_8hpp.html#a10eba5dc5108d4a9c2d0f52193925c0e">ame::addModulo2Pi</a></div><div class="ttdeci">constexpr float addModulo2Pi(float phase, const float increment) noexcept</div><div class="ttdoc">Increment the phase and returns in the range of 0~2pi.</div><div class="ttdef"><b>Definition:</b> dspHelpers.hpp:34</div></div>
+<div class="ttc" id="adsp_helpers_8hpp_html_a3a8b9197b6b9f6928e410219c22fd08e"><div class="ttname"><a href="dsp_helpers_8hpp.html#a3a8b9197b6b9f6928e410219c22fd08e">ame::scale</a></div><div class="ttdeci">constexpr float scale(const float sourceValue, const float sourceRangeMin, const float sourceRangeMax, const float targetRangeMin, const float targetRangeMax)</div><div class="ttdoc">Map values to an output range.</div><div class="ttdef"><b>Definition:</b> dspHelpers.hpp:53</div></div>
+<div class="ttc" id="adsp_helpers_8hpp_html_aa31fd9c4839dd2a12db428f44832b0aa"><div class="ttname"><a href="dsp_helpers_8hpp.html#aa31fd9c4839dd2a12db428f44832b0aa">ame::freqToPeriod</a></div><div class="ttdeci">constexpr float freqToPeriod(const float freq) noexcept</div><div class="ttdoc">Convert frequency to period.</div><div class="ttdef"><b>Definition:</b> dspHelpers.hpp:68</div></div>
+<div class="ttc" id="adsp_helpers_8hpp_html_ab54fe577a7c14cfab3820540e56e05a7"><div class="ttname"><a href="dsp_helpers_8hpp.html#ab54fe577a7c14cfab3820540e56e05a7">ame::lerp</a></div><div class="ttdeci">constexpr float lerp(float a, float b, float t) noexcept</div><div class="ttdoc">Linear interpolation between a and b.</div><div class="ttdef"><b>Definition:</b> dspHelpers.hpp:26</div></div>
+<div class="ttc" id="adsp_helpers_8hpp_html_ab591aa8a6792fdc6fd5e8c3838e875a8"><div class="ttname"><a href="dsp_helpers_8hpp.html#ab591aa8a6792fdc6fd5e8c3838e875a8">ame::periodToFreq</a></div><div class="ttdeci">constexpr float periodToFreq(const float period) noexcept</div><div class="ttdoc">Convert period to frequency.</div><div class="ttdef"><b>Definition:</b> dspHelpers.hpp:75</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
