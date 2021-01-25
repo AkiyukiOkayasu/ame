@@ -1,12 +1,10 @@
-/**
- * @file ame.hpp
- * @author Akiyuki Okayasu (akiyuki.okayasu@gmail.com)
- * @brief Main header file
- *
- * @copyright Copyright (c) 2021 Akiyuki Okayasu
- *
- * AME is released under the MIT license.
- */
+/** 
+    @file ame.hpp
+    @author Akiyuki Okayasu (akiyuki.okayasu@gmail.com)
+    @copyright Copyright (c) 2021 - Akiyuki Okayasu
+    
+    AME is released under the MIT license.
+*/
 
 #pragma once
 

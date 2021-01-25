@@ -1,12 +1,10 @@
-/**
- * @file pcm.hpp
- * @author Akiyuki Okayasu (akiyuki.okayasu@gmail.com)
- * @brief WAV reader / writer
- *
- * @copyright Copyright (c) 2021 Akiyuki Okayasu
- *
- * AME is released under the MIT license.
- */
+/** 
+    @file pcm.hpp
+    @author Akiyuki Okayasu (akiyuki.okayasu@gmail.com)
+    @copyright Copyright (c) 2021 - Akiyuki Okayasu
+    
+    AME is released under the MIT license.
+*/
 
 #pragma once
 
