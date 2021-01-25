@@ -1,7 +1,7 @@
 #define CATCH_CONFIG_MAIN
-#include <catch2/catch.hpp>
-
 #include "ame.hpp"
+
+#include <catch2/catch.hpp>
 
 TEST_CASE("Decibels")
 {
@@ -47,12 +47,6 @@ TEST_CASE("dspHelpers")
 
 TEST_CASE("MIDI")
 {
-    SECTION("ftom()")
-    {
-        REQUIRE(ame::MIDI::freqToMidi(440.0f) == Approx(69));
-    }
-    SECTION("mtof()")
-    {
-        REQUIRE(ame::MIDI::midiToFreq(69) == Approx(440.0f));
-    }
+    SECTION("ftom()") { REQUIRE(ame::MIDI::freqToMidi(440.0f) == Approx(69)); }
+    SECTION("mtof()") { REQUIRE(ame::MIDI::midiToFreq(69) == Approx(440.0f)); }
 }
