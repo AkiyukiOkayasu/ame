@@ -16,7 +16,8 @@
 
 namespace ame
 {
-/**
+/** 日本語のテスト.
+
     Converting between decibels and amplitude.
     @todo クラスを使わずに実装する
 */
