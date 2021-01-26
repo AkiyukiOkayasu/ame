@@ -1,4 +1,4 @@
-/** 日本語.
+/**
     Convert decibels and amplitude.
     
     @file decibel.hpp
@@ -16,8 +16,7 @@
 
 namespace ame
 {
-/** 日本語のテスト.
-
+/**
     Converting between decibels and amplitude.
     @todo クラスを使わずに実装する
 */
