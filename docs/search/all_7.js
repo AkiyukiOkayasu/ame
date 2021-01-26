@@ -5,5 +5,5 @@ var searchData=
   ['midi_18',['MIDI',['../classame_1_1_m_i_d_i.html',1,'ame']]],
   ['midihelpers_2ehpp_19',['midiHelpers.hpp',['../midi_helpers_8hpp.html',1,'']]],
   ['miditofreq_20',['midiToFreq',['../classame_1_1_m_i_d_i.html#a9c2eff36e1763a8ce242974d7c72afaf',1,'ame::MIDI']]],
-  ['mstobpm_21',['msToBpm',['../bpm_8hpp.html#a05ac90e7456ab63ba99f126dbf99421a',1,'ame']]]
+  ['mstobpm_21',['msToBpm',['../bpm_8hpp.html#a272314d1a1861cde617c106b77b0d721',1,'ame']]]
 ];

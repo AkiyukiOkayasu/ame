@@ -25,6 +25,6 @@ var bpm_8hpp =
       [ "N128", "bpm_8hpp.html#a7585c74ea4475a4b0750597223e0410da1def14bb689ac255a03fbf8593dde575", null ],
       [ "N128_TRIPLET", "bpm_8hpp.html#a7585c74ea4475a4b0750597223e0410da111ebf97e82422e0f992b0af2e0122bb", null ]
     ] ],
-    [ "bpmToMs", "bpm_8hpp.html#ae401917ad29908d9743f7728e086a962", null ],
-    [ "msToBpm", "bpm_8hpp.html#a05ac90e7456ab63ba99f126dbf99421a", null ]
+    [ "bpmToMs", "bpm_8hpp.html#a1668c6357a562bfa433b29d265277692", null ],
+    [ "msToBpm", "bpm_8hpp.html#a272314d1a1861cde617c106b77b0d721", null ]
 ];
