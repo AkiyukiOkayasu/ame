@@ -1,7 +1,7 @@
 <map id="math/table.hpp" name="math/table.hpp">
-<area shape="rect" id="node1" title="Compile time wave table generators." alt="" coords="153,5,261,32"/>
-<area shape="rect" id="node2" href="$constants_8hpp.html" title=" " alt="" coords="5,80,109,107"/>
-<area shape="rect" id="node3" href="$special_functions_8hpp.html" title=" " alt="" coords="134,80,279,107"/>
+<area shape="rect" id="node1" title="Wave table generator." alt="" coords="153,5,261,32"/>
+<area shape="rect" id="node2" href="$constants_8hpp.html" title="Math constants." alt="" coords="5,80,109,107"/>
+<area shape="rect" id="node3" href="$special_functions_8hpp.html" title="Special functions." alt="" coords="134,80,279,107"/>
 <area shape="rect" id="node5" title=" " alt="" coords="304,80,355,107"/>
 <area shape="rect" id="node4" title=" " alt="" coords="177,155,236,181"/>
 </map>

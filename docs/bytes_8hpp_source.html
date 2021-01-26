@@ -96,20 +96,19 @@ $(document).ready(function(){initNavTree('bytes_8hpp_source.html',''); initResiz
 </div><!--header-->
 <div class="contents">
 <a href="bytes_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;array&gt;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;cstddef&gt;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">namespace </span>ame</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span>... Ts&gt;</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="bytes_8hpp.html#a4f4cdcc2539bb0796615567cf5a22e51">   35</a></span>&#160;constexpr std::array&lt;std::byte, <span class="keyword">sizeof</span>...(Ts)&gt; <a class="code" href="bytes_8hpp.html#a4f4cdcc2539bb0796615567cf5a22e51">make_bytes</a>(Ts&amp;&amp;... args) noexcept</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">return</span> {std::byte(std::forward&lt;Ts&gt;(args))...};</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}<span class="comment">// namespace ame</span></div>
-<div class="ttc" id="abytes_8hpp_html_a4f4cdcc2539bb0796615567cf5a22e51"><div class="ttname"><a href="bytes_8hpp.html#a4f4cdcc2539bb0796615567cf5a22e51">ame::make_bytes</a></div><div class="ttdeci">constexpr std::array&lt; std::byte, sizeof...(Ts)&gt; make_bytes(Ts &amp;&amp;... args) noexcept</div><div class="ttdoc">Generate a std::array&lt;std::byte, N&gt; .</div><div class="ttdef"><b>Definition:</b> bytes.hpp:35</div></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;array&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;cstddef&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">namespace </span>ame</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span>... Ts&gt;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="bytes_8hpp.html#a4f4cdcc2539bb0796615567cf5a22e51">   32</a></span>&#160;constexpr std::array&lt;std::byte, <span class="keyword">sizeof</span>...(Ts)&gt; make_bytes (Ts&amp;&amp;... args) noexcept</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;{</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">return</span> { std::byte (std::forward&lt;Ts&gt; (args))... };</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;} <span class="comment">// namespace ame</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
