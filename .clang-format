@@ -1,4 +1,4 @@
-﻿---
+---
 BasedOnStyle: Microsoft
 AccessModifierOffset: '-4'
 AlignAfterOpenBracket: Align
@@ -50,7 +50,7 @@ SpaceBeforeInheritanceColon: 'true'
 SpaceBeforeParens: NonEmptyParentheses
 SpaceBeforeRangeBasedForLoopColon: 'true'
 SpaceInEmptyParentheses: 'false'
-SpacesBeforeTrailingComments: '0'
+SpacesBeforeTrailingComments: '1'
 SpacesInAngles: 'false'
 SpacesInCStyleCastParentheses: 'false'
 SpacesInContainerLiterals: 'true'
