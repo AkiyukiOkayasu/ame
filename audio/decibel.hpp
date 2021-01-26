@@ -1,5 +1,5 @@
-/** 
-    Convert decibels and amplitude
+/** 日本語.
+    Convert decibels and amplitude.
     
     @file decibel.hpp
     @author Akiyuki Okayasu (akiyuki.okayasu@gmail.com)
