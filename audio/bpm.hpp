@@ -47,11 +47,11 @@ enum class NoteValue
     @param bpm
     @return ms ex) BPM 120 is converted to 500ms
 */
-float bpmToMs (float bpm) { return 60000.0f / bpm; }
+constexpr float bpmToMs (float bpm) { return 60000.0f / bpm; }
 
 /** Convert ms to BPM
     @param ms
     @return BPM ex) 500ms is converted to BPM 120.
 */
-float msToBpm (float ms) { return 60000.0f / ms; }
+constexpr float msToBpm (float ms) { return 60000.0f / ms; }
 } // namespace ame
