@@ -23,7 +23,7 @@ namespace ame
     @param t It expects a value of 0~1 to be entered, but specifications exceeding 1 are allowed.
     @return linear interpolated value
 */
-constexpr float lerp(float a, float b, float t) noexcept { return a + t * (b - a); }
+constexpr float lerp (float a, float b, float t) noexcept { return a + t * (b - a); }
 
 // TODO phase.hppへ移動？
 /** Increment the phase and returns in the range of 0~2pi.
@@ -31,7 +31,7 @@ constexpr float lerp(float a, float b, float t) noexcept { return a + t * (b - a
     @param increment Amount to add to phase
     @return 0~2pi
 */
-constexpr float addModulo2Pi(float phase, const float increment) noexcept
+constexpr float addModulo2Pi (float phase, const float increment) noexcept
 {
     phase += increment;
     while (phase > twoPi)
@@ -50,11 +50,11 @@ constexpr float addModulo2Pi(float phase, const float increment) noexcept
     @param targetRangeMax output range Max
     @return scaled value
 */
-constexpr float scale(const float sourceValue,
-                      const float sourceRangeMin,
-                      const float sourceRangeMax,
-                      const float targetRangeMin,
-                      const float targetRangeMax)
+constexpr float scale (const float sourceValue,
+                       const float sourceRangeMin,
+                       const float sourceRangeMax,
+                       const float targetRangeMin,
+                       const float targetRangeMax)
 {
     return targetRangeMin
            + ((targetRangeMax - targetRangeMin) * (sourceValue - sourceRangeMin)) / (sourceRangeMax - sourceRangeMin);
@@ -65,12 +65,12 @@ constexpr float scale(const float sourceValue,
     @param freq frequency in Hz
     @return period
 */
-constexpr float freqToPeriod(const float freq) noexcept { return 1.0f / freq; }
+constexpr float freqToPeriod (const float freq) noexcept { return 1.0f / freq; }
 
 // Frequency.hppへ移動？
 /** Convert period to frequency.
     @param period period
     @return frequency
 */
-constexpr float periodToFreq(const float period) noexcept { return 1.0f / period; }
-}// namespace ame
+constexpr float periodToFreq (const float period) noexcept { return 1.0f / period; }
+} // namespace ame

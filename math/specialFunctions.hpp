@@ -1,4 +1,5 @@
 /** 
+    Special functions
     @file specialFunctions.hpp
     @author Akiyuki Okayasu (akiyuki.okayasu@gmail.com)
     @copyright Copyright (c) 2021 - Akiyuki Okayasu
@@ -26,12 +27,12 @@ namespace ame
     @param x phase
     @return float
 */
-inline float sinf(float x)
+inline float sinf (float x)
 {
 #ifdef USE_CMSIS_DSP
-    return arm_sin_f32(x);
+    return arm_sin_f32 (x);
 #else
-    return std::sinf(x);
+    return std::sinf (x);
 #endif
 }
 
@@ -42,12 +43,12 @@ inline float sinf(float x)
     @param x phase
     @return float
 */
-inline float cosf(float x)
+inline float cosf (float x)
 {
 #ifdef USE_CMSIS_DSP
-    return arm_cos_f32(x);
+    return arm_cos_f32 (x);
 #else
-    return std::cosf(x);
+    return std::cosf (x);
 #endif
 }
-}// namespace ame
+} // namespace ame

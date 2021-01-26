@@ -12,10 +12,9 @@
 
 namespace ame
 {
-/**
-     * @brief Enum that associates note values with MIDI ticks.
-     * @note 4n = 480 tick
-     */
+/** Enum that associates note values with MIDI ticks.
+     @note 4n = 480 tick
+*/
 enum class NoteValue
 {
     N1_DOT = 2880,
@@ -25,7 +24,7 @@ enum class NoteValue
     N2 = 960,
     N4_TRIPLET = 640,
     N4_DOT = 720,
-    N4 = 480,// 4n = 480 tick
+    N4 = 480, // 4n = 480 tick
     N4_TRIPLET = 320,
     N8_DOT = 360,
     N8 = 240,
@@ -44,19 +43,15 @@ enum class NoteValue
     N128_TRIPLET = 10
 };
 
-/**
-     * @brief Convert BPM to ms
-     *
-     * @param bpm
-     * @return ms ex) BPM 120 is converted to 500ms
-     */
-float bpmToMs(float bpm) { return 60000.0f / bpm; }
+/** Convert BPM to ms     
+    @param bpm
+    @return ms ex) BPM 120 is converted to 500ms
+*/
+float bpmToMs (float bpm) { return 60000.0f / bpm; }
 
-/**
-     * @brief Convert ms to BPM
-     *
-     * @param ms
-     * @return BPM ex) 500ms is converted to BPM 120.
-     */
-float msToBpm(float ms) { return 60000.0f / ms; }
-}// namespace ame
+/** Convert ms to BPM
+    @param ms
+    @return BPM ex) 500ms is converted to BPM 120.
+*/
+float msToBpm (float ms) { return 60000.0f / ms; }
+} // namespace ame

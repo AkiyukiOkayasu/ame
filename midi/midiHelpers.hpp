@@ -1,4 +1,5 @@
 /** 
+    MIDI
     @file midiHelpers.hpp
     @author Akiyuki Okayasu (akiyuki.okayasu@gmail.com)
     @copyright Copyright (c) 2021 - Akiyuki Okayasu
@@ -12,8 +13,7 @@
 
 namespace ame
 {
-/** MIDI helper functions.
-*/
+/** MIDI helper functions. */
 class MIDI
 {
 public:
@@ -22,9 +22,9 @@ public:
         @param A3Freq Frequency for A3 (MIDI note 69). 440Hz is the most common.
         @return MIDI note
     */
-    static int freqToMidi(const float freq, const float A3Freq = A3_Hz)
+    static int freqToMidi (const float freq, const float A3Freq = A3_Hz)
     {
-        return static_cast<int>(std::nearbyint(12.0f * log2(freq / A3Freq))) + A3_MIDINote;
+        return static_cast<int> (std::nearbyint (12.0f * log2 (freq / A3Freq))) + A3_MIDINote;
     }
 
     /** Convert MIDI note number to frequency.
@@ -32,9 +32,9 @@ public:
         @param A3Freq Frequency for A3 (MIDI note 69). 440Hz is the most common.
         @return frequency in Hz
     */
-    static float midiToFreq(const float midiNote, const float A3Freq = A3_Hz)
+    static float midiToFreq (const float midiNote, const float A3Freq = A3_Hz)
     {
-        return static_cast<float>(A3Freq) * std::pow(2.0f, (midiNote - A3_MIDINote) / 12.0f);
+        return static_cast<float> (A3Freq) * std::pow (2.0f, (midiNote - A3_MIDINote) / 12.0f);
     }
 
 private:
@@ -45,7 +45,7 @@ private:
     // Disallow instantiate, this class is a holder for static methods.
     MIDI() = delete;
     // Disallow copy constructor and assignment
-    MIDI(const MIDI&) = delete;
-    MIDI& operator=(const MIDI&) = delete;
+    MIDI (const MIDI&) = delete;
+    MIDI& operator= (const MIDI&) = delete;
 };
-}// namespace ame
+} // namespace ame

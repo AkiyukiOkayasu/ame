@@ -28,9 +28,9 @@ public:
         @param minusInfinityDb The decibel value at which the amplitude is considered to be zero.
         @return amplitude
     */
-    static constexpr float decibelsToGain(const float dB, const float minusInfinityDb = defaultMinusInfinitydB) noexcept
+    static constexpr float decibelsToGain (const float dB, const float minusInfinityDb = defaultMinusInfinitydB) noexcept
     {
-        return dB > minusInfinityDb ? std::pow(10.0f, dB * 0.05f) : 0.0f;
+        return dB > minusInfinityDb ? std::pow (10.0f, dB * 0.05f) : 0.0f;
     }
 
     /** Convert amplitude to dB.
@@ -38,10 +38,10 @@ public:
         @param minusInfinityDb The decibel value at which the amplitude is considered to be zero.
         @return dB
     */
-    static constexpr float gainToDecibels(const float gain,
-                                          const float minusInfinityDb = defaultMinusInfinitydB) noexcept
+    static constexpr float gainToDecibels (const float gain,
+                                           const float minusInfinityDb = defaultMinusInfinitydB) noexcept
     {
-        return gain > 0.0f ? std::max(minusInfinityDb, std::log10(gain) * 20.0f) : minusInfinityDb;
+        return gain > 0.0f ? std::max (minusInfinityDb, std::log10 (gain) * 20.0f) : minusInfinityDb;
     }
 
 private:
@@ -51,7 +51,7 @@ private:
     // Disallow instantiate, this class is a holder for static methods.
     Decibels() = delete;
     // Disallow copy constructor and assignment
-    Decibels(const Decibels&) = delete;
-    Decibels& operator=(const Decibels&) = delete;
+    Decibels (const Decibels&) = delete;
+    Decibels& operator= (const Decibels&) = delete;
 };
-}// namespace ame
+} // namespace ame

@@ -25,10 +25,10 @@ public:
         @param slownessOfDecrease The larger the value, the more slowly the decrease. If 1, no effect is applied to the input.
         @attention DO NOT set less than 1.
     */
-    Slide(const float slownessOfIncrease, const float slownessOfDecrease)
+    Slide (const float slownessOfIncrease, const float slownessOfDecrease)
     {
-        slideUp.store(slownessOfIncrease);
-        slideDown.store(slownessOfDecrease);
+        slideUp.store (slownessOfIncrease);
+        slideDown.store (slownessOfDecrease);
     }
     ~Slide() {}
 
@@ -36,27 +36,27 @@ public:
         @param newSlideUp The larger the value, the more slowly the increase. @n When set to 1, no change is made to the increase.
         @attention DO NOT set newSlideUp to less than 1.
     */
-    void setSlideUp(const float newSlideUp)
+    void setSlideUp (const float newSlideUp)
     {
         // TODO newSlideUpが1未満の時の丸め、もしくはassert
-        slideUp.store(newSlideUp);
+        slideUp.store (newSlideUp);
     }
 
     /** Set the slowness of the decrease
         @param newSlideDown The larger the value, the more slowly the decrease. @n When set to 1, no change is made to the decrease.
         @attention DO NOT set newSlideDown to less than 1.
     */
-    void setSlideDown(const float newSlideDown)
+    void setSlideDown (const float newSlideDown)
     {
         // TODO newSlideDownが1未満の時の丸め、もしくはassert
-        slideDown.store(newSlideDown);
+        slideDown.store (newSlideDown);
     }
 
     /** Filter an input value        
         @param input Value to smooth
         @return Smoothed value
     */
-    float process(const float input)
+    float process (const float input)
     {
         const float dt = input - lastOutput;
         const float s = dt > 0.0 ? slideUp.load() : slideDown.load();
@@ -68,7 +68,7 @@ private:
     Slide() = delete;
 
     float lastOutput = 0.0f;
-    std::atomic<float> slideUp {1.0f};
-    std::atomic<float> slideDown {1.0f};
+    std::atomic<float> slideUp { 1.0f };
+    std::atomic<float> slideDown { 1.0f };
 };
-}// namespace ame
+} // namespace ame

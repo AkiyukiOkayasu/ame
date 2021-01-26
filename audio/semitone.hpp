@@ -23,10 +23,10 @@ namespace ame
     semitoneToRatio(-12.0f)// 0.5f
     @endcode
 */
-float semitoneToRatio(const float semitone)
+float semitoneToRatio (const float semitone)
 {
     // TODO constexpr化 std::powの置き換えが必要だが、semitoneは負数も含むので難しい
     // TODO powを高速, 軽量なものに置き換えたい
-    return std::pow(2.0f, semitone / 12.0f);
+    return std::pow (2.0f, semitone / 12.0f);
 }
-}// namespace ame
+} // namespace ame

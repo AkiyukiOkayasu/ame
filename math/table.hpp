@@ -1,13 +1,11 @@
-/**
- * @file table.hpp
- * @author Akiyuki Okayasu (akiyuki.okayasu@gmail.com)
- * @brief Compile time wave table generators
- *
- * @copyright Copyright (c) 2021
- *
- * AME is released under the MIT license.
- */
-
+/** 
+    Wave table generator
+    @file table.hpp
+    @author Akiyuki Okayasu (akiyuki.okayasu@gmail.com)
+    @copyright Copyright (c) 2021 - Akiyuki Okayasu
+    
+    AME is released under the MIT license.
+*/
 #pragma once
 
 #include "constants.hpp"
@@ -27,15 +25,15 @@ constexpr std::array<float, N> make_sineTable()
     std::array<float, N> a {};
     for (size_t i = 0; i < N; ++i)
     {
-        float phase = static_cast<float>(i) / static_cast<float>(N) * twoPi;
-        a[i] = ame::sinf(phase);
+        float phase = static_cast<float> (i) / static_cast<float> (N) * twoPi;
+        a[i] = ame::sinf (phase);
     }
     return a;
 }
 
 // TODO hamming窓や矩形波などの実装追加
 
-}// namespace ame
+} // namespace ame
 
 /*
 より汎用的な実装
