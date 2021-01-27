@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['gaintodecibels_14',['gainToDecibels',['../classame_1_1_decibels.html#a5a45f2394a9f7289489c189c0cd68607',1,'ame::Decibels']]]
+  ['interpolation_2ehpp_9',['interpolation.hpp',['../interpolation_8hpp.html',1,'']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['cosf_63',['cosf',['../special_functions_8hpp.html#a65e6b4905b7324b6c8b266ad3d47290c',1,'ame']]]
+  ['cosf_52',['cosf',['../special_functions_8hpp.html#a65e6b4905b7324b6c8b266ad3d47290c',1,'ame']]]
 ];

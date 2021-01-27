@@ -102,19 +102,19 @@ $(document).ready(function(){initNavTree('classame_1_1_slide.html',''); initResi
 <p>Smooth values logarithmically.  
  <a href="classame_1_1_slide.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="slide_8hpp_source.html">slide.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="smoothing_8hpp_source.html">smoothing.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ac538d8f438b0638f45146a9d7a581f51"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_slide.html#ac538d8f438b0638f45146a9d7a581f51">Slide</a> (const float slownessOfIncrease, const float slownessOfDecrease)</td></tr>
 <tr class="memdesc:ac538d8f438b0638f45146a9d7a581f51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an <a class="el" href="classame_1_1_slide.html" title="Smooth values logarithmically.">Slide</a> object.  <a href="classame_1_1_slide.html#ac538d8f438b0638f45146a9d7a581f51">More...</a><br /></td></tr>
 <tr class="separator:ac538d8f438b0638f45146a9d7a581f51"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad3bba919f1b1123704542652e2e76ebd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_slide.html#ad3bba919f1b1123704542652e2e76ebd">setSlideUp</a> (const float newSlideUp)</td></tr>
-<tr class="memdesc:ad3bba919f1b1123704542652e2e76ebd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the slowness of the increase.  <a href="classame_1_1_slide.html#ad3bba919f1b1123704542652e2e76ebd">More...</a><br /></td></tr>
-<tr class="separator:ad3bba919f1b1123704542652e2e76ebd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc2dbee329c7f26ff75d1eb0e4fbb7a7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_slide.html#abc2dbee329c7f26ff75d1eb0e4fbb7a7">setSlideDown</a> (const float newSlideDown)</td></tr>
-<tr class="memdesc:abc2dbee329c7f26ff75d1eb0e4fbb7a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the slowness of the decrease.  <a href="classame_1_1_slide.html#abc2dbee329c7f26ff75d1eb0e4fbb7a7">More...</a><br /></td></tr>
-<tr class="separator:abc2dbee329c7f26ff75d1eb0e4fbb7a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a154bc8cfe774354a01badf5fbb46ea47"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_slide.html#a154bc8cfe774354a01badf5fbb46ea47">setSlownessOfIncrease</a> (const float newSlownessIncrease)</td></tr>
+<tr class="memdesc:a154bc8cfe774354a01badf5fbb46ea47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the slowness of the increase.  <a href="classame_1_1_slide.html#a154bc8cfe774354a01badf5fbb46ea47">More...</a><br /></td></tr>
+<tr class="separator:a154bc8cfe774354a01badf5fbb46ea47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae64b6d1eff8e29f927773f8a2c316a81"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_slide.html#ae64b6d1eff8e29f927773f8a2c316a81">setSlownessOfDecrease</a> (const float newSlownessDecrease)</td></tr>
+<tr class="memdesc:ae64b6d1eff8e29f927773f8a2c316a81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the slowness of the decrease.  <a href="classame_1_1_slide.html#ae64b6d1eff8e29f927773f8a2c316a81">More...</a><br /></td></tr>
+<tr class="separator:ae64b6d1eff8e29f927773f8a2c316a81"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c31482318c3e70b569f38fb359bebd2"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_slide.html#a9c31482318c3e70b569f38fb359bebd2">process</a> (const float input)</td></tr>
 <tr class="memdesc:a9c31482318c3e70b569f38fb359bebd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filter an input value <br  />
   <a href="classame_1_1_slide.html#a9c31482318c3e70b569f38fb359bebd2">More...</a><br /></td></tr>
@@ -122,8 +122,7 @@ Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Smooth values logarithmically. </p>
-<p>y (n) = y (n-1) + ((x (n) - y (n-1))/slide)</p>
-<dl class="section note"><dt>Note</dt><dd>SlideUp and SlideDown are affected by the update interval of the process. </dd></dl>
+<p>y (n) = y (n-1) + ((x (n) - y (n-1))/slide) </p><dl class="section note"><dt>Note</dt><dd>SlideUp and SlideDown are affected by the update interval of the process. </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ac538d8f438b0638f45146a9d7a581f51"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac538d8f438b0638f45146a9d7a581f51">&#9670;&nbsp;</a></span>Slide()</h2>
@@ -162,8 +161,8 @@ Public Member Functions</h2></td></tr>
 <p>Create an <a class="el" href="classame_1_1_slide.html" title="Smooth values logarithmically.">Slide</a> object. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">slownessOfIncrease</td><td>The larger the value, the more slowly the increase. If 1, no effect is applied to the input. </td></tr>
-    <tr><td class="paramname">slownessOfDecrease</td><td>The larger the value, the more slowly the decrease. If 1, no effect is applied to the input. </td></tr>
+    <tr><td class="paramname">slownessOfIncrease</td><td>The larger the value, the more slowly the increase. If 1, no effect is applied to the increase. </td></tr>
+    <tr><td class="paramname">slownessOfDecrease</td><td>The larger the value, the more slowly the decrease. If 1, no effect is applied to the decrease. </td></tr>
   </table>
   </dd>
 </dl>
@@ -208,8 +207,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="abc2dbee329c7f26ff75d1eb0e4fbb7a7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abc2dbee329c7f26ff75d1eb0e4fbb7a7">&#9670;&nbsp;</a></span>setSlideDown()</h2>
+<a id="ae64b6d1eff8e29f927773f8a2c316a81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae64b6d1eff8e29f927773f8a2c316a81">&#9670;&nbsp;</a></span>setSlownessOfDecrease()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -218,10 +217,10 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void ame::Slide::setSlideDown </td>
+          <td class="memname">void ame::Slide::setSlownessOfDecrease </td>
           <td>(</td>
           <td class="paramtype">const float&#160;</td>
-          <td class="paramname"><em>newSlideDown</em></td><td>)</td>
+          <td class="paramname"><em>newSlownessDecrease</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -235,8 +234,7 @@ Public Member Functions</h2></td></tr>
 <p>Set the slowness of the decrease. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">newSlideDown</td><td>The larger the value, the more slowly the decrease. <br  />
- When set to 1, no change is made to the decrease. </td></tr>
+    <tr><td class="paramname">newSlownessDecrease</td><td>The larger the value, the more slowly the decrease. If 1, no effect is applied to the decrease. </td></tr>
   </table>
   </dd>
 </dl>
@@ -244,8 +242,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ad3bba919f1b1123704542652e2e76ebd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad3bba919f1b1123704542652e2e76ebd">&#9670;&nbsp;</a></span>setSlideUp()</h2>
+<a id="a154bc8cfe774354a01badf5fbb46ea47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a154bc8cfe774354a01badf5fbb46ea47">&#9670;&nbsp;</a></span>setSlownessOfIncrease()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -254,10 +252,10 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void ame::Slide::setSlideUp </td>
+          <td class="memname">void ame::Slide::setSlownessOfIncrease </td>
           <td>(</td>
           <td class="paramtype">const float&#160;</td>
-          <td class="paramname"><em>newSlideUp</em></td><td>)</td>
+          <td class="paramname"><em>newSlownessIncrease</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -271,8 +269,7 @@ Public Member Functions</h2></td></tr>
 <p>Set the slowness of the increase. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">newSlideUp</td><td>The larger the value, the more slowly the increase. <br  />
- When set to 1, no change is made to the increase. </td></tr>
+    <tr><td class="paramname">newSlownessIncrease</td><td>The larger the value, the more slowly the increase. If 1, no effect is applied to the increase. </td></tr>
   </table>
   </dd>
 </dl>
@@ -281,7 +278,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>audio/<a class="el" href="slide_8hpp_source.html">slide.hpp</a></li>
+<li>audio/<a class="el" href="smoothing_8hpp_source.html">smoothing.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

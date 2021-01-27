@@ -100,7 +100,7 @@ $(document).ready(function(){initNavTree('sine__oscillator_8hpp_source.html','')
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;../math/constants.hpp&quot;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;../math/specialFunctions.hpp&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="dsp_helpers_8hpp.html">dspHelpers.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;dspHelpers.hpp&quot;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;atomic&gt;</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
@@ -119,7 +119,7 @@ $(document).ready(function(){initNavTree('sine__oscillator_8hpp_source.html','')
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
 <div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classame_1_1_sine_oscillator.html#a2ac7efb5c12f0877f39b36cc56f02c41">   45</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="classame_1_1_sine_oscillator.html#a2ac7efb5c12f0877f39b36cc56f02c41">nextSample</a>() noexcept</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        phase = <a class="code" href="dsp_helpers_8hpp.html#a10eba5dc5108d4a9c2d0f52193925c0e">addModulo2Pi</a> (phase, phaseIncrement);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        phase = <a class="code" href="phase_8hpp.html#a10eba5dc5108d4a9c2d0f52193925c0e">addModulo2Pi</a> (phase, phaseIncrement);</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="special_functions_8hpp.html#a04a55b89aafb7536f4f731002eb232ea">ame::sinf</a> (phase);</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
@@ -137,8 +137,7 @@ $(document).ready(function(){initNavTree('sine__oscillator_8hpp_source.html','')
 <div class="ttc" id="aclassame_1_1_sine_oscillator_html_a2ac7efb5c12f0877f39b36cc56f02c41"><div class="ttname"><a href="classame_1_1_sine_oscillator.html#a2ac7efb5c12f0877f39b36cc56f02c41">ame::SineOscillator::nextSample</a></div><div class="ttdeci">float nextSample() noexcept</div><div class="ttdoc">Generate single sample.</div><div class="ttdef"><b>Definition:</b> sine_oscillator.hpp:45</div></div>
 <div class="ttc" id="aclassame_1_1_sine_oscillator_html_aa733e87a8bb4d568767fda009a074162"><div class="ttname"><a href="classame_1_1_sine_oscillator.html#aa733e87a8bb4d568767fda009a074162">ame::SineOscillator::setFrequency</a></div><div class="ttdeci">void setFrequency(const float freq) noexcept</div><div class="ttdoc">Set the sine wave frequency.</div><div class="ttdef"><b>Definition:</b> sine_oscillator.hpp:40</div></div>
 <div class="ttc" id="aclassame_1_1_sine_oscillator_html_ae3e9f889ed1c34ba7d45134071cfb9e3"><div class="ttname"><a href="classame_1_1_sine_oscillator.html#ae3e9f889ed1c34ba7d45134071cfb9e3">ame::SineOscillator::SineOscillator</a></div><div class="ttdeci">SineOscillator(const float sampleRate, const float frequency)</div><div class="ttdoc">Create sine wave ocillator instance.</div><div class="ttdef"><b>Definition:</b> sine_oscillator.hpp:31</div></div>
-<div class="ttc" id="adsp_helpers_8hpp_html"><div class="ttname"><a href="dsp_helpers_8hpp.html">dspHelpers.hpp</a></div><div class="ttdoc">DSP helper functions.</div></div>
-<div class="ttc" id="adsp_helpers_8hpp_html_a10eba5dc5108d4a9c2d0f52193925c0e"><div class="ttname"><a href="dsp_helpers_8hpp.html#a10eba5dc5108d4a9c2d0f52193925c0e">ame::addModulo2Pi</a></div><div class="ttdeci">constexpr float addModulo2Pi(float phase, const float increment) noexcept</div><div class="ttdoc">Increment the phase and returns in the range of 0~2pi.</div><div class="ttdef"><b>Definition:</b> dspHelpers.hpp:34</div></div>
+<div class="ttc" id="aphase_8hpp_html_a10eba5dc5108d4a9c2d0f52193925c0e"><div class="ttname"><a href="phase_8hpp.html#a10eba5dc5108d4a9c2d0f52193925c0e">ame::addModulo2Pi</a></div><div class="ttdeci">constexpr float addModulo2Pi(float phase, const float increment) noexcept</div><div class="ttdoc">Increment the phase and returns in the range of 0~2pi.</div><div class="ttdef"><b>Definition:</b> phase.hpp:21</div></div>
 <div class="ttc" id="aspecial_functions_8hpp_html_a04a55b89aafb7536f4f731002eb232ea"><div class="ttname"><a href="special_functions_8hpp.html#a04a55b89aafb7536f4f731002eb232ea">ame::sinf</a></div><div class="ttdeci">float sinf(float x)</div><div class="ttdoc">sinf.</div><div class="ttdef"><b>Definition:</b> specialFunctions.hpp:30</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

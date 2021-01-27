@@ -1,9 +1,8 @@
 <map id="audio/sine_oscillator.hpp" name="audio/sine_oscillator.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="199,5,363,32"/>
-<area shape="rect" id="node2" href="$constants_8hpp.html" title="Math constants." alt="" coords="159,155,309,181"/>
-<area shape="rect" id="node3" href="$special_functions_8hpp.html" title="Special functions." alt="" coords="5,80,196,107"/>
-<area shape="rect" id="node5" href="$dsp_helpers_8hpp.html" title="DSP helper functions." alt="" coords="272,80,385,107"/>
-<area shape="rect" id="node7" title=" " alt="" coords="410,80,471,107"/>
-<area shape="rect" id="node4" title=" " alt="" coords="71,155,130,181"/>
-<area shape="rect" id="node6" title=" " alt="" coords="333,155,386,181"/>
+<area shape="rect" id="node1" title=" " alt="" coords="281,5,445,32"/>
+<area shape="rect" id="node2" href="$constants_8hpp.html" title="Math constants." alt="" coords="5,80,155,107"/>
+<area shape="rect" id="node3" href="$special_functions_8hpp.html" title="Special functions." alt="" coords="179,80,370,107"/>
+<area shape="rect" id="node5" title=" " alt="" coords="394,80,507,107"/>
+<area shape="rect" id="node6" title=" " alt="" coords="532,80,593,107"/>
+<area shape="rect" id="node4" title=" " alt="" coords="245,155,304,181"/>
 </map>

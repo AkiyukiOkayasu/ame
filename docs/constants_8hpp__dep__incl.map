@@ -1,7 +1,8 @@
 <map id="math/constants.hpp" name="math/constants.hpp">
-<area shape="rect" id="node1" title="Math constants." alt="" coords="89,5,226,32"/>
-<area shape="rect" id="node2" href="$ame_8hpp.html" title=" " alt="" coords="64,229,136,256"/>
-<area shape="rect" id="node3" href="$dsp_helpers_8hpp.html" title="DSP helper functions." alt="" coords="28,80,176,107"/>
-<area shape="rect" id="node4" href="$sine__oscillator_8hpp.html" title=" " alt="" coords="78,155,242,181"/>
-<area shape="rect" id="node5" href="$table_8hpp.html" title="Wave table generator." alt="" coords="266,155,374,181"/>
+<area shape="rect" id="node1" title="Math constants." alt="" coords="173,5,311,32"/>
+<area shape="rect" id="node2" href="$ame_8hpp.html" title=" " alt="" coords="371,155,443,181"/>
+<area shape="rect" id="node3" href="$mapping_8hpp.html" title="Mapping functions." alt="" coords="29,80,159,107"/>
+<area shape="rect" id="node4" href="$phase_8hpp.html" title="Pphase operation." alt="" coords="183,80,301,107"/>
+<area shape="rect" id="node5" href="$sine__oscillator_8hpp.html" title=" " alt="" coords="325,80,489,107"/>
+<area shape="rect" id="node6" href="$table_8hpp.html" title="Wave table generator." alt="" coords="513,80,621,107"/>
 </map>
