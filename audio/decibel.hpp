@@ -11,47 +11,31 @@
 
 #pragma once
 
-#include <algorithm>
 #include <cmath>
 
 namespace ame
 {
-/**
-    Converting between decibels and amplitude.
-    @todo クラスを使わずに実装する
+/** Convert dB to amplitude.
+    @param dB decibels value
+    @return amplitude [0, 1]
+    @note Outputs 0 if the input is less than -100dB.
 */
-class Decibels
+constexpr float dBToGain (const float dB) noexcept
 {
-public:
-    /** Convert dB to amplitude.
-        @param dB
-        @param minusInfinityDb The decibel value at which the amplitude is considered to be zero.
-        @return amplitude
-    */
-    static constexpr float decibelsToGain (const float dB, const float minusInfinityDb = defaultMinusInfinitydB) noexcept
-    {
-        return dB > minusInfinityDb ? std::pow (10.0f, dB * 0.05f) : 0.0f;
-    }
+    return dB > -100.0f
+               ? std::pow (10.0f, dB * 0.05f)
+               : 0.0f; // Outputs 0 if the input is less than -100dB
+}
 
-    /** Convert amplitude to dB.
-        @param gain
-        @param minusInfinityDb The decibel value at which the amplitude is considered to be zero.
-        @return dB
-    */
-    static constexpr float gainToDecibels (const float gain,
-                                           const float minusInfinityDb = defaultMinusInfinitydB) noexcept
-    {
-        return gain > 0.0f ? std::max (minusInfinityDb, std::log10 (gain) * 20.0f) : minusInfinityDb;
-    }
-
-private:
-    /** The default decibel value, which considers the amplitude to be zero is -100 dB. */
-    static constexpr float defaultMinusInfinitydB = -100.0f;
-
-    // Disallow instantiate, this class is a holder for static methods.
-    Decibels() = delete;
-    // Disallow copy constructor and assignment
-    Decibels (const Decibels&) = delete;
-    Decibels& operator= (const Decibels&) = delete;
-};
+/** Convert amplitude to dB.
+    @param gain 
+    @return dB decibels value
+    @note Outputs Outputs -100dB if the input is less than 0.00001.
+*/
+constexpr float gainToDecibels (const float gain) noexcept
+{
+    return gain > 0.00001f
+               ? std::log10 (gain) * 20.0f
+               : -100.0f; // Minimum output value -100dB
+}
 } // namespace ame
