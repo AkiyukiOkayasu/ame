@@ -11,9 +11,9 @@
 
 namespace ame
 {
-static constexpr float pi = 3.14159265f;
-static constexpr float twoPi = 6.283185307f;
-static constexpr float halfPi = 1.57079632f;
-static constexpr float euler = 2.71828182f;
-static constexpr float sqrt2 = 1.41421356f;
+constexpr float pi = 3.14159265f;
+constexpr float twoPi = 6.283185307f;
+constexpr float halfPi = 1.57079632f;
+constexpr float euler = 2.71828182f;
+constexpr float sqrt2 = 1.41421356f;
 } // namespace ame
