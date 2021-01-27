@@ -1,6 +1,6 @@
 /** 
     Frequency related conversions.
-    @file freqquency.hpp
+    @file frequency.hpp
     @author Akiyuki Okayasu (akiyuki.okayasu@gmail.com)
     @copyright Copyright (c) 2021 - Akiyuki Okayasu
     
