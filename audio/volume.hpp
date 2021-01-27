@@ -1,10 +1,8 @@
-/**
-    Convert decibels and amplitude.
-    
-    @file decibel.hpp
+/**    
+    Volume (dB, gain) related conversions.
+    @file volume.hpp
     @author Akiyuki Okayasu (akiyuki.okayasu@gmail.com)
-    @copyright Copyright (c) 2021 - Akiyuki Okayasu
-    @todo std::pow, std::max, std::log10をより高速かコンパイル時に実行できるものに置き換える
+    @copyright Copyright (c) 2021 - Akiyuki Okayasu    
     
     AME is released under the MIT license.
 */

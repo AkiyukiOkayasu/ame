@@ -1,4 +1,5 @@
 /** 
+    Interpolation.
     @file interpolation.hpp
     @author Akiyuki Okayasu (akiyuki.okayasu@gmail.com)
     @copyright Copyright (c) 2021 - Akiyuki Okayasu
@@ -12,7 +13,7 @@
 
 namespace ame
 {
-/** Linear interpolation between a and b.
+/** Linear interpolation.
     @note Function as same as std::lerp() implemented in C++20.
     @param a Start point
     @param b Target point
