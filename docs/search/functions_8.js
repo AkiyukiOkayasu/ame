@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['process_60',['process',['../classame_1_1_slide.html#a9c31482318c3e70b569f38fb359bebd2',1,'ame::Slide']]]
+  ['nextsample_65',['nextSample',['../classame_1_1_sine_oscillator.html#a2ac7efb5c12f0877f39b36cc56f02c41',1,'ame::SineOscillator']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['gaintodecibels_54',['gainToDecibels',['../volume_8hpp.html#a436f4dee126a9ae49c51e849f7905df8',1,'ame']]]
+  ['freqtoperiod_59',['freqToPeriod',['../frequency_8hpp.html#aa31fd9c4839dd2a12db428f44832b0aa',1,'ame']]]
 ];

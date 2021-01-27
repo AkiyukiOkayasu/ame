@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['lerp_55',['lerp',['../interpolation_8hpp.html#ab54fe577a7c14cfab3820540e56e05a7',1,'ame']]]
+  ['gaintodecibels_60',['gainToDecibels',['../volume_8hpp.html#a436f4dee126a9ae49c51e849f7905df8',1,'ame']]]
 ];

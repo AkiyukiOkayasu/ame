@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['n4_15',['N4',['../time_8hpp.html#a7585c74ea4475a4b0750597223e0410dab1c49f839832f51f6d687a04db101d4c',1,'ame']]],
-  ['nextsample_16',['nextSample',['../classame_1_1_sine_oscillator.html#a2ac7efb5c12f0877f39b36cc56f02c41',1,'ame::SineOscillator']]],
-  ['notevalue_17',['NoteValue',['../time_8hpp.html#a7585c74ea4475a4b0750597223e0410d',1,'ame']]]
+  ['make_5fbytes_13',['make_bytes',['../bytes_8hpp.html#a4f4cdcc2539bb0796615567cf5a22e51',1,'ame']]],
+  ['make_5fsinetable_14',['make_sineTable',['../table_8hpp.html#a0c2dc4a11adb1dc0751374a655ee1338',1,'ame']]],
+  ['mapping_2ehpp_15',['mapping.hpp',['../mapping_8hpp.html',1,'']]],
+  ['mstobpm_16',['msToBpm',['../time_8hpp.html#a272314d1a1861cde617c106b77b0d721',1,'ame']]]
 ];

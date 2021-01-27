@@ -1,7 +1,7 @@
 var dir_a5f32cf82ad289a7dac212f63f40f55b =
 [
     [ "buffer.hpp", "buffer_8hpp.html", "buffer_8hpp" ],
-    [ "frequency.hpp", "frequency_8hpp_source.html", null ],
+    [ "frequency.hpp", "frequency_8hpp.html", "frequency_8hpp" ],
     [ "interpolation.hpp", "interpolation_8hpp.html", "interpolation_8hpp" ],
     [ "mapping.hpp", "mapping_8hpp.html", "mapping_8hpp" ],
     [ "phase.hpp", "phase_8hpp.html", "phase_8hpp" ],
