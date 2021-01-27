@@ -1,7 +1,7 @@
 /**     
-    Convert BPM and ms
+    Time related conversions.
 
-    @file bpm.hpp
+    @file time.hpp
     @author Akiyuki Okayasu (akiyuki.okayasu@gmail.com)
     @copyright Copyright (c) 2021 - Akiyuki Okayasu
     
@@ -13,7 +13,7 @@
 namespace ame
 {
 /** Enum that associates note values with MIDI ticks.
-     @note 4n = 480 tick
+    @note 4n = 480 tick
 */
 enum class NoteValue
 {
@@ -24,7 +24,7 @@ enum class NoteValue
     N2 = 960,
     N4_TRIPLET = 640,
     N4_DOT = 720,
-    N4 = 480, // 4n = 480 tick
+    N4 = 480, ///< 4n = 480 tick
     N4_TRIPLET = 320,
     N8_DOT = 360,
     N8 = 240,
@@ -45,13 +45,19 @@ enum class NoteValue
 
 /** Convert BPM to ms     
     @param bpm
-    @return ms ex) BPM 120 is converted to 500ms
+    @return ms
+    @code
+    bpmToMs(120.0f); // 500ms
+    @endcode
 */
 constexpr float bpmToMs (float bpm) { return 60000.0f / bpm; }
 
 /** Convert ms to BPM
     @param ms
-    @return BPM ex) 500ms is converted to BPM 120.
+    @return BPM
+    @code
+    msToBpm(500.0f); // BPM 120    
+    @endcode
 */
 constexpr float msToBpm (float ms) { return 60000.0f / ms; }
 } // namespace ame
