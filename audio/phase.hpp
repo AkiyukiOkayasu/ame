@@ -1,5 +1,5 @@
 /** 
-    Pphase operation.    
+    Phase operation.
     @file phase.hpp
     @author Akiyuki Okayasu (akiyuki.okayasu@gmail.com)
     @copyright Copyright (c) 2021 - Akiyuki Okayasu
