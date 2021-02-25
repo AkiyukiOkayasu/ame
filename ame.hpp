@@ -10,16 +10,16 @@
 
 // TODO include整理と確認
 
-#include "audio/bpm.hpp"
 #include "audio/buffer.hpp"
-#include "audio/decibel.hpp"
-#include "audio/dspHelpers.hpp"
+#include "audio/frequency.hpp"
+#include "audio/interpolation.hpp"
+#include "audio/mapping.hpp"
+#include "audio/phase.hpp"
 #include "audio/q23_float_conversion.hpp"
-#include "audio/semitone.hpp"
-#include "audio/sine_oscillator.hpp"
-#include "audio/slide.hpp"
+#include "audio/smoothing.hpp"
+#include "audio/time.hpp"
+#include "audio/volume.hpp"
 #include "math/constants.hpp"
 #include "math/specialFunctions.hpp"
 #include "math/table.hpp"
-#include "midi/midiHelpers.hpp"
 #include "system/bytes.hpp"
