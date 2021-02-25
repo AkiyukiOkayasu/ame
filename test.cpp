@@ -52,8 +52,25 @@ TEST_CASE ("MIDI")
     SECTION ("mtof()") { REQUIRE (ame::midiToFreq (69) == Approx (440.0f)); }
 }
 
-TEST_CASE("MIDI")
+TEST_CASE ("WaveTable")
 {
-    SECTION("ftom()") { REQUIRE(ame::MIDI::freqToMidi(440.0f) == Approx(69)); }
-    SECTION("mtof()") { REQUIRE(ame::MIDI::midiToFreq(69) == Approx(440.0f)); }
+    SECTION ("makeTable()")
+    {
+        auto f = [] (auto& x) { x = ame::sinf (x * ame::twoPi); };
+        auto ar = ame::make_waveTable<float, 5> (f);
+        for (auto&& e : ar)
+        {
+            std::cout << std::fixed << std::setprecision (5) << e << std::endl;
+        }
+
+        /* 
+        -0.0f == Approx(0.0f)を失敗させないために、Approx().scale(1)を指定する
+        https://github.com/catchorg/Catch2/issues/1079
+        */
+        REQUIRE (ar[0] == Approx (0.0f).scale (1));
+        REQUIRE (ar[1] == Approx (1.0f).scale (1));
+        REQUIRE (ar[2] == Approx (0.0f).scale (1));
+        REQUIRE (ar[3] == Approx (-1.0f).scale (1));
+        REQUIRE (ar[4] == Approx (0.0f).scale (1));
+    }
 }
