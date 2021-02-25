@@ -12,41 +12,37 @@
 #include "specialFunctions.hpp"
 
 #include <array>
+#include <numeric>
 
 namespace ame
 {
-/** Compile time sine wave table generator
-    @tparam N Num samples
+/** Wavetable generator.
+    @tparam FloatType float or double
+    @tparam N array size
+    @tparam Function function to generate wavetable
+    @note Functionの入力は0~1範囲の配列です
+    @todo FloatTypeいらないかも。floatだけでいい？
+    @see make_sineTable()
+*/
+template <typename FloatType, size_t N, class Function>
+constexpr auto make_waveTable (Function func)
+{
+    std::array<FloatType, N> ar;
+    std::iota (ar.begin(), ar.end(), 0);
+    std::for_each (ar.begin(), ar.end(), [] (auto& x) { x = x / (N - 1); }); // ar: 0~1が順に並んだ配列
+    std::for_each (ar.begin(), ar.end(), func);
+    return ar;
+}
+
+/** Sine wave wavetable generator.
+    @tparam N array size
     @return constexpr std::array<float, N> sine wave table
+    @todo 初期位相いじれるようにする？
 */
 template <size_t N>
-constexpr std::array<float, N> make_sineTable()
+constexpr auto make_sineTable()
 {
-    std::array<float, N> a {};
-    for (size_t i = 0; i < N; ++i)
-    {
-        float phase = static_cast<float> (i) / static_cast<float> (N) * twoPi;
-        a[i] = ame::sinf (phase);
-    }
-    return a;
+    auto f = [] (auto& x) { x = ame::sinf (x * ame::twoPi); };
+    return ame::make_waveTable<float, N> (f);
 }
-
-// TODO hamming窓や矩形波などの実装追加
-
 } // namespace ame
-
-/*
-より汎用的な実装
-https://www.it-swarm-ja.tech/ja/c++/%E6%9C%80%E6%96%B0%E3%81%AEc-%EF%BC%9Aconstexpr%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB%E3%81%AE%E5%88%9D%E6%9C%9F%E5%8C%96/835602258/
-
-template<class T, size_t N, class F>
-constexpr auto make_table(F func, T first)
-{
-    std::array<T, N> a {first};
-    for (size_t i = 1; i < N; ++i)
-    {
-        a[i] = func(a[i - 1]);
-    }
-    return a;
-}
-*/
