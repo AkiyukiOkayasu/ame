@@ -21,7 +21,7 @@ enum class NoteValue
     N1_TRIPLET = 1280,
     N2_DOT = 1440,
     N2 = 960,
-    N4_TRIPLET = 640,
+    N2_TRIPLET = 640,
     N4_DOT = 720,
     N4 = 480, ///< 4n = 480 tick
     N4_TRIPLET = 320,
