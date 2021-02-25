@@ -1,6 +1,6 @@
 /** 
     Wave table generator
-    @file table.hpp
+    @file wavetable.hpp
     @author Akiyuki Okayasu (akiyuki.okayasu@gmail.com)
     @copyright Copyright (c) 2021 - Akiyuki Okayasu
     
@@ -8,8 +8,8 @@
 */
 #pragma once
 
-#include "constants.hpp"
-#include "specialFunctions.hpp"
+#include "../math/constants.hpp"
+#include "../math/specialFunctions.hpp"
 
 #include <array>
 #include <numeric>
