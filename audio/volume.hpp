@@ -30,7 +30,7 @@ constexpr float dBToGain (const float dB) noexcept
     @return dB decibels value
     @note Outputs Outputs -100dB if the input is less than 0.00001.
 */
-constexpr float gainToDecibels (const float gain) noexcept
+constexpr float gainTodB (const float gain) noexcept
 {
     return gain > 0.00001f
                ? std::log10 (gain) * 20.0f
