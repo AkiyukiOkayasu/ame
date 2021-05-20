@@ -67,7 +67,7 @@ static float midiToFreq (const float midiNote, const float A3Freq = 440.0f)
     @note Max/MSPのcartopolと同じ
     @see poltocar()
 */
-constexpr std::pair<float, float> cartopol (const float real, const float imag)
+inline std::pair<float, float> cartopol (const float real, const float imag)
 {
     const float amplitude = std::sqrt (real * real + imag * imag);
     const float angle = std::atan2 (imag, real);
@@ -81,7 +81,7 @@ constexpr std::pair<float, float> cartopol (const float real, const float imag)
     @note Max/MSPのpoltocarと同じ
     @see cartopol()
 */
-constexpr std::pair<float, float> poltocar (const float amplitude, const float angle)
+inline std::pair<float, float> poltocar (const float amplitude, const float angle)
 {
     const float real = amplitude * cosf (angle);
     const float imag = amplitude * sinf (angle);
