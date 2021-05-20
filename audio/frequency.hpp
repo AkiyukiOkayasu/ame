@@ -64,7 +64,7 @@ static float midiToFreq (const float midiNote, const float A3Freq = 440.0f)
     @param real 実部
     @param imag 虚部
     @return amplitude, angle
-    @note Max/MSPのpoltocar
+    @note Max/MSPのcartopolと同じ
 */
 constexpr std::pair<float, float> cartopol (const float real, const float imag)
 {
