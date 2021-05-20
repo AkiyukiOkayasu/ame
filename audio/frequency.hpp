@@ -59,4 +59,17 @@ static float midiToFreq (const float midiNote, const float A3Freq = 440.0f)
 {
     return A3Freq * std::pow (2.0f, (midiNote - 69.0f) / 12.0f);
 }
+
+/** 直交座標→極座標変換.    
+    @param real 実部
+    @param imag 虚部
+    @return amplitude, angle
+    @note Max/MSPのpoltocar
+*/
+constexpr std::pair<float, float> cartopol (const float real, const float imag)
+{
+    const float amplitude = std::sqrt (real * real + imag * imag);
+    const float angle = std::atan2 (imag, real);
+    return { amplitude, angle };
+}
 } // namespace ame
