@@ -61,6 +61,19 @@ TEST_CASE ("Time")
     }
 }
 
+TEST_CASE ("Frequency")
+{
+    SECTION ("Convert pol between car")
+    {
+        auto [amp, angle] = ame::cartopol (0.9, -0.4);
+        REQUIRE (amp == Approx (0.984886f));
+        REQUIRE (angle == Approx (-0.418224f));
+        auto [real, imag] = ame::poltocar (amp, angle);
+        REQUIRE (real == Approx (0.9));
+        REQUIRE (imag == Approx (-0.4));
+    }
+}
+
 TEST_CASE ("MIDI")
 {
     SECTION ("ftom()") { REQUIRE (ame::freqToMidi (440.0f) == Approx (69)); }
@@ -71,7 +84,11 @@ TEST_CASE ("WaveTable")
 {
     SECTION ("makeTable()")
     {
-        auto f = [] (auto& x) { x = ame::sinf (x * ame::twoPi); };
+        auto f = [] (auto& x)
+        {
+            x = ame::sinf (x * ame::twoPi);
+        };
+
         auto ar = ame::make_waveTable<float, 5> (f);
 
         /* 
