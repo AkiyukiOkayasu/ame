@@ -21,7 +21,7 @@ namespace ame
     semitoneToRatio(-12.0f)// 0.5f
     @endcode
 */
-float semitoneToRatio (const float semitone)
+inline float semitoneToRatio (const float semitone)
 {
     // TODO constexpr化 std::powの置き換えが必要だが、semitoneは負数も含むので難しい
     // TODO powを高速, 軽量なものに置き換えたい
@@ -45,7 +45,7 @@ constexpr float periodToFreq (const float period) noexcept { return 1.0f / perio
         @param A3Freq Frequency for A3 (MIDI note 69). 440Hz is default.
         @return MIDI note
     */
-static float freqToMidi (const float freq, const float A3Freq = 440.0f)
+inline float freqToMidi (const float freq, const float A3Freq = 440.0f)
 {
     return 12.0f * log2 (freq / A3Freq) + 69.0f;
 }
@@ -55,7 +55,7 @@ static float freqToMidi (const float freq, const float A3Freq = 440.0f)
         @param A3Freq Frequency for A3 (MIDI note 69). 440Hz is default.
         @return frequency in Hz
 */
-static float midiToFreq (const float midiNote, const float A3Freq = 440.0f)
+inline float midiToFreq (const float midiNote, const float A3Freq = 440.0f)
 {
     return A3Freq * std::pow (2.0f, (midiNote - 69.0f) / 12.0f);
 }
