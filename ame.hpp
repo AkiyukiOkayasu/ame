@@ -10,6 +10,7 @@
 #pragma once
 
 #include "audio/buffer.hpp"
+#include "audio/filter.hpp"
 #include "audio/frequency.hpp"
 #include "audio/interpolation.hpp"
 #include "audio/mapping.hpp"
