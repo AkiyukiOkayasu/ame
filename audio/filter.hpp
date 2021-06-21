@@ -11,6 +11,10 @@
 
 #include <atomic>
 
+/** 
+    Audio-EQ-Cookbook by Robert Bristow-Johnson implementation.
+    https://webaudio.github.io/Audio-EQ-Cookbook/audio-eq-cookbook.html
+*/
 namespace ame::IIR::BiQuad
 {
 /** BiQuadフィルターの係数群.
