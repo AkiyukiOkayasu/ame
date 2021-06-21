@@ -18,7 +18,6 @@ namespace ame::IIR::BiQuad
 */
 struct Coefficients
 {
-    float a0 = 0.0f;
     float a1 = 0.0f;
     float a2 = 0.0f;
     float b0 = 0.0f;
