@@ -1,5 +1,8 @@
 /** 
     Filter.
+    Audio-EQ-Cookbook by Robert Bristow-Johnson implementation.
+    https://webaudio.github.io/Audio-EQ-Cookbook/audio-eq-cookbook.html
+
     @file filter.hpp
     @author Akiyuki Okayasu (akiyuki.okayasu@gmail.com)
     @copyright Copyright (c) 2021 - Akiyuki Okayasu
@@ -11,11 +14,7 @@
 
 #include <atomic>
 
-/** 
-    Audio-EQ-Cookbook by Robert Bristow-Johnson implementation.
-    https://webaudio.github.io/Audio-EQ-Cookbook/audio-eq-cookbook.html
-*/
-namespace ame::IIR::BiQuad
+namespace ame::IIR::BiQuad //型定義
 {
 /** BiQuadフィルターの係数群.
     @todo atomicにするか検討
