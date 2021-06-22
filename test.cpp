@@ -102,3 +102,11 @@ TEST_CASE ("WaveTable")
         REQUIRE (ar[4] == Approx (0.0f).scale (1));
     }
 }
+
+///@todo 実装
+TEST_CASE ("Filter")
+{
+    SECTION ("Biquad")
+    {
+    }
+}
