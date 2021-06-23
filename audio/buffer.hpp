@@ -32,7 +32,7 @@ using AudioMonoBuffer = AudioBuffer<T, samples, 1>;
     @param numSamples 
     @param numChannels 
 */
-void interleaveSamples (const float** source, float* dest, const uint_fast32_t numSamples, const uint_fast32_t numChannels)
+inline void interleaveSamples (const float** source, float* dest, const uint_fast32_t numSamples, const uint_fast32_t numChannels)
 {
     for (uint_fast32_t chan = 0; chan < numChannels; ++chan)
     {
@@ -54,7 +54,7 @@ void interleaveSamples (const float** source, float* dest, const uint_fast32_t n
     @param numSamples 
     @param numChannels 
 */
-void deinterleaveSamples (const float* source, float** dest, const uint_fast32_t numSamples, const uint_fast32_t numChannels)
+inline void deinterleaveSamples (const float* source, float** dest, const uint_fast32_t numSamples, const uint_fast32_t numChannels)
 {
     for (uint_fast32_t chan = 0; chan < numChannels; ++chan)
     {

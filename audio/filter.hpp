@@ -36,14 +36,13 @@ struct Coefficients
 
 namespace ame::IIR::BiQuad //関数定義
 {
-/** 
-    Calculate LPF coefficients.
+/** Calculate LPF coefficients.
     @param cutoff Hz
     @param q 
     @param sampleRate 
     @return Coefficients 
 */
-Coefficients LPFCoef (const float cutoff, const float q, const float sampleRate)
+inline Coefficients LPFCoef (const float cutoff, const float q, const float sampleRate)
 {
     Coefficients c;
     const float w0 = twoPi * cutoff / sampleRate;
@@ -64,14 +63,13 @@ Coefficients LPFCoef (const float cutoff, const float q, const float sampleRate)
     return c;
 }
 
-/** 
-    Calculate HPF coefficients.
+/** Calculate HPF coefficients.
     @param cutoff Hz
     @param q 
     @param sampleRate 
     @return Coefficients 
 */
-Coefficients HPFCoef (const float cutoff, const float q, const float sampleRate)
+inline Coefficients HPFCoef (const float cutoff, const float q, const float sampleRate)
 {
     Coefficients c;
     const float w0 = twoPi * cutoff / sampleRate;
@@ -92,15 +90,14 @@ Coefficients HPFCoef (const float cutoff, const float q, const float sampleRate)
     return c;
 }
 
-/** 
-    Calculate BPF coefficients.
+/** Calculate BPF coefficients.
     Constant 0dB peak gain.
     @param cutoff Hz
     @param q 
     @param sampleRate 
     @return Coefficients 
 */
-Coefficients BPFCoef (const float cutoff, const float q, const float sampleRate)
+inline Coefficients BPFCoef (const float cutoff, const float q, const float sampleRate)
 {
     Coefficients c;
     const float w0 = twoPi * cutoff / sampleRate;
@@ -121,14 +118,13 @@ Coefficients BPFCoef (const float cutoff, const float q, const float sampleRate)
     return c;
 }
 
-/** 
-    Calculate notch coefficients.s
+/** Calculate notch coefficients
     @param cutoff 
     @param q 
     @param sampleRate 
     @return Coefficients 
 */
-Coefficients notchCoef (const float cutoff, const float q, const float sampleRate)
+inline Coefficients notchCoef (const float cutoff, const float q, const float sampleRate)
 {
     Coefficients c;
     const float w0 = twoPi * cutoff / sampleRate;
@@ -148,14 +144,14 @@ Coefficients notchCoef (const float cutoff, const float q, const float sampleRat
     c.a2 /= a0;
     return c;
 }
-/** 
-    Calculate APF coefficients.    
+
+/** Calculate APF coefficients.    
     @param cutoff Hz
     @param q 
     @param sampleRate 
     @return Coefficients 
 */
-Coefficients APFCoef (const float cutoff, const float q, const float sampleRate)
+inline Coefficients APFCoef (const float cutoff, const float q, const float sampleRate)
 {
     Coefficients c;
     const float w0 = twoPi * cutoff / sampleRate;
@@ -176,15 +172,14 @@ Coefficients APFCoef (const float cutoff, const float q, const float sampleRate)
     return c;
 }
 
-/** 
-    Calculate peak coefficients.    
+/** Calculate peak coefficients.    
     @param cutoff Hz
     @param q 
     @param sampleRate 
     @param dB
     @return Coefficients 
 */
-Coefficients peakCoef (const float cutoff, const float q, const float sampleRate, const float dB)
+inline Coefficients peakCoef (const float cutoff, const float q, const float sampleRate, const float dB)
 {
     Coefficients c;
     const float A = std::pow (10.0f, dB / 40.0f);
@@ -206,15 +201,14 @@ Coefficients peakCoef (const float cutoff, const float q, const float sampleRate
     return c;
 }
 
-/** 
-    Calculate LowShelf coefficients.    
+/** Calculate LowShelf coefficients.    
     @param cutoff Hz
     @param q 
     @param sampleRate 
     @param dB
     @return Coefficients 
 */
-Coefficients lowShelfCoef (const float cutoff, const float q, const float sampleRate, const float dB)
+inline Coefficients lowShelfCoef (const float cutoff, const float q, const float sampleRate, const float dB)
 {
     Coefficients c;
     const float A = std::pow (10.0f, dB / 40.0f);
@@ -236,15 +230,14 @@ Coefficients lowShelfCoef (const float cutoff, const float q, const float sample
     return c;
 }
 
-/** 
-    Calculate HighShelf coefficients.    
+/** Calculate HighShelf coefficients.    
     @param cutoff Hz
     @param q 
     @param sampleRate 
     @param dB
     @return Coefficients 
 */
-Coefficients highShelfCoef (const float cutoff, const float q, const float sampleRate, const float dB)
+inline Coefficients highShelfCoef (const float cutoff, const float q, const float sampleRate, const float dB)
 {
     Coefficients c;
     const float A = std::pow (10.0f, dB / 40.0f);
@@ -265,10 +258,9 @@ Coefficients highShelfCoef (const float cutoff, const float q, const float sampl
     c.a2 /= a0;
     return c;
 }
-
 } // namespace ame::IIR::BiQuad
 
-namespace ame::IIR::BiQuad
+namespace ame::IIR::BiQuad //クラス定義
 {
 template <size_t maximumChannels>
 class BiQuad
@@ -277,8 +269,7 @@ public:
     BiQuad() = default;
     ~BiQuad() = default;
 
-    /** 
-        Set BiQuad coefficients.
+    /** Set BiQuad coefficients.
         @param c 
         @see LPFcoef()
     */
