@@ -108,5 +108,27 @@ TEST_CASE ("Filter")
 {
     SECTION ("Biquad")
     {
+        constexpr int numChannels = 2;
+        constexpr int numSamples = 1000;
+        std::array<float, numChannels * numSamples> buffer {};
+        ame::AudioBlock block (buffer.data(), numSamples, numChannels); //Stereo
+        ame::IIR::BiQuad::BiQuad<numChannels> filter;
+
+        // LPF
+        filter.setCoefficients (ame::IIR::BiQuad::LPFCoef (100.0f, 0.71f, 44100.0f));
+        filter.process (block);
+        for (int i = 0; i < numSamples * numChannels; ++i)
+        {
+            REQUIRE (buffer[i] == Approx (0.0f));
+        }
+
+        // HPF for remove DC offset;
+        filter.setCoefficients (ame::IIR::BiQuad::HPFCoef (200.0f, 0.71f, 44100.0f));
+        buffer.fill (0.3f); //DC offset;
+        filter.process (block);
+        for (int i = 500; i < numSamples * numChannels; ++i)
+        {
+            REQUIRE (buffer[i] <= 0.01f);
+        }
     }
 }
