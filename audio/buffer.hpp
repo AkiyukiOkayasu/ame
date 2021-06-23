@@ -68,4 +68,58 @@ void deinterleaveSamples (const float* source, float** dest, const uint_fast32_t
         }
     }
 }
+
+/** 
+    Audio buffer pointer holder.
+*/
+class AudioBlock
+{
+public:
+    /** Constructor.
+        @param buffer Interleaved samples
+        @param numSamples 
+        @param numChannels 
+    */
+    AudioBlock (float* buffer, const uint_fast32_t numSamples, const uint_fast32_t numChannels) noexcept
+        : buffer (buffer),
+          numSamples (numSamples),
+          numChannels (numChannels)
+    {
+    }
+    ~AudioBlock() = default;
+
+    /** 
+        Get readable buffer.
+        @return const float* interleaved samples
+    */
+    const float* getReadPointer() noexcept
+    {
+        return buffer;
+    }
+
+    /** 
+        Get writable buffer.
+        @return float* interleaved samples
+    */
+    float* getWritePointer() noexcept
+    {
+        return buffer;
+    }
+
+    uint_fast32_t getNumSamples() noexcept
+    {
+        return numSamples;
+    }
+
+    uint_fast32_t getNumChannels() noexcept
+    {
+        return numChannels;
+    }
+    ///@todo interleaveとchannel arrayのうまいやりとり追加検討
+
+private:
+    float* buffer;
+    uint_fast32_t numSamples;
+    uint_fast32_t numChannels;
+};
 } // namespace ame

@@ -265,3 +265,4 @@ Coefficients highShelfCoef (const float cutoff, const float q, const float sampl
 }
 
 } // namespace ame::IIR::BiQuad
+} // namespace ame::IIR::BiQuad
