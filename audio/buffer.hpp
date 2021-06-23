@@ -92,7 +92,7 @@ public:
         Get readable buffer.
         @return const float* interleaved samples
     */
-    const float* getReadPointer() noexcept
+    const float* getReadPointer() const noexcept
     {
         return buffer;
     }
@@ -106,12 +106,12 @@ public:
         return buffer;
     }
 
-    uint_fast32_t getNumSamples() noexcept
+    uint_fast32_t getNumSamples() const noexcept
     {
         return numSamples;
     }
 
-    uint_fast32_t getNumChannels() noexcept
+    uint_fast32_t getNumChannels() const noexcept
     {
         return numChannels;
     }
