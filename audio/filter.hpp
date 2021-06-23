@@ -13,7 +13,9 @@
 #pragma once
 
 #include "../math/constants.hpp"
+#include "buffer.hpp"
 
+#include <array>
 #include <atomic>
 #include <cmath>
 
@@ -265,4 +267,53 @@ Coefficients highShelfCoef (const float cutoff, const float q, const float sampl
 }
 
 } // namespace ame::IIR::BiQuad
+
+namespace ame::IIR::BiQuad
+{
+template <size_t maximumChannels>
+class BiQuad
+{
+public:
+    BiQuad() = default;
+    ~BiQuad() = default;
+
+    /** 
+        Set BiQuad coefficients.
+        @param c 
+        @see LPFcoef()
+    */
+    void setCoefficients (const Coefficients& c)
+    {
+        coef = c;
+    }
+
+    void process (AudioBlock& block)
+    {
+        assert (block.getNumChannels() <= maximumChannels);
+
+        auto buffer = block.getWritePointer();
+        uint_fast32_t i = 0;
+        for (uint_fast32_t samp = 0; samp < block.getNumSamples(); ++samp)
+        {
+            for (uint_fast32_t ch = 0; ch < block.getNumChannels(); ++ch)
+            {
+                const float input = buffer[i];
+                const float output = coef.b0 * input + coef.b1 * x1[ch] + coef.b2 * x2[ch] - coef.a1 * y1[ch] - coef.a2 * y2[ch];
+                x2[ch] = x1[ch];
+                x1[ch] = input;
+                y2[ch] = y1[ch];
+                y1[ch] = output;
+                buffer[i] = output;
+                ++i;
+            }
+        }
+    }
+
+private:
+    Coefficients coef {};
+    std::array<float, maximumChannels> x1 {}; ///< [x-1] last input
+    std::array<float, maximumChannels> x2 {}; ///< [x-2] second last input
+    std::array<float, maximumChannels> y1 {}; ///< [y-1] last output
+    std::array<float, maximumChannels> y2 {}; ///< [y-2] second last output
+};
 } // namespace ame::IIR::BiQuad
