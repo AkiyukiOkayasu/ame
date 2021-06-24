@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['gaintodecibels_19',['gainToDecibels',['../volume_8hpp.html#a436f4dee126a9ae49c51e849f7905df8',1,'ame']]],
-  ['getnumchannels_20',['getNumChannels',['../classame_1_1_audio_block.html#acadee93c1023bc8acf9461c63924390c',1,'ame::AudioBlock']]],
-  ['getnumsamples_21',['getNumSamples',['../classame_1_1_audio_block.html#aaac8d907e11a937ae77c77ca9d171b14',1,'ame::AudioBlock']]],
-  ['getreadpointer_22',['getReadPointer',['../classame_1_1_audio_block.html#a0f070be9944c4ee23b482abd5bc6e2ec',1,'ame::AudioBlock']]],
-  ['getwritepointer_23',['getWritePointer',['../classame_1_1_audio_block.html#afdcda839ae2f59d71c76ba01aeea12f6',1,'ame::AudioBlock']]]
+  ['filter_2ehpp_16',['filter.hpp',['../filter_8hpp.html',1,'']]],
+  ['freqtomidi_17',['freqToMidi',['../frequency_8hpp.html#a7f69dfed319a8a702a445d1880cbe9f8',1,'ame']]],
+  ['freqtoperiod_18',['freqToPeriod',['../frequency_8hpp.html#aa31fd9c4839dd2a12db428f44832b0aa',1,'ame']]],
+  ['frequency_2ehpp_19',['frequency.hpp',['../frequency_8hpp.html',1,'']]]
 ];

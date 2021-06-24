@@ -105,13 +105,14 @@ $(document).ready(function(){initNavTree('phase_8hpp_source.html',''); initResiz
 <div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="phase_8hpp.html#a10eba5dc5108d4a9c2d0f52193925c0e">   21</a></span>&#160;constexpr <span class="keywordtype">float</span> <a class="code" href="phase_8hpp.html#a10eba5dc5108d4a9c2d0f52193925c0e">addModulo2Pi</a> (<span class="keywordtype">float</span> phase, <span class="keyword">const</span> <span class="keywordtype">float</span> increment) noexcept</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    phase += increment;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">while</span> (phase &gt; twoPi)</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">while</span> (phase &gt; <a class="code" href="constants_8hpp.html#ac75fe0229f8e610a324d8baf2ada26fb">twoPi</a>)</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    {</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        phase -= twoPi;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        phase -= <a class="code" href="constants_8hpp.html#ac75fe0229f8e610a324d8baf2ada26fb">twoPi</a>;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    }</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">return</span> phase;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;} <span class="comment">// namespace ame</span></div>
+<div class="ttc" id="aconstants_8hpp_html_ac75fe0229f8e610a324d8baf2ada26fb"><div class="ttname"><a href="constants_8hpp.html#ac75fe0229f8e610a324d8baf2ada26fb">ame::twoPi</a></div><div class="ttdeci">constexpr float twoPi</div><div class="ttdoc">2π</div><div class="ttdef"><b>Definition:</b> constants.hpp:15</div></div>
 <div class="ttc" id="aphase_8hpp_html_a10eba5dc5108d4a9c2d0f52193925c0e"><div class="ttname"><a href="phase_8hpp.html#a10eba5dc5108d4a9c2d0f52193925c0e">ame::addModulo2Pi</a></div><div class="ttdeci">constexpr float addModulo2Pi(float phase, const float increment) noexcept</div><div class="ttdoc">Increment the phase and returns in the range of 0~2pi.</div><div class="ttdef"><b>Definition:</b> phase.hpp:21</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

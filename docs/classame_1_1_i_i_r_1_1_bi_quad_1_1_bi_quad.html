@@ -98,17 +98,28 @@ $(document).ready(function(){initNavTree('classame_1_1_i_i_r_1_1_bi_quad_1_1_bi_
 <div class="title">ame::IIR::BiQuad::BiQuad&lt; maximumChannels &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><a class="el" href="classame_1_1_i_i_r_1_1_bi_quad_1_1_bi_quad.html" title="BiQuad filter.">BiQuad</a> filter.  
+ <a href="classame_1_1_i_i_r_1_1_bi_quad_1_1_bi_quad.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="filter_8hpp_source.html">filter.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ace94540bdbb01a97988ad36d65253867"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_i_i_r_1_1_bi_quad_1_1_bi_quad.html#ace94540bdbb01a97988ad36d65253867">setCoefficients</a> (const <a class="el" href="structame_1_1_i_i_r_1_1_bi_quad_1_1_coefficients.html">Coefficients</a> &amp;c)</td></tr>
-<tr class="memdesc:ace94540bdbb01a97988ad36d65253867"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set <a class="el" href="classame_1_1_i_i_r_1_1_bi_quad_1_1_bi_quad.html">BiQuad</a> coefficients.  <a href="classame_1_1_i_i_r_1_1_bi_quad_1_1_bi_quad.html#ace94540bdbb01a97988ad36d65253867">More...</a><br /></td></tr>
+<tr class="memdesc:ace94540bdbb01a97988ad36d65253867"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set <a class="el" href="classame_1_1_i_i_r_1_1_bi_quad_1_1_bi_quad.html" title="BiQuad filter.">BiQuad</a> coefficients.  <a href="classame_1_1_i_i_r_1_1_bi_quad_1_1_bi_quad.html#ace94540bdbb01a97988ad36d65253867">More...</a><br /></td></tr>
 <tr class="separator:ace94540bdbb01a97988ad36d65253867"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab50c1f6462ceaf06c3d654bac7eb240d"><td class="memItemLeft" align="right" valign="top"><a id="ab50c1f6462ceaf06c3d654bac7eb240d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>process</b> (<a class="el" href="classame_1_1_audio_block.html">AudioBlock</a> &amp;block)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_i_i_r_1_1_bi_quad_1_1_bi_quad.html#ab50c1f6462ceaf06c3d654bac7eb240d">process</a> (<a class="el" href="classame_1_1_audio_block.html">AudioBlock</a> &amp;block)</td></tr>
+<tr class="memdesc:ab50c1f6462ceaf06c3d654bac7eb240d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Process audio effect. <br /></td></tr>
 <tr class="separator:ab50c1f6462ceaf06c3d654bac7eb240d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><h3>template&lt;size_t maximumChannels&gt;<br />
+class ame::IIR::BiQuad::BiQuad&lt; maximumChannels &gt;</h3>
+
+<p><a class="el" href="classame_1_1_i_i_r_1_1_bi_quad_1_1_bi_quad.html" title="BiQuad filter.">BiQuad</a> filter. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ace94540bdbb01a97988ad36d65253867"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ace94540bdbb01a97988ad36d65253867">&#9670;&nbsp;</a></span>setCoefficients()</h2>
 
@@ -135,14 +146,17 @@ template&lt;size_t maximumChannels&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Set <a class="el" href="classame_1_1_i_i_r_1_1_bi_quad_1_1_bi_quad.html">BiQuad</a> coefficients. </p>
+<p>Set <a class="el" href="classame_1_1_i_i_r_1_1_bi_quad_1_1_bi_quad.html" title="BiQuad filter.">BiQuad</a> coefficients. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">c</td><td></td></tr>
+    <tr><td class="paramname">c</td><td><a class="el" href="classame_1_1_i_i_r_1_1_bi_quad_1_1_bi_quad.html" title="BiQuad filter.">BiQuad</a> coefficients </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="filter_8hpp.html#a98598c0335d29c69b885b68cbd6dc8de" title="Calculate LPF coefficients.">ame::IIR::BiQuad::LPFCoef()</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="filter_8hpp.html#a0ac831ace2e75460548c0f71deeff876" title="Calculate LPF coefficients.">ame::IIR::BiQuad::makeLowPass()</a> <div class="fragment"><div class="line">filter.setCoefficients(<a class="code" href="filter_8hpp.html#a0ac831ace2e75460548c0f71deeff876">makeLowPass</a>(48000.0f, 440.0f, 0.707f));</div>
+<div class="ttc" id="afilter_8hpp_html_a0ac831ace2e75460548c0f71deeff876"><div class="ttname"><a href="filter_8hpp.html#a0ac831ace2e75460548c0f71deeff876">ame::IIR::BiQuad::makeLowPass</a></div><div class="ttdeci">constexpr Coefficients makeLowPass(const float sampleRate, const float cutOffFrequency, const float Q=sqrt1_2) noexcept</div><div class="ttdoc">Calculate LPF coefficients.</div><div class="ttdef"><b>Definition:</b> filter.hpp:47</div></div>
+</div><!-- fragment --><br  />
+ </dd></dl>
 
 </div>
 </div>
