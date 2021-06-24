@@ -119,7 +119,7 @@ inline Coefficients BPFCoef (const float cutoff, const float q, const float samp
 }
 
 /** Calculate notch coefficients
-    @param cutoff 
+    @param cutoff Frequency in Hz
     @param q 
     @param sampleRate 
     @return Coefficients 
@@ -145,8 +145,8 @@ inline Coefficients notchCoef (const float cutoff, const float q, const float sa
     return c;
 }
 
-/** Calculate APF coefficients.    
-    @param cutoff Hz
+/** Returns the coefficients for a all-pass filter.
+    @param cutoff Frequency in Hz
     @param q 
     @param sampleRate 
     @return Coefficients 

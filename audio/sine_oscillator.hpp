@@ -16,9 +16,7 @@
 
 namespace ame
 {
-/** 
-    Sine wave oscillator
-
+/** Sine wave oscillator.
     Generates a sine between -1.0~1.0.
 */
 class SineOscillator

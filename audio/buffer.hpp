@@ -32,9 +32,10 @@ class AudioBlock
 {
 public:
     /** Constructor.
-        @param buffer Interleaved samples
-        @param numSamples 
-        @param numChannels 
+        @param buffer Interleaved audio buffer.
+        @param numSamples the number of samples in each of the buffer's channels.
+        @param numChannels the number of channels.
+        @attention The order of ame's audio buffers is interleaved. Note that it is NOT channel-splitting.
     */
     AudioBlock (float* buffer, const uint_fast32_t numSamples, const uint_fast32_t numChannels) noexcept
         : buffer (buffer),
@@ -44,8 +45,7 @@ public:
     }
     ~AudioBlock() = default;
 
-    /** 
-        Get readable buffer.
+    /** Returns a read only pointer to interleaved audio buffer.
         @return const float* interleaved samples
     */
     const float* getReadPointer() const noexcept
@@ -53,25 +53,29 @@ public:
         return buffer;
     }
 
-    /** 
-        Get writable buffer.
-        @return float* interleaved samples
+    /** Returns a writeable pointer to interleaved audio buffer.
+        @return float* interleaved audio buffer
     */
     float* getWritePointer() noexcept
     {
         return buffer;
     }
 
+    /** Returns the number of samples allocated in each of the buffer's channels.
+        @return uint_fast32_t 
+    */
     uint_fast32_t getNumSamples() const noexcept
     {
         return numSamples;
     }
 
+    /** Returns the numner of channels of audio data that this buffer contains.
+        @return uint_fast32_t 
+    */
     uint_fast32_t getNumChannels() const noexcept
     {
         return numChannels;
     }
-    ///@todo interleaveとchannel arrayのうまいやりとり追加検討
 
 private:
     float* buffer;
