@@ -271,7 +271,7 @@ public:
 
     /** Set BiQuad coefficients.
         @param c 
-        @see LPFcoef()
+        @see ame::IIR::BiQuad::LPFCoef()
     */
     void setCoefficients (const Coefficients& c)
     {
