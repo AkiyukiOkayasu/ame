@@ -151,7 +151,7 @@ inline Coefficients notchCoef (const float cutoff, const float q, const float sa
     @param sampleRate 
     @return Coefficients 
 */
-inline Coefficients APFCoef (const float cutoff, const float q, const float sampleRate)
+inline Coefficients makeAllPass (const float cutoff, const float q, const float sampleRate)
 {
     Coefficients c;
     const float w0 = twoPi * cutoff / sampleRate;
