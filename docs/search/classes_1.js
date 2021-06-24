@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['midi_43',['MIDI',['../classame_1_1_m_i_d_i.html',1,'ame']]]
+  ['biquad_64',['BiQuad',['../classame_1_1_i_i_r_1_1_bi_quad_1_1_bi_quad.html',1,'ame::IIR::BiQuad']]]
 ];

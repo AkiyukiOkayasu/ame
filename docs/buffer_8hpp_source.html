@@ -113,7 +113,50 @@ $(document).ready(function(){initNavTree('buffer_8hpp_source.html',''); initResi
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// 使用例：AudioBuffer&lt;int16_t, 512&gt; 512samples</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keywordtype">size_t</span> samples&gt;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">using</span> AudioMonoBuffer = AudioBuffer&lt;T, samples, 1&gt;;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;} <span class="comment">// namespace ame</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classame_1_1_audio_block.html">   31</a></span>&#160;<span class="keyword">class </span><a class="code" href="classame_1_1_audio_block.html">AudioBlock</a></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classame_1_1_audio_block.html#aa65fc7b57493008420a950ba7eb19106">   40</a></span>&#160;    <a class="code" href="classame_1_1_audio_block.html#aa65fc7b57493008420a950ba7eb19106">AudioBlock</a> (<span class="keywordtype">float</span>* buffer, <span class="keyword">const</span> uint_fast32_t numSamples, <span class="keyword">const</span> uint_fast32_t numChannels) noexcept</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        : buffer (buffer),</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;          numSamples (numSamples),</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;          numChannels (numChannels)</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    ~<a class="code" href="classame_1_1_audio_block.html">AudioBlock</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classame_1_1_audio_block.html#a0f070be9944c4ee23b482abd5bc6e2ec">   51</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">float</span>* <a class="code" href="classame_1_1_audio_block.html#a0f070be9944c4ee23b482abd5bc6e2ec">getReadPointer</a>() const noexcept</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordflow">return</span> buffer;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="classame_1_1_audio_block.html#afdcda839ae2f59d71c76ba01aeea12f6">   59</a></span>&#160;    <span class="keywordtype">float</span>* <a class="code" href="classame_1_1_audio_block.html#afdcda839ae2f59d71c76ba01aeea12f6">getWritePointer</a>() noexcept</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">return</span> buffer;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="classame_1_1_audio_block.html#aaac8d907e11a937ae77c77ca9d171b14">   67</a></span>&#160;    uint_fast32_t <a class="code" href="classame_1_1_audio_block.html#aaac8d907e11a937ae77c77ca9d171b14">getNumSamples</a>() const noexcept</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordflow">return</span> numSamples;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="classame_1_1_audio_block.html#acadee93c1023bc8acf9461c63924390c">   75</a></span>&#160;    uint_fast32_t <a class="code" href="classame_1_1_audio_block.html#acadee93c1023bc8acf9461c63924390c">getNumChannels</a>() const noexcept</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">return</span> numChannels;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordtype">float</span>* buffer;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    uint_fast32_t numSamples;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    uint_fast32_t numChannels;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;};</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;} <span class="comment">// namespace ame</span></div>
+<div class="ttc" id="aclassame_1_1_audio_block_html"><div class="ttname"><a href="classame_1_1_audio_block.html">ame::AudioBlock</a></div><div class="ttdoc">Audio buffer pointer holder.</div><div class="ttdef"><b>Definition:</b> buffer.hpp:32</div></div>
+<div class="ttc" id="aclassame_1_1_audio_block_html_a0f070be9944c4ee23b482abd5bc6e2ec"><div class="ttname"><a href="classame_1_1_audio_block.html#a0f070be9944c4ee23b482abd5bc6e2ec">ame::AudioBlock::getReadPointer</a></div><div class="ttdeci">const float * getReadPointer() const noexcept</div><div class="ttdoc">Returns a read only pointer to interleaved audio buffer.</div><div class="ttdef"><b>Definition:</b> buffer.hpp:51</div></div>
+<div class="ttc" id="aclassame_1_1_audio_block_html_aa65fc7b57493008420a950ba7eb19106"><div class="ttname"><a href="classame_1_1_audio_block.html#aa65fc7b57493008420a950ba7eb19106">ame::AudioBlock::AudioBlock</a></div><div class="ttdeci">AudioBlock(float *buffer, const uint_fast32_t numSamples, const uint_fast32_t numChannels) noexcept</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition:</b> buffer.hpp:40</div></div>
+<div class="ttc" id="aclassame_1_1_audio_block_html_aaac8d907e11a937ae77c77ca9d171b14"><div class="ttname"><a href="classame_1_1_audio_block.html#aaac8d907e11a937ae77c77ca9d171b14">ame::AudioBlock::getNumSamples</a></div><div class="ttdeci">uint_fast32_t getNumSamples() const noexcept</div><div class="ttdoc">Returns the number of samples allocated in each of the buffer's channels.</div><div class="ttdef"><b>Definition:</b> buffer.hpp:67</div></div>
+<div class="ttc" id="aclassame_1_1_audio_block_html_acadee93c1023bc8acf9461c63924390c"><div class="ttname"><a href="classame_1_1_audio_block.html#acadee93c1023bc8acf9461c63924390c">ame::AudioBlock::getNumChannels</a></div><div class="ttdeci">uint_fast32_t getNumChannels() const noexcept</div><div class="ttdoc">Returns the numner of channels of audio data that this buffer contains.</div><div class="ttdef"><b>Definition:</b> buffer.hpp:75</div></div>
+<div class="ttc" id="aclassame_1_1_audio_block_html_afdcda839ae2f59d71c76ba01aeea12f6"><div class="ttname"><a href="classame_1_1_audio_block.html#afdcda839ae2f59d71c76ba01aeea12f6">ame::AudioBlock::getWritePointer</a></div><div class="ttdeci">float * getWritePointer() noexcept</div><div class="ttdoc">Returns a writeable pointer to interleaved audio buffer.</div><div class="ttdef"><b>Definition:</b> buffer.hpp:59</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

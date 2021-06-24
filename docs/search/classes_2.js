@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['sineoscillator_44',['SineOscillator',['../classame_1_1_sine_oscillator.html',1,'ame']]],
-  ['slide_45',['Slide',['../classame_1_1_slide.html',1,'ame']]]
+  ['coefficients_65',['Coefficients',['../structame_1_1_i_i_r_1_1_bi_quad_1_1_coefficients.html',1,'ame::IIR::BiQuad']]]
 ];

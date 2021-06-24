@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['interpolation_2ehpp_11',['interpolation.hpp',['../interpolation_8hpp.html',1,'']]]
+  ['highshelfcoef_24',['highShelfCoef',['../filter_8hpp.html#a87107c3b8d70c6ac3af3f65d7cc2a145',1,'ame::IIR::BiQuad']]],
+  ['hpfcoef_25',['HPFCoef',['../filter_8hpp.html#ad4bc72123b7564c1abe462eb3230a245',1,'ame::IIR::BiQuad']]]
 ];

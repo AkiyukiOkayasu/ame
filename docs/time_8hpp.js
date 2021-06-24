@@ -6,7 +6,7 @@ var time_8hpp =
       [ "N1_TRIPLET", "time_8hpp.html#a7585c74ea4475a4b0750597223e0410daf5c49a45ac3e1161afe51b5a838615b4", null ],
       [ "N2_DOT", "time_8hpp.html#a7585c74ea4475a4b0750597223e0410da29f874f19d2ef4b2f1c6712ccd81d08b", null ],
       [ "N2", "time_8hpp.html#a7585c74ea4475a4b0750597223e0410dac74b82067996a9bc955560b9356f904c", null ],
-      [ "N4_TRIPLET", "time_8hpp.html#a7585c74ea4475a4b0750597223e0410dac96064e453d5cb95e479d5c3fc9adcb7", null ],
+      [ "N2_TRIPLET", "time_8hpp.html#a7585c74ea4475a4b0750597223e0410da86cedae16b23075cb0ab9ef930572238", null ],
       [ "N4_DOT", "time_8hpp.html#a7585c74ea4475a4b0750597223e0410da313b6fc04569fa19fc96bf72dca11c48", null ],
       [ "N4", "time_8hpp.html#a7585c74ea4475a4b0750597223e0410dab1c49f839832f51f6d687a04db101d4c", null ],
       [ "N4_TRIPLET", "time_8hpp.html#a7585c74ea4475a4b0750597223e0410dac96064e453d5cb95e479d5c3fc9adcb7", null ],

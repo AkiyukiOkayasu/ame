@@ -110,16 +110,25 @@ Include dependency graph for volume.hpp:</div>
 <area shape="rect" title=" " alt="" coords="38,80,97,107"/>
 </map>
 </div>
+</div><div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><img src="volume_8hpp__dep__incl.png" border="0" usemap="#aaudio_2volume_8hppdep" alt=""/></div>
+<map name="aaudio_2volume_8hppdep" id="aaudio_2volume_8hppdep">
+<area shape="rect" title="Volume (dB, gain) related conversions." alt="" coords="5,5,131,32"/>
+<area shape="rect" href="ame_8hpp.html" title="main header file." alt="" coords="31,80,104,107"/>
+</map>
+</div>
 </div>
 <p><a href="volume_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a68600bacc59752dc4a82bcac388dfde5"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="volume_8hpp.html#a68600bacc59752dc4a82bcac388dfde5">ame::dBToGain</a> (const float dB) noexcept</td></tr>
-<tr class="memdesc:a68600bacc59752dc4a82bcac388dfde5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert dB to amplitude.  <a href="volume_8hpp.html#a68600bacc59752dc4a82bcac388dfde5">More...</a><br /></td></tr>
-<tr class="separator:a68600bacc59752dc4a82bcac388dfde5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae50044432f13ab0bd9b0b284b5431652"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="volume_8hpp.html#ae50044432f13ab0bd9b0b284b5431652">ame::decibelsToGain</a> (const float dB) noexcept</td></tr>
+<tr class="memdesc:ae50044432f13ab0bd9b0b284b5431652"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a dBFS value to to its equivalent gain level.  <a href="volume_8hpp.html#ae50044432f13ab0bd9b0b284b5431652">More...</a><br /></td></tr>
+<tr class="separator:ae50044432f13ab0bd9b0b284b5431652"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a436f4dee126a9ae49c51e849f7905df8"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="volume_8hpp.html#a436f4dee126a9ae49c51e849f7905df8">ame::gainToDecibels</a> (const float gain) noexcept</td></tr>
-<tr class="memdesc:a436f4dee126a9ae49c51e849f7905df8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert amplitude to dB.  <a href="volume_8hpp.html#a436f4dee126a9ae49c51e849f7905df8">More...</a><br /></td></tr>
+<tr class="memdesc:a436f4dee126a9ae49c51e849f7905df8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a gain level into a dBFS value.  <a href="volume_8hpp.html#a436f4dee126a9ae49c51e849f7905df8">More...</a><br /></td></tr>
 <tr class="separator:a436f4dee126a9ae49c51e849f7905df8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -129,8 +138,8 @@ Functions</h2></td></tr>
 </dd></dl>
 <p>AME is released under the MIT license. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a68600bacc59752dc4a82bcac388dfde5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a68600bacc59752dc4a82bcac388dfde5">&#9670;&nbsp;</a></span>dBToGain()</h2>
+<a id="ae50044432f13ab0bd9b0b284b5431652"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae50044432f13ab0bd9b0b284b5431652">&#9670;&nbsp;</a></span>decibelsToGain()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -139,7 +148,7 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr float ame::dBToGain </td>
+          <td class="memname">constexpr float ame::decibelsToGain </td>
           <td>(</td>
           <td class="paramtype">const float&#160;</td>
           <td class="paramname"><em>dB</em></td><td>)</td>
@@ -153,7 +162,7 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Convert dB to amplitude. </p>
+<p>Convert a dBFS value to to its equivalent gain level. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">dB</td><td>decibels value </td></tr>
@@ -161,7 +170,10 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>amplitude [0, 1] </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>Outputs 0 if the input is less than -100dB. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Outputs 0 if the input is less than -100dB. <div class="fragment"><div class="line"><a class="code" href="volume_8hpp.html#ae50044432f13ab0bd9b0b284b5431652">decibelsToGain</a> (0.0f); <span class="comment">// 1.0f</span></div>
+<div class="line"><a class="code" href="volume_8hpp.html#ae50044432f13ab0bd9b0b284b5431652">decibelsToGain</a> (-20.0f); <span class="comment">// 0.1f</span></div>
+<div class="ttc" id="avolume_8hpp_html_ae50044432f13ab0bd9b0b284b5431652"><div class="ttname"><a href="volume_8hpp.html#ae50044432f13ab0bd9b0b284b5431652">ame::decibelsToGain</a></div><div class="ttdeci">constexpr float decibelsToGain(const float dB) noexcept</div><div class="ttdoc">Convert a dBFS value to to its equivalent gain level.</div><div class="ttdef"><b>Definition:</b> volume.hpp:25</div></div>
+</div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
@@ -189,7 +201,7 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Convert amplitude to dB. </p>
+<p>Convert a gain level into a dBFS value. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">gain</td><td></td></tr>
@@ -197,7 +209,10 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>dB decibels value </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>Outputs Outputs -100dB if the input is less than 0.00001. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Outputs Outputs -100dB if the input is less than 0.00001. <div class="fragment"><div class="line"><a class="code" href="volume_8hpp.html#a436f4dee126a9ae49c51e849f7905df8">gainToDecibels</a> (1.0f); <span class="comment">// 0.0f</span></div>
+<div class="line"><a class="code" href="volume_8hpp.html#a436f4dee126a9ae49c51e849f7905df8">gainToDecibels</a> (0.1f); <span class="comment">// -20.0f</span></div>
+<div class="ttc" id="avolume_8hpp_html_a436f4dee126a9ae49c51e849f7905df8"><div class="ttname"><a href="volume_8hpp.html#a436f4dee126a9ae49c51e849f7905df8">ame::gainToDecibels</a></div><div class="ttdeci">constexpr float gainToDecibels(const float gain) noexcept</div><div class="ttdoc">Convert a gain level into a dBFS value.</div><div class="ttdef"><b>Definition:</b> volume.hpp:41</div></div>
+</div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
