@@ -103,7 +103,6 @@ TEST_CASE ("WaveTable")
     }
 }
 
-///@todo 実装
 TEST_CASE ("Filter")
 {
     SECTION ("Biquad")
