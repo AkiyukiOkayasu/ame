@@ -2,12 +2,12 @@ var filter_8hpp =
 [
     [ "Coefficients", "structame_1_1_i_i_r_1_1_bi_quad_1_1_coefficients.html", "structame_1_1_i_i_r_1_1_bi_quad_1_1_coefficients" ],
     [ "BiQuad", "classame_1_1_i_i_r_1_1_bi_quad_1_1_bi_quad.html", "classame_1_1_i_i_r_1_1_bi_quad_1_1_bi_quad" ],
-    [ "BPFCoef", "filter_8hpp.html#a374039bae6da1b7da4115a3976ef5f56", null ],
-    [ "makeAllPass", "filter_8hpp.html#a0f803d0e11b43805f4d9cc0e69b9c926", null ],
-    [ "makeHighPass", "filter_8hpp.html#abebdecf8039baffae342f3b2b5267051", null ],
-    [ "makeHighShelf", "filter_8hpp.html#a8d5ff3ab71bbcf6ee1fbd04f16dee389", null ],
-    [ "makeLowPass", "filter_8hpp.html#a0ac831ace2e75460548c0f71deeff876", null ],
-    [ "makeLowShelf", "filter_8hpp.html#a513310ee164568bfeac46bb01be52d91", null ],
-    [ "makePeakFilter", "filter_8hpp.html#a8ea0d61296ce42b749bdc0b9e008333c", null ],
-    [ "notchCoef", "filter_8hpp.html#a05d954ba577285f1d80e0aa087e78c55", null ]
+    [ "makeAllPass", "filter_8hpp.html#a90eb839c519879995e4c864c9f5e980d", null ],
+    [ "makeBandPass", "filter_8hpp.html#a8546dd10ec2782ff4e4618e6a4ee3fcd", null ],
+    [ "makeHighPass", "filter_8hpp.html#a762b6dbf2ba9e4a9aafd6934b84f4089", null ],
+    [ "makeHighShelf", "filter_8hpp.html#a3770170d657e6cec0594dca919b3e1c7", null ],
+    [ "makeLowPass", "filter_8hpp.html#af15d5580435d8677f1d876989ddd2fbe", null ],
+    [ "makeLowShelf", "filter_8hpp.html#ae4087b6478e5436f165e28bbcfe9e827", null ],
+    [ "makeNotch", "filter_8hpp.html#a5561fa3e8f3d74c5ec04d14905d254eb", null ],
+    [ "makePeakFilter", "filter_8hpp.html#aa37d7807eb45680ca831c250a4018d35", null ]
 ];
