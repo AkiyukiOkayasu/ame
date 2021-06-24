@@ -10,12 +10,12 @@
 #pragma once
 
 #include "audio/buffer.hpp"
+#include "audio/conversion.hpp"
 #include "audio/filter.hpp"
 #include "audio/frequency.hpp"
 #include "audio/interpolation.hpp"
 #include "audio/mapping.hpp"
 #include "audio/phase.hpp"
-#include "audio/q23_float_conversion.hpp"
 #include "audio/sine_oscillator.hpp"
 #include "audio/smoothing.hpp"
 #include "audio/time.hpp"
