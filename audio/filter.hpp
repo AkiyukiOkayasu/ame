@@ -36,15 +36,8 @@ struct Coefficients
 
 namespace ame::IIR::BiQuad //関数定義
 {
-/** Calculate LPF coefficients.
-    @param cutOffFrequency Hz
-    @param q 
-    @param sampleRate 
-    @return Coefficients 
-*/
-
 /// Returns the coefficients for a low-pass filter with variable Q.
-inline Coefficients makeLowPass (const float sampleRate, const float cutOffFrequency, const float Q = sqrt1_2) noexcept
+inline Coefficients makeLowPass (const float sampleRate, const float cutOffFrequency, const float Q) noexcept
 {
     Coefficients c;
     const float w0 = twoPi * cutOffFrequency / sampleRate;
@@ -66,7 +59,7 @@ inline Coefficients makeLowPass (const float sampleRate, const float cutOffFrequ
 }
 
 /// Returns the coefficients for a high-pass filter with variable Q.
-inline Coefficients makeHighPass (const float sampleRate, const float cutOffFrequency, const float Q = sqrt1_2) noexcept
+inline Coefficients makeHighPass (const float sampleRate, const float cutOffFrequency, const float Q) noexcept
 {
     Coefficients c;
     const float w0 = twoPi * cutOffFrequency / sampleRate;
@@ -88,7 +81,7 @@ inline Coefficients makeHighPass (const float sampleRate, const float cutOffFreq
 }
 
 /// Returns the coefficients for a band-pass filter with variable Q.
-inline Coefficients makeBandPass (const float sampleRate, const float cutOffFrequency, const float Q = sqrt1_2) noexcept
+inline Coefficients makeBandPass (const float sampleRate, const float cutOffFrequency, const float Q) noexcept
 {
     Coefficients c;
     const float w0 = twoPi * cutOffFrequency / sampleRate;
@@ -110,7 +103,7 @@ inline Coefficients makeBandPass (const float sampleRate, const float cutOffFreq
 }
 
 /// Returns the coefficients for a notch filter with variable Q.
-inline Coefficients makeNotch (const float sampleRate, const float cutOffFrequency, const float Q = sqrt1_2) noexcept
+inline Coefficients makeNotch (const float sampleRate, const float cutOffFrequency, const float Q) noexcept
 {
     Coefficients c;
     const float w0 = twoPi * cutOffFrequency / sampleRate;
@@ -132,7 +125,7 @@ inline Coefficients makeNotch (const float sampleRate, const float cutOffFrequen
 }
 
 /// Returns the coefficients for a all-pass filter with variable Q.
-inline Coefficients makeAllPass (const float sampleRate, const float cutOffFrequency, const float Q = sqrt1_2) noexcept
+inline Coefficients makeAllPass (const float sampleRate, const float cutOffFrequency, const float Q) noexcept
 {
     Coefficients c;
     const float w0 = twoPi * cutOffFrequency / sampleRate;
