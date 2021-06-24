@@ -26,50 +26,6 @@ template <typename T, size_t samples>
 using AudioMonoBuffer = AudioBuffer<T, samples, 1>;
 
 /** 
-    Split channel→Interleave convertion.
-    @param source Split channel samples
-    @param dest Interleave array
-    @param numSamples 
-    @param numChannels 
-*/
-inline void interleaveSamples (const float** source, float* dest, const uint_fast32_t numSamples, const uint_fast32_t numChannels)
-{
-    for (uint_fast32_t chan = 0; chan < numChannels; ++chan)
-    {
-        auto i = chan;
-        auto src = source[chan];
-
-        for (uint_fast32_t j = 0; j < numSamples; ++j)
-        {
-            dest[i] = src[j];
-            i += numChannels;
-        }
-    }
-}
-
-/** 
-    Interleave→Split channel convertion.
-    @param source Interleave samples
-    @param dest Split channel array
-    @param numSamples 
-    @param numChannels 
-*/
-inline void deinterleaveSamples (const float* source, float** dest, const uint_fast32_t numSamples, const uint_fast32_t numChannels)
-{
-    for (uint_fast32_t chan = 0; chan < numChannels; ++chan)
-    {
-        auto i = chan;
-        auto dst = dest[chan];
-
-        for (uint_fast32_t j = 0; j < numSamples; ++j)
-        {
-            dst[j] = source[i];
-            i += numChannels;
-        }
-    }
-}
-
-/** 
     Audio buffer pointer holder.
 */
 class AudioBlock
