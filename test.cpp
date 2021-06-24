@@ -114,7 +114,7 @@ TEST_CASE ("Filter")
         ame::IIR::BiQuad::BiQuad<numChannels> filter;
 
         // LPF
-        filter.setCoefficients (ame::IIR::BiQuad::LPFCoef (100.0f, 0.71f, 44100.0f));
+        filter.setCoefficients (ame::IIR::BiQuad::makeLowPass (44100.0f, 100.0f, 0.71f));
         filter.process (block);
         for (int i = 0; i < numSamples * numChannels; ++i)
         {
@@ -122,12 +122,53 @@ TEST_CASE ("Filter")
         }
 
         // HPF for remove DC offset;
-        filter.setCoefficients (ame::IIR::BiQuad::HPFCoef (200.0f, 0.71f, 44100.0f));
+        filter.setCoefficients (ame::IIR::BiQuad::makeHighPass (44100.0f, 200.0f, 0.71f));
         buffer.fill (0.3f); //DC offset;
         filter.process (block);
         for (int i = 500; i < numSamples * numChannels; ++i)
         {
             REQUIRE (buffer[i] <= 0.01f);
         }
+    }
+}
+
+TEST_CASE ("Conversion")
+{
+    SECTION ("Deinterleave")
+    {
+        constexpr int numChannels = 2;
+        constexpr int numSamples = 4;
+        float interleavedBuffer[] = { 1, 2, 1, 2, 1, 2, 1, 2 };
+        float lch[numSamples];
+        float rch[numSamples];
+        float* channelSplit[] = { lch, rch };
+        ame::deinterleaveSamples (interleavedBuffer, channelSplit, numSamples, numChannels);
+        REQUIRE (channelSplit[0][0] == Approx (1.0f));
+        REQUIRE (channelSplit[0][1] == Approx (1.0f));
+        REQUIRE (channelSplit[0][2] == Approx (1.0f));
+        REQUIRE (channelSplit[0][3] == Approx (1.0f));
+        REQUIRE (channelSplit[1][0] == Approx (2.0f));
+        REQUIRE (channelSplit[1][1] == Approx (2.0f));
+        REQUIRE (channelSplit[1][2] == Approx (2.0f));
+        REQUIRE (channelSplit[1][3] == Approx (2.0f));
+    }
+
+    SECTION ("Interleave")
+    {
+        constexpr int numChannels = 2;
+        constexpr int numSamples = 4;
+        float interleavedBuffer[numChannels * numSamples];
+        float lch[numSamples] = { 1, 1, 1, 1 };
+        float rch[numSamples] = { 2, 2, 2, 2 };
+        float* channelSplit[] = { lch, rch };
+        ame::interleaveSamples (channelSplit, interleavedBuffer, numSamples, numChannels);
+        REQUIRE (interleavedBuffer[0] == Approx (1.0f));
+        REQUIRE (interleavedBuffer[1] == Approx (2.0f));
+        REQUIRE (interleavedBuffer[2] == Approx (1.0f));
+        REQUIRE (interleavedBuffer[3] == Approx (2.0f));
+        REQUIRE (interleavedBuffer[4] == Approx (1.0f));
+        REQUIRE (interleavedBuffer[5] == Approx (2.0f));
+        REQUIRE (interleavedBuffer[6] == Approx (1.0f));
+        REQUIRE (interleavedBuffer[7] == Approx (2.0f));
     }
 }
