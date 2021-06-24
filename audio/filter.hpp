@@ -44,7 +44,7 @@ namespace ame::IIR::BiQuad //関数定義
 */
 
 /// Returns the coefficients for a low-pass filter with variable Q.
-constexpr Coefficients makeLowPass (const float sampleRate, const float cutOffFrequency, const float Q = sqrt1_2) noexcept
+inline Coefficients makeLowPass (const float sampleRate, const float cutOffFrequency, const float Q = sqrt1_2) noexcept
 {
     Coefficients c;
     const float w0 = twoPi * cutOffFrequency / sampleRate;
@@ -66,7 +66,7 @@ constexpr Coefficients makeLowPass (const float sampleRate, const float cutOffFr
 }
 
 /// Returns the coefficients for a high-pass filter with variable Q.
-constexpr Coefficients makeHighPass (const float sampleRate, const float cutOffFrequency, const float Q = sqrt1_2) noexcept
+inline Coefficients makeHighPass (const float sampleRate, const float cutOffFrequency, const float Q = sqrt1_2) noexcept
 {
     Coefficients c;
     const float w0 = twoPi * cutOffFrequency / sampleRate;
@@ -88,7 +88,7 @@ constexpr Coefficients makeHighPass (const float sampleRate, const float cutOffF
 }
 
 /// Returns the coefficients for a band-pass filter with variable Q.
-constexpr Coefficients BPFCoef (const float sampleRate, const float cutOffFrequency, const float Q = sqrt1_2) noexcept
+inline Coefficients makeBandPass (const float sampleRate, const float cutOffFrequency, const float Q = sqrt1_2) noexcept
 {
     Coefficients c;
     const float w0 = twoPi * cutOffFrequency / sampleRate;
@@ -110,7 +110,7 @@ constexpr Coefficients BPFCoef (const float sampleRate, const float cutOffFreque
 }
 
 /// Returns the coefficients for a notch filter with variable Q.
-constexpr Coefficients notchCoef (const float sampleRate, const float cutOffFrequency, const float Q = sqrt1_2) noexcept
+inline Coefficients makeNotch (const float sampleRate, const float cutOffFrequency, const float Q = sqrt1_2) noexcept
 {
     Coefficients c;
     const float w0 = twoPi * cutOffFrequency / sampleRate;
@@ -132,7 +132,7 @@ constexpr Coefficients notchCoef (const float sampleRate, const float cutOffFreq
 }
 
 /// Returns the coefficients for a all-pass filter with variable Q.
-constexpr Coefficients makeAllPass (const float sampleRate, const float cutOffFrequency, const float Q = sqrt1_2) noexcept
+inline Coefficients makeAllPass (const float sampleRate, const float cutOffFrequency, const float Q = sqrt1_2) noexcept
 {
     Coefficients c;
     const float w0 = twoPi * cutOffFrequency / sampleRate;
@@ -154,7 +154,7 @@ constexpr Coefficients makeAllPass (const float sampleRate, const float cutOffFr
 }
 
 /// Returns the coefficients for a peak filter with variable Q.
-constexpr Coefficients makePeakFilter (const float sampleRate, const float cutOffFrequency, const float Q, const float gainDb) noexcept
+inline Coefficients makePeakFilter (const float sampleRate, const float cutOffFrequency, const float Q, const float gainDb) noexcept
 {
     Coefficients c;
     const float A = std::pow (10.0f, gainDb / 40.0f);
@@ -177,7 +177,7 @@ constexpr Coefficients makePeakFilter (const float sampleRate, const float cutOf
 }
 
 /// Returns the coefficients for low-shelf filter with variable Q.
-constexpr Coefficients makeLowShelf (const float sampleRate, const float cutOffFrequency, const float Q, const float gainDb) noexcept
+inline Coefficients makeLowShelf (const float sampleRate, const float cutOffFrequency, const float Q, const float gainDb) noexcept
 {
     Coefficients c;
     const float A = std::pow (10.0f, gainDb / 40.0f);
@@ -200,7 +200,7 @@ constexpr Coefficients makeLowShelf (const float sampleRate, const float cutOffF
 }
 
 /// Returns the coefficients for a high-shelf filter with variable Q.
-constexpr Coefficients makeHighShelf (const float sampleRate, const float cutOffFrequency, const float Q, const float gainDb) noexcept
+inline Coefficients makeHighShelf (const float sampleRate, const float cutOffFrequency, const float Q, const float gainDb) noexcept
 {
     Coefficients c;
     const float A = std::pow (10.0f, gainDb / 40.0f);
