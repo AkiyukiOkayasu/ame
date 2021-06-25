@@ -37,14 +37,14 @@ public:
         return NumSamples;
     }
 
-    SampleType* getWritePointer() const noexcept
+	const SampleType* getReadPointer() const noexcept
+	{
+		return buffer.data();
+	}
+	
+    SampleType* getWritePointer() noexcept
     {
-        return buffer.data();
-    }
-
-    const SampleType* getReadPointer() const noexcept
-    {
-        return buffer.data();
+		return buffer.data();
     }
 
     void clear()
@@ -93,7 +93,7 @@ public:
     /** Returns a writeable pointer to interleaved audio buffer.
         @return float* interleaved audio buffer
     */
-    SampleType* getWritePointer() const noexcept
+    SampleType* getWritePointer() noexcept
     {
         return buffer;
     }
@@ -119,4 +119,5 @@ private:
     uint_fast32_t numSamples;
     uint_fast32_t numChannels;
 };
+template class AudioBlockView<float>;//明示的テンプレートのインスタンス化
 } // namespace ame
