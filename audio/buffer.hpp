@@ -17,24 +17,27 @@ namespace ame
     An audio buffer that supports multiple channels whose size is determined at compile time.
     @attention Channel order is interleaved.
     @tparam SampleType
-    @tparam NumChannels the number of channels.
+    @tparam Capacity
     @tparam NumSamples the number of samples in each of the buffer's channels.
 */
-template <typename SampleType, size_t NumChannels, size_t NumSamples>
+template <typename SampleType, size_t Capacity>
 class AudioBuffer
 {
 public:
-    AudioBuffer() = default;
+    constexpr AudioBuffer (const uint_fast32_t numChannels, const uint_fast32_t numSamples) : numChannels (numChannels), numSamples (numSamples)
+    {
+        static_assert (Capacity >= numChannels * numSamples, "Capacity should be equal to or greater than numChannels * numSamples.");
+    }
     ~AudioBuffer() = default;
 
     uint_fast32_t getNumChannels() const noexcept
     {
-        return NumChannels;
+        return numChannels;
     }
 
     uint_fast32_t getNumSamples() const noexcept
     {
-        return NumSamples;
+        return numSamples;
     }
 
     const SampleType* getReadPointer() const noexcept
@@ -53,7 +56,9 @@ public:
     }
 
 private:
-    std::array<SampleType, NumChannels* NumSamples> buffer = {};
+    std::array<SampleType, Capacity> buffer = {};
+    uint_fast32_t numSamples;
+    uint_fast32_t numChannels;
 };
 
 /** 
