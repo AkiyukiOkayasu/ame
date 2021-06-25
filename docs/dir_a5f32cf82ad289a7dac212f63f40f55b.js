@@ -1,6 +1,9 @@
 var dir_a5f32cf82ad289a7dac212f63f40f55b =
 [
-    [ "buffer.hpp", "buffer_8hpp.html", "buffer_8hpp" ],
+    [ "buffer.hpp", "buffer_8hpp.html", [
+      [ "AudioBuffer", "classame_1_1_audio_buffer.html", "classame_1_1_audio_buffer" ],
+      [ "AudioBlockView", "classame_1_1_audio_block_view.html", "classame_1_1_audio_block_view" ]
+    ] ],
     [ "conversion.hpp", "conversion_8hpp.html", "conversion_8hpp" ],
     [ "filter.hpp", "filter_8hpp.html", "filter_8hpp" ],
     [ "frequency.hpp", "frequency_8hpp.html", "frequency_8hpp" ],

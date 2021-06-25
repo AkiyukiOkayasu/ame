@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['coefficients_71',['Coefficients',['../structame_1_1_i_i_r_1_1_bi_quad_1_1_coefficients.html',1,'ame::IIR::BiQuad']]]
+  ['coefficients_73',['Coefficients',['../structame_1_1_i_i_r_1_1_bi_quad_1_1_coefficients.html',1,'ame::IIR::BiQuad']]]
 ];
