@@ -17,15 +17,18 @@ Major changes may be added to this project. +
 * Conversion between **Decibel and Amplitude**
 * Conversion between **Frequency and Period**
 * Conversion between **MIDI note and Frequency**
-* Filters for smooth interpolation of values
-* Some utility functions
+* Interpolate functions
+* Filters
+* Audio buffer that can only be allocatable at compile time
 
-== TODO  
-* Audio buffer (mono and interleave)
+=== TODO  
 * WAV writer/reader
 * MIDI
 * Sample rate conversion
-* LPF, HPF, BPF filter
+
+== Example
+https://github.com/AkiyukiOkayasu/ame-juce[ame-juce] +
+An example of using ame without any hardware in combination with JUCE.
 
 == Document
 https://akiyukiokayasu.github.io/ame/[document]
