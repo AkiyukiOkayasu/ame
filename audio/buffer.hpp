@@ -24,9 +24,9 @@ template <typename SampleType, size_t Capacity>
 class AudioBuffer
 {
 public:
-    constexpr AudioBuffer (const uint_fast32_t numChannels, const uint_fast32_t numSamples) : numChannels (numChannels), numSamples (numSamples)
+    AudioBuffer (const uint_fast32_t numChannels, const uint_fast32_t numSamples) : numChannels (numChannels), numSamples (numSamples)
     {
-        static_assert (Capacity >= numChannels * numSamples, "Capacity should be equal to or greater than numChannels * numSamples.");
+		assert (Capacity >= numChannels * numSamples);//Capacity should be equal to or greater than numChannels * numSamples.
     }
     ~AudioBuffer() = default;
 
@@ -57,8 +57,8 @@ public:
 
 private:
     std::array<SampleType, Capacity> buffer = {};
+	uint_fast32_t numChannels;
     uint_fast32_t numSamples;
-    uint_fast32_t numChannels;
 };
 
 /** 
