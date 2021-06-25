@@ -239,7 +239,8 @@ public:
     }
 
     /// Process audio effect.
-    void process (AudioBlock& block)
+    template <typename SampleType>
+    void process (AudioBlockView<SampleType>& block)
     {
         assert (block.getNumChannels() <= maximumChannels);
 

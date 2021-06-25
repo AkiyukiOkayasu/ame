@@ -110,7 +110,7 @@ TEST_CASE ("Filter")
         constexpr int numChannels = 2;
         constexpr int numSamples = 1000;
         std::array<float, numChannels * numSamples> buffer {};
-        ame::AudioBlock block (buffer.data(), numSamples, numChannels); //Stereo
+        ame::AudioBlockView block (buffer.data(), numChannels, numSamples); //Stereo
         ame::IIR::BiQuad::BiQuad<numChannels> filter;
 
         // LPF

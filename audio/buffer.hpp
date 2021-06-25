@@ -13,42 +13,79 @@
 
 namespace ame
 {
-// AudioBuffer
-// 二次元配列版std::arrayの型エイリアス
-// 使用例：AudioBuffer<int16_t, 2, 512> 2ch, 512samples
-template <typename T, size_t channels, size_t samples>
-using AudioBuffer = std::array<std::array<T, samples>, channels>;
+/** 
+    An audio buffer that supports multiple channels whose size is determined at compile time.
+    @attention Channel order is interleaved.
+    @tparam SampleType
+    @tparam NumChannels the number of channels.
+    @tparam NumSamples the number of samples in each of the buffer's channels.
+*/
+template <typename SampleType, size_t NumChannels, size_t NumSamples>
+class AudioBuffer
+{
+public:
+    AudioBuffer() = default;
+    ~AudioBuffer() = default;
 
-// AudioMonoBuffer
-// std::arrayの型エイリアス
-// 使用例：AudioBuffer<int16_t, 512> 512samples
-template <typename T, size_t samples>
-using AudioMonoBuffer = AudioBuffer<T, samples, 1>;
+    uint_fast32_t getNumChannels() const noexcept
+    {
+        return NumChannels;
+    }
+
+    uint_fast32_t getNumSamples() const noexcept
+    {
+        return NumSamples;
+    }
+
+    SampleType* getWritePointer() const noexcept
+    {
+        return buffer.data();
+    }
+
+    const SampleType* getReadPointer() const noexcept
+    {
+        return buffer.data();
+    }
+
+    void clear()
+    {
+        buffer.fill (0.0);
+    }
+
+private:
+    std::array<SampleType, NumChannels* NumSamples> buffer = {};
+};
 
 /** 
-    Audio buffer pointer holder.
+    A lightweight data structure that stores a pointer to an audio buffer.
+
+    This class doesn't own any of the data which it points to, it's simply a view into data that is owned elsewhere.
+    You can construct one from some raw data that you've allocated yourself, or give it an AudioBuffer which it can refer to, but in all cases the user is responsible for making sure that the data doesn't get deleted while there's still an AudioBlock using it.    
+    @attention Channel order is interleaved.
+    @see AudioBuffer
 */
-class AudioBlock
+template <typename SampleType>
+class AudioBlockView
 {
 public:
     /** Constructor.
         @param buffer Interleaved audio buffer.
-        @param numSamples the number of samples in each of the buffer's channels.
         @param numChannels the number of channels.
+        @param numSamples the number of samples in each of the buffer's channels.        
         @attention The order of ame's audio buffers is interleaved. Note that it is NOT channel-splitting.
     */
-    AudioBlock (float* buffer, const uint_fast32_t numSamples, const uint_fast32_t numChannels) noexcept
+    AudioBlockView (SampleType* buffer, const uint_fast32_t numChannels, const uint_fast32_t numSamples) noexcept
         : buffer (buffer),
           numSamples (numSamples),
           numChannels (numChannels)
     {
     }
-    ~AudioBlock() = default;
+    ~AudioBlockView() = default;
 
     /** Returns a read only pointer to interleaved audio buffer.
         @return const float* interleaved samples
     */
-    const float* getReadPointer() const noexcept
+    const SampleType* getReadPointer() const noexcept
     {
         return buffer;
     }
@@ -56,7 +93,7 @@ public:
     /** Returns a writeable pointer to interleaved audio buffer.
         @return float* interleaved audio buffer
     */
-    float* getWritePointer() noexcept
+    SampleType* getWritePointer() const noexcept
     {
         return buffer;
     }
@@ -78,7 +115,7 @@ public:
     }
 
 private:
-    float* buffer;
+    SampleType* buffer;
     uint_fast32_t numSamples;
     uint_fast32_t numChannels;
 };
