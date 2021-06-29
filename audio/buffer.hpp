@@ -78,7 +78,8 @@ public:
     ///Set all samples to 0.
     void clear()
     {
-        buffer.fill (0.0);
+        buffer.fill (static_cast<SampleType> (0.0f));
+    }
     }
 
 private:
@@ -145,6 +146,19 @@ public:
         return numChannels;
     }
 
+    ///Set all samples to 0.
+    void clear()
+    {
+        uint_fast32_t i = 0;
+        for (uint_fast32_t samp = 0; samp < numSamples; ++samp)
+        {
+            for (uint_fast32_t ch = 0; ch < numChannels; ++ch)
+            {
+                buffer[i] = static_cast<SampleType> (0.0f);
+                ++i;
+            }
+        }
+    }
 private:
     SampleType* buffer;
     uint_fast32_t numSamples;
