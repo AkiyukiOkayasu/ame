@@ -17,47 +17,69 @@ namespace ame
     An audio buffer that supports multiple channels whose size is determined at compile time.
     @attention Channel order is interleaved.
     @tparam SampleType
-    @tparam Capacity
-    @tparam NumSamples the number of samples in each of the buffer's channels.
+    @tparam Size Total length of buffer
 */
-template <typename SampleType, size_t Capacity>
+template <typename SampleType, size_t Size>
 class AudioBuffer
 {
 public:
-    AudioBuffer (const uint_fast32_t numChannels, const uint_fast32_t numSamples) : numChannels (numChannels), numSamples (numSamples)
+    AudioBuffer (const uint_fast32_t numChannels) : numChannels (numChannels)
     {
-		assert (Capacity >= numChannels * numSamples);//Capacity should be equal to or greater than numChannels * numSamples.
+        numSamples = Size / numChannels;
     }
     ~AudioBuffer() = default;
 
+    /**         
+        Set the number of channels. Update numSamples (number of samples per channel) based on the buffer length.
+        @param channels number of channels
+    */
+    void setNumChannels (const uint_fast32_t channels)
+    {
+        numChannels = channels;
+        numSamples = Size / numChannels;
+    }
+
+    ///Returns the number of channels.
     uint_fast32_t getNumChannels() const noexcept
     {
         return numChannels;
     }
 
+    ///Returns the number of samples per channel.
     uint_fast32_t getNumSamples() const noexcept
     {
         return numSamples;
     }
 
+    /** Returns the length of the buffer.         
+        @attention This is the total number of samples allocated to the buffer. It is NOT the number of samples per channel.
+    */
+    uint_fast32_t getSize() const noexcept
+    {
+        return Size;
+    }
+
+    ///Returns a read-only pointer to a buffer.
     const SampleType* getReadPointer() const noexcept
     {
         return buffer.data();
     }
 
+    ///Returns a writable pointer to a buffer.
     SampleType* getWritePointer() noexcept
     {
         return buffer.data();
     }
 
+    ///Set all samples to 0.
     void clear()
     {
         buffer.fill (0.0);
     }
 
 private:
-    std::array<SampleType, Capacity> buffer = {};
-	uint_fast32_t numChannels;
+    std::array<SampleType, Size> buffer = {};
+    uint_fast32_t numChannels;
     uint_fast32_t numSamples;
 };
 
