@@ -80,6 +80,14 @@ public:
     {
         buffer.fill (static_cast<SampleType> (0.0f));
     }
+
+    ///Applies a gain multiple to all the audio data.
+    void applyGain (const float gain)
+    {
+        for (auto& e : buffer)
+        {
+            e *= gain;
+        }
     }
 
 private:
@@ -159,6 +167,21 @@ public:
             }
         }
     }
+
+    ///Applies a gain multiple to all the audio data.
+    void applyGain (const float gain)
+    {
+        uint_fast32_t i = 0;
+        for (uint_fast32_t samp = 0; samp < numSamples; ++samp)
+        {
+            for (uint_fast32_t ch = 0; ch < numChannels; ++ch)
+            {
+                buffer[i] *= gain;
+                ++i;
+            }
+        }
+    }
+
 private:
     SampleType* buffer;
     uint_fast32_t numSamples;
