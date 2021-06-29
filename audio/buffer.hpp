@@ -59,13 +59,17 @@ public:
         return Size;
     }
 
-    ///Returns a read-only pointer to a buffer.
+    /** Returns a read only pointer to interleaved audio buffer.
+        @return const float* interleaved samples
+    */
     const SampleType* getReadPointer() const noexcept
     {
         return buffer.data();
     }
 
-    ///Returns a writable pointer to a buffer.
+    /** Returns a writeable pointer to interleaved audio buffer.
+        @return float* interleaved audio buffer
+    */
     SampleType* getWritePointer() noexcept
     {
         return buffer.data();
