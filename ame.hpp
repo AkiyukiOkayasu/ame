@@ -9,6 +9,7 @@
 
 #pragma once
 
+#include "audio/audioBlockView.hpp"
 #include "audio/buffer.hpp"
 #include "audio/conversion.hpp"
 #include "audio/filter.hpp"
