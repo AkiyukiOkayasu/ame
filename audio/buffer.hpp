@@ -9,6 +9,8 @@
 
 #pragma once
 
+#include "audioBlockView.hpp"
+
 #include <array>
 
 namespace ame
@@ -90,102 +92,44 @@ public:
         }
     }
 
+    ///addBuffer
+    void addFrom (const uint_fast32_t destChannel, const uint_fast32_t destStartSample, const AudioBuffer& source, const uint_fast32_t sourceChannel, const uint_fast32_t sourceStartSample, const uint_fast32_t numTempSamples)
+    {
+        const auto& destOffset = destStartSample * numChannels;
+        const auto& sourceOffset = sourceStartSample * source.getNumChannels();
+        const auto& destEnd = destOffset + numTempSamples * numChannels;
+        const auto& sourceEnd = sourceOffset + numTempSamples * source.getNumChannels();
+
+        assert (destEnd <= Size);
+        assert (sourceEnd <= source.getSize());
+
+        for (uint_fast32_t i = 0; i < numTempSamples; ++i)
+        {
+            buffer[destOffset + i * destChannel] += source.buffer[sourceOffset + i * source.getNumChannels];
+        }
+    }
+
+    ///addBuffer
+    template <typename FloatType>
+    void addFrom (const uint_fast32_t destChannel, const uint_fast32_t destStartSample, const AudioBlockView<FloatType>& source, const uint_fast32_t sourceChannel, const uint_fast32_t sourceStartSample, const uint_fast32_t numTempSamples)
+    {
+        const auto& destOffset = destStartSample * numChannels;
+        const auto& sourceOffset = sourceStartSample * source.getNumChannels();
+        const auto& destEnd = destOffset + numTempSamples * numChannels;
+        const auto& sourceEnd = sourceOffset + numTempSamples * source.getNumChannels();
+
+        assert (destEnd <= Size);
+        assert (sourceEnd <= source.getSize());
+
+        for (uint_fast32_t i = 0; i < numTempSamples; ++i)
+        {
+            buffer[destOffset + i * destChannel] += source.buffer[sourceOffset + i * source.getNumChannels];
+        }
+    }
+
 private:
     std::array<SampleType, Size> buffer = {};
     uint_fast32_t numChannels;
     uint_fast32_t numSamples;
 };
-
-/** 
-    A lightweight data structure that stores a pointer to an audio buffer.
-
-    This class doesn't own any of the data which it points to, it's simply a view into data that is owned elsewhere.
-    You can construct one from some raw data that you've allocated yourself, or give it an AudioBuffer which it can refer to, but in all cases the user is responsible for making sure that the data doesn't get deleted while there's still an AudioBlock using it.    
-    @attention Channel order is interleaved.
-    @see AudioBuffer
-*/
-template <typename SampleType>
-class AudioBlockView
-{
-public:
-    /** Constructor.
-        @param buffer Interleaved audio buffer.
-        @param numChannels the number of channels.
-        @param numSamples the number of samples in each of the buffer's channels.        
-        @attention The order of ame's audio buffers is interleaved. Note that it is NOT channel-splitting.
-    */
-    AudioBlockView (SampleType* buffer, const uint_fast32_t numChannels, const uint_fast32_t numSamples) noexcept
-        : buffer (buffer),
-          numSamples (numSamples),
-          numChannels (numChannels)
-    {
-    }
-    ~AudioBlockView() = default;
-
-    /** Returns a read only pointer to interleaved audio buffer.
-        @return const float* interleaved samples
-    */
-    const SampleType* getReadPointer() const noexcept
-    {
-        return buffer;
-    }
-
-    /** Returns a writeable pointer to interleaved audio buffer.
-        @return float* interleaved audio buffer
-    */
-    SampleType* getWritePointer() noexcept
-    {
-        return buffer;
-    }
-
-    /** Returns the number of samples allocated in each of the buffer's channels.
-        @return uint_fast32_t 
-    */
-    uint_fast32_t getNumSamples() const noexcept
-    {
-        return numSamples;
-    }
-
-    /** Returns the numner of channels of audio data that this buffer contains.
-        @return uint_fast32_t 
-    */
-    uint_fast32_t getNumChannels() const noexcept
-    {
-        return numChannels;
-    }
-
-    ///Set all samples to 0.
-    void clear()
-    {
-        uint_fast32_t i = 0;
-        for (uint_fast32_t samp = 0; samp < numSamples; ++samp)
-        {
-            for (uint_fast32_t ch = 0; ch < numChannels; ++ch)
-            {
-                buffer[i] = static_cast<SampleType> (0.0f);
-                ++i;
-            }
-        }
-    }
-
-    ///Applies a gain multiple to all the audio data.
-    void applyGain (const float gain)
-    {
-        uint_fast32_t i = 0;
-        for (uint_fast32_t samp = 0; samp < numSamples; ++samp)
-        {
-            for (uint_fast32_t ch = 0; ch < numChannels; ++ch)
-            {
-                buffer[i] *= gain;
-                ++i;
-            }
-        }
-    }
-
-private:
-    SampleType* buffer;
-    uint_fast32_t numSamples;
-    uint_fast32_t numChannels;
-};
-template class AudioBlockView<float>; //明示的テンプレートのインスタンス化
 } // namespace ame
