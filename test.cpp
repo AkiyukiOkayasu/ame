@@ -131,6 +131,18 @@ TEST_CASE ("Filter")
         }
     }
 }
+
+TEST_CASE ("Buffer")
+{
+    SECTION ("AudioBuffer")
+    {
+    }
+
+    SECTION ("AudioBlockView")
+    {
+    }
+}
+
 /*
 TEST_CASE ("Conversion")
 {
