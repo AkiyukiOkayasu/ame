@@ -18,18 +18,18 @@ namespace ame
 {
 /** Wavetable generator.
     @tparam FloatType float or double
-    @tparam N array size
+    @tparam NumSamples array size
     @tparam Function function to generate wavetable
-    @note Functionの入力は0~1範囲の配列です
-    @todo FloatTypeいらないかも。floatだけでいい？
+    @note Functionの入力は0~1範囲の配列です    
     @see make_sineTable()
 */
-template <typename FloatType, size_t N, class Function>
-constexpr auto make_waveTable (Function func)
+template <typename FloatType, size_t NumSamples, class Function>
+constexpr auto makeWaveTable (Function func)
 {
-    std::array<FloatType, N> ar;
+    std::array<FloatType, NumSamples> ar;
     std::iota (ar.begin(), ar.end(), 0);
-    std::for_each (ar.begin(), ar.end(), [] (auto& x) { x = x / (N - 1); }); // ar: 0~1が順に並んだ配列
+    std::for_each (ar.begin(), ar.end(), [] (auto& x)
+                   { x = x / (NumSamples - 1); }); // ar: 0~1が順に並んだ配列
     std::for_each (ar.begin(), ar.end(), func);
     return ar;
 }
@@ -40,9 +40,12 @@ constexpr auto make_waveTable (Function func)
     @todo 初期位相いじれるようにする？
 */
 template <size_t N>
-constexpr auto make_sineTable()
+constexpr auto makeSineTable()
 {
-    auto f = [] (auto& x) { x = ame::sinf (x * ame::twoPi); };
-    return ame::make_waveTable<float, N> (f);
+    auto f = [] (auto& x)
+    {
+        x = ame::sinf (x * ame::twoPi);
+    };
+    return ame::makeWaveTable<float, N> (f);
 }
 } // namespace ame
