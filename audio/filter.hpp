@@ -13,10 +13,9 @@
 #pragma once
 
 #include "../math/constants.hpp"
-#include "buffer.hpp"
+#include "audioBlockView.hpp"
 
 #include <array>
-#include <atomic>
 #include <cmath>
 
 namespace ame::IIR::BiQuad //型定義
