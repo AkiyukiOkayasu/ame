@@ -47,7 +47,7 @@ constexpr float periodToFreq (const float period) noexcept { return 1.0f / perio
     */
 inline float freqToMidi (const float freq, const float A3Freq = 440.0f)
 {
-    return 12.0f * log2 (freq / A3Freq) + 69.0f;
+    return 12.0f * std::log2f (freq / A3Freq) + 69.0f;
 }
 
 /** Convert MIDI note number to frequency.
