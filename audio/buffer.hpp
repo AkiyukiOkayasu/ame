@@ -92,7 +92,9 @@ public:
         }
     }
 
+    AudioBlockView<FloatType> makeAudioBlockView()
     {
+        return AudioBlockView (buffer.data(), numChannels, numSamples);
     }
 
     ///addBuffer
