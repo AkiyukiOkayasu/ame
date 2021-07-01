@@ -92,21 +92,7 @@ public:
         }
     }
 
-    ///addBuffer
-    void addFrom (const uint_fast32_t destChannel, const uint_fast32_t destStartSample, const AudioBuffer& source, const uint_fast32_t sourceChannel, const uint_fast32_t sourceStartSample, const uint_fast32_t numTempSamples)
     {
-        const auto& destOffset = destStartSample * numChannels;
-        const auto& sourceOffset = sourceStartSample * source.getNumChannels();
-        const auto& destEnd = destOffset + numTempSamples * numChannels;
-        const auto& sourceEnd = sourceOffset + numTempSamples * source.getNumChannels();
-
-        assert (destEnd <= Size);
-        assert (sourceEnd <= source.getSize());
-
-        for (uint_fast32_t i = 0; i < numTempSamples; ++i)
-        {
-            buffer[destOffset + i * destChannel] += source.buffer[sourceOffset + i * source.getNumChannels];
-        }
     }
 
     ///addBuffer
