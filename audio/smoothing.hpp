@@ -36,23 +36,23 @@ public:
     ~Slide() = default;
 
     /** Set the slowness of the increase
-        @param newSlownessIncrease The larger the value, the more slowly the increase.  If 1, no effect is applied to the increase.
+        @param slownessIncrease The larger the value, the more slowly the increase.  If 1, no effect is applied to the increase.
         @attention DO NOT set newSlideUp to less than 1.
     */
-    void setSlownessOfIncrease (const float newSlownessIncrease)
+    void setSlownessOfIncrease (const float slownessIncrease)
     {
-        // TODO newSlideUpが1未満の時の丸め、もしくはassert
-        slideUp.store (newSlownessIncrease);
+        assert (slownessIncrease >= 1.0f);
+        slideUp.store (slownessIncrease);
     }
 
     /** Set the slowness of the decrease
-        @param newSlownessDecrease The larger the value, the more slowly the decrease. If 1, no effect is applied to the decrease.
+        @param slownessDecrease The larger the value, the more slowly the decrease. If 1, no effect is applied to the decrease.
         @attention DO NOT set newSlideDown to less than 1.
     */
-    void setSlownessOfDecrease (const float newSlownessDecrease)
+    void setSlownessOfDecrease (const float slownessDecrease)
     {
-        // TODO newSlideDownが1未満の時の丸め、もしくはassert
-        slideDown.store (newSlownessDecrease);
+        assert (slownessDecrease >= 1.0f);
+        slideDown.store (slownessDecrease);
     }
 
     /** Filter an input value        
