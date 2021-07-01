@@ -33,7 +33,7 @@ public:
         slideUp.store (slownessOfIncrease);
         slideDown.store (slownessOfDecrease);
     }
-    ~Slide() {}
+    ~Slide() = default;
 
     /** Set the slowness of the increase
         @param newSlownessIncrease The larger the value, the more slowly the increase.  If 1, no effect is applied to the increase.
