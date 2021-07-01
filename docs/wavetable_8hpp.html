@@ -131,14 +131,14 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a6c9f2a35b2f1ffd5964a9559b575877b"><td class="memTemplParams" colspan="2">template&lt;typename FloatType , size_t N, class Function &gt; </td></tr>
-<tr class="memitem:a6c9f2a35b2f1ffd5964a9559b575877b"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="wavetable_8hpp.html#a6c9f2a35b2f1ffd5964a9559b575877b">ame::make_waveTable</a> (Function func)</td></tr>
-<tr class="memdesc:a6c9f2a35b2f1ffd5964a9559b575877b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wavetable generator.  <a href="wavetable_8hpp.html#a6c9f2a35b2f1ffd5964a9559b575877b">More...</a><br /></td></tr>
-<tr class="separator:a6c9f2a35b2f1ffd5964a9559b575877b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6fb33d97728a5b4ed4275c243b73b622"><td class="memTemplParams" colspan="2">template&lt;size_t N&gt; </td></tr>
-<tr class="memitem:a6fb33d97728a5b4ed4275c243b73b622"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="wavetable_8hpp.html#a6fb33d97728a5b4ed4275c243b73b622">ame::make_sineTable</a> ()</td></tr>
-<tr class="memdesc:a6fb33d97728a5b4ed4275c243b73b622"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sine wave wavetable generator.  <a href="wavetable_8hpp.html#a6fb33d97728a5b4ed4275c243b73b622">More...</a><br /></td></tr>
-<tr class="separator:a6fb33d97728a5b4ed4275c243b73b622"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07be6f825286fe09b13b71e19db072f2"><td class="memTemplParams" colspan="2">template&lt;typename FloatType , size_t NumSamples, class Function &gt; </td></tr>
+<tr class="memitem:a07be6f825286fe09b13b71e19db072f2"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="wavetable_8hpp.html#a07be6f825286fe09b13b71e19db072f2">ame::makeWaveTable</a> (Function func)</td></tr>
+<tr class="memdesc:a07be6f825286fe09b13b71e19db072f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wavetable generator.  <a href="wavetable_8hpp.html#a07be6f825286fe09b13b71e19db072f2">More...</a><br /></td></tr>
+<tr class="separator:a07be6f825286fe09b13b71e19db072f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afcddded8fd5951fa442898d584a4d372"><td class="memTemplParams" colspan="2">template&lt;size_t N&gt; </td></tr>
+<tr class="memitem:afcddded8fd5951fa442898d584a4d372"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="wavetable_8hpp.html#afcddded8fd5951fa442898d584a4d372">ame::makeSineTable</a> ()</td></tr>
+<tr class="memdesc:afcddded8fd5951fa442898d584a4d372"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sine wave wavetable generator.  <a href="wavetable_8hpp.html#afcddded8fd5951fa442898d584a4d372">More...</a><br /></td></tr>
+<tr class="separator:afcddded8fd5951fa442898d584a4d372"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Wave table generator. </p>
@@ -146,8 +146,8 @@ Functions</h2></td></tr>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2021 - Akiyuki Okayasu</dd></dl>
 <p>AME is released under the MIT license. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a6fb33d97728a5b4ed4275c243b73b622"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6fb33d97728a5b4ed4275c243b73b622">&#9670;&nbsp;</a></span>make_sineTable()</h2>
+<a id="afcddded8fd5951fa442898d584a4d372"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcddded8fd5951fa442898d584a4d372">&#9670;&nbsp;</a></span>makeSineTable()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -158,7 +158,7 @@ template&lt;size_t N&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr auto ame::make_sineTable </td>
+          <td class="memname">constexpr auto ame::makeSineTable </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -179,23 +179,23 @@ template&lt;size_t N&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>constexpr std::array&lt;float, N&gt; sine wave table </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000003">Todo:</a></b></dt><dd>初期位相いじれるようにする？ </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000002">Todo:</a></b></dt><dd>初期位相いじれるようにする？ </dd></dl>
 
 </div>
 </div>
-<a id="a6c9f2a35b2f1ffd5964a9559b575877b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6c9f2a35b2f1ffd5964a9559b575877b">&#9670;&nbsp;</a></span>make_waveTable()</h2>
+<a id="a07be6f825286fe09b13b71e19db072f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07be6f825286fe09b13b71e19db072f2">&#9670;&nbsp;</a></span>makeWaveTable()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename FloatType , size_t N, class Function &gt; </div>
+template&lt;typename FloatType , size_t NumSamples, class Function &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr auto ame::make_waveTable </td>
+          <td class="memname">constexpr auto ame::makeWaveTable </td>
           <td>(</td>
           <td class="paramtype">Function&#160;</td>
           <td class="paramname"><em>func</em></td><td>)</td>
@@ -213,14 +213,14 @@ template&lt;typename FloatType , size_t N, class Function &gt; </div>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">FloatType</td><td>float or double </td></tr>
-    <tr><td class="paramname">N</td><td>array size </td></tr>
+    <tr><td class="paramname">NumSamples</td><td>array size </td></tr>
     <tr><td class="paramname">Function</td><td>function to generate wavetable </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section note"><dt>Note</dt><dd>Functionの入力は0~1範囲の配列です </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000002">Todo:</a></b></dt><dd>FloatTypeいらないかも。floatだけでいい？ </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="wavetable_8hpp.html#a6fb33d97728a5b4ed4275c243b73b622" title="Sine wave wavetable generator.">make_sineTable()</a> </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Functionの入力は0~1範囲の配列です <br  />
+ </dd></dl>
+<dl class="section see"><dt>See also</dt><dd>make_sineTable() </dd></dl>
 
 </div>
 </div>

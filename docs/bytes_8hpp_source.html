@@ -104,7 +104,7 @@ $(document).ready(function(){initNavTree('bytes_8hpp_source.html',''); initResiz
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">namespace </span>ame</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span>... Ts&gt;</div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="bytes_8hpp.html#a4f4cdcc2539bb0796615567cf5a22e51">   32</a></span>&#160;constexpr std::array&lt;std::byte, <span class="keyword">sizeof</span>...(Ts)&gt; make_bytes (Ts&amp;&amp;... args) noexcept</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="bytes_8hpp.html#a291016f1c0ea2093f1729d550746b7cd">   32</a></span>&#160;constexpr std::array&lt;std::byte, <span class="keyword">sizeof</span>...(Ts)&gt; makeBytes (Ts&amp;&amp;... args) noexcept</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;{</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">return</span> { std::byte (std::forward&lt;Ts&gt; (args))... };</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>

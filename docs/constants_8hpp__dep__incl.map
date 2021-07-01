@@ -1,9 +1,10 @@
 <map id="math/constants.hpp" name="math/constants.hpp">
-<area shape="rect" id="node1" title="Math constants." alt="" coords="219,5,358,32"/>
-<area shape="rect" id="node2" href="$ame_8hpp.html" title="main header file." alt="" coords="248,229,321,256"/>
-<area shape="rect" id="node3" href="$filter_8hpp.html" title="Filter." alt="" coords="31,155,141,181"/>
-<area shape="rect" id="node4" href="$mapping_8hpp.html" title="Mapping functions." alt="" coords="165,155,301,181"/>
-<area shape="rect" id="node5" href="$phase_8hpp.html" title="Phase operation." alt="" coords="278,80,398,107"/>
-<area shape="rect" id="node6" href="$sine__oscillator_8hpp.html" title=" " alt="" coords="376,155,545,181"/>
-<area shape="rect" id="node7" href="$wavetable_8hpp.html" title="Wave table generator." alt="" coords="501,80,645,107"/>
+<area shape="rect" id="node1" title="Math constants." alt="" coords="175,5,314,32"/>
+<area shape="rect" id="node2" href="$ame_8hpp.html" title="main header file." alt="" coords="254,229,327,256"/>
+<area shape="rect" id="node3" href="$delay_8hpp.html" title="Delay." alt="" coords="40,80,155,107"/>
+<area shape="rect" id="node4" href="$filter_8hpp.html" title="Filter." alt="" coords="38,155,147,181"/>
+<area shape="rect" id="node5" href="$mapping_8hpp.html" title="Mapping functions." alt="" coords="171,155,307,181"/>
+<area shape="rect" id="node6" href="$phase_8hpp.html" title="Phase operation." alt="" coords="284,80,404,107"/>
+<area shape="rect" id="node7" href="$sine__oscillator_8hpp.html" title=" " alt="" coords="382,155,551,181"/>
+<area shape="rect" id="node8" href="$wavetable_8hpp.html" title="Wave table generator." alt="" coords="507,80,651,107"/>
 </map>

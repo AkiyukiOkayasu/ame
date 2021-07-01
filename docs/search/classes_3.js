@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['sineoscillator_74',['SineOscillator',['../classame_1_1_sine_oscillator.html',1,'ame']]],
-  ['slide_75',['Slide',['../classame_1_1_slide.html',1,'ame']]]
+  ['delay_82',['Delay',['../classame_1_1dsp_1_1_delay.html',1,'ame::dsp']]]
 ];
