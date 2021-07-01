@@ -21,7 +21,7 @@ namespace ame
     @tparam SampleType
     @tparam Size Total length of buffer
 */
-template <typename SampleType, size_t Size>
+template <typename FloatType, size_t Size>
 class AudioBuffer
 {
 public:
@@ -64,7 +64,7 @@ public:
     /** Returns a read only pointer to interleaved audio buffer.
         @return const float* interleaved samples
     */
-    const SampleType* getReadPointer() const noexcept
+    const FloatType* getReadPointer() const noexcept
     {
         return buffer.data();
     }
@@ -72,7 +72,7 @@ public:
     /** Returns a writeable pointer to interleaved audio buffer.
         @return float* interleaved audio buffer
     */
-    SampleType* getWritePointer() noexcept
+    FloatType* getWritePointer() noexcept
     {
         return buffer.data();
     }
@@ -80,7 +80,7 @@ public:
     ///Set all samples to 0.
     void clear()
     {
-        buffer.fill (static_cast<SampleType> (0.0f));
+        buffer.fill (0.0f);
     }
 
     ///Applies a gain multiple to all the audio data.
@@ -110,25 +110,24 @@ public:
     }
 
     ///addBuffer
-    template <typename FloatType>
-    void addFrom (const uint_fast32_t destChannel, const uint_fast32_t destStartSample, const AudioBlockView<FloatType>& source, const uint_fast32_t sourceChannel, const uint_fast32_t sourceStartSample, const uint_fast32_t numTempSamples)
+    void addFrom (const uint_fast32_t destChannel, const uint_fast32_t destStartSample, const AudioBlockView<FloatType>& source, const uint_fast32_t sourceChannel, const uint_fast32_t sourceStartSample, const uint_fast32_t numSamplesToAdd)
     {
         const auto& destOffset = destStartSample * numChannels;
         const auto& sourceOffset = sourceStartSample * source.getNumChannels();
-        const auto& destEnd = destOffset + numTempSamples * numChannels;
-        const auto& sourceEnd = sourceOffset + numTempSamples * source.getNumChannels();
+        [[maybe_unused]] const auto& destEnd = destOffset + numSamplesToAdd * numChannels;
+        [[maybe_unused]] const auto& sourceEnd = sourceOffset + numSamplesToAdd * source.getNumChannels();
 
         assert (destEnd <= Size);
         assert (sourceEnd <= source.getSize());
 
-        for (uint_fast32_t i = 0; i < numTempSamples; ++i)
+        for (uint_fast32_t i = 0; i < numSamplesToAdd; ++i)
         {
             buffer[destOffset + i * destChannel] += source.buffer[sourceOffset + i * source.getNumChannels];
         }
     }
 
 private:
-    std::array<SampleType, Size> buffer = {};
+    std::array<FloatType, Size> buffer = {};
     uint_fast32_t numChannels;
     uint_fast32_t numSamples;
 };
