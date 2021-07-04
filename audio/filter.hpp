@@ -25,6 +25,7 @@ namespace ame::IIR::BiQuad //型定義
 */
 struct Coefficients
 {
+    float a0 = 0.0f;
     float a1 = 0.0f;
     float a2 = 0.0f;
     float b0 = 0.0f;
@@ -41,19 +42,13 @@ inline Coefficients makeLowPass (const float sampleRate, const float cutOffFrequ
     Coefficients c;
     const float w0 = twoPi * cutOffFrequency / sampleRate;
     const float alpha = sinf (w0) / (2.0f * Q);
-    const float a0 = 1.0f + alpha;
 
+    c.a0 = 1.0f + alpha;
     c.b0 = (1.0f - cosf (w0)) / 2.0f;
     c.b1 = 1.0f - cosf (w0);
     c.b2 = c.b0;
     c.a1 = -2.0f * cosf (w0);
     c.a2 = 1.0f - alpha;
-
-    c.b0 /= a0;
-    c.b1 /= a0;
-    c.b2 /= a0;
-    c.a1 /= a0;
-    c.a2 /= a0;
     return c;
 }
 
@@ -63,19 +58,13 @@ inline Coefficients makeHighPass (const float sampleRate, const float cutOffFreq
     Coefficients c;
     const float w0 = twoPi * cutOffFrequency / sampleRate;
     const float alpha = sinf (w0) / (2.0f * Q);
-    const float a0 = 1.0f + alpha;
 
+    c.a0 = 1.0f + alpha;
     c.b0 = (1.0f + cosf (w0)) / 2.0f;
     c.b1 = -(1.0f + cosf (w0));
     c.b2 = c.b0;
     c.a1 = -2.0f * cosf (w0);
     c.a2 = 1.0f - alpha;
-
-    c.b0 /= a0;
-    c.b1 /= a0;
-    c.b2 /= a0;
-    c.a1 /= a0;
-    c.a2 /= a0;
     return c;
 }
 
@@ -85,19 +74,13 @@ inline Coefficients makeBandPass (const float sampleRate, const float cutOffFreq
     Coefficients c;
     const float w0 = twoPi * cutOffFrequency / sampleRate;
     const float alpha = sinf (w0) / (2.0f * Q);
-    const float a0 = 1.0f + alpha;
 
+    c.a0 = 1.0f + alpha;
     c.b0 = alpha;
     c.b1 = 0.0f;
     c.b2 = -alpha;
     c.a1 = -2.0f * cosf (w0);
     c.a2 = 1.0f - alpha;
-
-    c.b0 /= a0;
-    c.b1 /= a0;
-    c.b2 /= a0;
-    c.a1 /= a0;
-    c.a2 /= a0;
     return c;
 }
 
@@ -107,19 +90,14 @@ inline Coefficients makeNotch (const float sampleRate, const float cutOffFrequen
     Coefficients c;
     const float w0 = twoPi * cutOffFrequency / sampleRate;
     const float alpha = sinf (w0) / (2.0f * Q);
-    const float a0 = 1.0f + alpha;
 
+    c.a0 = 1.0f + alpha;
     c.b0 = 1.0f;
     c.b1 = -2.0f * cosf (w0);
     c.b2 = 1.0f;
     c.a1 = -2.0f * cosf (w0);
     c.a2 = 1.0f - alpha;
 
-    c.b0 /= a0;
-    c.b1 /= a0;
-    c.b2 /= a0;
-    c.a1 /= a0;
-    c.a2 /= a0;
     return c;
 }
 
@@ -129,19 +107,13 @@ inline Coefficients makeAllPass (const float sampleRate, const float cutOffFrequ
     Coefficients c;
     const float w0 = twoPi * cutOffFrequency / sampleRate;
     const float alpha = sinf (w0) / (2.0f * Q);
-    const float a0 = 1.0f + alpha;
 
+    c.a0 = 1.0f + alpha;
     c.b0 = 1.0f - alpha;
     c.b1 = -2.0f * cosf (w0);
     c.b2 = 1.0f + alpha;
     c.a1 = -2.0f * cosf (w0);
     c.a2 = 1.0f - alpha;
-
-    c.b0 /= a0;
-    c.b1 /= a0;
-    c.b2 /= a0;
-    c.a1 /= a0;
-    c.a2 /= a0;
     return c;
 }
 
@@ -152,19 +124,13 @@ inline Coefficients makePeakFilter (const float sampleRate, const float cutOffFr
     const float A = std::pow (10.0f, gainDb / 40.0f);
     const float w0 = twoPi * cutOffFrequency / sampleRate;
     const float alpha = sinf (w0) / (2.0f * Q);
-    const float a0 = 1.0f + alpha / A;
 
+    c.a0 = 1.0f + alpha / A;
     c.b0 = 1.0f - alpha * A;
     c.b1 = -2.0f * cosf (w0);
     c.b2 = 1.0f + alpha * A;
     c.a1 = -2.0f * cosf (w0);
     c.a2 = 1.0f - alpha / A;
-
-    c.b0 /= a0;
-    c.b1 /= a0;
-    c.b2 /= a0;
-    c.a1 /= a0;
-    c.a2 /= a0;
     return c;
 }
 
@@ -175,19 +141,13 @@ inline Coefficients makeLowShelf (const float sampleRate, const float cutOffFreq
     const float A = std::pow (10.0f, gainDb / 40.0f);
     const float w0 = twoPi * cutOffFrequency / sampleRate;
     const float alpha = sinf (w0) / (2.0f * Q);
-    const float a0 = 1.0f + alpha / A;
 
+    c.a0 = 1.0f + alpha / A;
     c.b0 = A * ((A + 1.0f) - (A - 1.0f) * cosf (w0) + 2.0f * std::sqrt (A) * alpha);
     c.b1 = 2.0f * A * ((A - 1.0f) - (A + 1.0f) * cosf (w0));
     c.b2 = A * ((A + 1.0f) - (A - 1.0f) * cosf (w0) - 2.0f * std::sqrt (A) * alpha);
     c.a1 = -2.0f * ((A - 1.0f) + (A + 1.0f) * cosf (w0));
     c.a2 = (A + 1.0f) + (A - 1.0f) * cosf (w0) - 2.0f * std::sqrt (A) * alpha;
-
-    c.b0 /= a0;
-    c.b1 /= a0;
-    c.b2 /= a0;
-    c.a1 /= a0;
-    c.a2 /= a0;
     return c;
 }
 
@@ -198,19 +158,13 @@ inline Coefficients makeHighShelf (const float sampleRate, const float cutOffFre
     const float A = std::pow (10.0f, gainDb / 40.0f);
     const float w0 = twoPi * cutOffFrequency / sampleRate;
     const float alpha = sinf (w0) / (2.0f * Q);
-    const float a0 = 1.0f + alpha / A;
 
+    c.a0 = 1.0f + alpha / A;
     c.b0 = A * ((A + 1.0f) + (A - 1.0f) * cosf (w0) + 2.0f * std::sqrt (A) * alpha);
     c.b1 = -2.0f * A * ((A - 1.0f) + (A + 1.0f) * cosf (w0));
     c.b2 = A * ((A + 1.0f) + (A - 1.0f) * cosf (w0) - 2.0f * std::sqrt (A) * alpha);
     c.a1 = 2.0f * ((A - 1.0f) - (A + 1.0f) * cosf (w0));
     c.a2 = (A + 1.0f) - (A - 1.0f) * cosf (w0) - 2.0f * std::sqrt (A) * alpha;
-
-    c.b0 /= a0;
-    c.b1 /= a0;
-    c.b2 /= a0;
-    c.a1 /= a0;
-    c.a2 /= a0;
     return c;
 }
 } // namespace ame::IIR::BiQuad
@@ -232,8 +186,13 @@ public:
         filter.setCoefficients(makeLowPass(48000.0f, 440.0f, 0.707f));
         @endcode
     */
-    void setCoefficients (const Coefficients& c)
+    void setCoefficients (Coefficients& c)
     {
+        c.b0 /= c.a0;
+        c.b1 /= c.a0;
+        c.b2 /= c.a0;
+        c.a1 /= c.a0;
+        c.a2 /= c.a0;
         coef = c;
     }
 
