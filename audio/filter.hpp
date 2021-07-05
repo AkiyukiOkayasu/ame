@@ -186,14 +186,14 @@ public:
         filter.setCoefficients(makeLowPass(48000.0f, 440.0f, 0.707f));
         @endcode
     */
-    void setCoefficients (Coefficients& c)
+    void setCoefficients (const Coefficients& c)
     {
-        c.b0 /= c.a0;
-        c.b1 /= c.a0;
-        c.b2 /= c.a0;
-        c.a1 /= c.a0;
-        c.a2 /= c.a0;
         coef = c;
+        coef.b0 /= coef.a0;
+        coef.b1 /= coef.a0;
+        coef.b2 /= coef.a0;
+        coef.a1 /= coef.a0;
+        coef.a2 /= coef.a0;
     }
 
     /// Process audio effect.
