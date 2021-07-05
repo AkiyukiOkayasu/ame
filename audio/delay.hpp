@@ -18,14 +18,17 @@
 
 namespace ame::dsp
 {
-template <size_t maximumChannels, size_t maximumDelayTimeInSamples>
+template <size_t maximumChannels, size_t maximumDelayInSamples>
 class Delay
 {
 public:
     Delay() = default;
     ~Delay() = default;
 
-    void setDelayTime (const uint32_t delayTimeInSamples)
+    /** Set delay time.
+        @param delayInSamples 
+    */
+    void setDelay (const float delayInSamples)
     {
         assert (delayTimeInSamples <= maximumDelayTimeInSamples);
         readPos = wrap (writePos - delayTimeInSamples);
@@ -54,7 +57,7 @@ public:
     }
 
 private:
-    /// wrap value range 0 <= n < maximumDelaySamples;
+    /// wrap value range 0 <= n < maximumDelaySamples.
     uint_fast32_t wrap (uint_fast32_t n)
     {
         if (n >= 0)

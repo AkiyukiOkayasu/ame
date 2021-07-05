@@ -16,9 +16,11 @@ namespace ame
 /** @todo comment
     @tparam length 
 */
-template <uint_fast32_t length>
+template <int_fast32_t length>
 class Wrap
 {
+    static_assert (length > 0, "length must be greater than 0");
+
 public:
     Wrap() = default;
     ~Wrap() = default;
@@ -28,7 +30,7 @@ public:
         num = 0;
     }
 
-    void set (const uint_fast32_t n)
+    void set (const int_fast32_t n)
     {
         num = n;
 
@@ -48,7 +50,11 @@ public:
         return num;
     }
 
-    uint_fast32_t operator++() //前置インクリメント
+    /**
+    
+    @return int_fast32_t [0, length-1]
+    */
+    int_fast32_t operator++() //前置インクリメント
     {
         ++num;
         if (num >= length)
@@ -58,7 +64,11 @@ public:
         return num;
     }
 
-    uint_fast32_t operator++ (int) //後置インクリメント
+    /**
+    
+    @return int_fast32_t  [0, length-1]
+    */
+    int_fast32_t operator++ (int) //後置インクリメント
     {
         num++;
         if (num >= length)
@@ -68,7 +78,12 @@ public:
         return num;
     }
 
-    uint_fast32_t operator+= (uint_fast32_t add)
+    /**
+    
+    @param add 
+    @return int_fast32_t  [0, length-1]
+    */
+    int_fast32_t operator+= (int_fast32_t add)
     {
         num += add;
         if (num >= length)
@@ -79,6 +94,6 @@ public:
     }
 
 private:
-    uint_fast32_t num = 0;
+    int_fast32_t num = 0;
 };
 } // namespace ame
