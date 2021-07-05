@@ -42,7 +42,7 @@ public:
     template <typename SampleType>
     void process (AudioBlockView<SampleType>& block)
     {
-        assert (block.getNumChannels <= maximumChannels);
+        assert (block.getNumChannels() <= maximumChannels);
 
         auto buffer = block.getWritePointer();
         uint_fast32_t i = 0;
@@ -51,8 +51,8 @@ public:
             for (uint_fast32_t ch = 0; ch < block.getNumChannels(); ++ch)
             {
                 const float input = buffer[i];
-                delayLine[ch][writePos] = input;
-                buffer[i] = lerp (delayLine[ch][readPos], delayLine[ch][readPos.get (-1)], fractional);
+                delayLine[ch][writePos.get()] = input;
+                buffer[i] = lerp (delayLine[ch][readPos.get()], delayLine[ch][readPos.get (-1)], fractional);
                 ++i;
             }
             ++readPos;
