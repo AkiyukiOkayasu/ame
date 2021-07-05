@@ -11,6 +11,7 @@
 #pragma once
 
 #include "../math/constants.hpp"
+#include "../system/wrap.hpp"
 #include "audioBlockView.hpp"
 #include "interpolation.hpp"
 
@@ -30,8 +31,11 @@ public:
     */
     void setDelay (const float delayInSamples)
     {
-        assert (delayTimeInSamples <= maximumDelayTimeInSamples);
-        readPos = wrap (writePos - delayTimeInSamples);
+        assert (delayInSamples <= maximumDelayInSamples);
+        assert (0 < delayInSamples);
+
+        fractional = delayInSamples - static_cast<uint_fast32_t> (delayInSamples);
+        readPos.set (writePos.get (-delayInSamples));
     }
 
     /// Process audio effect.
@@ -48,7 +52,7 @@ public:
             {
                 const float input = buffer[i];
                 delayLine[ch][writePos] = input;
-                buffer[i] = delayLine[ch][readPos];
+                buffer[i] = lerp (delayLine[ch][readPos], delayLine[ch][readPos.get (-1)], fractional);
                 ++i;
             }
             ++readPos;
@@ -57,18 +61,9 @@ public:
     }
 
 private:
-    /// wrap value range 0 <= n < maximumDelaySamples.
-    uint_fast32_t wrap (uint_fast32_t n)
-    {
-        if (n >= 0)
-        {
-            return n;
-        }
-
-        return n + maximumDelayTimeInSamples;
-    }
-    std::array<std::array<float, maximumDelayTimeInSamples>, maximumChannels> delayLine {};
-    uint_fast32_t readPos = 0;
-    uint_fast32_t writePos = 0;
+    std::array<std::array<float, maximumDelayInSamples>, maximumChannels> delayLine {};
+    float fractional = 0.0f; //for fractional delay[0, 1]
+    Wrap<maximumDelayInSamples> readPos;
+    Wrap<maximumDelayInSamples> writePos;
 };
 } // namespace ame::dsp

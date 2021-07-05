@@ -12,6 +12,7 @@
 #include "audio/audioBlockView.hpp"
 #include "audio/buffer.hpp"
 #include "audio/conversion.hpp"
+#include "audio/delay.hpp"
 #include "audio/filter.hpp"
 #include "audio/frequency.hpp"
 #include "audio/interpolation.hpp"
@@ -25,3 +26,4 @@
 #include "math/constants.hpp"
 #include "math/specialFunctions.hpp"
 #include "system/bytes.hpp"
+#include "system/wrap.hpp"
