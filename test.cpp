@@ -132,6 +132,30 @@ TEST_CASE ("Filter")
     }
 }
 
+TEST_CASE ("Wrap")
+{
+    SECTION ("Increment")
+    {
+        ame::Wrap<10> w;
+        REQUIRE (w.get() == 0);
+        REQUIRE (w++ == 1);
+        REQUIRE (++w == 2);
+        w += 2;
+        REQUIRE (w.get() == 4);
+        w += 9;
+        REQUIRE (w.get() == 3);
+    }
+
+    SECTION ("set")
+    {
+        ame::Wrap<10> w;
+        w.set (12);
+        REQUIRE (w.get() == 2);
+        w.set (-9);
+        REQUIRE (w.get() == 1);
+    }
+}
+
 TEST_CASE ("Buffer")
 {
     SECTION ("AudioBuffer")

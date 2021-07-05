@@ -1,0 +1,84 @@
+/** 
+    
+    @file wrap.hpp
+    @author Akiyuki Okayasu (akiyuki.okayasu@gmail.com)
+    @copyright Copyright (c) 2021 - Akiyuki Okayasu
+    
+    AME is released under the MIT license.
+*/
+#pragma once
+
+#include <cstddef>
+#include <cstdint>
+
+namespace ame
+{
+/** @todo comment
+    @tparam length 
+*/
+template <uint_fast32_t length>
+class Wrap
+{
+public:
+    Wrap() = default;
+    ~Wrap() = default;
+
+    void reset()
+    {
+        num = 0;
+    }
+
+    void set (const uint_fast32_t n)
+    {
+        num = n;
+
+        while (num >= length)
+        {
+            num -= length;
+        }
+
+        while (num < 0)
+        {
+            num += length;
+        }
+    }
+
+    uint_fast32_t get()
+    {
+        return num;
+    }
+
+    uint_fast32_t operator++() //前置インクリメント
+    {
+        ++num;
+        if (num >= length)
+        {
+            num = 0;
+        }
+        return num;
+    }
+
+    uint_fast32_t operator++ (int) //後置インクリメント
+    {
+        num++;
+        if (num >= length)
+        {
+            num = 0;
+        }
+        return num;
+    }
+
+    uint_fast32_t operator+= (uint_fast32_t add)
+    {
+        num += add;
+        if (num >= length)
+        {
+            num -= length;
+        }
+        return num;
+    }
+
+private:
+    uint_fast32_t num = 0;
+};
+} // namespace ame
