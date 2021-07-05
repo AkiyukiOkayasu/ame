@@ -45,9 +45,24 @@ public:
         }
     }
 
-    uint_fast32_t get()
+    /**
+    
+        @param offset 
+        @return int_fast32_t [0, length-1]
+    */
+    int_fast32_t get (const int_fast32_t offset = 0)
     {
-        return num;
+        auto n = num + offset;
+        while (n >= length)
+        {
+            n -= length;
+        }
+
+        while (n < 0)
+        {
+            n += length;
+        }
+        return n;
     }
 
     /**
