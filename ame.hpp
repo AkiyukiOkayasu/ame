@@ -10,10 +10,10 @@
 #pragma once
 
 #include "audio/audioBlockView.hpp"
-#include "audio/buffer.hpp"
+#include "audio/audioBuffer.hpp"
+#include "audio/biquad.hpp"
 #include "audio/conversion.hpp"
 #include "audio/delay.hpp"
-#include "audio/filter.hpp"
 #include "audio/frequency.hpp"
 #include "audio/interpolation.hpp"
 #include "audio/mapping.hpp"

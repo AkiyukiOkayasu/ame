@@ -1,9 +1,9 @@
 /** 
-    Filter.
+    BiQuad filter.
     Audio-EQ-Cookbook by Robert Bristow-Johnson implementation.
     https://webaudio.github.io/Audio-EQ-Cookbook/audio-eq-cookbook.html
 
-    @file filter.hpp
+    @file biquad.hpp
     @author Akiyuki Okayasu (akiyuki.okayasu@gmail.com)
     @copyright Copyright (c) 2021 - Akiyuki Okayasu
     
@@ -18,7 +18,7 @@
 #include <array>
 #include <cmath>
 
-namespace ame::IIR::BiQuad //型定義
+namespace ame::dsp::iir::biquad //型定義
 {
 /** BiQuadフィルターの係数群.
     @todo atomicにするか検討
@@ -32,9 +32,9 @@ struct Coefficients
     float b1 = 0.0f;
     float b2 = 0.0f;
 };
-} // namespace ame::IIR::BiQuad
+} // namespace ame::dsp::iir::biquad
 
-namespace ame::IIR::BiQuad //関数定義
+namespace ame::dsp::iir::biquad //関数定義
 {
 /// Returns the coefficients for a low-pass filter with variable Q.
 inline Coefficients makeLowPass (const float sampleRate, const float cutOffFrequency, const float Q) noexcept
@@ -167,9 +167,9 @@ inline Coefficients makeHighShelf (const float sampleRate, const float cutOffFre
     c.a2 = (A + 1.0f) - (A - 1.0f) * cosf (w0) - 2.0f * std::sqrt (A) * alpha;
     return c;
 }
-} // namespace ame::IIR::BiQuad
+} // namespace ame::dsp::iir::biquad
 
-namespace ame::IIR::BiQuad //クラス定義
+namespace ame::dsp::iir::biquad //クラス定義
 {
 /// BiQuad filter.
 template <size_t maximumChannels>
@@ -227,4 +227,4 @@ private:
     std::array<float, maximumChannels> y1 {}; ///< [y-1] last output
     std::array<float, maximumChannels> y2 {}; ///< [y-2] second last output
 };
-} // namespace ame::IIR::BiQuad
+} // namespace ame::dsp::iir::biquad

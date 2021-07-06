@@ -111,10 +111,10 @@ TEST_CASE ("Filter")
         constexpr int numSamples = 1000;
         std::array<float, numChannels * numSamples> buffer {};
         ame::AudioBlockView block (buffer.data(), numChannels, numSamples); //Stereo
-        ame::IIR::BiQuad::BiQuad<numChannels> filter;
+        ame::dsp::iir::biquad::BiQuad<numChannels> filter;
 
         // LPF
-        filter.setCoefficients (ame::IIR::BiQuad::makeLowPass (44100.0f, 100.0f, 0.71f));
+        filter.setCoefficients (ame::dsp::iir::biquad::makeLowPass (44100.0f, 100.0f, 0.71f));
         filter.process (block);
         for (int i = 0; i < numSamples * numChannels; ++i)
         {
@@ -122,7 +122,7 @@ TEST_CASE ("Filter")
         }
 
         // HPF for remove DC offset;
-        filter.setCoefficients (ame::IIR::BiQuad::makeHighPass (44100.0f, 200.0f, 0.71f));
+        filter.setCoefficients (ame::dsp::iir::biquad::makeHighPass (44100.0f, 200.0f, 0.71f));
         buffer.fill (0.3f); //DC offset;
         filter.process (block);
         for (int i = 500; i < numSamples * numChannels; ++i)
