@@ -32,7 +32,7 @@ public:
     void setDelay (const float delayInSamples)
     {
         assert (delayInSamples <= maximumDelayInSamples);
-        assert (0 < delayInSamples);
+        assert (0 <= delayInSamples);
 
         fractional = delayInSamples - static_cast<uint_fast32_t> (delayInSamples);
         readPos.set (writePos.get (-delayInSamples));
