@@ -26,12 +26,13 @@ Major changes may be added to this project. +
 * MIDI
 * Sample rate conversion
 
-== Example
+== Usage
+Just copy this repository and include ame.hpp.
+See the https://akiyukiokayasu.github.io/ame/[document] for details.
+
+=== Example
 https://github.com/AkiyukiOkayasu/ame-juce[ame-juce] +
 An example of using ame without any hardware in combination with JUCE.
-
-== Document
-https://akiyukiokayasu.github.io/ame/[document]
 
 == LICENSE
 MIT +
