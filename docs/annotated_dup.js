@@ -13,6 +13,7 @@ var annotated_dup =
       [ "AudioBlockView", "classame_1_1_audio_block_view.html", "classame_1_1_audio_block_view" ],
       [ "AudioBuffer", "classame_1_1_audio_buffer.html", "classame_1_1_audio_buffer" ],
       [ "SineOscillator", "classame_1_1_sine_oscillator.html", "classame_1_1_sine_oscillator" ],
-      [ "Slide", "classame_1_1_slide.html", "classame_1_1_slide" ]
+      [ "Slide", "classame_1_1_slide.html", "classame_1_1_slide" ],
+      [ "Wrap", "classame_1_1_wrap.html", "classame_1_1_wrap" ]
     ] ]
 ];

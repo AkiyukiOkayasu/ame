@@ -96,9 +96,10 @@ $(document).ready(function(){initNavTree('delay_8hpp_source.html',''); initResiz
 </div><!--header-->
 <div class="contents">
 <a href="delay_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;../math/constants.hpp&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;../math/constants.hpp&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;../system/wrap.hpp&quot;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="audio_block_view_8hpp.html">audioBlockView.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="interpolation_8hpp.html">interpolation.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
@@ -106,63 +107,62 @@ $(document).ready(function(){initNavTree('delay_8hpp_source.html',''); initResiz
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">namespace </span>ame::dsp</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">size_t</span> maximumChannels, <span class="keywordtype">size_t</span> maximumDelayTimeInSamples&gt;</div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classame_1_1dsp_1_1_delay.html">   22</a></span>&#160;<span class="keyword">class </span><a class="code" href="classame_1_1dsp_1_1_delay.html">Delay</a></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="classame_1_1dsp_1_1_delay.html">Delay</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    ~<a class="code" href="classame_1_1dsp_1_1_delay.html">Delay</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">void</span> setDelayTime (<span class="keyword">const</span> uint32_t delayTimeInSamples)</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        assert (delayTimeInSamples &lt;= maximumDelayTimeInSamples);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        readPos = wrap (writePos - delayTimeInSamples);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    }</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> SampleType&gt;</div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classame_1_1dsp_1_1_delay.html#a2d42541254c9f32bd5c2a9453d45495d">   36</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classame_1_1dsp_1_1_delay.html#a2d42541254c9f32bd5c2a9453d45495d">process</a> (<a class="code" href="classame_1_1_audio_block_view.html">AudioBlockView&lt;SampleType&gt;</a>&amp; block)</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">size_t</span> maximumChannels, <span class="keywordtype">size_t</span> maximumDelayInSamples&gt;</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classame_1_1dsp_1_1_delay.html">   26</a></span>&#160;<span class="keyword">class </span><a class="code" href="classame_1_1dsp_1_1_delay.html">Delay</a></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="classame_1_1dsp_1_1_delay.html">Delay</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    ~<a class="code" href="classame_1_1dsp_1_1_delay.html">Delay</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classame_1_1dsp_1_1_delay.html#a86913684913048bef6225ad9cea3fb6a">   36</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classame_1_1dsp_1_1_delay.html#a86913684913048bef6225ad9cea3fb6a">setDelay</a> (<span class="keyword">const</span> <span class="keywordtype">float</span> delayInSamples)</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        assert (block.<a class="code" href="classame_1_1_audio_block_view.html#a2876af1db4b669386ab5170e38d7a3a1">getNumChannels</a> &lt;= maximumChannels);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keyword">auto</span> buffer = block.<a class="code" href="classame_1_1_audio_block_view.html#a69dcc67a5e9fd4446b989a272d669730">getWritePointer</a>();</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        uint_fast32_t i = 0;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">for</span> (uint_fast32_t samp = 0; samp &lt; block.<a class="code" href="classame_1_1_audio_block_view.html#a3ed14372b4f3854bc29e06005b0707bb">getNumSamples</a>(); ++samp)</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="keywordflow">for</span> (uint_fast32_t ch = 0; ch &lt; block.<a class="code" href="classame_1_1_audio_block_view.html#a2876af1db4b669386ab5170e38d7a3a1">getNumChannels</a>(); ++ch)</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            {</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">float</span> input = buffer[i];</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                delayLine[ch][writePos] = input;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                buffer[i] = delayLine[ch][readPos];</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                ++i;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            }</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            ++readPos;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            ++writePos;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        }</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    uint_fast32_t wrap (uint_fast32_t n)</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordflow">if</span> (n &gt;= 0)</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        {</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <span class="keywordflow">return</span> n;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        }</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">return</span> n + maximumDelayTimeInSamples;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    std::array&lt;std::array&lt;float, maximumDelayTimeInSamples&gt;, maximumChannels&gt; delayLine {};</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    uint_fast32_t readPos = 0;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    uint_fast32_t writePos = 0;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;};</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;} <span class="comment">// namespace ame::dsp</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        assert (delayInSamples &lt;= maximumDelayInSamples);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        assert (0 &lt;= delayInSamples);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        fractional = delayInSamples - <span class="keyword">static_cast&lt;</span>uint_fast32_t<span class="keyword">&gt;</span> (delayInSamples);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        readPos.set (writePos.<a class="code" href="classame_1_1_wrap.html#a9d2684abc5264ebd547e8e77a5d81ed9">get</a> (-delayInSamples));</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> SampleType&gt;</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classame_1_1dsp_1_1_delay.html#ab18c848ed863bdfe8b25293e7301efb4">   47</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classame_1_1dsp_1_1_delay.html#ab18c848ed863bdfe8b25293e7301efb4">process</a> (<a class="code" href="classame_1_1_audio_block_view.html">AudioBlockView&lt;SampleType&gt;</a>&amp; block)</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        assert (block.<a class="code" href="classame_1_1_audio_block_view.html#a2876af1db4b669386ab5170e38d7a3a1">getNumChannels</a>() &lt;= maximumChannels);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keyword">auto</span> buffer = block.<a class="code" href="classame_1_1_audio_block_view.html#a69dcc67a5e9fd4446b989a272d669730">getWritePointer</a>();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        uint_fast32_t i = 0;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordflow">for</span> (uint_fast32_t samp = 0; samp &lt; block.<a class="code" href="classame_1_1_audio_block_view.html#a3ed14372b4f3854bc29e06005b0707bb">getNumSamples</a>(); ++samp)</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keywordflow">for</span> (uint_fast32_t ch = 0; ch &lt; block.<a class="code" href="classame_1_1_audio_block_view.html#a2876af1db4b669386ab5170e38d7a3a1">getNumChannels</a>(); ++ch)</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">float</span> input = buffer[i];</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                delayLine[ch][writePos.<a class="code" href="classame_1_1_wrap.html#a9d2684abc5264ebd547e8e77a5d81ed9">get</a>()] = input;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                buffer[i] = <a class="code" href="interpolation_8hpp.html#ab54fe577a7c14cfab3820540e56e05a7">lerp</a> (delayLine[ch][readPos.<a class="code" href="classame_1_1_wrap.html#a9d2684abc5264ebd547e8e77a5d81ed9">get</a>()], delayLine[ch][readPos.<a class="code" href="classame_1_1_wrap.html#a9d2684abc5264ebd547e8e77a5d81ed9">get</a> (-1)], fractional);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                ++i;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            ++readPos;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            ++writePos;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    std::array&lt;std::array&lt;float, maximumDelayInSamples + 1&gt;, maximumChannels&gt; delayLine {}; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <a class="code" href="classame_1_1_wrap.html">Wrap&lt;maximumDelayInSamples + 1&gt;</a> readPos;                                                </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <a class="code" href="classame_1_1_wrap.html">Wrap&lt;maximumDelayInSamples + 1&gt;</a> writePos;                                               </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">float</span> fractional = 0.0f;                                                                </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;};</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;} <span class="comment">// namespace ame::dsp</span></div>
 <div class="ttc" id="aaudio_block_view_8hpp_html"><div class="ttname"><a href="audio_block_view_8hpp.html">audioBlockView.hpp</a></div><div class="ttdoc">Audio Block View.</div></div>
 <div class="ttc" id="aclassame_1_1_audio_block_view_html"><div class="ttname"><a href="classame_1_1_audio_block_view.html">ame::AudioBlockView</a></div><div class="ttdoc">A lightweight data structure that stores a pointer to an audio buffer.</div><div class="ttdef"><b>Definition:</b> audioBlockView.hpp:26</div></div>
 <div class="ttc" id="aclassame_1_1_audio_block_view_html_a2876af1db4b669386ab5170e38d7a3a1"><div class="ttname"><a href="classame_1_1_audio_block_view.html#a2876af1db4b669386ab5170e38d7a3a1">ame::AudioBlockView::getNumChannels</a></div><div class="ttdeci">uint_fast32_t getNumChannels() const noexcept</div><div class="ttdoc">Returns the number of channels.</div><div class="ttdef"><b>Definition:</b> audioBlockView.hpp:43</div></div>
 <div class="ttc" id="aclassame_1_1_audio_block_view_html_a3ed14372b4f3854bc29e06005b0707bb"><div class="ttname"><a href="classame_1_1_audio_block_view.html#a3ed14372b4f3854bc29e06005b0707bb">ame::AudioBlockView::getNumSamples</a></div><div class="ttdeci">uint_fast32_t getNumSamples() const noexcept</div><div class="ttdoc">Returns the number of samples per channel.</div><div class="ttdef"><b>Definition:</b> audioBlockView.hpp:49</div></div>
 <div class="ttc" id="aclassame_1_1_audio_block_view_html_a69dcc67a5e9fd4446b989a272d669730"><div class="ttname"><a href="classame_1_1_audio_block_view.html#a69dcc67a5e9fd4446b989a272d669730">ame::AudioBlockView::getWritePointer</a></div><div class="ttdeci">SampleType * getWritePointer() noexcept</div><div class="ttdoc">Returns a writeable pointer to interleaved audio buffer.</div><div class="ttdef"><b>Definition:</b> audioBlockView.hpp:73</div></div>
-<div class="ttc" id="aclassame_1_1dsp_1_1_delay_html"><div class="ttname"><a href="classame_1_1dsp_1_1_delay.html">ame::dsp::Delay</a></div><div class="ttdef"><b>Definition:</b> delay.hpp:23</div></div>
-<div class="ttc" id="aclassame_1_1dsp_1_1_delay_html_a2d42541254c9f32bd5c2a9453d45495d"><div class="ttname"><a href="classame_1_1dsp_1_1_delay.html#a2d42541254c9f32bd5c2a9453d45495d">ame::dsp::Delay::process</a></div><div class="ttdeci">void process(AudioBlockView&lt; SampleType &gt; &amp;block)</div><div class="ttdoc">Process audio effect.</div><div class="ttdef"><b>Definition:</b> delay.hpp:36</div></div>
+<div class="ttc" id="aclassame_1_1_wrap_html"><div class="ttname"><a href="classame_1_1_wrap.html">ame::Wrap&lt; maximumDelayInSamples+1 &gt;</a></div></div>
+<div class="ttc" id="aclassame_1_1_wrap_html_a9d2684abc5264ebd547e8e77a5d81ed9"><div class="ttname"><a href="classame_1_1_wrap.html#a9d2684abc5264ebd547e8e77a5d81ed9">ame::Wrap::get</a></div><div class="ttdeci">int_fast32_t get(const int_fast32_t offset=0)</div><div class="ttdef"><b>Definition:</b> wrap.hpp:53</div></div>
+<div class="ttc" id="aclassame_1_1dsp_1_1_delay_html"><div class="ttname"><a href="classame_1_1dsp_1_1_delay.html">ame::dsp::Delay</a></div><div class="ttdoc">Fractional delay.</div><div class="ttdef"><b>Definition:</b> delay.hpp:27</div></div>
+<div class="ttc" id="aclassame_1_1dsp_1_1_delay_html_a86913684913048bef6225ad9cea3fb6a"><div class="ttname"><a href="classame_1_1dsp_1_1_delay.html#a86913684913048bef6225ad9cea3fb6a">ame::dsp::Delay::setDelay</a></div><div class="ttdeci">void setDelay(const float delayInSamples)</div><div class="ttdoc">Set delay time.</div><div class="ttdef"><b>Definition:</b> delay.hpp:36</div></div>
+<div class="ttc" id="aclassame_1_1dsp_1_1_delay_html_ab18c848ed863bdfe8b25293e7301efb4"><div class="ttname"><a href="classame_1_1dsp_1_1_delay.html#ab18c848ed863bdfe8b25293e7301efb4">ame::dsp::Delay::process</a></div><div class="ttdeci">void process(AudioBlockView&lt; SampleType &gt; &amp;block)</div><div class="ttdoc">Process audio effect.</div><div class="ttdef"><b>Definition:</b> delay.hpp:47</div></div>
 <div class="ttc" id="ainterpolation_8hpp_html"><div class="ttname"><a href="interpolation_8hpp.html">interpolation.hpp</a></div><div class="ttdoc">Interpolation.</div></div>
+<div class="ttc" id="ainterpolation_8hpp_html_ab54fe577a7c14cfab3820540e56e05a7"><div class="ttname"><a href="interpolation_8hpp.html#ab54fe577a7c14cfab3820540e56e05a7">ame::lerp</a></div><div class="ttdeci">constexpr float lerp(float a, float b, float t) noexcept</div><div class="ttdoc">Linear interpolation.</div><div class="ttdef"><b>Definition:</b> interpolation.hpp:23</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

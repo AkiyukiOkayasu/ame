@@ -1,0 +1,28 @@
+digraph "math/constants.hpp"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="math/constants.hpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Math constants."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="ame.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ame_8hpp.html",tooltip="main header file."];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="audio/delay.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$delay_8hpp.html",tooltip="Fractional delay."];
+  Node3 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="audio/filter.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$filter_8hpp.html",tooltip="Filter."];
+  Node4 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="audio/mapping.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$mapping_8hpp.html",tooltip="Mapping functions."];
+  Node5 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="audio/phase.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$phase_8hpp.html",tooltip="Phase operation."];
+  Node6 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="audio/sine_oscillator.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sine__oscillator_8hpp.html",tooltip=" "];
+  Node7 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="audio/wavetable.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$wavetable_8hpp.html",tooltip="Wave table generator."];
+  Node8 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

@@ -1,13 +1,6 @@
 var searchData=
 [
-  ['scale_140',['scale',['../mapping_8hpp.html#a3a8b9197b6b9f6928e410219c22fd08e',1,'ame']]],
-  ['semitonetoratio_141',['semitoneToRatio',['../frequency_8hpp.html#a8b31e4517e783b663825105c5543f584',1,'ame']]],
-  ['setcoefficients_142',['setCoefficients',['../classame_1_1_i_i_r_1_1_bi_quad_1_1_bi_quad.html#ace94540bdbb01a97988ad36d65253867',1,'ame::IIR::BiQuad::BiQuad']]],
-  ['setfrequency_143',['setFrequency',['../classame_1_1_sine_oscillator.html#aa733e87a8bb4d568767fda009a074162',1,'ame::SineOscillator']]],
-  ['setnumchannels_144',['setNumChannels',['../classame_1_1_audio_buffer.html#a102730d8aa90fc8445255845e94450c7',1,'ame::AudioBuffer']]],
-  ['setslownessofdecrease_145',['setSlownessOfDecrease',['../classame_1_1_slide.html#afa6fa39a7733fd23adbfbb6ef947daed',1,'ame::Slide']]],
-  ['setslownessofincrease_146',['setSlownessOfIncrease',['../classame_1_1_slide.html#a3f414a26f6d2a008f46693cbb62988e6',1,'ame::Slide']]],
-  ['sineoscillator_147',['SineOscillator',['../classame_1_1_sine_oscillator.html#ae3e9f889ed1c34ba7d45134071cfb9e3',1,'ame::SineOscillator']]],
-  ['sinf_148',['sinf',['../special_functions_8hpp.html#a04a55b89aafb7536f4f731002eb232ea',1,'ame']]],
-  ['slide_149',['Slide',['../classame_1_1_slide.html#ac538d8f438b0638f45146a9d7a581f51',1,'ame::Slide']]]
+  ['periodtofreq_150',['periodToFreq',['../frequency_8hpp.html#ab591aa8a6792fdc6fd5e8c3838e875a8',1,'ame']]],
+  ['poltocar_151',['poltocar',['../frequency_8hpp.html#a3efcc056b1b635b37f37e601f1c4dbd4',1,'ame']]],
+  ['process_152',['process',['../classame_1_1dsp_1_1_delay.html#ab18c848ed863bdfe8b25293e7301efb4',1,'ame::dsp::Delay::process()'],['../classame_1_1_i_i_r_1_1_bi_quad_1_1_bi_quad.html#a34d215c9e033c36638a8ac2535ea7824',1,'ame::IIR::BiQuad::BiQuad::process()'],['../classame_1_1_slide.html#a9c31482318c3e70b569f38fb359bebd2',1,'ame::Slide::process()']]]
 ];
