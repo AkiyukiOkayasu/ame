@@ -30,9 +30,10 @@ Major changes may be added to this project. +
 Just copy this repository and include ame.hpp.
 See the https://akiyukiokayasu.github.io/ame/[document] for details.
 
-=== Example
-https://github.com/AkiyukiOkayasu/ame-juce[ame-juce] +
-An example of using ame without any hardware in combination with JUCE.
+=== For JUCE users
+ame is also a JUCE module. +
+https://github.com/AkiyukiOkayasu/ame-juce[ame-juce] is a simple example of using ame as a JUCE module. +
+Be aware that the order of audio samples in ame is interleaved. +
 
 == LICENSE
 MIT +
