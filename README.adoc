@@ -19,6 +19,7 @@ Major changes may be added to this project. +
 * Conversion between **MIDI note and Frequency**
 * Interpolate functions
 * Filters
+* Fractional delay
 * Audio buffer that can only be allocatable at compile time
 
 === TODO  
