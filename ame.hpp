@@ -7,6 +7,29 @@
     AME is released under the MIT license.
 */
 
+/*******************************************************************************
+ The block below describes the properties of this module, and is read by
+ the Projucer to automatically generate project code that uses it.
+ For details about the syntax and how to create or use a module, see the
+ JUCE Module Format.md file.
+ 
+ 
+ BEGIN_JUCE_MODULE_DECLARATION
+ 
+ ID:                 ame
+ vendor:             Akiyuki Okayasu
+ version:            0.0.1
+ name:
+ description:
+ website:
+ license:            MIT
+ 
+ dependencies:
+ 
+ END_JUCE_MODULE_DECLARATION
+ 
+ *******************************************************************************/
+
 #pragma once
 
 #include "audio/audioBlockView.hpp"
