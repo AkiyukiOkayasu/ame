@@ -61,7 +61,7 @@ public:
     }
 
 private:
-    std::array<std::array<float, maximumDelayInSamples>, maximumChannels> delayLine {};
+    std::array<std::array<float, maximumDelayInSamples + 1>, maximumChannels> delayLine {};
     float fractional = 0.0f; //for fractional delay[0, 1]
     Wrap<maximumDelayInSamples> readPos;
     Wrap<maximumDelayInSamples> writePos;
