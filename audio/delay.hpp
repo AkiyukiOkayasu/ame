@@ -1,6 +1,5 @@
 /** 
-    Delay.    
-
+    Fractional delay.    
     @file delay.hpp
     @author Akiyuki Okayasu (akiyuki.okayasu@gmail.com)
     @copyright Copyright (c) 2021 - Akiyuki Okayasu
@@ -19,6 +18,10 @@
 
 namespace ame::dsp
 {
+/** Fractional delay.
+    @tparam maximumChannels 
+    @tparam maximumDelayInSamples 
+*/
 template <size_t maximumChannels, size_t maximumDelayInSamples>
 class Delay
 {
@@ -27,7 +30,8 @@ public:
     ~Delay() = default;
 
     /** Set delay time.
-        @param delayInSamples 
+        A fractional delay can also be set.
+        @param delayInSamples [0. maximumDelayInSamples]
     */
     void setDelay (const float delayInSamples)
     {
@@ -61,9 +65,9 @@ public:
     }
 
 private:
-    std::array<std::array<float, maximumDelayInSamples + 1>, maximumChannels> delayLine {};
-    Wrap<maximumDelayInSamples+1> readPos;
-    Wrap<maximumDelayInSamples+1> writePos;
-    float fractional = 0.0f; //for fractional delay[0, 1]
+    std::array<std::array<float, maximumDelayInSamples + 1>, maximumChannels> delayLine {}; ///<Ring buffer
+    Wrap<maximumDelayInSamples + 1> readPos;                                                ///< Ring buffer read position
+    Wrap<maximumDelayInSamples + 1> writePos;                                               ///< Ring buffer write position
+    float fractional = 0.0f;                                                                ///<for fractional delay[0, 1]
 };
 } // namespace ame::dsp
