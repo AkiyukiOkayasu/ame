@@ -9,6 +9,7 @@
 
 #pragma once
 
+#include <cmath>
 #include <cstdint>
 
 namespace ame
@@ -101,6 +102,25 @@ public:
                 ++i;
             }
         }
+    }
+
+    /**
+    
+        @param channel 
+        @return FloatType [0.0, FloatTypeMax]
+    */
+    SampleType getPeak (const uint_fast32_t channel) const
+    {
+        SampleType peak = 0.0;
+        for (auto i = channel; i < numSamples * numChannels; i += numChannels)
+        {
+            const auto v = std::abs (buffer[i]);
+            if (v > peak)
+            {
+                peak = v;
+            }
+        }
+        return peak;
     }
 
 private:

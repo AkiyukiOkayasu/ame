@@ -156,14 +156,30 @@ TEST_CASE ("Wrap")
     }
 }
 
-TEST_CASE ("Buffer")
+TEST_CASE ("AudioBuffer")
 {
-    SECTION ("AudioBuffer")
+    SECTION ("getPeak")
     {
+        ame::AudioBuffer<float, 4> buf (2);
+        auto b = buf.getWritePointer();
+        b[0] = 0.0f;
+        b[1] = 0.2f;
+        b[2] = 0.9f;
+        b[3] = -0.5f;
+        buf.getPeak (0);
+        REQUIRE (buf.getPeak (0) == Approx (0.9f));
+        REQUIRE (buf.getPeak (1) == Approx (0.5f));
     }
+}
 
-    SECTION ("AudioBlockView")
+TEST_CASE ("AudioBlockView")
+{
+    SECTION ("getPeak")
     {
+        float v[6] = { 0.0f, 0.2f, 0.9f, -0.5f, -0.1f, -0.0f };
+        ame::AudioBlockView<float> block (v, 2, 3);
+        REQUIRE (block.getPeak (0) == Approx (0.9f));
+        REQUIRE (block.getPeak (1) == Approx (0.5f));
     }
 }
 
