@@ -10,7 +10,16 @@
 #pragma once
 
 #if __has_include("arm_math.h")
+    #ifdef __cplusplus
+extern "C"
+{
+    #endif
+
     #include "arm_math.h"
+
+    #ifdef __cplusplus
+}
+    #endif
     #ifndef USE_CMSIS_DSP
         #define USE_CMSIS_DSP
     #endif
