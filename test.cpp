@@ -189,10 +189,12 @@ constexpr uint8_t wav[] = {
 
 TEST_CASE ("WavReader")
 {
-    SECTION ("Constructor")
+    std::cout << "WavSize: " << sizeof (wav) << std::endl;
+    ame::WavReader wavReader (wav, sizeof (wav));
+
+    SECTION ("getFileSize()")
     {
-        std::cout << "WavSize: " << sizeof (wav) << std::endl;
-        ame::WavReader (wav, sizeof (wav));
+        REQUIRE (wavReader.getFileSize() == sizeof (wav) - 8);
     }
 }
 

@@ -20,26 +20,31 @@ public:
     WavReader (const uint8_t* wavByteArray, size_t length) : wav (wavByteArray),
                                                              length (length)
     {
-        //46: チャンク全体の最小サイズ1
-        assert (length > 46);
-
-        //RIFFチャンク
-        {
-            std::cout << "wav: " << wav[0] << std::endl;
-            const auto c = reinterpret_cast<const char*> (wav);
-            std::cout << "wav_c: " << c[0] << std::endl;
-            std::string_view sv (c);
-            std::cout << "sv: " << sv[0] << std::endl;
-            auto subsv = sv.substr (0, 4);
-            assert (subsv == "RIFF");
-            //std::cout << sv[0] << std::endl;
-            //assert (sv[0] == 'R');
-        }
+        assert (length > 46); //46: RIFFヘッダーと最低限のチャンクを合わせた最小のサイズ
+        parseRiffHeader();
     }
     ~WavReader() = default;
 
+    /// return RIFF header file size.
+    uint32_t getFileSize()
+    {
+        return fileSize;
+    }
+
 private:
+    void parseRiffHeader()
+    {
+        const auto c = reinterpret_cast<const char*> (wav);
+        std::string_view sv (c, length);
+        auto riffId = sv.substr (0, 4);
+        assert (riffId == "RIFF");
+        auto format = sv.substr (8, 4);
+        assert (format == "WAVE");
+        fileSize = *(reinterpret_cast<const uint32_t*> (&wav[4]));
+    }
+
     const uint8_t* wav;
-    [[maybe_unused]] size_t length = 0;
+    uint32_t fileSize = 0;
+    size_t length = 0;
 };
 } // namespace ame
