@@ -14,6 +14,15 @@
 
 namespace ame
 {
+namespace
+{
+    struct Chunk
+    {
+        char* id;
+        uint32_t size;
+        uint8_t* data;
+    };
+} // namespace
 class WavReader
 {
 public:
@@ -41,6 +50,14 @@ private:
         auto format = sv.substr (8, 4);
         assert (format == "WAVE");
         fileSize = *(reinterpret_cast<const uint32_t*> (&wav[4]));
+    }
+
+    Chunk parseChunk()
+    {
+        char* id = nullptr;
+        uint32_t size = 100;
+        uint8_t* data = nullptr;
+        return Chunk { id, size, data };
     }
 
     const uint8_t* wav;
