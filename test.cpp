@@ -183,7 +183,7 @@ TEST_CASE ("AudioBlockView")
     }
 }
 
-constexpr uint8_t wav[] = {
+alignas (4) constexpr unsigned char wav[] = {
 #include "resource/sine100.csv"
 };
 
