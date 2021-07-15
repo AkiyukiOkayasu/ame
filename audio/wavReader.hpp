@@ -26,8 +26,8 @@ namespace
 class WavReader
 {
 public:
-    WavReader (const uint8_t* wavByteArray, size_t length) : wav (wavByteArray),
-                                                             length (length)
+    WavReader (const unsigned char* wavByteArray, size_t length) : wav (wavByteArray),
+                                                                   length (length)
     {
         assert (length > 46); //46: RIFFヘッダーと最低限のチャンクを合わせた最小のサイズ
         parseRiffHeader();
@@ -60,7 +60,7 @@ private:
         return Chunk { id, size, data };
     }
 
-    const uint8_t* wav;
+    const unsigned char* wav;
     uint32_t fileSize = 0;
     size_t length = 0;
 };
