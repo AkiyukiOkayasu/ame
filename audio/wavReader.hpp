@@ -14,6 +14,13 @@
 
 namespace ame
 {
+namespace wavChunkId
+{
+    inline constexpr char FMT[] = "fmt ";
+    inline constexpr char PEAK[] = "peak";
+    inline constexpr char FACT[] = "fact";
+    inline constexpr char DATA[] = "data";
+} // namespace wavChunkId
 namespace
 {
     struct Chunk
