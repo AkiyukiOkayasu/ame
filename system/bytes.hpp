@@ -20,9 +20,9 @@ namespace ame
     but it is tedious, so make_bytes(0x00, 0xFF) can be used to generate it.
 
     @code    
-    constexpr std::array<std::byte, 2> arr = make_bytes(0x00, 0xFF);
+    constexpr std::array<std::byte, 2> arr = makeBytes(0x00, 0xFF);
     // or
-    constexpr auto arr = make_bytes(0x00, 0xFF);
+    constexpr auto arr = makeBytes(0x00, 0xFF);
     @endcode
     @tparam Ts Integer types. It must be able to be cast to std::byte.
     @param args Integers to convert to std::byte array
