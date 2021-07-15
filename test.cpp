@@ -182,3 +182,23 @@ TEST_CASE ("AudioBlockView")
         REQUIRE (block.getPeak (1) == Approx (0.5f));
     }
 }
+
+constexpr uint8_t wav[] = {
+#include "resource/sine100.csv"
+};
+
+TEST_CASE ("WavReader")
+{
+    SECTION ("Constructor")
+    {
+        std::cout << "WavSize: " << sizeof (wav) << std::endl;
+        ame::WavReader (wav, sizeof (wav));
+    }
+}
+
+TEST_CASE ("Byte")
+{
+    SECTION ("makeByte")
+    {
+    }
+}
