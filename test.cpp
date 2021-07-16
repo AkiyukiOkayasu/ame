@@ -189,12 +189,20 @@ alignas (4) constexpr unsigned char wav[] = {
 
 TEST_CASE ("WavReader")
 {
-    std::cout << "WavSize: " << sizeof (wav) << std::endl;
     ame::WavReader wavReader (wav, sizeof (wav));
-
     SECTION ("getFileSize()")
     {
         REQUIRE (wavReader.getFileSize() == sizeof (wav) - 8);
+    }
+
+    SECTION ("sampleRate")
+    {
+        REQUIRE (wavReader.getSampleRate() == 48000);
+    }
+
+    SECTION ("bitRate")
+    {
+        REQUIRE (wavReader.getBitRate() == 32);
     }
 }
 
