@@ -9,7 +9,6 @@
 #pragma once
 
 #include <cstddef>
-#include <iostream>
 #include <string_view>
 
 namespace ame::wav
@@ -77,17 +76,14 @@ public:
             const auto chunk = parseChunk();
             if (chunk.id == wavChunkId::PEAK)
             {
-                std::cout << "PEAK chunk" << std::endl;
                 ///とりあえずPEAKチャンクは無視する
             }
             else if (chunk.id == wavChunkId::FACT)
             {
-                std::cout << "FACT chunk" << std::endl;
                 //とりあえずFACTチャンクは無視する
             }
             else if (chunk.id == wavChunkId::DATA)
             {
-                std::cout << "DATA chunk" << std::endl;
                 numSamplesPerChannel = chunk.size / numChannels / (wBitsPerSample / 8);
                 dataChunk = chunk;
                 break;
