@@ -18,9 +18,9 @@ namespace
 {
     struct Chunk
     {
-        char* id;
+        std::string_view id;
         uint32_t size;
-        uint8_t* data;
+        const unsigned char* data;
     };
 
     namespace wavChunkId
@@ -59,7 +59,11 @@ public:
     {
         assert (length > 46); //46: RIFFヘッダーと最低限のチャンクを合わせた最小のサイズ
         parseRiffHeader();
-        offset = 12; //FMTチャンク冒頭
+        const auto fmt = parseChunk();
+        assert (fmt.id == wavChunkId::FMT);
+        assert (fmt.size == 16);
+        formatTag = static_cast<fmt::wFormatTag> (*(reinterpret_cast<const uint16_t*> (&fmt.data[0])));
+        assert (formatTag == fmt::wFormatTag::PCM || formatTag == fmt::wFormatTag::IeeeFloat || formatTag == fmt::wFormatTag::ImaAdpcm);
     }
     ~WavReader() = default;
 
@@ -83,15 +87,27 @@ private:
 
     Chunk parseChunk()
     {
-        char* id = nullptr;
-        uint32_t size = 100;
-        uint8_t* data = nullptr;
-        return Chunk { id, size, data };
+        const auto c = reinterpret_cast<const char*> (&wav[offset]);
+        std::string_view sv (c, length - offset);
+        auto chunkId = sv.substr (0, 4); //chunkIDとchunkSizeを除くチャンクサイズ
+        const uint32_t chunkSize = *(reinterpret_cast<const uint32_t*> (&wav[offset + 4]));
+        std::cout << "chunkSize: " << chunkSize << std::endl;
+        const size_t dataIndex = offset + 8;
+
+        offset += chunkSize + 8; //8: chunkIDとchunkSizeの8byte分
+        return Chunk { chunkId, chunkSize, &wav[dataIndex] };
     }
 
     const unsigned char* wav;
     uint32_t fileSize = 0;
     size_t length = 0;
-    size_t offset = 0;
+    size_t offset = 12; //FMTチャンク冒頭
+
+    //fmtチャンク
+    fmt::wFormatTag formatTag;
+    //uint16_t wFormatTag = 0;
+    uint16_t numChannels = 0;
+    uint32_t sampleRate = 0;
+    uint16_t wBitsPerSample = 0;
 };
 } // namespace ame
