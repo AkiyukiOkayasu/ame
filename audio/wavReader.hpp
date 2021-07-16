@@ -98,7 +98,6 @@ private:
         std::string_view sv (c, length - offset);
         auto chunkId = sv.substr (0, 4); //chunkIDとchunkSizeを除くチャンクサイズ
         const uint32_t chunkSize = *(reinterpret_cast<const uint32_t*> (&wav[offset + 4]));
-        std::cout << "chunkSize: " << chunkSize << std::endl;
         const size_t dataIndex = offset + 8;
 
         offset += chunkSize + 8; //8: chunkIDとchunkSizeの8byte分
