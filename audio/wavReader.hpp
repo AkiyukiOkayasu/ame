@@ -64,6 +64,13 @@ public:
         assert (fmt.size == 16);
         formatTag = static_cast<fmt::wFormatTag> (*(reinterpret_cast<const uint16_t*> (&fmt.data[0])));
         assert (formatTag == fmt::wFormatTag::PCM || formatTag == fmt::wFormatTag::IeeeFloat || formatTag == fmt::wFormatTag::ImaAdpcm);
+        numChannels = *(reinterpret_cast<const uint16_t*> (&fmt.data[2]));
+        sampleRate = *(reinterpret_cast<const uint32_t*> (&fmt.data[4]));
+        std::cout << "sampleRate: " << sampleRate << std::endl;
+        assert (sampleRate >= 8000);
+        wBitsPerSample = *(reinterpret_cast<const uint16_t*> (&fmt.data[14]));
+        std::cout << "wBitsPerSample: " << wBitsPerSample << std::endl;
+        assert (wBitsPerSample == 16 || wBitsPerSample == 24 || wBitsPerSample == 32);
     }
     ~WavReader() = default;
 
@@ -105,7 +112,6 @@ private:
 
     //fmtチャンク
     fmt::wFormatTag formatTag;
-    //uint16_t wFormatTag = 0;
     uint16_t numChannels = 0;
     uint32_t sampleRate = 0;
     uint16_t wBitsPerSample = 0;
