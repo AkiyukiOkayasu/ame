@@ -132,6 +132,11 @@ public:
         return dataChunk;
     }
 
+    std::pair<const unsigned char*, uint32_t> getDataPointer()
+    {
+        return { dataChunk.data, dataChunk.size };
+    }
+
 private:
     void parseRiffHeader()
     {

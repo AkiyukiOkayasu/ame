@@ -214,6 +214,12 @@ TEST_CASE ("WavReader")
     {
         REQUIRE (wavReader.getNumSamples() == 1440000);
     }
+
+    SECTION ("data")
+    {
+        auto [data, size] = wavReader.getDataPointer();
+        REQUIRE (size == 5760000);
+    }
 }
 
 TEST_CASE ("Byte")
