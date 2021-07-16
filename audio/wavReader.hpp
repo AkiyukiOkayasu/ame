@@ -71,6 +71,24 @@ public:
             wBitsPerSample = *(reinterpret_cast<const uint16_t*> (&fmt.data[14]));
             assert (wBitsPerSample == 16 || wBitsPerSample == 24 || wBitsPerSample == 32);
         }
+
+        while (true)
+        {
+            const auto chunk = parseChunk();
+            if (chunk.id == wavChunkId::PEAK)
+            {
+                std::cout << "PEAK chunk" << std::endl;
+            }
+            else if (chunk.id == wavChunkId::FACT)
+            {
+                std::cout << "FACT chunk" << std::endl;
+            }
+            else if (chunk.id == wavChunkId::DATA)
+            {
+                std::cout << "DATA chunk" << std::endl;
+                break;
+            }
+        }
     }
     ~WavReader() = default;
 
