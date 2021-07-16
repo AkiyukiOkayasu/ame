@@ -88,7 +88,7 @@ public:
             else if (chunk.id == wavChunkId::DATA)
             {
                 std::cout << "DATA chunk" << std::endl;
-                numSamplesPerChannel = chunk.size / numChannels;
+                numSamplesPerChannel = chunk.size / numChannels / (wBitsPerSample / 8);
                 dataChunk = chunk;
                 break;
             }

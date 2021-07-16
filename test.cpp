@@ -204,6 +204,10 @@ TEST_CASE ("WavReader")
     {
         REQUIRE (wavReader.getBitRate() == 32);
     }
+    SECTION ("numSample")
+    {
+        REQUIRE (wavReader.getNumSamples() == 1440000);
+    }
 }
 
 TEST_CASE ("Byte")
