@@ -59,18 +59,18 @@ public:
     {
         assert (length > 46); //46: RIFFヘッダーと最低限のチャンクを合わせた最小のサイズ
         parseRiffHeader();
-        const auto fmt = parseChunk();
-        assert (fmt.id == wavChunkId::FMT);
-        assert (fmt.size == 16);
-        formatTag = static_cast<fmt::wFormatTag> (*(reinterpret_cast<const uint16_t*> (&fmt.data[0])));
-        assert (formatTag == fmt::wFormatTag::PCM || formatTag == fmt::wFormatTag::IeeeFloat || formatTag == fmt::wFormatTag::ImaAdpcm);
-        numChannels = *(reinterpret_cast<const uint16_t*> (&fmt.data[2]));
-        sampleRate = *(reinterpret_cast<const uint32_t*> (&fmt.data[4]));
-        std::cout << "sampleRate: " << sampleRate << std::endl;
-        assert (sampleRate >= 8000);
-        wBitsPerSample = *(reinterpret_cast<const uint16_t*> (&fmt.data[14]));
-        std::cout << "wBitsPerSample: " << wBitsPerSample << std::endl;
-        assert (wBitsPerSample == 16 || wBitsPerSample == 24 || wBitsPerSample == 32);
+
+        { //fmt chunk
+            const auto fmt = parseChunk();
+            assert (fmt.id == wavChunkId::FMT);
+            assert (fmt.size == 16);
+            formatTag = static_cast<fmt::wFormatTag> (*(reinterpret_cast<const uint16_t*> (&fmt.data[0])));
+            assert (formatTag == fmt::wFormatTag::PCM || formatTag == fmt::wFormatTag::IeeeFloat || formatTag == fmt::wFormatTag::ImaAdpcm);
+            numChannels = *(reinterpret_cast<const uint16_t*> (&fmt.data[2]));
+            sampleRate = *(reinterpret_cast<const uint32_t*> (&fmt.data[4]));
+            wBitsPerSample = *(reinterpret_cast<const uint16_t*> (&fmt.data[14]));
+            assert (wBitsPerSample == 16 || wBitsPerSample == 24 || wBitsPerSample == 32);
+        }
     }
     ~WavReader() = default;
 
