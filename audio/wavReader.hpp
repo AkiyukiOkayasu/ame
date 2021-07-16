@@ -26,7 +26,7 @@ namespace
     namespace wavChunkId
     {
         inline constexpr char FMT[] = "fmt ";
-        inline constexpr char PEAK[] = "peak"; //optional
+        inline constexpr char PEAK[] = "PEAK"; //optional
         inline constexpr char FACT[] = "fact"; //optional
         inline constexpr char DATA[] = "data";
     } // namespace wavChunkId
