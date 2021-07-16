@@ -14,13 +14,6 @@
 
 namespace ame
 {
-namespace wavChunkId
-{
-    inline constexpr char FMT[] = "fmt ";
-    inline constexpr char PEAK[] = "peak";
-    inline constexpr char FACT[] = "fact";
-    inline constexpr char DATA[] = "data";
-} // namespace wavChunkId
 namespace
 {
     struct Chunk
@@ -29,7 +22,16 @@ namespace
         uint32_t size;
         uint8_t* data;
     };
+
+    namespace wavChunkId
+    {
+        inline constexpr char FMT[] = "fmt ";
+        inline constexpr char PEAK[] = "peak"; //optional
+        inline constexpr char FACT[] = "fact"; //optional
+        inline constexpr char DATA[] = "data";
+    } // namespace wavChunkId
 } // namespace
+
 class WavReader
 {
 public:
