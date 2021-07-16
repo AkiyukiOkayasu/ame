@@ -189,7 +189,7 @@ alignas (4) constexpr unsigned char wav[] = {
 
 TEST_CASE ("WavReader")
 {
-    ame::WavReader wavReader (wav, sizeof (wav));
+    ame::wav::WavReader wavReader (wav, sizeof (wav));
     SECTION ("getFileSize()")
     {
         REQUIRE (wavReader.getFileSize() == sizeof (wav) - 8);

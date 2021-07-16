@@ -12,17 +12,17 @@
 #include <iostream>
 #include <string_view>
 
-namespace ame
+namespace ame::wav
 {
+struct Chunk
+{
+    std::string_view id;
+    uint32_t size;
+    const unsigned char* data;
+};
+
 namespace
 {
-    struct Chunk
-    {
-        std::string_view id;
-        uint32_t size;
-        const unsigned char* data;
-    };
-
     namespace wavChunkId
     {
         inline constexpr char FMT[] = "fmt ";
@@ -78,14 +78,18 @@ public:
             if (chunk.id == wavChunkId::PEAK)
             {
                 std::cout << "PEAK chunk" << std::endl;
+                ///とりあえずPEAKチャンクは無視する
             }
             else if (chunk.id == wavChunkId::FACT)
             {
                 std::cout << "FACT chunk" << std::endl;
+                //とりあえずFACTチャンクは無視する
             }
             else if (chunk.id == wavChunkId::DATA)
             {
                 std::cout << "DATA chunk" << std::endl;
+                numSamplesPerChannel = chunk.size / numChannels;
+                dataChunk = chunk;
                 break;
             }
         }
@@ -110,6 +114,24 @@ public:
         return wBitsPerSample;
     }
 
+    /// return number of channels
+    uint16_t getNumChannels()
+    {
+        return numChannels;
+    }
+
+    ///return number of samples per channel.
+    uint32_t getNumSamples()
+    {
+        return numSamplesPerChannel;
+    }
+
+    ///return data chunk.
+    Chunk getDataChunk()
+    {
+        return dataChunk;
+    }
+
 private:
     void parseRiffHeader()
     {
@@ -130,6 +152,7 @@ private:
         const uint32_t chunkSize = *(reinterpret_cast<const uint32_t*> (&wav[offset + 4]));
         const size_t dataIndex = offset + 8;
 
+        ///@todo offset更新をparseChunkから分離したい
         offset += chunkSize + 8; //8: chunkIDとchunkSizeの8byte分
         return Chunk { chunkId, chunkSize, &wav[dataIndex] };
     }
@@ -143,6 +166,8 @@ private:
     fmt::wFormatTag formatTag;
     uint16_t numChannels = 0;
     uint32_t sampleRate = 0;
+    uint32_t numSamplesPerChannel = 0;
     uint16_t wBitsPerSample = 0;
+    Chunk dataChunk;
 };
-} // namespace ame
+} // namespace ame::wav
