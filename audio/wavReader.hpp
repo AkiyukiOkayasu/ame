@@ -59,6 +59,7 @@ public:
     {
         assert (length > 46); //46: RIFFヘッダーと最低限のチャンクを合わせた最小のサイズ
         parseRiffHeader();
+        offset = 12; //FMTチャンク冒頭
     }
     ~WavReader() = default;
 
@@ -91,5 +92,6 @@ private:
     const unsigned char* wav;
     uint32_t fileSize = 0;
     size_t length = 0;
+    size_t offset = 0;
 };
 } // namespace ame
