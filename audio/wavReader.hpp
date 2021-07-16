@@ -80,6 +80,18 @@ public:
         return fileSize;
     }
 
+    /// return sample rate.
+    uint32_t getSampleRate()
+    {
+        return sampleRate;
+    }
+
+    /// return bit rate.
+    uint16_t getBitRate()
+    {
+        return wBitsPerSample;
+    }
+
 private:
     void parseRiffHeader()
     {
