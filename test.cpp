@@ -215,10 +215,17 @@ TEST_CASE ("WavReader")
         REQUIRE (wavReader.getNumSamples() == 1440000);
     }
 
-    SECTION ("data")
+    SECTION ("getDataPointer")
     {
-        auto [data, size] = wavReader.getDataPointer();
-        REQUIRE (size == 5760000);
+        auto data = wavReader.getDataPointer();
+        REQUIRE (data[0] == 0x00);
+        REQUIRE (data[1] == 0x00);
+        REQUIRE (data[2] == 0x00);
+        REQUIRE (data[3] == 0x00);
+        REQUIRE (data[4] == 0xBE);
+        REQUIRE (data[5] == 0x75);
+        REQUIRE (data[6] == 0x56);
+        REQUIRE (data[7] == 0x3C);
     }
 }
 

@@ -128,9 +128,9 @@ public:
         return dataChunk;
     }
 
-    std::pair<const unsigned char*, uint32_t> getDataPointer()
+    const unsigned char* getDataPointer()
     {
-        return { dataChunk.data, dataChunk.size };
+        return dataChunk.data;
     }
 
 private:
