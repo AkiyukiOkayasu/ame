@@ -38,6 +38,7 @@
 #include "audio/smoothing.hpp"
 #include "audio/time.hpp"
 #include "audio/volume.hpp"
+#include "audio/wavPlayer.hpp"
 #include "audio/wavReader.hpp"
 #include "audio/wavetable.hpp"
 #include "math/constants.hpp"

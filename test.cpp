@@ -229,6 +229,15 @@ TEST_CASE ("WavReader")
     }
 }
 
+TEST_CASE ("WavPlayer")
+{
+    SECTION ("Constructor")
+    {
+        ame::wav::WavReader reader (wav, sizeof (wav));
+        ame::wav::WavPlayer player (reader);
+    }
+}
+
 TEST_CASE ("Byte")
 {
     SECTION ("makeByte")
