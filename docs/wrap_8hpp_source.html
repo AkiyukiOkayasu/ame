@@ -112,79 +112,75 @@ $(document).ready(function(){initNavTree('wrap_8hpp_source.html',''); initResiza
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="classame_1_1_wrap.html">Wrap</a>() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    ~<a class="code" href="classame_1_1_wrap.html">Wrap</a>() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">void</span> reset()</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        num = 0;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    }</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">void</span> set (<span class="keyword">const</span> int_fast32_t n)</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        num = n;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordflow">while</span> (num &gt;= length)</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            num -= length;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        }</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">while</span> (num &lt; 0)</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            num += length;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        }</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classame_1_1_wrap.html#a9d2684abc5264ebd547e8e77a5d81ed9">   53</a></span>&#160;    int_fast32_t <a class="code" href="classame_1_1_wrap.html#a9d2684abc5264ebd547e8e77a5d81ed9">get</a> (<span class="keyword">const</span> int_fast32_t offset = 0)</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keyword">auto</span> n = num + offset;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordflow">while</span> (n &gt;= length)</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            n -= length;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        }</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">while</span> (n &lt; 0)</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            n += length;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        }</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">return</span> n;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="classame_1_1_wrap.html#ab090f17f7949e87b6979acf5e3a64ab0">   72</a></span>&#160;    int_fast32_t <a class="code" href="classame_1_1_wrap.html#ab090f17f7949e87b6979acf5e3a64ab0">operator++</a>() <span class="comment">//前置インクリメント</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    {</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        ++num;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">if</span> (num &gt;= length)</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        {</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            num = 0;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        }</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">return</span> num;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="classame_1_1_wrap.html#a1bbf6d6133c5c207c3afc954b37f5717">   86</a></span>&#160;    int_fast32_t <a class="code" href="classame_1_1_wrap.html#ab090f17f7949e87b6979acf5e3a64ab0">operator++ </a>(<span class="keywordtype">int</span>) <span class="comment">//後置インクリメント</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    {</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        num++;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordflow">if</span> (num &gt;= length)</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        {</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            num = 0;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        }</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordflow">return</span> num;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    }</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="classame_1_1_wrap.html#a3995b4cdafce59b7cdf1a84ab2702861">  101</a></span>&#160;    int_fast32_t <a class="code" href="classame_1_1_wrap.html#a3995b4cdafce59b7cdf1a84ab2702861">operator+= </a>(int_fast32_t add)</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    {</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        num += add;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordflow">if</span> (num &gt;= length)</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        {</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            num -= length;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        }</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordflow">return</span> num;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    }</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    int_fast32_t num = 0;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;};</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;} <span class="comment">// namespace ame</span></div>
-<div class="ttc" id="aclassame_1_1_wrap_html"><div class="ttname"><a href="classame_1_1_wrap.html">ame::Wrap</a></div><div class="ttdef"><b>Definition:</b> wrap.hpp:21</div></div>
-<div class="ttc" id="aclassame_1_1_wrap_html_a3995b4cdafce59b7cdf1a84ab2702861"><div class="ttname"><a href="classame_1_1_wrap.html#a3995b4cdafce59b7cdf1a84ab2702861">ame::Wrap::operator+=</a></div><div class="ttdeci">int_fast32_t operator+=(int_fast32_t add)</div><div class="ttdef"><b>Definition:</b> wrap.hpp:101</div></div>
-<div class="ttc" id="aclassame_1_1_wrap_html_a9d2684abc5264ebd547e8e77a5d81ed9"><div class="ttname"><a href="classame_1_1_wrap.html#a9d2684abc5264ebd547e8e77a5d81ed9">ame::Wrap::get</a></div><div class="ttdeci">int_fast32_t get(const int_fast32_t offset=0)</div><div class="ttdef"><b>Definition:</b> wrap.hpp:53</div></div>
-<div class="ttc" id="aclassame_1_1_wrap_html_ab090f17f7949e87b6979acf5e3a64ab0"><div class="ttname"><a href="classame_1_1_wrap.html#ab090f17f7949e87b6979acf5e3a64ab0">ame::Wrap::operator++</a></div><div class="ttdeci">int_fast32_t operator++()</div><div class="ttdef"><b>Definition:</b> wrap.hpp:72</div></div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classame_1_1_wrap.html#a28e506491a4b58bb56b369d2380074fd">   32</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classame_1_1_wrap.html#a28e506491a4b58bb56b369d2380074fd">set</a> (int_fast32_t n)</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordflow">while</span> (n &gt;= length)</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            n -= length;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        }</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordflow">while</span> (n &lt; 0)</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            n += length;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        num = n;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classame_1_1_wrap.html#a9d2684abc5264ebd547e8e77a5d81ed9">   51</a></span>&#160;    int_fast32_t <a class="code" href="classame_1_1_wrap.html#a9d2684abc5264ebd547e8e77a5d81ed9">get</a> (<span class="keyword">const</span> int_fast32_t offset = 0)</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keyword">auto</span> n = num + offset;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordflow">while</span> (n &gt;= length)</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            n -= length;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordflow">while</span> (n &lt; 0)</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            n += length;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">return</span> n;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="classame_1_1_wrap.html#ab090f17f7949e87b6979acf5e3a64ab0">   69</a></span>&#160;    int_fast32_t <a class="code" href="classame_1_1_wrap.html#ab090f17f7949e87b6979acf5e3a64ab0">operator++</a>()</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        ++num;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordflow">if</span> (num &gt;= length)</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            num = 0;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordflow">return</span> num;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="classame_1_1_wrap.html#a1bbf6d6133c5c207c3afc954b37f5717">   82</a></span>&#160;    int_fast32_t <a class="code" href="classame_1_1_wrap.html#ab090f17f7949e87b6979acf5e3a64ab0">operator++ </a>(<span class="keywordtype">int</span>)</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        num++;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">if</span> (num &gt;= length)</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            num = 0;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        }</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordflow">return</span> num;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    }</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="classame_1_1_wrap.html#a3995b4cdafce59b7cdf1a84ab2702861">   97</a></span>&#160;    int_fast32_t <a class="code" href="classame_1_1_wrap.html#a3995b4cdafce59b7cdf1a84ab2702861">operator+= </a>(int_fast32_t add)</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        num += add;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordflow">while</span> (num &gt;= length)</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        {</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            num -= length;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        }</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordflow">return</span> num;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    }</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    int_fast32_t num = 0;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;};</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;} <span class="comment">// namespace ame</span></div>
+<div class="ttc" id="aclassame_1_1_wrap_html"><div class="ttname"><a href="classame_1_1_wrap.html">ame::Wrap</a></div><div class="ttdoc">The number to automatically wrap in the range [0, length-1].</div><div class="ttdef"><b>Definition:</b> wrap.hpp:21</div></div>
+<div class="ttc" id="aclassame_1_1_wrap_html_a28e506491a4b58bb56b369d2380074fd"><div class="ttname"><a href="classame_1_1_wrap.html#a28e506491a4b58bb56b369d2380074fd">ame::Wrap::set</a></div><div class="ttdeci">void set(int_fast32_t n)</div><div class="ttdoc">Sets the current value to an arbitrary number.</div><div class="ttdef"><b>Definition:</b> wrap.hpp:32</div></div>
+<div class="ttc" id="aclassame_1_1_wrap_html_a3995b4cdafce59b7cdf1a84ab2702861"><div class="ttname"><a href="classame_1_1_wrap.html#a3995b4cdafce59b7cdf1a84ab2702861">ame::Wrap::operator+=</a></div><div class="ttdeci">int_fast32_t operator+=(int_fast32_t add)</div><div class="ttdoc">+= operator.</div><div class="ttdef"><b>Definition:</b> wrap.hpp:97</div></div>
+<div class="ttc" id="aclassame_1_1_wrap_html_a9d2684abc5264ebd547e8e77a5d81ed9"><div class="ttname"><a href="classame_1_1_wrap.html#a9d2684abc5264ebd547e8e77a5d81ed9">ame::Wrap::get</a></div><div class="ttdeci">int_fast32_t get(const int_fast32_t offset=0)</div><div class="ttdoc">Get the current value or the number of the current value plus an offset.</div><div class="ttdef"><b>Definition:</b> wrap.hpp:51</div></div>
+<div class="ttc" id="aclassame_1_1_wrap_html_ab090f17f7949e87b6979acf5e3a64ab0"><div class="ttname"><a href="classame_1_1_wrap.html#ab090f17f7949e87b6979acf5e3a64ab0">ame::Wrap::operator++</a></div><div class="ttdeci">int_fast32_t operator++()</div><div class="ttdoc">Prefix increment.</div><div class="ttdef"><b>Definition:</b> wrap.hpp:69</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

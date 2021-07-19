@@ -102,7 +102,7 @@ $(document).ready(function(){initNavTree('classame_1_1_audio_buffer.html',''); i
 <p>An audio buffer that supports multiple channels whose size is determined at compile time.  
  <a href="classame_1_1_audio_buffer.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="buffer_8hpp_source.html">buffer.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="audio_buffer_8hpp_source.html">audioBuffer.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -144,6 +144,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_audio_buffer.html#aafdc8b71a3086d32b960ac90d835a9df">addFrom</a> (const uint_fast32_t destChannel, const uint_fast32_t destStartSample, const <a class="el" href="classame_1_1_audio_block_view.html">AudioBlockView</a>&lt; FloatType &gt; &amp;source, const uint_fast32_t sourceChannel, const uint_fast32_t sourceStartSample, const uint_fast32_t numSamplesToAdd)</td></tr>
 <tr class="memdesc:aafdc8b71a3086d32b960ac90d835a9df"><td class="mdescLeft">&#160;</td><td class="mdescRight">addBuffer <br /></td></tr>
 <tr class="separator:aafdc8b71a3086d32b960ac90d835a9df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14426152feb6882a5f353c89e70de9e9"><td class="memItemLeft" align="right" valign="top">FloatType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_audio_buffer.html#a14426152feb6882a5f353c89e70de9e9">getPeak</a> (const uint_fast32_t channel) const</td></tr>
+<tr class="separator:a14426152feb6882a5f353c89e70de9e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename FloatType, size_t Size&gt;<br />
@@ -159,6 +161,41 @@ class ame::AudioBuffer&lt; FloatType, Size &gt;</h3>
   </dd>
 </dl>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a14426152feb6882a5f353c89e70de9e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14426152feb6882a5f353c89e70de9e9">&#9670;&nbsp;</a></span>getPeak()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename FloatType , size_t Size&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">FloatType <a class="el" href="classame_1_1_audio_buffer.html">ame::AudioBuffer</a>&lt; FloatType, Size &gt;::getPeak </td>
+          <td>(</td>
+          <td class="paramtype">const uint_fast32_t&#160;</td>
+          <td class="paramname"><em>channel</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">channel</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>FloatType [0.0, FloatTypeMax] </dd></dl>
+
+</div>
+</div>
 <a id="a3dc3f5d97fb0fa401779520b0eef5b1d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3dc3f5d97fb0fa401779520b0eef5b1d">&#9670;&nbsp;</a></span>getReadPointer()</h2>
 
@@ -287,7 +324,7 @@ template&lt;typename FloatType , size_t Size&gt; </div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>audio/<a class="el" href="buffer_8hpp_source.html">buffer.hpp</a></li>
+<li>audio/<a class="el" href="audio_buffer_8hpp_source.html">audioBuffer.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

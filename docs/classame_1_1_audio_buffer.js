@@ -7,6 +7,7 @@ var classame_1_1_audio_buffer =
     [ "clear", "classame_1_1_audio_buffer.html#a4c4e1428efb234fbadcd2c244c24194c", null ],
     [ "getNumChannels", "classame_1_1_audio_buffer.html#adee30570bf93712fe472ee8fbe17693a", null ],
     [ "getNumSamples", "classame_1_1_audio_buffer.html#aea669856e0e2b3481656b98dd2413f30", null ],
+    [ "getPeak", "classame_1_1_audio_buffer.html#a14426152feb6882a5f353c89e70de9e9", null ],
     [ "getReadPointer", "classame_1_1_audio_buffer.html#a3dc3f5d97fb0fa401779520b0eef5b1d", null ],
     [ "getSize", "classame_1_1_audio_buffer.html#a21c8a9ce8ffc93880ffb545b3050d3fd", null ],
     [ "getWritePointer", "classame_1_1_audio_buffer.html#ab8ea88e7a19c1cf4ec6a63666199561f", null ],

@@ -7,12 +7,12 @@ digraph "audio/audioBlockView.hpp"
   Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node2 [label="ame.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ame_8hpp.html",tooltip="main header file."];
   Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node3 [label="audio/buffer.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$buffer_8hpp.html",tooltip="Audio buffer."];
+  Node3 [label="audio/audioBuffer.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$audio_buffer_8hpp.html",tooltip="Audio buffer."];
   Node3 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node4 [label="audio/delay.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$delay_8hpp.html",tooltip="Fractional delay."];
+  Node4 [label="audio/biquad.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$biquad_8hpp.html",tooltip="BiQuad filter."];
   Node4 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node5 [label="audio/filter.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$filter_8hpp.html",tooltip="Filter."];
+  Node5 [label="audio/delay.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$delay_8hpp.html",tooltip="Fractional delay."];
   Node5 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
 }
