@@ -93,42 +93,42 @@ public:
     ~WavReader() = default;
 
     /// return RIFF header file size.
-    uint32_t getFileSize()
+    uint32_t getFileSize() const noexcept
     {
         return fileSize;
     }
 
     /// return sample rate.
-    uint32_t getSampleRate()
+    uint32_t getSampleRate() const noexcept
     {
         return sampleRate;
     }
 
     /// return bit rate.
-    uint16_t getBitRate()
+    uint16_t getBitRate() const noexcept
     {
         return wBitsPerSample;
     }
 
     /// return number of channels
-    uint16_t getNumChannels()
+    uint16_t getNumChannels() const noexcept
     {
         return numChannels;
     }
 
     ///return number of samples per channel.
-    uint32_t getNumSamples()
+    uint32_t getNumSamples() const noexcept
     {
         return numSamplesPerChannel;
     }
 
     ///return data chunk.
-    Chunk getDataChunk()
+    Chunk getDataChunk() const noexcept
     {
         return dataChunk;
     }
 
-    const unsigned char* getDataPointer()
+    const unsigned char* getDataPointer() const noexcept
     {
         return dataChunk.data;
     }
