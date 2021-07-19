@@ -133,6 +133,11 @@ public:
         return dataChunk.data;
     }
 
+    fmt::wFormatTag getFormatTag() const noexcept
+    {
+        return formatTag;
+    }
+
 private:
     void parseRiffHeader()
     {
