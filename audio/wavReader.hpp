@@ -20,6 +20,25 @@ struct Chunk
     const unsigned char* data;
 };
 
+namespace fmt
+{
+    enum class wFormatTag : uint16_t
+    {
+        Unknown = 0,
+        PCM = 1, //For LinearPCM
+        MicrosoftAdpcm = 2,
+        IeeeFloat = 3, //For 32bitFloat
+        Alaw = 6,
+        Ulaw = 7,
+        ImaAdpcm = 0x11, // IMA-ADPCM
+        YamahaAdpcm = 0x16,
+        Gsm610 = 0x21,
+        G721Adpcm = 0x40,
+        Mpeg = 0x50,
+        Experimental = 0xFF
+    };
+} // namespace fmt
+
 namespace
 {
     namespace wavChunkId
@@ -29,25 +48,6 @@ namespace
         inline constexpr char FACT[] = "fact"; //optional
         inline constexpr char DATA[] = "data";
     } // namespace wavChunkId
-
-    namespace fmt
-    {
-        enum class wFormatTag : uint16_t
-        {
-            Unknown = 0,
-            PCM = 1, //For LinearPCM
-            MicrosoftAdpcm = 2,
-            IeeeFloat = 3, //For 32bitFloat
-            Alaw = 6,
-            Ulaw = 7,
-            ImaAdpcm = 0x11, // IMA-ADPCM
-            YamahaAdpcm = 0x16,
-            Gsm610 = 0x21,
-            G721Adpcm = 0x40,
-            Mpeg = 0x50,
-            Experimental = 0xFF
-        };
-    } // namespace fmt
 } // namespace
 
 class WavReader
