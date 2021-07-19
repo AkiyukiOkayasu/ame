@@ -42,4 +42,22 @@ private:
     uint32_t readPosition = 0;
     bool loop = false;
 };
+
+namespace
+{
+    class WavDecoderBase
+    {
+    public:
+        virtual float getSample (uint32_t channel, uint32_t sample) = 0;
+    };
+
+    class PCMDecoder : public WavDecoderBase
+    {
+    public:
+        float getSample (uint32_t channel, uint32_t sample) override
+        {
+            return 0.0f;
+        }
+    };
+} // namespace
 } // namespace ame::wav
