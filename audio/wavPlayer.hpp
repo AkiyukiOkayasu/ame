@@ -15,7 +15,7 @@ namespace ame::wav
 class WavPlayer
 {
 public:
-    WavPlayer (WavReader reader)
+    WavPlayer (const WavReader reader)
         : reader (reader)
     {
         ///@todo 残りの実装
@@ -23,6 +23,6 @@ public:
     ~WavPlayer() = default;
 
 private:
-    WavReader reader;
+    const WavReader reader;
 };
 } // namespace ame::wav
