@@ -17,6 +17,7 @@
 
 namespace ame::wav
 {
+template <typename BytePointerType>
 class WavPlayer
 {
 private:
@@ -37,7 +38,7 @@ private:
     };
 
 public:
-    WavPlayer (const WavReader reader)
+    WavPlayer (const WavReader<BytePointerType> reader)
         : reader (reader)
     {
         ///@todo 残りの実装
@@ -55,7 +56,7 @@ public:
     bool isLooping();
 
 private:
-    const WavReader reader;
+    const WavReader<BytePointerType> reader;
     uint32_t readPosition = 0;
     bool loop = false;
 };

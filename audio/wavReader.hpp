@@ -13,11 +13,12 @@
 
 namespace ame::wav
 {
+template <class BytePointerType>
 struct Chunk
 {
     std::string_view id;
     uint32_t size;
-    const unsigned char* data;
+    BytePointerType data;
 };
 
 namespace fmt
@@ -52,10 +53,11 @@ namespace
 
 ///@todo template classにするか？
 ///const unsigned char*とかunsigned char*, uint8_t とかstd::byteとかに対応させたい
+template <typename BytePointerType>
 class WavReader
 {
 public:
-    WavReader (const unsigned char* wavByteArray, size_t length)
+    WavReader (BytePointerType wavByteArray, size_t length)
         : wav (wavByteArray),
           length (length)
     {
@@ -126,12 +128,12 @@ public:
     }
 
     ///return data chunk.
-    Chunk getDataChunk() const noexcept
+    Chunk<BytePointerType> getDataChunk() const noexcept
     {
         return dataChunk;
     }
 
-    const unsigned char* getDataPointer() const noexcept
+    BytePointerType getDataPointer() const noexcept
     {
         return dataChunk.data;
     }
@@ -153,7 +155,7 @@ private:
         fileSize = *(reinterpret_cast<const uint32_t*> (&wav[4]));
     }
 
-    Chunk parseChunk()
+    Chunk<BytePointerType> parseChunk()
     {
         const auto c = reinterpret_cast<const char*> (&wav[offset]);
         std::string_view sv (c, length - offset);
@@ -163,10 +165,10 @@ private:
 
         ///@todo offset更新をparseChunkから分離したい
         offset += chunkSize + 8; //8: chunkIDとchunkSizeの8byte分
-        return Chunk { chunkId, chunkSize, &wav[dataIndex] };
+        return Chunk<BytePointerType> { chunkId, chunkSize, &wav[dataIndex] };
     }
 
-    const unsigned char* wav;
+    BytePointerType wav;
     uint32_t fileSize = 0;
     size_t length = 0;
     size_t offset = 12; //FMTチャンク冒頭
@@ -177,6 +179,6 @@ private:
     uint32_t sampleRate = 0;
     uint32_t numSamplesPerChannel = 0;
     uint16_t wBitsPerSample = 0;
-    Chunk dataChunk;
+    Chunk<BytePointerType> dataChunk;
 };
 } // namespace ame::wav
