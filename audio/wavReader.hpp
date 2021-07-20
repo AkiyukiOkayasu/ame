@@ -53,8 +53,9 @@ namespace
 class WavReader
 {
 public:
-    WavReader (const unsigned char* wavByteArray, size_t length) : wav (wavByteArray),
-                                                                   length (length)
+    WavReader (const unsigned char* wavByteArray, size_t length)
+        : wav (wavByteArray),
+          length (length)
     {
         assert (length > 46); //46: RIFFヘッダーと最低限のチャンクを合わせた最小のサイズ
         parseRiffHeader();
