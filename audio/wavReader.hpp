@@ -10,6 +10,7 @@
 
 #include <cstddef>
 #include <string_view>
+#include <type_traits>
 
 namespace ame::wav
 {
@@ -56,6 +57,14 @@ namespace
 template <typename BytePointerType>
 class WavReader
 {
+private:
+    using baseType = typename std::remove_pointer<BytePointerType>::type;
+    using cvRemovedBaseType = typename std::remove_cv<baseType>::type;
+    static_assert (std::is_pointer<BytePointerType>::value, "BytePointerType must be a Pointer type.");
+    static_assert (std::is_same<cvRemovedBaseType,
+                                unsigned char>::value,
+                   "BytePointerType must be unsigned char* (or CV-qualified).");
+
 public:
     WavReader (BytePointerType wavByteArray, size_t length)
         : wav (wavByteArray),
