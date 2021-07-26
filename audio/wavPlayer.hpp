@@ -22,19 +22,25 @@ class WavPlayer
 {
 private:
     //wavデコード用内部クラス
-    class WavDecoderBase
+    class WavDecoder
     {
     public:
-        virtual float getSample (uint32_t channel, uint32_t sample) = 0;
-    };
-
-    class PCMDecoder : public WavDecoderBase
-    {
-    public:
-        float getSample (uint32_t channel, uint32_t sample) override
+        WavDecoder (fmt::wFormatTag formatTag, uint32_t numChannels, uint32_t numSamples)
+            : formatTag (formatTag),
+              numChannels (numChannels),
+              numSamples (numSamples)
         {
-            return 0.0f;
         }
+        ~WavDecoder() = default;
+
+        float getSample (uint32_t channel, uint32_t sample)
+        {
+        }
+
+    private:
+        const fmt::wFormatTag formatTag = fmt::wFormatTag::Unknown;
+        const uint32_t numChannels = 0;
+        const uint32_t numSamples = 0;
     };
 
 public:
@@ -42,6 +48,7 @@ public:
         : reader (reader)
     {
         ///@todo 残りの実装
+        WavDecoder decoder (reader.getFormatTag(), reader.getNumChannels(), reader.getNumSamples()); ///@todo メンバ変数にする
     }
     ~WavPlayer() = default;
 
