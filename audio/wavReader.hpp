@@ -148,9 +148,9 @@ private:
     {
         const auto c = reinterpret_cast<const char*> (wav);
         std::string_view sv (c, length);
-        auto riffId = sv.substr (0, 4);
+        const auto riffId = sv.substr (0, 4);
         assert (riffId == "RIFF");
-        auto format = sv.substr (8, 4);
+        const auto format = sv.substr (8, 4);
         assert (format == "WAVE");
         fileSize = *(reinterpret_cast<const uint32_t*> (&wav[4]));
     }
@@ -158,8 +158,8 @@ private:
     Chunk<BytePointerType> parseChunk()
     {
         const auto c = reinterpret_cast<const char*> (&wav[offset]);
-        std::string_view sv (c, length - offset);
-        auto chunkId = sv.substr (0, 4); //chunkIDとchunkSizeを除くチャンクサイズ
+        const std::string_view sv (c, length - offset);
+        const auto chunkId = sv.substr (0, 4); //chunkIDとchunkSizeを除くチャンクサイズ
         const uint32_t chunkSize = *(reinterpret_cast<const uint32_t*> (&wav[offset + 4]));
         const size_t dataIndex = offset + 8;
 
@@ -168,17 +168,17 @@ private:
         return Chunk<BytePointerType> { chunkId, chunkSize, &wav[dataIndex] };
     }
 
-    BytePointerType wav;
+    const BytePointerType wav;
     uint32_t fileSize = 0;
-    size_t length = 0;
+    const size_t length = 0;
     size_t offset = 12; //FMTチャンク冒頭
 
     //fmtチャンク
-    fmt::wFormatTag formatTag;
+    fmt::wFormatTag formatTag = fmt::wFormatTag::Unknown;
     uint16_t numChannels = 0;
     uint32_t sampleRate = 0;
     uint32_t numSamplesPerChannel = 0;
     uint16_t wBitsPerSample = 0;
-    Chunk<BytePointerType> dataChunk;
+    Chunk<BytePointerType> dataChunk {};
 };
 } // namespace ame::wav
