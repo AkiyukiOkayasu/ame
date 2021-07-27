@@ -44,4 +44,5 @@
 #include "math/constants.hpp"
 #include "math/specialFunctions.hpp"
 #include "system/bytes.hpp"
+#include "system/stringUtilities.hpp"
 #include "system/wrap.hpp"
