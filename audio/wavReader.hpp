@@ -66,7 +66,7 @@ private:
                    "BytePointerType must be unsigned char* (or CV-qualified).");
 
 public:
-    WavReader (BytePointerType wavByteArray, size_t length)
+    constexpr WavReader (BytePointerType wavByteArray, size_t length)
         : wav (wavByteArray),
           length (length)
     {
