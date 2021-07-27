@@ -18,6 +18,7 @@ namespace ame::wav
 template <class BytePointerType>
 struct Chunk
 {
+    constexpr Chunk() = default;
     std::string_view id;
     uint32_t size;
     BytePointerType data;
