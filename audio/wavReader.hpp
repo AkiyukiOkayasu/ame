@@ -52,8 +52,6 @@ namespace
     } // namespace wavChunkId
 } // namespace
 
-///@todo template classにするか？
-///const unsigned char*とかunsigned char*, uint8_t とかstd::byteとかに対応させたい
 template <typename BytePointerType>
 class WavReader
 {
