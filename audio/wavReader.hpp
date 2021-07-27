@@ -8,6 +8,7 @@
 */
 #pragma once
 
+#include <cassert>
 #include <cstddef>
 #include <string_view>
 #include <type_traits>
@@ -151,15 +152,11 @@ public:
     }
 
 private:
-    void parseRiffHeader()
+    constexpr void parseRiffHeader()
     {
-        const auto c = reinterpret_cast<const char*> (wav);
-        std::string_view sv (c, length);
-        const auto riffId = sv.substr (0, 4);
-        assert (riffId == "RIFF");
-        const auto format = sv.substr (8, 4);
-        assert (format == "WAVE");
-        fileSize = *(reinterpret_cast<const uint32_t*> (&wav[4]));
+        assert (wav[0] == 'R' && wav[1] == 'I' && wav[2] == 'F' && wav[3] == 'F');   //RIFF ID must be RIFF
+        assert (wav[8] == 'W' && wav[9] == 'A' && wav[10] == 'V' && wav[11] == 'E'); //Format must be WAVE
+        fileSize = (wav[7] << 24) | (wav[6] << 16) | (wav[5] << 8) | wav[4];
     }
 
     Chunk<BytePointerType> parseChunk()
