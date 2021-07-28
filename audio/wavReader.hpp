@@ -8,18 +8,28 @@
 */
 #pragma once
 
+#include "../system/stringUtilities.hpp"
+
 #include <cassert>
 #include <cstddef>
-#include <string_view>
 #include <type_traits>
 
 namespace ame::wav
 {
+enum class ChunkId : uint_fast8_t
+{
+    Unknown = 0,
+    fmt,
+    PEAK,
+    fact,
+    data
+};
+
 template <class BytePointerType>
 struct Chunk
 {
     constexpr Chunk() = default;
-    std::string_view id;
+    ChunkId id;
     uint32_t size;
     BytePointerType data;
 };
@@ -45,13 +55,13 @@ namespace fmt
 
 namespace
 {
-    namespace wavChunkId
+    namespace WavChunkId
     {
-        inline constexpr char FMT[] = "fmt ";
-        inline constexpr char PEAK[] = "PEAK"; //optional
-        inline constexpr char FACT[] = "fact"; //optional
-        inline constexpr char DATA[] = "data";
-    } // namespace wavChunkId
+        constexpr char fmt[] = "fmt ";
+        constexpr char PEAK[] = "PEAK";
+        constexpr char fact[] = "fact";
+        constexpr char data[] = "data";
+    } // namespace WavChunkId
 } // namespace
 
 template <typename BytePointerType>
@@ -73,34 +83,33 @@ public:
         assert (length > 46); //46: RIFFヘッダーと最低限のチャンクを合わせた最小のサイズ
         parseRiffHeader();
 
-        { //fmt chunk
-            const auto fmt = parseChunk();
-            assert (fmt.id == wavChunkId::FMT);
-            assert (fmt.size == 16);
-            formatTag = static_cast<fmt::wFormatTag> (*(reinterpret_cast<const uint16_t*> (&fmt.data[0])));
-            assert (formatTag == fmt::wFormatTag::PCM || formatTag == fmt::wFormatTag::IeeeFloat || formatTag == fmt::wFormatTag::ImaAdpcm);
-            numChannels = *(reinterpret_cast<const uint16_t*> (&fmt.data[2]));
-            sampleRate = *(reinterpret_cast<const uint32_t*> (&fmt.data[4]));
-            wBitsPerSample = *(reinterpret_cast<const uint16_t*> (&fmt.data[14]));
-            assert (wBitsPerSample == 16 || wBitsPerSample == 24 || wBitsPerSample == 32);
-        }
-
-        while (true)
+        while (offset < length)
         {
             const auto chunk = parseChunk();
-            if (chunk.id == wavChunkId::PEAK)
+            switch (chunk.id)
             {
-                ///とりあえずPEAKチャンクは無視する
-            }
-            else if (chunk.id == wavChunkId::FACT)
-            {
-                //とりあえずFACTチャンクは無視する
-            }
-            else if (chunk.id == wavChunkId::DATA)
-            {
-                numSamplesPerChannel = chunk.size / numChannels / (wBitsPerSample / 8);
-                dataChunk = chunk;
-                break;
+                case ChunkId::fmt:
+                    assert (chunk.size == 16);
+                    formatTag = static_cast<fmt::wFormatTag> ((chunk.data[1] << 8) | chunk.data[0]);
+                    assert (formatTag == fmt::wFormatTag::PCM || formatTag == fmt::wFormatTag::IeeeFloat || formatTag == fmt::wFormatTag::ImaAdpcm);
+                    numChannels = (chunk.data[3] << 8) | chunk.data[2];
+                    sampleRate = (chunk.data[5] << 8) | chunk.data[4];
+                    wBitsPerSample = (chunk.data[15] << 8) | chunk.data[14];
+                    assert (wBitsPerSample == 16 || wBitsPerSample == 24 || wBitsPerSample == 32);
+                    break;
+                case ChunkId::PEAK:
+                    //とりあえずPEAKチャンクは無視する
+                    break;
+                case ChunkId::fact:
+                    //とりえあずfactチャンクは無視する
+                    break;
+                case ChunkId::data:
+                    numSamplesPerChannel = chunk.size / numChannels / (wBitsPerSample / 8);
+                    dataChunk = chunk;
+                    break;
+                default:
+                    assert (false); //invalid chunk id
+                    break;
             }
         }
     }
@@ -160,12 +169,33 @@ private:
         fileSize = (wav[7] << 24) | (wav[6] << 16) | (wav[5] << 8) | wav[4];
     }
 
-    Chunk<BytePointerType> parseChunk()
+    constexpr Chunk<BytePointerType> parseChunk()
     {
-        const auto c = reinterpret_cast<const char*> (&wav[offset]);
-        const std::string_view sv (c, length - offset);
-        const auto chunkId = sv.substr (0, 4); //chunkIDとchunkSizeを除くチャンクサイズ
-        const uint32_t chunkSize = *(reinterpret_cast<const uint32_t*> (&wav[offset + 4]));
+        unsigned char cid[4] = {};
+        for (int i = 0; i < 4; ++i)
+        {
+            cid[i] = wav[offset + i];
+        }
+
+        ChunkId chunkId = ChunkId::Unknown;
+        if (stringComp (cid, WavChunkId::fmt, 4))
+        {
+            chunkId = ChunkId::fmt;
+        }
+        else if (stringComp (cid, WavChunkId::PEAK, 4))
+        {
+            chunkId = ChunkId::PEAK;
+        }
+        else if (stringComp (cid, WavChunkId::fact, 4))
+        {
+            chunkId = ChunkId::fact;
+        }
+        else if (stringComp (cid, WavChunkId::data, 4))
+        {
+            chunkId = ChunkId::data;
+        }
+
+        const uint32_t chunkSize = (wav[offset + 7] << 24) | (wav[offset + 6] << 16) | (wav[offset + 5] << 8) | wav[offset + 4]; //constexprのためにretinterpret_cast<uint32_t>を使わない
         const size_t dataIndex = offset + 8;
 
         ///@todo offset更新をparseChunkから分離したい
