@@ -243,4 +243,21 @@ TEST_CASE ("Byte")
     SECTION ("makeByte")
     {
     }
+}TEST_CASE ("String")
+
+TEST_CASE ("String")
+{
+    SECTION ("Comp")
+    {
+        char foo[] = { 'f', 'o', 'o' };
+        const char bar[] = { 'b', 'a', 'r' };
+        char baz[] = "baz";
+        unsigned char qux[] = "qux";
+        unsigned char quux[] = "quux";
+        REQUIRE (ame::stringComp (foo, "foo", 3));
+        REQUIRE (ame::stringComp (bar, "bar", 3));
+        REQUIRE (ame::stringComp (baz, "baz", 3));
+        REQUIRE (ame::stringComp (qux, "qux", 3));
+        REQUIRE (! ame::stringComp (quux, "foo", 4));
+    }
 }
