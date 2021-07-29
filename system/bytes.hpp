@@ -33,4 +33,15 @@ constexpr std::array<std::byte, sizeof...(Ts)> makeBytes (Ts&&... args) noexcept
 {
     return { std::byte (std::forward<Ts> (args))... };
 }
+
+template <auto length>
+constexpr std::array<std::byte, length> makeBytes (const unsigned char* array) noexcept
+{
+    std::array<std::byte, length> a {};
+    for (auto i = 0; i < length; ++i)
+    {
+        a[i] = static_cast<std::byte> (array[i]);
+    }
+    return a;
+}
 } // namespace ame
