@@ -34,7 +34,7 @@ constexpr std::array<std::byte, sizeof...(Ts)> makeBytes (Ts&&... args) noexcept
     return { std::byte (std::forward<Ts> (args))... };
 }
 
-template <auto length>
+template <size_t length>
 constexpr std::array<std::byte, length> makeBytes (const unsigned char* array) noexcept
 {
     std::array<std::byte, length> a {};
