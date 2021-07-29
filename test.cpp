@@ -1,5 +1,6 @@
 #define CATCH_CONFIG_MAIN
 #include "ame.hpp"
+#include "resource/sine440.hpp"
 
 #include <catch2/catch.hpp>
 #include <iomanip>
@@ -183,28 +184,22 @@ TEST_CASE ("AudioBlockView")
     }
 }
 
-constexpr unsigned char wavByteArray[] = {
-#include "resource/sine100.csv"
-};
-alignas (4) constexpr auto wav = ame::makeBytes<sizeof (wavByteArray)> (wavByteArray);
-
-#if 0
 TEST_CASE ("WavReader")
 {
-    ame::wav::WavReader wavReader (wav, sizeof (wav));
+    constexpr ame::wav::WavReader wavReader (wav::wav, sizeof (wav::wav));
     SECTION ("getFileSize()")
     {
-        REQUIRE (wavReader.getFileSize() == sizeof (wav) - 8);
+        REQUIRE (wavReader.getFileSize() == sizeof (wav::wav) - 8);
     }
 
     SECTION ("sampleRate")
     {
-        REQUIRE (wavReader.getSampleRate() == 48000);
+        REQUIRE (wavReader.getSampleRate() == 44100);
     }
 
     SECTION ("bitRate")
     {
-        REQUIRE (wavReader.getBitRate() == 32);
+        REQUIRE (wavReader.getBitRate() == 16);
     }
 
     SECTION ("Channel")
@@ -214,7 +209,7 @@ TEST_CASE ("WavReader")
 
     SECTION ("numSample")
     {
-        REQUIRE (wavReader.getNumSamples() == 1440000);
+        REQUIRE (wavReader.getNumSamples() == 88200);
     }
 
     SECTION ("getDataPointer")
@@ -222,12 +217,12 @@ TEST_CASE ("WavReader")
         auto data = wavReader.getDataPointer();
         REQUIRE (data[0] == 0x00);
         REQUIRE (data[1] == 0x00);
-        REQUIRE (data[2] == 0x00);
-        REQUIRE (data[3] == 0x00);
-        REQUIRE (data[4] == 0xBE);
-        REQUIRE (data[5] == 0x75);
-        REQUIRE (data[6] == 0x56);
-        REQUIRE (data[7] == 0x3C);
+        REQUIRE (data[2] == 0x6B);
+        REQUIRE (data[3] == 0x06);
+        REQUIRE (data[4] == 0xCC);
+        REQUIRE (data[5] == 0x0C);
+        REQUIRE (data[6] == 0x28);
+        REQUIRE (data[7] == 0x13);
     }
 }
 
@@ -235,11 +230,10 @@ TEST_CASE ("WavPlayer")
 {
     SECTION ("Constructor")
     {
-        //constexpr ame::wav::WavReader reader (wav, sizeof (wav));
-        //ame::wav::WavPlayer player (reader);
+        constexpr ame::wav::WavReader reader (wav::wav, sizeof (wav::wav));
+        ame::wav::WavPlayer player (reader);
     }
 }
-#endif
 
 TEST_CASE ("Byte")
 {

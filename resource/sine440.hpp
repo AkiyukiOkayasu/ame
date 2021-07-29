@@ -3,7 +3,7 @@
 
 namespace wav
 {
-inline constexpr std::array<unsigned char, 176444> wav = {
+inline constexpr unsigned char wav[176444] = {
     0x52,
     0x49,
     0x46,
