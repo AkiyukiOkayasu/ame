@@ -63,7 +63,6 @@ public:
         assert (0 <= readPosition.load() && readPosition <= numSamples);
 
         auto buffer = block.getWritePointer();
-        //uint_fast32_t rp = readPosition.load();
 
         ///@todo デコード部分は別関数に移動する
         switch (formatTag)
@@ -75,7 +74,7 @@ public:
                 {
                     if (readPosition + samp >= numSamples)
                     {
-                        ///@todo 別関数をつくる
+                        ///再生停止 @todo 別関数をつくる
                         readPosition.store (0);
                         playing.store (false);
                         return;
@@ -89,7 +88,7 @@ public:
                             temp |= (dataChunk.data[offset] << b);
                             ++offset;
                         }
-                        const FloatType smp = temp / static_cast<FloatType> (std::pow (2.0, reader.getBitRate() - 1));
+                        const FloatType smp = temp / static_cast<FloatType> (std::pow (2.0, reader.getBitRate() - 1)); ///normalize [-1, 1] @todo static_cast<FloatType> (std::pow (2.0, reader.getBitRate() - 1))を予め計算する
                         buffer[samp] += smp;
                     }
                 }
@@ -97,6 +96,10 @@ public:
                 break;
             }
             case fmt::wFormatTag::ImaAdpcm:
+                assert (false); ///@todo 実装追加
+                break;
+            case fmt::wFormatTag::IeeeFloat:
+                assert (false); ///@todo 実装追加
                 break;
             default:
                 assert (false); //invalid wFormat
@@ -124,7 +127,7 @@ private:
     const fmt::wFormatTag formatTag;
     const uint32_t numChannels;
     const uint32_t numSamples;
-    std::atomic<uint32_t> readPosition { 0 }; ///< [0, numSamples]
+    std::atomic<uint32_t> readPosition { 0 }; ///< [0, numSamples] @todo ame::Wrapに変更する？
     std::atomic<bool> loop { false };
     std::atomic<bool> playing { false };
     const Chunk<BytePointerType> dataChunk;
