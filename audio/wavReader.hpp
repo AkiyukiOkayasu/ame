@@ -116,47 +116,47 @@ public:
     ~WavReader() = default;
 
     /// return RIFF header file size.
-    uint32_t getFileSize() const noexcept
+    constexpr uint32_t getFileSize() const noexcept
     {
         return fileSize;
     }
 
     /// return sample rate.
-    uint32_t getSampleRate() const noexcept
+    constexpr uint32_t getSampleRate() const noexcept
     {
         return sampleRate;
     }
 
     /// return bit rate.
-    uint16_t getBitRate() const noexcept
+    constexpr uint16_t getBitRate() const noexcept
     {
         return wBitsPerSample;
     }
 
     /// return number of channels
-    uint16_t getNumChannels() const noexcept
+    constexpr uint16_t getNumChannels() const noexcept
     {
         return numChannels;
     }
 
     ///return number of samples per channel.
-    uint32_t getNumSamples() const noexcept
+    constexpr uint32_t getNumSamples() const noexcept
     {
         return numSamplesPerChannel;
     }
 
     ///return data chunk.
-    Chunk<BytePointerType> getDataChunk() const noexcept
+    constexpr Chunk<BytePointerType> getDataChunk() const noexcept
     {
         return dataChunk;
     }
 
-    BytePointerType getDataPointer() const noexcept
+    constexpr BytePointerType getDataPointer() const noexcept
     {
         return dataChunk.data;
     }
 
-    fmt::wFormatTag getFormatTag() const noexcept
+    constexpr fmt::wFormatTag getFormatTag() const noexcept
     {
         return formatTag;
     }

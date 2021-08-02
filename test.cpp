@@ -231,7 +231,7 @@ TEST_CASE ("WavPlayer")
     SECTION ("Constructor")
     {
         constexpr ame::wav::WavReader reader (wav::wav, sizeof (wav::wav));
-        ame::wav::WavPlayer player (reader);
+        constexpr ame::wav::WavPlayer player (reader);
     }
 }
 
