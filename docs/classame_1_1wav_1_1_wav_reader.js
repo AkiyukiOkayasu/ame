@@ -1,12 +1,13 @@
 var classame_1_1wav_1_1_wav_reader =
 [
-    [ "WavReader", "classame_1_1wav_1_1_wav_reader.html#ad5cf04b4efb1c4e020d13211f623d428", null ],
-    [ "~WavReader", "classame_1_1wav_1_1_wav_reader.html#ad7ae7efcae0cb7ad1e3375684fd52d6a", null ],
-    [ "getBitRate", "classame_1_1wav_1_1_wav_reader.html#a60eefe79d6116616cbb29b6cce6b56ac", null ],
-    [ "getDataChunk", "classame_1_1wav_1_1_wav_reader.html#ae0442b029c621e960adbf6bf2aaa1a1f", null ],
-    [ "getDataPointer", "classame_1_1wav_1_1_wav_reader.html#a9d95532a75ece9ce64c51605239bab80", null ],
-    [ "getFileSize", "classame_1_1wav_1_1_wav_reader.html#a4cd5f58a0825a3e35643b4ca09a2bba8", null ],
-    [ "getNumChannels", "classame_1_1wav_1_1_wav_reader.html#a8ec3bd21f5e9f11ed2e859a5b04869e5", null ],
-    [ "getNumSamples", "classame_1_1wav_1_1_wav_reader.html#a04fb06d5eb53b8a4b251f95276ec494f", null ],
-    [ "getSampleRate", "classame_1_1wav_1_1_wav_reader.html#a136d5eb770399dafb4728b678a80b0e0", null ]
+    [ "WavReader", "classame_1_1wav_1_1_wav_reader.html#a7494beb9d5fa09fdc9c7922cbd7d9e61", null ],
+    [ "~WavReader", "classame_1_1wav_1_1_wav_reader.html#a50fbdf2a77933d5b829e96fcb37b39ac", null ],
+    [ "getBitRate", "classame_1_1wav_1_1_wav_reader.html#a877d3de79ff5ae949a51fdb55bd2ccaa", null ],
+    [ "getDataChunk", "classame_1_1wav_1_1_wav_reader.html#a73c4e2500d483d062f117e667c119462", null ],
+    [ "getDataPointer", "classame_1_1wav_1_1_wav_reader.html#aa1a67b957430d642cfb9bb911764c037", null ],
+    [ "getFileSize", "classame_1_1wav_1_1_wav_reader.html#a8f789226163496883ebc93091e92f2a9", null ],
+    [ "getFormatTag", "classame_1_1wav_1_1_wav_reader.html#a0311499e42e334823ab2f8e40d7a0f15", null ],
+    [ "getNumChannels", "classame_1_1wav_1_1_wav_reader.html#aa7d410a68d0305878531ed80391f7b38", null ],
+    [ "getNumSamples", "classame_1_1wav_1_1_wav_reader.html#a3b69097125c9621d6ee105454761b08f", null ],
+    [ "getSampleRate", "classame_1_1wav_1_1_wav_reader.html#aac77a2c00412b4ee4b60964501f0cf6c", null ]
 ];

@@ -26,6 +26,9 @@ var NAVTREE =
 [
   [ "AME", "index.html", [
     [ "Todo List", "todo.html", null ],
+    [ "Namespaces", "namespaces.html", [
+      [ "Namespace List", "namespaces.html", "namespaces_dup" ]
+    ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
@@ -42,7 +45,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"ame_8hpp.html"
+"",
+"time_8hpp.html#a7585c74ea4475a4b0750597223e0410da88de3c503d9c1f20e9152cc5c0527b31"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

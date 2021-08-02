@@ -10,7 +10,7 @@ var annotated_dup =
         ] ],
         [ "Delay", "classame_1_1dsp_1_1_delay.html", "classame_1_1dsp_1_1_delay" ]
       ] ],
-      [ "wav", null, [
+      [ "wav", "namespaceame_1_1wav.html", [
         [ "WavPlayer", "classame_1_1wav_1_1_wav_player.html", "classame_1_1wav_1_1_wav_player" ],
         [ "Chunk", "structame_1_1wav_1_1_chunk.html", "structame_1_1wav_1_1_chunk" ],
         [ "WavReader", "classame_1_1wav_1_1_wav_reader.html", "classame_1_1wav_1_1_wav_reader" ]

@@ -1,6 +1,7 @@
 var structame_1_1wav_1_1_chunk =
 [
-    [ "data", "structame_1_1wav_1_1_chunk.html#af66b11241051f3bb75b1b2d25ef1e9cb", null ],
-    [ "id", "structame_1_1wav_1_1_chunk.html#a8476595a3b3675d5a9a5156c45638b78", null ],
-    [ "size", "structame_1_1wav_1_1_chunk.html#a63dda6ba8f10fc09fc3a5dc3cec591e0", null ]
+    [ "Chunk", "structame_1_1wav_1_1_chunk.html#add3800c64a9e8515d7031919842b7384", null ],
+    [ "data", "structame_1_1wav_1_1_chunk.html#a87c88bf7daf81822547956cf0188207c", null ],
+    [ "id", "structame_1_1wav_1_1_chunk.html#ab68b96d4604b538152aca5bbb2eb0cde", null ],
+    [ "size", "structame_1_1wav_1_1_chunk.html#aed3e95be0a800bfd67667ac803fd14b8", null ]
 ];

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>AME: ame::wav::WavReader Class Reference</title>
+<title>AME: ame::wav::WavReader&lt; BytePointerType &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -31,6 +31,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">AME
+   &#160;<span id="projectnumber">v0.0.1</span>
    </div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -95,80 +96,46 @@ $(document).ready(function(){initNavTree('classame_1_1wav_1_1_wav_reader.html','
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classame_1_1wav_1_1_wav_reader-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">ame::wav::WavReader Class Reference</div>  </div>
+<div class="title">ame::wav::WavReader&lt; BytePointerType &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ad5cf04b4efb1c4e020d13211f623d428"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1wav_1_1_wav_reader.html#ad5cf04b4efb1c4e020d13211f623d428">WavReader</a> (const unsigned char *wavByteArray, size_t length)</td></tr>
-<tr class="separator:ad5cf04b4efb1c4e020d13211f623d428"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4cd5f58a0825a3e35643b4ca09a2bba8"><td class="memItemLeft" align="right" valign="top"><a id="a4cd5f58a0825a3e35643b4ca09a2bba8"></a>
-uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1wav_1_1_wav_reader.html#a4cd5f58a0825a3e35643b4ca09a2bba8">getFileSize</a> ()</td></tr>
-<tr class="memdesc:a4cd5f58a0825a3e35643b4ca09a2bba8"><td class="mdescLeft">&#160;</td><td class="mdescRight">return RIFF header file size. <br /></td></tr>
-<tr class="separator:a4cd5f58a0825a3e35643b4ca09a2bba8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a136d5eb770399dafb4728b678a80b0e0"><td class="memItemLeft" align="right" valign="top"><a id="a136d5eb770399dafb4728b678a80b0e0"></a>
-uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1wav_1_1_wav_reader.html#a136d5eb770399dafb4728b678a80b0e0">getSampleRate</a> ()</td></tr>
-<tr class="memdesc:a136d5eb770399dafb4728b678a80b0e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">return sample rate. <br /></td></tr>
-<tr class="separator:a136d5eb770399dafb4728b678a80b0e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a60eefe79d6116616cbb29b6cce6b56ac"><td class="memItemLeft" align="right" valign="top"><a id="a60eefe79d6116616cbb29b6cce6b56ac"></a>
-uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1wav_1_1_wav_reader.html#a60eefe79d6116616cbb29b6cce6b56ac">getBitRate</a> ()</td></tr>
-<tr class="memdesc:a60eefe79d6116616cbb29b6cce6b56ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">return bit rate. <br /></td></tr>
-<tr class="separator:a60eefe79d6116616cbb29b6cce6b56ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ec3bd21f5e9f11ed2e859a5b04869e5"><td class="memItemLeft" align="right" valign="top"><a id="a8ec3bd21f5e9f11ed2e859a5b04869e5"></a>
-uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1wav_1_1_wav_reader.html#a8ec3bd21f5e9f11ed2e859a5b04869e5">getNumChannels</a> ()</td></tr>
-<tr class="memdesc:a8ec3bd21f5e9f11ed2e859a5b04869e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">return number of channels <br /></td></tr>
-<tr class="separator:a8ec3bd21f5e9f11ed2e859a5b04869e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a04fb06d5eb53b8a4b251f95276ec494f"><td class="memItemLeft" align="right" valign="top"><a id="a04fb06d5eb53b8a4b251f95276ec494f"></a>
-uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1wav_1_1_wav_reader.html#a04fb06d5eb53b8a4b251f95276ec494f">getNumSamples</a> ()</td></tr>
-<tr class="memdesc:a04fb06d5eb53b8a4b251f95276ec494f"><td class="mdescLeft">&#160;</td><td class="mdescRight">return number of samples per channel. <br /></td></tr>
-<tr class="separator:a04fb06d5eb53b8a4b251f95276ec494f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae0442b029c621e960adbf6bf2aaa1a1f"><td class="memItemLeft" align="right" valign="top"><a id="ae0442b029c621e960adbf6bf2aaa1a1f"></a>
-<a class="el" href="structame_1_1wav_1_1_chunk.html">Chunk</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1wav_1_1_wav_reader.html#ae0442b029c621e960adbf6bf2aaa1a1f">getDataChunk</a> ()</td></tr>
-<tr class="memdesc:ae0442b029c621e960adbf6bf2aaa1a1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">return data chunk. <br /></td></tr>
-<tr class="separator:ae0442b029c621e960adbf6bf2aaa1a1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d95532a75ece9ce64c51605239bab80"><td class="memItemLeft" align="right" valign="top"><a id="a9d95532a75ece9ce64c51605239bab80"></a>
-const unsigned char *&#160;</td><td class="memItemRight" valign="bottom"><b>getDataPointer</b> ()</td></tr>
-<tr class="separator:a9d95532a75ece9ce64c51605239bab80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7494beb9d5fa09fdc9c7922cbd7d9e61"><td class="memItemLeft" align="right" valign="top"><a id="a7494beb9d5fa09fdc9c7922cbd7d9e61"></a>
+constexpr&#160;</td><td class="memItemRight" valign="bottom"><b>WavReader</b> (BytePointerType wavByteArray, size_t length)</td></tr>
+<tr class="separator:a7494beb9d5fa09fdc9c7922cbd7d9e61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f789226163496883ebc93091e92f2a9"><td class="memItemLeft" align="right" valign="top"><a id="a8f789226163496883ebc93091e92f2a9"></a>
+constexpr uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1wav_1_1_wav_reader.html#a8f789226163496883ebc93091e92f2a9">getFileSize</a> () const noexcept</td></tr>
+<tr class="memdesc:a8f789226163496883ebc93091e92f2a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">return RIFF header file size. <br /></td></tr>
+<tr class="separator:a8f789226163496883ebc93091e92f2a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac77a2c00412b4ee4b60964501f0cf6c"><td class="memItemLeft" align="right" valign="top"><a id="aac77a2c00412b4ee4b60964501f0cf6c"></a>
+constexpr uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1wav_1_1_wav_reader.html#aac77a2c00412b4ee4b60964501f0cf6c">getSampleRate</a> () const noexcept</td></tr>
+<tr class="memdesc:aac77a2c00412b4ee4b60964501f0cf6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">return sample rate. <br /></td></tr>
+<tr class="separator:aac77a2c00412b4ee4b60964501f0cf6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a877d3de79ff5ae949a51fdb55bd2ccaa"><td class="memItemLeft" align="right" valign="top"><a id="a877d3de79ff5ae949a51fdb55bd2ccaa"></a>
+constexpr uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1wav_1_1_wav_reader.html#a877d3de79ff5ae949a51fdb55bd2ccaa">getBitRate</a> () const noexcept</td></tr>
+<tr class="memdesc:a877d3de79ff5ae949a51fdb55bd2ccaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">return bit rate. <br /></td></tr>
+<tr class="separator:a877d3de79ff5ae949a51fdb55bd2ccaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7d410a68d0305878531ed80391f7b38"><td class="memItemLeft" align="right" valign="top"><a id="aa7d410a68d0305878531ed80391f7b38"></a>
+constexpr uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1wav_1_1_wav_reader.html#aa7d410a68d0305878531ed80391f7b38">getNumChannels</a> () const noexcept</td></tr>
+<tr class="memdesc:aa7d410a68d0305878531ed80391f7b38"><td class="mdescLeft">&#160;</td><td class="mdescRight">return number of channels <br /></td></tr>
+<tr class="separator:aa7d410a68d0305878531ed80391f7b38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b69097125c9621d6ee105454761b08f"><td class="memItemLeft" align="right" valign="top"><a id="a3b69097125c9621d6ee105454761b08f"></a>
+constexpr uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1wav_1_1_wav_reader.html#a3b69097125c9621d6ee105454761b08f">getNumSamples</a> () const noexcept</td></tr>
+<tr class="memdesc:a3b69097125c9621d6ee105454761b08f"><td class="mdescLeft">&#160;</td><td class="mdescRight">return number of samples per channel. <br /></td></tr>
+<tr class="separator:a3b69097125c9621d6ee105454761b08f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73c4e2500d483d062f117e667c119462"><td class="memItemLeft" align="right" valign="top"><a id="a73c4e2500d483d062f117e667c119462"></a>
+constexpr <a class="el" href="structame_1_1wav_1_1_chunk.html">Chunk</a>&lt; BytePointerType &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1wav_1_1_wav_reader.html#a73c4e2500d483d062f117e667c119462">getDataChunk</a> () const noexcept</td></tr>
+<tr class="memdesc:a73c4e2500d483d062f117e667c119462"><td class="mdescLeft">&#160;</td><td class="mdescRight">return data chunk. <br /></td></tr>
+<tr class="separator:a73c4e2500d483d062f117e667c119462"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1a67b957430d642cfb9bb911764c037"><td class="memItemLeft" align="right" valign="top"><a id="aa1a67b957430d642cfb9bb911764c037"></a>
+constexpr BytePointerType&#160;</td><td class="memItemRight" valign="bottom"><b>getDataPointer</b> () const noexcept</td></tr>
+<tr class="separator:aa1a67b957430d642cfb9bb911764c037"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0311499e42e334823ab2f8e40d7a0f15"><td class="memItemLeft" align="right" valign="top"><a id="a0311499e42e334823ab2f8e40d7a0f15"></a>
+constexpr fmt::wFormatTag&#160;</td><td class="memItemRight" valign="bottom"><b>getFormatTag</b> () const noexcept</td></tr>
+<tr class="separator:a0311499e42e334823ab2f8e40d7a0f15"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ad5cf04b4efb1c4e020d13211f623d428"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad5cf04b4efb1c4e020d13211f623d428">&#9670;&nbsp;</a></span>WavReader()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">ame::wav::WavReader::WavReader </td>
-          <td>(</td>
-          <td class="paramtype">const unsigned char *&#160;</td>
-          <td class="paramname"><em>wavByteArray</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>length</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>とりあえずPEAKチャンクは無視する</p>
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>audio/<a class="el" href="wav_reader_8hpp_source.html">wavReader.hpp</a></li>
 </ul>
@@ -177,7 +144,7 @@ const unsigned char *&#160;</td><td class="memItemRight" valign="bottom"><b>getD
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>ame</b></li><li class="navelem"><b>wav</b></li><li class="navelem"><a class="el" href="classame_1_1wav_1_1_wav_reader.html">WavReader</a></li>
+    <li class="navelem"><b>ame</b></li><li class="navelem"><a class="el" href="namespaceame_1_1wav.html">wav</a></li><li class="navelem"><a class="el" href="classame_1_1wav_1_1_wav_reader.html">WavReader</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
