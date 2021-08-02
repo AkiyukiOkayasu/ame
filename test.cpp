@@ -230,8 +230,22 @@ TEST_CASE ("WavPlayer")
 {
     SECTION ("Constructor")
     {
+        float v[10] = {};
+        ame::AudioBlockView<float> block (v, 1, 10);
         constexpr ame::wav::WavReader reader (wav::wav, sizeof (wav::wav));
-        constexpr ame::wav::WavPlayer player (reader);
+        ame::wav::WavPlayer player (reader);
+        player.play();
+        player.process (block);
+        REQUIRE (v[0] == Approx (0.00000f).scale (1));
+        REQUIRE (v[1] == Approx (0.05014f).scale (1));
+        REQUIRE (v[2] == Approx (0.09998f).scale (1));
+        REQUIRE (v[3] == Approx (0.14966f).scale (1));
+        REQUIRE (v[4] == Approx (0.19843f).scale (1));
+        REQUIRE (v[5] == Approx (0.24677f).scale (1));
+        REQUIRE (v[6] == Approx (0.29376f).scale (1));
+        REQUIRE (v[7] == Approx (0.34000f).scale (1));
+        REQUIRE (v[8] == Approx (0.38452f).scale (1));
+        REQUIRE (v[9] == Approx (0.42786f).scale (1));
     }
 }
 
