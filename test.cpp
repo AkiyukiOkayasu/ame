@@ -1,5 +1,6 @@
 #define CATCH_CONFIG_MAIN
 #include "ame.hpp"
+#include "resource/Tamtam.hpp"
 #include "resource/sine440.hpp"
 
 #include <catch2/catch.hpp>
@@ -184,37 +185,44 @@ TEST_CASE ("AudioBlockView")
     }
 }
 
-TEST_CASE ("WavReader")
+TEST_CASE ("sine440Reader")
 {
-    constexpr ame::wav::WavReader wavReader (wav::wav, sizeof (wav::wav));
+    constexpr ame::wav::WavReader sine440Reader (wav::sine440, sizeof (wav::sine440));
+    constexpr ame::wav::WavReader tamtamReader (wav::tamtam, sizeof (wav::tamtam));
+
     SECTION ("getFileSize()")
     {
-        REQUIRE (wavReader.getFileSize() == sizeof (wav::wav) - 8);
+        REQUIRE (sine440Reader.getFileSize() == sizeof (wav::sine440) - 8);
+        REQUIRE (tamtamReader.getFileSize() == sizeof (wav::tamtam) - 8);
     }
 
     SECTION ("sampleRate")
     {
-        REQUIRE (wavReader.getSampleRate() == 44100);
+        REQUIRE (sine440Reader.getSampleRate() == 44100);
+        REQUIRE (tamtamReader.getSampleRate() == 44100);
     }
 
     SECTION ("bitRate")
     {
-        REQUIRE (wavReader.getBitRate() == 16);
+        REQUIRE (sine440Reader.getBitRate() == 16);
+        REQUIRE (tamtamReader.getBitRate() == 16);
     }
 
     SECTION ("Channel")
     {
-        REQUIRE (wavReader.getNumChannels() == 1);
+        REQUIRE (sine440Reader.getNumChannels() == 1);
+        REQUIRE (tamtamReader.getNumChannels() == 2);
     }
 
     SECTION ("numSample")
     {
-        REQUIRE (wavReader.getNumSamples() == 88200);
+        REQUIRE (sine440Reader.getNumSamples() == 88200);
+        REQUIRE (tamtamReader.getNumSamples() == 279290);
     }
 
     SECTION ("getDataPointer")
     {
-        auto data = wavReader.getDataPointer();
+        auto data = sine440Reader.getDataPointer();
         REQUIRE (data[0] == 0x00);
         REQUIRE (data[1] == 0x00);
         REQUIRE (data[2] == 0x6B);
@@ -223,16 +231,36 @@ TEST_CASE ("WavReader")
         REQUIRE (data[5] == 0x0C);
         REQUIRE (data[6] == 0x28);
         REQUIRE (data[7] == 0x13);
+
+        auto tamtamData = tamtamReader.getDataPointer();
+        REQUIRE (tamtamData[0] == 0x00);
+        REQUIRE (tamtamData[1] == 0x00);
+        REQUIRE (tamtamData[2] == 0x00);
+        REQUIRE (tamtamData[3] == 0x00);
+        REQUIRE (tamtamData[4] == 0x00);
+        REQUIRE (tamtamData[5] == 0x00);
+        REQUIRE (tamtamData[6] == 0x00);
+        REQUIRE (tamtamData[7] == 0x00);
+        REQUIRE (tamtamData[8] == 0xFF);
+        REQUIRE (tamtamData[9] == 0xFF);
+        REQUIRE (tamtamData[10] == 0xFF);
+        REQUIRE (tamtamData[11] == 0xFF);
+        REQUIRE (tamtamData[12] == 0x00);
+        REQUIRE (tamtamData[13] == 0x00);
+        REQUIRE (tamtamData[14] == 0xFF);
+        REQUIRE (tamtamData[15] == 0xFF);
     }
 }
 
 TEST_CASE ("WavPlayer")
 {
-    SECTION ("Constructor")
+    SECTION ("Sine")
     {
-        float v[10] = {};
-        ame::AudioBlockView<float> block (v, 1, 10);
-        constexpr ame::wav::WavReader reader (wav::wav, sizeof (wav::wav));
+        //Mono 16bit LittleEndian 44.1kHz
+        float v[100] = {};
+        constexpr int numChannel = 1;
+        ame::AudioBlockView<float> block (v, numChannel, 100);
+        constexpr ame::wav::WavReader reader (wav::sine440, sizeof (wav::sine440));
         ame::wav::WavPlayer player (reader);
         player.play();
         player.process (block);
@@ -246,6 +274,118 @@ TEST_CASE ("WavPlayer")
         REQUIRE (v[7] == Approx (0.34000f).scale (1));
         REQUIRE (v[8] == Approx (0.38452f).scale (1));
         REQUIRE (v[9] == Approx (0.42786f).scale (1));
+        REQUIRE (v[10] == Approx (0.46930f).scale (1));
+        REQUIRE (v[11] == Approx (0.50894f).scale (1));
+        REQUIRE (v[12] == Approx (0.54666f).scale (1));
+        REQUIRE (v[13] == Approx (0.58215f).scale (1));
+        REQUIRE (v[14] == Approx (0.61539f).scale (1));
+        REQUIRE (v[15] == Approx (0.64621f).scale (1));
+        REQUIRE (v[16] == Approx (0.67450f).scale (1));
+        REQUIRE (v[17] == Approx (0.70007f).scale (1));
+        REQUIRE (v[18] == Approx (0.72302f).scale (1));
+        REQUIRE (v[19] == Approx (0.74298f).scale (1));
+        REQUIRE (v[20] == Approx (0.76016f).scale (1));
+        REQUIRE (v[21] == Approx (0.77426f).scale (1));
+        REQUIRE (v[22] == Approx (0.78537f).scale (1));
+        REQUIRE (v[23] == Approx (0.79330f).scale (1));
+        REQUIRE (v[24] == Approx (0.79834f).scale (1));
+        REQUIRE (v[25] == Approx (0.79987f).scale (1));
+        REQUIRE (v[26] == Approx (0.79874f).scale (1));
+        REQUIRE (v[27] == Approx (0.79398f).scale (1));
+        REQUIRE (v[28] == Approx (0.78647f).scale (1));
+        REQUIRE (v[29] == Approx (0.77567f).scale (1));
+        REQUIRE (v[30] == Approx (0.76190f).scale (1));
+        REQUIRE (v[31] == Approx (0.74509f).scale (1));
+        REQUIRE (v[32] == Approx (0.72543f).scale (1));
+        REQUIRE (v[33] == Approx (0.70285f).scale (1));
+        REQUIRE (v[34] == Approx (0.67749f).scale (1));
+        REQUIRE (v[35] == Approx (0.64963f).scale (1));
+        REQUIRE (v[36] == Approx (0.61896f).scale (1));
+        REQUIRE (v[37] == Approx (0.58606f).scale (1));
+        REQUIRE (v[38] == Approx (0.55081f).scale (1));
+        REQUIRE (v[39] == Approx (0.51331f).scale (1));
+        REQUIRE (v[40] == Approx (0.47400f).scale (1));
+        REQUIRE (v[41] == Approx (0.43250f).scale (1));
+        REQUIRE (v[42] == Approx (0.38968f).scale (1));
+        REQUIRE (v[43] == Approx (0.34497f).scale (1));
+        REQUIRE (v[44] == Approx (0.29926f).scale (1));
+        REQUIRE (v[45] == Approx (0.25198f).scale (1));
+        REQUIRE (v[46] == Approx (0.20410f).scale (1));
+        REQUIRE (v[47] == Approx (0.15509f).scale (1));
+        REQUIRE (v[48] == Approx (0.10577f).scale (1));
+        REQUIRE (v[49] == Approx (0.05573f).scale (1));
+        REQUIRE (v[50] == Approx (0.00577f).scale (1));
+        REQUIRE (v[51] == Approx (-0.04446f).scale (1));
+        REQUIRE (v[52] == Approx (-0.09442f).scale (1));
+        REQUIRE (v[53] == Approx (-0.14386f).scale (1));
+        REQUIRE (v[54] == Approx (-0.19312f).scale (1));
+        REQUIRE (v[55] == Approx (-0.24115f).scale (1));
+        REQUIRE (v[56] == Approx (-0.28857f).scale (1));
+        REQUIRE (v[57] == Approx (-0.33478f).scale (1));
+        REQUIRE (v[58] == Approx (-0.37952f).scale (1));
+        REQUIRE (v[59] == Approx (-0.42303f).scale (1));
+        REQUIRE (v[60] == Approx (-0.46466f).scale (1));
+        REQUIRE (v[61] == Approx (-0.50458f).scale (1));
+        REQUIRE (v[62] == Approx (-0.54242f).scale (1));
+        REQUIRE (v[63] == Approx (-0.57828f).scale (1));
+        REQUIRE (v[64] == Approx (-0.61169f).scale (1));
+        REQUIRE (v[65] == Approx (-0.64285f).scale (1));
+        REQUIRE (v[66] == Approx (-0.67145f).scale (1));
+        REQUIRE (v[67] == Approx (-0.69724f).scale (1));
+        REQUIRE (v[68] == Approx (-0.72061f).scale (1));
+        REQUIRE (v[69] == Approx (-0.74084f).scale (1));
+        REQUIRE (v[70] == Approx (-0.75836f).scale (1));
+        REQUIRE (v[71] == Approx (-0.77280f).scale (1));
+        REQUIRE (v[72] == Approx (-0.78427f).scale (1));
+        REQUIRE (v[73] == Approx (-0.79257f).scale (1));
+        REQUIRE (v[74] == Approx (-0.79788f).scale (1));
+        REQUIRE (v[75] == Approx (-0.79996f).scale (1));
+        REQUIRE (v[76] == Approx (-0.79889f).scale (1));
+        REQUIRE (v[77] == Approx (-0.79474f).scale (1));
+        REQUIRE (v[78] == Approx (-0.78748f).scale (1));
+        REQUIRE (v[79] == Approx (-0.77704f).scale (1));
+        REQUIRE (v[80] == Approx (-0.76361f).scale (1));
+        REQUIRE (v[81] == Approx (-0.74719f).scale (1));
+        REQUIRE (v[82] == Approx (-0.72775f).scale (1));
+        REQUIRE (v[83] == Approx (-0.70560f).scale (1));
+        REQUIRE (v[84] == Approx (-0.68051f).scale (1));
+        REQUIRE (v[85] == Approx (-0.65289f).scale (1));
+        REQUIRE (v[86] == Approx (-0.62256f).scale (1));
+        REQUIRE (v[87] == Approx (-0.58997f).scale (1));
+        REQUIRE (v[88] == Approx (-0.55490f).scale (1));
+        REQUIRE (v[89] == Approx (-0.51770f).scale (1));
+        REQUIRE (v[90] == Approx (-0.47849f).scale (1));
+        REQUIRE (v[91] == Approx (-0.43741f).scale (1));
+        REQUIRE (v[92] == Approx (-0.39453f).scale (1));
+        REQUIRE (v[93] == Approx (-0.35019f).scale (1));
+        REQUIRE (v[94] == Approx (-0.30444f).scale (1));
+        REQUIRE (v[95] == Approx (-0.25748f).scale (1));
+        REQUIRE (v[96] == Approx (-0.20956f).scale (1));
+        REQUIRE (v[97] == Approx (-0.16074f).scale (1));
+        REQUIRE (v[98] == Approx (-0.11133f).scale (1));
+        REQUIRE (v[99] == Approx (-0.06146f).scale (1));
+    }
+
+    SECTION ("Tamtam")
+    {
+        //Stereo 16bit LittleEndian 44.1kHz
+        float v[10] = {};
+        constexpr int numChannel = 2;
+        ame::AudioBlockView<float> block (v, numChannel, 5);
+        constexpr ame::wav::WavReader reader (wav::tamtam, sizeof (wav::tamtam));
+        ame::wav::WavPlayer player (reader);
+        player.play();
+        player.process (block);
+        REQUIRE (v[0] == Approx (0.00000f).scale (1));
+        REQUIRE (v[1] == Approx (0.00000f).scale (1));
+        REQUIRE (v[2] == Approx (0.00000f).scale (1));
+        REQUIRE (v[3] == Approx (0.00000f).scale (1));
+        REQUIRE (v[4] == Approx (-0.00003f).scale (1));
+        REQUIRE (v[5] == Approx (-0.00003f).scale (1));
+        REQUIRE (v[6] == Approx (0.00000f).scale (1));
+        REQUIRE (v[7] == Approx (-0.00003f).scale (1));
+        REQUIRE (v[8] == Approx (-0.00006f).scale (1));
+        REQUIRE (v[9] == Approx (-0.00009f).scale (1));
     }
 }
 

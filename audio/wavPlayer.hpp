@@ -28,10 +28,8 @@ public:
           formatTag (reader.getFormatTag()),
           numChannels (reader.getNumChannels()),
           numSamples (reader.getNumSamples()),
-          dataChunk (reader.getDataChunk()),
-          normalizeFactor (1 << (reader.getBitRate() - 1))
+          dataChunk (reader.getDataChunk())
     {
-        ///@todo 残りの実装
     }
     ~WavPlayer() = default;
 
@@ -65,10 +63,8 @@ public:
             return;
         }
 
-        assert (block.getNumChannels() == numChannels);
+        assert (block.getNumChannels() >= numChannels);
         assert (0 <= readPosition.load() && readPosition <= numSamples);
-
-        auto buffer = block.getWritePointer();
 
         ///@todo デコード部分は別関数に移動する
         switch (formatTag)
@@ -89,13 +85,13 @@ public:
                     for (uint_fast32_t ch = 0; ch < block.getNumChannels(); ++ch)
                     {
                         int32_t temp = 0;
-                        for (uint32_t b = 0; b < reader.getBitRate(); b += 8)
+                        for (uint32_t b = 32 - reader.getBitRate(); b < 32; b += 8) //bitDepthが16bitや24bitのときは下部を0埋めする.
                         {
                             temp |= (dataChunk.data[offset] << b);
                             ++offset;
                         }
-                        const FloatType smp = static_cast<FloatType> (temp) / normalizeFactor; ///normalize [-1, 1]
-                        buffer[samp] += smp;
+                        const FloatType s = static_cast<FloatType> (temp) / normalizeFactor; ///normalize [-1, 1]
+                        block.addSample (ch, samp, s);
                     }
                 }
                 readPosition += block.getNumSamples();
@@ -137,6 +133,6 @@ private:
     std::atomic<bool> loop { false };
     std::atomic<bool> playing { false };
     const Chunk<BytePointerType> dataChunk;
-    const uint32_t normalizeFactor;
+    static constexpr uint32_t normalizeFactor = 2147483648; //2^31
 };
 } // namespace ame::wav
