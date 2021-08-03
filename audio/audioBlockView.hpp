@@ -9,6 +9,7 @@
 
 #pragma once
 
+#include <cassert>
 #include <cmath>
 #include <cstdint>
 
@@ -58,6 +59,36 @@ public:
     uint_fast32_t getSize() const noexcept
     {
         return numChannels * numSamples;
+    }
+
+    /** Sets a sample in the buffer.    
+    @param destChannel 
+    @param destSample 
+    @param value 
+    */
+
+    /** Set a sample in the buffer.    
+    @param destChannel 
+    @param destSample 
+    @param value     
+    */
+    void setSample (const uint_fast32_t destChannel, const uint_fast32_t destSample, const SampleType newValue)
+    {
+        assert (destChannel < numChannels);
+        assert (destSample < numSamples);
+        buffer[destSample * numChannels + destChannel] = newValue;
+    }
+
+    /** Add a value to a sample in the buffer.
+    @param destChannel 
+    @param destSample 
+    @param valueToAdd 
+    */
+    void addSample (const uint_fast32_t destChannel, const uint_fast32_t destSample, const SampleType valueToAdd)
+    {
+        assert (destChannel < numChannels);
+        assert (destSample < numSamples);
+        buffer[destSample * numChannels + destChannel] += valueToAdd;
     }
 
     /** Returns a read only pointer to interleaved audio buffer.
