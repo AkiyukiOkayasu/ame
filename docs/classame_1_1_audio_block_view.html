@@ -121,6 +121,12 @@ uint_fast32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" h
 <tr class="memitem:a5c695d126beb3585a6fd92a991d9802d"><td class="memItemLeft" align="right" valign="top">uint_fast32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_audio_block_view.html#a5c695d126beb3585a6fd92a991d9802d">getSize</a> () const noexcept</td></tr>
 <tr class="memdesc:a5c695d126beb3585a6fd92a991d9802d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the length of the buffer.  <a href="classame_1_1_audio_block_view.html#a5c695d126beb3585a6fd92a991d9802d">More...</a><br /></td></tr>
 <tr class="separator:a5c695d126beb3585a6fd92a991d9802d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa86614be16ad607689acb254b7ca86b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_audio_block_view.html#aaa86614be16ad607689acb254b7ca86b">setSample</a> (const uint_fast32_t destChannel, const uint_fast32_t destSample, const SampleType newValue)</td></tr>
+<tr class="memdesc:aaa86614be16ad607689acb254b7ca86b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a sample in the buffer.  <a href="classame_1_1_audio_block_view.html#aaa86614be16ad607689acb254b7ca86b">More...</a><br /></td></tr>
+<tr class="separator:aaa86614be16ad607689acb254b7ca86b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae25cf9ee97949a5bb3902fdb25f9f449"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_audio_block_view.html#ae25cf9ee97949a5bb3902fdb25f9f449">addSample</a> (const uint_fast32_t destChannel, const uint_fast32_t destSample, const SampleType valueToAdd)</td></tr>
+<tr class="memdesc:ae25cf9ee97949a5bb3902fdb25f9f449"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a value to a sample in the buffer.  <a href="classame_1_1_audio_block_view.html#ae25cf9ee97949a5bb3902fdb25f9f449">More...</a><br /></td></tr>
+<tr class="separator:ae25cf9ee97949a5bb3902fdb25f9f449"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0fb764e6f98f2a8ae3e1b235040f6c38"><td class="memItemLeft" align="right" valign="top">const SampleType *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_audio_block_view.html#a0fb764e6f98f2a8ae3e1b235040f6c38">getReadPointer</a> () const noexcept</td></tr>
 <tr class="memdesc:a0fb764e6f98f2a8ae3e1b235040f6c38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a read only pointer to interleaved audio buffer.  <a href="classame_1_1_audio_block_view.html#a0fb764e6f98f2a8ae3e1b235040f6c38">More...</a><br /></td></tr>
 <tr class="separator:a0fb764e6f98f2a8ae3e1b235040f6c38"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -204,6 +210,60 @@ template&lt;typename SampleType &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="ae25cf9ee97949a5bb3902fdb25f9f449"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae25cf9ee97949a5bb3902fdb25f9f449">&#9670;&nbsp;</a></span>addSample()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename SampleType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classame_1_1_audio_block_view.html">ame::AudioBlockView</a>&lt; SampleType &gt;::addSample </td>
+          <td>(</td>
+          <td class="paramtype">const uint_fast32_t&#160;</td>
+          <td class="paramname"><em>destChannel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint_fast32_t&#160;</td>
+          <td class="paramname"><em>destSample</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const SampleType&#160;</td>
+          <td class="paramname"><em>valueToAdd</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Add a value to a sample in the buffer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">destChannel</td><td></td></tr>
+    <tr><td class="paramname">destSample</td><td></td></tr>
+    <tr><td class="paramname">valueToAdd</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a6beefbb8b07fc5bc5b62a9f4666a3eb8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6beefbb8b07fc5bc5b62a9f4666a3eb8">&#9670;&nbsp;</a></span>getPeak()</h2>
 
@@ -327,6 +387,66 @@ template&lt;typename SampleType &gt; </div>
 
 <p>Returns a writeable pointer to interleaved audio buffer. </p>
 <dl class="section return"><dt>Returns</dt><dd>float* interleaved audio buffer </dd></dl>
+
+</div>
+</div>
+<a id="aaa86614be16ad607689acb254b7ca86b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa86614be16ad607689acb254b7ca86b">&#9670;&nbsp;</a></span>setSample()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename SampleType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classame_1_1_audio_block_view.html">ame::AudioBlockView</a>&lt; SampleType &gt;::setSample </td>
+          <td>(</td>
+          <td class="paramtype">const uint_fast32_t&#160;</td>
+          <td class="paramname"><em>destChannel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint_fast32_t&#160;</td>
+          <td class="paramname"><em>destSample</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const SampleType&#160;</td>
+          <td class="paramname"><em>newValue</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets a sample in the buffer. </p>
+<p><br  />
+ </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">destChannel</td><td></td></tr>
+    <tr><td class="paramname">destSample</td><td></td></tr>
+    <tr><td class="paramname">value</td><td>Set a sample in the buffer. <br  />
+ </td></tr>
+    <tr><td class="paramname">destChannel</td><td></td></tr>
+    <tr><td class="paramname">destSample</td><td></td></tr>
+    <tr><td class="paramname">value</td><td><br  />
+ </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

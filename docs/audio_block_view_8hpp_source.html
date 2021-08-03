@@ -99,105 +99,122 @@ $(document).ready(function(){initNavTree('audio_block_view_8hpp_source.html','')
 <a href="audio_block_view_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;cmath&gt;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">namespace </span>ame</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> SampleType&gt;</div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classame_1_1_audio_block_view.html">   26</a></span>&#160;<span class="keyword">class </span><a class="code" href="classame_1_1_audio_block_view.html">AudioBlockView</a></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classame_1_1_audio_block_view.html#a469b867bada0bad24e603ea86ed7c9e1">   35</a></span>&#160;    <a class="code" href="classame_1_1_audio_block_view.html#a469b867bada0bad24e603ea86ed7c9e1">AudioBlockView</a> (SampleType* buffer, <span class="keyword">const</span> uint_fast32_t numChannels, <span class="keyword">const</span> uint_fast32_t numSamples) noexcept</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        : buffer (buffer),</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;          numSamples (numSamples),</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;          numChannels (numChannels)</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    }</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    ~<a class="code" href="classame_1_1_audio_block_view.html">AudioBlockView</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classame_1_1_audio_block_view.html#a2876af1db4b669386ab5170e38d7a3a1">   44</a></span>&#160;    uint_fast32_t <a class="code" href="classame_1_1_audio_block_view.html#a2876af1db4b669386ab5170e38d7a3a1">getNumChannels</a>() const noexcept</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    {</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">return</span> numChannels;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classame_1_1_audio_block_view.html#a3ed14372b4f3854bc29e06005b0707bb">   50</a></span>&#160;    uint_fast32_t <a class="code" href="classame_1_1_audio_block_view.html#a3ed14372b4f3854bc29e06005b0707bb">getNumSamples</a>() const noexcept</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    {</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">return</span> numSamples;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classame_1_1_audio_block_view.html#a5c695d126beb3585a6fd92a991d9802d">   58</a></span>&#160;    uint_fast32_t <a class="code" href="classame_1_1_audio_block_view.html#a5c695d126beb3585a6fd92a991d9802d">getSize</a>() const noexcept</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordflow">return</span> numChannels * numSamples;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="classame_1_1_audio_block_view.html#a0fb764e6f98f2a8ae3e1b235040f6c38">   66</a></span>&#160;    <span class="keyword">const</span> SampleType* <a class="code" href="classame_1_1_audio_block_view.html#a0fb764e6f98f2a8ae3e1b235040f6c38">getReadPointer</a>() const noexcept</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    {</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">return</span> buffer;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="classame_1_1_audio_block_view.html#a69dcc67a5e9fd4446b989a272d669730">   74</a></span>&#160;    SampleType* <a class="code" href="classame_1_1_audio_block_view.html#a69dcc67a5e9fd4446b989a272d669730">getWritePointer</a>() noexcept</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    {</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordflow">return</span> buffer;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="classame_1_1_audio_block_view.html#a803054f0321e2f79bf47d924acc02e38">   80</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classame_1_1_audio_block_view.html#a803054f0321e2f79bf47d924acc02e38">clear</a>()</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        uint_fast32_t i = 0;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">for</span> (uint_fast32_t samp = 0; samp &lt; numSamples; ++samp)</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        {</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="keywordflow">for</span> (uint_fast32_t ch = 0; ch &lt; numChannels; ++ch)</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            {</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                buffer[i] = <span class="keyword">static_cast&lt;</span>SampleType<span class="keyword">&gt;</span> (0.0f);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                ++i;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            }</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        }</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    }</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="classame_1_1_audio_block_view.html#a1f5d801579029007ede551c6ac98d9f6">   94</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classame_1_1_audio_block_view.html#a1f5d801579029007ede551c6ac98d9f6">applyGain</a> (<span class="keyword">const</span> <span class="keywordtype">float</span> gain)</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    {</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        uint_fast32_t i = 0;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordflow">for</span> (uint_fast32_t samp = 0; samp &lt; numSamples; ++samp)</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        {</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <span class="keywordflow">for</span> (uint_fast32_t ch = 0; ch &lt; numChannels; ++ch)</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            {</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                buffer[i] *= gain;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                ++i;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            }</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        }</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    }</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
-<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="classame_1_1_audio_block_view.html#a6beefbb8b07fc5bc5b62a9f4666a3eb8">  112</a></span>&#160;    SampleType <a class="code" href="classame_1_1_audio_block_view.html#a6beefbb8b07fc5bc5b62a9f4666a3eb8">getPeak</a> (<span class="keyword">const</span> uint_fast32_t channel)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        SampleType peak = 0.0;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = channel; i &lt; numSamples * numChannels; i += numChannels)</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        {</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span> v = std::abs (buffer[i]);</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            <span class="keywordflow">if</span> (v &gt; peak)</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            {</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                peak = v;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            }</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        }</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="keywordflow">return</span> peak;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    }</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    SampleType* buffer;</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    uint_fast32_t numSamples;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    uint_fast32_t numChannels;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;};</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="keyword">template</span> <span class="keyword">class </span>AudioBlockView&lt;float&gt;; <span class="comment">//明示的テンプレートのインスタンス化</span></div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;} <span class="comment">// namespace ame</span></div>
-<div class="ttc" id="aclassame_1_1_audio_block_view_html"><div class="ttname"><a href="classame_1_1_audio_block_view.html">ame::AudioBlockView</a></div><div class="ttdoc">A lightweight data structure that stores a pointer to an audio buffer.</div><div class="ttdef"><b>Definition:</b> audioBlockView.hpp:27</div></div>
-<div class="ttc" id="aclassame_1_1_audio_block_view_html_a0fb764e6f98f2a8ae3e1b235040f6c38"><div class="ttname"><a href="classame_1_1_audio_block_view.html#a0fb764e6f98f2a8ae3e1b235040f6c38">ame::AudioBlockView::getReadPointer</a></div><div class="ttdeci">const SampleType * getReadPointer() const noexcept</div><div class="ttdoc">Returns a read only pointer to interleaved audio buffer.</div><div class="ttdef"><b>Definition:</b> audioBlockView.hpp:66</div></div>
-<div class="ttc" id="aclassame_1_1_audio_block_view_html_a1f5d801579029007ede551c6ac98d9f6"><div class="ttname"><a href="classame_1_1_audio_block_view.html#a1f5d801579029007ede551c6ac98d9f6">ame::AudioBlockView::applyGain</a></div><div class="ttdeci">void applyGain(const float gain)</div><div class="ttdoc">Applies a gain multiple to all the audio data.</div><div class="ttdef"><b>Definition:</b> audioBlockView.hpp:94</div></div>
-<div class="ttc" id="aclassame_1_1_audio_block_view_html_a2876af1db4b669386ab5170e38d7a3a1"><div class="ttname"><a href="classame_1_1_audio_block_view.html#a2876af1db4b669386ab5170e38d7a3a1">ame::AudioBlockView::getNumChannels</a></div><div class="ttdeci">uint_fast32_t getNumChannels() const noexcept</div><div class="ttdoc">Returns the number of channels.</div><div class="ttdef"><b>Definition:</b> audioBlockView.hpp:44</div></div>
-<div class="ttc" id="aclassame_1_1_audio_block_view_html_a3ed14372b4f3854bc29e06005b0707bb"><div class="ttname"><a href="classame_1_1_audio_block_view.html#a3ed14372b4f3854bc29e06005b0707bb">ame::AudioBlockView::getNumSamples</a></div><div class="ttdeci">uint_fast32_t getNumSamples() const noexcept</div><div class="ttdoc">Returns the number of samples per channel.</div><div class="ttdef"><b>Definition:</b> audioBlockView.hpp:50</div></div>
-<div class="ttc" id="aclassame_1_1_audio_block_view_html_a469b867bada0bad24e603ea86ed7c9e1"><div class="ttname"><a href="classame_1_1_audio_block_view.html#a469b867bada0bad24e603ea86ed7c9e1">ame::AudioBlockView::AudioBlockView</a></div><div class="ttdeci">AudioBlockView(SampleType *buffer, const uint_fast32_t numChannels, const uint_fast32_t numSamples) noexcept</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition:</b> audioBlockView.hpp:35</div></div>
-<div class="ttc" id="aclassame_1_1_audio_block_view_html_a5c695d126beb3585a6fd92a991d9802d"><div class="ttname"><a href="classame_1_1_audio_block_view.html#a5c695d126beb3585a6fd92a991d9802d">ame::AudioBlockView::getSize</a></div><div class="ttdeci">uint_fast32_t getSize() const noexcept</div><div class="ttdoc">Returns the length of the buffer.</div><div class="ttdef"><b>Definition:</b> audioBlockView.hpp:58</div></div>
-<div class="ttc" id="aclassame_1_1_audio_block_view_html_a69dcc67a5e9fd4446b989a272d669730"><div class="ttname"><a href="classame_1_1_audio_block_view.html#a69dcc67a5e9fd4446b989a272d669730">ame::AudioBlockView::getWritePointer</a></div><div class="ttdeci">SampleType * getWritePointer() noexcept</div><div class="ttdoc">Returns a writeable pointer to interleaved audio buffer.</div><div class="ttdef"><b>Definition:</b> audioBlockView.hpp:74</div></div>
-<div class="ttc" id="aclassame_1_1_audio_block_view_html_a6beefbb8b07fc5bc5b62a9f4666a3eb8"><div class="ttname"><a href="classame_1_1_audio_block_view.html#a6beefbb8b07fc5bc5b62a9f4666a3eb8">ame::AudioBlockView::getPeak</a></div><div class="ttdeci">SampleType getPeak(const uint_fast32_t channel) const</div><div class="ttdef"><b>Definition:</b> audioBlockView.hpp:112</div></div>
-<div class="ttc" id="aclassame_1_1_audio_block_view_html_a803054f0321e2f79bf47d924acc02e38"><div class="ttname"><a href="classame_1_1_audio_block_view.html#a803054f0321e2f79bf47d924acc02e38">ame::AudioBlockView::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdoc">Set all samples to 0.</div><div class="ttdef"><b>Definition:</b> audioBlockView.hpp:80</div></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;cassert&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;cmath&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">namespace </span>ame</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> SampleType&gt;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classame_1_1_audio_block_view.html">   27</a></span>&#160;<span class="keyword">class </span><a class="code" href="classame_1_1_audio_block_view.html">AudioBlockView</a></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classame_1_1_audio_block_view.html#a469b867bada0bad24e603ea86ed7c9e1">   36</a></span>&#160;    <a class="code" href="classame_1_1_audio_block_view.html#a469b867bada0bad24e603ea86ed7c9e1">AudioBlockView</a> (SampleType* buffer, <span class="keyword">const</span> uint_fast32_t numChannels, <span class="keyword">const</span> uint_fast32_t numSamples) noexcept</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        : buffer (buffer),</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;          numSamples (numSamples),</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;          numChannels (numChannels)</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    }</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    ~<a class="code" href="classame_1_1_audio_block_view.html">AudioBlockView</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classame_1_1_audio_block_view.html#a2876af1db4b669386ab5170e38d7a3a1">   45</a></span>&#160;    uint_fast32_t <a class="code" href="classame_1_1_audio_block_view.html#a2876af1db4b669386ab5170e38d7a3a1">getNumChannels</a>() const noexcept</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">return</span> numChannels;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classame_1_1_audio_block_view.html#a3ed14372b4f3854bc29e06005b0707bb">   51</a></span>&#160;    uint_fast32_t <a class="code" href="classame_1_1_audio_block_view.html#a3ed14372b4f3854bc29e06005b0707bb">getNumSamples</a>() const noexcept</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordflow">return</span> numSamples;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="classame_1_1_audio_block_view.html#a5c695d126beb3585a6fd92a991d9802d">   59</a></span>&#160;    uint_fast32_t <a class="code" href="classame_1_1_audio_block_view.html#a5c695d126beb3585a6fd92a991d9802d">getSize</a>() const noexcept</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">return</span> numChannels * numSamples;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="classame_1_1_audio_block_view.html#aaa86614be16ad607689acb254b7ca86b">   75</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classame_1_1_audio_block_view.html#aaa86614be16ad607689acb254b7ca86b">setSample</a> (<span class="keyword">const</span> uint_fast32_t destChannel, <span class="keyword">const</span> uint_fast32_t destSample, <span class="keyword">const</span> SampleType newValue)</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        assert (destChannel &lt; numChannels);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        assert (destSample &lt; numSamples);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        buffer[destSample * numChannels + destChannel] = newValue;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="classame_1_1_audio_block_view.html#ae25cf9ee97949a5bb3902fdb25f9f449">   87</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classame_1_1_audio_block_view.html#ae25cf9ee97949a5bb3902fdb25f9f449">addSample</a> (<span class="keyword">const</span> uint_fast32_t destChannel, <span class="keyword">const</span> uint_fast32_t destSample, <span class="keyword">const</span> SampleType valueToAdd)</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    {</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        assert (destChannel &lt; numChannels);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        assert (destSample &lt; numSamples);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        buffer[destSample * numChannels + destChannel] += valueToAdd;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="classame_1_1_audio_block_view.html#a0fb764e6f98f2a8ae3e1b235040f6c38">   97</a></span>&#160;    <span class="keyword">const</span> SampleType* <a class="code" href="classame_1_1_audio_block_view.html#a0fb764e6f98f2a8ae3e1b235040f6c38">getReadPointer</a>() const noexcept</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordflow">return</span> buffer;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    }</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="classame_1_1_audio_block_view.html#a69dcc67a5e9fd4446b989a272d669730">  105</a></span>&#160;    SampleType* <a class="code" href="classame_1_1_audio_block_view.html#a69dcc67a5e9fd4446b989a272d669730">getWritePointer</a>() noexcept</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    {</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keywordflow">return</span> buffer;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    }</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="classame_1_1_audio_block_view.html#a803054f0321e2f79bf47d924acc02e38">  111</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classame_1_1_audio_block_view.html#a803054f0321e2f79bf47d924acc02e38">clear</a>()</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    {</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        uint_fast32_t i = 0;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keywordflow">for</span> (uint_fast32_t samp = 0; samp &lt; numSamples; ++samp)</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        {</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            <span class="keywordflow">for</span> (uint_fast32_t ch = 0; ch &lt; numChannels; ++ch)</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            {</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                buffer[i] = <span class="keyword">static_cast&lt;</span>SampleType<span class="keyword">&gt;</span> (0.0f);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                ++i;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            }</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        }</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    }</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
+<div class="line"><a name="l00125"></a><span class="lineno"><a class="line" href="classame_1_1_audio_block_view.html#a1f5d801579029007ede551c6ac98d9f6">  125</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classame_1_1_audio_block_view.html#a1f5d801579029007ede551c6ac98d9f6">applyGain</a> (<span class="keyword">const</span> <span class="keywordtype">float</span> gain)</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    {</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        uint_fast32_t i = 0;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <span class="keywordflow">for</span> (uint_fast32_t samp = 0; samp &lt; numSamples; ++samp)</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        {</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            <span class="keywordflow">for</span> (uint_fast32_t ch = 0; ch &lt; numChannels; ++ch)</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            {</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                buffer[i] *= gain;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                ++i;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            }</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        }</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    }</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
+<div class="line"><a name="l00143"></a><span class="lineno"><a class="line" href="classame_1_1_audio_block_view.html#a6beefbb8b07fc5bc5b62a9f4666a3eb8">  143</a></span>&#160;    SampleType <a class="code" href="classame_1_1_audio_block_view.html#a6beefbb8b07fc5bc5b62a9f4666a3eb8">getPeak</a> (<span class="keyword">const</span> uint_fast32_t channel)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        SampleType peak = 0.0;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = channel; i &lt; numSamples * numChannels; i += numChannels)</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        {</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span> v = std::abs (buffer[i]);</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;            <span class="keywordflow">if</span> (v &gt; peak)</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;            {</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                peak = v;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;            }</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        }</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <span class="keywordflow">return</span> peak;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    }</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    SampleType* buffer;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    uint_fast32_t numSamples;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    uint_fast32_t numChannels;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;};</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="keyword">template</span> <span class="keyword">class </span>AudioBlockView&lt;float&gt;; <span class="comment">//明示的テンプレートのインスタンス化</span></div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;} <span class="comment">// namespace ame</span></div>
+<div class="ttc" id="aclassame_1_1_audio_block_view_html"><div class="ttname"><a href="classame_1_1_audio_block_view.html">ame::AudioBlockView</a></div><div class="ttdoc">A lightweight data structure that stores a pointer to an audio buffer.</div><div class="ttdef"><b>Definition:</b> audioBlockView.hpp:28</div></div>
+<div class="ttc" id="aclassame_1_1_audio_block_view_html_a0fb764e6f98f2a8ae3e1b235040f6c38"><div class="ttname"><a href="classame_1_1_audio_block_view.html#a0fb764e6f98f2a8ae3e1b235040f6c38">ame::AudioBlockView::getReadPointer</a></div><div class="ttdeci">const SampleType * getReadPointer() const noexcept</div><div class="ttdoc">Returns a read only pointer to interleaved audio buffer.</div><div class="ttdef"><b>Definition:</b> audioBlockView.hpp:97</div></div>
+<div class="ttc" id="aclassame_1_1_audio_block_view_html_a1f5d801579029007ede551c6ac98d9f6"><div class="ttname"><a href="classame_1_1_audio_block_view.html#a1f5d801579029007ede551c6ac98d9f6">ame::AudioBlockView::applyGain</a></div><div class="ttdeci">void applyGain(const float gain)</div><div class="ttdoc">Applies a gain multiple to all the audio data.</div><div class="ttdef"><b>Definition:</b> audioBlockView.hpp:125</div></div>
+<div class="ttc" id="aclassame_1_1_audio_block_view_html_a2876af1db4b669386ab5170e38d7a3a1"><div class="ttname"><a href="classame_1_1_audio_block_view.html#a2876af1db4b669386ab5170e38d7a3a1">ame::AudioBlockView::getNumChannels</a></div><div class="ttdeci">uint_fast32_t getNumChannels() const noexcept</div><div class="ttdoc">Returns the number of channels.</div><div class="ttdef"><b>Definition:</b> audioBlockView.hpp:45</div></div>
+<div class="ttc" id="aclassame_1_1_audio_block_view_html_a3ed14372b4f3854bc29e06005b0707bb"><div class="ttname"><a href="classame_1_1_audio_block_view.html#a3ed14372b4f3854bc29e06005b0707bb">ame::AudioBlockView::getNumSamples</a></div><div class="ttdeci">uint_fast32_t getNumSamples() const noexcept</div><div class="ttdoc">Returns the number of samples per channel.</div><div class="ttdef"><b>Definition:</b> audioBlockView.hpp:51</div></div>
+<div class="ttc" id="aclassame_1_1_audio_block_view_html_a469b867bada0bad24e603ea86ed7c9e1"><div class="ttname"><a href="classame_1_1_audio_block_view.html#a469b867bada0bad24e603ea86ed7c9e1">ame::AudioBlockView::AudioBlockView</a></div><div class="ttdeci">AudioBlockView(SampleType *buffer, const uint_fast32_t numChannels, const uint_fast32_t numSamples) noexcept</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition:</b> audioBlockView.hpp:36</div></div>
+<div class="ttc" id="aclassame_1_1_audio_block_view_html_a5c695d126beb3585a6fd92a991d9802d"><div class="ttname"><a href="classame_1_1_audio_block_view.html#a5c695d126beb3585a6fd92a991d9802d">ame::AudioBlockView::getSize</a></div><div class="ttdeci">uint_fast32_t getSize() const noexcept</div><div class="ttdoc">Returns the length of the buffer.</div><div class="ttdef"><b>Definition:</b> audioBlockView.hpp:59</div></div>
+<div class="ttc" id="aclassame_1_1_audio_block_view_html_a69dcc67a5e9fd4446b989a272d669730"><div class="ttname"><a href="classame_1_1_audio_block_view.html#a69dcc67a5e9fd4446b989a272d669730">ame::AudioBlockView::getWritePointer</a></div><div class="ttdeci">SampleType * getWritePointer() noexcept</div><div class="ttdoc">Returns a writeable pointer to interleaved audio buffer.</div><div class="ttdef"><b>Definition:</b> audioBlockView.hpp:105</div></div>
+<div class="ttc" id="aclassame_1_1_audio_block_view_html_a6beefbb8b07fc5bc5b62a9f4666a3eb8"><div class="ttname"><a href="classame_1_1_audio_block_view.html#a6beefbb8b07fc5bc5b62a9f4666a3eb8">ame::AudioBlockView::getPeak</a></div><div class="ttdeci">SampleType getPeak(const uint_fast32_t channel) const</div><div class="ttdef"><b>Definition:</b> audioBlockView.hpp:143</div></div>
+<div class="ttc" id="aclassame_1_1_audio_block_view_html_a803054f0321e2f79bf47d924acc02e38"><div class="ttname"><a href="classame_1_1_audio_block_view.html#a803054f0321e2f79bf47d924acc02e38">ame::AudioBlockView::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdoc">Set all samples to 0.</div><div class="ttdef"><b>Definition:</b> audioBlockView.hpp:111</div></div>
+<div class="ttc" id="aclassame_1_1_audio_block_view_html_aaa86614be16ad607689acb254b7ca86b"><div class="ttname"><a href="classame_1_1_audio_block_view.html#aaa86614be16ad607689acb254b7ca86b">ame::AudioBlockView::setSample</a></div><div class="ttdeci">void setSample(const uint_fast32_t destChannel, const uint_fast32_t destSample, const SampleType newValue)</div><div class="ttdoc">Sets a sample in the buffer.</div><div class="ttdef"><b>Definition:</b> audioBlockView.hpp:75</div></div>
+<div class="ttc" id="aclassame_1_1_audio_block_view_html_ae25cf9ee97949a5bb3902fdb25f9f449"><div class="ttname"><a href="classame_1_1_audio_block_view.html#ae25cf9ee97949a5bb3902fdb25f9f449">ame::AudioBlockView::addSample</a></div><div class="ttdeci">void addSample(const uint_fast32_t destChannel, const uint_fast32_t destSample, const SampleType valueToAdd)</div><div class="ttdoc">Add a value to a sample in the buffer.</div><div class="ttdef"><b>Definition:</b> audioBlockView.hpp:87</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

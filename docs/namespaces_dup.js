@@ -85,6 +85,7 @@ var namespaces_dup =
       [ "twoPi", "constants_8hpp.html#ac75fe0229f8e610a324d8baf2ada26fb", null ]
     ] ],
     [ "wav", null, [
-      [ "wav", "sine440_8hpp.html#aafc7044d323d97542d9ba065cfeecb0d", null ]
+      [ "sine440", "sine440_8hpp.html#ae4ddf686ef5ffd44662fd902f209b4c3", null ],
+      [ "tamtam", "_tamtam_8hpp.html#ad6f1e034f87afd9a967cd058e6692dc6", null ]
     ] ]
 ];

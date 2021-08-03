@@ -7,6 +7,6 @@ var classame_1_1wav_1_1_wav_player =
     [ "pause", "classame_1_1wav_1_1_wav_player.html#a6fa88c7e04014a0d8e57a8a75fea6f56", null ],
     [ "play", "classame_1_1wav_1_1_wav_player.html#ac4f0c6765d970c44a1a15eff72f484e1", null ],
     [ "process", "classame_1_1wav_1_1_wav_player.html#a9a01a22dc44b2babf010feeb59dc7ba7", null ],
-    [ "reset", "classame_1_1wav_1_1_wav_player.html#ae7244215dd90c5a8c9c72d4b9ed81d73", null ],
-    [ "setLoopPlay", "classame_1_1wav_1_1_wav_player.html#a5c011c19856736bfee6d16221421390b", null ]
+    [ "setLoopPlay", "classame_1_1wav_1_1_wav_player.html#a5c011c19856736bfee6d16221421390b", null ],
+    [ "skipToHome", "classame_1_1wav_1_1_wav_player.html#a0f04960d875c9010d60eba739e147b43", null ]
 ];
