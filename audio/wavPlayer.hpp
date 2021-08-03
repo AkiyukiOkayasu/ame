@@ -28,29 +28,35 @@ public:
           formatTag (reader.getFormatTag()),
           numChannels (reader.getNumChannels()),
           numSamples (reader.getNumSamples()),
-          dataChunk (reader.getDataChunk())
+          dataChunk (reader.getDataChunk()),
+          normalizeFactor (1 << (reader.getBitRate() - 1))
     {
         ///@todo 残りの実装
     }
     ~WavPlayer() = default;
 
+    ///Start (or re-start) playing.
     void play()
     {
         playing.store (true);
     }
 
-    ///@todo 関数名再検討
+    ///Pause.
     void pause()
     {
         playing.store (false);
     }
 
-    ///@todo 関数名再検討
-    void reset()
+    ///Skip to home.
+    void skipToHome()
     {
         readPosition.store (0);
     }
 
+    /** Add to sound to AudioBlockView if playing.
+        @tparam FloatType float or double
+        @param block dest
+    */
     template <typename FloatType>
     void process (AudioBlockView<FloatType>& block)
     {
@@ -88,7 +94,7 @@ public:
                             temp |= (dataChunk.data[offset] << b);
                             ++offset;
                         }
-                        const FloatType smp = temp / static_cast<FloatType> (std::pow (2.0, reader.getBitRate() - 1)); ///normalize [-1, 1] @todo static_cast<FloatType> (std::pow (2.0, reader.getBitRate() - 1))を予め計算する
+                        const FloatType smp = static_cast<FloatType> (temp) / normalizeFactor; ///normalize [-1, 1]
                         buffer[samp] += smp;
                     }
                 }
@@ -131,5 +137,6 @@ private:
     std::atomic<bool> loop { false };
     std::atomic<bool> playing { false };
     const Chunk<BytePointerType> dataChunk;
+    const uint32_t normalizeFactor;
 };
 } // namespace ame::wav
