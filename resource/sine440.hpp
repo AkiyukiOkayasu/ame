@@ -1,9 +1,11 @@
-#include <array>
+#pragma once
+
 #include <cstddef>
 
 namespace wav
 {
-inline constexpr unsigned char wav[176444] = {
+//Mono 16bitLE 44.1kHz
+inline constexpr unsigned char sine440[176444] = {
     0x52,
     0x49,
     0x46,
