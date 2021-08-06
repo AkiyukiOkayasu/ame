@@ -13,10 +13,10 @@
 namespace ame
 {
 template <typename Char1Type, typename Char2Type>
-constexpr bool stringComp (Char1Type str1, Char2Type str2, size_t size)
+constexpr bool stringComp (Char1Type str1, Char2Type str2, const size_t size)
 {
     ///@todo C++20対応したらChar1TypeとChar2Typeにconceptを導入する
-    for (auto i = 0; i < size; ++i)
+    for (uint32_t i = 0; i < size; ++i)
     {
         if (str1[i] != str2[i])
         {
