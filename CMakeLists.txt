@@ -16,6 +16,6 @@ include(CTest)
 include(Catch)
 catch_discover_tests(tests)
 
-target_compile_options(tests PUBLIC -O2 -Wall -fconstexpr-depth=-1 -fconstexpr-steps=-1)
+target_compile_options(tests PUBLIC -O2 -Wall -fconstexpr-depth=2147483647 -fconstexpr-steps=2147483647)
 target_compile_features(tests PUBLIC cxx_std_17)
 # target_compile_definitions(tests )マクロ設定
