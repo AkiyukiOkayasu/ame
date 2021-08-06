@@ -80,7 +80,7 @@ public:
         : wav (wavByteArray),
           length (length)
     {
-        //assert (length > 46); //46: RIFFヘッダーと最低限のチャンクを合わせた最小のサイズ
+        assert (length > 46); //46: RIFFヘッダーと最低限のチャンクを合わせた最小のサイズ
         parseRiffHeader();
 
         while (offset < length)
