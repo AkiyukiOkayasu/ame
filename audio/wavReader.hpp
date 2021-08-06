@@ -108,7 +108,7 @@ public:
                     dataChunk = chunk;
                     break;
                 default:
-                    //assert (false); //invalid chunk id
+                    //JUNK, LIST, IDv3チャンクなどは無視する
                     break;
             }
         }
