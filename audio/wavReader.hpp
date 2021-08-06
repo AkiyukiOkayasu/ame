@@ -80,7 +80,7 @@ public:
         : wav (wavByteArray),
           length (length)
     {
-        assert (length > 46); //46: RIFFヘッダーと最低限のチャンクを合わせた最小のサイズ
+        //assert (length > 46); //46: RIFFヘッダーと最低限のチャンクを合わせた最小のサイズ
         parseRiffHeader();
 
         while (offset < length)
@@ -89,13 +89,13 @@ public:
             switch (chunk.id)
             {
                 case ChunkId::fmt:
-                    assert (chunk.size == 16);
+                    //assert (chunk.size == 16);
                     formatTag = static_cast<fmt::wFormatTag> ((chunk.data[1] << 8) | chunk.data[0]);
-                    assert (formatTag == fmt::wFormatTag::PCM || formatTag == fmt::wFormatTag::IeeeFloat || formatTag == fmt::wFormatTag::ImaAdpcm);
+                    //assert (formatTag == fmt::wFormatTag::PCM || formatTag == fmt::wFormatTag::IeeeFloat || formatTag == fmt::wFormatTag::ImaAdpcm);
                     numChannels = (chunk.data[3] << 8) | chunk.data[2];
                     sampleRate = (chunk.data[5] << 8) | chunk.data[4];
                     wBitsPerSample = (chunk.data[15] << 8) | chunk.data[14];
-                    assert (wBitsPerSample == 16 || wBitsPerSample == 24 || wBitsPerSample == 32);
+                    //assert (wBitsPerSample == 16 || wBitsPerSample == 24 || wBitsPerSample == 32);
                     break;
                 case ChunkId::PEAK:
                     //とりあえずPEAKチャンクは無視する
@@ -108,7 +108,7 @@ public:
                     dataChunk = chunk;
                     break;
                 default:
-                    assert (false); //invalid chunk id
+                    //assert (false); //invalid chunk id
                     break;
             }
         }
@@ -164,8 +164,8 @@ public:
 private:
     constexpr void parseRiffHeader()
     {
-        assert (wav[0] == 'R' && wav[1] == 'I' && wav[2] == 'F' && wav[3] == 'F');   //RIFF ID must be RIFF
-        assert (wav[8] == 'W' && wav[9] == 'A' && wav[10] == 'V' && wav[11] == 'E'); //Format must be WAVE
+        //assert (wav[0] == 'R' && wav[1] == 'I' && wav[2] == 'F' && wav[3] == 'F');   //RIFF ID must be RIFF
+        //assert (wav[8] == 'W' && wav[9] == 'A' && wav[10] == 'V' && wav[11] == 'E'); //Format must be WAVE
         fileSize = (wav[7] << 24) | (wav[6] << 16) | (wav[5] << 8) | wav[4];
     }
 
