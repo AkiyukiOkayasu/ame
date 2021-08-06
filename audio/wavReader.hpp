@@ -91,7 +91,7 @@ public:
                 case ChunkId::fmt:
                     //assert (chunk.size == 16);
                     formatTag = static_cast<fmt::wFormatTag> ((chunk.data[1] << 8) | chunk.data[0]);
-                    //assert (formatTag == fmt::wFormatTag::PCM || formatTag == fmt::wFormatTag::IeeeFloat || formatTag == fmt::wFormatTag::ImaAdpcm);
+                    assert (formatTag == fmt::wFormatTag::PCM || formatTag == fmt::wFormatTag::IeeeFloat || formatTag == fmt::wFormatTag::ImaAdpcm);
                     numChannels = (chunk.data[3] << 8) | chunk.data[2];
                     sampleRate = (chunk.data[5] << 8) | chunk.data[4];
                     wBitsPerSample = (chunk.data[15] << 8) | chunk.data[14];
