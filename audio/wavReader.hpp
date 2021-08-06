@@ -164,8 +164,8 @@ public:
 private:
     constexpr void parseRiffHeader()
     {
-        //assert (wav[0] == 'R' && wav[1] == 'I' && wav[2] == 'F' && wav[3] == 'F');   //RIFF ID must be RIFF
-        //assert (wav[8] == 'W' && wav[9] == 'A' && wav[10] == 'V' && wav[11] == 'E'); //Format must be WAVE
+        assert (wav[0] == 'R' && wav[1] == 'I' && wav[2] == 'F' && wav[3] == 'F');   //RIFF ID must be RIFF
+        assert (wav[8] == 'W' && wav[9] == 'A' && wav[10] == 'V' && wav[11] == 'E'); //Format must be WAVE
         fileSize = (wav[7] << 24) | (wav[6] << 16) | (wav[5] << 8) | wav[4];
     }
 
