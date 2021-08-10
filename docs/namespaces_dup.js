@@ -73,7 +73,7 @@ var namespaces_dup =
       [ "scale", "mapping_8hpp.html#a3a8b9197b6b9f6928e410219c22fd08e", null ],
       [ "semitoneToRatio", "frequency_8hpp.html#a8b31e4517e783b663825105c5543f584", null ],
       [ "sinf", "special_functions_8hpp.html#a04a55b89aafb7536f4f731002eb232ea", null ],
-      [ "stringComp", "string_utilities_8hpp.html#ae17399f3a47b3f1a62e6e36c73b492d8", null ],
+      [ "stringComp", "string_utilities_8hpp.html#a40427fa5dc9508cacd204127610445bb", null ],
       [ "euler", "constants_8hpp.html#a76ccbcf90dfaa7c7d153ba88e47ba44a", null ],
       [ "halfPi", "constants_8hpp.html#a1cf9d11df53d8979c2bdc4d948d9e884", null ],
       [ "pi", "constants_8hpp.html#ac0dccbff14912b3a0c5fc01e52da16a9", null ],

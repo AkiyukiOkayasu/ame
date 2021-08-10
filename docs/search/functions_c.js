@@ -14,5 +14,5 @@ var searchData=
   ['sinf_198',['sinf',['../special_functions_8hpp.html#a04a55b89aafb7536f4f731002eb232ea',1,'ame']]],
   ['skiptohome_199',['skipToHome',['../classame_1_1wav_1_1_wav_player.html#a0f04960d875c9010d60eba739e147b43',1,'ame::wav::WavPlayer']]],
   ['slide_200',['Slide',['../classame_1_1_slide.html#ac538d8f438b0638f45146a9d7a581f51',1,'ame::Slide']]],
-  ['stringcomp_201',['stringComp',['../string_utilities_8hpp.html#ae17399f3a47b3f1a62e6e36c73b492d8',1,'ame']]]
+  ['stringcomp_201',['stringComp',['../string_utilities_8hpp.html#a40427fa5dc9508cacd204127610445bb',1,'ame']]]
 ];

@@ -19,6 +19,6 @@ var searchData=
   ['specialfunctions_2ehpp_87',['specialFunctions.hpp',['../special_functions_8hpp.html',1,'']]],
   ['sqrt1_5f2_88',['sqrt1_2',['../constants_8hpp.html#a222b08222c89893a68486d989b4aa99e',1,'ame']]],
   ['sqrt2_89',['sqrt2',['../constants_8hpp.html#a95950004da17b850191a35a5ae2e2775',1,'ame']]],
-  ['stringcomp_90',['stringComp',['../string_utilities_8hpp.html#ae17399f3a47b3f1a62e6e36c73b492d8',1,'ame']]],
+  ['stringcomp_90',['stringComp',['../string_utilities_8hpp.html#a40427fa5dc9508cacd204127610445bb',1,'ame']]],
   ['stringutilities_2ehpp_91',['stringUtilities.hpp',['../string_utilities_8hpp.html',1,'']]]
 ];
