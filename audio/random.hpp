@@ -40,7 +40,7 @@ namespace ame
 @note Adapted from David Blackman and Sebastiano Vigna's xoshiro128+
 https://prng.di.unimi.it/xoshiro128plus.c
 */
-float random()
+inline float random()
 {
     return (next() >> 8) * FLOAT_UNIT;
 }
@@ -50,7 +50,7 @@ float random()
 @todo ベンチマーク取る.
 @see ame::random()
 */
-float noise()
+inline float noise()
 {
     return (next() >> 7) * FLOAT_UNIT - 1.0f; //[-1, 1]
     /* もうひとつの方法. ベンチマークを取って比べたい
