@@ -8,7 +8,7 @@ inline uint32_t s[4] = { 123, 234, 345, 97 };    //random seed
 inline constexpr double DOUBLE_UNIT = 0x1.0p-53; // 1.0f / (1 << 53)
 inline constexpr float FLOAT_UNIT = 0x1.0p-24f;  // 1.0f / (1 << 24)
 
-inline consexpr uint32_t rotl (const uint32_t x, int k)
+inline constexpr uint32_t rotl (const uint32_t x, int k)
 {
     return (x << k) | (x >> (32 - k));
 }
