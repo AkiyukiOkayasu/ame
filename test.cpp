@@ -412,3 +412,16 @@ TEST_CASE ("String")
         REQUIRE (! ame::stringComp (quux, "foo", 4));
     }
 }
+
+TEST_CASE ("Random")
+{
+    SECTION ("noise")
+    {
+        for (auto i = 0; i < 100; ++i)
+        {
+            auto f = ame::random();
+            REQUIRE (0.0f <= f);
+            REQUIRE (f <= 1.0f);
+        }
+    }
+}

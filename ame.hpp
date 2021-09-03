@@ -34,6 +34,7 @@
 #include "audio/interpolation.hpp"
 #include "audio/mapping.hpp"
 #include "audio/phase.hpp"
+#include "audio/random.hpp"
 #include "audio/sine_oscillator.hpp"
 #include "audio/smoothing.hpp"
 #include "audio/time.hpp"
