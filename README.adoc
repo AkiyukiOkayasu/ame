@@ -21,9 +21,11 @@ Major changes may be added to this project. +
 * Filters
 * Fractional delay
 * Audio buffer that can only be allocatable at compile time
+* WAV reader
+* Random
+* White noise generator
 
 === TODO  
-* WAV writer/reader
 * MIDI
 * Sample rate conversion
 
