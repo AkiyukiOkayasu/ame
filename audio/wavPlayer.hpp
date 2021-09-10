@@ -53,8 +53,8 @@ public:
         : formatTag (reader.getFormatTag()),
           numChannels (reader.getNumChannels()),
           numSamples (reader.getNumSamples()),
-          dataChunk (reader.getDataChunk()),
-          bitRate (reader.getBitRate())
+          bitRate (reader.getBitRate()),
+          dataChunk (reader.getDataChunk())
     {
     }
     ~WavPlayer() = default;
