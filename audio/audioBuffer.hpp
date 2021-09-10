@@ -26,7 +26,7 @@ template <typename FloatType, size_t Size>
 class AudioBuffer
 {
 public:
-    AudioBuffer (const uint_fast32_t numChannels) : numChannels (numChannels) explicit
+    explicit AudioBuffer (const uint_fast32_t numChannels) : numChannels (numChannels)
     {
         numSamples = Size / numChannels;
     }
