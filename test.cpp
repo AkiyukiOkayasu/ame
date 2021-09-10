@@ -134,6 +134,7 @@ TEST_CASE ("Filter")
     }
 }
 
+#if 0
 TEST_CASE ("Wrap")
 {
     SECTION ("Increment")
@@ -157,6 +158,7 @@ TEST_CASE ("Wrap")
         REQUIRE (w.get() == 1);
     }
 }
+#endif
 
 TEST_CASE ("AudioBuffer")
 {
