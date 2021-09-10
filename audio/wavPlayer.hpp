@@ -50,11 +50,11 @@ class WavPlayer
 
 public:
     explicit constexpr WavPlayer (const WavReader<BytePointerType> reader)
-        : reader (reader),
-          formatTag (reader.getFormatTag()),
+        : formatTag (reader.getFormatTag()),
           numChannels (reader.getNumChannels()),
           numSamples (reader.getNumSamples()),
-          dataChunk (reader.getDataChunk())
+          dataChunk (reader.getDataChunk()),
+          bitRate (reader.getBitRate())
     {
     }
     ~WavPlayer() = default;
@@ -97,7 +97,7 @@ public:
         {
             case fmt::wFormatTag::PCM:
             {
-                auto offset = (reader.getBitRate() / 8) * numChannels * readPosition.load();
+                auto offset = (bitRate / 8) * numChannels * readPosition.load();
                 for (uint_fast32_t samp = 0; samp < block.getNumSamples(); ++samp)
                 {
                     if (readPosition + samp >= numSamples)
@@ -111,7 +111,7 @@ public:
                     for (uint_fast32_t ch = 0; ch < block.getNumChannels(); ++ch)
                     {
                         int32_t temp = 0;
-                        for (uint32_t b = 32 - reader.getBitRate(); b < 32; b += 8) //bitDepthが16bitや24bitのときは下部を0埋めする.
+                        for (uint32_t b = 32 - bitRate; b < 32; b += 8) //bitDepthが16bitや24bitのときは下部を0埋めする.
                         {
                             temp |= (dataChunk.data[offset] << b);
                             ++offset;
@@ -151,10 +151,10 @@ public:
     }
 
 private:
-    const WavReader<BytePointerType> reader;
     const fmt::wFormatTag formatTag;
     const uint32_t numChannels;
     const uint32_t numSamples;
+    const uint16_t bitRate;
     std::atomic<uint32_t> readPosition { 0 }; ///< [0, numSamples] @todo ame::Wrapに変更する？
     std::atomic<bool> loop { false };
     std::atomic<bool> playing { false };
