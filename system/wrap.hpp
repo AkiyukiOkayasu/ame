@@ -20,7 +20,7 @@ public:
     
     @param length The number to automatically wrap in the range [0, length-1].
     */
-    Wrap (const uint_fast32_t length) : length (length)
+    explicit Wrap (const uint_fast32_t length) : length (length)
     {
     }
     ~Wrap() = default;
