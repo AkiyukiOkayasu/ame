@@ -139,7 +139,7 @@ TEST_CASE ("Wrap")
 {
     SECTION ("Increment")
     {
-        ame::Wrap<10> w;
+        ame::Wrap w { 10 };
         REQUIRE (w.get() == 0);
         REQUIRE (w++ == 1);
         REQUIRE (++w == 2);
@@ -151,7 +151,7 @@ TEST_CASE ("Wrap")
 
     SECTION ("set")
     {
-        ame::Wrap<10> w;
+        ame::Wrap w { 10 };
         w.set (12);
         REQUIRE (w.get() == 2);
         w.set (-9);
