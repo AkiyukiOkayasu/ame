@@ -49,7 +49,7 @@ class WavPlayer
     };
 
 public:
-    explicit constexpr WavPlayer (const WavReader<BytePointerType> reader)
+    explicit constexpr WavPlayer (const WavReader<BytePointerType>& reader)
         : formatTag (reader.getFormatTag()),
           numChannels (reader.getNumChannels()),
           numSamples (reader.getNumSamples()),
