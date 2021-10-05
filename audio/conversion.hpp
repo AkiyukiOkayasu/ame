@@ -71,12 +71,11 @@ inline void deinterleaveSamples (const float* source, float** dest, const uint_f
 {
     for (uint_fast32_t chan = 0; chan < numChannels; ++chan)
     {
-        auto i = chan;
-        auto dst = dest[chan];
+        uint_fast32_t i = chan;
 
-        for (uint_fast32_t j = 0; j < numSamples; ++j)
+        for (uint_fast32_t k = 0; k < numSamples; ++k)
         {
-            dst[j] = source[i];
+            dest[chan][k] = source[i];
             i += numChannels;
         }
     }
