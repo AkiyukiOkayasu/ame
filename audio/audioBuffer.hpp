@@ -11,6 +11,7 @@
 
 #include "audioBlockView.hpp"
 
+#include <algorithm>
 #include <array>
 #include <cmath>
 
@@ -87,10 +88,8 @@ public:
     ///Applies a gain multiple to all the audio data.
     void applyGain (const float gain)
     {
-        for (auto& e : buffer)
-        {
-            e *= gain;
-        }
+        std::for_each (buffer.begin(), buffer.end(), [] (auto& e)
+                       { e *= gain; });
     }
 
     AudioBlockView<FloatType> makeAudioBlockView()
