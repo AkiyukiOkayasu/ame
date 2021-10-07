@@ -88,7 +88,7 @@ public:
     ///Applies a gain multiple to all the audio data.
     void applyGain (const float gain)
     {
-        std::for_each (buffer.begin(), buffer.end(), [] (auto& e)
+        std::for_each (buffer.begin(), buffer.end(), [&gain] (auto& e)
                        { e *= gain; });
     }
 
