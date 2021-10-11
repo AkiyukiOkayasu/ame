@@ -6,20 +6,11 @@
 #include <doctest/doctest.h>
 #include <iomanip>
 
-TEST_CASE ("testing the doctest")
-{
-    CHECK (1 == 1);
-}
+using doctest::Approx;
 
-TEST_CASE ("test2")
-{
-    CHECK (0 == 1);
-}
-
-#if 0
 TEST_CASE ("Volume")
 {
-    SECTION ("decibelsToGain()")
+    SUBCASE ("decibelsToGain()")
     {
         REQUIRE (ame::decibelsToGain (0.0f) == Approx (1.0f));
         REQUIRE (ame::decibelsToGain (-6.0f) == Approx (0.501187));
@@ -89,8 +80,14 @@ TEST_CASE ("Frequency")
 
 TEST_CASE ("MIDI")
 {
-    SECTION ("ftom()") { REQUIRE (ame::freqToMidi (440.0f) == Approx (69)); }
-    SECTION ("mtof()") { REQUIRE (ame::midiToFreq (69) == Approx (440.0f)); }
+    SECTION ("ftom()")
+    {
+        REQUIRE (ame::freqToMidi (440.0f) == Approx (69));
+    }
+    SECTION ("mtof()")
+    {
+        REQUIRE (ame::midiToFreq (69) == Approx (440.0f));
+    }
 }
 
 TEST_CASE ("WaveTable")
@@ -140,36 +137,34 @@ TEST_CASE ("Filter")
         filter.process (block);
         for (int i = 500; i < numSamples * numChannels; ++i)
         {
-            REQUIRE (buffer[i] <= 0.01f);
+            REQUIRE_LE (buffer[i], 0.01f);
         }
     }
 }
 
-    #if 0
 TEST_CASE ("Wrap")
 {
     SECTION ("Increment")
     {
         ame::Wrap w { 10 };
-        REQUIRE (w.get() == 0);
-        REQUIRE (w++ == 1);
-        REQUIRE (++w == 2);
+        CHECK_EQ (w.get(), 0);
+        CHECK_EQ (w++, 1);
+        CHECK_EQ (++w, 2);
         w += 2;
-        REQUIRE (w.get() == 4);
+        CHECK_EQ (w.get(), 4);
         w += 9;
-        REQUIRE (w.get() == 3);
+        CHECK_EQ (w.get(), 3);
     }
 
     SECTION ("set")
     {
         ame::Wrap w { 10 };
         w.set (12);
-        REQUIRE (w.get() == 2);
+        CHECK_EQ (w.get(), 2);
         w.set (-9);
-        REQUIRE (w.get() == 1);
+        CHECK_EQ (w.get(), 1);
     }
 }
-    #endif
 
 TEST_CASE ("AudioBuffer")
 {
@@ -205,63 +200,63 @@ TEST_CASE ("sine440Reader")
 
     SECTION ("getFileSize()")
     {
-        REQUIRE (sine440Reader.getFileSize() == sizeof (wav::sine440) - 8);
-        REQUIRE (tamtamReader.getFileSize() == sizeof (wav::tamtam) - 8);
+        CHECK_EQ (sine440Reader.getFileSize(), sizeof (wav::sine440) - 8);
+        CHECK_EQ (tamtamReader.getFileSize(), sizeof (wav::tamtam) - 8);
     }
 
     SECTION ("sampleRate")
     {
-        REQUIRE (sine440Reader.getSampleRate() == 44100);
-        REQUIRE (tamtamReader.getSampleRate() == 44100);
+        CHECK_EQ (sine440Reader.getSampleRate(), 44100);
+        CHECK_EQ (tamtamReader.getSampleRate(), 44100);
     }
 
     SECTION ("bitRate")
     {
-        REQUIRE (sine440Reader.getBitRate() == 16);
-        REQUIRE (tamtamReader.getBitRate() == 16);
+        CHECK_EQ (sine440Reader.getBitRate(), 16);
+        CHECK_EQ (tamtamReader.getBitRate(), 16);
     }
 
     SECTION ("Channel")
     {
-        REQUIRE (sine440Reader.getNumChannels() == 1);
-        REQUIRE (tamtamReader.getNumChannels() == 2);
+        CHECK_EQ (sine440Reader.getNumChannels(), 1);
+        CHECK_EQ (tamtamReader.getNumChannels(), 2);
     }
 
     SECTION ("numSample")
     {
-        REQUIRE (sine440Reader.getNumSamples() == 88200);
-        REQUIRE (tamtamReader.getNumSamples() == 279290);
+        CHECK_EQ (sine440Reader.getNumSamples(), 88200);
+        CHECK_EQ (tamtamReader.getNumSamples(), 279290);
     }
 
     SECTION ("getDataPointer")
     {
         auto data = sine440Reader.getDataPointer();
-        REQUIRE (data[0] == 0x00);
-        REQUIRE (data[1] == 0x00);
-        REQUIRE (data[2] == 0x6B);
-        REQUIRE (data[3] == 0x06);
-        REQUIRE (data[4] == 0xCC);
-        REQUIRE (data[5] == 0x0C);
-        REQUIRE (data[6] == 0x28);
-        REQUIRE (data[7] == 0x13);
+        CHECK_EQ (data[0], 0x00);
+        CHECK_EQ (data[1], 0x00);
+        CHECK_EQ (data[2], 0x6B);
+        CHECK_EQ (data[3], 0x06);
+        CHECK_EQ (data[4], 0xCC);
+        CHECK_EQ (data[5], 0x0C);
+        CHECK_EQ (data[6], 0x28);
+        CHECK_EQ (data[7], 0x13);
 
         auto tamtamData = tamtamReader.getDataPointer();
-        REQUIRE (tamtamData[0] == 0x00);
-        REQUIRE (tamtamData[1] == 0x00);
-        REQUIRE (tamtamData[2] == 0x00);
-        REQUIRE (tamtamData[3] == 0x00);
-        REQUIRE (tamtamData[4] == 0x00);
-        REQUIRE (tamtamData[5] == 0x00);
-        REQUIRE (tamtamData[6] == 0x00);
-        REQUIRE (tamtamData[7] == 0x00);
-        REQUIRE (tamtamData[8] == 0xFF);
-        REQUIRE (tamtamData[9] == 0xFF);
-        REQUIRE (tamtamData[10] == 0xFF);
-        REQUIRE (tamtamData[11] == 0xFF);
-        REQUIRE (tamtamData[12] == 0x00);
-        REQUIRE (tamtamData[13] == 0x00);
-        REQUIRE (tamtamData[14] == 0xFF);
-        REQUIRE (tamtamData[15] == 0xFF);
+        CHECK_EQ (tamtamData[0], 0x00);
+        CHECK_EQ (tamtamData[1], 0x00);
+        CHECK_EQ (tamtamData[2], 0x00);
+        CHECK_EQ (tamtamData[3], 0x00);
+        CHECK_EQ (tamtamData[4], 0x00);
+        CHECK_EQ (tamtamData[5], 0x00);
+        CHECK_EQ (tamtamData[6], 0x00);
+        CHECK_EQ (tamtamData[7], 0x00);
+        CHECK_EQ (tamtamData[8], 0xFF);
+        CHECK_EQ (tamtamData[9], 0xFF);
+        CHECK_EQ (tamtamData[10], 0xFF);
+        CHECK_EQ (tamtamData[11], 0xFF);
+        CHECK_EQ (tamtamData[12], 0x00);
+        CHECK_EQ (tamtamData[13], 0x00);
+        CHECK_EQ (tamtamData[14], 0xFF);
+        CHECK_EQ (tamtamData[15], 0xFF);
     }
 }
 
@@ -402,6 +397,7 @@ TEST_CASE ("WavPlayer")
     }
 }
 
+///@todo
 TEST_CASE ("Byte")
 {
     SECTION ("makeByte")
@@ -438,4 +434,3 @@ TEST_CASE ("Random")
         }
     }
 }
-#endif
