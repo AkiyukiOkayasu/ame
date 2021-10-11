@@ -7,8 +7,6 @@ include(FetchContent)
 FetchContent_Declare(doctest GIT_REPOSITORY https://github.com/onqtam/doctest GIT_TAG 2.4.5)
 FetchContent_MakeAvailable(doctest)
 enable_testing()
-message("aaa")
-message(${doctest_SOURCE_DIR})
 include(${doctest_SOURCE_DIR}/scripts/cmake/doctest.cmake)
 
 add_executable(tests test.cpp)
