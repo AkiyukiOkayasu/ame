@@ -17,6 +17,6 @@ target_include_directories(tests
     PUBLIC ${PROJECT_SOURCE_DIR}    
 )
 
-target_compile_options(tests PUBLIC -O2 -Wall -fconstexpr-depth=2147483647 -fconstexpr-steps=2147483647)
+target_compile_options(tests PUBLIC -O2 -Wall -fconstexpr-depth=2147483647)
 target_compile_features(tests PUBLIC cxx_std_17)
 target_link_libraries(tests PRIVATE doctest::doctest)
