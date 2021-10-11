@@ -41,7 +41,7 @@ inline float sinf (float x)
 #ifdef USE_CMSIS_DSP
     return arm_sin_f32 (x);
 #else
-    return std::sinf (x);
+    return std::sin (x); //libstdc++だとstd:sinf()は未定義なので、std::sin()にしている
 #endif
 }
 
@@ -57,7 +57,7 @@ inline float cosf (float x)
 #ifdef USE_CMSIS_DSP
     return arm_cos_f32 (x);
 #else
-    return std::cosf (x);
+    return std::cos (x); //libstdc++だとstd:cosf()は未定義なので、std::cos()にしている
 #endif
 }
 } // namespace ame
