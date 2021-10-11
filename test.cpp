@@ -17,7 +17,7 @@ TEST_CASE ("Volume")
         REQUIRE (ame::decibelsToGain (-20.0f) == Approx (0.1));
         REQUIRE (ame::decibelsToGain (3.0f) == Approx (1.412538));
     }
-    SECTION ("gainToDecibels()")
+    SUBCASE ("gainToDecibels()")
     {
         REQUIRE (ame::gainToDecibels (1.0f) == Approx (0.0f));
         REQUIRE (ame::gainToDecibels (0.501187f) == Approx (-6.0f));
@@ -28,37 +28,37 @@ TEST_CASE ("Volume")
 
 TEST_CASE ("Time")
 {
-    SECTION ("addModule2Pi()")
+    SUBCASE ("addModule2Pi()")
     {
         REQUIRE (ame::addModulo2Pi (6.28318530717958647692f, 0.1f) == Approx (0.1f));
         REQUIRE (ame::addModulo2Pi (6.28318530717958647692f, 2.5f) == Approx (2.5f));
     }
 
-    SECTION ("freqToPeriod()")
+    SUBCASE ("freqToPeriod()")
     {
         REQUIRE (ame::freqToPeriod (440.0f) == Approx (0.002272727f));
         REQUIRE (ame::freqToPeriod (44100.0f) == Approx (0.000022676f));
     }
 
-    SECTION ("periodToFreq()")
+    SUBCASE ("periodToFreq()")
     {
         REQUIRE (ame::periodToFreq (0.002272727f) == Approx (440.0f));
         REQUIRE (ame::periodToFreq (0.000022676f) == Approx (44100.0f));
     }
 
-    SECTION ("scale()")
+    SUBCASE ("scale()")
     {
         REQUIRE (ame::scale (0.5f, 0.0f, 1.0f, -100.0f, 100.0f) == Approx (0.0f));
         REQUIRE (ame::scale (0.0f, 0.0f, 1.0f, -100.0f, 100.0f) == Approx (-100.0f));
     }
 
-    SECTION ("BPM to ms")
+    SUBCASE ("BPM to ms")
     {
         REQUIRE (ame::bpmToMs (60.0f) == Approx (1000.0f));
         REQUIRE (ame::bpmToMs (120.0f) == Approx (500.0f));
     }
 
-    SECTION ("ms to BPM")
+    SUBCASE ("ms to BPM")
     {
         REQUIRE (ame::msToBpm (1000.0f) == Approx (60.0f));
         REQUIRE (ame::msToBpm (500.0f) == Approx (120.0f));
@@ -67,7 +67,7 @@ TEST_CASE ("Time")
 
 TEST_CASE ("Frequency")
 {
-    SECTION ("Convert pol between car")
+    SUBCASE ("Convert pol between car")
     {
         auto [amp, angle] = ame::cartopol (0.9, -0.4);
         REQUIRE (amp == Approx (0.984886f));
@@ -80,11 +80,11 @@ TEST_CASE ("Frequency")
 
 TEST_CASE ("MIDI")
 {
-    SECTION ("ftom()")
+    SUBCASE ("ftom()")
     {
         REQUIRE (ame::freqToMidi (440.0f) == Approx (69));
     }
-    SECTION ("mtof()")
+    SUBCASE ("mtof()")
     {
         REQUIRE (ame::midiToFreq (69) == Approx (440.0f));
     }
@@ -92,7 +92,7 @@ TEST_CASE ("MIDI")
 
 TEST_CASE ("WaveTable")
 {
-    SECTION ("makeTable()")
+    SUBCASE ("makeTable()")
     {
         auto f = [] (auto& x)
         {
@@ -115,7 +115,7 @@ TEST_CASE ("WaveTable")
 
 TEST_CASE ("Filter")
 {
-    SECTION ("Biquad")
+    SUBCASE ("Biquad")
     {
         constexpr int numChannels = 2;
         constexpr int numSamples = 1000;
@@ -144,7 +144,7 @@ TEST_CASE ("Filter")
 
 TEST_CASE ("Wrap")
 {
-    SECTION ("Increment")
+    SUBCASE ("Increment")
     {
         ame::Wrap w { 10 };
         CHECK_EQ (w.get(), 0);
@@ -156,7 +156,7 @@ TEST_CASE ("Wrap")
         CHECK_EQ (w.get(), 3);
     }
 
-    SECTION ("set")
+    SUBCASE ("set")
     {
         ame::Wrap w { 10 };
         w.set (12);
@@ -168,7 +168,7 @@ TEST_CASE ("Wrap")
 
 TEST_CASE ("AudioBuffer")
 {
-    SECTION ("getPeak")
+    SUBCASE ("getPeak")
     {
         ame::AudioBuffer<float, 4> buf (2);
         auto b = buf.getWritePointer();
@@ -184,7 +184,7 @@ TEST_CASE ("AudioBuffer")
 
 TEST_CASE ("AudioBlockView")
 {
-    SECTION ("getPeak")
+    SUBCASE ("getPeak")
     {
         float v[6] = { 0.0f, 0.2f, 0.9f, -0.5f, -0.1f, -0.0f };
         ame::AudioBlockView<float> block (v, 2, 3);
@@ -198,37 +198,37 @@ TEST_CASE ("sine440Reader")
     constexpr ame::wav::WavReader sine440Reader (wav::sine440, sizeof (wav::sine440));
     constexpr ame::wav::WavReader tamtamReader (wav::tamtam, sizeof (wav::tamtam));
 
-    SECTION ("getFileSize()")
+    SUBCASE ("getFileSize()")
     {
         CHECK_EQ (sine440Reader.getFileSize(), sizeof (wav::sine440) - 8);
         CHECK_EQ (tamtamReader.getFileSize(), sizeof (wav::tamtam) - 8);
     }
 
-    SECTION ("sampleRate")
+    SUBCASE ("sampleRate")
     {
         CHECK_EQ (sine440Reader.getSampleRate(), 44100);
         CHECK_EQ (tamtamReader.getSampleRate(), 44100);
     }
 
-    SECTION ("bitRate")
+    SUBCASE ("bitRate")
     {
         CHECK_EQ (sine440Reader.getBitRate(), 16);
         CHECK_EQ (tamtamReader.getBitRate(), 16);
     }
 
-    SECTION ("Channel")
+    SUBCASE ("Channel")
     {
         CHECK_EQ (sine440Reader.getNumChannels(), 1);
         CHECK_EQ (tamtamReader.getNumChannels(), 2);
     }
 
-    SECTION ("numSample")
+    SUBCASE ("numSample")
     {
         CHECK_EQ (sine440Reader.getNumSamples(), 88200);
         CHECK_EQ (tamtamReader.getNumSamples(), 279290);
     }
 
-    SECTION ("getDataPointer")
+    SUBCASE ("getDataPointer")
     {
         auto data = sine440Reader.getDataPointer();
         CHECK_EQ (data[0], 0x00);
@@ -262,7 +262,7 @@ TEST_CASE ("sine440Reader")
 
 TEST_CASE ("WavPlayer")
 {
-    SECTION ("Sine")
+    SUBCASE ("Sine")
     {
         //Mono 16bit LittleEndian 44.1kHz
         float v[100] = {};
@@ -374,7 +374,7 @@ TEST_CASE ("WavPlayer")
         REQUIRE (v[99] == Approx (-0.06146f).scale (1));
     }
 
-    SECTION ("Tamtam")
+    SUBCASE ("Tamtam")
     {
         //Stereo 16bit LittleEndian 44.1kHz
         float v[10] = {};
@@ -400,14 +400,14 @@ TEST_CASE ("WavPlayer")
 ///@todo
 TEST_CASE ("Byte")
 {
-    SECTION ("makeByte")
+    SUBCASE ("makeByte")
     {
     }
 }
 
 TEST_CASE ("String")
 {
-    SECTION ("Comp")
+    SUBCASE ("Comp")
     {
         char foo[] = { 'f', 'o', 'o' };
         const char bar[] = { 'b', 'a', 'r' };
@@ -424,7 +424,7 @@ TEST_CASE ("String")
 
 TEST_CASE ("Random")
 {
-    SECTION ("noise")
+    SUBCASE ("noise")
     {
         for (auto i = 0; i < 100; ++i)
         {
