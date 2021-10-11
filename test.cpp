@@ -1,11 +1,22 @@
-#define CATCH_CONFIG_MAIN
+#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include "ame.hpp"
 #include "resource/Tamtam.hpp"
 #include "resource/sine440.hpp"
 
-#include <catch2/catch.hpp>
+#include <doctest/doctest.h>
 #include <iomanip>
 
+TEST_CASE ("testing the doctest")
+{
+    CHECK (1 == 1);
+}
+
+TEST_CASE ("test2")
+{
+    CHECK (0 == 1);
+}
+
+#if 0
 TEST_CASE ("Volume")
 {
     SECTION ("decibelsToGain()")
@@ -134,7 +145,7 @@ TEST_CASE ("Filter")
     }
 }
 
-#if 0
+    #if 0
 TEST_CASE ("Wrap")
 {
     SECTION ("Increment")
@@ -158,7 +169,7 @@ TEST_CASE ("Wrap")
         REQUIRE (w.get() == 1);
     }
 }
-#endif
+    #endif
 
 TEST_CASE ("AudioBuffer")
 {
@@ -427,3 +438,4 @@ TEST_CASE ("Random")
         }
     }
 }
+#endif
