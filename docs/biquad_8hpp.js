@@ -1,7 +1,7 @@
 var biquad_8hpp =
 [
-    [ "Coefficients", "structame_1_1dsp_1_1iir_1_1biquad_1_1_coefficients.html", "structame_1_1dsp_1_1iir_1_1biquad_1_1_coefficients" ],
-    [ "BiQuad", "classame_1_1dsp_1_1iir_1_1biquad_1_1_bi_quad.html", "classame_1_1dsp_1_1iir_1_1biquad_1_1_bi_quad" ],
+    [ "ame::dsp::iir::biquad::Coefficients", "structame_1_1dsp_1_1iir_1_1biquad_1_1_coefficients.html", null ],
+    [ "ame::dsp::iir::biquad::BiQuad< maximumChannels >", "classame_1_1dsp_1_1iir_1_1biquad_1_1_bi_quad.html", "classame_1_1dsp_1_1iir_1_1biquad_1_1_bi_quad" ],
     [ "makeAllPass", "biquad_8hpp.html#a0599e4a2dc0fbf7380d507ad66df7c55", null ],
     [ "makeBandPass", "biquad_8hpp.html#a323c4a6483dbf6a0ff8f1cdba574e12b", null ],
     [ "makeHighPass", "biquad_8hpp.html#afa43e57d6ce4bc1100cb797f92cc27ed", null ],

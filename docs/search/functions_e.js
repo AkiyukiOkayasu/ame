@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['wavplayer_196',['WavPlayer',['../classame_1_1wav_1_1_wav_player.html#a94a1c755885041d1853bf02b3020ef99',1,'ame::wav::WavPlayer']]]
+  ['unary_5fassert_0',['unary_assert',['../structdoctest_1_1detail_1_1_result_builder.html#a98c33e90242e2859255a79cb38489f3b',1,'doctest::detail::ResultBuilder::unary_assert(const DOCTEST_REF_WRAP(L) val)'],['../structdoctest_1_1detail_1_1_result_builder.html#a98c33e90242e2859255a79cb38489f3b',1,'doctest::detail::ResultBuilder::unary_assert(const DOCTEST_REF_WRAP(L) val)']]]
 ];

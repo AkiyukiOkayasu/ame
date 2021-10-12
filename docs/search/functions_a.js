@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['operator_2b_2b_180',['operator++',['../classame_1_1_wrap.html#ab090f17f7949e87b6979acf5e3a64ab0',1,'ame::Wrap::operator++()'],['../classame_1_1_wrap.html#a1bbf6d6133c5c207c3afc954b37f5717',1,'ame::Wrap::operator++(int)']]],
-  ['operator_2b_3d_181',['operator+=',['../classame_1_1_wrap.html#a3995b4cdafce59b7cdf1a84ab2702861',1,'ame::Wrap']]]
+  ['operator_2b_2b_0',['operator++',['../classame_1_1_wrap.html#af29b1149e7332720255c5a677dfd479f',1,'ame::Wrap::operator++()'],['../classame_1_1_wrap.html#a2f73e5619dc8249722e03dd3282fbb82',1,'ame::Wrap::operator++(int)']]],
+  ['operator_2b_3d_1',['operator+=',['../classame_1_1_wrap.html#a8c22e15e40c1f39ee14cea90b1662339',1,'ame::Wrap']]]
 ];

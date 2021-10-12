@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['delay_109',['Delay',['../classame_1_1dsp_1_1_delay.html',1,'ame::dsp']]]
+  ['deferred_5ffalse_0',['deferred_false',['../structdoctest_1_1detail_1_1deferred__false.html',1,'doctest::detail']]]
 ];

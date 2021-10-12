@@ -1,10 +1,10 @@
 var classame_1_1_wrap =
 [
-    [ "Wrap", "classame_1_1_wrap.html#a59c4e154bc942dc7e3e6eb15e47efbfa", null ],
-    [ "~Wrap", "classame_1_1_wrap.html#abea45f2041fd2748db4d0d9fdedb4d12", null ],
-    [ "get", "classame_1_1_wrap.html#a9d2684abc5264ebd547e8e77a5d81ed9", null ],
-    [ "operator++", "classame_1_1_wrap.html#ab090f17f7949e87b6979acf5e3a64ab0", null ],
-    [ "operator++", "classame_1_1_wrap.html#a1bbf6d6133c5c207c3afc954b37f5717", null ],
-    [ "operator+=", "classame_1_1_wrap.html#a3995b4cdafce59b7cdf1a84ab2702861", null ],
-    [ "set", "classame_1_1_wrap.html#a28e506491a4b58bb56b369d2380074fd", null ]
+    [ "Wrap", "classame_1_1_wrap.html#a656d70ed08496498e30501c9eccb93cf", null ],
+    [ "changeLength", "classame_1_1_wrap.html#aa675a05eef184bd21493a737b9a5f91c", null ],
+    [ "get", "classame_1_1_wrap.html#a2fb32aa7d18f10a4e3f8e56e450c5b4e", null ],
+    [ "operator++", "classame_1_1_wrap.html#af29b1149e7332720255c5a677dfd479f", null ],
+    [ "operator++", "classame_1_1_wrap.html#a2f73e5619dc8249722e03dd3282fbb82", null ],
+    [ "operator+=", "classame_1_1_wrap.html#a8c22e15e40c1f39ee14cea90b1662339", null ],
+    [ "set", "classame_1_1_wrap.html#a716daa5acebc93e5a6758f0e11719bd7", null ]
 ];

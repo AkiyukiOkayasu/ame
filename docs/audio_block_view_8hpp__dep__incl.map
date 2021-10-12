@@ -1,7 +1,7 @@
 <map id="audio/audioBlockView.hpp" name="audio/audioBlockView.hpp">
-<area shape="rect" id="node1" title="Audio Block View." alt="" coords="64,5,242,32"/>
-<area shape="rect" id="node2" href="$ame_8hpp.html" title="main header file." alt="" coords="46,155,118,181"/>
-<area shape="rect" id="node3" href="$buffer_8hpp.html" title="Audio buffer." alt="" coords="23,80,141,107"/>
-<area shape="rect" id="node4" href="$delay_8hpp.html" title="Delay." alt="" coords="166,80,281,107"/>
-<area shape="rect" id="node5" href="$filter_8hpp.html" title="Filter." alt="" coords="306,80,416,107"/>
+<area shape="rect" id="node1" title="Audio Block View." alt="" coords="93,5,271,32"/>
+<area shape="rect" id="node2" href="$ame_8hpp.html" title="main header file." alt="" coords="145,155,218,181"/>
+<area shape="rect" id="node3" href="$audio_buffer_8hpp.html" title="Audio buffer." alt="" coords="25,80,177,107"/>
+<area shape="rect" id="node4" href="$biquad_8hpp.html" title="BiQuad filter." alt="" coords="201,80,325,107"/>
+<area shape="rect" id="node5" href="$wav_player_8hpp.html" title="Wav player." alt="" coords="349,80,494,107"/>
 </map>
