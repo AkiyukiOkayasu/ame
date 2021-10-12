@@ -1,6 +1,6 @@
 = AME - C++ header-only DSP library for Cortex-M
 
-image::https://github.com/AkiyukiOkayasu/ame/actions/workflows/cmake.yml/badge.svg[test]
+image:https://github.com/AkiyukiOkayasu/ame/actions/workflows/cmake.yml/badge.svg[test] image:https://img.shields.io/github/license/AkiyukiOkayasu/ame[link=LICENSE]
 
 AME is a C++ header-only library focused on fast audio processing on Cortex-M, such as i.MXRT. +
 Specifically, AME provides a function that is missing from the CMSIS-DSP for audio processing. +
@@ -39,7 +39,3 @@ See the https://akiyukiokayasu.github.io/ame/[document] for details.
 ame is also a JUCE module. +
 https://github.com/AkiyukiOkayasu/ame-juce[ame-juce] is a simple example of using ame as a JUCE module. +
 Be aware that the order of audio samples in ame is interleaved. +
-
-== LICENSE
-MIT +
-link:LICENSE[LICENSE]
