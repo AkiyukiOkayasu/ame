@@ -1,0 +1,9 @@
+<map id="audio/biquad.hpp" name="audio/biquad.hpp">
+<area shape="rect" id="node1" title="BiQuad filter." alt="" coords="239,5,358,32"/>
+<area shape="rect" id="node2" href="$constants_8hpp.html" title="Math constants." alt="" coords="5,80,152,107"/>
+<area shape="rect" id="node3" href="$audio_block_view_8hpp.html" title="Audio Block View." alt="" coords="176,80,315,107"/>
+<area shape="rect" id="node5" title=" " alt="" coords="317,155,376,181"/>
+<area shape="rect" id="node7" title=" " alt="" coords="389,80,440,107"/>
+<area shape="rect" id="node4" title=" " alt="" coords="131,155,197,181"/>
+<area shape="rect" id="node6" title=" " alt="" coords="221,155,283,181"/>
+</map>
