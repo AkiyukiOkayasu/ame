@@ -13,11 +13,12 @@
  ID:                 ame
  vendor:             Akiyuki Okayasu
  version:            0.0.1
- name:
- description:
- website:
+ name:               ame DSP functions
+ description:        Header-only DSP library for Cortex-M
+ website:            https://github.com/AkiyukiOkayasu/ame
  license:            MIT
- 
+ minimumCppStandard: 17
+
  dependencies:
  
  END_JUCE_MODULE_DECLARATION
