@@ -3,6 +3,7 @@ project(ame VERSION 0.1.0)
 
 include(CTest)
 include(FetchContent)
+
 # ------------------------------------ First fetch/config doctest:
 FetchContent_Declare(doctest GIT_REPOSITORY https://github.com/onqtam/doctest GIT_TAG 2.4.5)
 FetchContent_MakeAvailable(doctest)
@@ -14,7 +15,7 @@ doctest_discover_tests(tests)
 
 # Include directories
 target_include_directories(tests
-    PUBLIC ${PROJECT_SOURCE_DIR}    
+    PUBLIC ${PROJECT_SOURCE_DIR}
 )
 
 target_compile_options(tests PUBLIC -O2 -Wall -fconstexpr-depth=2147483647)
