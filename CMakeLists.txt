@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.13)
-project(ame VERSION 0.0.4)
+project(ame VERSION 0.0.11)
 
 include(CTest)
 include(FetchContent)

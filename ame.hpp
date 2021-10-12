@@ -12,7 +12,7 @@
  
  ID:                 ame
  vendor:             Akiyuki Okayasu
- version:            0.0.4
+ version:            0.0.11
  name:               ame DSP functions
  description:        Header-only DSP library for Cortex-M
  website:            https://github.com/AkiyukiOkayasu/ame
