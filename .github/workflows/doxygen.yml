@@ -1,4 +1,4 @@
-name: doxygen
+name: Doxygen & Pages deploy
 
 # Controls when the workflow will run
 on:
