@@ -23,5 +23,5 @@ jobs:
           doxygenconf: ./Doxyfile
           htmloutput: ./docs/
           ghpagesbranch: gh-pages
-          ghpagedir: ./
+          ghpagesdir: ./
           
