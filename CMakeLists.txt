@@ -10,12 +10,13 @@ FetchContent_MakeAvailable(doctest)
 enable_testing()
 include(${doctest_SOURCE_DIR}/scripts/cmake/doctest.cmake)
 
-add_executable(tests test.cpp)
+add_executable(tests test/test.cpp)
 doctest_discover_tests(tests)
 
 # Include directories
 target_include_directories(tests
-    PUBLIC ${PROJECT_SOURCE_DIR}
+    PUBLIC ${PROJECT_SOURCE_DIR}/include
+    PUBLIC ${PROJECT_SOURCE_DIR}/test
 )
 
 target_compile_options(tests PUBLIC -O2 -Wall -fconstexpr-depth=2147483647)
