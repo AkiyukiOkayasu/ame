@@ -9,9 +9,10 @@
 
 #pragma once
 
-#include "../math/constants.hpp"
+#include "ame_Math.hpp"
 
 #include <atomic>
+#include <cassert>
 #include <cstddef>
 
 namespace ame

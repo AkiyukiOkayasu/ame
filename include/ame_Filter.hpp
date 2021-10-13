@@ -16,6 +16,7 @@
 #include "ame_Math.hpp"
 
 #include <array>
+#include <cassert>
 #include <cmath>
 
 namespace ame::dsp::iir::biquad //型定義

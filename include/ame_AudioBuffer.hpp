@@ -9,10 +9,11 @@
 
 #pragma once
 
-#include "audioBlockView.hpp"
+#include "ame_AudioBuffer.hpp"
 
 #include <algorithm>
 #include <array>
+#include <cassert>
 #include <cmath>
 #include <cstdint>
 
