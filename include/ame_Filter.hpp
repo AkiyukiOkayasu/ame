@@ -3,7 +3,7 @@
     Audio-EQ-Cookbook by Robert Bristow-Johnson implementation.
     https://webaudio.github.io/Audio-EQ-Cookbook/audio-eq-cookbook.html
 
-    @file biquad.hpp
+    @file ame_Filter.hpp
     @author Akiyuki Okayasu (akiyuki.okayasu@gmail.com)
     @copyright Copyright (c) 2021 - Akiyuki Okayasu
     
@@ -12,8 +12,8 @@
 
 #pragma once
 
-#include "../math/constants.hpp"
-#include "audioBlockView.hpp"
+#include "ame_AudioBuffer.hpp"
+#include "ame_Math.hpp"
 
 #include <array>
 #include <cmath>
