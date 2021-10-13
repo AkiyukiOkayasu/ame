@@ -22,7 +22,7 @@ namespace ame
 class SineOscillator
 {
 public:
-    /** Create sine wave ocillator instance.
+    /** Create sine wave oscillator instance.
         @param sampleRate The sample rate that will be used for calclate the oscillator phase  increment.
         @param frequency Initial frequency
     */
