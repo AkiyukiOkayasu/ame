@@ -12,6 +12,7 @@
 #include "ame_Util.hpp"
 
 #include <atomic>
+#include <numeric>
 
 namespace ame
 {
