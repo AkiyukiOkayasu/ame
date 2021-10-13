@@ -1,7 +1,7 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
+#include "Tamtam.hpp"
 #include "ame.hpp"
-#include "resource/Tamtam.hpp"
-#include "resource/sine440.hpp"
+#include "sine440.hpp"
 
 #include <doctest/doctest.h>
 #include <iomanip>
