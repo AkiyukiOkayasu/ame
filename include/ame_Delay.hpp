@@ -14,6 +14,7 @@
 #include "ame_Util.hpp"
 
 #include <array>
+#include <cassert>
 
 namespace ame::dsp
 {
