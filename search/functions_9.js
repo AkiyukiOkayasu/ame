@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['nextsample_166',['nextSample',['../classame_1_1_sine_oscillator.html#a2ac7efb5c12f0877f39b36cc56f02c41',1,'ame::SineOscillator']]]
+  ['operator_2b_2b_174',['operator++',['../classame_1_1_wrap.html#ae0a525fbd2163d4b861f0bd3fc72ad59',1,'ame::Wrap::operator++()'],['../classame_1_1_wrap.html#ad1855ca92b689e6e71122ca25bc3614c',1,'ame::Wrap::operator++(int)']]],
+  ['operator_2b_3d_175',['operator+=',['../classame_1_1_wrap.html#ac7fef5eabd19cf4a65db492176ea2ec4',1,'ame::Wrap']]]
 ];

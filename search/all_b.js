@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['n4_56',['N4',['../ame___conversion_8hpp.html#a7585c74ea4475a4b0750597223e0410dab1c49f839832f51f6d687a04db101d4c',1,'ame']]],
-  ['nextsample_57',['nextSample',['../classame_1_1_sine_oscillator.html#a2ac7efb5c12f0877f39b36cc56f02c41',1,'ame::SineOscillator']]],
-  ['notevalue_58',['NoteValue',['../ame___conversion_8hpp.html#a7585c74ea4475a4b0750597223e0410d',1,'ame']]]
+  ['operator_2b_2b_72',['operator++',['../classame_1_1_wrap.html#ae0a525fbd2163d4b861f0bd3fc72ad59',1,'ame::Wrap::operator++()'],['../classame_1_1_wrap.html#ad1855ca92b689e6e71122ca25bc3614c',1,'ame::Wrap::operator++(int)']]],
+  ['operator_2b_3d_73',['operator+=',['../classame_1_1_wrap.html#ac7fef5eabd19cf4a65db492176ea2ec4',1,'ame::Wrap']]]
 ];

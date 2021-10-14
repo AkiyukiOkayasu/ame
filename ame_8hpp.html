@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>AME: ame.hpp File Reference</title>
+<title>AME: include/ame.hpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -99,60 +99,44 @@ $(document).ready(function(){initNavTree('ame_8hpp.html',''); initResizable(); }
 
 <p>main header file.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="ame___conversion_8hpp_source.html">audio/ame_Conversion.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="audio_block_view_8hpp_source.html">audio/audioBlockView.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="audio_buffer_8hpp_source.html">audio/audioBuffer.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="biquad_8hpp_source.html">audio/biquad.hpp</a>&quot;</code><br />
-<code>#include &quot;audio/delay.hpp&quot;</code><br />
-<code>#include &quot;<a class="el" href="interpolation_8hpp_source.html">audio/interpolation.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="mapping_8hpp_source.html">audio/mapping.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="phase_8hpp_source.html">audio/phase.hpp</a>&quot;</code><br />
-<code>#include &quot;audio/random.hpp&quot;</code><br />
-<code>#include &quot;<a class="el" href="sine__oscillator_8hpp_source.html">audio/sine_oscillator.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="smoothing_8hpp_source.html">audio/smoothing.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="wav_player_8hpp_source.html">audio/wavPlayer.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="wav_reader_8hpp_source.html">audio/wavReader.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="wavetable_8hpp_source.html">audio/wavetable.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="constants_8hpp_source.html">math/constants.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="special_functions_8hpp_source.html">math/specialFunctions.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="bytes_8hpp_source.html">system/bytes.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="string_utilities_8hpp_source.html">system/stringUtilities.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="wrap_8hpp_source.html">system/wrap.hpp</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;ame_AudioBuffer.hpp&quot;</code><br />
+<code>#include &quot;<a class="el" href="ame___conversion_8hpp_source.html">ame_Conversion.hpp</a>&quot;</code><br />
+<code>#include &quot;ame_Delay.hpp&quot;</code><br />
+<code>#include &quot;<a class="el" href="ame___filter_8hpp_source.html">ame_Filter.hpp</a>&quot;</code><br />
+<code>#include &quot;ame_Math.hpp&quot;</code><br />
+<code>#include &quot;<a class="el" href="ame___midi_8hpp_source.html">ame_Midi.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ame___oscillator_8hpp_source.html">ame_Oscillator.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ame___pcm_8hpp_source.html">ame_Pcm.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ame___random_8hpp_source.html">ame_Random.hpp</a>&quot;</code><br />
+<code>#include &quot;ame_String.hpp&quot;</code><br />
+<code>#include &quot;<a class="el" href="ame___util_8hpp_source.html">ame_Util.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for ame.hpp:</div>
 <div class="dyncontent">
-<div class="center"><img src="ame_8hpp__incl.png" border="0" usemap="#aame_8hpp" alt=""/></div>
-<map name="aame_8hpp" id="aame_8hpp">
-<area shape="rect" title="main header file." alt="" coords="1199,5,1269,32"/>
-<area shape="rect" href="ame___conversion_8hpp.html" title="Audio friendly conversion functions." alt="" coords="154,80,333,107"/>
-<area shape="rect" href="audio_block_view_8hpp.html" title="Audio Block View." alt="" coords="1272,155,1447,181"/>
-<area shape="rect" href="audio_buffer_8hpp.html" title="Audio buffer." alt="" coords="357,80,503,107"/>
-<area shape="rect" href="biquad_8hpp.html" title="BiQuad filter." alt="" coords="1027,80,1145,107"/>
-<area shape="rect" href="constants_8hpp.html" title="Math constants." alt="" coords="1109,229,1255,256"/>
-<area shape="rect" href="delay_8hpp_source.html" title=" " alt="" coords="744,80,855,107"/>
-<area shape="rect" href="interpolation_8hpp.html" title="Interpolation." alt="" coords="1561,80,1712,107"/>
-<area shape="rect" href="mapping_8hpp.html" title="Mapping functions." alt="" coords="1066,155,1197,181"/>
-<area shape="rect" href="phase_8hpp.html" title="Phase operation." alt="" coords="1471,155,1587,181"/>
-<area shape="rect" href="random_8hpp_source.html" title=" " alt="" coords="5,80,129,107"/>
-<area shape="rect" href="sine__oscillator_8hpp.html" title=" " alt="" coords="1373,80,1537,107"/>
-<area shape="rect" href="special_functions_8hpp.html" title="Special functions." alt="" coords="703,155,890,181"/>
-<area shape="rect" href="smoothing_8hpp.html" title="Smoothing value." alt="" coords="1737,80,1878,107"/>
-<area shape="rect" href="wav_player_8hpp.html" title="Wav player." alt="" coords="1902,80,2043,107"/>
-<area shape="rect" href="wav_reader_8hpp.html" title="Wav reader." alt="" coords="1993,155,2104,181"/>
-<area shape="rect" href="string_utilities_8hpp.html" title="String utilities." alt="" coords="2097,229,2275,256"/>
-<area shape="rect" href="wavetable_8hpp.html" title="Wave table generator." alt="" coords="528,80,668,107"/>
-<area shape="rect" href="bytes_8hpp.html" title="Byte operations." alt="" coords="879,80,1002,107"/>
-<area shape="rect" href="wrap_8hpp.html" title="The number to automatically wrap in the range [0, length&#45;1]." alt="" coords="1849,155,1969,181"/>
-<area shape="rect" title=" " alt="" coords="307,155,382,181"/>
-<area shape="rect" title=" " alt="" coords="767,229,826,256"/>
-<area shape="rect" title=" " alt="" coords="1799,229,1864,256"/>
-<area shape="rect" title=" " alt="" coords="1495,229,1557,256"/>
-<area shape="rect" title=" " alt="" coords="629,155,679,181"/>
-<area shape="rect" title=" " alt="" coords="1662,155,1723,181"/>
-<area shape="rect" title=" " alt="" coords="35,155,99,181"/>
-<area shape="rect" title=" " alt="" coords="1869,304,1935,331"/>
-<area shape="rect" title=" " alt="" coords="1990,229,2073,256"/>
-<area shape="rect" title=" " alt="" coords="485,155,553,181"/>
+<div class="center"><img src="ame_8hpp__incl.png" border="0" usemap="#ainclude_2ame_8hpp" alt=""/></div>
+<map name="ainclude_2ame_8hpp" id="ainclude_2ame_8hpp">
+<area shape="rect" title="main header file." alt="" coords="747,5,863,32"/>
+<area shape="rect" href="ame___audio_buffer_8hpp_source.html" title=" " alt="" coords="316,155,461,181"/>
+<area shape="rect" href="ame___conversion_8hpp.html" title="Audio friendly conversion functions." alt="" coords="1031,155,1173,181"/>
+<area shape="rect" href="ame___delay_8hpp_source.html" title=" " alt="" coords="504,80,615,107"/>
+<area shape="rect" href="ame___math_8hpp_source.html" title=" " alt="" coords="594,229,701,256"/>
+<area shape="rect" href="ame___util_8hpp.html" title="Some utilities functions." alt="" coords="611,155,710,181"/>
+<area shape="rect" href="ame___filter_8hpp.html" title="BiQuad filter." alt="" coords="194,80,301,107"/>
+<area shape="rect" href="ame___midi_8hpp.html" title="MIDI" alt="" coords="5,80,108,107"/>
+<area shape="rect" href="ame___oscillator_8hpp.html" title=" " alt="" coords="738,80,871,107"/>
+<area shape="rect" href="ame___pcm_8hpp.html" title="PCM." alt="" coords="1135,80,1240,107"/>
+<area shape="rect" href="ame___string_8hpp_source.html" title=" " alt="" coords="1355,155,1467,181"/>
+<area shape="rect" href="ame___random_8hpp.html" title="Random." alt="" coords="1421,80,1548,107"/>
+<area shape="rect" title=" " alt="" coords="921,229,995,256"/>
+<area shape="rect" title=" " alt="" coords="202,229,253,256"/>
+<area shape="rect" title=" " alt="" coords="491,229,556,256"/>
+<area shape="rect" title=" " alt="" coords="521,304,579,331"/>
+<area shape="rect" title=" " alt="" coords="115,229,177,256"/>
+<area shape="rect" title=" " alt="" coords="1111,229,1176,256"/>
+<area shape="rect" title=" " alt="" coords="781,229,842,256"/>
+<area shape="rect" title=" " alt="" coords="785,155,853,181"/>
+<area shape="rect" title=" " alt="" coords="1249,155,1331,181"/>
+<area shape="rect" title=" " alt="" coords="1491,155,1555,181"/>
 </map>
 </div>
 </div>
@@ -167,7 +151,7 @@ Include dependency graph for ame.hpp:</div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="ame_8hpp.html">ame.hpp</a></li>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="ame_8hpp.html">ame.hpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>

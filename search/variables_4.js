@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['twopi_194',['twoPi',['../constants_8hpp.html#ac75fe0229f8e610a324d8baf2ada26fb',1,'ame']]]
+  ['jade_202',['JADE',['../ame___midi_8hpp.html#a3a8e2acdceb56acb5843390db28caee0',1,'ame::midi::SysEx::DeviceID']]]
 ];

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['interleavesamples_39',['interleaveSamples',['../ame___conversion_8hpp.html#a2a9e3dca01787ab3fb8be2ae6a131635',1,'ame']]],
-  ['interpolation_2ehpp_40',['interpolation.hpp',['../interpolation_8hpp.html',1,'']]]
+  ['jade_48',['JADE',['../ame___midi_8hpp.html#a3a8e2acdceb56acb5843390db28caee0',1,'ame::midi::SysEx::DeviceID']]]
 ];

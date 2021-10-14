@@ -1,17 +1,11 @@
 var searchData=
 [
-  ['makeallpass_42',['makeAllPass',['../biquad_8hpp.html#a0599e4a2dc0fbf7380d507ad66df7c55',1,'ame::dsp::iir::biquad']]],
-  ['makebandpass_43',['makeBandPass',['../biquad_8hpp.html#a323c4a6483dbf6a0ff8f1cdba574e12b',1,'ame::dsp::iir::biquad']]],
-  ['makebytes_44',['makeBytes',['../bytes_8hpp.html#a291016f1c0ea2093f1729d550746b7cd',1,'ame']]],
-  ['makehighpass_45',['makeHighPass',['../biquad_8hpp.html#afa43e57d6ce4bc1100cb797f92cc27ed',1,'ame::dsp::iir::biquad']]],
-  ['makehighshelf_46',['makeHighShelf',['../biquad_8hpp.html#a7edc801580ca762592220a9048ca8a4e',1,'ame::dsp::iir::biquad']]],
-  ['makelowpass_47',['makeLowPass',['../biquad_8hpp.html#a97af9118a07600de05ea3705a6743b7a',1,'ame::dsp::iir::biquad']]],
-  ['makelowshelf_48',['makeLowShelf',['../biquad_8hpp.html#a9328a66107467008ad3d15b15dc4c1cd',1,'ame::dsp::iir::biquad']]],
-  ['makenotch_49',['makeNotch',['../biquad_8hpp.html#ad141c4e0067523e3fe217795962484ae',1,'ame::dsp::iir::biquad']]],
-  ['makepeakfilter_50',['makePeakFilter',['../biquad_8hpp.html#a045fd871facb893d55fc3ef0cd166834',1,'ame::dsp::iir::biquad']]],
-  ['makesinetable_51',['makeSineTable',['../wavetable_8hpp.html#afcddded8fd5951fa442898d584a4d372',1,'ame']]],
-  ['makewavetable_52',['makeWaveTable',['../wavetable_8hpp.html#a07be6f825286fe09b13b71e19db072f2',1,'ame']]],
-  ['mapping_2ehpp_53',['mapping.hpp',['../mapping_8hpp.html',1,'']]],
-  ['miditofreq_54',['midiToFreq',['../ame___conversion_8hpp.html#a5b4357245e3088bdf7fb7977c1ef1ced',1,'ame']]],
-  ['mstobpm_55',['msToBpm',['../ame___conversion_8hpp.html#a272314d1a1861cde617c106b77b0d721',1,'ame']]]
+  ['n4_64',['N4',['../ame___conversion_8hpp.html#a7585c74ea4475a4b0750597223e0410dab1c49f839832f51f6d687a04db101d4c',1,'ame']]],
+  ['nextsample_65',['nextSample',['../classame_1_1_sine_oscillator.html#a2ac7efb5c12f0877f39b36cc56f02c41',1,'ame::SineOscillator']]],
+  ['noise_66',['noise',['../ame___random_8hpp.html#a1a67c3556492fe36f2e188b570829f85',1,'ame']]],
+  ['non_5fcommercial_67',['NON_COMMERCIAL',['../ame___midi_8hpp.html#a7c247a6206afe4af3478854c593b8b4d',1,'ame::midi::SysEx::ManufacturerID']]],
+  ['non_5frealtime_68',['NON_REALTIME',['../ame___midi_8hpp.html#ac2721e960fa8b270c39525b8a5cc16bd',1,'ame::midi::SysEx::ManufacturerID']]],
+  ['note_69',['Note',['../structame_1_1midi_1_1_note.html',1,'ame::midi']]],
+  ['notenumber_70',['noteNumber',['../structame_1_1midi_1_1_note.html#a9c3f3add8e6caf5551f8461f292dca48',1,'ame::midi::Note']]],
+  ['notevalue_71',['NoteValue',['../ame___conversion_8hpp.html#a7585c74ea4475a4b0750597223e0410d',1,'ame']]]
 ];
