@@ -96,11 +96,11 @@ $(document).ready(function(){initNavTree('ame___delay_8hpp_source.html',''); ini
 <div class="title">ame_Delay.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<a href="ame___delay_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;ame_AudioBuffer.hpp&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;ame_Math.hpp&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ame___audio_buffer_8hpp.html">ame_AudioBuffer.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ame___math_8hpp.html">ame_Math.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ame___util_8hpp.html">ame_Util.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;array&gt;</span></div>
@@ -141,7 +141,7 @@ $(document).ready(function(){initNavTree('ame___delay_8hpp_source.html',''); ini
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            {</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">float</span> input = buffer[i];</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                delayLine[ch][writePos.<a class="code" href="classame_1_1_wrap.html#aeb6b57e29967683931c2c8e135db6bb0">get</a>()] = input;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                buffer[i] = lerp (delayLine[ch][readPos.<a class="code" href="classame_1_1_wrap.html#aeb6b57e29967683931c2c8e135db6bb0">get</a>()], delayLine[ch][readPos.<a class="code" href="classame_1_1_wrap.html#aeb6b57e29967683931c2c8e135db6bb0">get</a> (-1)], fractional);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                buffer[i] = <a class="code" href="ame___math_8hpp.html#ab54fe577a7c14cfab3820540e56e05a7">lerp</a> (delayLine[ch][readPos.<a class="code" href="classame_1_1_wrap.html#aeb6b57e29967683931c2c8e135db6bb0">get</a>()], delayLine[ch][readPos.<a class="code" href="classame_1_1_wrap.html#aeb6b57e29967683931c2c8e135db6bb0">get</a> (-1)], fractional);</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                ++i;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            }</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            ++readPos;</div>
@@ -156,11 +156,14 @@ $(document).ready(function(){initNavTree('ame___delay_8hpp_source.html',''); ini
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">float</span> fractional = 0.0f;                                                                </div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;};</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;} <span class="comment">// namespace ame::dsp</span></div>
+<div class="ttc" id="aame___audio_buffer_8hpp_html"><div class="ttname"><a href="ame___audio_buffer_8hpp.html">ame_AudioBuffer.hpp</a></div><div class="ttdoc">Audio buffer.</div></div>
+<div class="ttc" id="aame___math_8hpp_html"><div class="ttname"><a href="ame___math_8hpp.html">ame_Math.hpp</a></div><div class="ttdoc">Math functions.</div></div>
+<div class="ttc" id="aame___math_8hpp_html_ab54fe577a7c14cfab3820540e56e05a7"><div class="ttname"><a href="ame___math_8hpp.html#ab54fe577a7c14cfab3820540e56e05a7">ame::lerp</a></div><div class="ttdeci">constexpr float lerp(float a, float b, float t) noexcept</div><div class="ttdoc">Linear interpolation.</div><div class="ttdef"><b>Definition:</b> ame_Math.hpp:78</div></div>
 <div class="ttc" id="aame___util_8hpp_html"><div class="ttname"><a href="ame___util_8hpp.html">ame_Util.hpp</a></div><div class="ttdoc">Some utilities functions.</div></div>
-<div class="ttc" id="aclassame_1_1_audio_block_view_html"><div class="ttname"><a href="classame_1_1_audio_block_view.html">ame::AudioBlockView</a></div><div class="ttdoc">A lightweight data structure that stores a pointer to an audio buffer.</div><div class="ttdef"><b>Definition:</b> ame_AudioBuffer.hpp:32</div></div>
-<div class="ttc" id="aclassame_1_1_audio_block_view_html_a2876af1db4b669386ab5170e38d7a3a1"><div class="ttname"><a href="classame_1_1_audio_block_view.html#a2876af1db4b669386ab5170e38d7a3a1">ame::AudioBlockView::getNumChannels</a></div><div class="ttdeci">uint_fast32_t getNumChannels() const noexcept</div><div class="ttdoc">Returns the number of channels.</div><div class="ttdef"><b>Definition:</b> ame_AudioBuffer.hpp:49</div></div>
-<div class="ttc" id="aclassame_1_1_audio_block_view_html_a3ed14372b4f3854bc29e06005b0707bb"><div class="ttname"><a href="classame_1_1_audio_block_view.html#a3ed14372b4f3854bc29e06005b0707bb">ame::AudioBlockView::getNumSamples</a></div><div class="ttdeci">uint_fast32_t getNumSamples() const noexcept</div><div class="ttdoc">Returns the number of samples per channel.</div><div class="ttdef"><b>Definition:</b> ame_AudioBuffer.hpp:55</div></div>
-<div class="ttc" id="aclassame_1_1_audio_block_view_html_a69dcc67a5e9fd4446b989a272d669730"><div class="ttname"><a href="classame_1_1_audio_block_view.html#a69dcc67a5e9fd4446b989a272d669730">ame::AudioBlockView::getWritePointer</a></div><div class="ttdeci">SampleType * getWritePointer() noexcept</div><div class="ttdoc">Returns a writeable pointer to interleaved audio buffer.</div><div class="ttdef"><b>Definition:</b> ame_AudioBuffer.hpp:109</div></div>
+<div class="ttc" id="aclassame_1_1_audio_block_view_html"><div class="ttname"><a href="classame_1_1_audio_block_view.html">ame::AudioBlockView</a></div><div class="ttdoc">A lightweight data structure that stores a pointer to an audio buffer.</div><div class="ttdef"><b>Definition:</b> ame_AudioBuffer.hpp:30</div></div>
+<div class="ttc" id="aclassame_1_1_audio_block_view_html_a2876af1db4b669386ab5170e38d7a3a1"><div class="ttname"><a href="classame_1_1_audio_block_view.html#a2876af1db4b669386ab5170e38d7a3a1">ame::AudioBlockView::getNumChannels</a></div><div class="ttdeci">uint_fast32_t getNumChannels() const noexcept</div><div class="ttdoc">Returns the number of channels.</div><div class="ttdef"><b>Definition:</b> ame_AudioBuffer.hpp:47</div></div>
+<div class="ttc" id="aclassame_1_1_audio_block_view_html_a3ed14372b4f3854bc29e06005b0707bb"><div class="ttname"><a href="classame_1_1_audio_block_view.html#a3ed14372b4f3854bc29e06005b0707bb">ame::AudioBlockView::getNumSamples</a></div><div class="ttdeci">uint_fast32_t getNumSamples() const noexcept</div><div class="ttdoc">Returns the number of samples per channel.</div><div class="ttdef"><b>Definition:</b> ame_AudioBuffer.hpp:53</div></div>
+<div class="ttc" id="aclassame_1_1_audio_block_view_html_a69dcc67a5e9fd4446b989a272d669730"><div class="ttname"><a href="classame_1_1_audio_block_view.html#a69dcc67a5e9fd4446b989a272d669730">ame::AudioBlockView::getWritePointer</a></div><div class="ttdeci">SampleType * getWritePointer() noexcept</div><div class="ttdoc">Returns a writeable pointer to interleaved audio buffer.</div><div class="ttdef"><b>Definition:</b> ame_AudioBuffer.hpp:107</div></div>
 <div class="ttc" id="aclassame_1_1_wrap_html"><div class="ttname"><a href="classame_1_1_wrap.html">ame::Wrap</a></div><div class="ttdef"><b>Definition:</b> ame_Util.hpp:114</div></div>
 <div class="ttc" id="aclassame_1_1_wrap_html_a716daa5acebc93e5a6758f0e11719bd7"><div class="ttname"><a href="classame_1_1_wrap.html#a716daa5acebc93e5a6758f0e11719bd7">ame::Wrap::set</a></div><div class="ttdeci">void set(int_fast32_t n)</div><div class="ttdoc">Sets the current value to an arbitrary number.</div><div class="ttdef"><b>Definition:</b> ame_Util.hpp:131</div></div>
 <div class="ttc" id="aclassame_1_1_wrap_html_aae68d28f92bbd048aa5194637bf0bb74"><div class="ttname"><a href="classame_1_1_wrap.html#aae68d28f92bbd048aa5194637bf0bb74">ame::Wrap::changeLength</a></div><div class="ttdeci">void changeLength(const int_fast32_t newLength)</div><div class="ttdoc">The number to automatically wrap in the range [0, length-1].</div><div class="ttdef"><b>Definition:</b> ame_Util.hpp:168</div></div>
@@ -173,7 +176,7 @@ $(document).ready(function(){initNavTree('ame___delay_8hpp_source.html',''); ini
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><b>ame_Delay.hpp</b></li>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="ame___delay_8hpp.html">ame_Delay.hpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>

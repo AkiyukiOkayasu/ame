@@ -1,0 +1,7 @@
+<map id="include/ame_AudioBuffer.hpp" name="include/ame_AudioBuffer.hpp">
+<area shape="rect" id="node1" title="Audio buffer." alt="" coords="95,5,286,32"/>
+<area shape="rect" id="node2" href="$ame_8hpp.html" title="main header file." alt="" coords="133,155,249,181"/>
+<area shape="rect" id="node3" href="$ame___delay_8hpp.html" title="Fractional delay." alt="" coords="25,80,180,107"/>
+<area shape="rect" id="node4" href="$ame___filter_8hpp.html" title="BiQuad filter." alt="" coords="204,80,356,107"/>
+<area shape="rect" id="node5" href="$ame___pcm_8hpp.html" title="PCM." alt="" coords="381,80,531,107"/>
+</map>

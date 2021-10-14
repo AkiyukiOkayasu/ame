@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['jade_202',['JADE',['../ame___midi_8hpp.html#a3a8e2acdceb56acb5843390db28caee0',1,'ame::midi::SysEx::DeviceID']]]
+  ['halfpi_225',['halfPi',['../ame___math_8hpp.html#a1cf9d11df53d8979c2bdc4d948d9e884',1,'ame']]]
 ];

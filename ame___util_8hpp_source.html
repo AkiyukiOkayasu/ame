@@ -99,7 +99,7 @@ $(document).ready(function(){initNavTree('ame___util_8hpp_source.html',''); init
 <a href="ame___util_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;ame_Math.hpp&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ame___math_8hpp.html">ame_Math.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;atomic&gt;</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;cassert&gt;</span></div>
@@ -110,9 +110,9 @@ $(document).ready(function(){initNavTree('ame___util_8hpp_source.html',''); init
 <div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="ame___util_8hpp.html#a10eba5dc5108d4a9c2d0f52193925c0e">   25</a></span>&#160;constexpr <span class="keywordtype">float</span> <a class="code" href="ame___util_8hpp.html#a10eba5dc5108d4a9c2d0f52193925c0e">addModulo2Pi</a> (<span class="keywordtype">float</span> phase, <span class="keyword">const</span> <span class="keywordtype">float</span> increment) noexcept</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    phase += increment;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">while</span> (phase &gt; twoPi)</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">while</span> (phase &gt; <a class="code" href="ame___math_8hpp.html#ac75fe0229f8e610a324d8baf2ada26fb">twoPi</a>)</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        phase -= twoPi;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        phase -= <a class="code" href="ame___math_8hpp.html#ac75fe0229f8e610a324d8baf2ada26fb">twoPi</a>;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    }</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">return</span> phase;</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
@@ -250,6 +250,8 @@ $(document).ready(function(){initNavTree('ame___util_8hpp_source.html',''); init
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <span class="keywordflow">return</span> { std::byte (std::forward&lt;Ts&gt; (args))... };</div>
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;}</div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;} <span class="comment">// namespace ame</span></div>
+<div class="ttc" id="aame___math_8hpp_html"><div class="ttname"><a href="ame___math_8hpp.html">ame_Math.hpp</a></div><div class="ttdoc">Math functions.</div></div>
+<div class="ttc" id="aame___math_8hpp_html_ac75fe0229f8e610a324d8baf2ada26fb"><div class="ttname"><a href="ame___math_8hpp.html#ac75fe0229f8e610a324d8baf2ada26fb">ame::twoPi</a></div><div class="ttdeci">constexpr float twoPi</div><div class="ttdoc">2π</div><div class="ttdef"><b>Definition:</b> ame_Math.hpp:33</div></div>
 <div class="ttc" id="aame___util_8hpp_html_a10eba5dc5108d4a9c2d0f52193925c0e"><div class="ttname"><a href="ame___util_8hpp.html#a10eba5dc5108d4a9c2d0f52193925c0e">ame::addModulo2Pi</a></div><div class="ttdeci">constexpr float addModulo2Pi(float phase, const float increment) noexcept</div><div class="ttdoc">Increment the phase and returns in the range of 0~2pi.</div><div class="ttdef"><b>Definition:</b> ame_Util.hpp:25</div></div>
 <div class="ttc" id="aame___util_8hpp_html_a3a8b9197b6b9f6928e410219c22fd08e"><div class="ttname"><a href="ame___util_8hpp.html#a3a8b9197b6b9f6928e410219c22fd08e">ame::scale</a></div><div class="ttdeci">constexpr float scale(const float sourceValue, const float sourceRangeMin, const float sourceRangeMax, const float targetRangeMin, const float targetRangeMax)</div><div class="ttdoc">Map values to an output range.</div><div class="ttdef"><b>Definition:</b> ame_Util.hpp:43</div></div>
 <div class="ttc" id="aclassame_1_1_slide_html"><div class="ttname"><a href="classame_1_1_slide.html">ame::Slide</a></div><div class="ttdoc">Smooth values logarithmically.</div><div class="ttdef"><b>Definition:</b> ame_Util.hpp:60</div></div>

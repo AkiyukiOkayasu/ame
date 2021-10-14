@@ -99,7 +99,7 @@ $(document).ready(function(){initNavTree('ame___oscillator_8hpp_source.html','')
 <a href="ame___oscillator_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;ame_Math.hpp&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ame___math_8hpp.html">ame_Math.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ame___util_8hpp.html">ame_Util.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;atomic&gt;</span></div>
@@ -123,7 +123,7 @@ $(document).ready(function(){initNavTree('ame___oscillator_8hpp_source.html','')
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;{</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">auto</span> f = [] (<span class="keyword">auto</span>&amp; x)</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        x = ame::sinf (x * ame::twoPi);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        x = <a class="code" href="ame___math_8hpp.html#a04a55b89aafb7536f4f731002eb232ea">ame::sinf</a> (x * <a class="code" href="ame___math_8hpp.html#ac75fe0229f8e610a324d8baf2ada26fb">ame::twoPi</a>);</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    };</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">return</span> ame::makeWaveTable&lt;float, N&gt; (f);</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
@@ -137,12 +137,12 @@ $(document).ready(function(){initNavTree('ame___oscillator_8hpp_source.html','')
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    }</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    ~<a class="code" href="classame_1_1_sine_oscillator.html">SineOscillator</a>() {}</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classame_1_1_sine_oscillator.html#aa733e87a8bb4d568767fda009a074162">   71</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classame_1_1_sine_oscillator.html#aa733e87a8bb4d568767fda009a074162">setFrequency</a> (<span class="keyword">const</span> <span class="keywordtype">float</span> freq) noexcept { phaseIncrement = freq * twoPi * samplingPeriod; }</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classame_1_1_sine_oscillator.html#aa733e87a8bb4d568767fda009a074162">   71</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classame_1_1_sine_oscillator.html#aa733e87a8bb4d568767fda009a074162">setFrequency</a> (<span class="keyword">const</span> <span class="keywordtype">float</span> freq) noexcept { phaseIncrement = freq * <a class="code" href="ame___math_8hpp.html#ac75fe0229f8e610a324d8baf2ada26fb">twoPi</a> * samplingPeriod; }</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
 <div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="classame_1_1_sine_oscillator.html#a2ac7efb5c12f0877f39b36cc56f02c41">   76</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="classame_1_1_sine_oscillator.html#a2ac7efb5c12f0877f39b36cc56f02c41">nextSample</a>() noexcept</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    {</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        phase = <a class="code" href="ame___util_8hpp.html#a10eba5dc5108d4a9c2d0f52193925c0e">addModulo2Pi</a> (phase, phaseIncrement);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">return</span> ame::sinf (phase);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="ame___math_8hpp.html#a04a55b89aafb7536f4f731002eb232ea">ame::sinf</a> (phase);</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="keyword">private</span>:</div>
@@ -155,6 +155,9 @@ $(document).ready(function(){initNavTree('ame___oscillator_8hpp_source.html','')
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <a class="code" href="classame_1_1_sine_oscillator.html#ae3e9f889ed1c34ba7d45134071cfb9e3">SineOscillator</a>&amp; operator= (<span class="keyword">const</span> <a class="code" href="classame_1_1_sine_oscillator.html#ae3e9f889ed1c34ba7d45134071cfb9e3">SineOscillator</a>&amp;) = <span class="keyword">delete</span>;</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;};</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;} <span class="comment">// namespace ame</span></div>
+<div class="ttc" id="aame___math_8hpp_html"><div class="ttname"><a href="ame___math_8hpp.html">ame_Math.hpp</a></div><div class="ttdoc">Math functions.</div></div>
+<div class="ttc" id="aame___math_8hpp_html_a04a55b89aafb7536f4f731002eb232ea"><div class="ttname"><a href="ame___math_8hpp.html#a04a55b89aafb7536f4f731002eb232ea">ame::sinf</a></div><div class="ttdeci">float sinf(float x)</div><div class="ttdoc">sinf.</div><div class="ttdef"><b>Definition:</b> ame_Math.hpp:46</div></div>
+<div class="ttc" id="aame___math_8hpp_html_ac75fe0229f8e610a324d8baf2ada26fb"><div class="ttname"><a href="ame___math_8hpp.html#ac75fe0229f8e610a324d8baf2ada26fb">ame::twoPi</a></div><div class="ttdeci">constexpr float twoPi</div><div class="ttdoc">2π</div><div class="ttdef"><b>Definition:</b> ame_Math.hpp:33</div></div>
 <div class="ttc" id="aame___oscillator_8hpp_html_a07be6f825286fe09b13b71e19db072f2"><div class="ttname"><a href="ame___oscillator_8hpp.html#a07be6f825286fe09b13b71e19db072f2">ame::makeWaveTable</a></div><div class="ttdeci">constexpr auto makeWaveTable(Function func)</div><div class="ttdoc">Wavetable generator.</div><div class="ttdef"><b>Definition:</b> ame_Oscillator.hpp:27</div></div>
 <div class="ttc" id="aame___oscillator_8hpp_html_afcddded8fd5951fa442898d584a4d372"><div class="ttname"><a href="ame___oscillator_8hpp.html#afcddded8fd5951fa442898d584a4d372">ame::makeSineTable</a></div><div class="ttdeci">constexpr auto makeSineTable()</div><div class="ttdoc">Sine wave wavetable generator.</div><div class="ttdef"><b>Definition:</b> ame_Oscillator.hpp:43</div></div>
 <div class="ttc" id="aame___util_8hpp_html"><div class="ttname"><a href="ame___util_8hpp.html">ame_Util.hpp</a></div><div class="ttdoc">Some utilities functions.</div></div>

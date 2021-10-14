@@ -1,9 +1,11 @@
 var searchData=
 [
-  ['pause_74',['pause',['../classame_1_1wav_1_1_wav_player.html#a6fa88c7e04014a0d8e57a8a75fea6f56',1,'ame::wav::WavPlayer']]],
-  ['periodtofreq_75',['periodToFreq',['../ame___conversion_8hpp.html#ab591aa8a6792fdc6fd5e8c3838e875a8',1,'ame']]],
-  ['play_76',['play',['../classame_1_1wav_1_1_wav_player.html#ac4f0c6765d970c44a1a15eff72f484e1',1,'ame::wav::WavPlayer']]],
-  ['poltocar_77',['poltocar',['../ame___conversion_8hpp.html#a3efcc056b1b635b37f37e601f1c4dbd4',1,'ame']]],
-  ['process_78',['process',['../classame_1_1dsp_1_1_delay.html#ab18c848ed863bdfe8b25293e7301efb4',1,'ame::dsp::Delay::process()'],['../classame_1_1dsp_1_1iir_1_1biquad_1_1_bi_quad.html#aa5301eec388a1106abcdcacb28b1b7c7',1,'ame::dsp::iir::biquad::BiQuad::process()'],['../classame_1_1wav_1_1_wav_player.html#a9a01a22dc44b2babf010feeb59dc7ba7',1,'ame::wav::WavPlayer::process()'],['../classame_1_1_slide.html#a9c31482318c3e70b569f38fb359bebd2',1,'ame::Slide::process()']]],
-  ['program_5fchange_79',['PROGRAM_CHANGE',['../namespaceame_1_1midi_1_1_code_index_number.html#a553fb896b3fb1d8e08f1caf6ef50db9b',1,'ame::midi::CodeIndexNumber']]]
+  ['n4_72',['N4',['../ame___conversion_8hpp.html#a7585c74ea4475a4b0750597223e0410dab1c49f839832f51f6d687a04db101d4c',1,'ame']]],
+  ['nextsample_73',['nextSample',['../classame_1_1_sine_oscillator.html#a2ac7efb5c12f0877f39b36cc56f02c41',1,'ame::SineOscillator']]],
+  ['noise_74',['noise',['../ame___random_8hpp.html#a1a67c3556492fe36f2e188b570829f85',1,'ame']]],
+  ['non_5fcommercial_75',['NON_COMMERCIAL',['../ame___midi_8hpp.html#a7c247a6206afe4af3478854c593b8b4d',1,'ame::midi::SysEx::ManufacturerID']]],
+  ['non_5frealtime_76',['NON_REALTIME',['../ame___midi_8hpp.html#ac2721e960fa8b270c39525b8a5cc16bd',1,'ame::midi::SysEx::ManufacturerID']]],
+  ['note_77',['Note',['../structame_1_1midi_1_1_note.html',1,'ame::midi']]],
+  ['notenumber_78',['noteNumber',['../structame_1_1midi_1_1_note.html#a9c3f3add8e6caf5551f8461f292dca48',1,'ame::midi::Note']]],
+  ['notevalue_79',['NoteValue',['../ame___conversion_8hpp.html#a7585c74ea4475a4b0750597223e0410d',1,'ame']]]
 ];

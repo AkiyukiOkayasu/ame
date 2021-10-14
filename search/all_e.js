@@ -1,21 +1,10 @@
 var searchData=
 [
-  ['scale_82',['scale',['../ame___util_8hpp.html#a3a8b9197b6b9f6928e410219c22fd08e',1,'ame']]],
-  ['semitonetoratio_83',['semitoneToRatio',['../ame___conversion_8hpp.html#a8b31e4517e783b663825105c5543f584',1,'ame']]],
-  ['set_84',['set',['../classame_1_1_wrap.html#a716daa5acebc93e5a6758f0e11719bd7',1,'ame::Wrap']]],
-  ['setcoefficients_85',['setCoefficients',['../classame_1_1dsp_1_1iir_1_1biquad_1_1_bi_quad.html#ab0e622a7077f9c67282625005632b2e1',1,'ame::dsp::iir::biquad::BiQuad']]],
-  ['setdelay_86',['setDelay',['../classame_1_1dsp_1_1_delay.html#a86913684913048bef6225ad9cea3fb6a',1,'ame::dsp::Delay']]],
-  ['setfrequency_87',['setFrequency',['../classame_1_1_sine_oscillator.html#aa733e87a8bb4d568767fda009a074162',1,'ame::SineOscillator']]],
-  ['setnumchannels_88',['setNumChannels',['../classame_1_1_audio_buffer.html#a102730d8aa90fc8445255845e94450c7',1,'ame::AudioBuffer']]],
-  ['setsample_89',['setSample',['../classame_1_1_audio_block_view.html#aaa86614be16ad607689acb254b7ca86b',1,'ame::AudioBlockView']]],
-  ['setslownessofdecrease_90',['setSlownessOfDecrease',['../classame_1_1_slide.html#afa6fa39a7733fd23adbfbb6ef947daed',1,'ame::Slide']]],
-  ['setslownessofincrease_91',['setSlownessOfIncrease',['../classame_1_1_slide.html#a3f414a26f6d2a008f46693cbb62988e6',1,'ame::Slide']]],
-  ['sineoscillator_92',['SineOscillator',['../classame_1_1_sine_oscillator.html',1,'ame::SineOscillator'],['../classame_1_1_sine_oscillator.html#ae3e9f889ed1c34ba7d45134071cfb9e3',1,'ame::SineOscillator::SineOscillator()']]],
-  ['skiptohome_93',['skipToHome',['../classame_1_1wav_1_1_wav_player.html#a0f04960d875c9010d60eba739e147b43',1,'ame::wav::WavPlayer']]],
-  ['slide_94',['Slide',['../classame_1_1_slide.html',1,'ame::Slide'],['../classame_1_1_slide.html#ac538d8f438b0638f45146a9d7a581f51',1,'ame::Slide::Slide()']]],
-  ['sys_5frealtime_95',['SYS_REALTIME',['../namespaceame_1_1midi_1_1_code_index_number.html#a2566c39c570fee9579505aca5a041374',1,'ame::midi::CodeIndexNumber']]],
-  ['syscommon_5f2bytes_96',['SYSCOMMON_2BYTES',['../namespaceame_1_1midi_1_1_code_index_number.html#ade5e3d4ca5ea3d81d85eb89786518e0c',1,'ame::midi::CodeIndexNumber']]],
-  ['sysex_5fend_5f1byte_97',['SYSEX_END_1BYTE',['../namespaceame_1_1midi_1_1_code_index_number.html#ac5262bb818973707674b704ec917118a',1,'ame::midi::CodeIndexNumber']]],
-  ['sysex_5fend_5f2bytes_98',['SYSEX_END_2BYTES',['../namespaceame_1_1midi_1_1_code_index_number.html#aa0392ea9443f08dbdd7840a00a57ff85',1,'ame::midi::CodeIndexNumber']]],
-  ['sysex_5fend_5f3bytes_99',['SYSEX_END_3BYTES',['../namespaceame_1_1midi_1_1_code_index_number.html#a5806521ac9bd61f99934d894b23ec81d',1,'ame::midi::CodeIndexNumber']]]
+  ['pause_82',['pause',['../classame_1_1wav_1_1_wav_player.html#a6fa88c7e04014a0d8e57a8a75fea6f56',1,'ame::wav::WavPlayer']]],
+  ['periodtofreq_83',['periodToFreq',['../ame___conversion_8hpp.html#ab591aa8a6792fdc6fd5e8c3838e875a8',1,'ame']]],
+  ['pi_84',['pi',['../ame___math_8hpp.html#ac0dccbff14912b3a0c5fc01e52da16a9',1,'ame']]],
+  ['play_85',['play',['../classame_1_1wav_1_1_wav_player.html#ac4f0c6765d970c44a1a15eff72f484e1',1,'ame::wav::WavPlayer']]],
+  ['poltocar_86',['poltocar',['../ame___conversion_8hpp.html#a3efcc056b1b635b37f37e601f1c4dbd4',1,'ame']]],
+  ['process_87',['process',['../classame_1_1dsp_1_1_delay.html#ab18c848ed863bdfe8b25293e7301efb4',1,'ame::dsp::Delay::process()'],['../classame_1_1dsp_1_1iir_1_1biquad_1_1_bi_quad.html#aa5301eec388a1106abcdcacb28b1b7c7',1,'ame::dsp::iir::biquad::BiQuad::process()'],['../classame_1_1wav_1_1_wav_player.html#a9a01a22dc44b2babf010feeb59dc7ba7',1,'ame::wav::WavPlayer::process()'],['../classame_1_1_slide.html#a9c31482318c3e70b569f38fb359bebd2',1,'ame::Slide::process()']]],
+  ['program_5fchange_88',['PROGRAM_CHANGE',['../namespaceame_1_1midi_1_1_code_index_number.html#a553fb896b3fb1d8e08f1caf6ef50db9b',1,'ame::midi::CodeIndexNumber']]]
 ];
