@@ -9,8 +9,6 @@
 
 #pragma once
 
-#include <stdint.h>
-
 namespace
 {
 inline uint32_t s[4] = { 123, 234, 345, 97 };    //random seed
