@@ -1,6 +1,6 @@
 /** 
     Audio buffer.
-    @file audioBuffer.hpp
+    @file ame_AudioBuffer.hpp
     @author Akiyuki Okayasu (akiyuki.okayasu@gmail.com)
     @copyright Copyright (c) 2021 - Akiyuki Okayasu
     
@@ -8,8 +8,6 @@
 */
 
 #pragma once
-
-#include "ame_AudioBuffer.hpp"
 
 #include <algorithm>
 #include <array>

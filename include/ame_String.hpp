@@ -1,6 +1,6 @@
 /** 
     String utilities.
-    @file stringUtilities.hpp
+    @file ame_String.hpp
     @author Akiyuki Okayasu (akiyuki.okayasu@gmail.com)
     @copyright Copyright (c) 2021 - Akiyuki Okayasu
     
