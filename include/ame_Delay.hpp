@@ -1,6 +1,6 @@
 /**
     Fractional delay.
-    @file delay.hpp
+    @file ame_Delay.hpp
     @author Akiyuki Okayasu (akiyuki.okayasu@gmail.com)
     @copyright Copyright (c) 2021 - Akiyuki Okayasu
 

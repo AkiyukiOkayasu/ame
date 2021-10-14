@@ -1,6 +1,6 @@
 /** 
-    Special functions
-    @file specialFunctions.hpp
+    Math functions
+    @file ame_Math.hpp
     @author Akiyuki Okayasu (akiyuki.okayasu@gmail.com)
     @copyright Copyright (c) 2021 - Akiyuki Okayasu
     
