@@ -149,7 +149,7 @@ var namespaces_dup =
       [ "scale", "ame___util_8hpp.html#a3a8b9197b6b9f6928e410219c22fd08e", null ],
       [ "semitoneToRatio", "ame___conversion_8hpp.html#a8b31e4517e783b663825105c5543f584", null ],
       [ "sinf", "ame___math_8hpp.html#a04a55b89aafb7536f4f731002eb232ea", null ],
-      [ "stringComp", "ame___string_8hpp.html#a40427fa5dc9508cacd204127610445bb", null ],
+      [ "stringComp", "ame___string_8hpp.html#aa62edcc17c69b05efcb73b9fff71e1db", null ],
       [ "euler", "ame___math_8hpp.html#a76ccbcf90dfaa7c7d153ba88e47ba44a", null ],
       [ "halfPi", "ame___math_8hpp.html#a1cf9d11df53d8979c2bdc4d948d9e884", null ],
       [ "pi", "ame___math_8hpp.html#ac0dccbff14912b3a0c5fc01e52da16a9", null ],

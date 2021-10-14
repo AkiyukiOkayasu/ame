@@ -16,7 +16,7 @@ var searchData=
   ['slide_104',['Slide',['../classame_1_1_slide.html',1,'ame::Slide'],['../classame_1_1_slide.html#ac538d8f438b0638f45146a9d7a581f51',1,'ame::Slide::Slide()']]],
   ['sqrt1_5f2_105',['sqrt1_2',['../ame___math_8hpp.html#a222b08222c89893a68486d989b4aa99e',1,'ame']]],
   ['sqrt2_106',['sqrt2',['../ame___math_8hpp.html#a95950004da17b850191a35a5ae2e2775',1,'ame']]],
-  ['stringcomp_107',['stringComp',['../ame___string_8hpp.html#a40427fa5dc9508cacd204127610445bb',1,'ame']]],
+  ['stringcomp_107',['stringComp',['../ame___string_8hpp.html#aa62edcc17c69b05efcb73b9fff71e1db',1,'ame']]],
   ['sys_5frealtime_108',['SYS_REALTIME',['../namespaceame_1_1midi_1_1_code_index_number.html#a2566c39c570fee9579505aca5a041374',1,'ame::midi::CodeIndexNumber']]],
   ['syscommon_5f2bytes_109',['SYSCOMMON_2BYTES',['../namespaceame_1_1midi_1_1_code_index_number.html#ade5e3d4ca5ea3d81d85eb89786518e0c',1,'ame::midi::CodeIndexNumber']]],
   ['sysex_5fend_5f1byte_110',['SYSEX_END_1BYTE',['../namespaceame_1_1midi_1_1_code_index_number.html#ac5262bb818973707674b704ec917118a',1,'ame::midi::CodeIndexNumber']]],

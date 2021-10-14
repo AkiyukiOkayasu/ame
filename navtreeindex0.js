@@ -245,8 +245,8 @@ var NAVTREEINDEX0 =
 "ame___random_8hpp.html#ab3a0c0c4f501f46a46bb1430150e9373":[1,0,0,30],
 "ame___random_8hpp_source.html":[3,0,0,9],
 "ame___string_8hpp.html":[3,0,0,10],
-"ame___string_8hpp.html#a40427fa5dc9508cacd204127610445bb":[3,0,0,10,0],
-"ame___string_8hpp.html#a40427fa5dc9508cacd204127610445bb":[1,0,0,34],
+"ame___string_8hpp.html#aa62edcc17c69b05efcb73b9fff71e1db":[3,0,0,10,0],
+"ame___string_8hpp.html#aa62edcc17c69b05efcb73b9fff71e1db":[1,0,0,34],
 "ame___string_8hpp_source.html":[3,0,0,10],
 "ame___util_8hpp.html":[3,0,0,11],
 "ame___util_8hpp.html#a10eba5dc5108d4a9c2d0f52193925c0e":[3,0,0,11,2]
