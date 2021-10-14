@@ -117,9 +117,11 @@ public:
     
     @param length The number to automatically wrap in the range [0, length-1].
     */
-    explicit Wrap (const uint_fast32_t length) : length (length)
+    explicit Wrap (const int_fast32_t length) : length (length)
     {
     }
+
+    Wrap() = default;
     ~Wrap() = default;
 
     /** Sets the current value to an arbitrary number.
@@ -133,7 +135,7 @@ public:
             n -= length;
         }
 
-        while (n != 0)
+        while (n < 0)
         {
             n += length;
         }
@@ -145,7 +147,7 @@ public:
         @param offset 
         @return int_fast32_t [0, length-1]
     */
-    uint_fast32_t get (const int_fast32_t offset = 0)
+    int_fast32_t get (const int_fast32_t offset = 0)
     {
         auto n = num + offset;
         while (n >= length)
@@ -163,7 +165,7 @@ public:
     /** The number to automatically wrap in the range [0, length-1].
         @param newLength 
     */
-    void changeLength (const uint_fast32_t newLength)
+    void changeLength (const int_fast32_t newLength)
     {
         length = newLength;
     }
@@ -171,7 +173,7 @@ public:
     /** Prefix increment.
         @return size_t [0, length-1]
     */
-    uint_fast32_t operator++()
+    int_fast32_t operator++()
     {
         ++num;
         if (num >= length)
@@ -184,7 +186,7 @@ public:
     /** Postfix increment.
         @return int_fast32_t  [0, length-1]
     */
-    uint_fast32_t operator++ (int)
+    int_fast32_t operator++ (int)
     {
         num++;
         if (num >= length)
@@ -199,7 +201,7 @@ public:
         @param add 
         @return int_fast32_t  [0, length-1]
     */
-    uint_fast32_t operator+= (int_fast32_t add)
+    int_fast32_t operator+= (int_fast32_t add)
     {
         num += add;
         while (num >= length)
@@ -210,8 +212,8 @@ public:
     }
 
 private:
-    uint_fast32_t num = {};
-    uint_fast32_t length = {};
+    int_fast32_t num = {};
+    int_fast32_t length = {};
 };
 
 /** Generate a std::array<std::byte, N>
