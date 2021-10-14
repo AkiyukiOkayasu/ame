@@ -9,8 +9,6 @@
 
 #pragma once
 
-#include "ame_AudioBuffer.hpp"
-
 #include <algorithm>
 #include <array>
 #include <cassert>
