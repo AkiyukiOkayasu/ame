@@ -434,3 +434,74 @@ TEST_CASE ("Random")
         }
     }
 }
+
+TEST_CASE ("Delay")
+{
+    SUBCASE ("small int delay")
+    {
+        constexpr int numChannel = 1;
+        constexpr int bufferSize = 4;
+        constexpr int maximumDelaySamples = 100;
+        float v[numChannel * bufferSize] = {};
+        ame::AudioBlockView<float> block (v, numChannel, bufferSize);
+        ame::dsp::Delay<numChannel, maximumDelaySamples> delay;
+        delay.setDelay (2); //2sample delay
+        block.clear();
+        block.setSample (0, 0, 1.0);
+        delay.process (block);
+
+        CHECK (v[0] == Approx (0.0f).scale (1));
+        CHECK (v[1] == Approx (0.0f).scale (1));
+        CHECK (v[2] == Approx (1.0f).scale (1));
+        CHECK (v[3] == Approx (0.0f).scale (1));
+    }
+
+    SUBCASE ("large int delay")
+    {
+        constexpr int numChannel = 1;
+        constexpr int bufferSize = 4;
+        constexpr int maximumDelaySamples = 100;
+        float v[numChannel * bufferSize] = {};
+        ame::AudioBlockView<float> block (v, numChannel, bufferSize);
+        ame::dsp::Delay<numChannel, maximumDelaySamples> delay;
+        delay.setDelay (10); //10sample delay
+        block.clear();
+        block.setSample (0, 0, 1.0); //Impulse
+
+        delay.process (block);
+        CHECK (v[0] == Approx (0.0f).scale (1));
+        CHECK (v[1] == Approx (0.0f).scale (1)); //1sample delay
+        CHECK (v[2] == Approx (0.0f).scale (1));
+        CHECK (v[3] == Approx (0.0f).scale (1));
+        block.clear();
+        delay.process (block);
+        CHECK (v[0] == Approx (0.0f).scale (1)); //4sample delay
+        CHECK (v[1] == Approx (0.0f).scale (1));
+        CHECK (v[2] == Approx (0.0f).scale (1));
+        CHECK (v[3] == Approx (0.0f).scale (1));
+        delay.process (block);
+        CHECK (v[0] == Approx (0.0f).scale (1)); //8sample delay
+        CHECK (v[1] == Approx (0.0f).scale (1));
+        CHECK (v[2] == Approx (1.0f).scale (1)); //10sample delay
+        CHECK (v[3] == Approx (0.0f).scale (1));
+    }
+
+    SUBCASE ("fractional delay")
+    {
+        constexpr int numChannel = 1;
+        constexpr int bufferSize = 4;
+        constexpr int maximumDelaySamples = 100;
+        float v[numChannel * bufferSize] = {};
+        ame::AudioBlockView<float> block (v, numChannel, bufferSize);
+        ame::dsp::Delay<numChannel, maximumDelaySamples> delay;
+        delay.setDelay (1.5f); //1.5sample delay
+        block.clear();
+        block.setSample (0, 0, 1.0); //Impulse
+
+        delay.process (block);
+        CHECK (v[0] == Approx (0.0f).scale (1));
+        CHECK (v[1] == Approx (0.5f).scale (1));
+        CHECK (v[2] == Approx (0.5f).scale (1));
+        CHECK (v[3] == Approx (0.0f).scale (1));
+    }
+}

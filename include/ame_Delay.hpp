@@ -26,7 +26,11 @@ template <size_t maximumChannels, size_t maximumDelayInSamples>
 class Delay
 {
 public:
-    Delay() = default;
+    Delay()
+    {
+        readPos.changeLength (maximumChannels * maximumDelayInSamples);
+        writePos.changeLength (maximumChannels * maximumDelayInSamples);
+    }
     ~Delay() = default;
 
     /** Set delay time.
@@ -66,8 +70,8 @@ public:
 
 private:
     std::array<std::array<float, maximumDelayInSamples + 1>, maximumChannels> delayLine {}; ///<Ring buffer
-    Wrap<maximumDelayInSamples + 1> readPos;                                                ///< Ring buffer read position
-    Wrap<maximumDelayInSamples + 1> writePos;                                               ///< Ring buffer write position
+    Wrap readPos;                                                                           ///< Ring buffer read position
+    Wrap writePos;                                                                          ///< Ring buffer write position
     float fractional = 0.0f;                                                                ///<for fractional delay[0, 1]
 };
 } // namespace ame::dsp
