@@ -189,7 +189,7 @@ $(document).ready(function(){initNavTree('ame___midi_8hpp_source.html',''); init
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="comment">//Functions</span></div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="keyword">namespace </span>ame::midi</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;{</div>
-<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="ame___midi_8hpp.html#a57229653ef9a0cd704a60f7f44accd1c">  117</a></span>&#160;<a class="code" href="structame_1_1midi_1_1_usb_midi_event_packet.html">UsbMidiEventPacket</a> <a class="code" href="ame___midi_8hpp.html#a57229653ef9a0cd704a60f7f44accd1c">makeNoteOn</a> (uint8_t noteNumber, uint8_t velocity, uint8_t channel)</div>
+<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="ame___midi_8hpp.html#a57229653ef9a0cd704a60f7f44accd1c">  117</a></span>&#160;<span class="keyword">inline</span> <a class="code" href="structame_1_1midi_1_1_usb_midi_event_packet.html">UsbMidiEventPacket</a> <a class="code" href="ame___midi_8hpp.html#a57229653ef9a0cd704a60f7f44accd1c">makeNoteOn</a> (uint8_t noteNumber, uint8_t velocity, uint8_t channel)</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;{</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <a class="code" href="structame_1_1midi_1_1_usb_midi_event_packet.html">UsbMidiEventPacket</a> p;</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    p.header = CodeIndexNumber::NOTE_ON;</div>
@@ -199,7 +199,7 @@ $(document).ready(function(){initNavTree('ame___midi_8hpp_source.html',''); init
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keywordflow">return</span> p;</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;}</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
-<div class="line"><a name="l00132"></a><span class="lineno"><a class="line" href="ame___midi_8hpp.html#a3eb8b8249772e0cbd6833a922a153306">  132</a></span>&#160;<a class="code" href="structame_1_1midi_1_1_usb_midi_event_packet.html">UsbMidiEventPacket</a> <a class="code" href="ame___midi_8hpp.html#a3eb8b8249772e0cbd6833a922a153306">makeNoteOff</a> (uint8_t noteNumber, uint8_t channel)</div>
+<div class="line"><a name="l00132"></a><span class="lineno"><a class="line" href="ame___midi_8hpp.html#a3eb8b8249772e0cbd6833a922a153306">  132</a></span>&#160;<span class="keyword">inline</span> <a class="code" href="structame_1_1midi_1_1_usb_midi_event_packet.html">UsbMidiEventPacket</a> <a class="code" href="ame___midi_8hpp.html#a3eb8b8249772e0cbd6833a922a153306">makeNoteOff</a> (uint8_t noteNumber, uint8_t channel)</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;{</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <a class="code" href="structame_1_1midi_1_1_usb_midi_event_packet.html">UsbMidiEventPacket</a> p;</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    p.header = CodeIndexNumber::NOTE_OFF;</div>
