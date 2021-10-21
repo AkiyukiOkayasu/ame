@@ -114,7 +114,7 @@ namespace ame::midi
     @param channel MIDI channel [0, 15]
     @return midiEventPacket_t 
 */
-UsbMidiEventPacket makeNoteOn (uint8_t noteNumber, uint8_t velocity, uint8_t channel)
+inline UsbMidiEventPacket makeNoteOn (uint8_t noteNumber, uint8_t velocity, uint8_t channel)
 {
     UsbMidiEventPacket p;
     p.header = CodeIndexNumber::NOTE_ON;
@@ -129,7 +129,7 @@ UsbMidiEventPacket makeNoteOn (uint8_t noteNumber, uint8_t velocity, uint8_t cha
     @param channel MIDI channel [0, 15]
     @return midiEventPacket_t 
 */
-UsbMidiEventPacket makeNoteOff (uint8_t noteNumber, uint8_t channel)
+inline UsbMidiEventPacket makeNoteOff (uint8_t noteNumber, uint8_t channel)
 {
     UsbMidiEventPacket p;
     p.header = CodeIndexNumber::NOTE_OFF;
