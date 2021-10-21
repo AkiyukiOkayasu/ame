@@ -4,6 +4,7 @@ image:https://github.com/AkiyukiOkayasu/ame/actions/workflows/cmake.yml/badge.sv
 
 AME is a C++ header-only library focused on fast audio processing on Cortex-M, such as i.MXRT. +
 Specifically, AME provides a function that is missing from the CMSIS-DSP for audio processing. +
+If CMSIS-DSP is available, use it, but it is not required. This means that ame can run on non-Cortex-M environments. +
 
 This is my back up project and also in the early stages of the project.  +
 Major changes may be added to this project. +
@@ -14,28 +15,46 @@ Major changes may be added to this project. +
 ==== Optional
 * https://arm-software.github.io/CMSIS_5/DSP/html/index.html[ARM CMSIS-DSP] +
 
+
 == Feautures
-* Conversion between float and Q23
-* Conversion between **Decibel and Amplitude**
-* Conversion between **Frequency and Period**
-* Conversion between **MIDI note and Frequency**
-* Interpolate functions
+* Audio buffer that can only be allocatable at compile time
+* Oscillator and noise generator
 * Filters
 * Fractional delay
-* Audio buffer that can only be allocatable at compile time
 * WAV reader
-* Random
-* White noise generator
+* Interpolate functions
+* Conversion between float and Q23
+** Float and Q23
+** Decibel and Amplitude
+** Frequency and Period
+** MIDI note and Frequency
 
-=== TODO  
-* MIDI
-* Sample rate conversion
 
-== Usage
-Just copy this repository and include ame.hpp.
-See the https://akiyukiokayasu.github.io/ame/[document] for details.
+== How to use
+The easiest way is to just copy this repository and include ame.hpp.
+Just copy this repository and #include "ame.hpp".
+
+=== CMake integration
+If you are using CMake, you can install ame using https://cmake.org/cmake/help/latest/module/FetchContent.html[FetchContent]
+[source,cmake]
+----
+# CMakeLists.txt
+cmake_minimum_required(VERSION 3.15)
+project(example_project VERSION 0.0.1)
+add_executable(example_project main.cpp)
+
+include(FetchContent)
+FetchContent_Declare(ame GIT_REPOSITORY https://github.com/AkiyukiOkayasu/ame GIT_TAG v0.2.3)
+FetchContent_MakeAvailable(ame)
+target_compile_features(example_project PUBLIC cxx_std_17)
+target_link_libraries(example_project PRIVATE ame)
+----
 
 === For JUCE users
 ame is also a JUCE module. +
-https://github.com/AkiyukiOkayasu/ame-juce[ame-juce] is a simple example of using ame as a JUCE module. +
+https://github.com/AkiyukiOkayasu/ame-juce[ame-juce] is a simple example of combining JUCE and ame. +
 Be aware that the order of audio samples in ame is interleaved. +
+
+
+== Other document
+See the https://akiyukiokayasu.github.io/ame/[document] for details.
