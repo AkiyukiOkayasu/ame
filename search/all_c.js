@@ -1,11 +1,5 @@
 var searchData=
 [
-  ['n4_72',['N4',['../ame___conversion_8hpp.html#a7585c74ea4475a4b0750597223e0410dab1c49f839832f51f6d687a04db101d4c',1,'ame']]],
-  ['nextsample_73',['nextSample',['../classame_1_1_sine_oscillator.html#a2ac7efb5c12f0877f39b36cc56f02c41',1,'ame::SineOscillator']]],
-  ['noise_74',['noise',['../ame___random_8hpp.html#a1a67c3556492fe36f2e188b570829f85',1,'ame']]],
-  ['non_5fcommercial_75',['NON_COMMERCIAL',['../ame___midi_8hpp.html#a7c247a6206afe4af3478854c593b8b4d',1,'ame::midi::SysEx::ManufacturerID']]],
-  ['non_5frealtime_76',['NON_REALTIME',['../ame___midi_8hpp.html#ac2721e960fa8b270c39525b8a5cc16bd',1,'ame::midi::SysEx::ManufacturerID']]],
-  ['note_77',['Note',['../structame_1_1midi_1_1_note.html',1,'ame::midi']]],
-  ['notenumber_78',['noteNumber',['../structame_1_1midi_1_1_note.html#a9c3f3add8e6caf5551f8461f292dca48',1,'ame::midi::Note']]],
-  ['notevalue_79',['NoteValue',['../ame___conversion_8hpp.html#a7585c74ea4475a4b0750597223e0410d',1,'ame']]]
+  ['operator_2b_2b_63',['operator++',['../classame_1_1_wrap.html#ae0a525fbd2163d4b861f0bd3fc72ad59',1,'ame::Wrap::operator++()'],['../classame_1_1_wrap.html#ad1855ca92b689e6e71122ca25bc3614c',1,'ame::Wrap::operator++(int)']]],
+  ['operator_2b_3d_64',['operator+=',['../classame_1_1_wrap.html#ac7fef5eabd19cf4a65db492176ea2ec4',1,'ame::Wrap']]]
 ];

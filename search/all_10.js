@@ -1,25 +1,5 @@
 var searchData=
 [
-  ['scale_91',['scale',['../ame___util_8hpp.html#a3a8b9197b6b9f6928e410219c22fd08e',1,'ame']]],
-  ['semitonetoratio_92',['semitoneToRatio',['../ame___conversion_8hpp.html#a8b31e4517e783b663825105c5543f584',1,'ame']]],
-  ['set_93',['set',['../classame_1_1_wrap.html#a716daa5acebc93e5a6758f0e11719bd7',1,'ame::Wrap']]],
-  ['setcoefficients_94',['setCoefficients',['../classame_1_1dsp_1_1iir_1_1biquad_1_1_bi_quad.html#ab0e622a7077f9c67282625005632b2e1',1,'ame::dsp::iir::biquad::BiQuad']]],
-  ['setdelay_95',['setDelay',['../classame_1_1dsp_1_1_delay.html#a86913684913048bef6225ad9cea3fb6a',1,'ame::dsp::Delay']]],
-  ['setfrequency_96',['setFrequency',['../classame_1_1_sine_oscillator.html#aa733e87a8bb4d568767fda009a074162',1,'ame::SineOscillator']]],
-  ['setnumchannels_97',['setNumChannels',['../classame_1_1_audio_buffer.html#a102730d8aa90fc8445255845e94450c7',1,'ame::AudioBuffer']]],
-  ['setsample_98',['setSample',['../classame_1_1_audio_block_view.html#aaa86614be16ad607689acb254b7ca86b',1,'ame::AudioBlockView']]],
-  ['setslownessofdecrease_99',['setSlownessOfDecrease',['../classame_1_1_slide.html#afa6fa39a7733fd23adbfbb6ef947daed',1,'ame::Slide']]],
-  ['setslownessofincrease_100',['setSlownessOfIncrease',['../classame_1_1_slide.html#a3f414a26f6d2a008f46693cbb62988e6',1,'ame::Slide']]],
-  ['sineoscillator_101',['SineOscillator',['../classame_1_1_sine_oscillator.html',1,'ame::SineOscillator'],['../classame_1_1_sine_oscillator.html#ae3e9f889ed1c34ba7d45134071cfb9e3',1,'ame::SineOscillator::SineOscillator()']]],
-  ['sinf_102',['sinf',['../ame___math_8hpp.html#a04a55b89aafb7536f4f731002eb232ea',1,'ame']]],
-  ['skiptohome_103',['skipToHome',['../classame_1_1wav_1_1_wav_player.html#a0f04960d875c9010d60eba739e147b43',1,'ame::wav::WavPlayer']]],
-  ['slide_104',['Slide',['../classame_1_1_slide.html',1,'ame::Slide'],['../classame_1_1_slide.html#ac538d8f438b0638f45146a9d7a581f51',1,'ame::Slide::Slide()']]],
-  ['sqrt1_5f2_105',['sqrt1_2',['../ame___math_8hpp.html#a222b08222c89893a68486d989b4aa99e',1,'ame']]],
-  ['sqrt2_106',['sqrt2',['../ame___math_8hpp.html#a95950004da17b850191a35a5ae2e2775',1,'ame']]],
-  ['stringcomp_107',['stringComp',['../ame___string_8hpp.html#aa62edcc17c69b05efcb73b9fff71e1db',1,'ame']]],
-  ['sys_5frealtime_108',['SYS_REALTIME',['../namespaceame_1_1midi_1_1_code_index_number.html#a2566c39c570fee9579505aca5a041374',1,'ame::midi::CodeIndexNumber']]],
-  ['syscommon_5f2bytes_109',['SYSCOMMON_2BYTES',['../namespaceame_1_1midi_1_1_code_index_number.html#ade5e3d4ca5ea3d81d85eb89786518e0c',1,'ame::midi::CodeIndexNumber']]],
-  ['sysex_5fend_5f1byte_110',['SYSEX_END_1BYTE',['../namespaceame_1_1midi_1_1_code_index_number.html#ac5262bb818973707674b704ec917118a',1,'ame::midi::CodeIndexNumber']]],
-  ['sysex_5fend_5f2bytes_111',['SYSEX_END_2BYTES',['../namespaceame_1_1midi_1_1_code_index_number.html#aa0392ea9443f08dbdd7840a00a57ff85',1,'ame::midi::CodeIndexNumber']]],
-  ['sysex_5fend_5f3bytes_112',['SYSEX_END_3BYTES',['../namespaceame_1_1midi_1_1_code_index_number.html#a5806521ac9bd61f99934d894b23ec81d',1,'ame::midi::CodeIndexNumber']]]
+  ['todo_20list_89',['Todo List',['../todo.html',1,'']]],
+  ['twopi_90',['twoPi',['../ame___math_8hpp.html#ac75fe0229f8e610a324d8baf2ada26fb',1,'ame']]]
 ];

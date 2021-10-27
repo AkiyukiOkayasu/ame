@@ -26,20 +26,12 @@ var NAVTREE =
 [
   [ "AME", "index.html", [
     [ "Todo List", "todo.html", null ],
-    [ "Namespaces", "namespaces.html", [
-      [ "Namespace List", "namespaces.html", "namespaces_dup" ],
-      [ "Namespace Members", "namespacemembers.html", [
-        [ "All", "namespacemembers.html", null ],
-        [ "Variables", "namespacemembers_vars.html", null ]
-      ] ]
-    ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", null ],
-        [ "Functions", "functions_func.html", null ],
-        [ "Variables", "functions_vars.html", null ]
+        [ "Functions", "functions_func.html", null ]
       ] ]
     ] ],
     [ "Files", "files.html", [
@@ -50,8 +42,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_tamtam_8hpp.html#ad6f1e034f87afd9a967cd058e6692dc6",
-"classame_1_1_audio_block_view.html#a3ed14372b4f3854bc29e06005b0707bb"
+"_tamtam_8hpp_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

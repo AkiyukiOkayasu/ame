@@ -11,7 +11,6 @@ var dir_d44c64559bbebec7f509842c48db8b23 =
     ] ],
     [ "ame_Filter.hpp", "ame___filter_8hpp.html", "ame___filter_8hpp" ],
     [ "ame_Math.hpp", "ame___math_8hpp.html", "ame___math_8hpp" ],
-    [ "ame_Midi.hpp", "ame___midi_8hpp.html", "ame___midi_8hpp" ],
     [ "ame_Oscillator.hpp", "ame___oscillator_8hpp.html", "ame___oscillator_8hpp" ],
     [ "ame_Pcm.hpp", "ame___pcm_8hpp.html", "ame___pcm_8hpp" ],
     [ "ame_Random.hpp", "ame___random_8hpp.html", "ame___random_8hpp" ],

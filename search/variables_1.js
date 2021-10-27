@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['begin_219',['BEGIN',['../namespaceame_1_1midi_1_1_sys_ex.html#a63b5d3b2d8417a41ef71be64f228dd7f',1,'ame::midi::SysEx']]]
+  ['halfpi_184',['halfPi',['../ame___math_8hpp.html#a1cf9d11df53d8979c2bdc4d948d9e884',1,'ame']]]
 ];
