@@ -59,7 +59,8 @@ public:
         @param sampleRate The sample rate that will be used for calclate the oscillator phase  increment.
         @param frequency Initial frequency
     */
-    SineOscillator (const float sampleRate, const float frequency) : samplingPeriod (1.0f / sampleRate)
+    SineOscillator (const float sampleRate, const float frequency)
+        : samplingPeriod (1.0f / sampleRate)
     {
         setFrequency (frequency);
     }
@@ -68,7 +69,10 @@ public:
     /** Set the sine wave frequency
         @param freq frequency in Hz
     */
-    void setFrequency (const float freq) noexcept { phaseIncrement = freq * twoPi * samplingPeriod; }
+    void setFrequency (const float freq) noexcept
+    {
+        phaseIncrement = freq * twoPi * samplingPeriod;
+    }
 
     /** Generate single sample
         @return generated latest sample
