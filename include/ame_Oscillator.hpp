@@ -11,6 +11,7 @@
 #include "ame_Math.hpp"
 #include "ame_Util.hpp"
 
+#include <array>
 #include <atomic>
 #include <numeric>
 
@@ -48,6 +49,77 @@ constexpr auto makeSineTable()
     };
     return ame::makeWaveTable<float, N> (f);
 }
+
+/** Wavetable oscillator
+    @tparam FloatType float or double
+    @tparam numSamples 
+    @todo 動作確認、単体テスト、doxygenコメントの英語化
+*/
+template <typename FloatType, size_t numSamples>
+class WavetableOscillator
+{
+public:
+    WavetableOscillator (const FloatType sampleRate, const FloatType frequency)
+        : samplingPeriod (1.0f / sampleRate)
+    {
+        setFrequency (frequency);
+        tableIndex.changeLength (numSamples);
+    }
+    ~WavetableOscillator() = default;
+
+    /** Set the frequency.
+        @param freq frequency in Hz
+    */
+    void setFrequency (const float freq) noexcept
+    {
+        tableIndexIncrement = freq * samplingPeriod;
+    }
+
+    /** ウェーブテーブル生成.
+        @tparam Function Function to generate wavetable                
+        @note Functionの入力は0~1範囲の配列です    
+    */
+    template <class Function>
+    void setWavetable (Function&& func)
+    {
+        resetWavetable();
+        std::for_each (wavetable.begin(), wavetable.end(), func);
+    }
+
+    /** Generate single sample
+        @return generated latest sample
+    */
+    FloatType nextSample() noexcept
+    {
+        tableIndex += tableIndexIncrement;
+
+        const uint32_t aIndex = std::floor (tableIndex.get());
+        uint32_t bIndex = aIndex + 1;
+        const float t = tableIndex.get() - aIndex;
+        if (aIndex == numSamples - 1)
+        {
+            bIndex = 0;
+        }
+        const auto a = wavetable[aIndex];
+        const auto b = wavetable[bIndex];
+
+        return lerp (a, b, t);
+    }
+
+private:
+    /// wavetableを0~1の配列にする.
+    void resetWavetable()
+    {
+        std::iota (wavetable.begin(), wavetable.end(), 0);
+        std::for_each (wavetable.begin(), wavetable.end(), [] (auto& x)
+                       { x = x / (numSamples - 1); }); // 0~1が順に並んだ配列
+    }
+
+    std::array<FloatType, numSamples> wavetable {};
+    const FloatType samplingPeriod; // サンプリング周期 1 /sampleRate
+    std::atomic<FloatType> tableIndexIncrement {};
+    Wrap<float> tableIndex {};
+};
 
 /** Sine wave oscillator.
     Generates a sine between -1.0~1.0.
