@@ -85,7 +85,7 @@ public:
 
 private:
     float samplingPeriod; // サンプリング周期 1 /sampleRate
-    std::atomic<float> phaseIncrement { 0.0f };
+    std::atomic<float> phaseIncrement {};
     float phase {};
 
     // Disallow copy constructor and assignment
