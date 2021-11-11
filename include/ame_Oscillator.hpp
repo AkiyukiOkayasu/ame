@@ -64,7 +64,7 @@ public:
     {
         setFrequency (frequency);
     }
-    ~SineOscillator() {}
+    ~SineOscillator() = default;
 
     /** Set the sine wave frequency
         @param freq frequency in Hz
