@@ -137,8 +137,7 @@ public:
         }
     }
 
-    /**
-    
+    /** Finds the highest absolute sample value within a region of a channel.    
         @param channel 
         @return FloatType [0.0, FloatTypeMax]
     */
@@ -260,8 +259,7 @@ public:
         }
     }
 
-    /**
-    
+    /** Finds the highest absolute sample value within a region of a channel.
         @param channel 
         @return FloatType [0.0, FloatTypeMax]
     */
