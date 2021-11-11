@@ -176,7 +176,6 @@ TEST_CASE ("AudioBuffer")
         b[1] = 0.2f;
         b[2] = 0.9f;
         b[3] = -0.5f;
-        buf.getPeak (0);
         REQUIRE (buf.getPeak (0) == Approx (0.9f));
         REQUIRE (buf.getPeak (1) == Approx (0.5f));
     }
