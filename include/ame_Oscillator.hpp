@@ -84,7 +84,7 @@ public:
     }
 
 private:
-    float samplingPeriod; // サンプリング周期 1 /sampleRate
+    const float samplingPeriod; // サンプリング周期 1 /sampleRate
     std::atomic<float> phaseIncrement {};
     float phase {};
 
