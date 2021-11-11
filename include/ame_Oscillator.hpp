@@ -86,7 +86,7 @@ public:
 private:
     float samplingPeriod; // サンプリング周期 1 /sampleRate
     std::atomic<float> phaseIncrement { 0.0f };
-    std::atomic<float> phase { 0.0f };
+    float phase {};
 
     // Disallow copy constructor and assignment
     SineOscillator (const SineOscillator&) = delete;
