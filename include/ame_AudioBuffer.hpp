@@ -155,6 +155,23 @@ public:
         return peak;
     }
 
+    /** Returns the root mean squared level for a region of a channel.
+    @param channel 
+    @return FloatType RMS level [0.0, SampleTypeMax]
+    */
+    SampleType getRMSLevel (const uint_fast32_t channel) const
+    {
+        assert (channel < numChannels);
+        SampleType sum = 0.0;
+        for (auto i = channel; i < numSamples * numChannels; i += numChannels)
+        {
+            const auto sample = buffer[i];
+            sum += sample * sample;
+        }
+
+        return static_cast<SampleType> (std::sqrt (sum / numSamples));
+    }
+
 private:
     SampleType* buffer;
     uint_fast32_t numSamples;
@@ -276,6 +293,23 @@ public:
             }
         }
         return peak;
+    }
+
+    /** Returns the root mean squared level for a region of a channel.
+    @param channel 
+    @return FloatType RMS level [0.0, FloatTypeMax]
+    */
+    FloatType getRMSLevel (const uint_fast32_t channel) const
+    {
+        assert (channel < numChannels);
+        FloatType sum = 0.0;
+        for (auto i = channel; i < numSamples * numChannels; i += numChannels)
+        {
+            const auto sample = buffer[i];
+            sum += sample * sample;
+        }
+
+        return static_cast<FloatType> (std::sqrt (sum / numSamples));
     }
 
 private:

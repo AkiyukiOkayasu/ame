@@ -179,6 +179,19 @@ TEST_CASE ("AudioBuffer")
         REQUIRE (buf.getPeak (0) == Approx (0.9f));
         REQUIRE (buf.getPeak (1) == Approx (0.5f));
     }
+
+    SUBCASE ("getRMSLevel")
+    {
+        ame::AudioBuffer<float, 6> buffer (1);
+        auto b = buffer.getWritePointer();
+        b[0] = 0.0f;
+        b[1] = 0.2f;
+        b[2] = 0.9f;
+        b[3] = -0.5f;
+        b[4] = -0.1f;
+        b[5] = -0.0f;
+        CHECK (buffer.getRMSLevel (0) == Approx (0.4301162f).scale (1));
+    }
 }
 
 TEST_CASE ("AudioBlockView")
@@ -189,6 +202,13 @@ TEST_CASE ("AudioBlockView")
         ame::AudioBlockView<float> block (v, 2, 3);
         REQUIRE (block.getPeak (0) == Approx (0.9f));
         REQUIRE (block.getPeak (1) == Approx (0.5f));
+    }
+
+    SUBCASE ("getRMSLevel")
+    {
+        float v[6] = { 0.0f, 0.2f, 0.9f, -0.5f, -0.1f, -0.0f };
+        ame::AudioBlockView<float> block (v, 1, 6);
+        CHECK (block.getRMSLevel (0) == Approx (0.4301162f).scale (1));
     }
 }
 
