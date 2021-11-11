@@ -70,8 +70,8 @@ public:
 
 private:
     std::array<std::array<float, maximumDelayInSamples + 1>, maximumChannels> delayLine {}; ///<Ring buffer
-    Wrap readPos;                                                                           ///< Ring buffer read position
-    Wrap writePos;                                                                          ///< Ring buffer write position
+    Wrap<int32_t> readPos {};                                                               ///< Ring buffer read position
+    Wrap<int32_t> writePos {};                                                              ///< Ring buffer write position
     float fractional = 0.0f;                                                                ///<for fractional delay[0, 1]
 };
 } // namespace ame::dsp

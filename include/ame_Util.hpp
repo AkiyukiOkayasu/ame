@@ -14,6 +14,7 @@
 #include <atomic>
 #include <cassert>
 #include <cstddef>
+#include <type_traits>
 
 namespace ame
 {
@@ -110,14 +111,19 @@ private:
     std::atomic<float> slideDown { 1.0f };
 };
 
+/** A number to wrap between 0~length.
+    @tparam T T is must to be signed type(int32_t, float etc...)
+*/
+template <typename T>
 class Wrap
 {
+    static_assert (std::is_signed<T>::value == true, "Wrap type is must to be signed");
+
 public:
-    /**
-    
+    /**    
     @param length The number to automatically wrap in the range [0, length-1].
     */
-    explicit Wrap (const int_fast32_t length) : length (length)
+    explicit Wrap (const T length) : length (length)
     {
     }
 
@@ -128,7 +134,7 @@ public:
         When n is not in the range of 0~length-1, the wrapped number is used as the current value.
         @param n 
     */
-    void set (int_fast32_t n)
+    void set (T n)
     {
         while (n >= length)
         {
@@ -147,7 +153,7 @@ public:
         @param offset 
         @return int_fast32_t [0, length-1]
     */
-    int_fast32_t get (const int_fast32_t offset = 0)
+    T get (const T offset = 0)
     {
         auto n = num + offset;
         while (n >= length)
@@ -165,15 +171,15 @@ public:
     /** The number to automatically wrap in the range [0, length-1].
         @param newLength 
     */
-    void changeLength (const int_fast32_t newLength)
+    void changeLength (const T newLength)
     {
         length = newLength;
     }
 
     /** Prefix increment.
-        @return size_t [0, length-1]
+        @return [0, length-1]
     */
-    int_fast32_t operator++()
+    T operator++()
     {
         ++num;
         if (num >= length)
@@ -184,9 +190,9 @@ public:
     }
 
     /** Postfix increment.
-        @return int_fast32_t  [0, length-1]
+        @return [0, length-1]
     */
-    int_fast32_t operator++ (int)
+    T operator++ (int)
     {
         num++;
         if (num >= length)
@@ -199,9 +205,9 @@ public:
     /** += operator.
         Add and return wrapped number.
         @param add 
-        @return int_fast32_t  [0, length-1]
+        @return [0, length-1]
     */
-    int_fast32_t operator+= (int_fast32_t add)
+    T operator+= (T add)
     {
         num += add;
         while (num >= length)
@@ -212,8 +218,8 @@ public:
     }
 
 private:
-    int_fast32_t num = {};
-    int_fast32_t length = {};
+    T num = {};
+    T length = {};
 };
 
 /** Generate a std::array<std::byte, N>

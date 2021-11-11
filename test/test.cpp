@@ -146,7 +146,7 @@ TEST_CASE ("Wrap")
 {
     SUBCASE ("Increment")
     {
-        ame::Wrap w { 10 };
+        ame::Wrap<int32_t> w { 10 };
         CHECK_EQ (w.get(), 0);
         CHECK_EQ (w++, 1);
         CHECK_EQ (++w, 2);
@@ -158,7 +158,7 @@ TEST_CASE ("Wrap")
 
     SUBCASE ("set")
     {
-        ame::Wrap w { 10 };
+        ame::Wrap<int32_t> w { 10 };
         w.set (12);
         CHECK_EQ (w.get(), 2);
         w.set (-9);
