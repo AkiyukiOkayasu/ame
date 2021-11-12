@@ -112,7 +112,7 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 
 <h3><a id="index_c"></a>- c -</h3><ul>
 <li>changeLength()
-: <a class="el" href="classame_1_1_wrap.html#aae68d28f92bbd048aa5194637bf0bb74">ame::Wrap</a>
+: <a class="el" href="classame_1_1_wrap.html#ab5654022ff41a9e6641de9c45504e699">ame::Wrap&lt; T &gt;</a>
 </li>
 <li>clear()
 : <a class="el" href="classame_1_1_audio_block_view.html#a803054f0321e2f79bf47d924acc02e38">ame::AudioBlockView&lt; SampleType &gt;</a>
@@ -123,7 +123,7 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 
 <h3><a id="index_g"></a>- g -</h3><ul>
 <li>get()
-: <a class="el" href="classame_1_1_wrap.html#aeb6b57e29967683931c2c8e135db6bb0">ame::Wrap</a>
+: <a class="el" href="classame_1_1_wrap.html#a6ca3443205652716f4a58408e335f8c2">ame::Wrap&lt; T &gt;</a>
 </li>
 <li>getBitRate()
 : <a class="el" href="classame_1_1wav_1_1_wav_reader.html#a877d3de79ff5ae949a51fdb55bd2ccaa">ame::wav::WavReader&lt; BytePointerType &gt;</a>
@@ -152,6 +152,10 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 : <a class="el" href="classame_1_1_audio_block_view.html#a0fb764e6f98f2a8ae3e1b235040f6c38">ame::AudioBlockView&lt; SampleType &gt;</a>
 , <a class="el" href="classame_1_1_audio_buffer.html#a3dc3f5d97fb0fa401779520b0eef5b1d">ame::AudioBuffer&lt; FloatType, Size &gt;</a>
 </li>
+<li>getRMSLevel()
+: <a class="el" href="classame_1_1_audio_block_view.html#a08e06878b68219fd8fbcf3f74eb7772e">ame::AudioBlockView&lt; SampleType &gt;</a>
+, <a class="el" href="classame_1_1_audio_buffer.html#a2853b035888fee086502117b93004b9a">ame::AudioBuffer&lt; FloatType, Size &gt;</a>
+</li>
 <li>getSampleRate()
 : <a class="el" href="classame_1_1wav_1_1_wav_reader.html#aac77a2c00412b4ee4b60964501f0cf6c">ame::wav::WavReader&lt; BytePointerType &gt;</a>
 </li>
@@ -169,16 +173,17 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <h3><a id="index_n"></a>- n -</h3><ul>
 <li>nextSample()
 : <a class="el" href="classame_1_1_sine_oscillator.html#a2ac7efb5c12f0877f39b36cc56f02c41">ame::SineOscillator</a>
+, <a class="el" href="classame_1_1_wavetable_oscillator.html#a77f34b624cd9327c88d99774bb717906">ame::WavetableOscillator&lt; FloatType, numSamples &gt;</a>
 </li>
 </ul>
 
 
 <h3><a id="index_o"></a>- o -</h3><ul>
 <li>operator++()
-: <a class="el" href="classame_1_1_wrap.html#ae0a525fbd2163d4b861f0bd3fc72ad59">ame::Wrap</a>
+: <a class="el" href="classame_1_1_wrap.html#a82f76b83e647c18e891b0f0740088d3c">ame::Wrap&lt; T &gt;</a>
 </li>
 <li>operator+=()
-: <a class="el" href="classame_1_1_wrap.html#ac7fef5eabd19cf4a65db492176ea2ec4">ame::Wrap</a>
+: <a class="el" href="classame_1_1_wrap.html#a69801c0654503b548c06887e6117b788">ame::Wrap&lt; T &gt;</a>
 </li>
 </ul>
 
@@ -201,7 +206,7 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 
 <h3><a id="index_s"></a>- s -</h3><ul>
 <li>set()
-: <a class="el" href="classame_1_1_wrap.html#a716daa5acebc93e5a6758f0e11719bd7">ame::Wrap</a>
+: <a class="el" href="classame_1_1_wrap.html#aa49851e51240f2dca0fb51847b61b160">ame::Wrap&lt; T &gt;</a>
 </li>
 <li>setCoefficients()
 : <a class="el" href="classame_1_1dsp_1_1iir_1_1biquad_1_1_bi_quad.html#ab0e622a7077f9c67282625005632b2e1">ame::dsp::iir::biquad::BiQuad&lt; maximumChannels &gt;</a>
@@ -211,6 +216,7 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 </li>
 <li>setFrequency()
 : <a class="el" href="classame_1_1_sine_oscillator.html#aa733e87a8bb4d568767fda009a074162">ame::SineOscillator</a>
+, <a class="el" href="classame_1_1_wavetable_oscillator.html#a523a14f117cc9cc67d91c2d0a42791e3">ame::WavetableOscillator&lt; FloatType, numSamples &gt;</a>
 </li>
 <li>setNumChannels()
 : <a class="el" href="classame_1_1_audio_buffer.html#a102730d8aa90fc8445255845e94450c7">ame::AudioBuffer&lt; FloatType, Size &gt;</a>
@@ -223,6 +229,9 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 </li>
 <li>setSlownessOfIncrease()
 : <a class="el" href="classame_1_1_slide.html#a3f414a26f6d2a008f46693cbb62988e6">ame::Slide</a>
+</li>
+<li>setWavetable()
+: <a class="el" href="classame_1_1_wavetable_oscillator.html#a6337184ac9722ebab70ab0f1d45198c9">ame::WavetableOscillator&lt; FloatType, numSamples &gt;</a>
 </li>
 <li>SineOscillator()
 : <a class="el" href="classame_1_1_sine_oscillator.html#ae3e9f889ed1c34ba7d45134071cfb9e3">ame::SineOscillator</a>
@@ -238,7 +247,7 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 
 <h3><a id="index_w"></a>- w -</h3><ul>
 <li>Wrap()
-: <a class="el" href="classame_1_1_wrap.html#a565d1b59d013b664346378c6c709c7e9">ame::Wrap</a>
+: <a class="el" href="classame_1_1_wrap.html#ad39de8126b07a5fd7f26a8cc68f7e165">ame::Wrap&lt; T &gt;</a>
 </li>
 </ul>
 </div><!-- contents -->

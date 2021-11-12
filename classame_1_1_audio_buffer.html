@@ -145,7 +145,11 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memdesc:aafdc8b71a3086d32b960ac90d835a9df"><td class="mdescLeft">&#160;</td><td class="mdescRight">addBuffer <br /></td></tr>
 <tr class="separator:aafdc8b71a3086d32b960ac90d835a9df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a14426152feb6882a5f353c89e70de9e9"><td class="memItemLeft" align="right" valign="top">FloatType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_audio_buffer.html#a14426152feb6882a5f353c89e70de9e9">getPeak</a> (const uint_fast32_t channel) const</td></tr>
+<tr class="memdesc:a14426152feb6882a5f353c89e70de9e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the highest absolute sample value within a region of a channel.  <a href="classame_1_1_audio_buffer.html#a14426152feb6882a5f353c89e70de9e9">More...</a><br /></td></tr>
 <tr class="separator:a14426152feb6882a5f353c89e70de9e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2853b035888fee086502117b93004b9a"><td class="memItemLeft" align="right" valign="top">FloatType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_audio_buffer.html#a2853b035888fee086502117b93004b9a">getRMSLevel</a> (const uint_fast32_t channel) const</td></tr>
+<tr class="memdesc:a2853b035888fee086502117b93004b9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the root mean squared level for a region of a channel.  <a href="classame_1_1_audio_buffer.html#a2853b035888fee086502117b93004b9a">More...</a><br /></td></tr>
+<tr class="separator:a2853b035888fee086502117b93004b9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename FloatType, size_t Size&gt;<br />
@@ -186,6 +190,8 @@ template&lt;typename FloatType , size_t Size&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Finds the highest absolute sample value within a region of a channel. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">channel</td><td></td></tr>
@@ -223,6 +229,43 @@ template&lt;typename FloatType , size_t Size&gt; </div>
 
 <p>Returns a read only pointer to interleaved audio buffer. </p>
 <dl class="section return"><dt>Returns</dt><dd>const float* interleaved samples </dd></dl>
+
+</div>
+</div>
+<a id="a2853b035888fee086502117b93004b9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2853b035888fee086502117b93004b9a">&#9670;&nbsp;</a></span>getRMSLevel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename FloatType , size_t Size&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">FloatType <a class="el" href="classame_1_1_audio_buffer.html">ame::AudioBuffer</a>&lt; FloatType, Size &gt;::getRMSLevel </td>
+          <td>(</td>
+          <td class="paramtype">const uint_fast32_t&#160;</td>
+          <td class="paramname"><em>channel</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the root mean squared level for a region of a channel. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">channel</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>FloatType RMS level [0.0, FloatTypeMax] </dd></dl>
 
 </div>
 </div>

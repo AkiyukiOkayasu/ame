@@ -9,6 +9,7 @@ var classame_1_1_audio_buffer =
     [ "getNumSamples", "classame_1_1_audio_buffer.html#aea669856e0e2b3481656b98dd2413f30", null ],
     [ "getPeak", "classame_1_1_audio_buffer.html#a14426152feb6882a5f353c89e70de9e9", null ],
     [ "getReadPointer", "classame_1_1_audio_buffer.html#a3dc3f5d97fb0fa401779520b0eef5b1d", null ],
+    [ "getRMSLevel", "classame_1_1_audio_buffer.html#a2853b035888fee086502117b93004b9a", null ],
     [ "getSize", "classame_1_1_audio_buffer.html#a21c8a9ce8ffc93880ffb545b3050d3fd", null ],
     [ "getWritePointer", "classame_1_1_audio_buffer.html#ab8ea88e7a19c1cf4ec6a63666199561f", null ],
     [ "makeAudioBlockView", "classame_1_1_audio_buffer.html#a1e122a41c3abf0642c32418cb4458e12", null ],

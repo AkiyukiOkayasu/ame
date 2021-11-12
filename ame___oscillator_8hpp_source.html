@@ -101,70 +101,137 @@ $(document).ready(function(){initNavTree('ame___oscillator_8hpp_source.html','')
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ame___math_8hpp.html">ame_Math.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ame___util_8hpp.html">ame_Util.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;atomic&gt;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;numeric&gt;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">namespace </span>ame</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> FloatType, <span class="keywordtype">size_t</span> NumSamples, <span class="keyword">class</span> Function&gt;</div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="ame___oscillator_8hpp.html#a07be6f825286fe09b13b71e19db072f2">   27</a></span>&#160;constexpr <span class="keyword">auto</span> <a class="code" href="ame___oscillator_8hpp.html#a07be6f825286fe09b13b71e19db072f2">makeWaveTable</a> (Function func)</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    std::array&lt;FloatType, NumSamples&gt; ar;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    std::iota (ar.begin(), ar.end(), 0);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    std::for_each (ar.begin(), ar.end(), [] (<span class="keyword">auto</span>&amp; x)</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                   { x = x / (NumSamples - 1); }); <span class="comment">// ar: 0~1が順に並んだ配列</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    std::for_each (ar.begin(), ar.end(), func);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">return</span> ar;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">size_t</span> N&gt;</div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="ame___oscillator_8hpp.html#afcddded8fd5951fa442898d584a4d372">   43</a></span>&#160;constexpr <span class="keyword">auto</span> <a class="code" href="ame___oscillator_8hpp.html#afcddded8fd5951fa442898d584a4d372">makeSineTable</a>()</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;{</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">auto</span> f = [] (<span class="keyword">auto</span>&amp; x)</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        x = <a class="code" href="ame___math_8hpp.html#a04a55b89aafb7536f4f731002eb232ea">ame::sinf</a> (x * <a class="code" href="ame___math_8hpp.html#ac75fe0229f8e610a324d8baf2ada26fb">ame::twoPi</a>);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    };</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">return</span> ame::makeWaveTable&lt;float, N&gt; (f);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classame_1_1_sine_oscillator.html">   55</a></span>&#160;<span class="keyword">class </span><a class="code" href="classame_1_1_sine_oscillator.html">SineOscillator</a></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;{</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classame_1_1_sine_oscillator.html#ae3e9f889ed1c34ba7d45134071cfb9e3">   62</a></span>&#160;    <a class="code" href="classame_1_1_sine_oscillator.html#ae3e9f889ed1c34ba7d45134071cfb9e3">SineOscillator</a> (<span class="keyword">const</span> <span class="keywordtype">float</span> sampleRate, <span class="keyword">const</span> <span class="keywordtype">float</span> frequency) : samplingPeriod (1.0f / sampleRate)</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    {</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <a class="code" href="classame_1_1_sine_oscillator.html#aa733e87a8bb4d568767fda009a074162">setFrequency</a> (frequency);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    }</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    ~<a class="code" href="classame_1_1_sine_oscillator.html">SineOscillator</a>() {}</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classame_1_1_sine_oscillator.html#aa733e87a8bb4d568767fda009a074162">   71</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classame_1_1_sine_oscillator.html#aa733e87a8bb4d568767fda009a074162">setFrequency</a> (<span class="keyword">const</span> <span class="keywordtype">float</span> freq) noexcept { phaseIncrement = freq * <a class="code" href="ame___math_8hpp.html#ac75fe0229f8e610a324d8baf2ada26fb">twoPi</a> * samplingPeriod; }</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="classame_1_1_sine_oscillator.html#a2ac7efb5c12f0877f39b36cc56f02c41">   76</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="classame_1_1_sine_oscillator.html#a2ac7efb5c12f0877f39b36cc56f02c41">nextSample</a>() noexcept</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    {</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        phase = <a class="code" href="ame___util_8hpp.html#a10eba5dc5108d4a9c2d0f52193925c0e">addModulo2Pi</a> (phase, phaseIncrement);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="ame___math_8hpp.html#a04a55b89aafb7536f4f731002eb232ea">ame::sinf</a> (phase);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordtype">float</span> samplingPeriod; <span class="comment">// サンプリング周期 1 /sampleRate</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    std::atomic&lt;float&gt; phaseIncrement { 0.0f };</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    std::atomic&lt;float&gt; phase { 0.0f };</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="comment">// Disallow copy constructor and assignment</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <a class="code" href="classame_1_1_sine_oscillator.html#ae3e9f889ed1c34ba7d45134071cfb9e3">SineOscillator</a> (<span class="keyword">const</span> <a class="code" href="classame_1_1_sine_oscillator.html#ae3e9f889ed1c34ba7d45134071cfb9e3">SineOscillator</a>&amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <a class="code" href="classame_1_1_sine_oscillator.html#ae3e9f889ed1c34ba7d45134071cfb9e3">SineOscillator</a>&amp; operator= (<span class="keyword">const</span> <a class="code" href="classame_1_1_sine_oscillator.html#ae3e9f889ed1c34ba7d45134071cfb9e3">SineOscillator</a>&amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;};</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;} <span class="comment">// namespace ame</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;array&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;atomic&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;numeric&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">namespace </span>ame</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> FloatType, <span class="keywordtype">size_t</span> NumSamples, <span class="keyword">class</span> Function&gt;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="ame___oscillator_8hpp.html#a07be6f825286fe09b13b71e19db072f2">   28</a></span>&#160;constexpr <span class="keyword">auto</span> <a class="code" href="ame___oscillator_8hpp.html#a07be6f825286fe09b13b71e19db072f2">makeWaveTable</a> (Function func)</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    std::array&lt;FloatType, NumSamples&gt; ar;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    std::iota (ar.begin(), ar.end(), 0);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    std::for_each (ar.begin(), ar.end(), [] (<span class="keyword">auto</span>&amp; x)</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                   { x = x / (NumSamples - 1); }); <span class="comment">// ar: 0~1が順に並んだ配列</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    std::for_each (ar.begin(), ar.end(), func);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">return</span> ar;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">size_t</span> N&gt;</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="ame___oscillator_8hpp.html#afcddded8fd5951fa442898d584a4d372">   44</a></span>&#160;constexpr <span class="keyword">auto</span> <a class="code" href="ame___oscillator_8hpp.html#afcddded8fd5951fa442898d584a4d372">makeSineTable</a>()</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;{</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">auto</span> f = [] (<span class="keyword">auto</span>&amp; x)</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        x = <a class="code" href="ame___math_8hpp.html#a04a55b89aafb7536f4f731002eb232ea">ame::sinf</a> (x * <a class="code" href="ame___math_8hpp.html#ac75fe0229f8e610a324d8baf2ada26fb">ame::twoPi</a>);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    };</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">return</span> ame::makeWaveTable&lt;float, N&gt; (f);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> FloatType, <span class="keywordtype">size_t</span> numSamples&gt;</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="classame_1_1_wavetable_oscillator.html">   59</a></span>&#160;<span class="keyword">class </span><a class="code" href="classame_1_1_wavetable_oscillator.html">WavetableOscillator</a></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;{</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="classame_1_1_wavetable_oscillator.html">WavetableOscillator</a> (<span class="keyword">const</span> FloatType sampleRate, <span class="keyword">const</span> FloatType frequency)</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        : samplingPeriod (1.0f / sampleRate)</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <a class="code" href="classame_1_1_wavetable_oscillator.html#a523a14f117cc9cc67d91c2d0a42791e3">setFrequency</a> (frequency);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        tableIndex.<a class="code" href="classame_1_1_wrap.html#ab5654022ff41a9e6641de9c45504e699">changeLength</a> (numSamples);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    ~<a class="code" href="classame_1_1_wavetable_oscillator.html">WavetableOscillator</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="classame_1_1_wavetable_oscillator.html#a523a14f117cc9cc67d91c2d0a42791e3">   73</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classame_1_1_wavetable_oscillator.html#a523a14f117cc9cc67d91c2d0a42791e3">setFrequency</a> (<span class="keyword">const</span> <span class="keywordtype">float</span> freq) noexcept</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        tableIndexIncrement = freq * samplingPeriod;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    }</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> Function&gt;</div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="classame_1_1_wavetable_oscillator.html#a6337184ac9722ebab70ab0f1d45198c9">   83</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classame_1_1_wavetable_oscillator.html#a6337184ac9722ebab70ab0f1d45198c9">setWavetable</a> (Function&amp;&amp; func)</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        resetWavetable();</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        std::for_each (wavetable.begin(), wavetable.end(), func);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="classame_1_1_wavetable_oscillator.html#a77f34b624cd9327c88d99774bb717906">   92</a></span>&#160;    FloatType <a class="code" href="classame_1_1_wavetable_oscillator.html#a77f34b624cd9327c88d99774bb717906">nextSample</a>() noexcept</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        tableIndex += tableIndexIncrement;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keyword">const</span> uint32_t aIndex = std::floor (tableIndex.<a class="code" href="classame_1_1_wrap.html#a6ca3443205652716f4a58408e335f8c2">get</a>());</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        uint32_t bIndex = aIndex + 1;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">float</span> t = tableIndex.<a class="code" href="classame_1_1_wrap.html#a6ca3443205652716f4a58408e335f8c2">get</a>() - aIndex;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordflow">if</span> (aIndex == numSamples - 1)</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            bIndex = 0;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        }</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> a = wavetable[aIndex];</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> b = wavetable[bIndex];</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="ame___math_8hpp.html#ab54fe577a7c14cfab3820540e56e05a7">lerp</a> (a, b, t);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    }</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordtype">void</span> resetWavetable()</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    {</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        std::iota (wavetable.begin(), wavetable.end(), 0);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        std::for_each (wavetable.begin(), wavetable.end(), [] (<span class="keyword">auto</span>&amp; x)</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                       { x = x / (numSamples - 1); }); <span class="comment">// 0~1が順に並んだ配列</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    }</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    std::array&lt;FloatType, numSamples&gt; wavetable {};</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keyword">const</span> FloatType samplingPeriod; <span class="comment">// サンプリング周期 1 /sampleRate</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    std::atomic&lt;FloatType&gt; tableIndexIncrement {};</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    Wrap&lt;float&gt; tableIndex {};</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;};</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
+<div class="line"><a name="l00127"></a><span class="lineno"><a class="line" href="classame_1_1_sine_oscillator.html">  127</a></span>&#160;<span class="keyword">class </span><a class="code" href="classame_1_1_sine_oscillator.html">SineOscillator</a></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;{</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00134"></a><span class="lineno"><a class="line" href="classame_1_1_sine_oscillator.html#ae3e9f889ed1c34ba7d45134071cfb9e3">  134</a></span>&#160;    <a class="code" href="classame_1_1_sine_oscillator.html#ae3e9f889ed1c34ba7d45134071cfb9e3">SineOscillator</a> (<span class="keyword">const</span> <span class="keywordtype">float</span> sampleRate, <span class="keyword">const</span> <span class="keywordtype">float</span> frequency)</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        : samplingPeriod (1.0f / sampleRate)</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    {</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <a class="code" href="classame_1_1_sine_oscillator.html#aa733e87a8bb4d568767fda009a074162">setFrequency</a> (frequency);</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    }</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    ~<a class="code" href="classame_1_1_sine_oscillator.html">SineOscillator</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
+<div class="line"><a name="l00144"></a><span class="lineno"><a class="line" href="classame_1_1_sine_oscillator.html#aa733e87a8bb4d568767fda009a074162">  144</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classame_1_1_sine_oscillator.html#aa733e87a8bb4d568767fda009a074162">setFrequency</a> (<span class="keyword">const</span> <span class="keywordtype">float</span> freq) noexcept</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    {</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        phaseIncrement = freq * <a class="code" href="ame___math_8hpp.html#ac75fe0229f8e610a324d8baf2ada26fb">twoPi</a> * samplingPeriod;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    }</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
+<div class="line"><a name="l00152"></a><span class="lineno"><a class="line" href="classame_1_1_sine_oscillator.html#a2ac7efb5c12f0877f39b36cc56f02c41">  152</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="classame_1_1_sine_oscillator.html#a2ac7efb5c12f0877f39b36cc56f02c41">nextSample</a>() noexcept</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    {</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        phase = <a class="code" href="ame___util_8hpp.html#a10eba5dc5108d4a9c2d0f52193925c0e">addModulo2Pi</a> (phase, phaseIncrement);</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="ame___math_8hpp.html#a04a55b89aafb7536f4f731002eb232ea">ame::sinf</a> (phase);</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    }</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">float</span> samplingPeriod; <span class="comment">// サンプリング周期 1 /sampleRate</span></div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    std::atomic&lt;float&gt; phaseIncrement {};</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="keywordtype">float</span> phase {};</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="comment">// Disallow copy constructor and assignment</span></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <a class="code" href="classame_1_1_sine_oscillator.html#ae3e9f889ed1c34ba7d45134071cfb9e3">SineOscillator</a> (<span class="keyword">const</span> <a class="code" href="classame_1_1_sine_oscillator.html#ae3e9f889ed1c34ba7d45134071cfb9e3">SineOscillator</a>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <a class="code" href="classame_1_1_sine_oscillator.html#ae3e9f889ed1c34ba7d45134071cfb9e3">SineOscillator</a>&amp; operator= (<span class="keyword">const</span> <a class="code" href="classame_1_1_sine_oscillator.html#ae3e9f889ed1c34ba7d45134071cfb9e3">SineOscillator</a>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;};</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;} <span class="comment">// namespace ame</span></div>
 <div class="ttc" id="aame___math_8hpp_html"><div class="ttname"><a href="ame___math_8hpp.html">ame_Math.hpp</a></div><div class="ttdoc">Math functions.</div></div>
 <div class="ttc" id="aame___math_8hpp_html_a04a55b89aafb7536f4f731002eb232ea"><div class="ttname"><a href="ame___math_8hpp.html#a04a55b89aafb7536f4f731002eb232ea">ame::sinf</a></div><div class="ttdeci">float sinf(float x)</div><div class="ttdoc">sinf.</div><div class="ttdef"><b>Definition:</b> ame_Math.hpp:46</div></div>
+<div class="ttc" id="aame___math_8hpp_html_ab54fe577a7c14cfab3820540e56e05a7"><div class="ttname"><a href="ame___math_8hpp.html#ab54fe577a7c14cfab3820540e56e05a7">ame::lerp</a></div><div class="ttdeci">constexpr float lerp(float a, float b, float t) noexcept</div><div class="ttdoc">Linear interpolation.</div><div class="ttdef"><b>Definition:</b> ame_Math.hpp:78</div></div>
 <div class="ttc" id="aame___math_8hpp_html_ac75fe0229f8e610a324d8baf2ada26fb"><div class="ttname"><a href="ame___math_8hpp.html#ac75fe0229f8e610a324d8baf2ada26fb">ame::twoPi</a></div><div class="ttdeci">constexpr float twoPi</div><div class="ttdoc">2π</div><div class="ttdef"><b>Definition:</b> ame_Math.hpp:33</div></div>
-<div class="ttc" id="aame___oscillator_8hpp_html_a07be6f825286fe09b13b71e19db072f2"><div class="ttname"><a href="ame___oscillator_8hpp.html#a07be6f825286fe09b13b71e19db072f2">ame::makeWaveTable</a></div><div class="ttdeci">constexpr auto makeWaveTable(Function func)</div><div class="ttdoc">Wavetable generator.</div><div class="ttdef"><b>Definition:</b> ame_Oscillator.hpp:27</div></div>
-<div class="ttc" id="aame___oscillator_8hpp_html_afcddded8fd5951fa442898d584a4d372"><div class="ttname"><a href="ame___oscillator_8hpp.html#afcddded8fd5951fa442898d584a4d372">ame::makeSineTable</a></div><div class="ttdeci">constexpr auto makeSineTable()</div><div class="ttdoc">Sine wave wavetable generator.</div><div class="ttdef"><b>Definition:</b> ame_Oscillator.hpp:43</div></div>
+<div class="ttc" id="aame___oscillator_8hpp_html_a07be6f825286fe09b13b71e19db072f2"><div class="ttname"><a href="ame___oscillator_8hpp.html#a07be6f825286fe09b13b71e19db072f2">ame::makeWaveTable</a></div><div class="ttdeci">constexpr auto makeWaveTable(Function func)</div><div class="ttdoc">Wavetable generator.</div><div class="ttdef"><b>Definition:</b> ame_Oscillator.hpp:28</div></div>
+<div class="ttc" id="aame___oscillator_8hpp_html_afcddded8fd5951fa442898d584a4d372"><div class="ttname"><a href="ame___oscillator_8hpp.html#afcddded8fd5951fa442898d584a4d372">ame::makeSineTable</a></div><div class="ttdeci">constexpr auto makeSineTable()</div><div class="ttdoc">Sine wave wavetable generator.</div><div class="ttdef"><b>Definition:</b> ame_Oscillator.hpp:44</div></div>
 <div class="ttc" id="aame___util_8hpp_html"><div class="ttname"><a href="ame___util_8hpp.html">ame_Util.hpp</a></div><div class="ttdoc">Some utilities functions.</div></div>
-<div class="ttc" id="aame___util_8hpp_html_a10eba5dc5108d4a9c2d0f52193925c0e"><div class="ttname"><a href="ame___util_8hpp.html#a10eba5dc5108d4a9c2d0f52193925c0e">ame::addModulo2Pi</a></div><div class="ttdeci">constexpr float addModulo2Pi(float phase, const float increment) noexcept</div><div class="ttdoc">Increment the phase and returns in the range of 0~2pi.</div><div class="ttdef"><b>Definition:</b> ame_Util.hpp:25</div></div>
-<div class="ttc" id="aclassame_1_1_sine_oscillator_html"><div class="ttname"><a href="classame_1_1_sine_oscillator.html">ame::SineOscillator</a></div><div class="ttdoc">Sine wave oscillator.</div><div class="ttdef"><b>Definition:</b> ame_Oscillator.hpp:56</div></div>
-<div class="ttc" id="aclassame_1_1_sine_oscillator_html_a2ac7efb5c12f0877f39b36cc56f02c41"><div class="ttname"><a href="classame_1_1_sine_oscillator.html#a2ac7efb5c12f0877f39b36cc56f02c41">ame::SineOscillator::nextSample</a></div><div class="ttdeci">float nextSample() noexcept</div><div class="ttdoc">Generate single sample.</div><div class="ttdef"><b>Definition:</b> ame_Oscillator.hpp:76</div></div>
-<div class="ttc" id="aclassame_1_1_sine_oscillator_html_aa733e87a8bb4d568767fda009a074162"><div class="ttname"><a href="classame_1_1_sine_oscillator.html#aa733e87a8bb4d568767fda009a074162">ame::SineOscillator::setFrequency</a></div><div class="ttdeci">void setFrequency(const float freq) noexcept</div><div class="ttdoc">Set the sine wave frequency.</div><div class="ttdef"><b>Definition:</b> ame_Oscillator.hpp:71</div></div>
-<div class="ttc" id="aclassame_1_1_sine_oscillator_html_ae3e9f889ed1c34ba7d45134071cfb9e3"><div class="ttname"><a href="classame_1_1_sine_oscillator.html#ae3e9f889ed1c34ba7d45134071cfb9e3">ame::SineOscillator::SineOscillator</a></div><div class="ttdeci">SineOscillator(const float sampleRate, const float frequency)</div><div class="ttdoc">Create sine wave oscillator instance.</div><div class="ttdef"><b>Definition:</b> ame_Oscillator.hpp:62</div></div>
+<div class="ttc" id="aame___util_8hpp_html_a10eba5dc5108d4a9c2d0f52193925c0e"><div class="ttname"><a href="ame___util_8hpp.html#a10eba5dc5108d4a9c2d0f52193925c0e">ame::addModulo2Pi</a></div><div class="ttdeci">constexpr float addModulo2Pi(float phase, const float increment) noexcept</div><div class="ttdoc">Increment the phase and returns in the range of 0~2pi.</div><div class="ttdef"><b>Definition:</b> ame_Util.hpp:26</div></div>
+<div class="ttc" id="aclassame_1_1_sine_oscillator_html"><div class="ttname"><a href="classame_1_1_sine_oscillator.html">ame::SineOscillator</a></div><div class="ttdoc">Sine wave oscillator.</div><div class="ttdef"><b>Definition:</b> ame_Oscillator.hpp:128</div></div>
+<div class="ttc" id="aclassame_1_1_sine_oscillator_html_a2ac7efb5c12f0877f39b36cc56f02c41"><div class="ttname"><a href="classame_1_1_sine_oscillator.html#a2ac7efb5c12f0877f39b36cc56f02c41">ame::SineOscillator::nextSample</a></div><div class="ttdeci">float nextSample() noexcept</div><div class="ttdoc">Generate single sample.</div><div class="ttdef"><b>Definition:</b> ame_Oscillator.hpp:152</div></div>
+<div class="ttc" id="aclassame_1_1_sine_oscillator_html_aa733e87a8bb4d568767fda009a074162"><div class="ttname"><a href="classame_1_1_sine_oscillator.html#aa733e87a8bb4d568767fda009a074162">ame::SineOscillator::setFrequency</a></div><div class="ttdeci">void setFrequency(const float freq) noexcept</div><div class="ttdoc">Set the sine wave frequency.</div><div class="ttdef"><b>Definition:</b> ame_Oscillator.hpp:144</div></div>
+<div class="ttc" id="aclassame_1_1_sine_oscillator_html_ae3e9f889ed1c34ba7d45134071cfb9e3"><div class="ttname"><a href="classame_1_1_sine_oscillator.html#ae3e9f889ed1c34ba7d45134071cfb9e3">ame::SineOscillator::SineOscillator</a></div><div class="ttdeci">SineOscillator(const float sampleRate, const float frequency)</div><div class="ttdoc">Create sine wave oscillator instance.</div><div class="ttdef"><b>Definition:</b> ame_Oscillator.hpp:134</div></div>
+<div class="ttc" id="aclassame_1_1_wavetable_oscillator_html"><div class="ttname"><a href="classame_1_1_wavetable_oscillator.html">ame::WavetableOscillator</a></div><div class="ttdoc">Wavetable oscillator.</div><div class="ttdef"><b>Definition:</b> ame_Oscillator.hpp:60</div></div>
+<div class="ttc" id="aclassame_1_1_wavetable_oscillator_html_a523a14f117cc9cc67d91c2d0a42791e3"><div class="ttname"><a href="classame_1_1_wavetable_oscillator.html#a523a14f117cc9cc67d91c2d0a42791e3">ame::WavetableOscillator::setFrequency</a></div><div class="ttdeci">void setFrequency(const float freq) noexcept</div><div class="ttdoc">Set the frequency.</div><div class="ttdef"><b>Definition:</b> ame_Oscillator.hpp:73</div></div>
+<div class="ttc" id="aclassame_1_1_wavetable_oscillator_html_a6337184ac9722ebab70ab0f1d45198c9"><div class="ttname"><a href="classame_1_1_wavetable_oscillator.html#a6337184ac9722ebab70ab0f1d45198c9">ame::WavetableOscillator::setWavetable</a></div><div class="ttdeci">void setWavetable(Function &amp;&amp;func)</div><div class="ttdoc">ウェーブテーブル生成.</div><div class="ttdef"><b>Definition:</b> ame_Oscillator.hpp:83</div></div>
+<div class="ttc" id="aclassame_1_1_wavetable_oscillator_html_a77f34b624cd9327c88d99774bb717906"><div class="ttname"><a href="classame_1_1_wavetable_oscillator.html#a77f34b624cd9327c88d99774bb717906">ame::WavetableOscillator::nextSample</a></div><div class="ttdeci">FloatType nextSample() noexcept</div><div class="ttdoc">Generate single sample.</div><div class="ttdef"><b>Definition:</b> ame_Oscillator.hpp:92</div></div>
+<div class="ttc" id="aclassame_1_1_wrap_html_a6ca3443205652716f4a58408e335f8c2"><div class="ttname"><a href="classame_1_1_wrap.html#a6ca3443205652716f4a58408e335f8c2">ame::Wrap::get</a></div><div class="ttdeci">T get(const T offset=0)</div><div class="ttdoc">Get the current value or the number of the current value plus an offset.</div><div class="ttdef"><b>Definition:</b> ame_Util.hpp:156</div></div>
+<div class="ttc" id="aclassame_1_1_wrap_html_ab5654022ff41a9e6641de9c45504e699"><div class="ttname"><a href="classame_1_1_wrap.html#ab5654022ff41a9e6641de9c45504e699">ame::Wrap::changeLength</a></div><div class="ttdeci">void changeLength(const T newLength)</div><div class="ttdoc">The number to automatically wrap in the range [0, length-1].</div><div class="ttdef"><b>Definition:</b> ame_Util.hpp:174</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -105,16 +105,18 @@ $(document).ready(function(){initNavTree('ame___util_8hpp.html',''); initResizab
 <code>#include &lt;atomic&gt;</code><br />
 <code>#include &lt;cassert&gt;</code><br />
 <code>#include &lt;cstddef&gt;</code><br />
+<code>#include &lt;type_traits&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for ame_Util.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="ame___util_8hpp__incl.png" border="0" usemap="#ainclude_2ame___util_8hpp" alt=""/></div>
 <map name="ainclude_2ame___util_8hpp" id="ainclude_2ame___util_8hpp">
-<area shape="rect" title="Some utilities functions." alt="" coords="139,5,282,32"/>
+<area shape="rect" title="Some utilities functions." alt="" coords="183,5,326,32"/>
 <area shape="rect" href="ame___math_8hpp.html" title="Math functions." alt="" coords="5,80,112,107"/>
 <area shape="rect" title=" " alt="" coords="136,80,197,107"/>
 <area shape="rect" title=" " alt="" coords="222,80,287,107"/>
 <area shape="rect" title=" " alt="" coords="311,80,377,107"/>
+<area shape="rect" title=" " alt="" coords="401,80,484,107"/>
 <area shape="rect" title=" " alt="" coords="29,155,88,181"/>
 </map>
 </div>
@@ -137,7 +139,8 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_slide.html">ame::Slide</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Smooth values logarithmically.  <a href="classame_1_1_slide.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_wrap.html">ame::Wrap</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_wrap.html">ame::Wrap&lt; T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A number to wrap between 0~length.  <a href="classame_1_1_wrap.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -236,7 +239,7 @@ template&lt;typename... Ts&gt; </div>
 <div class="fragment"><div class="line">constexpr std::array&lt;std::byte, 2&gt; arr = <a class="code" href="ame___util_8hpp.html#a291016f1c0ea2093f1729d550746b7cd">makeBytes</a>(0x00, 0xFF);</div>
 <div class="line"><span class="comment">// or</span></div>
 <div class="line">constexpr <span class="keyword">auto</span> arr = <a class="code" href="ame___util_8hpp.html#a291016f1c0ea2093f1729d550746b7cd">makeBytes</a>(0x00, 0xFF);</div>
-<div class="ttc" id="aame___util_8hpp_html_a291016f1c0ea2093f1729d550746b7cd"><div class="ttname"><a href="ame___util_8hpp.html#a291016f1c0ea2093f1729d550746b7cd">ame::makeBytes</a></div><div class="ttdeci">constexpr std::array&lt; std::byte, sizeof...(Ts)&gt; makeBytes(Ts &amp;&amp;... args) noexcept</div><div class="ttdoc">Generate a std::array&lt;std::byte, N&gt;</div><div class="ttdef"><b>Definition:</b> ame_Util.hpp:235</div></div>
+<div class="ttc" id="aame___util_8hpp_html_a291016f1c0ea2093f1729d550746b7cd"><div class="ttname"><a href="ame___util_8hpp.html#a291016f1c0ea2093f1729d550746b7cd">ame::makeBytes</a></div><div class="ttdeci">constexpr std::array&lt; std::byte, sizeof...(Ts)&gt; makeBytes(Ts &amp;&amp;... args) noexcept</div><div class="ttdoc">Generate a std::array&lt;std::byte, N&gt;</div><div class="ttdef"><b>Definition:</b> ame_Util.hpp:241</div></div>
 </div><!-- fragment --><p><br  />
  </p><dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
