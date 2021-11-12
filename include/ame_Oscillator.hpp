@@ -72,7 +72,7 @@ public:
     */
     void setFrequency (const float freq) noexcept
     {
-        tableIndexIncrement = freq * samplingPeriod;
+        tableIndexIncrement = freq * numSamples * samplingPeriod;
     }
 
     /** ウェーブテーブル生成.
