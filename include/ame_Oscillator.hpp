@@ -58,7 +58,7 @@ constexpr auto makeSineTable()
 template <typename FloatType>
 class WavetableOscillator
 {
-    static_assert (std::is_floating_point<FloatType>::value == false, "FloatType is must be floating point type.");
+    static_assert (std::is_floating_point<FloatType>::value == true, "FloatType is must be floating point type.");
 
 public:
     WavetableOscillator (const FloatType* wavetable, const uint32_t numSamples, const FloatType sampleRate)
