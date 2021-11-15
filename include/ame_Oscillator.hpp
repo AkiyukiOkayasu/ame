@@ -73,7 +73,7 @@ public:
    */
     void changeSampleRate (const FloatType sampleRate)
     {
-        samplingPeriod = 1.0f / fs;
+        samplingPeriod = 1.0f / sampleRate;
     }
 
     /** Set the frequency.
