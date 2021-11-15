@@ -164,10 +164,22 @@ public:
         return ame::sinf (phase);
     }
 
+    /** Reset the phase to any value.    
+        @param newPhase [0, 2pi]
+    */
+    void resetPhase (float newPhase = 0.0f)
+    {
+        assert (0 <= newPhase && newPhase <= twoPi);
+        if (0.0f <= newPhase && newPhase <= twoPi)
+        {
+            phase = newPhase;
+        }
+    }
+
 private:
     const float samplingPeriod; // 1 /sampleRate
     std::atomic<float> phaseIncrement {};
-    float phase {};
+    std::atomic<float> phase {}; //<[0, 2pi]
 
     // Disallow copy constructor and assignment
     SineOscillator (const SineOscillator&) = delete;
