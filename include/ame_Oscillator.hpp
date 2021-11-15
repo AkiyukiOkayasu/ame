@@ -63,9 +63,18 @@ public:
         : samplingPeriod (1.0f / sampleRate)
     {
         setFrequency (frequency);
+        changeSampleRate (sampleRate);
         tableIndex.changeLength (numSamples);
     }
     ~WavetableOscillator() = default;
+
+    /** Change sampling rate.   
+        @param sampleRate new sampling rate in Hz
+   */
+    void changeSampleRate (const FloatType sampleRate)
+    {
+        samplingPeriod = 1.0f / fs;
+    }
 
     /** Set the frequency.
         @param freq frequency in Hz
@@ -116,9 +125,9 @@ private:
     }
 
     std::array<FloatType, numSamples> wavetable {};
-    const FloatType samplingPeriod; // サンプリング周期 1 /sampleRate
     std::atomic<FloatType> tableIndexIncrement {};
     Wrap<float> tableIndex {};
+    FloatType samplingPeriod;
 };
 
 /** Sine wave oscillator.
