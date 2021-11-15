@@ -153,7 +153,7 @@ public:
         @param offset 
         @return int_fast32_t [0, length-1]
     */
-    T get (const T offset = 0)
+    T get (const T offset = 0) const noexcept
     {
         auto n = num + offset;
         while (n >= length)
