@@ -176,6 +176,11 @@ public:
         length = newLength;
     }
 
+    T getLength() const noexcept
+    {
+        return length;
+    }
+
     /** Prefix increment.
         @return [0, length-1]
     */
