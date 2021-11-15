@@ -9,8 +9,8 @@ var searchData=
   ['makelowshelf_54',['makeLowShelf',['../ame___filter_8hpp.html#a9328a66107467008ad3d15b15dc4c1cd',1,'ame::dsp::iir::biquad']]],
   ['makenotch_55',['makeNotch',['../ame___filter_8hpp.html#ad141c4e0067523e3fe217795962484ae',1,'ame::dsp::iir::biquad']]],
   ['makepeakfilter_56',['makePeakFilter',['../ame___filter_8hpp.html#a045fd871facb893d55fc3ef0cd166834',1,'ame::dsp::iir::biquad']]],
-  ['makesinetable_57',['makeSineTable',['../ame___oscillator_8hpp.html#afcddded8fd5951fa442898d584a4d372',1,'ame']]],
-  ['makewavetable_58',['makeWaveTable',['../ame___oscillator_8hpp.html#a07be6f825286fe09b13b71e19db072f2',1,'ame']]],
+  ['makesinetable_57',['makeSineTable',['../ame___oscillator_8hpp.html#a3d36e2acc8afbcc14f501a63fb3c5762',1,'ame']]],
+  ['makewavetable_58',['makeWaveTable',['../ame___oscillator_8hpp.html#a3d4d998c84a56455a4abcacb0ad9abc9',1,'ame']]],
   ['miditofreq_59',['midiToFreq',['../ame___conversion_8hpp.html#a5b4357245e3088bdf7fb7977c1ef1ced',1,'ame']]],
   ['mstobpm_60',['msToBpm',['../ame___conversion_8hpp.html#a272314d1a1861cde617c106b77b0d721',1,'ame']]]
 ];

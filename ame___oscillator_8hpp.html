@@ -143,22 +143,22 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a07be6f825286fe09b13b71e19db072f2"><td class="memTemplParams" colspan="2">template&lt;typename FloatType , size_t NumSamples, class Function &gt; </td></tr>
-<tr class="memitem:a07be6f825286fe09b13b71e19db072f2"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="ame___oscillator_8hpp.html#a07be6f825286fe09b13b71e19db072f2">ame::makeWaveTable</a> (Function func)</td></tr>
-<tr class="memdesc:a07be6f825286fe09b13b71e19db072f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wavetable generator.  <a href="ame___oscillator_8hpp.html#a07be6f825286fe09b13b71e19db072f2">More...</a><br /></td></tr>
-<tr class="separator:a07be6f825286fe09b13b71e19db072f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afcddded8fd5951fa442898d584a4d372"><td class="memTemplParams" colspan="2">template&lt;size_t N&gt; </td></tr>
-<tr class="memitem:afcddded8fd5951fa442898d584a4d372"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="ame___oscillator_8hpp.html#afcddded8fd5951fa442898d584a4d372">ame::makeSineTable</a> ()</td></tr>
-<tr class="memdesc:afcddded8fd5951fa442898d584a4d372"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sine wave wavetable generator.  <a href="ame___oscillator_8hpp.html#afcddded8fd5951fa442898d584a4d372">More...</a><br /></td></tr>
-<tr class="separator:afcddded8fd5951fa442898d584a4d372"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d4d998c84a56455a4abcacb0ad9abc9"><td class="memTemplParams" colspan="2">template&lt;typename FloatType , size_t NumSamples, class Function &gt; </td></tr>
+<tr class="memitem:a3d4d998c84a56455a4abcacb0ad9abc9"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::array&lt; FloatType, NumSamples &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="ame___oscillator_8hpp.html#a3d4d998c84a56455a4abcacb0ad9abc9">ame::makeWaveTable</a> (Function func)</td></tr>
+<tr class="memdesc:a3d4d998c84a56455a4abcacb0ad9abc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wavetable generator.  <a href="ame___oscillator_8hpp.html#a3d4d998c84a56455a4abcacb0ad9abc9">More...</a><br /></td></tr>
+<tr class="separator:a3d4d998c84a56455a4abcacb0ad9abc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d36e2acc8afbcc14f501a63fb3c5762"><td class="memTemplParams" colspan="2">template&lt;size_t N&gt; </td></tr>
+<tr class="memitem:a3d36e2acc8afbcc14f501a63fb3c5762"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::array&lt; float, N &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="ame___oscillator_8hpp.html#a3d36e2acc8afbcc14f501a63fb3c5762">ame::makeSineTable</a> ()</td></tr>
+<tr class="memdesc:a3d36e2acc8afbcc14f501a63fb3c5762"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sine wave wavetable generator.  <a href="ame___oscillator_8hpp.html#a3d36e2acc8afbcc14f501a63fb3c5762">More...</a><br /></td></tr>
+<tr class="separator:a3d36e2acc8afbcc14f501a63fb3c5762"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Akiyuki Okayasu (<a href="#" onclick="location.href='mai'+'lto:'+'aki'+'yu'+'ki.'+'ok'+'aya'+'su'+'@gm'+'ai'+'l.c'+'om'; return false;">akiyu<span style="display: none;">.nosp@m.</span>ki.o<span style="display: none;">.nosp@m.</span>kayas<span style="display: none;">.nosp@m.</span>u@gm<span style="display: none;">.nosp@m.</span>ail.c<span style="display: none;">.nosp@m.</span>om</a>) </dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2021 - Akiyuki Okayasu</dd></dl>
 <p>AME is released under the MIT license. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="afcddded8fd5951fa442898d584a4d372"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afcddded8fd5951fa442898d584a4d372">&#9670;&nbsp;</a></span>makeSineTable()</h2>
+<a id="a3d36e2acc8afbcc14f501a63fb3c5762"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d36e2acc8afbcc14f501a63fb3c5762">&#9670;&nbsp;</a></span>makeSineTable()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -169,7 +169,7 @@ template&lt;size_t N&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr auto ame::makeSineTable </td>
+          <td class="memname">constexpr std::array&lt;float, N&gt; ame::makeSineTable </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -194,8 +194,8 @@ template&lt;size_t N&gt; </div>
 
 </div>
 </div>
-<a id="a07be6f825286fe09b13b71e19db072f2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a07be6f825286fe09b13b71e19db072f2">&#9670;&nbsp;</a></span>makeWaveTable()</h2>
+<a id="a3d4d998c84a56455a4abcacb0ad9abc9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d4d998c84a56455a4abcacb0ad9abc9">&#9670;&nbsp;</a></span>makeWaveTable()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -206,7 +206,7 @@ template&lt;typename FloatType , size_t NumSamples, class Function &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr auto ame::makeWaveTable </td>
+          <td class="memname">constexpr std::array&lt;FloatType, NumSamples&gt; ame::makeWaveTable </td>
           <td>(</td>
           <td class="paramtype">Function&#160;</td>
           <td class="paramname"><em>func</em></td><td>)</td>
