@@ -25,7 +25,7 @@ namespace ame
     @see make_sineTable()
 */
 template <typename FloatType, size_t NumSamples, class Function>
-constexpr auto makeWaveTable (Function func)
+constexpr std::array<FloatType, NumSamples> makeWaveTable (Function func)
 {
     std::array<FloatType, NumSamples> ar;
     std::iota (ar.begin(), ar.end(), 0);
@@ -41,7 +41,7 @@ constexpr auto makeWaveTable (Function func)
     @todo 初期位相いじれるようにする？
 */
 template <size_t N>
-constexpr auto makeSineTable()
+constexpr std::array<float, N> makeSineTable()
 {
     auto f = [] (auto& x)
     {
