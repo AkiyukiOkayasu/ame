@@ -111,12 +111,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa49851e51240f2dca0fb51847b61b160"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_wrap.html#aa49851e51240f2dca0fb51847b61b160">set</a> (T n)</td></tr>
 <tr class="memdesc:aa49851e51240f2dca0fb51847b61b160"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the current value to an arbitrary number.  <a href="classame_1_1_wrap.html#aa49851e51240f2dca0fb51847b61b160">More...</a><br /></td></tr>
 <tr class="separator:aa49851e51240f2dca0fb51847b61b160"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ca3443205652716f4a58408e335f8c2"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_wrap.html#a6ca3443205652716f4a58408e335f8c2">get</a> (const T offset=0)</td></tr>
-<tr class="memdesc:a6ca3443205652716f4a58408e335f8c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current value or the number of the current value plus an offset.  <a href="classame_1_1_wrap.html#a6ca3443205652716f4a58408e335f8c2">More...</a><br /></td></tr>
-<tr class="separator:a6ca3443205652716f4a58408e335f8c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af63da6ae8e23fb36ffc538b677c47304"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_wrap.html#af63da6ae8e23fb36ffc538b677c47304">get</a> (const T offset=0) const noexcept</td></tr>
+<tr class="memdesc:af63da6ae8e23fb36ffc538b677c47304"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current value or the number of the current value plus an offset.  <a href="classame_1_1_wrap.html#af63da6ae8e23fb36ffc538b677c47304">More...</a><br /></td></tr>
+<tr class="separator:af63da6ae8e23fb36ffc538b677c47304"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab5654022ff41a9e6641de9c45504e699"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_wrap.html#ab5654022ff41a9e6641de9c45504e699">changeLength</a> (const T newLength)</td></tr>
 <tr class="memdesc:ab5654022ff41a9e6641de9c45504e699"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number to automatically wrap in the range [0, length-1].  <a href="classame_1_1_wrap.html#ab5654022ff41a9e6641de9c45504e699">More...</a><br /></td></tr>
 <tr class="separator:ab5654022ff41a9e6641de9c45504e699"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd429b571247d86753a70ee6d72f3fd0"><td class="memItemLeft" align="right" valign="top"><a id="abd429b571247d86753a70ee6d72f3fd0"></a>
+T&#160;</td><td class="memItemRight" valign="bottom"><b>getLength</b> () const noexcept</td></tr>
+<tr class="separator:abd429b571247d86753a70ee6d72f3fd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a82f76b83e647c18e891b0f0740088d3c"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_wrap.html#a82f76b83e647c18e891b0f0740088d3c">operator++</a> ()</td></tr>
 <tr class="memdesc:a82f76b83e647c18e891b0f0740088d3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prefix increment.  <a href="classame_1_1_wrap.html#a82f76b83e647c18e891b0f0740088d3c">More...</a><br /></td></tr>
 <tr class="separator:a82f76b83e647c18e891b0f0740088d3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -210,8 +213,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a6ca3443205652716f4a58408e335f8c2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6ca3443205652716f4a58408e335f8c2">&#9670;&nbsp;</a></span>get()</h2>
+<a id="af63da6ae8e23fb36ffc538b677c47304"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af63da6ae8e23fb36ffc538b677c47304">&#9670;&nbsp;</a></span>get()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -226,12 +229,12 @@ template&lt;typename T &gt; </div>
           <td>(</td>
           <td class="paramtype">const T&#160;</td>
           <td class="paramname"><em>offset</em> = <code>0</code></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
