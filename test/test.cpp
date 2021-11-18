@@ -214,7 +214,6 @@ TEST_CASE ("AudioBlockView")
 
 TEST_CASE ("sine440Reader")
 {
-    constexpr auto s = sizeof (wav::sine440);
     constexpr ame::wav::WavReader sine440Reader (wav::sine440, sizeof (wav::sine440));
     constexpr ame::wav::WavReader tamtamReader (wav::tamtam, sizeof (wav::tamtam));
 
