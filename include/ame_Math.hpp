@@ -94,10 +94,42 @@ inline float sinf (float x)
 */
 inline float cosf (float x)
 {
+//C++20以降
+#if __cplusplus >= 202002L
+    if (std::is_constant_evaluated())
+    {
+        //コンパイル時
+        auto fabs = [] (float v) -> float
+        { return (v < float (0.0)) ? (-v) : (v); };
+        float x_sq = -(x * x);
+        float series = float (1.0);
+        float tmp = float (1.0);
+        float fact = float (1.0);
+
+        //マクローリン級数の計算
+        do
+        {
+            tmp *= x_sq / (fact * (fact + float (1.0)));
+            series += tmp;
+            fact += float (2.0);
+        } while (fabs (tmp) >= std::numeric_limits<float>::epsilon());
+
+        return series;
+    }
+    else
+    {
+        //実行時
+#endif
+
 #ifdef USE_CMSIS_DSP
-    return arm_cos_f32 (x);
+        return arm_cos_f32 (x);
 #else
     return std::cos (x); //libstdc++だとstd:cosf()は未定義なので、std::cos()にしている
+#endif
+
+//C++20以降
+#if __cplusplus >= 202002L
+    }
 #endif
 }
 
