@@ -1,10 +1,11 @@
 <map id="include/ame_Filter.hpp" name="include/ame_Filter.hpp">
-<area shape="rect" id="node1" title="BiQuad filter." alt="" coords="219,5,371,32"/>
-<area shape="rect" id="node2" href="$ame___audio_buffer_8hpp.html" title="Audio buffer." alt="" coords="111,80,257,107"/>
+<area shape="rect" id="node1" title="BiQuad filter." alt="" coords="232,5,384,32"/>
+<area shape="rect" id="node2" href="$ame___audio_buffer_8hpp.html" title="Audio buffer." alt="" coords="125,80,270,107"/>
 <area shape="rect" id="node4" title=" " alt="" coords="5,155,56,181"/>
 <area shape="rect" id="node5" title=" " alt="" coords="265,155,330,181"/>
-<area shape="rect" id="node6" title=" " alt="" coords="356,155,415,181"/>
-<area shape="rect" id="node8" href="$ame___math_8hpp.html" title="Math functions." alt="" coords="332,80,439,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="165,155,240,181"/>
-<area shape="rect" id="node7" title=" " alt="" coords="80,155,141,181"/>
+<area shape="rect" id="node6" title=" " alt="" coords="355,155,413,181"/>
+<area shape="rect" id="node8" href="$ame___math_8hpp.html" title="Math functions." alt="" coords="396,80,503,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="80,155,155,181"/>
+<area shape="rect" id="node7" title=" " alt="" coords="179,155,240,181"/>
+<area shape="rect" id="node9" title=" " alt="" coords="437,155,520,181"/>
 </map>
