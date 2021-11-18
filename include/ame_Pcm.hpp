@@ -48,7 +48,6 @@ enum class ChunkId : uint_fast8_t
 template <class BytePointerType>
 struct Chunk
 {
-    constexpr Chunk() = default;
     ChunkId id;
     uint32_t size;
     BytePointerType data;
