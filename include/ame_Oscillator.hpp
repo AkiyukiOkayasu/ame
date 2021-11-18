@@ -22,8 +22,7 @@ namespace ame
     @tparam NumSamples array size
     @tparam Function function to generate wavetable
     @note Functionの入力は0~1範囲の配列です    
-    @see make_sineTable()
-    @todo std::arrayを返すのではなく、float*を受けて書き換えるように直す。
+    @see make_sineTable()    
 */
 template <typename FloatType, size_t NumSamples, class Function>
 constexpr std::array<FloatType, NumSamples> makeWaveTable (Function func)
