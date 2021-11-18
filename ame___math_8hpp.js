@@ -1,8 +1,8 @@
 var ame___math_8hpp =
 [
-    [ "cosf", "ame___math_8hpp.html#a65e6b4905b7324b6c8b266ad3d47290c", null ],
+    [ "cosf", "ame___math_8hpp.html#a11094c0a66ad99bcdbd41a40627dc3b0", null ],
     [ "lerp", "ame___math_8hpp.html#ab54fe577a7c14cfab3820540e56e05a7", null ],
-    [ "sinf", "ame___math_8hpp.html#a04a55b89aafb7536f4f731002eb232ea", null ],
+    [ "sinf", "ame___math_8hpp.html#a93cf457a4c18fc460bf669537e459f90", null ],
     [ "euler", "ame___math_8hpp.html#a76ccbcf90dfaa7c7d153ba88e47ba44a", null ],
     [ "halfPi", "ame___math_8hpp.html#a1cf9d11df53d8979c2bdc4d948d9e884", null ],
     [ "pi", "ame___math_8hpp.html#ac0dccbff14912b3a0c5fc01e52da16a9", null ],

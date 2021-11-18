@@ -11,7 +11,7 @@ var searchData=
   ['setslownessofdecrease_189',['setSlownessOfDecrease',['../classame_1_1_slide.html#afa6fa39a7733fd23adbfbb6ef947daed',1,'ame::Slide']]],
   ['setslownessofincrease_190',['setSlownessOfIncrease',['../classame_1_1_slide.html#a3f414a26f6d2a008f46693cbb62988e6',1,'ame::Slide']]],
   ['sineoscillator_191',['SineOscillator',['../classame_1_1_sine_oscillator.html#ae3e9f889ed1c34ba7d45134071cfb9e3',1,'ame::SineOscillator']]],
-  ['sinf_192',['sinf',['../ame___math_8hpp.html#a04a55b89aafb7536f4f731002eb232ea',1,'ame']]],
+  ['sinf_192',['sinf',['../ame___math_8hpp.html#a93cf457a4c18fc460bf669537e459f90',1,'ame']]],
   ['skiptohome_193',['skipToHome',['../classame_1_1wav_1_1_wav_player.html#a0f04960d875c9010d60eba739e147b43',1,'ame::wav::WavPlayer']]],
   ['slide_194',['Slide',['../classame_1_1_slide.html#ac538d8f438b0638f45146a9d7a581f51',1,'ame::Slide']]],
   ['stringcomp_195',['stringComp',['../ame___string_8hpp.html#aa62edcc17c69b05efcb73b9fff71e1db',1,'ame']]]

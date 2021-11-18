@@ -11,7 +11,7 @@ var searchData=
   ['setslownessofdecrease_84',['setSlownessOfDecrease',['../classame_1_1_slide.html#afa6fa39a7733fd23adbfbb6ef947daed',1,'ame::Slide']]],
   ['setslownessofincrease_85',['setSlownessOfIncrease',['../classame_1_1_slide.html#a3f414a26f6d2a008f46693cbb62988e6',1,'ame::Slide']]],
   ['sineoscillator_86',['SineOscillator',['../classame_1_1_sine_oscillator.html',1,'ame::SineOscillator'],['../classame_1_1_sine_oscillator.html#ae3e9f889ed1c34ba7d45134071cfb9e3',1,'ame::SineOscillator::SineOscillator()']]],
-  ['sinf_87',['sinf',['../ame___math_8hpp.html#a04a55b89aafb7536f4f731002eb232ea',1,'ame']]],
+  ['sinf_87',['sinf',['../ame___math_8hpp.html#a93cf457a4c18fc460bf669537e459f90',1,'ame']]],
   ['skiptohome_88',['skipToHome',['../classame_1_1wav_1_1_wav_player.html#a0f04960d875c9010d60eba739e147b43',1,'ame::wav::WavPlayer']]],
   ['slide_89',['Slide',['../classame_1_1_slide.html',1,'ame::Slide'],['../classame_1_1_slide.html#ac538d8f438b0638f45146a9d7a581f51',1,'ame::Slide::Slide()']]],
   ['sqrt1_5f2_90',['sqrt1_2',['../ame___math_8hpp.html#a222b08222c89893a68486d989b4aa99e',1,'ame']]],
