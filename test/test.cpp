@@ -99,7 +99,7 @@ TEST_CASE ("WaveTable")
             x = ame::sinf (x * ame::twoPi);
         };
 
-        auto ar = ame::makeWaveTable<float, 5> (f);
+        constexpr auto ar = ame::makeWaveTable<float, 5> (f);
 
         /* 
         -0.0f == Approx(0.0f)を失敗させないために、Approx().scale(1)を指定する

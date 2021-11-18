@@ -44,7 +44,7 @@ inline constexpr float sqrt1_2 = 0.70710678f; ///< sqrt(1/2)
     @param x phase
     @return float
 */
-inline float sinf (float x)
+constexpr inline float sinf (float x)
 {
 //C++20以降
 #if __cplusplus >= 202002L
@@ -92,7 +92,7 @@ inline float sinf (float x)
     @param x phase
     @return float
 */
-inline float cosf (float x)
+constexpr inline float cosf (float x)
 {
 //C++20以降
 #if __cplusplus >= 202002L

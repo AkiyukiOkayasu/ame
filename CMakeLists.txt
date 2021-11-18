@@ -26,7 +26,7 @@ if(MAIN_PROJECT)
     )
 
     target_compile_options(tests PUBLIC -O2 -Wall -fconstexpr-depth=2147483647)
-    target_compile_features(tests PUBLIC cxx_std_17)
+    target_compile_features(tests PUBLIC cxx_std_20)
     target_link_libraries(tests PRIVATE doctest::doctest)
     message(STATUS "AME Unit test settings end")
 else()
