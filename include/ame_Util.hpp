@@ -11,6 +11,7 @@
 
 #include "ame_Math.hpp"
 
+#include <array>
 #include <atomic>
 #include <cassert>
 #include <cstddef>
