@@ -8,6 +8,8 @@
 */
 #pragma once
 
+#include <cstdint>
+
 namespace ame
 {
 template <typename Char1Type, typename Char2Type>
