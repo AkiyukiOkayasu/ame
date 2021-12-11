@@ -46,8 +46,6 @@ inline constexpr float sqrt1_2 = 0.70710678f; ///< sqrt(1/2)
 */
 constexpr inline float sinf (float x)
 {
-//C++20以降
-#if __cplusplus >= 202002L
     if (std::is_constant_evaluated())
     {
         //コンパイル時
@@ -71,18 +69,12 @@ constexpr inline float sinf (float x)
     else
     {
         //実行時
-#endif
-
 #ifdef USE_CMSIS_DSP
         return arm_sin_f32 (x);
 #else
-    return std::sin (x); //libstdc++だとstd:sinf()は未定義なので、std::sin()にしている
+        return std::sin (x); //libstdc++だとstd:sinf()は未定義なので、std::sin()にしている
 #endif
-
-//C++20以降
-#if __cplusplus >= 202002L
     }
-#endif
 }
 
 /** cosf.
@@ -94,8 +86,6 @@ constexpr inline float sinf (float x)
 */
 constexpr inline float cosf (float x)
 {
-//C++20以降
-#if __cplusplus >= 202002L
     if (std::is_constant_evaluated())
     {
         //コンパイル時
@@ -118,19 +108,13 @@ constexpr inline float cosf (float x)
     }
     else
     {
-        //実行時
-#endif
-
+//実行時
 #ifdef USE_CMSIS_DSP
         return arm_cos_f32 (x);
 #else
-    return std::cos (x); //libstdc++だとstd:cosf()は未定義なので、std::cos()にしている
+        return std::cos (x); //libstdc++だとstd:cosf()は未定義なので、std::cos()にしている
 #endif
-
-//C++20以降
-#if __cplusplus >= 202002L
     }
-#endif
 }
 
 /** Linear interpolation.
