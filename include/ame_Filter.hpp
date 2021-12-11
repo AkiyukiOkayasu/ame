@@ -173,7 +173,7 @@ inline Coefficients makeHighShelf (const float sampleRate, const float cutOffFre
 namespace ame::dsp::iir::biquad //クラス定義
 {
 /// BiQuad filter.
-template <size_t maximumChannels>
+template <size_t MaximumChannels>
 class BiQuad
 {
 public:
@@ -201,7 +201,7 @@ public:
     template <typename SampleType>
     void process (AudioBlockView<SampleType>& block)
     {
-        assert (block.getNumChannels() <= maximumChannels);
+        assert (block.getNumChannels() <= MaximumChannels);
 
         auto buffer = block.getWritePointer();
         uint_fast32_t i = 0;
@@ -223,9 +223,9 @@ public:
 
 private:
     Coefficients coef {};
-    std::array<float, maximumChannels> x1 {}; ///< [x-1] last input
-    std::array<float, maximumChannels> x2 {}; ///< [x-2] second last input
-    std::array<float, maximumChannels> y1 {}; ///< [y-1] last output
-    std::array<float, maximumChannels> y2 {}; ///< [y-2] second last output
+    std::array<float, MaximumChannels> x1 {}; ///< [x-1] last input
+    std::array<float, MaximumChannels> x2 {}; ///< [x-2] second last input
+    std::array<float, MaximumChannels> y1 {}; ///< [y-1] last output
+    std::array<float, MaximumChannels> y2 {}; ///< [y-2] second last output
 };
 } // namespace ame::dsp::iir::biquad
