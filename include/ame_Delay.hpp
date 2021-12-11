@@ -22,14 +22,14 @@ namespace ame::dsp
     @tparam maximumChannels
     @tparam maximumDelayInSamples
 */
-template <size_t maximumChannels, size_t maximumDelayInSamples>
+template <size_t MaximumChannels, size_t MaximumDelayInSamples>
 class Delay
 {
 public:
     Delay()
     {
-        readPos.changeLength (maximumChannels * maximumDelayInSamples);
-        writePos.changeLength (maximumChannels * maximumDelayInSamples);
+        readPos.changeLength (MaximumChannels * MaximumDelayInSamples);
+        writePos.changeLength (MaximumChannels * MaximumDelayInSamples);
     }
     ~Delay() = default;
 
@@ -39,7 +39,7 @@ public:
     */
     void setDelay (const float delayInSamples)
     {
-        assert (delayInSamples <= maximumDelayInSamples);
+        assert (delayInSamples <= MaximumDelayInSamples);
         assert (0 <= delayInSamples);
 
         fractional = delayInSamples - static_cast<uint_fast32_t> (delayInSamples);
@@ -50,7 +50,7 @@ public:
     template <typename SampleType>
     void process (AudioBlockView<SampleType>& block)
     {
-        assert (block.getNumChannels() <= maximumChannels);
+        assert (block.getNumChannels() <= MaximumChannels);
 
         auto buffer = block.getWritePointer();
         uint_fast32_t i = 0;
@@ -69,7 +69,7 @@ public:
     }
 
 private:
-    std::array<std::array<float, maximumDelayInSamples + 1>, maximumChannels> delayLine {}; ///<Ring buffer
+    std::array<std::array<float, MaximumDelayInSamples + 1>, MaximumChannels> delayLine {}; ///<Ring buffer
     Wrap<int32_t> readPos {};                                                               ///< Ring buffer read position
     Wrap<int32_t> writePos {};                                                              ///< Ring buffer write position
     float fractional = 0.0f;                                                                ///<for fractional delay[0, 1]

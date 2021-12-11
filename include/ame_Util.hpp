@@ -118,7 +118,7 @@ private:
 template <typename T>
 class Wrap
 {
-    static_assert (std::is_signed<T>::value == true, "Wrap type is must to be signed");
+    static_assert (std::is_signed<T>::value, "Wrap type is must to be signed");
 
 public:
     /**    
