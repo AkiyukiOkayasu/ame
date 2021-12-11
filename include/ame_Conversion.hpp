@@ -86,7 +86,7 @@ constexpr void interleaveSamples (const float** source, float* dest, const uint_
     for (uint_fast32_t chan = 0; chan < numChannels; ++chan)
     {
         auto i = chan;
-        auto src = source[chan];
+        const auto* src = source[chan];
 
         for (uint_fast32_t j = 0; j < numSamples; ++j)
         {
