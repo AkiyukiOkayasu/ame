@@ -52,7 +52,7 @@ inline constexpr int32_t Q23_MIN = -8388608;
 inline constexpr float Q23_ABSMAX = 8388608.0f;
 
 //==============================================================================
-constexpr void float_to_q23 (const float src[], int32_t dest[], const uint32_t blockSize)
+constexpr void floatToQ23 (const float src[], int32_t dest[], const uint32_t blockSize)
 {
 #if defined(__GNUC__) && (__GNUC__ >= 8)
     #pragma GCC unroll 4
@@ -63,7 +63,7 @@ constexpr void float_to_q23 (const float src[], int32_t dest[], const uint32_t b
     }
 }
 
-constexpr void q23_to_float (const int32_t src[], float dest[], const uint32_t blockSize)
+constexpr void q23ToFloat (const int32_t src[], float dest[], const uint32_t blockSize)
 {
 #if defined(__GNUC__) && (__GNUC__ >= 8)
     #pragma GCC unroll 4
