@@ -52,6 +52,90 @@ constexpr float scale (const float sourceValue,
            + ((targetRangeMax - targetRangeMin) * (sourceValue - sourceRangeMin)) / (sourceRangeMax - sourceRangeMin);
 }
 
+template <typename FloatType>
+class LinearSmoothedValue
+{
+public:
+    LinearSmoothedValue() = default;
+    ~LinearSmoothedValue() = default;
+    bool isSmoothing()
+    {
+        return countdown > 0;
+    }
+
+    FloatType getCurrentValue()
+    {
+        return currentValue;
+    }
+
+    FloatType getTargetValue()
+    {
+        return target;
+    }
+
+    /// TODO reset()に改名を検討.
+    void setCurrentAndTargetValue (const FloatType newValue)
+    {
+        target = newValue;
+        currentValue = newValue;
+        countdown = 0;
+    }
+
+    void setRampLength (const int numSteps) noexcept
+    {
+        stepsToTarget = numSteps;
+    }
+
+    void setTargetValue (FloatType newValue) noexcept
+    {
+        if (newValue == target)
+        {
+            return;
+        }
+
+        if (stepsToTarget <= 0)
+        {
+            setCurrentAndTargetValue (newValue);
+            return;
+        }
+
+        target = newValue;
+        countdown = stepsToTarget;
+        setStepSize();
+    }
+
+    FloatType getNextValue() noexcept
+    {
+        if (! isSmoothing())
+        {
+            return target;
+        }
+
+        --countdown;
+        if (isSmoothing())
+        {
+            currentValue += step;
+        }
+        else
+        {
+            currentValue = target;
+        }
+        return currentValue;
+    }
+
+private:
+    void setStepSize()
+    {
+        step = (target - currentValue) / stepsToTarget;
+    }
+
+    FloatType currentValue = 0.0;
+    FloatType target = 0.0;
+    FloatType step = 0.0;
+    int countdown = 0;
+    int stepsToTarget = 0;
+};
+
 /** 
     Smooth values logarithmically.
 
