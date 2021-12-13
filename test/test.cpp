@@ -198,7 +198,7 @@ TEST_CASE ("AudioBuffer")
     SUBCASE ("getPeak")
     {
         ame::AudioBuffer<float, 4> buf (2);
-        auto b = buf.getWritePointer();
+        float* b = buf.getWritePointer();
         b[0] = 0.0f;
         b[1] = 0.2f;
         b[2] = 0.9f;
@@ -210,7 +210,7 @@ TEST_CASE ("AudioBuffer")
     SUBCASE ("getRMSLevel")
     {
         ame::AudioBuffer<float, 6> buffer (1);
-        auto b = buffer.getWritePointer();
+        float* b = buffer.getWritePointer();
         b[0] = 0.0f;
         b[1] = 0.2f;
         b[2] = 0.9f;
@@ -276,7 +276,7 @@ TEST_CASE ("sine440Reader")
 
     SUBCASE ("getDataPointer")
     {
-        auto data = sine440Reader.getDataPointer();
+        const auto* data = sine440Reader.getDataPointer();
         CHECK_EQ (data[0], 0x00);
         CHECK_EQ (data[1], 0x00);
         CHECK_EQ (data[2], 0x6B);
@@ -286,7 +286,7 @@ TEST_CASE ("sine440Reader")
         CHECK_EQ (data[6], 0x28);
         CHECK_EQ (data[7], 0x13);
 
-        auto tamtamData = tamtamReader.getDataPointer();
+        const auto* tamtamData = tamtamReader.getDataPointer();
         CHECK_EQ (tamtamData[0], 0x00);
         CHECK_EQ (tamtamData[1], 0x00);
         CHECK_EQ (tamtamData[2], 0x00);
