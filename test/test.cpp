@@ -8,6 +8,33 @@
 
 using doctest::Approx;
 
+TEST_CASE ("LinearSmoothedValue")
+{
+    ame::LinearSmoothedValue<float> smooth { 0.0f, 10 };
+    smooth.setTargetValue (1.0f);
+    SUBCASE ("LinearSmoothing")
+    {
+        CHECK_EQ (smooth.getCurrentValue(), Approx (0.0f));
+        CHECK_EQ (smooth.getTargetValue(), Approx (1.0f));
+        CHECK_EQ (smooth.getNextValue(), Approx (0.1f));
+        CHECK_EQ (smooth.getNextValue(), Approx (0.2f));
+        CHECK_EQ (smooth.getNextValue(), Approx (0.3f));
+        CHECK_EQ (smooth.getNextValue(), Approx (0.4f));
+        CHECK_EQ (smooth.getNextValue(), Approx (0.5f));
+        CHECK_EQ (smooth.getNextValue(), Approx (0.6f));
+        CHECK_EQ (smooth.getNextValue(), Approx (0.7f));
+        CHECK_EQ (smooth.getNextValue(), Approx (0.8f));
+        CHECK_EQ (smooth.getNextValue(), Approx (0.9f));
+        CHECK (smooth.isSmoothing());
+        CHECK_EQ (smooth.getNextValue(), Approx (1.0f));
+        CHECK (! smooth.isSmoothing());
+        CHECK_EQ (smooth.getNextValue(), Approx (1.0f));
+        CHECK_EQ (smooth.getNextValue(), Approx (1.0f));
+        smooth.reset (0.33f);
+        CHECK_EQ (smooth.getCurrentValue(), Approx (0.33f));
+    }
+}
+
 TEST_CASE ("Volume")
 {
     SUBCASE ("decibelsToGain()")

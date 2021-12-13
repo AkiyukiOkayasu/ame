@@ -52,40 +52,61 @@ constexpr float scale (const float sourceValue,
            + ((targetRangeMax - targetRangeMin) * (sourceValue - sourceRangeMin)) / (sourceRangeMax - sourceRangeMin);
 }
 
+/** Smooth values linearly.
+    @tparam FloatType float or double
+*/
 template <typename FloatType>
 class LinearSmoothedValue
 {
+    static_assert (std::is_floating_point<FloatType>::value, "FloatType is must be floating point type.");
+
 public:
-    LinearSmoothedValue() = default;
+    LinearSmoothedValue (const FloatType initialValue, const int rampSteps)
+    {
+        reset (initialValue);
+        setRampLength (rampSteps);
+    }
     ~LinearSmoothedValue() = default;
-    bool isSmoothing()
+
+    /// Returns true if the current value is currently being interpolated.
+    bool isSmoothing() const noexcept
     {
         return countdown > 0;
     }
 
-    FloatType getCurrentValue()
+    /// Returns the current value to the ramp.
+    FloatType getCurrentValue() const noexcept
     {
         return currentValue;
     }
 
-    FloatType getTargetValue()
+    /// Returns the target value towards which the smoothed value is currently moving.
+    FloatType getTargetValue() const noexcept
     {
         return target;
     }
 
-    /// TODO reset()に改名を検討.
-    void setCurrentAndTargetValue (const FloatType newValue)
+    /** Reset the currentValue, targetValue and ramp count.
+        @param newValue The new current and target value.
+    */
+    void reset (const FloatType newValue) noexcept
     {
         target = newValue;
         currentValue = newValue;
         countdown = 0;
     }
 
+    /** Set a new ramp length in samples.    
+        @param numSteps The number of samples to ramp.
+    */
     void setRampLength (const int numSteps) noexcept
     {
         stepsToTarget = numSteps;
     }
 
+    /** Set the next value to ramp towards.    
+        @param newValue The new target value to ramp.
+    */
     void setTargetValue (FloatType newValue) noexcept
     {
         if (newValue == target)
@@ -95,7 +116,7 @@ public:
 
         if (stepsToTarget <= 0)
         {
-            setCurrentAndTargetValue (newValue);
+            reset (newValue);
             return;
         }
 
@@ -104,6 +125,9 @@ public:
         setStepSize();
     }
 
+    /** Compute the smoothed value.
+        @return FloatType Smoothed value
+    */
     FloatType getNextValue() noexcept
     {
         if (! isSmoothing())
