@@ -51,7 +51,8 @@ constexpr inline float sinf (float x)
         //コンパイル時
         auto fabs = [] (float v) -> float
         { return (v < float (0.0)) ? (-v) : (v); };
-        float x_sq = -(x * x);
+
+        float xSq = -(x * x);
         float series = x;
         float tmp = x;
         float fact = float (2.0);
