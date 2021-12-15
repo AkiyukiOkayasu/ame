@@ -59,7 +59,7 @@ constexpr inline float sinf (float x)
         //マクローリン級数の計算
         do
         {
-            tmp *= x_sq / (fact * (fact + float (1.0)));
+            tmp *= xSq / (fact * (fact + float (1.0)));
             series += tmp;
             fact += float (2.0);
         } while (fabs (tmp) >= std::numeric_limits<float>::epsilon());
@@ -91,7 +91,7 @@ constexpr inline float cosf (float x)
         //コンパイル時
         auto fabs = [] (float v) -> float
         { return (v < float (0.0)) ? (-v) : (v); };
-        float x_sq = -(x * x);
+        float xSq = -(x * x);
         float series = float (1.0);
         float tmp = float (1.0);
         float fact = float (1.0);
@@ -99,7 +99,7 @@ constexpr inline float cosf (float x)
         //マクローリン級数の計算
         do
         {
-            tmp *= x_sq / (fact * (fact + float (1.0)));
+            tmp *= xSq / (fact * (fact + float (1.0)));
             series += tmp;
             fact += float (2.0);
         } while (fabs (tmp) >= std::numeric_limits<float>::epsilon());
