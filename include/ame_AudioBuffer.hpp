@@ -13,7 +13,9 @@
 #include <array>
 #include <cassert>
 #include <cmath>
+#include <cstddef>
 #include <cstdint>
+#include <span>
 
 namespace ame
 {
@@ -25,21 +27,21 @@ namespace ame
     @attention Channel order is interleaved.
     @see AudioBuffer
 */
-template <typename SampleType>
+template <class ElementType, size_t Extent>
 class AudioBlockView
 {
 public:
     /** Constructor.
-        @param buffer Interleaved audio buffer.
+        @param buffer Interleaved audio buffer view.
         @param numChannels the number of channels.
         @param numSamples the number of samples in each of the buffer's channels.        
         @attention The order of ame's audio buffers is interleaved. Note that it is NOT channel-splitting.
     */
-    AudioBlockView (SampleType* buffer, const uint_fast32_t numChannels, const uint_fast32_t numSamples) noexcept
-        : buffer (buffer),
-          numSamples (numSamples),
+    AudioBlockView (std::span<ElementType, Extent> view, const uint_fast32_t numChannels) noexcept
+        : view (view),
           numChannels (numChannels)
     {
+        numSamplesPerChannel = view.size() / numChannels;
     }
     ~AudioBlockView() = default;
 
@@ -50,35 +52,21 @@ public:
     }
 
     ///Returns the number of samples per channel.
-    uint_fast32_t getNumSamples() const noexcept
+    uint_fast32_t getNumSamplesPerChannel() const noexcept
     {
-        return numSamples;
+        return numSamplesPerChannel;
     }
-
-    /** Returns the length of the buffer.         
-        @attention This is the total number of samples allocated to the buffer. It is NOT the number of samples per channel.
-    */
-    uint_fast32_t getSize() const noexcept
-    {
-        return numChannels * numSamples;
-    }
-
-    /** Sets a sample in the buffer.    
-    @param destChannel 
-    @param destSample 
-    @param value 
-    */
 
     /** Set a sample in the buffer.    
     @param destChannel 
     @param destSample 
     @param value     
     */
-    void setSample (const uint_fast32_t destChannel, const uint_fast32_t destSample, const SampleType newValue)
+    void setSample (const uint_fast32_t destChannel, const uint_fast32_t destSample, const ElementType newValue)
     {
         assert (destChannel < numChannels);
-        assert (destSample < numSamples);
-        buffer[destSample * numChannels + destChannel] = newValue;
+        assert (destSample < numSamplesPerChannel);
+        view[destSample * numChannels + destChannel] = newValue;
     }
 
     /** Add a value to a sample in the buffer.
@@ -86,67 +74,37 @@ public:
     @param destSample 
     @param valueToAdd 
     */
-    void addSample (const uint_fast32_t destChannel, const uint_fast32_t destSample, const SampleType valueToAdd)
+    void addSample (const uint_fast32_t destChannel, const uint_fast32_t destSample, const ElementType valueToAdd)
     {
         assert (destChannel < numChannels);
-        assert (destSample < numSamples);
-        buffer[destSample * numChannels + destChannel] += valueToAdd;
-    }
-
-    /** Returns a read only pointer to interleaved audio buffer.
-        @return const float* interleaved samples
-    */
-    const SampleType* getReadPointer() const noexcept
-    {
-        return buffer;
-    }
-
-    /** Returns a writeable pointer to interleaved audio buffer.
-        @return float* interleaved audio buffer
-    */
-    SampleType* getWritePointer() noexcept
-    {
-        return buffer;
+        assert (destSample < numSamplesPerChannel);
+        view[destSample * numChannels + destChannel] += valueToAdd;
     }
 
     ///Set all samples to 0.
     void clear()
     {
-        uint_fast32_t i = 0;
-        for (uint_fast32_t samp = 0; samp < numSamples; ++samp)
-        {
-            for (uint_fast32_t ch = 0; ch < numChannels; ++ch)
-            {
-                buffer[i] = static_cast<SampleType> (0.0f);
-                ++i;
-            }
-        }
+        std::fill (view.begin(), view.end(), ElementType (0.0));
     }
 
     ///Applies a gain multiple to all the audio data.
     void applyGain (const float gain)
     {
-        uint_fast32_t i = 0;
-        for (uint_fast32_t samp = 0; samp < numSamples; ++samp)
-        {
-            for (uint_fast32_t ch = 0; ch < numChannels; ++ch)
-            {
-                buffer[i] *= gain;
-                ++i;
-            }
-        }
+        for_each (view.begin(), view.end(), [&gain] (auto& x)
+                  { x *= gain; });
     }
 
     /** Finds the highest absolute sample value within a region of a channel.    
         @param channel 
         @return FloatType [0.0, FloatTypeMax]
     */
-    SampleType getPeak (const uint_fast32_t channel) const
+    float getPeak (const uint_fast32_t channel) const
     {
-        SampleType peak = 0.0;
-        for (auto i = channel; i < numSamples * numChannels; i += numChannels)
+        float peak = 0.0f;
+
+        for (auto i = channel; i < view.size(); i += numChannels)
         {
-            const auto v = std::abs (buffer[i]);
+            const auto v = std::abs (view[i]);
             if (v > peak)
             {
                 peak = v;
@@ -159,25 +117,25 @@ public:
     @param channel 
     @return FloatType RMS level [0.0, SampleTypeMax]
     */
-    SampleType getRMSLevel (const uint_fast32_t channel) const
+    float getRMSLevel (const uint_fast32_t channel) const
     {
         assert (channel < numChannels);
-        SampleType sum = 0.0;
-        for (auto i = channel; i < numSamples * numChannels; i += numChannels)
+        float sum = 0.0f;
+        for (auto i = channel; i < view.size(); i += numChannels)
         {
-            const auto sample = buffer[i];
+            const auto sample = view[i];
             sum += sample * sample;
         }
 
-        return static_cast<SampleType> (std::sqrt (sum / numSamples));
+        return std::sqrt (sum / numSamplesPerChannel);
     }
 
+    std::span<ElementType, Extent> view;
+
 private:
-    SampleType* buffer;
-    uint_fast32_t numSamples;
+    uint_fast32_t numSamplesPerChannel;
     uint_fast32_t numChannels;
 };
-template class AudioBlockView<float>; //明示的テンプレートのインスタンス化
 
 /** 
     An audio buffer that supports multiple channels whose size is determined at compile time.
