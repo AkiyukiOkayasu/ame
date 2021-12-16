@@ -17,7 +17,7 @@
  description:        Header-only DSP library for Cortex-M
  website:            https://github.com/AkiyukiOkayasu/ame
  license:            MIT
- minimumCppStandard: 17
+ minimumCppStandard: 20
 
  dependencies:
  
