@@ -238,6 +238,24 @@ TEST_CASE ("AudioBuffer")
         buf.buffer[5] = -0.0f;
         CHECK (buf.getRMSLevel (0) == Approx (0.4301162f).scale (1));
     }
+
+    SUBCASE ("MakeView")
+    {
+        ame::AudioBuffer<float, 6> buf (1);
+        buf.buffer[0] = 0.0f;
+        buf.buffer[1] = 0.2f;
+        buf.buffer[2] = 0.9f;
+        buf.buffer[3] = -0.5f;
+        buf.buffer[4] = -0.1f;
+        buf.buffer[5] = -0.0f;
+        auto view = buf.makeAudioBlockView();
+        CHECK_EQ (view.view[0], Approx (0.0f));
+        CHECK_EQ (view.view[1], Approx (0.2f));
+        CHECK_EQ (view.view[2], Approx (0.9f));
+        CHECK_EQ (view.view[3], Approx (-0.5f));
+        CHECK_EQ (view.view[4], Approx (-0.1f));
+        CHECK_EQ (view.view[5], Approx (-0.0f));
+    }
 }
 
 TEST_CASE ("AudioBlockView")
