@@ -47,20 +47,19 @@ public:
     }
 
     /// Process audio effect.
-    template <typename SampleType>
-    void process (AudioBlockView<SampleType>& block)
+    template <typename SampleType, size_t N>
+    void process (AudioBlockView<SampleType, N>& block)
     {
         assert (block.getNumChannels() <= MaximumChannels);
 
-        auto buffer = block.getWritePointer();
         uint_fast32_t i = 0;
-        for (uint_fast32_t samp = 0; samp < block.getNumSamples(); ++samp)
+        for (uint_fast32_t samp = 0; samp < block.getNumSamplesPerChannel(); ++samp)
         {
             for (uint_fast32_t ch = 0; ch < block.getNumChannels(); ++ch)
             {
-                const float input = buffer[i];
+                const float input = block.view[i];
                 delayLine[ch][writePos.get()] = input;
-                buffer[i] = lerp (delayLine[ch][readPos.get()], delayLine[ch][readPos.get (-1)], fractional);
+                block.view[i] = lerp (delayLine[ch][readPos.get()], delayLine[ch][readPos.get (-1)], fractional);
                 ++i;
             }
             ++readPos;

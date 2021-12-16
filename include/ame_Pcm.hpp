@@ -281,8 +281,8 @@ public:
         @tparam FloatType float or double
         @param block dest
     */
-    template <typename FloatType>
-    void process (AudioBlockView<FloatType>& block)
+    template <typename FloatType, size_t N>
+    void process (AudioBlockView<FloatType, N>& block)
     {
         if (playing.load() == false)
         {
@@ -298,7 +298,8 @@ public:
             case fmt::wFormatTag::PCM:
             {
                 auto offset = (bitRate / 8) * numChannels * readPosition.load();
-                for (uint_fast32_t samp = 0; samp < block.getNumSamples(); ++samp)
+                const auto nSamp = block.getNumSamplesPerChannel();
+                for (uint_fast32_t samp = 0; samp < nSamp; ++samp)
                 {
                     if (readPosition + samp >= numSamples)
                     {
@@ -320,7 +321,7 @@ public:
                         block.addSample (ch, samp, s);
                     }
                 }
-                readPosition += block.getNumSamples();
+                readPosition += nSamp;
                 break;
             }
             case fmt::wFormatTag::ImaAdpcm:
