@@ -187,9 +187,10 @@ public:
                        { e *= gain; });
     }
 
-    AudioBlockView<FloatType, Size> makeAudioBlockView()
+    auto makeAudioBlockView()
     {
-        return AudioBlockView<FloatType, Size> (buffer.data(), numChannels);
+        std::span<FloatType, Size> sp { buffer.data(), buffer.size() };
+        return ame::AudioBlockView<FloatType, Size> { sp, numChannels };
     }
 
     ///addBuffer
