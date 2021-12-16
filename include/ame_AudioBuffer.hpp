@@ -147,9 +147,8 @@ template <typename FloatType, size_t Size>
 class AudioBuffer
 {
 public:
-    explicit AudioBuffer (const uint_fast32_t numChannels) : numChannels (numChannels)
+    explicit AudioBuffer (const uint_fast32_t numChannels) : numChannels (numChannels), numSamplesPerChannel (Size / numChannels)
     {
-        numSamples = Size / numChannels;
     }
     ~AudioBuffer() = default;
 
@@ -160,7 +159,7 @@ public:
     void setNumChannels (const uint_fast32_t channels)
     {
         numChannels = channels;
-        numSamples = Size / numChannels;
+        numSamplesPerChannel = Size / numChannels;
     }
 
     ///Returns the number of channels.
@@ -170,33 +169,9 @@ public:
     }
 
     ///Returns the number of samples per channel.
-    uint_fast32_t getNumSamples() const noexcept
+    uint_fast32_t getNumSamplesPerChannel() const noexcept
     {
-        return numSamples;
-    }
-
-    /** Returns the length of the buffer.         
-        @attention This is the total number of samples allocated to the buffer. It is NOT the number of samples per channel.
-    */
-    uint_fast32_t getSize() const noexcept
-    {
-        return Size;
-    }
-
-    /** Returns a read only pointer to interleaved audio buffer.
-        @return const float* interleaved samples
-    */
-    const FloatType* getReadPointer() const noexcept
-    {
-        return buffer.data();
-    }
-
-    /** Returns a writeable pointer to interleaved audio buffer.
-        @return float* interleaved audio buffer
-    */
-    FloatType* getWritePointer() noexcept
-    {
-        return buffer.data();
+        return numSamplesPerChannel;
     }
 
     ///Set all samples to 0.
@@ -212,18 +187,19 @@ public:
                        { e *= gain; });
     }
 
-    AudioBlockView<FloatType> makeAudioBlockView()
+    AudioBlockView<FloatType, Size> makeAudioBlockView()
     {
-        return AudioBlockView<FloatType> (buffer.data(), numChannels, numSamples);
+        return AudioBlockView<FloatType, Size> (buffer.data(), numChannels);
     }
 
     ///addBuffer
-    void addFrom (const uint_fast32_t destChannel, const uint_fast32_t destStartSample, const AudioBlockView<FloatType>& source, const uint_fast32_t sourceChannel, const uint_fast32_t sourceStartSample, const uint_fast32_t numSamplesToAdd)
+    template <size_t Extent>
+    void addFrom (const uint_fast32_t destChannel, const uint_fast32_t destStartSample, const AudioBlockView<FloatType, Extent>& source, const uint_fast32_t sourceChannel, const uint_fast32_t sourceStartSample, const uint_fast32_t numSamplesToAdd)
     {
         const auto& destOffset = destStartSample * numChannels;
         const auto& sourceOffset = sourceStartSample * source.getNumChannels();
-        [[maybe_unused]] const auto& destEnd = destOffset + numSamplesToAdd * numChannels;
-        [[maybe_unused]] const auto& sourceEnd = sourceOffset + numSamplesToAdd * source.getNumChannels();
+        const auto& destEnd = destOffset + numSamplesToAdd * numChannels;
+        const auto& sourceEnd = sourceOffset + numSamplesToAdd * source.getNumChannels();
 
         assert (destEnd <= Size);
         assert (sourceEnd <= source.getSize());
@@ -242,7 +218,7 @@ public:
     {
         assert (channel < numChannels);
         FloatType peak = 0.0;
-        for (auto i = channel; i < numSamples * numChannels; i += numChannels)
+        for (auto i = channel; i < numSamplesPerChannel * numChannels; i += numChannels)
         {
             const auto v = std::abs (buffer[i]);
             if (v > peak)
@@ -261,18 +237,19 @@ public:
     {
         assert (channel < numChannels);
         FloatType sum = 0.0;
-        for (auto i = channel; i < numSamples * numChannels; i += numChannels)
+        for (auto i = channel; i < numSamplesPerChannel * numChannels; i += numChannels)
         {
             const auto sample = buffer[i];
             sum += sample * sample;
         }
 
-        return static_cast<FloatType> (std::sqrt (sum / numSamples));
+        return static_cast<FloatType> (std::sqrt (sum / numSamplesPerChannel));
     }
 
-private:
     std::array<FloatType, Size> buffer = {};
+
+private:
     uint_fast32_t numChannels;
-    uint_fast32_t numSamples;
+    uint_fast32_t numSamplesPerChannel;
 };
 } // namespace ame
