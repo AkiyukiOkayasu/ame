@@ -147,11 +147,11 @@ TEST_CASE ("Filter")
         constexpr int numChannels = 2;
         constexpr int numSamples = 1000;
         std::array<float, numChannels * numSamples> buffer {};
-        ame::AudioBlockView block (buffer.data(), numChannels, numSamples); //Stereo
-        ame::dsp::iir::biquad::BiQuad<numChannels> filter;
+        ame::AudioBlockView<float, numChannels * numSamples> block (std::span { buffer }, numChannels); //Stereo
+        ame::dsp::Biquad<float, numChannels> filter { 44100 };
 
         // LPF
-        filter.setCoefficients (ame::dsp::iir::biquad::makeLowPass (44100.0f, 100.0f, 0.71f));
+        filter.makeLowPass (100.0f, 0.71f);
         filter.process (block);
         for (int i = 0; i < numSamples * numChannels; ++i)
         {
@@ -159,7 +159,7 @@ TEST_CASE ("Filter")
         }
 
         // HPF for remove DC offset;
-        filter.setCoefficients (ame::dsp::iir::biquad::makeHighPass (44100.0f, 200.0f, 0.71f));
+        filter.makeHighPass (200.0f, 0.71f);
         buffer.fill (0.3f); //DC offset;
         filter.process (block);
         for (int i = 500; i < numSamples * numChannels; ++i)
@@ -195,38 +195,54 @@ TEST_CASE ("Wrap")
 
 TEST_CASE ("AudioBuffer")
 {
+    SUBCASE ("size")
+    {
+        constexpr int numChannels = 2;
+        ame::AudioBuffer<float, 10> buf (numChannels);
+        CHECK_EQ (buf.getNumChannels(), numChannels);
+        CHECK_EQ (buf.getNumSamplesPerChannel(), 5);
+        CHECK_EQ (buf.buffer.size(), 10);
+    }
+
     SUBCASE ("getPeak")
     {
         ame::AudioBuffer<float, 4> buf (2);
-        float* b = buf.getWritePointer();
-        b[0] = 0.0f;
-        b[1] = 0.2f;
-        b[2] = 0.9f;
-        b[3] = -0.5f;
+        buf.buffer[0] = 0.0f;
+        buf.buffer[1] = 0.2f;
+        buf.buffer[2] = 0.9f;
+        buf.buffer[3] = -0.5f;
         REQUIRE (buf.getPeak (0) == Approx (0.9f));
         REQUIRE (buf.getPeak (1) == Approx (0.5f));
     }
 
     SUBCASE ("getRMSLevel")
     {
-        ame::AudioBuffer<float, 6> buffer (1);
-        float* b = buffer.getWritePointer();
-        b[0] = 0.0f;
-        b[1] = 0.2f;
-        b[2] = 0.9f;
-        b[3] = -0.5f;
-        b[4] = -0.1f;
-        b[5] = -0.0f;
-        CHECK (buffer.getRMSLevel (0) == Approx (0.4301162f).scale (1));
+        ame::AudioBuffer<float, 6> buf (1);
+        buf.buffer[0] = 0.0f;
+        buf.buffer[1] = 0.2f;
+        buf.buffer[2] = 0.9f;
+        buf.buffer[3] = -0.5f;
+        buf.buffer[4] = -0.1f;
+        buf.buffer[5] = -0.0f;
+        CHECK (buf.getRMSLevel (0) == Approx (0.4301162f).scale (1));
     }
 }
 
 TEST_CASE ("AudioBlockView")
 {
+    SUBCASE ("size")
+    {
+        float v[6] = { 0.0f, 0.2f, 0.9f, -0.5f, -0.1f, -0.0f };
+        ame::AudioBlockView block (std::span<float> { v }, 2);
+        CHECK_EQ (block.getNumChannels(), 2);
+        CHECK_EQ (block.getNumSamplesPerChannel(), 3);
+        CHECK_EQ (block.view.size(), 6);
+    }
+
     SUBCASE ("getPeak")
     {
         float v[6] = { 0.0f, 0.2f, 0.9f, -0.5f, -0.1f, -0.0f };
-        ame::AudioBlockView<float> block (v, 2, 3);
+        ame::AudioBlockView block (std::span<float> { v }, 2);
         REQUIRE (block.getPeak (0) == Approx (0.9f));
         REQUIRE (block.getPeak (1) == Approx (0.5f));
     }
@@ -234,7 +250,7 @@ TEST_CASE ("AudioBlockView")
     SUBCASE ("getRMSLevel")
     {
         float v[6] = { 0.0f, 0.2f, 0.9f, -0.5f, -0.1f, -0.0f };
-        ame::AudioBlockView<float> block (v, 1, 6);
+        ame::AudioBlockView block (std::span { v }, 1);
         CHECK (block.getRMSLevel (0) == Approx (0.4301162f).scale (1));
     }
 }
@@ -313,7 +329,7 @@ TEST_CASE ("WavPlayer")
         //Mono 16bit LittleEndian 44.1kHz
         float v[100] = {};
         constexpr int numChannel = 1;
-        ame::AudioBlockView<float> block (v, numChannel, 100);
+        ame::AudioBlockView block (std::span { v }, numChannel);
         constexpr ame::wav::WavReader reader (wav::sine440, sizeof (wav::sine440));
         ame::wav::WavPlayer player (reader);
         player.play();
@@ -425,7 +441,7 @@ TEST_CASE ("WavPlayer")
         //Stereo 16bit LittleEndian 44.1kHz
         float v[10] = {};
         constexpr int numChannel = 2;
-        ame::AudioBlockView<float> block (v, numChannel, 5);
+        ame::AudioBlockView block (std::span { v }, numChannel);
         constexpr ame::wav::WavReader reader (wav::tamtam, sizeof (wav::tamtam));
         ame::wav::WavPlayer player (reader);
         player.play();
@@ -489,7 +505,7 @@ TEST_CASE ("Delay")
         constexpr int bufferSize = 4;
         constexpr int maximumDelaySamples = 100;
         float v[numChannel * bufferSize] = {};
-        ame::AudioBlockView<float> block (v, numChannel, bufferSize);
+        ame::AudioBlockView block (std::span { v }, numChannel);
         ame::dsp::Delay<numChannel, maximumDelaySamples> delay;
         delay.setDelay (2); //2sample delay
         block.clear();
@@ -508,7 +524,7 @@ TEST_CASE ("Delay")
         constexpr int bufferSize = 4;
         constexpr int maximumDelaySamples = 100;
         float v[numChannel * bufferSize] = {};
-        ame::AudioBlockView<float> block (v, numChannel, bufferSize);
+        ame::AudioBlockView block (std::span { v }, numChannel);
         ame::dsp::Delay<numChannel, maximumDelaySamples> delay;
         delay.setDelay (10); //10sample delay
         block.clear();
@@ -538,7 +554,7 @@ TEST_CASE ("Delay")
         constexpr int bufferSize = 4;
         constexpr int maximumDelaySamples = 100;
         float v[numChannel * bufferSize] = {};
-        ame::AudioBlockView<float> block (v, numChannel, bufferSize);
+        ame::AudioBlockView block (std::span { v }, numChannel);
         ame::dsp::Delay<numChannel, maximumDelaySamples> delay;
         delay.setDelay (1.5f); //1.5sample delay
         block.clear();
