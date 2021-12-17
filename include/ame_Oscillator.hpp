@@ -45,7 +45,7 @@ constexpr std::array<float, N> makeSineTable()
 {
     auto f = [] (auto& x)
     {
-        x = ame::sinf (x * ame::twoPi);
+        x = ame::sin (x * ame::twoPi<float>);
     };
     return ame::makeWaveTable<float, N> (f);
 }
@@ -139,7 +139,7 @@ public:
     */
     void setFrequency (const float freq) noexcept
     {
-        phaseIncrement = freq * twoPi * samplingPeriod;
+        phaseIncrement = freq * twoPi<float> * samplingPeriod;
     }
 
     /** Generate single sample
@@ -148,7 +148,7 @@ public:
     float nextSample() noexcept
     {
         phase = addModulo2Pi (phase, phaseIncrement);
-        return ame::sinf (phase);
+        return ame::sin (phase);
     }
 
     /** Reset the phase to any value.    
@@ -156,8 +156,8 @@ public:
     */
     void resetPhase (float newPhase = 0.0f)
     {
-        assert (0 <= newPhase && newPhase <= twoPi);
-        if (0.0f <= newPhase && newPhase <= twoPi)
+        assert (0 <= newPhase && newPhase <= twoPi<float>);
+        if (0.0f <= newPhase && newPhase <= twoPi<float>)
         {
             phase = newPhase;
         }

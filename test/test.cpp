@@ -135,7 +135,7 @@ TEST_CASE ("WaveTable")
     {
         auto f = [] (auto& x)
         {
-            x = ame::sinf (x * ame::twoPi);
+            x = ame::sin (x * ame::twoPi<float>);
         };
 
         constexpr auto ar = ame::makeWaveTable<float, 5> (f);

@@ -78,7 +78,7 @@ public:
     /// LowPass coefficients calculation from RBJ cookbook.
     void makeLowPass (const FloatType cutOffFrequency, const FloatType Q) noexcept
     {
-        const FloatType w0 = twoPi * cutOffFrequency / sampleRate;
+        const FloatType w0 = twoPi<FloatType> * cutOffFrequency / sampleRate;
         const FloatType alpha = sinf (w0) / (FloatType (2.0) * Q);
 
         coef.a0 = FloatType (1.0) + alpha;
@@ -93,7 +93,7 @@ public:
     /// HighPass coefficients calculation from RBJ cookbook.
     void makeHighPass (const FloatType cutOffFrequency, const FloatType Q) noexcept
     {
-        const FloatType w0 = twoPi * cutOffFrequency / sampleRate;
+        const FloatType w0 = twoPi<FloatType> * cutOffFrequency / sampleRate;
         const FloatType alpha = sinf (w0) / (FloatType (2.0) * Q);
 
         coef.a0 = FloatType (1.0) + alpha;
@@ -108,7 +108,7 @@ public:
     /// BandPass coefficients calculation from RBJ cookbook.
     void makeBandPass (const FloatType cutOffFrequency, const FloatType Q) noexcept
     {
-        const FloatType w0 = twoPi * cutOffFrequency / sampleRate;
+        const FloatType w0 = twoPi<FloatType> * cutOffFrequency / sampleRate;
         const FloatType alpha = sinf (w0) / (FloatType (2.0) * Q);
 
         coef.a0 = FloatType (1.0) + alpha;
@@ -123,7 +123,7 @@ public:
     /// Notch coefficients calculation from RBJ cookbook.
     void makeNotch (const FloatType sampleRate, const FloatType cutOffFrequency, const FloatType Q) noexcept
     {
-        const FloatType w0 = twoPi * cutOffFrequency / sampleRate;
+        const FloatType w0 = twoPi<FloatType> * cutOffFrequency / sampleRate;
         const FloatType alpha = sinf (w0) / (FloatType (2.0) * Q);
 
         coef.a0 = FloatType (1.0) + alpha;
@@ -138,7 +138,7 @@ public:
     /// AllPass coefficients calculation from RBJ cookbook.
     void makeAllPass (const FloatType cutOffFrequency, const FloatType Q) noexcept
     {
-        const FloatType w0 = twoPi * cutOffFrequency / sampleRate;
+        const FloatType w0 = twoPi<FloatType> * cutOffFrequency / sampleRate;
         const FloatType alpha = sinf (w0) / (FloatType (2.0) * Q);
 
         coef.a0 = FloatType (1.0) + alpha;
@@ -154,7 +154,7 @@ public:
     void makePeakFilter (const FloatType cutOffFrequency, const FloatType Q, const FloatType gainDb) noexcept
     {
         const FloatType A = std::pow (FloatType (10.0), gainDb / FloatType (40.0));
-        const FloatType w0 = twoPi * cutOffFrequency / sampleRate;
+        const FloatType w0 = twoPi<FloatType> * cutOffFrequency / sampleRate;
         const FloatType alpha = sinf (w0) / FloatType (2.0) * Q;
 
         coef.a0 = FloatType (1.0) + alpha / A;
@@ -170,7 +170,7 @@ public:
     void makeLowShelf (const FloatType cutOffFrequency, const FloatType Q, const FloatType gainDb) noexcept
     {
         const FloatType A = std::pow (FloatType (10.0), gainDb / FloatType (40.0));
-        const FloatType w0 = twoPi * cutOffFrequency / sampleRate;
+        const FloatType w0 = twoPi<FloatType> * cutOffFrequency / sampleRate;
         const FloatType alpha = sinf (w0) / (FloatType (2.0) * Q);
 
         coef.a0 = FloatType (1.0) + alpha / A;
@@ -186,7 +186,7 @@ public:
     void makeHighShelf (const FloatType cutOffFrequency, const FloatType Q, const FloatType gainDb) noexcept
     {
         const FloatType A = std::pow (FloatType (10.0), gainDb / FloatType (40.0));
-        const FloatType w0 = twoPi * cutOffFrequency / sampleRate;
+        const FloatType w0 = twoPi<FloatType> * cutOffFrequency / sampleRate;
         const FloatType alpha = sinf (w0) / (FloatType (2.0) * Q);
 
         coef.a0 = FloatType (1.0) + alpha / A;

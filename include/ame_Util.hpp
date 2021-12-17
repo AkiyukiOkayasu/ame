@@ -27,9 +27,9 @@ namespace ame
 constexpr float addModulo2Pi (float phase, const float increment) noexcept
 {
     phase += increment;
-    while (phase > twoPi)
+    while (phase > twoPi<float>)
     {
-        phase -= twoPi;
+        phase -= twoPi<float>;
     }
     return phase;
 }
