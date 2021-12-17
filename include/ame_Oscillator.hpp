@@ -13,7 +13,9 @@
 
 #include <array>
 #include <atomic>
+#include <cmath>
 #include <numeric>
+#include <span>
 
 namespace ame
 {
@@ -61,10 +63,10 @@ class WavetableOscillator
     static_assert (std::is_floating_point<FloatType>::value, "FloatType is must be floating point type.");
 
 public:
-    WavetableOscillator (const FloatType* wavetable, const uint32_t numSamples, const FloatType sampleRate)
+    WavetableOscillator (std::span<FloatType> wavetable, const FloatType sampleRate)
         : wavetable (wavetable)
     {
-        tableIndex.changeLength (numSamples);
+        tableIndex.changeLength (wavetable.size());
         changeSampleRate (sampleRate);
     }
     ~WavetableOscillator() = default;
@@ -111,7 +113,7 @@ public:
     }
 
 private:
-    FloatType* wavetable = nullptr;
+    std::span<FloatType> wavetable;
     Wrap<float> tableIndex {};
     FloatType samplingPeriod {};
     std::atomic<FloatType> tableIndexIncrement {};
