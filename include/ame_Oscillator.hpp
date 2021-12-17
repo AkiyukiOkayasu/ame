@@ -107,7 +107,7 @@ public:
         const float t = tableIndex.get() - aIndex;
         const auto a = wavetable[aIndex];
         const auto b = wavetable[bIndex];
-        return lerp (a, b, t);
+        return std::lerp (a, b, t);
     }
 
 private:

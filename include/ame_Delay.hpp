@@ -15,6 +15,7 @@
 
 #include <array>
 #include <cassert>
+#include <cmath>
 
 namespace ame::dsp
 {
@@ -59,7 +60,7 @@ public:
             {
                 const float input = block.view[i];
                 delayLine[ch][writePos.get()] = input;
-                block.view[i] = lerp (delayLine[ch][readPos.get()], delayLine[ch][readPos.get (-1)], fractional);
+                block.view[i] = std::lerp (delayLine[ch][readPos.get()], delayLine[ch][readPos.get (-1)], fractional);
                 ++i;
             }
             ++readPos;
