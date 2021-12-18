@@ -24,12 +24,14 @@ namespace ame
     @param increment Amount to add to phase
     @return [0, 2pi]
 */
-constexpr float addModulo2Pi (float phase, const float increment) noexcept
+template <typename FloatType>
+constexpr FloatType addModulo2Pi (FloatType phase, const FloatType increment) noexcept
 {
+    static_assert (std::is_floating_point<FloatType>::value, "FloatType is must be floating point type.");
     phase += increment;
-    while (phase > twoPi<float>)
+    while (phase > twoPi<FloatType>)
     {
-        phase -= twoPi<float>;
+        phase -= twoPi<FloatType>;
     }
     return phase;
 }
@@ -42,12 +44,14 @@ constexpr float addModulo2Pi (float phase, const float increment) noexcept
     @param targetRangeMax output range Max
     @return scaled value
 */
-constexpr float scale (const float sourceValue,
-                       const float sourceRangeMin,
-                       const float sourceRangeMax,
-                       const float targetRangeMin,
-                       const float targetRangeMax)
+template <typename FloatType>
+constexpr FloatType scale (const FloatType sourceValue,
+                           const FloatType sourceRangeMin,
+                           const FloatType sourceRangeMax,
+                           const FloatType targetRangeMin,
+                           const FloatType targetRangeMax)
 {
+    static_assert (std::is_floating_point<FloatType>::value, "FloatType is must be floating point type.");
     return targetRangeMin
            + ((targetRangeMax - targetRangeMin) * (sourceValue - sourceRangeMin)) / (sourceRangeMax - sourceRangeMin);
 }
@@ -153,11 +157,11 @@ private:
         step = (target - currentValue) / stepsToTarget;
     }
 
-    FloatType currentValue = 0.0;
-    FloatType target = 0.0;
-    FloatType step = 0.0;
-    int countdown = 0;
-    int stepsToTarget = 0;
+    FloatType currentValue {};
+    FloatType target {};
+    FloatType step {};
+    int countdown {};
+    int stepsToTarget {};
 };
 
 /** 
@@ -166,8 +170,11 @@ private:
     y (n) = y (n-1) + ((x (n) - y (n-1))/slide)
     @note SlideUp and SlideDown are affected by the update interval of the process.
 */
+template <typename FloatType>
 class Slide
 {
+    static_assert (std::is_floating_point<FloatType>::value, "FloatType is must be floating point type.");
+
 public:
     Slide() {}
     /** Create an Slide object
@@ -175,7 +182,7 @@ public:
         @param slownessOfDecrease The larger the value, the more slowly the decrease. If 1, no effect is applied to the decrease.
         @attention DO NOT set less than 1.
     */
-    Slide (const float slownessOfIncrease, const float slownessOfDecrease)
+    Slide (const FloatType slownessOfIncrease, const FloatType slownessOfDecrease)
     {
         slideUp.store (slownessOfIncrease);
         slideDown.store (slownessOfDecrease);
@@ -186,7 +193,7 @@ public:
         @param slownessIncrease The larger the value, the more slowly the increase.  If 1, no effect is applied to the increase.
         @attention DO NOT set newSlideUp to less than 1.
     */
-    void setSlownessOfIncrease (const float slownessIncrease)
+    void setSlownessOfIncrease (const FloatType slownessIncrease)
     {
         assert (slownessIncrease >= 1.0f);
         slideUp.store (slownessIncrease);
@@ -196,7 +203,7 @@ public:
         @param slownessDecrease The larger the value, the more slowly the decrease. If 1, no effect is applied to the decrease.
         @attention DO NOT set newSlideDown to less than 1.
     */
-    void setSlownessOfDecrease (const float slownessDecrease)
+    void setSlownessOfDecrease (const FloatType slownessDecrease)
     {
         assert (slownessDecrease >= 1.0f);
         slideDown.store (slownessDecrease);
@@ -206,18 +213,18 @@ public:
         @param input Value to smooth
         @return Smoothed value
     */
-    float process (const float input)
+    FloatType process (const FloatType input)
     {
-        const float dt = input - lastOutput;
-        const float s = dt > 0.0f ? slideUp.load() : slideDown.load();
+        const auto dt = input - lastOutput;
+        const auto s = dt > FloatType (0.0) ? slideUp.load() : slideDown.load();
         lastOutput = lastOutput + dt / s;
         return lastOutput;
     }
 
 private:
-    float lastOutput = 0.0f;
-    std::atomic<float> slideUp { 1.0f };
-    std::atomic<float> slideDown { 1.0f };
+    FloatType lastOutput {};
+    std::atomic<FloatType> slideUp { 1.0 };
+    std::atomic<FloatType> slideDown { 1.0 };
 };
 
 /** A number to wrap between 0~length.
@@ -332,8 +339,8 @@ public:
     }
 
 private:
-    T num = {};
-    T length = {};
+    T num {};
+    T length {};
 };
 
 /** Generate a std::array<std::byte, N>

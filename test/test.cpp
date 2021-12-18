@@ -155,7 +155,7 @@ TEST_CASE ("WaveTable")
 
     SUBCASE ("sinetable")
     {
-        constexpr std::array<float, 512> wavetable = ame::makeSineTable<512>();
+        constexpr std::array<float, 512> wavetable = ame::makeSineTable<float, 512>();
         CHECK_EQ (wavetable[0], Approx (0.0f).scale (1));
         CHECK_GT (wavetable[127], 0.97f);
         CHECK_LT (wavetable[256], 0.03f);
@@ -169,7 +169,7 @@ TEST_CASE ("Oscillator")
 {
     SUBCASE ("Wavetable")
     {
-        constexpr std::array<float, 512> wavetable = ame::makeSineTable<512>();
+        constexpr std::array<float, 512> wavetable = ame::makeSineTable<float, 512>();
         ame::WavetableOscillator osc { std::span { wavetable }, 44100.0f };
         CHECK_EQ (wavetable[0], Approx (0.0f).scale (1));
         osc.setFrequency (440); //Hz

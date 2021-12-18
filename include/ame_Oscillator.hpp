@@ -17,6 +17,7 @@
 #include <cmath>
 #include <numeric>
 #include <span>
+#include <type_traits>
 
 namespace ame
 {
@@ -43,14 +44,14 @@ constexpr std::array<FloatType, NumSamples> makeWaveTable (Function func)
     @return constexpr std::array<float, N> sine wave table
     @todo 初期位相いじれるようにする？
 */
-template <size_t N>
-constexpr std::array<float, N> makeSineTable()
+template <typename FloatType, size_t N>
+constexpr std::array<FloatType, N> makeSineTable()
 {
     auto f = [] (auto& x)
     {
         x = ame::sin (x * ame::twoPi<float>);
     };
-    return ame::makeWaveTable<float, N> (f);
+    return ame::makeWaveTable<FloatType, N> (f);
 }
 
 /** Wavetable oscillator
@@ -62,9 +63,10 @@ template <typename FloatType, size_t N>
 class WavetableOscillator
 {
     static_assert (std::is_floating_point<FloatType>::value, "FloatType is must be floating point type.");
+    using FloatTypeBase = typename std::remove_cv<FloatType>::type;
 
 public:
-    explicit WavetableOscillator (std::span<FloatType, N> wavetable, const float sampleRate)
+    explicit WavetableOscillator (std::span<FloatType, N> wavetable, const FloatTypeBase sampleRate)
         : wavetable (wavetable)
     {
         tableIndex.changeLength (wavetable.size());
@@ -75,7 +77,7 @@ public:
     /** Set sampling rate.   
         @param sampleRate new sampling rate in Hz
    */
-    void setSampleRate (const float sampleRate)
+    void setSampleRate (const FloatTypeBase sampleRate)
     {
         samplingPeriod = 1.0f / sampleRate;
     }
@@ -83,7 +85,7 @@ public:
     /** Set the frequency.
         @param freq frequency in Hz
     */
-    void setFrequency (const float freq) noexcept
+    void setFrequency (const FloatTypeBase freq) noexcept
     {
         tableIndexIncrement = freq * tableIndex.getLength() * samplingPeriod;
     }
@@ -105,7 +107,7 @@ public:
     {
         const uint32_t aIndex = std::floor (tableIndex.get());
         const uint32_t bIndex = std::floor (tableIndex.get (1));
-        const float t = tableIndex.get() - aIndex;
+        const auto t = tableIndex.get() - aIndex;
         const auto a = wavetable[aIndex];
         const auto b = wavetable[bIndex];
 
@@ -115,22 +117,26 @@ public:
 
 private:
     std::span<FloatType, N> wavetable;
-    Wrap<float> tableIndex {};
-    float samplingPeriod {};
-    std::atomic<float> tableIndexIncrement {};
+    Wrap<FloatTypeBase> tableIndex {};
+    FloatTypeBase samplingPeriod {};
+    std::atomic<FloatTypeBase> tableIndexIncrement {};
 };
 
 /** Sine wave oscillator.
     Generates a sine between -1.0~1.0.
 */
+template <typename FloatType>
 class SineOscillator
 {
+    static_assert (std::is_floating_point<FloatType>::value, "FloatType is must be floating point type.");
+    static_assert (! std::is_const<FloatType>::value, "FloatType is must NOT be const.");
+
 public:
     /** Create sine wave oscillator instance.
         @param sampleRate The sample rate that will be used for calclate the oscillator phase  increment.
         @param frequency Initial frequency
     */
-    SineOscillator (const float sampleRate)
+    SineOscillator (const FloatType sampleRate)
     {
         setSampleRate (sampleRate);
     }
@@ -139,17 +145,17 @@ public:
     /** Set sampling rate.   
         @param sampleRate new sampling rate in Hz
    */
-    void setSampleRate (const float sampleRate)
+    void setSampleRate (const FloatType sampleRate)
     {
-        samplingPeriod = 1.0f / sampleRate;
+        samplingPeriod = FloatType (1.0) / sampleRate;
     }
 
     /** Set the sine wave frequency
         @param freq frequency in Hz
     */
-    void setFrequency (const float freq) noexcept
+    void setFrequency (const FloatType freq) noexcept
     {
-        phaseIncrement = freq * twoPi<float> * samplingPeriod;
+        phaseIncrement = freq * twoPi<FloatType> * samplingPeriod;
     }
 
     /** Generate single sample
@@ -157,7 +163,7 @@ public:
     */
     float nextSample() noexcept
     {
-        const float p = phase.load();
+        const auto p = phase.load();
         phase = addModulo2Pi (phase, phaseIncrement);
         return ame::sin (p);
     }
@@ -165,19 +171,19 @@ public:
     /** Reset the phase to any value.    
         @param newPhase [0, 2pi]
     */
-    void resetPhase (float newPhase = 0.0f)
+    void resetPhase (const FloatType newPhase = 0.0f)
     {
-        assert (0 <= newPhase && newPhase <= twoPi<float>);
-        if (0.0f <= newPhase && newPhase <= twoPi<float>)
+        assert (0 <= newPhase && newPhase <= twoPi<FloatType>);
+        if (FloatType (0.0) <= newPhase && newPhase <= twoPi<FloatType>)
         {
             phase = newPhase;
         }
     }
 
 private:
-    float samplingPeriod; // 1 /sampleRate
-    std::atomic<float> phaseIncrement {};
-    std::atomic<float> phase {}; //<[0, 2pi]
+    FloatType samplingPeriod; // 1 /sampleRate
+    std::atomic<FloatType> phaseIncrement {};
+    std::atomic<FloatType> phase {}; //<[0, 2pi]
 
     // Disallow copy constructor and assignment
     SineOscillator (const SineOscillator&) = delete;
