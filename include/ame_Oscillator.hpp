@@ -13,6 +13,7 @@
 
 #include <array>
 #include <atomic>
+#include <cassert>
 #include <cmath>
 #include <numeric>
 #include <span>
@@ -57,24 +58,24 @@ constexpr std::array<float, N> makeSineTable()
     @tparam numSamples 
     @todo 動作確認、単体テスト、doxygenコメントの英語化
 */
-template <typename FloatType>
+template <typename FloatType, size_t N>
 class WavetableOscillator
 {
     static_assert (std::is_floating_point<FloatType>::value, "FloatType is must be floating point type.");
 
 public:
-    WavetableOscillator (std::span<FloatType> wavetable, const FloatType sampleRate)
+    explicit WavetableOscillator (std::span<FloatType, N> wavetable, const float sampleRate)
         : wavetable (wavetable)
     {
         tableIndex.changeLength (wavetable.size());
-        changeSampleRate (sampleRate);
+        setSampleRate (sampleRate);
     }
     ~WavetableOscillator() = default;
 
-    /** Change sampling rate.   
+    /** Set sampling rate.   
         @param sampleRate new sampling rate in Hz
    */
-    void changeSampleRate (const FloatType sampleRate)
+    void setSampleRate (const float sampleRate)
     {
         samplingPeriod = 1.0f / sampleRate;
     }
@@ -87,14 +88,14 @@ public:
         tableIndexIncrement = freq * tableIndex.getLength() * samplingPeriod;
     }
 
-    /** ウェーブテーブルのポインタ設定    
-        @param wavetablePtr 
-        @param numSamples number of wavetable samples
+    /** Set the wavetable.
+        @param newWavetable         
     */
-    void resetWavetable (const FloatType* wavetablePtr, const uint32_t numSamples)
+    void setWavetable (std::span<FloatType, N> newWavetable)
     {
-        wavetable = wavetablePtr;
-        tableIndex.changeLength (numSamples);
+        assert (! newWavetable.empty());
+        wavetable = newWavetable;
+        tableIndex.changeLength (wavetable.size());
     }
 
     /** Generate single sample
@@ -102,21 +103,21 @@ public:
     */
     FloatType nextSample() noexcept
     {
-        tableIndex += tableIndexIncrement;
-
         const uint32_t aIndex = std::floor (tableIndex.get());
         const uint32_t bIndex = std::floor (tableIndex.get (1));
         const float t = tableIndex.get() - aIndex;
         const auto a = wavetable[aIndex];
         const auto b = wavetable[bIndex];
+
+        tableIndex += tableIndexIncrement;
         return std::lerp (a, b, t);
     }
 
 private:
-    std::span<FloatType> wavetable;
+    std::span<FloatType, N> wavetable;
     Wrap<float> tableIndex {};
-    FloatType samplingPeriod {};
-    std::atomic<FloatType> tableIndexIncrement {};
+    float samplingPeriod {};
+    std::atomic<float> tableIndexIncrement {};
 };
 
 /** Sine wave oscillator.
@@ -129,12 +130,19 @@ public:
         @param sampleRate The sample rate that will be used for calclate the oscillator phase  increment.
         @param frequency Initial frequency
     */
-    SineOscillator (const float sampleRate, const float frequency)
-        : samplingPeriod (1.0f / sampleRate)
+    SineOscillator (const float sampleRate)
     {
-        setFrequency (frequency);
+        setSampleRate (sampleRate);
     }
     ~SineOscillator() = default;
+
+    /** Set sampling rate.   
+        @param sampleRate new sampling rate in Hz
+   */
+    void setSampleRate (const float sampleRate)
+    {
+        samplingPeriod = 1.0f / sampleRate;
+    }
 
     /** Set the sine wave frequency
         @param freq frequency in Hz
@@ -149,8 +157,9 @@ public:
     */
     float nextSample() noexcept
     {
+        const float p = phase.load();
         phase = addModulo2Pi (phase, phaseIncrement);
-        return ame::sin (phase);
+        return ame::sin (p);
     }
 
     /** Reset the phase to any value.    
@@ -166,7 +175,7 @@ public:
     }
 
 private:
-    const float samplingPeriod; // 1 /sampleRate
+    float samplingPeriod; // 1 /sampleRate
     std::atomic<float> phaseIncrement {};
     std::atomic<float> phase {}; //<[0, 2pi]
 

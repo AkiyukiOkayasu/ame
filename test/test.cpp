@@ -1,4 +1,5 @@
 #include "ame_AudioBuffer.hpp"
+#include "ame_Oscillator.hpp"
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include "Tamtam.hpp"
 #include "ame.hpp"
@@ -6,6 +7,7 @@
 
 #include <doctest/doctest.h>
 #include <iomanip>
+#include <span>
 
 using doctest::Approx;
 
@@ -149,6 +151,38 @@ TEST_CASE ("WaveTable")
         REQUIRE (ar[2] == Approx (0.0f).scale (1));
         REQUIRE (ar[3] == Approx (-1.0f).scale (1));
         REQUIRE (ar[4] == Approx (0.0f).scale (1));
+    }
+
+    SUBCASE ("sinetable")
+    {
+        constexpr std::array<float, 512> wavetable = ame::makeSineTable<512>();
+        CHECK_EQ (wavetable[0], Approx (0.0f).scale (1));
+        CHECK_GT (wavetable[127], 0.97f);
+        CHECK_LT (wavetable[256], 0.03f);
+        CHECK_GT (wavetable[256], -0.03f);
+        CHECK_LT (wavetable[384], -0.97f);
+        CHECK_EQ (wavetable[511], Approx (0.0f).scale (1));
+    }
+}
+
+TEST_CASE ("Oscillator")
+{
+    SUBCASE ("Wavetable")
+    {
+        constexpr std::array<float, 512> wavetable = ame::makeSineTable<512>();
+        ame::WavetableOscillator osc { std::span { wavetable }, 44100.0f };
+        CHECK_EQ (wavetable[0], Approx (0.0f).scale (1));
+        osc.setFrequency (440); //Hz
+        CHECK_EQ (osc.nextSample(), Approx (0.0f).scale (1));
+        CHECK_GT (osc.nextSample(), 0.001f);
+        CHECK_GT (osc.nextSample(), 0.01f);
+        CHECK_GT (osc.nextSample(), 0.1f);
+    }
+
+    SUBCASE ("SineWaveOsc")
+    {
+        ame::SineOscillator osc (44100.0f);
+        osc.setFrequency (440.0f);
     }
 }
 
