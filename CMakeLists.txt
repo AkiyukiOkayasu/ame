@@ -7,7 +7,7 @@ endif()
 if(MAIN_PROJECT)    
     message(STATUS "AME Unit test settings begin")
     cmake_minimum_required(VERSION 3.14)
-    project(ame VERSION 0.2.4 LANGUAGES CXX)
+    project(ame LANGUAGES CXX)
 
     include(CTest)
     include(FetchContent)
