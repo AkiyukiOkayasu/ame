@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>AME: ame::WavetableOscillator&lt; FloatType &gt; Class Template Reference</title>
+<title>AME: ame::WavetableOscillator&lt; FloatType, N &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -95,7 +95,7 @@ $(document).ready(function(){initNavTree('classame_1_1_wavetable_oscillator.html
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classame_1_1_wavetable_oscillator-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">ame::WavetableOscillator&lt; FloatType &gt; Class Template Reference</div>  </div>
+<div class="title">ame::WavetableOscillator&lt; FloatType, N &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -106,26 +106,25 @@ $(document).ready(function(){initNavTree('classame_1_1_wavetable_oscillator.html
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a2c9fe0f04928590a33351c8888840f18"><td class="memItemLeft" align="right" valign="top"><a id="a2c9fe0f04928590a33351c8888840f18"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>WavetableOscillator</b> (const FloatType *wavetable, const uint32_t numSamples, const FloatType sampleRate)</td></tr>
-<tr class="separator:a2c9fe0f04928590a33351c8888840f18"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af424624c28387b613d16dcd4529aafb3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_wavetable_oscillator.html#af424624c28387b613d16dcd4529aafb3">changeSampleRate</a> (const FloatType sampleRate)</td></tr>
-<tr class="memdesc:af424624c28387b613d16dcd4529aafb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change sampling rate.  <a href="classame_1_1_wavetable_oscillator.html#af424624c28387b613d16dcd4529aafb3">More...</a><br /></td></tr>
-<tr class="separator:af424624c28387b613d16dcd4529aafb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaadaa0b96eacb8b20f87ab7508055d68"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_wavetable_oscillator.html#aaadaa0b96eacb8b20f87ab7508055d68">setFrequency</a> (const float freq) noexcept</td></tr>
-<tr class="memdesc:aaadaa0b96eacb8b20f87ab7508055d68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the frequency.  <a href="classame_1_1_wavetable_oscillator.html#aaadaa0b96eacb8b20f87ab7508055d68">More...</a><br /></td></tr>
-<tr class="separator:aaadaa0b96eacb8b20f87ab7508055d68"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a59dbdd7b745a0bcbf2d3375c2759df17"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_wavetable_oscillator.html#a59dbdd7b745a0bcbf2d3375c2759df17">resetWavetable</a> (const FloatType *wavetablePtr, const uint32_t numSamples)</td></tr>
-<tr class="memdesc:a59dbdd7b745a0bcbf2d3375c2759df17"><td class="mdescLeft">&#160;</td><td class="mdescRight">ウェーブテーブルのポインタ設定 <br  />
-  <a href="classame_1_1_wavetable_oscillator.html#a59dbdd7b745a0bcbf2d3375c2759df17">More...</a><br /></td></tr>
-<tr class="separator:a59dbdd7b745a0bcbf2d3375c2759df17"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a28fbcc864f4d874aa8348385195636fd"><td class="memItemLeft" align="right" valign="top">FloatType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_wavetable_oscillator.html#a28fbcc864f4d874aa8348385195636fd">nextSample</a> () noexcept</td></tr>
-<tr class="memdesc:a28fbcc864f4d874aa8348385195636fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate single sample.  <a href="classame_1_1_wavetable_oscillator.html#a28fbcc864f4d874aa8348385195636fd">More...</a><br /></td></tr>
-<tr class="separator:a28fbcc864f4d874aa8348385195636fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a64c30c52c7df73d1472120b264902e"><td class="memItemLeft" align="right" valign="top"><a id="a9a64c30c52c7df73d1472120b264902e"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>WavetableOscillator</b> (std::span&lt; FloatType, N &gt; wavetable, const FloatTypeBase sampleRate)</td></tr>
+<tr class="separator:a9a64c30c52c7df73d1472120b264902e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2934c4b34a7e9ff452536ccf01318493"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_wavetable_oscillator.html#a2934c4b34a7e9ff452536ccf01318493">setSampleRate</a> (const FloatTypeBase sampleRate)</td></tr>
+<tr class="memdesc:a2934c4b34a7e9ff452536ccf01318493"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set sampling rate.  <a href="classame_1_1_wavetable_oscillator.html#a2934c4b34a7e9ff452536ccf01318493">More...</a><br /></td></tr>
+<tr class="separator:a2934c4b34a7e9ff452536ccf01318493"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b97d8754ae543a4678fc77a965036d5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_wavetable_oscillator.html#a5b97d8754ae543a4678fc77a965036d5">setFrequency</a> (const FloatTypeBase freq) noexcept</td></tr>
+<tr class="memdesc:a5b97d8754ae543a4678fc77a965036d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the frequency.  <a href="classame_1_1_wavetable_oscillator.html#a5b97d8754ae543a4678fc77a965036d5">More...</a><br /></td></tr>
+<tr class="separator:a5b97d8754ae543a4678fc77a965036d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae667602d3490457fb115bd8bb046cc33"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_wavetable_oscillator.html#ae667602d3490457fb115bd8bb046cc33">setWavetable</a> (std::span&lt; FloatType, N &gt; newWavetable)</td></tr>
+<tr class="memdesc:ae667602d3490457fb115bd8bb046cc33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the wavetable.  <a href="classame_1_1_wavetable_oscillator.html#ae667602d3490457fb115bd8bb046cc33">More...</a><br /></td></tr>
+<tr class="separator:ae667602d3490457fb115bd8bb046cc33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa48f9f5c765f916d623016b9922eabf7"><td class="memItemLeft" align="right" valign="top">FloatType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_wavetable_oscillator.html#aa48f9f5c765f916d623016b9922eabf7">nextSample</a> () noexcept</td></tr>
+<tr class="memdesc:aa48f9f5c765f916d623016b9922eabf7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate single sample.  <a href="classame_1_1_wavetable_oscillator.html#aa48f9f5c765f916d623016b9922eabf7">More...</a><br /></td></tr>
+<tr class="separator:aa48f9f5c765f916d623016b9922eabf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;typename FloatType&gt;<br />
-class ame::WavetableOscillator&lt; FloatType &gt;</h3>
+<div class="textblock"><h3>template&lt;typename FloatType, size_t N&gt;<br />
+class ame::WavetableOscillator&lt; FloatType, N &gt;</h3>
 
 <p>Wavetable oscillator. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
@@ -135,58 +134,21 @@ class ame::WavetableOscillator&lt; FloatType &gt;</h3>
   </table>
   </dd>
 </dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000003">Todo:</a></b></dt><dd>動作確認、単体テスト、doxygenコメントの英語化 </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000002">Todo:</a></b></dt><dd>動作確認、単体テスト、doxygenコメントの英語化 </dd></dl>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="af424624c28387b613d16dcd4529aafb3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af424624c28387b613d16dcd4529aafb3">&#9670;&nbsp;</a></span>changeSampleRate()</h2>
+<a id="aa48f9f5c765f916d623016b9922eabf7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa48f9f5c765f916d623016b9922eabf7">&#9670;&nbsp;</a></span>nextSample()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename FloatType &gt; </div>
+template&lt;typename FloatType , size_t N&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classame_1_1_wavetable_oscillator.html">ame::WavetableOscillator</a>&lt; FloatType &gt;::changeSampleRate </td>
-          <td>(</td>
-          <td class="paramtype">const FloatType&#160;</td>
-          <td class="paramname"><em>sampleRate</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Change sampling rate. </p>
-<p><br  />
- </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">sampleRate</td><td>new sampling rate in Hz </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a28fbcc864f4d874aa8348385195636fd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a28fbcc864f4d874aa8348385195636fd">&#9670;&nbsp;</a></span>nextSample()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename FloatType &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">FloatType <a class="el" href="classame_1_1_wavetable_oscillator.html">ame::WavetableOscillator</a>&lt; FloatType &gt;::nextSample </td>
+          <td class="memname">FloatType <a class="el" href="classame_1_1_wavetable_oscillator.html">ame::WavetableOscillator</a>&lt; FloatType, N &gt;::nextSample </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -204,69 +166,21 @@ template&lt;typename FloatType &gt; </div>
 
 </div>
 </div>
-<a id="a59dbdd7b745a0bcbf2d3375c2759df17"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a59dbdd7b745a0bcbf2d3375c2759df17">&#9670;&nbsp;</a></span>resetWavetable()</h2>
+<a id="a5b97d8754ae543a4678fc77a965036d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b97d8754ae543a4678fc77a965036d5">&#9670;&nbsp;</a></span>setFrequency()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename FloatType &gt; </div>
+template&lt;typename FloatType , size_t N&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classame_1_1_wavetable_oscillator.html">ame::WavetableOscillator</a>&lt; FloatType &gt;::resetWavetable </td>
+          <td class="memname">void <a class="el" href="classame_1_1_wavetable_oscillator.html">ame::WavetableOscillator</a>&lt; FloatType, N &gt;::setFrequency </td>
           <td>(</td>
-          <td class="paramtype">const FloatType *&#160;</td>
-          <td class="paramname"><em>wavetablePtr</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const uint32_t&#160;</td>
-          <td class="paramname"><em>numSamples</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>ウェーブテーブルのポインタ設定 <br  />
- </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">wavetablePtr</td><td></td></tr>
-    <tr><td class="paramname">numSamples</td><td>number of wavetable samples </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="aaadaa0b96eacb8b20f87ab7508055d68"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaadaa0b96eacb8b20f87ab7508055d68">&#9670;&nbsp;</a></span>setFrequency()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename FloatType &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classame_1_1_wavetable_oscillator.html">ame::WavetableOscillator</a>&lt; FloatType &gt;::setFrequency </td>
-          <td>(</td>
-          <td class="paramtype">const float&#160;</td>
+          <td class="paramtype">const FloatTypeBase&#160;</td>
           <td class="paramname"><em>freq</em></td><td>)</td>
           <td></td>
         </tr>
@@ -282,6 +196,80 @@ template&lt;typename FloatType &gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">freq</td><td>frequency in Hz </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2934c4b34a7e9ff452536ccf01318493"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2934c4b34a7e9ff452536ccf01318493">&#9670;&nbsp;</a></span>setSampleRate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename FloatType , size_t N&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classame_1_1_wavetable_oscillator.html">ame::WavetableOscillator</a>&lt; FloatType, N &gt;::setSampleRate </td>
+          <td>(</td>
+          <td class="paramtype">const FloatTypeBase&#160;</td>
+          <td class="paramname"><em>sampleRate</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set sampling rate. </p>
+<p><br  />
+ </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sampleRate</td><td>new sampling rate in Hz </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae667602d3490457fb115bd8bb046cc33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae667602d3490457fb115bd8bb046cc33">&#9670;&nbsp;</a></span>setWavetable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename FloatType , size_t N&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classame_1_1_wavetable_oscillator.html">ame::WavetableOscillator</a>&lt; FloatType, N &gt;::setWavetable </td>
+          <td>(</td>
+          <td class="paramtype">std::span&lt; FloatType, N &gt;&#160;</td>
+          <td class="paramname"><em>newWavetable</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the wavetable. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">newWavetable</td><td><br  />
+ </td></tr>
   </table>
   </dd>
 </dl>

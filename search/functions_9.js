@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['nextsample_169',['nextSample',['../classame_1_1_wavetable_oscillator.html#a28fbcc864f4d874aa8348385195636fd',1,'ame::WavetableOscillator::nextSample()'],['../classame_1_1_sine_oscillator.html#a2ac7efb5c12f0877f39b36cc56f02c41',1,'ame::SineOscillator::nextSample()']]],
-  ['noise_170',['noise',['../ame___random_8hpp.html#a1a67c3556492fe36f2e188b570829f85',1,'ame']]]
+  ['operator_2b_2b_191',['operator++',['../classame_1_1_wrap.html#a82f76b83e647c18e891b0f0740088d3c',1,'ame::Wrap::operator++()'],['../classame_1_1_wrap.html#af1eaa8c385b3fafa943adf2a1b8b45f9',1,'ame::Wrap::operator++(int)']]],
+  ['operator_2b_3d_192',['operator+=',['../classame_1_1_wrap.html#a69801c0654503b548c06887e6117b788',1,'ame::Wrap']]]
 ];

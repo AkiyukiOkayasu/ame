@@ -1,9 +1,11 @@
 <map id="include/ame_Util.hpp" name="include/ame_Util.hpp">
-<area shape="rect" id="node1" title="Some utilities functions." alt="" coords="146,5,289,32"/>
-<area shape="rect" id="node2" href="$ame___math_8hpp.html" title="Math functions." alt="" coords="5,80,112,107"/>
-<area shape="rect" id="node4" title=" " alt="" coords="108,155,191,181"/>
-<area shape="rect" id="node5" title=" " alt="" coords="187,80,248,107"/>
-<area shape="rect" id="node6" title=" " alt="" coords="273,80,338,107"/>
-<area shape="rect" id="node7" title=" " alt="" coords="362,80,427,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="25,155,84,181"/>
+<area shape="rect" id="node1" title="Some utilities functions." alt="" coords="254,5,397,32"/>
+<area shape="rect" id="node2" href="$ame___math_8hpp.html" title="Math functions." alt="" coords="76,80,183,107"/>
+<area shape="rect" id="node5" title=" " alt="" coords="184,155,267,181"/>
+<area shape="rect" id="node6" title=" " alt="" coords="260,80,311,107"/>
+<area shape="rect" id="node7" title=" " alt="" coords="335,80,396,107"/>
+<area shape="rect" id="node8" title=" " alt="" coords="421,80,486,107"/>
+<area shape="rect" id="node9" title=" " alt="" coords="510,80,575,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,155,64,181"/>
+<area shape="rect" id="node4" title=" " alt="" coords="88,155,160,181"/>
 </map>

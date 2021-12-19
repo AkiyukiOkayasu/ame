@@ -1,9 +1,9 @@
 var classame_1_1_slide =
 [
-    [ "Slide", "classame_1_1_slide.html#a0156c3f627d8be1a064891d5afe7af5b", null ],
-    [ "Slide", "classame_1_1_slide.html#ac538d8f438b0638f45146a9d7a581f51", null ],
-    [ "~Slide", "classame_1_1_slide.html#a3ce70333c86220723c1d98caf3fb9839", null ],
-    [ "process", "classame_1_1_slide.html#a9c31482318c3e70b569f38fb359bebd2", null ],
-    [ "setSlownessOfDecrease", "classame_1_1_slide.html#afa6fa39a7733fd23adbfbb6ef947daed", null ],
-    [ "setSlownessOfIncrease", "classame_1_1_slide.html#a3f414a26f6d2a008f46693cbb62988e6", null ]
+    [ "Slide", "classame_1_1_slide.html#a46c6660e1f8f41765ef791be6c5ad6f5", null ],
+    [ "Slide", "classame_1_1_slide.html#a6ff00e88fed8633ac3190d7dd8ccbd5f", null ],
+    [ "~Slide", "classame_1_1_slide.html#ab619a467a6862c6b07122eedb795ab3d", null ],
+    [ "process", "classame_1_1_slide.html#acc67bfb18cb121aaef228d2ab743a17a", null ],
+    [ "setSlownessOfDecrease", "classame_1_1_slide.html#a78420eee99ff1a625198980ec702b451", null ],
+    [ "setSlownessOfIncrease", "classame_1_1_slide.html#acccda788f50262bbd647183c6ec729f5", null ]
 ];

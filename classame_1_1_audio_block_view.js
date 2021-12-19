@@ -1,16 +1,14 @@
 var classame_1_1_audio_block_view =
 [
-    [ "AudioBlockView", "classame_1_1_audio_block_view.html#a469b867bada0bad24e603ea86ed7c9e1", null ],
-    [ "~AudioBlockView", "classame_1_1_audio_block_view.html#a2667ec4af8a4ae45b41e0abdcabece06", null ],
-    [ "addSample", "classame_1_1_audio_block_view.html#ae25cf9ee97949a5bb3902fdb25f9f449", null ],
-    [ "applyGain", "classame_1_1_audio_block_view.html#a1f5d801579029007ede551c6ac98d9f6", null ],
-    [ "clear", "classame_1_1_audio_block_view.html#a803054f0321e2f79bf47d924acc02e38", null ],
-    [ "getNumChannels", "classame_1_1_audio_block_view.html#a2876af1db4b669386ab5170e38d7a3a1", null ],
-    [ "getNumSamples", "classame_1_1_audio_block_view.html#a3ed14372b4f3854bc29e06005b0707bb", null ],
-    [ "getPeak", "classame_1_1_audio_block_view.html#a6beefbb8b07fc5bc5b62a9f4666a3eb8", null ],
-    [ "getReadPointer", "classame_1_1_audio_block_view.html#a0fb764e6f98f2a8ae3e1b235040f6c38", null ],
-    [ "getRMSLevel", "classame_1_1_audio_block_view.html#a08e06878b68219fd8fbcf3f74eb7772e", null ],
-    [ "getSize", "classame_1_1_audio_block_view.html#a5c695d126beb3585a6fd92a991d9802d", null ],
-    [ "getWritePointer", "classame_1_1_audio_block_view.html#a69dcc67a5e9fd4446b989a272d669730", null ],
-    [ "setSample", "classame_1_1_audio_block_view.html#aaa86614be16ad607689acb254b7ca86b", null ]
+    [ "AudioBlockView", "classame_1_1_audio_block_view.html#a4db9073fa24542608b044666f3a885ba", null ],
+    [ "~AudioBlockView", "classame_1_1_audio_block_view.html#a4e2230609fa4365cd5d40d8bbf31e1e4", null ],
+    [ "addSample", "classame_1_1_audio_block_view.html#ab99a4a2a04ceb9eb1da003658ea6a468", null ],
+    [ "applyGain", "classame_1_1_audio_block_view.html#ae5a5717682b8c3ee1ec1a4fd4a7713ed", null ],
+    [ "clear", "classame_1_1_audio_block_view.html#a907f2180f3ea9746cb4115a99cb351d3", null ],
+    [ "getNumChannels", "classame_1_1_audio_block_view.html#a124f244746474edf1dca2e2f85ad98a4", null ],
+    [ "getNumSamplesPerChannel", "classame_1_1_audio_block_view.html#afc201f67ef0f395695fbef8ac985fa11", null ],
+    [ "getPeak", "classame_1_1_audio_block_view.html#a72899fd26da50c9656024d9e8acffffb", null ],
+    [ "getRMSLevel", "classame_1_1_audio_block_view.html#a70b70ca8632cbec3bccf79426251138d", null ],
+    [ "setSample", "classame_1_1_audio_block_view.html#a1386f0c84312618a59a6d6c1a3c4f9f9", null ],
+    [ "view", "classame_1_1_audio_block_view.html#ad18b0cb336f190a40736cadd1eae3760", null ]
 ];

@@ -1,0 +1,15 @@
+<map id="include/ame_Biquad.hpp" name="include/ame_Biquad.hpp">
+<area shape="rect" id="node1" title="Biquad filter." alt="" coords="401,5,564,32"/>
+<area shape="rect" id="node2" href="$ame___audio_buffer_8hpp.html" title="Audio buffer." alt="" coords="279,80,425,107"/>
+<area shape="rect" id="node4" title=" " alt="" coords="5,155,56,181"/>
+<area shape="rect" id="node5" title=" " alt="" coords="81,155,146,181"/>
+<area shape="rect" id="node6" title=" " alt="" coords="520,155,579,181"/>
+<area shape="rect" id="node10" href="$ame___math_8hpp.html" title="Math functions." alt="" coords="520,80,627,107"/>
+<area shape="rect" id="node12" title=" " alt="" coords="699,155,781,181"/>
+<area shape="rect" id="node13" title=" " alt="" coords="701,80,763,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="245,155,320,181"/>
+<area shape="rect" id="node7" title=" " alt="" coords="345,155,410,181"/>
+<area shape="rect" id="node8" title=" " alt="" coords="435,155,496,181"/>
+<area shape="rect" id="node9" title=" " alt="" coords="171,155,221,181"/>
+<area shape="rect" id="node11" title=" " alt="" coords="603,155,675,181"/>
+</map>

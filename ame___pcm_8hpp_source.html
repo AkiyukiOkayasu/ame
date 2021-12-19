@@ -109,7 +109,7 @@ $(document).ready(function(){initNavTree('ame___pcm_8hpp_source.html',''); initR
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">namespace</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">// clang-format off</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">inline</span> constexpr int16_t ima_step_table[89] = { </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">inline</span> constexpr int16_t imaStepTable[89] = { </div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  7, 8, 9, 10, 11, 12, 13, 14, 16, 17, </div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  19, 21, 23, 25, 28, 31, 34, 37, 41, 45, </div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  50, 55, 60, 66, 73, 80, 88, 97, 107, 118, </div>
@@ -163,13 +163,13 @@ $(document).ready(function(){initNavTree('ame___pcm_8hpp_source.html',''); initR
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keyword">namespace</span></div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;{</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keyword">namespace </span>WavChunkId</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keyword">namespace </span>wavChunkId</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    {</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        constexpr <span class="keywordtype">char</span> fmt[] = <span class="stringliteral">&quot;fmt &quot;</span>;</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        constexpr <span class="keywordtype">char</span> PEAK[] = <span class="stringliteral">&quot;PEAK&quot;</span>;</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        constexpr <span class="keywordtype">char</span> fact[] = <span class="stringliteral">&quot;fact&quot;</span>;</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        constexpr <span class="keywordtype">char</span> data[] = <span class="stringliteral">&quot;data&quot;</span>;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    } <span class="comment">// namespace WavChunkId</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    } <span class="comment">// namespace wavChunkId</span></div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;} <span class="comment">// namespace</span></div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> BytePo<span class="keywordtype">int</span>erType&gt;</div>
@@ -280,19 +280,19 @@ $(document).ready(function(){initNavTree('ame___pcm_8hpp_source.html',''); initR
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        }</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        ChunkId chunkId = ChunkId::Unknown;</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        <span class="keywordflow">if</span> (stringComp (cid, WavChunkId::fmt, 4))</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        <span class="keywordflow">if</span> (stringComp (cid, wavChunkId::fmt, 4))</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        {</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;            chunkId = ChunkId::fmt;</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        }</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (stringComp (cid, WavChunkId::PEAK, 4))</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (stringComp (cid, wavChunkId::PEAK, 4))</div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        {</div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;            chunkId = ChunkId::PEAK;</div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        }</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (stringComp (cid, WavChunkId::fact, 4))</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (stringComp (cid, wavChunkId::fact, 4))</div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        {</div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;            chunkId = ChunkId::fact;</div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        }</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (stringComp (cid, WavChunkId::data, 4))</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (stringComp (cid, wavChunkId::data, 4))</div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        {</div>
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;            chunkId = ChunkId::data;</div>
 <div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        }</div>
@@ -356,15 +356,15 @@ $(document).ready(function(){initNavTree('ame___pcm_8hpp_source.html',''); initR
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        readPosition.store (0);</div>
 <div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    }</div>
 <div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160; </div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> FloatType&gt;</div>
-<div class="line"><a name="l00285"></a><span class="lineno"><a class="line" href="classame_1_1wav_1_1_wav_player.html#a9a01a22dc44b2babf010feeb59dc7ba7">  285</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classame_1_1wav_1_1_wav_player.html#a9a01a22dc44b2babf010feeb59dc7ba7">process</a> (<a class="code" href="classame_1_1_audio_block_view.html">AudioBlockView&lt;FloatType&gt;</a>&amp; block)</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> FloatType, <span class="keywordtype">size_t</span> N&gt;</div>
+<div class="line"><a name="l00285"></a><span class="lineno"><a class="line" href="classame_1_1wav_1_1_wav_player.html#a7fff5f3666a76beccca12f271e6d61fd">  285</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classame_1_1wav_1_1_wav_player.html#a7fff5f3666a76beccca12f271e6d61fd">process</a> (<a class="code" href="classame_1_1_audio_block_view.html">AudioBlockView&lt;FloatType, N&gt;</a>&amp; block)</div>
 <div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    {</div>
 <div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;        <span class="keywordflow">if</span> (playing.load() == <span class="keyword">false</span>)</div>
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;        {</div>
 <div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;            <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;        }</div>
 <div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160; </div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        assert (block.<a class="code" href="classame_1_1_audio_block_view.html#a2876af1db4b669386ab5170e38d7a3a1">getNumChannels</a>() &gt;= numChannels);</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        assert (block.<a class="code" href="classame_1_1_audio_block_view.html#a124f244746474edf1dca2e2f85ad98a4">getNumChannels</a>() &gt;= numChannels);</div>
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        assert (0 &lt;= readPosition.load() &amp;&amp; readPosition &lt;= numSamples);</div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160; </div>
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        <span class="keywordflow">switch</span> (formatTag)</div>
@@ -372,79 +372,80 @@ $(document).ready(function(){initNavTree('ame___pcm_8hpp_source.html',''); initR
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;            <span class="keywordflow">case</span> fmt::wFormatTag::PCM:</div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;            {</div>
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;                <span class="keyword">auto</span> offset = (bitRate / 8) * numChannels * readPosition.load();</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;                <span class="keywordflow">for</span> (uint_fast32_t samp = 0; samp &lt; block.<a class="code" href="classame_1_1_audio_block_view.html#a3ed14372b4f3854bc29e06005b0707bb">getNumSamples</a>(); ++samp)</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;                {</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;                    <span class="keywordflow">if</span> (readPosition + samp &gt;= numSamples)</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;                    {</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;                        readPosition.store (0);</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;                        playing.store (<span class="keyword">false</span>);</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;                        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;                    }</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160; </div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;                    <span class="keywordflow">for</span> (uint_fast32_t ch = 0; ch &lt; block.<a class="code" href="classame_1_1_audio_block_view.html#a2876af1db4b669386ab5170e38d7a3a1">getNumChannels</a>(); ++ch)</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;                    {</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;                        int32_t temp = 0;</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;                        <span class="keywordflow">for</span> (uint32_t b = 32 - bitRate; b &lt; 32; b += 8) <span class="comment">//bitDepthが16bitや24bitのときは下部を0埋めする.</span></div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;                        {</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;                            temp |= (dataChunk.data[offset] &lt;&lt; b);</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;                            ++offset;</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;                        }</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;                        <span class="keyword">const</span> FloatType s = <span class="keyword">static_cast&lt;</span>FloatType<span class="keyword">&gt;</span> (temp) / normalizeFactor; </div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;                        block.<a class="code" href="classame_1_1_audio_block_view.html#ae25cf9ee97949a5bb3902fdb25f9f449">addSample</a> (ch, samp, s);</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;                    }</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;                }</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                readPosition += block.<a class="code" href="classame_1_1_audio_block_view.html#a3ed14372b4f3854bc29e06005b0707bb">getNumSamples</a>();</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;            }</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;            <span class="keywordflow">case</span> fmt::wFormatTag::ImaAdpcm:</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;                assert (<span class="keyword">false</span>); </div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;            <span class="keywordflow">case</span> fmt::wFormatTag::IeeeFloat:</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;                assert (<span class="keyword">false</span>); </div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;            <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;                assert (<span class="keyword">false</span>); <span class="comment">//invalid wFormat</span></div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        }</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    }</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160; </div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    <span class="keywordtype">bool</span> isPlaying() const noexcept</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    {</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        <span class="keywordflow">return</span> playing.load();</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    }</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160; </div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    <span class="keywordtype">void</span> setLoopPlay (<span class="keywordtype">bool</span> loopPlay)</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    {</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;        loop.store (loopPlay);</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    }</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160; </div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    <span class="keywordtype">bool</span> isLooping() const noexcept</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    {</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;        <span class="keywordflow">return</span> loop.load();</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    }</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160; </div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    <span class="keyword">const</span> fmt::wFormatTag formatTag;</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;    <span class="keyword">const</span> uint32_t numChannels;</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    <span class="keyword">const</span> uint32_t numSamples;</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    <span class="keyword">const</span> uint16_t bitRate;</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    std::atomic&lt;uint32_t&gt; readPosition { 0 }; </div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    std::atomic&lt;bool&gt; loop { <span class="keyword">false</span> };</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    std::atomic&lt;bool&gt; playing { <span class="keyword">false</span> };</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    <span class="keyword">const</span> Chunk&lt;BytePointerType&gt; dataChunk;</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    <span class="keyword">static</span> constexpr uint32_t normalizeFactor = 2147483648; <span class="comment">//2^31</span></div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;};</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;} <span class="comment">// namespace ame::wav</span></div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;                <span class="keyword">const</span> <span class="keyword">auto</span> nSamp = block.<a class="code" href="classame_1_1_audio_block_view.html#afc201f67ef0f395695fbef8ac985fa11">getNumSamplesPerChannel</a>();</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;                <span class="keywordflow">for</span> (uint_fast32_t samp = 0; samp &lt; nSamp; ++samp)</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;                {</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;                    <span class="keywordflow">if</span> (readPosition + samp &gt;= numSamples)</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;                    {</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;                        readPosition.store (0);</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;                        playing.store (<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;                        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;                    }</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160; </div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;                    <span class="keywordflow">for</span> (uint_fast32_t ch = 0; ch &lt; block.<a class="code" href="classame_1_1_audio_block_view.html#a124f244746474edf1dca2e2f85ad98a4">getNumChannels</a>(); ++ch)</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;                    {</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;                        int32_t temp = 0;</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;                        <span class="keywordflow">for</span> (uint32_t b = 32 - bitRate; b &lt; 32; b += 8) <span class="comment">//bitDepthが16bitや24bitのときは下部を0埋めする.</span></div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;                        {</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;                            temp |= (dataChunk.data[offset] &lt;&lt; b);</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;                            ++offset;</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;                        }</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;                        <span class="keyword">const</span> FloatType s = <span class="keyword">static_cast&lt;</span>FloatType<span class="keyword">&gt;</span> (temp) / normalizeFactor; </div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;                        block.<a class="code" href="classame_1_1_audio_block_view.html#ab99a4a2a04ceb9eb1da003658ea6a468">addSample</a> (ch, samp, s);</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;                    }</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                }</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;                readPosition += nSamp;</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;            }</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;            <span class="keywordflow">case</span> fmt::wFormatTag::ImaAdpcm:</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;                assert (<span class="keyword">false</span>); </div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;            <span class="keywordflow">case</span> fmt::wFormatTag::IeeeFloat:</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;                assert (<span class="keyword">false</span>); </div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;            <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;                assert (<span class="keyword">false</span>); <span class="comment">//invalid wFormat</span></div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        }</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    }</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160; </div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    <span class="keywordtype">bool</span> isPlaying() const noexcept</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    {</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;        <span class="keywordflow">return</span> playing.load();</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    }</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160; </div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    <span class="keywordtype">void</span> setLoopPlay (<span class="keywordtype">bool</span> loopPlay)</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    {</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;        loop.store (loopPlay);</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    }</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160; </div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    <span class="keywordtype">bool</span> isLooping() const noexcept</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    {</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;        <span class="keywordflow">return</span> loop.load();</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    }</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160; </div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;    <span class="keyword">const</span> fmt::wFormatTag formatTag;</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    <span class="keyword">const</span> uint32_t numChannels;</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    <span class="keyword">const</span> uint32_t numSamples;</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    <span class="keyword">const</span> uint16_t bitRate;</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    std::atomic&lt;uint32_t&gt; readPosition { 0 }; </div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    std::atomic&lt;bool&gt; loop { <span class="keyword">false</span> };</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    std::atomic&lt;bool&gt; playing { <span class="keyword">false</span> };</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    <span class="keyword">const</span> Chunk&lt;BytePointerType&gt; dataChunk;</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    <span class="keyword">static</span> constexpr uint32_t normalizeFactor = 2147483648; <span class="comment">//2^31</span></div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;};</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;} <span class="comment">// namespace ame::wav</span></div>
 <div class="ttc" id="aame___audio_buffer_8hpp_html"><div class="ttname"><a href="ame___audio_buffer_8hpp.html">ame_AudioBuffer.hpp</a></div><div class="ttdoc">Audio buffer.</div></div>
 <div class="ttc" id="aame___string_8hpp_html"><div class="ttname"><a href="ame___string_8hpp.html">ame_String.hpp</a></div><div class="ttdoc">String utilities.</div></div>
-<div class="ttc" id="aclassame_1_1_audio_block_view_html"><div class="ttname"><a href="classame_1_1_audio_block_view.html">ame::AudioBlockView</a></div><div class="ttdoc">A lightweight data structure that stores a pointer to an audio buffer.</div><div class="ttdef"><b>Definition:</b> ame_AudioBuffer.hpp:30</div></div>
-<div class="ttc" id="aclassame_1_1_audio_block_view_html_a2876af1db4b669386ab5170e38d7a3a1"><div class="ttname"><a href="classame_1_1_audio_block_view.html#a2876af1db4b669386ab5170e38d7a3a1">ame::AudioBlockView::getNumChannels</a></div><div class="ttdeci">uint_fast32_t getNumChannels() const noexcept</div><div class="ttdoc">Returns the number of channels.</div><div class="ttdef"><b>Definition:</b> ame_AudioBuffer.hpp:47</div></div>
-<div class="ttc" id="aclassame_1_1_audio_block_view_html_a3ed14372b4f3854bc29e06005b0707bb"><div class="ttname"><a href="classame_1_1_audio_block_view.html#a3ed14372b4f3854bc29e06005b0707bb">ame::AudioBlockView::getNumSamples</a></div><div class="ttdeci">uint_fast32_t getNumSamples() const noexcept</div><div class="ttdoc">Returns the number of samples per channel.</div><div class="ttdef"><b>Definition:</b> ame_AudioBuffer.hpp:53</div></div>
-<div class="ttc" id="aclassame_1_1_audio_block_view_html_ae25cf9ee97949a5bb3902fdb25f9f449"><div class="ttname"><a href="classame_1_1_audio_block_view.html#ae25cf9ee97949a5bb3902fdb25f9f449">ame::AudioBlockView::addSample</a></div><div class="ttdeci">void addSample(const uint_fast32_t destChannel, const uint_fast32_t destSample, const SampleType valueToAdd)</div><div class="ttdoc">Add a value to a sample in the buffer.</div><div class="ttdef"><b>Definition:</b> ame_AudioBuffer.hpp:89</div></div>
+<div class="ttc" id="aclassame_1_1_audio_block_view_html"><div class="ttname"><a href="classame_1_1_audio_block_view.html">ame::AudioBlockView</a></div><div class="ttdoc">A lightweight data structure that stores a pointer to an audio buffer.</div><div class="ttdef"><b>Definition:</b> ame_AudioBuffer.hpp:32</div></div>
+<div class="ttc" id="aclassame_1_1_audio_block_view_html_a124f244746474edf1dca2e2f85ad98a4"><div class="ttname"><a href="classame_1_1_audio_block_view.html#a124f244746474edf1dca2e2f85ad98a4">ame::AudioBlockView::getNumChannels</a></div><div class="ttdeci">uint_fast32_t getNumChannels() const noexcept</div><div class="ttdoc">Returns the number of channels.</div><div class="ttdef"><b>Definition:</b> ame_AudioBuffer.hpp:49</div></div>
+<div class="ttc" id="aclassame_1_1_audio_block_view_html_ab99a4a2a04ceb9eb1da003658ea6a468"><div class="ttname"><a href="classame_1_1_audio_block_view.html#ab99a4a2a04ceb9eb1da003658ea6a468">ame::AudioBlockView::addSample</a></div><div class="ttdeci">void addSample(const uint_fast32_t destChannel, const uint_fast32_t destSample, const ElementType valueToAdd)</div><div class="ttdoc">Add a value to a sample in the buffer.</div><div class="ttdef"><b>Definition:</b> ame_AudioBuffer.hpp:77</div></div>
+<div class="ttc" id="aclassame_1_1_audio_block_view_html_afc201f67ef0f395695fbef8ac985fa11"><div class="ttname"><a href="classame_1_1_audio_block_view.html#afc201f67ef0f395695fbef8ac985fa11">ame::AudioBlockView::getNumSamplesPerChannel</a></div><div class="ttdeci">uint_fast32_t getNumSamplesPerChannel() const noexcept</div><div class="ttdoc">Returns the number of samples per channel.</div><div class="ttdef"><b>Definition:</b> ame_AudioBuffer.hpp:55</div></div>
 <div class="ttc" id="aclassame_1_1wav_1_1_wav_player_html"><div class="ttname"><a href="classame_1_1wav_1_1_wav_player.html">ame::wav::WavPlayer</a></div><div class="ttdef"><b>Definition:</b> ame_Pcm.hpp:241</div></div>
 <div class="ttc" id="aclassame_1_1wav_1_1_wav_player_html_a0f04960d875c9010d60eba739e147b43"><div class="ttname"><a href="classame_1_1wav_1_1_wav_player.html#a0f04960d875c9010d60eba739e147b43">ame::wav::WavPlayer::skipToHome</a></div><div class="ttdeci">void skipToHome()</div><div class="ttdoc">Skip to home.</div><div class="ttdef"><b>Definition:</b> ame_Pcm.hpp:275</div></div>
 <div class="ttc" id="aclassame_1_1wav_1_1_wav_player_html_a6fa88c7e04014a0d8e57a8a75fea6f56"><div class="ttname"><a href="classame_1_1wav_1_1_wav_player.html#a6fa88c7e04014a0d8e57a8a75fea6f56">ame::wav::WavPlayer::pause</a></div><div class="ttdeci">void pause()</div><div class="ttdoc">Pause.</div><div class="ttdef"><b>Definition:</b> ame_Pcm.hpp:269</div></div>
-<div class="ttc" id="aclassame_1_1wav_1_1_wav_player_html_a9a01a22dc44b2babf010feeb59dc7ba7"><div class="ttname"><a href="classame_1_1wav_1_1_wav_player.html#a9a01a22dc44b2babf010feeb59dc7ba7">ame::wav::WavPlayer::process</a></div><div class="ttdeci">void process(AudioBlockView&lt; FloatType &gt; &amp;block)</div><div class="ttdoc">Add to sound to AudioBlockView if playing.</div><div class="ttdef"><b>Definition:</b> ame_Pcm.hpp:285</div></div>
+<div class="ttc" id="aclassame_1_1wav_1_1_wav_player_html_a7fff5f3666a76beccca12f271e6d61fd"><div class="ttname"><a href="classame_1_1wav_1_1_wav_player.html#a7fff5f3666a76beccca12f271e6d61fd">ame::wav::WavPlayer::process</a></div><div class="ttdeci">void process(AudioBlockView&lt; FloatType, N &gt; &amp;block)</div><div class="ttdoc">Add to sound to AudioBlockView if playing.</div><div class="ttdef"><b>Definition:</b> ame_Pcm.hpp:285</div></div>
 <div class="ttc" id="aclassame_1_1wav_1_1_wav_player_html_ac4f0c6765d970c44a1a15eff72f484e1"><div class="ttname"><a href="classame_1_1wav_1_1_wav_player.html#ac4f0c6765d970c44a1a15eff72f484e1">ame::wav::WavPlayer::play</a></div><div class="ttdeci">void play()</div><div class="ttdoc">Start (or re-start) playing.</div><div class="ttdef"><b>Definition:</b> ame_Pcm.hpp:263</div></div>
 <div class="ttc" id="aclassame_1_1wav_1_1_wav_reader_html"><div class="ttname"><a href="classame_1_1wav_1_1_wav_reader.html">ame::wav::WavReader</a></div><div class="ttdef"><b>Definition:</b> ame_Pcm.hpp:88</div></div>
 <div class="ttc" id="aclassame_1_1wav_1_1_wav_reader_html_a3b69097125c9621d6ee105454761b08f"><div class="ttname"><a href="classame_1_1wav_1_1_wav_reader.html#a3b69097125c9621d6ee105454761b08f">ame::wav::WavReader::getNumSamples</a></div><div class="ttdeci">constexpr uint32_t getNumSamples() const noexcept</div><div class="ttdoc">return number of samples per channel.</div><div class="ttdef"><b>Definition:</b> ame_Pcm.hpp:162</div></div>

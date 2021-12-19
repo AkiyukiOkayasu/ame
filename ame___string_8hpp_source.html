@@ -98,22 +98,24 @@ $(document).ready(function(){initNavTree('ame___string_8hpp_source.html',''); in
 <a href="ame___string_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span>ame</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Char1Type, <span class="keyword">typename</span> Char2Type&gt;</div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="ame___string_8hpp.html#aa62edcc17c69b05efcb73b9fff71e1db">   14</a></span>&#160;constexpr <span class="keywordtype">bool</span> <a class="code" href="ame___string_8hpp.html#aa62edcc17c69b05efcb73b9fff71e1db">stringComp</a> (Char1Type str1, Char2Type str2, <span class="keyword">const</span> uint32_t size)</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordflow">for</span> (uint32_t i = 0; i &lt; size; ++i)</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keywordflow">if</span> (str1[i] != str2[i])</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        }</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    }</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;} <span class="comment">// namespace ame</span></div>
-<div class="ttc" id="aame___string_8hpp_html_aa62edcc17c69b05efcb73b9fff71e1db"><div class="ttname"><a href="ame___string_8hpp.html#aa62edcc17c69b05efcb73b9fff71e1db">ame::stringComp</a></div><div class="ttdeci">constexpr bool stringComp(Char1Type str1, Char2Type str2, const uint32_t size)</div><div class="ttdef"><b>Definition:</b> ame_String.hpp:14</div></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">namespace </span>ame</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Char1Type, <span class="keyword">typename</span> Char2Type&gt;</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="ame___string_8hpp.html#aa62edcc17c69b05efcb73b9fff71e1db">   16</a></span>&#160;constexpr <span class="keywordtype">bool</span> <a class="code" href="ame___string_8hpp.html#aa62edcc17c69b05efcb73b9fff71e1db">stringComp</a> (Char1Type str1, Char2Type str2, <span class="keyword">const</span> uint32_t size)</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordflow">for</span> (uint32_t i = 0; i &lt; size; ++i)</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordflow">if</span> (str1[i] != str2[i])</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        }</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    }</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;} <span class="comment">// namespace ame</span></div>
+<div class="ttc" id="aame___string_8hpp_html_aa62edcc17c69b05efcb73b9fff71e1db"><div class="ttname"><a href="ame___string_8hpp.html#aa62edcc17c69b05efcb73b9fff71e1db">ame::stringComp</a></div><div class="ttdeci">constexpr bool stringComp(Char1Type str1, Char2Type str2, const uint32_t size)</div><div class="ttdef"><b>Definition:</b> ame_String.hpp:16</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

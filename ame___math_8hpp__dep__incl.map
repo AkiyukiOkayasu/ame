@@ -1,8 +1,9 @@
 <map id="include/ame_Math.hpp" name="include/ame_Math.hpp">
-<area shape="rect" id="node1" title="Math functions." alt="" coords="142,5,294,32"/>
-<area shape="rect" id="node2" href="$ame_8hpp.html" title="main header file." alt="" coords="155,229,271,256"/>
-<area shape="rect" id="node3" href="$ame___delay_8hpp.html" title="Fractional delay." alt="" coords="136,155,290,181"/>
-<area shape="rect" id="node4" href="$ame___filter_8hpp.html" title="BiQuad filter." alt="" coords="29,80,181,107"/>
-<area shape="rect" id="node5" href="$ame___oscillator_8hpp.html" title=" " alt="" coords="365,155,544,181"/>
-<area shape="rect" id="node6" href="$ame___util_8hpp.html" title="Some utilities functions." alt="" coords="256,80,399,107"/>
+<area shape="rect" id="node1" title="Math functions." alt="" coords="145,5,297,32"/>
+<area shape="rect" id="node2" href="$ame_8hpp.html" title="main header file." alt="" coords="205,229,321,256"/>
+<area shape="rect" id="node3" href="$ame___biquad_8hpp.html" title="Biquad filter." alt="" coords="21,80,183,107"/>
+<area shape="rect" id="node4" href="$ame___delay_8hpp.html" title="Fractional delay." alt="" coords="91,155,246,181"/>
+<area shape="rect" id="node5" href="$ame___oscillator_8hpp.html" title=" " alt="" coords="270,155,449,181"/>
+<area shape="rect" id="node6" href="$ame___util_8hpp.html" title="Some utilities functions." alt="" coords="309,80,452,107"/>
+<area shape="rect" id="node7" href="$ame___reverb_8hpp.html" title="Reverb." alt="" coords="524,155,688,181"/>
 </map>

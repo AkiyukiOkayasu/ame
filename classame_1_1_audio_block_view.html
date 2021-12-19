@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>AME: ame::AudioBlockView&lt; SampleType &gt; Class Template Reference</title>
+<title>AME: ame::AudioBlockView&lt; ElementType, Extent &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -93,9 +93,10 @@ $(document).ready(function(){initNavTree('classame_1_1_audio_block_view.html',''
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="classame_1_1_audio_block_view-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">ame::AudioBlockView&lt; SampleType &gt; Class Template Reference</div>  </div>
+<div class="title">ame::AudioBlockView&lt; ElementType, Extent &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -106,84 +107,75 @@ $(document).ready(function(){initNavTree('classame_1_1_audio_block_view.html',''
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a469b867bada0bad24e603ea86ed7c9e1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_audio_block_view.html#a469b867bada0bad24e603ea86ed7c9e1">AudioBlockView</a> (SampleType *buffer, const uint_fast32_t numChannels, const uint_fast32_t numSamples) noexcept</td></tr>
-<tr class="memdesc:a469b867bada0bad24e603ea86ed7c9e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classame_1_1_audio_block_view.html#a469b867bada0bad24e603ea86ed7c9e1">More...</a><br /></td></tr>
-<tr class="separator:a469b867bada0bad24e603ea86ed7c9e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2876af1db4b669386ab5170e38d7a3a1"><td class="memItemLeft" align="right" valign="top"><a id="a2876af1db4b669386ab5170e38d7a3a1"></a>
-uint_fast32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_audio_block_view.html#a2876af1db4b669386ab5170e38d7a3a1">getNumChannels</a> () const noexcept</td></tr>
-<tr class="memdesc:a2876af1db4b669386ab5170e38d7a3a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of channels. <br /></td></tr>
-<tr class="separator:a2876af1db4b669386ab5170e38d7a3a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ed14372b4f3854bc29e06005b0707bb"><td class="memItemLeft" align="right" valign="top"><a id="a3ed14372b4f3854bc29e06005b0707bb"></a>
-uint_fast32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_audio_block_view.html#a3ed14372b4f3854bc29e06005b0707bb">getNumSamples</a> () const noexcept</td></tr>
-<tr class="memdesc:a3ed14372b4f3854bc29e06005b0707bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of samples per channel. <br /></td></tr>
-<tr class="separator:a3ed14372b4f3854bc29e06005b0707bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c695d126beb3585a6fd92a991d9802d"><td class="memItemLeft" align="right" valign="top">uint_fast32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_audio_block_view.html#a5c695d126beb3585a6fd92a991d9802d">getSize</a> () const noexcept</td></tr>
-<tr class="memdesc:a5c695d126beb3585a6fd92a991d9802d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the length of the buffer.  <a href="classame_1_1_audio_block_view.html#a5c695d126beb3585a6fd92a991d9802d">More...</a><br /></td></tr>
-<tr class="separator:a5c695d126beb3585a6fd92a991d9802d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa86614be16ad607689acb254b7ca86b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_audio_block_view.html#aaa86614be16ad607689acb254b7ca86b">setSample</a> (const uint_fast32_t destChannel, const uint_fast32_t destSample, const SampleType newValue)</td></tr>
-<tr class="memdesc:aaa86614be16ad607689acb254b7ca86b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a sample in the buffer.  <a href="classame_1_1_audio_block_view.html#aaa86614be16ad607689acb254b7ca86b">More...</a><br /></td></tr>
-<tr class="separator:aaa86614be16ad607689acb254b7ca86b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae25cf9ee97949a5bb3902fdb25f9f449"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_audio_block_view.html#ae25cf9ee97949a5bb3902fdb25f9f449">addSample</a> (const uint_fast32_t destChannel, const uint_fast32_t destSample, const SampleType valueToAdd)</td></tr>
-<tr class="memdesc:ae25cf9ee97949a5bb3902fdb25f9f449"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a value to a sample in the buffer.  <a href="classame_1_1_audio_block_view.html#ae25cf9ee97949a5bb3902fdb25f9f449">More...</a><br /></td></tr>
-<tr class="separator:ae25cf9ee97949a5bb3902fdb25f9f449"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0fb764e6f98f2a8ae3e1b235040f6c38"><td class="memItemLeft" align="right" valign="top">const SampleType *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_audio_block_view.html#a0fb764e6f98f2a8ae3e1b235040f6c38">getReadPointer</a> () const noexcept</td></tr>
-<tr class="memdesc:a0fb764e6f98f2a8ae3e1b235040f6c38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a read only pointer to interleaved audio buffer.  <a href="classame_1_1_audio_block_view.html#a0fb764e6f98f2a8ae3e1b235040f6c38">More...</a><br /></td></tr>
-<tr class="separator:a0fb764e6f98f2a8ae3e1b235040f6c38"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a69dcc67a5e9fd4446b989a272d669730"><td class="memItemLeft" align="right" valign="top">SampleType *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_audio_block_view.html#a69dcc67a5e9fd4446b989a272d669730">getWritePointer</a> () noexcept</td></tr>
-<tr class="memdesc:a69dcc67a5e9fd4446b989a272d669730"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a writeable pointer to interleaved audio buffer.  <a href="classame_1_1_audio_block_view.html#a69dcc67a5e9fd4446b989a272d669730">More...</a><br /></td></tr>
-<tr class="separator:a69dcc67a5e9fd4446b989a272d669730"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a803054f0321e2f79bf47d924acc02e38"><td class="memItemLeft" align="right" valign="top"><a id="a803054f0321e2f79bf47d924acc02e38"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_audio_block_view.html#a803054f0321e2f79bf47d924acc02e38">clear</a> ()</td></tr>
-<tr class="memdesc:a803054f0321e2f79bf47d924acc02e38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set all samples to 0. <br /></td></tr>
-<tr class="separator:a803054f0321e2f79bf47d924acc02e38"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1f5d801579029007ede551c6ac98d9f6"><td class="memItemLeft" align="right" valign="top"><a id="a1f5d801579029007ede551c6ac98d9f6"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_audio_block_view.html#a1f5d801579029007ede551c6ac98d9f6">applyGain</a> (const float gain)</td></tr>
-<tr class="memdesc:a1f5d801579029007ede551c6ac98d9f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies a gain multiple to all the audio data. <br /></td></tr>
-<tr class="separator:a1f5d801579029007ede551c6ac98d9f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6beefbb8b07fc5bc5b62a9f4666a3eb8"><td class="memItemLeft" align="right" valign="top">SampleType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_audio_block_view.html#a6beefbb8b07fc5bc5b62a9f4666a3eb8">getPeak</a> (const uint_fast32_t channel) const</td></tr>
-<tr class="memdesc:a6beefbb8b07fc5bc5b62a9f4666a3eb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the highest absolute sample value within a region of a channel.  <a href="classame_1_1_audio_block_view.html#a6beefbb8b07fc5bc5b62a9f4666a3eb8">More...</a><br /></td></tr>
-<tr class="separator:a6beefbb8b07fc5bc5b62a9f4666a3eb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a08e06878b68219fd8fbcf3f74eb7772e"><td class="memItemLeft" align="right" valign="top">SampleType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_audio_block_view.html#a08e06878b68219fd8fbcf3f74eb7772e">getRMSLevel</a> (const uint_fast32_t channel) const</td></tr>
-<tr class="memdesc:a08e06878b68219fd8fbcf3f74eb7772e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the root mean squared level for a region of a channel.  <a href="classame_1_1_audio_block_view.html#a08e06878b68219fd8fbcf3f74eb7772e">More...</a><br /></td></tr>
-<tr class="separator:a08e06878b68219fd8fbcf3f74eb7772e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4db9073fa24542608b044666f3a885ba"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_audio_block_view.html#a4db9073fa24542608b044666f3a885ba">AudioBlockView</a> (std::span&lt; ElementType, Extent &gt; view, const uint_fast32_t numChannels) noexcept</td></tr>
+<tr class="memdesc:a4db9073fa24542608b044666f3a885ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classame_1_1_audio_block_view.html#a4db9073fa24542608b044666f3a885ba">More...</a><br /></td></tr>
+<tr class="separator:a4db9073fa24542608b044666f3a885ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a124f244746474edf1dca2e2f85ad98a4"><td class="memItemLeft" align="right" valign="top"><a id="a124f244746474edf1dca2e2f85ad98a4"></a>
+uint_fast32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_audio_block_view.html#a124f244746474edf1dca2e2f85ad98a4">getNumChannels</a> () const noexcept</td></tr>
+<tr class="memdesc:a124f244746474edf1dca2e2f85ad98a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of channels. <br /></td></tr>
+<tr class="separator:a124f244746474edf1dca2e2f85ad98a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc201f67ef0f395695fbef8ac985fa11"><td class="memItemLeft" align="right" valign="top"><a id="afc201f67ef0f395695fbef8ac985fa11"></a>
+uint_fast32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_audio_block_view.html#afc201f67ef0f395695fbef8ac985fa11">getNumSamplesPerChannel</a> () const noexcept</td></tr>
+<tr class="memdesc:afc201f67ef0f395695fbef8ac985fa11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of samples per channel. <br /></td></tr>
+<tr class="separator:afc201f67ef0f395695fbef8ac985fa11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1386f0c84312618a59a6d6c1a3c4f9f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_audio_block_view.html#a1386f0c84312618a59a6d6c1a3c4f9f9">setSample</a> (const uint_fast32_t destChannel, const uint_fast32_t destSample, const ElementType newValue)</td></tr>
+<tr class="memdesc:a1386f0c84312618a59a6d6c1a3c4f9f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a sample in the buffer.  <a href="classame_1_1_audio_block_view.html#a1386f0c84312618a59a6d6c1a3c4f9f9">More...</a><br /></td></tr>
+<tr class="separator:a1386f0c84312618a59a6d6c1a3c4f9f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab99a4a2a04ceb9eb1da003658ea6a468"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_audio_block_view.html#ab99a4a2a04ceb9eb1da003658ea6a468">addSample</a> (const uint_fast32_t destChannel, const uint_fast32_t destSample, const ElementType valueToAdd)</td></tr>
+<tr class="memdesc:ab99a4a2a04ceb9eb1da003658ea6a468"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a value to a sample in the buffer.  <a href="classame_1_1_audio_block_view.html#ab99a4a2a04ceb9eb1da003658ea6a468">More...</a><br /></td></tr>
+<tr class="separator:ab99a4a2a04ceb9eb1da003658ea6a468"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a907f2180f3ea9746cb4115a99cb351d3"><td class="memItemLeft" align="right" valign="top"><a id="a907f2180f3ea9746cb4115a99cb351d3"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_audio_block_view.html#a907f2180f3ea9746cb4115a99cb351d3">clear</a> ()</td></tr>
+<tr class="memdesc:a907f2180f3ea9746cb4115a99cb351d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set all samples to 0. <br /></td></tr>
+<tr class="separator:a907f2180f3ea9746cb4115a99cb351d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5a5717682b8c3ee1ec1a4fd4a7713ed"><td class="memItemLeft" align="right" valign="top"><a id="ae5a5717682b8c3ee1ec1a4fd4a7713ed"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_audio_block_view.html#ae5a5717682b8c3ee1ec1a4fd4a7713ed">applyGain</a> (const float gain)</td></tr>
+<tr class="memdesc:ae5a5717682b8c3ee1ec1a4fd4a7713ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies a gain multiple to all the audio data. <br /></td></tr>
+<tr class="separator:ae5a5717682b8c3ee1ec1a4fd4a7713ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72899fd26da50c9656024d9e8acffffb"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_audio_block_view.html#a72899fd26da50c9656024d9e8acffffb">getPeak</a> (const uint_fast32_t channel) const</td></tr>
+<tr class="memdesc:a72899fd26da50c9656024d9e8acffffb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the highest absolute sample value within a region of a channel.  <a href="classame_1_1_audio_block_view.html#a72899fd26da50c9656024d9e8acffffb">More...</a><br /></td></tr>
+<tr class="separator:a72899fd26da50c9656024d9e8acffffb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70b70ca8632cbec3bccf79426251138d"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_audio_block_view.html#a70b70ca8632cbec3bccf79426251138d">getRMSLevel</a> (const uint_fast32_t channel) const</td></tr>
+<tr class="memdesc:a70b70ca8632cbec3bccf79426251138d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the root mean squared level for a region of a channel.  <a href="classame_1_1_audio_block_view.html#a70b70ca8632cbec3bccf79426251138d">More...</a><br /></td></tr>
+<tr class="separator:a70b70ca8632cbec3bccf79426251138d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:ad18b0cb336f190a40736cadd1eae3760"><td class="memItemLeft" align="right" valign="top"><a id="ad18b0cb336f190a40736cadd1eae3760"></a>
+std::span&lt; ElementType, Extent &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>view</b></td></tr>
+<tr class="separator:ad18b0cb336f190a40736cadd1eae3760"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;typename SampleType&gt;<br />
-class ame::AudioBlockView&lt; SampleType &gt;</h3>
+<div class="textblock"><h3>template&lt;class ElementType, size_t Extent&gt;<br />
+class ame::AudioBlockView&lt; ElementType, Extent &gt;</h3>
 
 <p>A lightweight data structure that stores a pointer to an audio buffer. </p>
 <p>This class doesn't own any of the data which it points to, it's simply a view into data that is owned elsewhere. You can construct one from some raw data that you've allocated yourself, or give it an <a class="el" href="classame_1_1_audio_buffer.html" title="An audio buffer that supports multiple channels whose size is determined at compile time.">AudioBuffer</a> which it can refer to, but in all cases the user is responsible for making sure that the data doesn't get deleted while there's still an AudioBlock using it. <br  />
  </p><dl class="section attention"><dt>Attention</dt><dd>Channel order is interleaved. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classame_1_1_audio_buffer.html" title="An audio buffer that supports multiple channels whose size is determined at compile time.">AudioBuffer</a> </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a469b867bada0bad24e603ea86ed7c9e1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a469b867bada0bad24e603ea86ed7c9e1">&#9670;&nbsp;</a></span>AudioBlockView()</h2>
+<a id="a4db9073fa24542608b044666f3a885ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4db9073fa24542608b044666f3a885ba">&#9670;&nbsp;</a></span>AudioBlockView()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename SampleType &gt; </div>
+template&lt;class ElementType , size_t Extent&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classame_1_1_audio_block_view.html">ame::AudioBlockView</a>&lt; SampleType &gt;::<a class="el" href="classame_1_1_audio_block_view.html">AudioBlockView</a> </td>
+          <td class="memname"><a class="el" href="classame_1_1_audio_block_view.html">ame::AudioBlockView</a>&lt; ElementType, Extent &gt;::<a class="el" href="classame_1_1_audio_block_view.html">AudioBlockView</a> </td>
           <td>(</td>
-          <td class="paramtype">SampleType *&#160;</td>
-          <td class="paramname"><em>buffer</em>, </td>
+          <td class="paramtype">std::span&lt; ElementType, Extent &gt;&#160;</td>
+          <td class="paramname"><em>view</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const uint_fast32_t&#160;</td>
-          <td class="paramname"><em>numChannels</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const uint_fast32_t&#160;</td>
-          <td class="paramname"><em>numSamples</em>&#160;</td>
+          <td class="paramname"><em>numChannels</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -201,7 +193,7 @@ template&lt;typename SampleType &gt; </div>
 <p>Constructor. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">buffer</td><td>Interleaved audio buffer. </td></tr>
+    <tr><td class="paramname">buffer</td><td>Interleaved audio buffer view. </td></tr>
     <tr><td class="paramname">numChannels</td><td>the number of channels. </td></tr>
     <tr><td class="paramname">numSamples</td><td>the number of samples in each of the buffer's channels. <br  />
  </td></tr>
@@ -213,19 +205,19 @@ template&lt;typename SampleType &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ae25cf9ee97949a5bb3902fdb25f9f449"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae25cf9ee97949a5bb3902fdb25f9f449">&#9670;&nbsp;</a></span>addSample()</h2>
+<a id="ab99a4a2a04ceb9eb1da003658ea6a468"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab99a4a2a04ceb9eb1da003658ea6a468">&#9670;&nbsp;</a></span>addSample()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename SampleType &gt; </div>
+template&lt;class ElementType , size_t Extent&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classame_1_1_audio_block_view.html">ame::AudioBlockView</a>&lt; SampleType &gt;::addSample </td>
+          <td class="memname">void <a class="el" href="classame_1_1_audio_block_view.html">ame::AudioBlockView</a>&lt; ElementType, Extent &gt;::addSample </td>
           <td>(</td>
           <td class="paramtype">const uint_fast32_t&#160;</td>
           <td class="paramname"><em>destChannel</em>, </td>
@@ -239,7 +231,7 @@ template&lt;typename SampleType &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const SampleType&#160;</td>
+          <td class="paramtype">const ElementType&#160;</td>
           <td class="paramname"><em>valueToAdd</em>&#160;</td>
         </tr>
         <tr>
@@ -267,19 +259,19 @@ template&lt;typename SampleType &gt; </div>
 
 </div>
 </div>
-<a id="a6beefbb8b07fc5bc5b62a9f4666a3eb8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6beefbb8b07fc5bc5b62a9f4666a3eb8">&#9670;&nbsp;</a></span>getPeak()</h2>
+<a id="a72899fd26da50c9656024d9e8acffffb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72899fd26da50c9656024d9e8acffffb">&#9670;&nbsp;</a></span>getPeak()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename SampleType &gt; </div>
+template&lt;class ElementType , size_t Extent&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">SampleType <a class="el" href="classame_1_1_audio_block_view.html">ame::AudioBlockView</a>&lt; SampleType &gt;::getPeak </td>
+          <td class="memname">float <a class="el" href="classame_1_1_audio_block_view.html">ame::AudioBlockView</a>&lt; ElementType, Extent &gt;::getPeak </td>
           <td>(</td>
           <td class="paramtype">const uint_fast32_t&#160;</td>
           <td class="paramname"><em>channel</em></td><td>)</td>
@@ -305,49 +297,19 @@ template&lt;typename SampleType &gt; </div>
 
 </div>
 </div>
-<a id="a0fb764e6f98f2a8ae3e1b235040f6c38"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0fb764e6f98f2a8ae3e1b235040f6c38">&#9670;&nbsp;</a></span>getReadPointer()</h2>
+<a id="a70b70ca8632cbec3bccf79426251138d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70b70ca8632cbec3bccf79426251138d">&#9670;&nbsp;</a></span>getRMSLevel()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename SampleType &gt; </div>
+template&lt;class ElementType , size_t Extent&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const SampleType* <a class="el" href="classame_1_1_audio_block_view.html">ame::AudioBlockView</a>&lt; SampleType &gt;::getReadPointer </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns a read only pointer to interleaved audio buffer. </p>
-<dl class="section return"><dt>Returns</dt><dd>const float* interleaved samples </dd></dl>
-
-</div>
-</div>
-<a id="a08e06878b68219fd8fbcf3f74eb7772e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a08e06878b68219fd8fbcf3f74eb7772e">&#9670;&nbsp;</a></span>getRMSLevel()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename SampleType &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">SampleType <a class="el" href="classame_1_1_audio_block_view.html">ame::AudioBlockView</a>&lt; SampleType &gt;::getRMSLevel </td>
+          <td class="memname">float <a class="el" href="classame_1_1_audio_block_view.html">ame::AudioBlockView</a>&lt; ElementType, Extent &gt;::getRMSLevel </td>
           <td>(</td>
           <td class="paramtype">const uint_fast32_t&#160;</td>
           <td class="paramname"><em>channel</em></td><td>)</td>
@@ -372,80 +334,19 @@ template&lt;typename SampleType &gt; </div>
 
 </div>
 </div>
-<a id="a5c695d126beb3585a6fd92a991d9802d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5c695d126beb3585a6fd92a991d9802d">&#9670;&nbsp;</a></span>getSize()</h2>
+<a id="a1386f0c84312618a59a6d6c1a3c4f9f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1386f0c84312618a59a6d6c1a3c4f9f9">&#9670;&nbsp;</a></span>setSample()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename SampleType &gt; </div>
+template&lt;class ElementType , size_t Extent&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint_fast32_t <a class="el" href="classame_1_1_audio_block_view.html">ame::AudioBlockView</a>&lt; SampleType &gt;::getSize </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns the length of the buffer. </p>
-<p><br  />
- </p><dl class="section attention"><dt>Attention</dt><dd>This is the total number of samples allocated to the buffer. It is NOT the number of samples per channel. </dd></dl>
-
-</div>
-</div>
-<a id="a69dcc67a5e9fd4446b989a272d669730"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a69dcc67a5e9fd4446b989a272d669730">&#9670;&nbsp;</a></span>getWritePointer()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename SampleType &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">SampleType* <a class="el" href="classame_1_1_audio_block_view.html">ame::AudioBlockView</a>&lt; SampleType &gt;::getWritePointer </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns a writeable pointer to interleaved audio buffer. </p>
-<dl class="section return"><dt>Returns</dt><dd>float* interleaved audio buffer </dd></dl>
-
-</div>
-</div>
-<a id="aaa86614be16ad607689acb254b7ca86b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaa86614be16ad607689acb254b7ca86b">&#9670;&nbsp;</a></span>setSample()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename SampleType &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classame_1_1_audio_block_view.html">ame::AudioBlockView</a>&lt; SampleType &gt;::setSample </td>
+          <td class="memname">void <a class="el" href="classame_1_1_audio_block_view.html">ame::AudioBlockView</a>&lt; ElementType, Extent &gt;::setSample </td>
           <td>(</td>
           <td class="paramtype">const uint_fast32_t&#160;</td>
           <td class="paramname"><em>destChannel</em>, </td>
@@ -459,7 +360,7 @@ template&lt;typename SampleType &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const SampleType&#160;</td>
+          <td class="paramtype">const ElementType&#160;</td>
           <td class="paramname"><em>newValue</em>&#160;</td>
         </tr>
         <tr>
@@ -475,14 +376,10 @@ template&lt;typename SampleType &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Sets a sample in the buffer. </p>
+<p>Set a sample in the buffer. </p>
 <p><br  />
  </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">destChannel</td><td></td></tr>
-    <tr><td class="paramname">destSample</td><td></td></tr>
-    <tr><td class="paramname">value</td><td>Set a sample in the buffer. <br  />
- </td></tr>
     <tr><td class="paramname">destChannel</td><td></td></tr>
     <tr><td class="paramname">destSample</td><td></td></tr>
     <tr><td class="paramname">value</td><td><br  />

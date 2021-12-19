@@ -1,12 +1,12 @@
 var ame___math_8hpp =
 [
-    [ "cosf", "ame___math_8hpp.html#a11094c0a66ad99bcdbd41a40627dc3b0", null ],
-    [ "lerp", "ame___math_8hpp.html#ab54fe577a7c14cfab3820540e56e05a7", null ],
-    [ "sinf", "ame___math_8hpp.html#a93cf457a4c18fc460bf669537e459f90", null ],
-    [ "euler", "ame___math_8hpp.html#a76ccbcf90dfaa7c7d153ba88e47ba44a", null ],
-    [ "halfPi", "ame___math_8hpp.html#a1cf9d11df53d8979c2bdc4d948d9e884", null ],
-    [ "pi", "ame___math_8hpp.html#ac0dccbff14912b3a0c5fc01e52da16a9", null ],
-    [ "sqrt1_2", "ame___math_8hpp.html#a222b08222c89893a68486d989b4aa99e", null ],
-    [ "sqrt2", "ame___math_8hpp.html#a95950004da17b850191a35a5ae2e2775", null ],
-    [ "twoPi", "ame___math_8hpp.html#ac75fe0229f8e610a324d8baf2ada26fb", null ]
+    [ "cos", "ame___math_8hpp.html#adea25ce1911894aba888279b4474a8ef", null ],
+    [ "cos", "ame___math_8hpp.html#a94dc9019e3b2a7df78f4141dfe77d001", null ],
+    [ "sin", "ame___math_8hpp.html#a20c2e263673378c1647a84c9d01adcb2", null ],
+    [ "sin", "ame___math_8hpp.html#ac7efb0db07c77c7b1cb6f1f76e6ca98e", null ],
+    [ "halfPi", "ame___math_8hpp.html#a9b3c2137ce9d299388750c7731ffbe30", null ],
+    [ "invSqrt2", "ame___math_8hpp.html#a4dbee2ada22ee0a007493899a8ba6519", null ],
+    [ "pi", "ame___math_8hpp.html#a293360c6858860117a43a7afe494965f", null ],
+    [ "sqrt2", "ame___math_8hpp.html#a51ccce317b47448c3d8bde35e5c4e299", null ],
+    [ "twoPi", "ame___math_8hpp.html#a1afb257f21a588aaae40191d0e7c2496", null ]
 ];

@@ -98,53 +98,55 @@ $(document).ready(function(){initNavTree('ame___random_8hpp_source.html',''); in
 <a href="ame___random_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">namespace</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">inline</span> uint32_t s[4] = { 123, 234, 345, 97 };    <span class="comment">//random seed</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">inline</span> constexpr <span class="keywordtype">double</span> DOUBLE_UNIT = 0x1.0p-53; <span class="comment">// 1.0f / (1 &lt;&lt; 53)</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">inline</span> constexpr <span class="keywordtype">float</span> FLOAT_UNIT = 0x1.0p-24f;  <span class="comment">// 1.0f / (1 &lt;&lt; 24)</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">inline</span> constexpr uint32_t rotl (<span class="keyword">const</span> uint32_t x, <span class="keywordtype">int</span> k)</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">return</span> (x &lt;&lt; k) | (x &gt;&gt; (32 - k));</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">inline</span> uint32_t next (<span class="keywordtype">void</span>)</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">const</span> uint32_t result = s[0] + s[3];</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">const</span> uint32_t t = s[1] &lt;&lt; 9;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">namespace</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">inline</span> uint32_t s[4] = { 123, 234, 345, 97 };    <span class="comment">//random seed</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">inline</span> constexpr <span class="keywordtype">double</span> DOUBLE_UNIT = 0x1.0p-53; <span class="comment">// 1.0f / (1 &lt;&lt; 53)</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">inline</span> constexpr <span class="keywordtype">float</span> FLOAT_UNIT = 0x1.0p-24f;  <span class="comment">// 1.0f / (1 &lt;&lt; 24)</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">inline</span> constexpr uint32_t rotl (<span class="keyword">const</span> uint32_t x, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">return</span> (x &lt;&lt; k) | (x &gt;&gt; (32 - k));</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">inline</span> uint32_t next (<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">const</span> uint32_t result = s[0] + s[3];</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    s[2] ^= s[0];</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    s[3] ^= s[1];</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    s[1] ^= s[2];</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    s[0] ^= s[3];</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    s[2] ^= t;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">const</span> uint32_t t = s[1] &lt;&lt; 9;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    s[2] ^= s[0];</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    s[3] ^= s[1];</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    s[1] ^= s[2];</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    s[0] ^= s[3];</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    s[3] = rotl (s[3], 11);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    s[2] ^= t;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;} <span class="comment">// namespace</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">namespace </span>ame</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;{</div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="ame___random_8hpp.html#ab3a0c0c4f501f46a46bb1430150e9373">   50</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">float</span> <a class="code" href="ame___random_8hpp.html#ab3a0c0c4f501f46a46bb1430150e9373">random</a>()</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">return</span> (next() &gt;&gt; 8) * FLOAT_UNIT;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="ame___random_8hpp.html#a1a67c3556492fe36f2e188b570829f85">   60</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">float</span> <a class="code" href="ame___random_8hpp.html#a1a67c3556492fe36f2e188b570829f85">noise</a>()</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;{</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">return</span> (next() &gt;&gt; 7) * FLOAT_UNIT - 1.0f; <span class="comment">//[-1, 1]</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">/* もうひとつの方法. ベンチマークを取って比べたい</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">    return (static_cast&lt;int32_t&gt;(next()) &gt;&gt; 8) * 0x1.0p-23f;//[-1, 1]</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">    */</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;} <span class="comment">// namespace ame</span></div>
-<div class="ttc" id="aame___random_8hpp_html_a1a67c3556492fe36f2e188b570829f85"><div class="ttname"><a href="ame___random_8hpp.html#a1a67c3556492fe36f2e188b570829f85">ame::noise</a></div><div class="ttdeci">float noise()</div><div class="ttdoc">white noise.</div><div class="ttdef"><b>Definition:</b> ame_Random.hpp:60</div></div>
-<div class="ttc" id="aame___random_8hpp_html_ab3a0c0c4f501f46a46bb1430150e9373"><div class="ttname"><a href="ame___random_8hpp.html#ab3a0c0c4f501f46a46bb1430150e9373">ame::random</a></div><div class="ttdeci">float random()</div><div class="ttdoc">random.</div><div class="ttdef"><b>Definition:</b> ame_Random.hpp:50</div></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    s[3] = rotl (s[3], 11);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;} <span class="comment">// namespace</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">namespace </span>ame</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;{</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="ame___random_8hpp.html#ab3a0c0c4f501f46a46bb1430150e9373">   52</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">float</span> <a class="code" href="ame___random_8hpp.html#ab3a0c0c4f501f46a46bb1430150e9373">random</a>()</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;{</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">return</span> (next() &gt;&gt; 8) * FLOAT_UNIT;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="ame___random_8hpp.html#a1a67c3556492fe36f2e188b570829f85">   62</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">float</span> <a class="code" href="ame___random_8hpp.html#a1a67c3556492fe36f2e188b570829f85">noise</a>()</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;{</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">return</span> (next() &gt;&gt; 7) * FLOAT_UNIT - 1.0f; <span class="comment">//[-1, 1]</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">/* もうひとつの方法. ベンチマークを取って比べたい</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">    return (static_cast&lt;int32_t&gt;(next()) &gt;&gt; 8) * 0x1.0p-23f;//[-1, 1]</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">    */</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;} <span class="comment">// namespace ame</span></div>
+<div class="ttc" id="aame___random_8hpp_html_a1a67c3556492fe36f2e188b570829f85"><div class="ttname"><a href="ame___random_8hpp.html#a1a67c3556492fe36f2e188b570829f85">ame::noise</a></div><div class="ttdeci">float noise()</div><div class="ttdoc">white noise.</div><div class="ttdef"><b>Definition:</b> ame_Random.hpp:62</div></div>
+<div class="ttc" id="aame___random_8hpp_html_ab3a0c0c4f501f46a46bb1430150e9373"><div class="ttname"><a href="ame___random_8hpp.html#ab3a0c0c4f501f46a46bb1430150e9373">ame::random</a></div><div class="ttdeci">float random()</div><div class="ttdoc">random.</div><div class="ttdef"><b>Definition:</b> ame_Random.hpp:52</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

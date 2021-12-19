@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['halfpi_198',['halfPi',['../ame___math_8hpp.html#a1cf9d11df53d8979c2bdc4d948d9e884',1,'ame']]]
+  ['freezemode_224',['freezeMode',['../structame_1_1dsp_1_1_freeverb_1_1_parameters.html#adea44fcfa87a13d58fee127661bc4e5c',1,'ame::dsp::Freeverb::Parameters']]]
 ];

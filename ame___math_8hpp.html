@@ -102,15 +102,17 @@ $(document).ready(function(){initNavTree('ame___math_8hpp.html',''); initResizab
 <p>Math functions.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;cmath&gt;</code><br />
+<code>#include &lt;numbers&gt;</code><br />
 <code>#include &lt;type_traits&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for ame_Math.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="ame___math_8hpp__incl.png" border="0" usemap="#ainclude_2ame___math_8hpp" alt=""/></div>
 <map name="ainclude_2ame___math_8hpp" id="ainclude_2ame___math_8hpp">
-<area shape="rect" title="Math functions." alt="" coords="5,5,157,32"/>
+<area shape="rect" title="Math functions." alt="" coords="48,5,200,32"/>
 <area shape="rect" title=" " alt="" coords="5,80,64,107"/>
-<area shape="rect" title=" " alt="" coords="88,80,171,107"/>
+<area shape="rect" title=" " alt="" coords="88,80,160,107"/>
+<area shape="rect" title=" " alt="" coords="184,80,267,107"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -118,12 +120,13 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="ame___math_8hpp__dep__incl.png" border="0" usemap="#ainclude_2ame___math_8hppdep" alt=""/></div>
 <map name="ainclude_2ame___math_8hppdep" id="ainclude_2ame___math_8hppdep">
-<area shape="rect" title="Math functions." alt="" coords="142,5,294,32"/>
-<area shape="rect" href="ame_8hpp.html" title="main header file." alt="" coords="155,229,271,256"/>
-<area shape="rect" href="ame___delay_8hpp.html" title="Fractional delay." alt="" coords="136,155,290,181"/>
-<area shape="rect" href="ame___filter_8hpp.html" title="BiQuad filter." alt="" coords="29,80,181,107"/>
-<area shape="rect" href="ame___oscillator_8hpp.html" title=" " alt="" coords="365,155,544,181"/>
-<area shape="rect" href="ame___util_8hpp.html" title="Some utilities functions." alt="" coords="256,80,399,107"/>
+<area shape="rect" title="Math functions." alt="" coords="145,5,297,32"/>
+<area shape="rect" href="ame_8hpp.html" title="main header file." alt="" coords="205,229,321,256"/>
+<area shape="rect" href="ame___biquad_8hpp.html" title="Biquad filter." alt="" coords="21,80,183,107"/>
+<area shape="rect" href="ame___delay_8hpp.html" title="Fractional delay." alt="" coords="91,155,246,181"/>
+<area shape="rect" href="ame___oscillator_8hpp.html" title=" " alt="" coords="270,155,449,181"/>
+<area shape="rect" href="ame___util_8hpp.html" title="Some utilities functions." alt="" coords="309,80,452,107"/>
+<area shape="rect" href="ame___reverb_8hpp.html" title="Reverb." alt="" coords="524,155,688,181"/>
 </map>
 </div>
 </div>
@@ -131,42 +134,46 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a93cf457a4c18fc460bf669537e459f90"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ame___math_8hpp.html#a93cf457a4c18fc460bf669537e459f90">ame::sinf</a> (float x)</td></tr>
-<tr class="memdesc:a93cf457a4c18fc460bf669537e459f90"><td class="mdescLeft">&#160;</td><td class="mdescRight">sinf.  <a href="ame___math_8hpp.html#a93cf457a4c18fc460bf669537e459f90">More...</a><br /></td></tr>
-<tr class="separator:a93cf457a4c18fc460bf669537e459f90"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a11094c0a66ad99bcdbd41a40627dc3b0"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ame___math_8hpp.html#a11094c0a66ad99bcdbd41a40627dc3b0">ame::cosf</a> (float x)</td></tr>
-<tr class="memdesc:a11094c0a66ad99bcdbd41a40627dc3b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">cosf.  <a href="ame___math_8hpp.html#a11094c0a66ad99bcdbd41a40627dc3b0">More...</a><br /></td></tr>
-<tr class="separator:a11094c0a66ad99bcdbd41a40627dc3b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab54fe577a7c14cfab3820540e56e05a7"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ame___math_8hpp.html#ab54fe577a7c14cfab3820540e56e05a7">ame::lerp</a> (float a, float b, float t) noexcept</td></tr>
-<tr class="memdesc:ab54fe577a7c14cfab3820540e56e05a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Linear interpolation.  <a href="ame___math_8hpp.html#ab54fe577a7c14cfab3820540e56e05a7">More...</a><br /></td></tr>
-<tr class="separator:ab54fe577a7c14cfab3820540e56e05a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7efb0db07c77c7b1cb6f1f76e6ca98e"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ame___math_8hpp.html#ac7efb0db07c77c7b1cb6f1f76e6ca98e">ame::sin</a> (float x)</td></tr>
+<tr class="memdesc:ac7efb0db07c77c7b1cb6f1f76e6ca98e"><td class="mdescLeft">&#160;</td><td class="mdescRight">sin for float  <a href="ame___math_8hpp.html#ac7efb0db07c77c7b1cb6f1f76e6ca98e">More...</a><br /></td></tr>
+<tr class="separator:ac7efb0db07c77c7b1cb6f1f76e6ca98e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20c2e263673378c1647a84c9d01adcb2"><td class="memItemLeft" align="right" valign="top">constexpr double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ame___math_8hpp.html#a20c2e263673378c1647a84c9d01adcb2">ame::sin</a> (double x)</td></tr>
+<tr class="memdesc:a20c2e263673378c1647a84c9d01adcb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">sin for double.  <a href="ame___math_8hpp.html#a20c2e263673378c1647a84c9d01adcb2">More...</a><br /></td></tr>
+<tr class="separator:a20c2e263673378c1647a84c9d01adcb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94dc9019e3b2a7df78f4141dfe77d001"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ame___math_8hpp.html#a94dc9019e3b2a7df78f4141dfe77d001">ame::cos</a> (float x)</td></tr>
+<tr class="memdesc:a94dc9019e3b2a7df78f4141dfe77d001"><td class="mdescLeft">&#160;</td><td class="mdescRight">cosf.  <a href="ame___math_8hpp.html#a94dc9019e3b2a7df78f4141dfe77d001">More...</a><br /></td></tr>
+<tr class="separator:a94dc9019e3b2a7df78f4141dfe77d001"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adea25ce1911894aba888279b4474a8ef"><td class="memItemLeft" align="right" valign="top"><a id="adea25ce1911894aba888279b4474a8ef"></a>
+constexpr double&#160;</td><td class="memItemRight" valign="bottom"><b>ame::cos</b> (double x)</td></tr>
+<tr class="separator:adea25ce1911894aba888279b4474a8ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:ac0dccbff14912b3a0c5fc01e52da16a9"><td class="memItemLeft" align="right" valign="top"><a id="ac0dccbff14912b3a0c5fc01e52da16a9"></a>
-constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ame___math_8hpp.html#ac0dccbff14912b3a0c5fc01e52da16a9">ame::pi</a> = 3.14159265f</td></tr>
-<tr class="memdesc:ac0dccbff14912b3a0c5fc01e52da16a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">π. <br /></td></tr>
-<tr class="separator:ac0dccbff14912b3a0c5fc01e52da16a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac75fe0229f8e610a324d8baf2ada26fb"><td class="memItemLeft" align="right" valign="top"><a id="ac75fe0229f8e610a324d8baf2ada26fb"></a>
-constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ame___math_8hpp.html#ac75fe0229f8e610a324d8baf2ada26fb">ame::twoPi</a> = 6.283185307f</td></tr>
-<tr class="memdesc:ac75fe0229f8e610a324d8baf2ada26fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">2π <br /></td></tr>
-<tr class="separator:ac75fe0229f8e610a324d8baf2ada26fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1cf9d11df53d8979c2bdc4d948d9e884"><td class="memItemLeft" align="right" valign="top"><a id="a1cf9d11df53d8979c2bdc4d948d9e884"></a>
-constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ame___math_8hpp.html#a1cf9d11df53d8979c2bdc4d948d9e884">ame::halfPi</a> = 1.57079632f</td></tr>
-<tr class="memdesc:a1cf9d11df53d8979c2bdc4d948d9e884"><td class="mdescLeft">&#160;</td><td class="mdescRight">π/2. <br /></td></tr>
-<tr class="separator:a1cf9d11df53d8979c2bdc4d948d9e884"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a76ccbcf90dfaa7c7d153ba88e47ba44a"><td class="memItemLeft" align="right" valign="top"><a id="a76ccbcf90dfaa7c7d153ba88e47ba44a"></a>
-constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ame___math_8hpp.html#a76ccbcf90dfaa7c7d153ba88e47ba44a">ame::euler</a> = 2.71828182f</td></tr>
-<tr class="memdesc:a76ccbcf90dfaa7c7d153ba88e47ba44a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Napier's constant. <br /></td></tr>
-<tr class="separator:a76ccbcf90dfaa7c7d153ba88e47ba44a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a95950004da17b850191a35a5ae2e2775"><td class="memItemLeft" align="right" valign="top"><a id="a95950004da17b850191a35a5ae2e2775"></a>
-constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ame___math_8hpp.html#a95950004da17b850191a35a5ae2e2775">ame::sqrt2</a> = 1.41421356f</td></tr>
-<tr class="memdesc:a95950004da17b850191a35a5ae2e2775"><td class="mdescLeft">&#160;</td><td class="mdescRight">sqrt(2) <br /></td></tr>
-<tr class="separator:a95950004da17b850191a35a5ae2e2775"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a222b08222c89893a68486d989b4aa99e"><td class="memItemLeft" align="right" valign="top"><a id="a222b08222c89893a68486d989b4aa99e"></a>
-constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ame___math_8hpp.html#a222b08222c89893a68486d989b4aa99e">ame::sqrt1_2</a> = 0.70710678f</td></tr>
-<tr class="memdesc:a222b08222c89893a68486d989b4aa99e"><td class="mdescLeft">&#160;</td><td class="mdescRight">sqrt(1/2) <br /></td></tr>
-<tr class="separator:a222b08222c89893a68486d989b4aa99e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a293360c6858860117a43a7afe494965f"><td class="memTemplParams" colspan="2"><a id="a293360c6858860117a43a7afe494965f"></a>
+template&lt;typename FloatType &gt; </td></tr>
+<tr class="memitem:a293360c6858860117a43a7afe494965f"><td class="memTemplItemLeft" align="right" valign="top">constexpr FloatType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="ame___math_8hpp.html#a293360c6858860117a43a7afe494965f">ame::pi</a> = std::numbers::pi_v&lt;FloatType&gt;</td></tr>
+<tr class="memdesc:a293360c6858860117a43a7afe494965f"><td class="mdescLeft">&#160;</td><td class="mdescRight">π. <br /></td></tr>
+<tr class="separator:a293360c6858860117a43a7afe494965f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1afb257f21a588aaae40191d0e7c2496"><td class="memTemplParams" colspan="2"><a id="a1afb257f21a588aaae40191d0e7c2496"></a>
+template&lt;typename FloatType &gt; </td></tr>
+<tr class="memitem:a1afb257f21a588aaae40191d0e7c2496"><td class="memTemplItemLeft" align="right" valign="top">constexpr FloatType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="ame___math_8hpp.html#a1afb257f21a588aaae40191d0e7c2496">ame::twoPi</a> = 2.0 * std::numbers::pi_v&lt;FloatType&gt;</td></tr>
+<tr class="memdesc:a1afb257f21a588aaae40191d0e7c2496"><td class="mdescLeft">&#160;</td><td class="mdescRight">2π <br /></td></tr>
+<tr class="separator:a1afb257f21a588aaae40191d0e7c2496"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b3c2137ce9d299388750c7731ffbe30"><td class="memTemplParams" colspan="2"><a id="a9b3c2137ce9d299388750c7731ffbe30"></a>
+template&lt;typename FloatType &gt; </td></tr>
+<tr class="memitem:a9b3c2137ce9d299388750c7731ffbe30"><td class="memTemplItemLeft" align="right" valign="top">constexpr FloatType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="ame___math_8hpp.html#a9b3c2137ce9d299388750c7731ffbe30">ame::halfPi</a> = std::numbers::pi_v&lt;FloatType&gt; / 2.0</td></tr>
+<tr class="memdesc:a9b3c2137ce9d299388750c7731ffbe30"><td class="mdescLeft">&#160;</td><td class="mdescRight">π/2. <br /></td></tr>
+<tr class="separator:a9b3c2137ce9d299388750c7731ffbe30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51ccce317b47448c3d8bde35e5c4e299"><td class="memTemplParams" colspan="2"><a id="a51ccce317b47448c3d8bde35e5c4e299"></a>
+template&lt;typename FloatType &gt; </td></tr>
+<tr class="memitem:a51ccce317b47448c3d8bde35e5c4e299"><td class="memTemplItemLeft" align="right" valign="top">constexpr FloatType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="ame___math_8hpp.html#a51ccce317b47448c3d8bde35e5c4e299">ame::sqrt2</a> = std::numbers::sqrt2_v&lt;FloatType&gt;</td></tr>
+<tr class="memdesc:a51ccce317b47448c3d8bde35e5c4e299"><td class="mdescLeft">&#160;</td><td class="mdescRight">sqrt2 <br /></td></tr>
+<tr class="separator:a51ccce317b47448c3d8bde35e5c4e299"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4dbee2ada22ee0a007493899a8ba6519"><td class="memTemplParams" colspan="2"><a id="a4dbee2ada22ee0a007493899a8ba6519"></a>
+template&lt;typename FloatType &gt; </td></tr>
+<tr class="memitem:a4dbee2ada22ee0a007493899a8ba6519"><td class="memTemplItemLeft" align="right" valign="top">constexpr FloatType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="ame___math_8hpp.html#a4dbee2ada22ee0a007493899a8ba6519">ame::invSqrt2</a> = 1.0 / std::numbers::sqrt2_v&lt;FloatType&gt;</td></tr>
+<tr class="memdesc:a4dbee2ada22ee0a007493899a8ba6519"><td class="mdescLeft">&#160;</td><td class="mdescRight">1/sqrt2 <br /></td></tr>
+<tr class="separator:a4dbee2ada22ee0a007493899a8ba6519"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Math functions. </p>
@@ -174,8 +181,8 @@ constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2021 - Akiyuki Okayasu</dd></dl>
 <p>AME is released under the MIT license. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a11094c0a66ad99bcdbd41a40627dc3b0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a11094c0a66ad99bcdbd41a40627dc3b0">&#9670;&nbsp;</a></span>cosf()</h2>
+<a id="a94dc9019e3b2a7df78f4141dfe77d001"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94dc9019e3b2a7df78f4141dfe77d001">&#9670;&nbsp;</a></span>cos()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -184,7 +191,7 @@ constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr float ame::cosf </td>
+          <td class="memname">constexpr float ame::cos </td>
           <td>(</td>
           <td class="paramtype">float&#160;</td>
           <td class="paramname"><em>x</em></td><td>)</td>
@@ -199,7 +206,7 @@ constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 </div><div class="memdoc">
 
 <p>cosf. </p>
-<p>When CMSIS-DSP is available, use arm_cos_f32() of CMSIS-DSP; when not, use <a class="el" href="ame___math_8hpp.html#a11094c0a66ad99bcdbd41a40627dc3b0" title="cosf.">std::cosf()</a></p>
+<p>When CMSIS-DSP is available, use arm_cos_f32() of CMSIS-DSP; when not, use std::cosf()</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">x</td><td>phase </td></tr>
@@ -210,8 +217,8 @@ constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 
 </div>
 </div>
-<a id="ab54fe577a7c14cfab3820540e56e05a7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab54fe577a7c14cfab3820540e56e05a7">&#9670;&nbsp;</a></span>lerp()</h2>
+<a id="a20c2e263673378c1647a84c9d01adcb2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20c2e263673378c1647a84c9d01adcb2">&#9670;&nbsp;</a></span>sin() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -220,52 +227,34 @@ constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr float ame::lerp </td>
+          <td class="memname">constexpr double ame::sin </td>
           <td>(</td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>b</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>t</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Linear interpolation. </p>
-<dl class="section note"><dt>Note</dt><dd>Function as same as <a class="el" href="ame___math_8hpp.html#ab54fe577a7c14cfab3820540e56e05a7" title="Linear interpolation.">std::lerp()</a> implemented in C++20. </dd></dl>
+<p>sin for double. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">a</td><td>Start point </td></tr>
-    <tr><td class="paramname">b</td><td>Target point </td></tr>
-    <tr><td class="paramname">t</td><td>It expects a value of 0~1 to be entered, but specifications exceeding 1 are allowed. </td></tr>
+    <tr><td class="paramname">x</td><td>radian </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>linear interpolated value </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>double </dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd>CMSIS-DSP does not support double, so at runtime, <a class="el" href="ame___math_8hpp.html#a20c2e263673378c1647a84c9d01adcb2" title="sin for double.">std::sin()</a> is always used. </dd></dl>
 
 </div>
 </div>
-<a id="a93cf457a4c18fc460bf669537e459f90"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a93cf457a4c18fc460bf669537e459f90">&#9670;&nbsp;</a></span>sinf()</h2>
+<a id="ac7efb0db07c77c7b1cb6f1f76e6ca98e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7efb0db07c77c7b1cb6f1f76e6ca98e">&#9670;&nbsp;</a></span>sin() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -274,7 +263,7 @@ constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr float ame::sinf </td>
+          <td class="memname">constexpr float ame::sin </td>
           <td>(</td>
           <td class="paramtype">float&#160;</td>
           <td class="paramname"><em>x</em></td><td>)</td>
@@ -288,11 +277,11 @@ constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 </table>
 </div><div class="memdoc">
 
-<p>sinf. </p>
-<p>When CMSIS-DSP is available, use arm_sin_f32() of CMSIS-DSP; when not, use <a class="el" href="ame___math_8hpp.html#a93cf457a4c18fc460bf669537e459f90" title="sinf.">std::sinf()</a></p>
+<p>sin for float </p>
+<p>When CMSIS-DSP is available, use arm_sin_f32() of CMSIS-DSP; when not, use std::sinf()</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">x</td><td>phase </td></tr>
+    <tr><td class="paramname">x</td><td>radian </td></tr>
   </table>
   </dd>
 </dl>

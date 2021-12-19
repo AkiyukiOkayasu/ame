@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>AME: ame::dsp::Delay&lt; maximumChannels, maximumDelayInSamples &gt; Class Template Reference</title>
+<title>AME: ame::dsp::Delay&lt; MaximumChannels, MaximumDelayInSamples &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -95,7 +95,7 @@ $(document).ready(function(){initNavTree('classame_1_1dsp_1_1_delay.html',''); i
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classame_1_1dsp_1_1_delay-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">ame::dsp::Delay&lt; maximumChannels, maximumDelayInSamples &gt; Class Template Reference</div>  </div>
+<div class="title">ame::dsp::Delay&lt; MaximumChannels, MaximumDelayInSamples &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -106,18 +106,18 @@ $(document).ready(function(){initNavTree('classame_1_1dsp_1_1_delay.html',''); i
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a86913684913048bef6225ad9cea3fb6a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1dsp_1_1_delay.html#a86913684913048bef6225ad9cea3fb6a">setDelay</a> (const float delayInSamples)</td></tr>
-<tr class="memdesc:a86913684913048bef6225ad9cea3fb6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set delay time.  <a href="classame_1_1dsp_1_1_delay.html#a86913684913048bef6225ad9cea3fb6a">More...</a><br /></td></tr>
-<tr class="separator:a86913684913048bef6225ad9cea3fb6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab18c848ed863bdfe8b25293e7301efb4"><td class="memTemplParams" colspan="2"><a id="ab18c848ed863bdfe8b25293e7301efb4"></a>
-template&lt;typename SampleType &gt; </td></tr>
-<tr class="memitem:ab18c848ed863bdfe8b25293e7301efb4"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classame_1_1dsp_1_1_delay.html#ab18c848ed863bdfe8b25293e7301efb4">process</a> (<a class="el" href="classame_1_1_audio_block_view.html">AudioBlockView</a>&lt; SampleType &gt; &amp;block)</td></tr>
-<tr class="memdesc:ab18c848ed863bdfe8b25293e7301efb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Process audio effect. <br /></td></tr>
-<tr class="separator:ab18c848ed863bdfe8b25293e7301efb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af44e76311af60a8ae8b33ea9f3cfe1fa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1dsp_1_1_delay.html#af44e76311af60a8ae8b33ea9f3cfe1fa">setDelay</a> (const float delayInSamples)</td></tr>
+<tr class="memdesc:af44e76311af60a8ae8b33ea9f3cfe1fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set delay time.  <a href="classame_1_1dsp_1_1_delay.html#af44e76311af60a8ae8b33ea9f3cfe1fa">More...</a><br /></td></tr>
+<tr class="separator:af44e76311af60a8ae8b33ea9f3cfe1fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6773236e5fd5dab3d1751e6d9d6055af"><td class="memTemplParams" colspan="2"><a id="a6773236e5fd5dab3d1751e6d9d6055af"></a>
+template&lt;typename SampleType , size_t N&gt; </td></tr>
+<tr class="memitem:a6773236e5fd5dab3d1751e6d9d6055af"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classame_1_1dsp_1_1_delay.html#a6773236e5fd5dab3d1751e6d9d6055af">process</a> (<a class="el" href="classame_1_1_audio_block_view.html">AudioBlockView</a>&lt; SampleType, N &gt; &amp;block)</td></tr>
+<tr class="memdesc:a6773236e5fd5dab3d1751e6d9d6055af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Process audio effect. <br /></td></tr>
+<tr class="separator:a6773236e5fd5dab3d1751e6d9d6055af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;size_t maximumChannels, size_t maximumDelayInSamples&gt;<br />
-class ame::dsp::Delay&lt; maximumChannels, maximumDelayInSamples &gt;</h3>
+<div class="textblock"><h3>template&lt;size_t MaximumChannels, size_t MaximumDelayInSamples&gt;<br />
+class ame::dsp::Delay&lt; MaximumChannels, MaximumDelayInSamples &gt;</h3>
 
 <p>Fractional delay. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
@@ -128,19 +128,19 @@ class ame::dsp::Delay&lt; maximumChannels, maximumDelayInSamples &gt;</h3>
   </dd>
 </dl>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a86913684913048bef6225ad9cea3fb6a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a86913684913048bef6225ad9cea3fb6a">&#9670;&nbsp;</a></span>setDelay()</h2>
+<a id="af44e76311af60a8ae8b33ea9f3cfe1fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af44e76311af60a8ae8b33ea9f3cfe1fa">&#9670;&nbsp;</a></span>setDelay()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;size_t maximumChannels, size_t maximumDelayInSamples&gt; </div>
+template&lt;size_t MaximumChannels, size_t MaximumDelayInSamples&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classame_1_1dsp_1_1_delay.html">ame::dsp::Delay</a>&lt; maximumChannels, maximumDelayInSamples &gt;::setDelay </td>
+          <td class="memname">void <a class="el" href="classame_1_1dsp_1_1_delay.html">ame::dsp::Delay</a>&lt; MaximumChannels, MaximumDelayInSamples &gt;::setDelay </td>
           <td>(</td>
           <td class="paramtype">const float&#160;</td>
           <td class="paramname"><em>delayInSamples</em></td><td>)</td>

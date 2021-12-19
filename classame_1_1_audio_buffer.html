@@ -93,6 +93,7 @@ $(document).ready(function(){initNavTree('classame_1_1_audio_buffer.html',''); i
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="classame_1_1_audio_buffer-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">ame::AudioBuffer&lt; FloatType, Size &gt; Class Template Reference</div>  </div>
@@ -116,19 +117,10 @@ Public Member Functions</h2></td></tr>
 uint_fast32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_audio_buffer.html#adee30570bf93712fe472ee8fbe17693a">getNumChannels</a> () const noexcept</td></tr>
 <tr class="memdesc:adee30570bf93712fe472ee8fbe17693a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of channels. <br /></td></tr>
 <tr class="separator:adee30570bf93712fe472ee8fbe17693a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea669856e0e2b3481656b98dd2413f30"><td class="memItemLeft" align="right" valign="top"><a id="aea669856e0e2b3481656b98dd2413f30"></a>
-uint_fast32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_audio_buffer.html#aea669856e0e2b3481656b98dd2413f30">getNumSamples</a> () const noexcept</td></tr>
-<tr class="memdesc:aea669856e0e2b3481656b98dd2413f30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of samples per channel. <br /></td></tr>
-<tr class="separator:aea669856e0e2b3481656b98dd2413f30"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21c8a9ce8ffc93880ffb545b3050d3fd"><td class="memItemLeft" align="right" valign="top">uint_fast32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_audio_buffer.html#a21c8a9ce8ffc93880ffb545b3050d3fd">getSize</a> () const noexcept</td></tr>
-<tr class="memdesc:a21c8a9ce8ffc93880ffb545b3050d3fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the length of the buffer.  <a href="classame_1_1_audio_buffer.html#a21c8a9ce8ffc93880ffb545b3050d3fd">More...</a><br /></td></tr>
-<tr class="separator:a21c8a9ce8ffc93880ffb545b3050d3fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3dc3f5d97fb0fa401779520b0eef5b1d"><td class="memItemLeft" align="right" valign="top">const FloatType *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_audio_buffer.html#a3dc3f5d97fb0fa401779520b0eef5b1d">getReadPointer</a> () const noexcept</td></tr>
-<tr class="memdesc:a3dc3f5d97fb0fa401779520b0eef5b1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a read only pointer to interleaved audio buffer.  <a href="classame_1_1_audio_buffer.html#a3dc3f5d97fb0fa401779520b0eef5b1d">More...</a><br /></td></tr>
-<tr class="separator:a3dc3f5d97fb0fa401779520b0eef5b1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab8ea88e7a19c1cf4ec6a63666199561f"><td class="memItemLeft" align="right" valign="top">FloatType *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_audio_buffer.html#ab8ea88e7a19c1cf4ec6a63666199561f">getWritePointer</a> () noexcept</td></tr>
-<tr class="memdesc:ab8ea88e7a19c1cf4ec6a63666199561f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a writeable pointer to interleaved audio buffer.  <a href="classame_1_1_audio_buffer.html#ab8ea88e7a19c1cf4ec6a63666199561f">More...</a><br /></td></tr>
-<tr class="separator:ab8ea88e7a19c1cf4ec6a63666199561f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4f37b2d7eaf85e166229456ece5da4f"><td class="memItemLeft" align="right" valign="top"><a id="ab4f37b2d7eaf85e166229456ece5da4f"></a>
+uint_fast32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_audio_buffer.html#ab4f37b2d7eaf85e166229456ece5da4f">getNumSamplesPerChannel</a> () const noexcept</td></tr>
+<tr class="memdesc:ab4f37b2d7eaf85e166229456ece5da4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of samples per channel. <br /></td></tr>
+<tr class="separator:ab4f37b2d7eaf85e166229456ece5da4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c4e1428efb234fbadcd2c244c24194c"><td class="memItemLeft" align="right" valign="top"><a id="a4c4e1428efb234fbadcd2c244c24194c"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_audio_buffer.html#a4c4e1428efb234fbadcd2c244c24194c">clear</a> ()</td></tr>
 <tr class="memdesc:a4c4e1428efb234fbadcd2c244c24194c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set all samples to 0. <br /></td></tr>
@@ -137,19 +129,26 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_audio_buffer.html#a34fb341157887e60ad4cd01bd4094d9d">applyGain</a> (const float gain)</td></tr>
 <tr class="memdesc:a34fb341157887e60ad4cd01bd4094d9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies a gain multiple to all the audio data. <br /></td></tr>
 <tr class="separator:a34fb341157887e60ad4cd01bd4094d9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e122a41c3abf0642c32418cb4458e12"><td class="memItemLeft" align="right" valign="top"><a id="a1e122a41c3abf0642c32418cb4458e12"></a>
-<a class="el" href="classame_1_1_audio_block_view.html">AudioBlockView</a>&lt; FloatType &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>makeAudioBlockView</b> ()</td></tr>
-<tr class="separator:a1e122a41c3abf0642c32418cb4458e12"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aafdc8b71a3086d32b960ac90d835a9df"><td class="memItemLeft" align="right" valign="top"><a id="aafdc8b71a3086d32b960ac90d835a9df"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_audio_buffer.html#aafdc8b71a3086d32b960ac90d835a9df">addFrom</a> (const uint_fast32_t destChannel, const uint_fast32_t destStartSample, const <a class="el" href="classame_1_1_audio_block_view.html">AudioBlockView</a>&lt; FloatType &gt; &amp;source, const uint_fast32_t sourceChannel, const uint_fast32_t sourceStartSample, const uint_fast32_t numSamplesToAdd)</td></tr>
-<tr class="memdesc:aafdc8b71a3086d32b960ac90d835a9df"><td class="mdescLeft">&#160;</td><td class="mdescRight">addBuffer <br /></td></tr>
-<tr class="separator:aafdc8b71a3086d32b960ac90d835a9df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20388eefeb49fbe6dd4b8d2f755b0fc4"><td class="memItemLeft" align="right" valign="top"><a id="a20388eefeb49fbe6dd4b8d2f755b0fc4"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><b>makeAudioBlockView</b> ()</td></tr>
+<tr class="separator:a20388eefeb49fbe6dd4b8d2f755b0fc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add5249d475af26ca08fa46d709ac95a4"><td class="memTemplParams" colspan="2"><a id="add5249d475af26ca08fa46d709ac95a4"></a>
+template&lt;size_t Extent&gt; </td></tr>
+<tr class="memitem:add5249d475af26ca08fa46d709ac95a4"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classame_1_1_audio_buffer.html#add5249d475af26ca08fa46d709ac95a4">addFrom</a> (const uint_fast32_t destChannel, const uint_fast32_t destStartSample, const <a class="el" href="classame_1_1_audio_block_view.html">AudioBlockView</a>&lt; FloatType, Extent &gt; &amp;source, const uint_fast32_t sourceChannel, const uint_fast32_t sourceStartSample, const uint_fast32_t numSamplesToAdd)</td></tr>
+<tr class="memdesc:add5249d475af26ca08fa46d709ac95a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">addBuffer <br /></td></tr>
+<tr class="separator:add5249d475af26ca08fa46d709ac95a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a14426152feb6882a5f353c89e70de9e9"><td class="memItemLeft" align="right" valign="top">FloatType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_audio_buffer.html#a14426152feb6882a5f353c89e70de9e9">getPeak</a> (const uint_fast32_t channel) const</td></tr>
 <tr class="memdesc:a14426152feb6882a5f353c89e70de9e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the highest absolute sample value within a region of a channel.  <a href="classame_1_1_audio_buffer.html#a14426152feb6882a5f353c89e70de9e9">More...</a><br /></td></tr>
 <tr class="separator:a14426152feb6882a5f353c89e70de9e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2853b035888fee086502117b93004b9a"><td class="memItemLeft" align="right" valign="top">FloatType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_audio_buffer.html#a2853b035888fee086502117b93004b9a">getRMSLevel</a> (const uint_fast32_t channel) const</td></tr>
 <tr class="memdesc:a2853b035888fee086502117b93004b9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the root mean squared level for a region of a channel.  <a href="classame_1_1_audio_buffer.html#a2853b035888fee086502117b93004b9a">More...</a><br /></td></tr>
 <tr class="separator:a2853b035888fee086502117b93004b9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a7be24cc3bd51703c73435b613bab4da6"><td class="memItemLeft" align="right" valign="top"><a id="a7be24cc3bd51703c73435b613bab4da6"></a>
+std::array&lt; FloatType, Size &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>buffer</b> = {}</td></tr>
+<tr class="separator:a7be24cc3bd51703c73435b613bab4da6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename FloatType, size_t Size&gt;<br />
@@ -202,36 +201,6 @@ template&lt;typename FloatType , size_t Size&gt; </div>
 
 </div>
 </div>
-<a id="a3dc3f5d97fb0fa401779520b0eef5b1d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3dc3f5d97fb0fa401779520b0eef5b1d">&#9670;&nbsp;</a></span>getReadPointer()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename FloatType , size_t Size&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const FloatType* <a class="el" href="classame_1_1_audio_buffer.html">ame::AudioBuffer</a>&lt; FloatType, Size &gt;::getReadPointer </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns a read only pointer to interleaved audio buffer. </p>
-<dl class="section return"><dt>Returns</dt><dd>const float* interleaved samples </dd></dl>
-
-</div>
-</div>
 <a id="a2853b035888fee086502117b93004b9a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2853b035888fee086502117b93004b9a">&#9670;&nbsp;</a></span>getRMSLevel()</h2>
 
@@ -266,67 +235,6 @@ template&lt;typename FloatType , size_t Size&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>FloatType RMS level [0.0, FloatTypeMax] </dd></dl>
-
-</div>
-</div>
-<a id="a21c8a9ce8ffc93880ffb545b3050d3fd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a21c8a9ce8ffc93880ffb545b3050d3fd">&#9670;&nbsp;</a></span>getSize()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename FloatType , size_t Size&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint_fast32_t <a class="el" href="classame_1_1_audio_buffer.html">ame::AudioBuffer</a>&lt; FloatType, Size &gt;::getSize </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns the length of the buffer. </p>
-<p><br  />
- </p><dl class="section attention"><dt>Attention</dt><dd>This is the total number of samples allocated to the buffer. It is NOT the number of samples per channel. </dd></dl>
-
-</div>
-</div>
-<a id="ab8ea88e7a19c1cf4ec6a63666199561f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab8ea88e7a19c1cf4ec6a63666199561f">&#9670;&nbsp;</a></span>getWritePointer()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename FloatType , size_t Size&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">FloatType* <a class="el" href="classame_1_1_audio_buffer.html">ame::AudioBuffer</a>&lt; FloatType, Size &gt;::getWritePointer </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns a writeable pointer to interleaved audio buffer. </p>
-<dl class="section return"><dt>Returns</dt><dd>float* interleaved audio buffer </dd></dl>
 
 </div>
 </div>

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['euler_197',['euler',['../ame___math_8hpp.html#a76ccbcf90dfaa7c7d153ba88e47ba44a',1,'ame']]]
+  ['damping_222',['damping',['../structame_1_1dsp_1_1_freeverb_1_1_parameters.html#ae620340cf6ec2053f04f4b3c24586e1f',1,'ame::dsp::Freeverb::Parameters']]],
+  ['drylevel_223',['dryLevel',['../structame_1_1dsp_1_1_freeverb_1_1_parameters.html#a599e23b913c92e27ad1588387c2ba0f4',1,'ame::dsp::Freeverb::Parameters']]]
 ];

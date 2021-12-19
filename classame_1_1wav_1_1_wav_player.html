@@ -117,10 +117,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1wav_1_1_wav_player.html#a0f04960d875c9010d60eba739e147b43">skipToHome</a> ()</td></tr>
 <tr class="memdesc:a0f04960d875c9010d60eba739e147b43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Skip to home. <br /></td></tr>
 <tr class="separator:a0f04960d875c9010d60eba739e147b43"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a01a22dc44b2babf010feeb59dc7ba7"><td class="memTemplParams" colspan="2">template&lt;typename FloatType &gt; </td></tr>
-<tr class="memitem:a9a01a22dc44b2babf010feeb59dc7ba7"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classame_1_1wav_1_1_wav_player.html#a9a01a22dc44b2babf010feeb59dc7ba7">process</a> (<a class="el" href="classame_1_1_audio_block_view.html">AudioBlockView</a>&lt; FloatType &gt; &amp;block)</td></tr>
-<tr class="memdesc:a9a01a22dc44b2babf010feeb59dc7ba7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add to sound to <a class="el" href="classame_1_1_audio_block_view.html" title="A lightweight data structure that stores a pointer to an audio buffer.">AudioBlockView</a> if playing.  <a href="classame_1_1wav_1_1_wav_player.html#a9a01a22dc44b2babf010feeb59dc7ba7">More...</a><br /></td></tr>
-<tr class="separator:a9a01a22dc44b2babf010feeb59dc7ba7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7fff5f3666a76beccca12f271e6d61fd"><td class="memTemplParams" colspan="2">template&lt;typename FloatType , size_t N&gt; </td></tr>
+<tr class="memitem:a7fff5f3666a76beccca12f271e6d61fd"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classame_1_1wav_1_1_wav_player.html#a7fff5f3666a76beccca12f271e6d61fd">process</a> (<a class="el" href="classame_1_1_audio_block_view.html">AudioBlockView</a>&lt; FloatType, N &gt; &amp;block)</td></tr>
+<tr class="memdesc:a7fff5f3666a76beccca12f271e6d61fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add to sound to <a class="el" href="classame_1_1_audio_block_view.html" title="A lightweight data structure that stores a pointer to an audio buffer.">AudioBlockView</a> if playing.  <a href="classame_1_1wav_1_1_wav_player.html#a7fff5f3666a76beccca12f271e6d61fd">More...</a><br /></td></tr>
+<tr class="separator:a7fff5f3666a76beccca12f271e6d61fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a23b7a8409ec1431257e8d208b32f05f4"><td class="memItemLeft" align="right" valign="top"><a id="a23b7a8409ec1431257e8d208b32f05f4"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>isPlaying</b> () const noexcept</td></tr>
 <tr class="separator:a23b7a8409ec1431257e8d208b32f05f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -132,15 +132,15 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>isLooping</b> () cons
 <tr class="separator:a7b46b014c5b251b4a6a3cfb0e6c3ba40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a9a01a22dc44b2babf010feeb59dc7ba7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9a01a22dc44b2babf010feeb59dc7ba7">&#9670;&nbsp;</a></span>process()</h2>
+<a id="a7fff5f3666a76beccca12f271e6d61fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7fff5f3666a76beccca12f271e6d61fd">&#9670;&nbsp;</a></span>process()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename BytePointerType &gt; </div>
 <div class="memtemplate">
-template&lt;typename FloatType &gt; </div>
+template&lt;typename FloatType , size_t N&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -148,7 +148,7 @@ template&lt;typename FloatType &gt; </div>
         <tr>
           <td class="memname">void <a class="el" href="classame_1_1wav_1_1_wav_player.html">ame::wav::WavPlayer</a>&lt; BytePointerType &gt;::process </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classame_1_1_audio_block_view.html">AudioBlockView</a>&lt; FloatType &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classame_1_1_audio_block_view.html">AudioBlockView</a>&lt; FloatType, N &gt; &amp;&#160;</td>
           <td class="paramname"><em>block</em></td><td>)</td>
           <td></td>
         </tr>
@@ -173,11 +173,11 @@ template&lt;typename FloatType &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000006">Todo:</a></b></dt><dd>デコード部分は別関数に移動する </dd></dl>
-<p>再生停止 </p><dl class="todo"><dt><b><a class="el" href="todo.html#_todo000007">Todo:</a></b></dt><dd>別関数をつくる </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000005">Todo:</a></b></dt><dd>デコード部分は別関数に移動する </dd></dl>
+<p>再生停止 </p><dl class="todo"><dt><b><a class="el" href="todo.html#_todo000006">Todo:</a></b></dt><dd>別関数をつくる </dd></dl>
 <p>normalize [-1, 1]</p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000007">Todo:</a></b></dt><dd>実装追加 </dd></dl>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000008">Todo:</a></b></dt><dd>実装追加 </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000009">Todo:</a></b></dt><dd>実装追加 </dd></dl>
 
 </div>
 </div>

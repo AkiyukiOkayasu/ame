@@ -138,7 +138,7 @@ $(document).ready(function(){initNavTree('ame___conversion_8hpp_source.html','')
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">inline</span> constexpr <span class="keywordtype">float</span> Q23_ABSMAX = 8388608.0f;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">//==============================================================================</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;constexpr <span class="keywordtype">void</span> float_to_q23 (<span class="keyword">const</span> <span class="keywordtype">float</span> src[], int32_t dest[], <span class="keyword">const</span> uint32_t blockSize)</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;constexpr <span class="keywordtype">void</span> floatToQ23 (<span class="keyword">const</span> <span class="keywordtype">float</span> src[], int32_t dest[], <span class="keyword">const</span> uint32_t blockSize)</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;{</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#if defined(__GNUC__) &amp;&amp; (__GNUC__ &gt;= 8)</span></div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">    #pragma GCC unroll 4</span></div>
@@ -149,7 +149,7 @@ $(document).ready(function(){initNavTree('ame___conversion_8hpp_source.html','')
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    }</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;constexpr <span class="keywordtype">void</span> q23_to_float (<span class="keyword">const</span> int32_t src[], <span class="keywordtype">float</span> dest[], <span class="keyword">const</span> uint32_t blockSize)</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;constexpr <span class="keywordtype">void</span> q23ToFloat (<span class="keyword">const</span> int32_t src[], <span class="keywordtype">float</span> dest[], <span class="keyword">const</span> uint32_t blockSize)</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;{</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#if defined(__GNUC__) &amp;&amp; (__GNUC__ &gt;= 8)</span></div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">    #pragma GCC unroll 4</span></div>
@@ -165,7 +165,7 @@ $(document).ready(function(){initNavTree('ame___conversion_8hpp_source.html','')
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">for</span> (uint_fast32_t chan = 0; chan &lt; numChannels; ++chan)</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    {</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keyword">auto</span> i = chan;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keyword">auto</span> src = source[chan];</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>* src = source[chan];</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordflow">for</span> (uint_fast32_t j = 0; j &lt; numSamples; ++j)</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        {</div>
@@ -222,8 +222,8 @@ $(document).ready(function(){initNavTree('ame___conversion_8hpp_source.html','')
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160; </div>
 <div class="line"><a name="l00191"></a><span class="lineno"><a class="line" href="ame___conversion_8hpp.html#a3efcc056b1b635b37f37e601f1c4dbd4">  191</a></span>&#160;<span class="keyword">inline</span> std::pair&lt;float, float&gt; <a class="code" href="ame___conversion_8hpp.html#a3efcc056b1b635b37f37e601f1c4dbd4">poltocar</a> (<span class="keyword">const</span> <span class="keywordtype">float</span> amplitude, <span class="keyword">const</span> <span class="keywordtype">float</span> angle)</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;{</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">float</span> real = amplitude * <a class="code" href="ame___math_8hpp.html#a11094c0a66ad99bcdbd41a40627dc3b0">cosf</a> (angle);</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">float</span> imag = amplitude * <a class="code" href="ame___math_8hpp.html#a93cf457a4c18fc460bf669537e459f90">sinf</a> (angle);</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">float</span> real = amplitude * cosf (angle);</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">float</span> imag = amplitude * sinf (angle);</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <span class="keywordflow">return</span> { real, imag };</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;}</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160; </div>
@@ -265,8 +265,6 @@ $(document).ready(function(){initNavTree('ame___conversion_8hpp_source.html','')
 <div class="ttc" id="aame___conversion_8hpp_html_ab591aa8a6792fdc6fd5e8c3838e875a8"><div class="ttname"><a href="ame___conversion_8hpp.html#ab591aa8a6792fdc6fd5e8c3838e875a8">ame::periodToFreq</a></div><div class="ttdeci">constexpr float periodToFreq(const float period) noexcept</div><div class="ttdoc">Convert period to frequency.</div><div class="ttdef"><b>Definition:</b> ame_Conversion.hpp:148</div></div>
 <div class="ttc" id="aame___conversion_8hpp_html_ad842793ae2035f1ceb410e2c3c0e4645"><div class="ttname"><a href="ame___conversion_8hpp.html#ad842793ae2035f1ceb410e2c3c0e4645">ame::cartopol</a></div><div class="ttdeci">std::pair&lt; float, float &gt; cartopol(const float real, const float imag)</div><div class="ttdoc">直交座標→極座標変換.</div><div class="ttdef"><b>Definition:</b> ame_Conversion.hpp:177</div></div>
 <div class="ttc" id="aame___conversion_8hpp_html_ae50044432f13ab0bd9b0b284b5431652"><div class="ttname"><a href="ame___conversion_8hpp.html#ae50044432f13ab0bd9b0b284b5431652">ame::decibelsToGain</a></div><div class="ttdeci">constexpr float decibelsToGain(const float dB) noexcept</div><div class="ttdoc">Convert a dBFS value to to its equivalent gain level.</div><div class="ttdef"><b>Definition:</b> ame_Conversion.hpp:230</div></div>
-<div class="ttc" id="aame___math_8hpp_html_a11094c0a66ad99bcdbd41a40627dc3b0"><div class="ttname"><a href="ame___math_8hpp.html#a11094c0a66ad99bcdbd41a40627dc3b0">ame::cosf</a></div><div class="ttdeci">constexpr float cosf(float x)</div><div class="ttdoc">cosf.</div><div class="ttdef"><b>Definition:</b> ame_Math.hpp:95</div></div>
-<div class="ttc" id="aame___math_8hpp_html_a93cf457a4c18fc460bf669537e459f90"><div class="ttname"><a href="ame___math_8hpp.html#a93cf457a4c18fc460bf669537e459f90">ame::sinf</a></div><div class="ttdeci">constexpr float sinf(float x)</div><div class="ttdoc">sinf.</div><div class="ttdef"><b>Definition:</b> ame_Math.hpp:47</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
