@@ -137,15 +137,15 @@ $(document).ready(function(){initNavTree('ame___random_8hpp_source.html',''); in
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">return</span> (next() &gt;&gt; 8) * FLOAT_UNIT;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="ame___random_8hpp.html#a1a67c3556492fe36f2e188b570829f85">   62</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">float</span> <a class="code" href="ame___random_8hpp.html#a1a67c3556492fe36f2e188b570829f85">noise</a>()</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;{</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">return</span> (next() &gt;&gt; 7) * FLOAT_UNIT - 1.0f; <span class="comment">//[-1, 1]</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">/* もうひとつの方法. ベンチマークを取って比べたい</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">    return (static_cast&lt;int32_t&gt;(next()) &gt;&gt; 8) * 0x1.0p-23f;//[-1, 1]</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">    */</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;} <span class="comment">// namespace ame</span></div>
-<div class="ttc" id="aame___random_8hpp_html_a1a67c3556492fe36f2e188b570829f85"><div class="ttname"><a href="ame___random_8hpp.html#a1a67c3556492fe36f2e188b570829f85">ame::noise</a></div><div class="ttdeci">float noise()</div><div class="ttdoc">white noise.</div><div class="ttdef"><b>Definition:</b> ame_Random.hpp:62</div></div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="ame___random_8hpp.html#a1a67c3556492fe36f2e188b570829f85">   61</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">float</span> <a class="code" href="ame___random_8hpp.html#a1a67c3556492fe36f2e188b570829f85">noise</a>()</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;{</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">return</span> (next() &gt;&gt; 7) * FLOAT_UNIT - 1.0f; <span class="comment">//[-1, 1]</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">/* もうひとつの方法. 負荷はほぼ同じ.</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">    return (static_cast&lt;int32_t&gt;(next()) &gt;&gt; 8) * 0x1.0p-23f;//[-1, 1]</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">    */</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;} <span class="comment">// namespace ame</span></div>
+<div class="ttc" id="aame___random_8hpp_html_a1a67c3556492fe36f2e188b570829f85"><div class="ttname"><a href="ame___random_8hpp.html#a1a67c3556492fe36f2e188b570829f85">ame::noise</a></div><div class="ttdeci">float noise()</div><div class="ttdoc">white noise.</div><div class="ttdef"><b>Definition:</b> ame_Random.hpp:61</div></div>
 <div class="ttc" id="aame___random_8hpp_html_ab3a0c0c4f501f46a46bb1430150e9373"><div class="ttname"><a href="ame___random_8hpp.html#ab3a0c0c4f501f46a46bb1430150e9373">ame::random</a></div><div class="ttdeci">float random()</div><div class="ttdoc">random.</div><div class="ttdef"><b>Definition:</b> ame_Random.hpp:52</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
