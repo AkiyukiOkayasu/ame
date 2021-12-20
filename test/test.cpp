@@ -170,7 +170,8 @@ TEST_CASE ("Oscillator")
     SUBCASE ("Wavetable")
     {
         constexpr std::array<float, 512> wavetable = ame::makeSineTable<float, 512>();
-        ame::WavetableOscillator osc { std::span { wavetable }, 44100.0f };
+        std::span s { wavetable };
+        ame::WavetableOscillator osc { s, 44100.0f };
         CHECK_EQ (wavetable[0], Approx (0.0f).scale (1));
         osc.setFrequency (440); //Hz
         CHECK_EQ (osc.nextSample(), Approx (0.0f).scale (1));
@@ -193,7 +194,8 @@ TEST_CASE ("Filter")
         constexpr int numChannels = 2;
         constexpr int numSamples = 1000;
         std::array<float, numChannels * numSamples> buffer {};
-        ame::AudioBlockView<float, numChannels * numSamples> block (std::span { buffer }, numChannels); //Stereo
+        std::span s { buffer };
+        ame::AudioBlockView block (s, numChannels); //Stereo
         ame::dsp::Biquad<float, numChannels> filter { 44100 };
 
         // LPF
@@ -294,10 +296,11 @@ TEST_CASE ("AudioBuffer")
 
 TEST_CASE ("AudioBlockView")
 {
+    std::array<float, 6> v = { 0.0f, 0.2f, 0.9f, -0.5f, -0.1f, -0.0f };
+    std::span s { v };
     SUBCASE ("size")
     {
-        float v[6] = { 0.0f, 0.2f, 0.9f, -0.5f, -0.1f, -0.0f };
-        ame::AudioBlockView block (std::span<float> { v }, 2);
+        ame::AudioBlockView block (s, 2);
         CHECK_EQ (block.getNumChannels(), 2);
         CHECK_EQ (block.getNumSamplesPerChannel(), 3);
         CHECK_EQ (block.view.size(), 6);
@@ -305,16 +308,14 @@ TEST_CASE ("AudioBlockView")
 
     SUBCASE ("getPeak")
     {
-        float v[6] = { 0.0f, 0.2f, 0.9f, -0.5f, -0.1f, -0.0f };
-        ame::AudioBlockView block (std::span<float> { v }, 2);
+        ame::AudioBlockView block (s, 2);
         REQUIRE (block.getPeak (0) == Approx (0.9f));
         REQUIRE (block.getPeak (1) == Approx (0.5f));
     }
 
     SUBCASE ("getRMSLevel")
     {
-        float v[6] = { 0.0f, 0.2f, 0.9f, -0.5f, -0.1f, -0.0f };
-        ame::AudioBlockView block (std::span { v }, 1);
+        ame::AudioBlockView block (s, 1);
         CHECK (block.getRMSLevel (0) == Approx (0.4301162f).scale (1));
     }
 }
@@ -391,9 +392,10 @@ TEST_CASE ("WavPlayer")
     SUBCASE ("Sine")
     {
         //Mono 16bit LittleEndian 44.1kHz
-        float v[100] = {};
+        std::array<float, 100> v {};
         constexpr int numChannel = 1;
-        ame::AudioBlockView block (std::span { v }, numChannel);
+        std::span s { v };
+        ame::AudioBlockView block (s, numChannel);
         constexpr ame::wav::WavReader reader (wav::sine440, sizeof (wav::sine440));
         ame::wav::WavPlayer player (reader);
         player.play();
@@ -503,9 +505,10 @@ TEST_CASE ("WavPlayer")
     SUBCASE ("Tamtam")
     {
         //Stereo 16bit LittleEndian 44.1kHz
-        float v[10] = {};
+        std::array<float, 10> v {};
         constexpr int numChannel = 2;
-        ame::AudioBlockView block (std::span { v }, numChannel);
+        std::span s { v };
+        ame::AudioBlockView block (s, numChannel);
         constexpr ame::wav::WavReader reader (wav::tamtam, sizeof (wav::tamtam));
         ame::wav::WavPlayer player (reader);
         player.play();
@@ -568,8 +571,9 @@ TEST_CASE ("Delay")
         constexpr int numChannel = 1;
         constexpr int bufferSize = 4;
         constexpr int maximumDelaySamples = 100;
-        float v[numChannel * bufferSize] = {};
-        ame::AudioBlockView block (std::span { v }, numChannel);
+        std::array<float, numChannel * bufferSize> v;
+        std::span s { v };
+        ame::AudioBlockView block (s, numChannel);
         ame::dsp::Delay<numChannel, maximumDelaySamples> delay;
         delay.setDelay (2); //2sample delay
         block.clear();
@@ -587,8 +591,9 @@ TEST_CASE ("Delay")
         constexpr int numChannel = 1;
         constexpr int bufferSize = 4;
         constexpr int maximumDelaySamples = 100;
-        float v[numChannel * bufferSize] = {};
-        ame::AudioBlockView block (std::span { v }, numChannel);
+        std::array<float, numChannel * bufferSize> v;
+        std::span s { v };
+        ame::AudioBlockView block (s, numChannel);
         ame::dsp::Delay<numChannel, maximumDelaySamples> delay;
         delay.setDelay (10); //10sample delay
         block.clear();
@@ -617,8 +622,9 @@ TEST_CASE ("Delay")
         constexpr int numChannel = 1;
         constexpr int bufferSize = 4;
         constexpr int maximumDelaySamples = 100;
-        float v[numChannel * bufferSize] = {};
-        ame::AudioBlockView block (std::span { v }, numChannel);
+        std::array<float, numChannel * bufferSize> v {};
+        std::span s { v };
+        ame::AudioBlockView block (s, numChannel);
         ame::dsp::Delay<numChannel, maximumDelaySamples> delay;
         delay.setDelay (1.5f); //1.5sample delay
         block.clear();
