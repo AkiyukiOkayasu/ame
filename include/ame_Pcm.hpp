@@ -356,7 +356,7 @@ private:
     const uint32_t numChannels;
     const uint32_t numSamples;
     const uint16_t bitRate;
-    std::atomic<uint32_t> readPosition { 0 }; ///< [0, numSamples] @todo ame::Wrapに変更する？
+    std::atomic<uint32_t> readPosition { 0 };
     std::atomic<bool> loop { false };
     std::atomic<bool> playing { false };
     const Chunk<BytePointerType> dataChunk;

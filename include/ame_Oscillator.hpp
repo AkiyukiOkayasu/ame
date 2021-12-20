@@ -41,8 +41,7 @@ constexpr std::array<FloatType, NumSamples> makeWaveTable (Function func)
 
 /** Sine wave wavetable generator.
     @tparam N array size
-    @return constexpr std::array<float, N> sine wave table
-    @todo 初期位相いじれるようにする？
+    @return constexpr std::array<float, N> sine wave table    
 */
 template <typename FloatType, size_t N>
 constexpr std::array<FloatType, N> makeSineTable()
@@ -56,8 +55,7 @@ constexpr std::array<FloatType, N> makeSineTable()
 
 /** Wavetable oscillator
     @tparam FloatType float or double
-    @tparam numSamples 
-    @todo 動作確認、単体テスト、doxygenコメントの英語化
+    @tparam numSamples     
 */
 template <typename FloatType, size_t N>
 class WavetableOscillator
@@ -100,7 +98,7 @@ public:
         tableIndex.changeLength (wavetable.size());
     }
 
-    /** Generate single sample
+    /** Generate single sample.
         @return generated latest sample
     */
     FloatType nextSample() noexcept
@@ -150,7 +148,7 @@ public:
         samplingPeriod = FloatType (1.0) / sampleRate;
     }
 
-    /** Set the sine wave frequency
+    /** Set the sine wave frequency.
         @param freq frequency in Hz
     */
     void setFrequency (const FloatType freq) noexcept
@@ -158,7 +156,7 @@ public:
         phaseIncrement = freq * twoPi<FloatType> * samplingPeriod;
     }
 
-    /** Generate single sample
+    /** Generate single sample.
         @return generated latest sample
     */
     float nextSample() noexcept

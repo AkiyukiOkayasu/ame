@@ -56,13 +56,12 @@ inline float random()
 
 /** white noise.
 @return float [-1, 1]
-@todo ベンチマーク取る.
 @see ame::random()
 */
 inline float noise()
 {
     return (next() >> 7) * FLOAT_UNIT - 1.0f; //[-1, 1]
-    /* もうひとつの方法. ベンチマークを取って比べたい
+    /* もうひとつの方法. 負荷はほぼ同じ.
     return (static_cast<int32_t>(next()) >> 8) * 0x1.0p-23f;//[-1, 1]
     */
 }
