@@ -163,7 +163,7 @@ public:
     float nextSample() noexcept
     {
         const auto p = phase.load();
-        phase = addModulo2Pi (phase, phaseIncrement);
+        phase = addModulo2Pi (p, phaseIncrement.load());
         return ame::sin (p);
     }
 
