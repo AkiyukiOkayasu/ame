@@ -130,6 +130,11 @@ public:
         return std::sqrt (sum / numSamplesPerChannel);
     }
 
+    auto subView (uint_fast32_t offset, uint_fast32_t size)
+    {
+        return AudioBlockView { view.subspan (offset, size), numChannels };
+    }
+
     std::span<ElementType, Extent> view;
 
 private:
@@ -187,10 +192,10 @@ public:
                        { e *= gain; });
     }
 
-    auto makeAudioBlockView()
+    auto makeAudioBlockView (uint_fast32_t offset = 0, uint_fast32_t size = Size)
     {
-        std::span<FloatType, Size> sp { buffer.data(), buffer.size() };
-        return ame::AudioBlockView<FloatType, Size> { sp, numChannels };
+        std::span sp { buffer.data() + offset, size };
+        return ame::AudioBlockView { sp, numChannels };
     }
 
     ///addBuffer

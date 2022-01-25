@@ -298,6 +298,13 @@ TEST_CASE ("AudioBuffer")
         CHECK_EQ (view.view[3], Approx (-0.5f));
         CHECK_EQ (view.view[4], Approx (-0.1f));
         CHECK_EQ (view.view[5], Approx (-0.0f));
+        auto subView = buf.makeAudioBlockView (2, 4);
+        CHECK_EQ (subView.getNumSamplesPerChannel(), 4);
+        CHECK_EQ (subView.getNumChannels(), 1);
+        CHECK_EQ (subView.view[0], Approx (0.9f));
+        CHECK_EQ (subView.view[1], Approx (-0.5f));
+        CHECK_EQ (subView.view[2], Approx (-0.1f));
+        CHECK_EQ (subView.view[3], Approx (-0.0f));
     }
 }
 
