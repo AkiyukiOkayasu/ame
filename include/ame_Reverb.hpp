@@ -31,45 +31,23 @@ class Freeverb
 public:
     explicit Freeverb (const FloatType sampleRate)
     {
-        setParameters (Parameters());
         setSampleRate (sampleRate);
     }
     ~Freeverb() = default;
 
-    //==============================================================================
-    /// Holds the parameters being used by a Reverb object.
-    struct Parameters
-    {
-        FloatType roomSize = 0.5;  ///< Room size, 0 to 1.0, where 1.0 is big, 0 is small.
-        FloatType damping = 0.5;   ///< Damping, 0 to 1.0, where 0 is not damped, 1.0 is fully damped.
-        FloatType wetLevel = 0.33; ///< Wet level, 0 to 1.0
-        FloatType dryLevel = 0.4;  ///< Dry level, 0 to 1.0
-        FloatType width = 1.0;     ///< Reverb width, 0 to 1.0, where 1.0 is very wide.
-    };
-
-    //==============================================================================
-    /// Returns the reverb's current parameters.
-    const Parameters& getParameters() const noexcept { return parameters; }
-
-    /** Applies a new set of parameters to the reverb.
-        @note If you call this in parallel with the process method, you may get artifacts.
+    /** Room size and damping.
+        @param roomSize [0 1]
+        @param damp [0 1]
     */
-    void setParameters (const Parameters& newParams)
+    void setRoomSize (const FloatType roomSize, const FloatType damp) noexcept
     {
-        static constexpr FloatType wetScaleFactor = 3.0;
-        static constexpr FloatType dryScaleFactor = 2.0;
-
-        const FloatType wet = newParams.wetLevel * wetScaleFactor;
-        dryGain.setTargetValue (newParams.dryLevel * dryScaleFactor);
-        wetGain1.setTargetValue (FloatType (0.5) * wet * (1.0 + newParams.width));
-        wetGain2.setTargetValue (FloatType (0.5) * wet * (1.0 - newParams.width));
-
-        gain = 0.015f;
-        parameters = newParams;
-        updateDamping();
+        static constexpr FloatType roomScaleFactor = 0.28;
+        static constexpr FloatType roomOffset = 0.7;
+        static constexpr FloatType dampScaleFactor = 0.4;
+        damping = damp * dampScaleFactor;
+        feedback = roomSize * roomScaleFactor + roomOffset;
     }
 
-    //==============================================================================
     /** Sets the sample rate that will be used for the reverb.
         You must call this before the process methods, in order to tell it the correct sample rate.
     */
@@ -95,11 +73,18 @@ public:
         }
 
         const int smoothSteps = 0.01 * sampleRate; //10ms
-        damping.setRampLength (smoothSteps);
-        feedback.setRampLength (smoothSteps);
         dryGain.setRampLength (smoothSteps);
-        wetGain1.setRampLength (smoothSteps);
-        wetGain2.setRampLength (smoothSteps);
+        wetGain.setRampLength (smoothSteps);
+    }
+
+    /** Dry/Wet balance.
+        @param dry [0 1]
+        @param wet [0 1]
+    */
+    void setMix (const FloatType dry, const FloatType wet)
+    {
+        dryGain.setTargetValue (dry);
+        wetGain.setTargetValue (wet);
     }
 
     /** Clears the reverb's buffers. */
@@ -126,21 +111,21 @@ public:
     {
         assert (block.getNumChannels() <= MaximumChannels);
 
+        block.applyGain (inputGain);
+
         uint_fast32_t i = 0;
         for (uint_fast32_t samp = 0; samp < block.getNumSamplesPerChannel(); ++samp)
         {
-            const FloatType damp = damping.getNextValue();
-            const FloatType feedbck = feedback.getNextValue();
             const FloatType dry = dryGain.getNextValue();
-            const FloatType wet = wetGain1.getNextValue();
+            const FloatType wet = wetGain.getNextValue();
             for (uint_fast32_t ch = 0; ch < block.getNumChannels(); ++ch)
             {
-                const FloatType input = block.view[i] * gain;
-                FloatType output {};
+                const FloatType input = block.view[i];
 
+                FloatType output {};
                 for (int cmb = 0; cmb < numCombs; ++cmb) //accumulate the comb filters in parallel
                 {
-                    output += comb[ch][cmb].process (input, damp, feedbck);
+                    output += comb[ch][cmb].process (input, damping, feedback);
                 }
 
                 for (int ap = 0; ap < numAllPasses; ++ap) // run the allpass filters in series
@@ -156,25 +141,10 @@ public:
 
 private:
     static constexpr int stereoSpread = 23;
+    static constexpr FloatType inputGain = 0.015;
+    static constexpr int numCombs = 8;
+    static constexpr int numAllPasses = 4;
 
-    //==============================================================================
-    void updateDamping() noexcept
-    {
-        static constexpr FloatType roomScaleFactor = 0.28;
-        static constexpr FloatType roomOffset = 0.7;
-        static constexpr FloatType dampScaleFactor = 0.4;
-
-        setDamping (parameters.damping * dampScaleFactor,
-                    parameters.roomSize * roomScaleFactor + roomOffset);
-    }
-
-    void setDamping (const float dampingToUse, const float roomSizeToUse) noexcept
-    {
-        damping.setTargetValue (dampingToUse);
-        feedback.setTargetValue (roomSizeToUse);
-    }
-
-    //==============================================================================
     class CombFilter
     {
     public:
@@ -244,20 +214,11 @@ private:
         ame::Wrap<int> bufferIndex { bufferAllocatedSize };
     };
 
-    //==============================================================================
-    Parameters parameters;
-    FloatType gain {};
-    static constexpr int numCombs = 8;
-    static constexpr int numAllPasses = 4;
-
     CombFilter comb[MaximumChannels][numCombs] {};
     AllPassFilter allPass[MaximumChannels][numAllPasses] {};
-
-    static constexpr int rampLengthInSamples = MaximumSampleRate * 0.01;
-    LinearSmoothedValue<FloatType> damping { 0.5, rampLengthInSamples };
-    LinearSmoothedValue<FloatType> feedback { 0.0, rampLengthInSamples };
-    LinearSmoothedValue<FloatType> dryGain { 0.4, rampLengthInSamples };
-    LinearSmoothedValue<FloatType> wetGain1 { 0.33, rampLengthInSamples };
-    LinearSmoothedValue<FloatType> wetGain2 { 0.33, rampLengthInSamples };
+    LinearSmoothedValue<FloatType> dryGain { 0.5, 100 };
+    LinearSmoothedValue<FloatType> wetGain { 0.5, 100 };
+    FloatType damping = 0;
+    FloatType feedback = 0;
 };
 } // namespace ame::dsp

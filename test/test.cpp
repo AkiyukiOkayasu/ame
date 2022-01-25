@@ -16,7 +16,6 @@ TEST_CASE ("Freeverb")
     ame::dsp::Freeverb<float, 2, 48000> reverb { 48000 };
     SUBCASE ("params")
     {
-        reverb.getParameters();
         reverb.reset();
         reverb.setSampleRate (44100);
     }
