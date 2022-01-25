@@ -94,7 +94,7 @@ public:
             allPass[1][i].setSize ((intSampleRate * (allPassTunings[i] + stereoSpread)) / 44100);
         }
 
-        const int smoothSteps = 0.01 * sampleRate;
+        const int smoothSteps = 0.01 * sampleRate; //10ms
         damping.setRampLength (smoothSteps);
         feedback.setRampLength (smoothSteps);
         dryGain.setRampLength (smoothSteps);
@@ -266,8 +266,8 @@ private:
     static constexpr int numCombs = 8;
     static constexpr int numAllPasses = 4;
 
-    CombFilter comb[MaximumChannels][numCombs];
-    AllPassFilter allPass[MaximumChannels][numAllPasses];
+    CombFilter comb[MaximumChannels][numCombs] {};
+    AllPassFilter allPass[MaximumChannels][numAllPasses] {};
 
     static constexpr int rampLengthInSamples = MaximumSampleRate * 0.01;
     LinearSmoothedValue<FloatType> damping { 0.5, rampLengthInSamples };
