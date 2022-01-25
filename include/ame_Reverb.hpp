@@ -183,13 +183,8 @@ private:
         void setSize (const int size)
         {
             assert (size <= buffer.size());
-
-            if (size != bufferSize)
-            {
-                bufferIndex = 0;
-                bufferSize = size;
-            }
-
+            bufferIndex.set (0);
+            bufferIndex.changeLength (size);
             clear();
         }
 
@@ -201,22 +196,18 @@ private:
 
         FloatType process (const FloatType input, const FloatType damp, const FloatType feedbackLevel) noexcept
         {
-            const FloatType output = buffer[bufferIndex];
+            const auto ind = bufferIndex.get();
+            const FloatType output = buffer[ind];
             last = (output * FloatType (1.0 - damp)) + (last * damp);
-            //JUCE_UNDENORMALISE (last);
-
-            const FloatType temp = input + (last * feedbackLevel);
-            //JUCE_UNDENORMALISE (temp);
-            buffer[bufferIndex] = temp;
-            bufferIndex = (bufferIndex + 1) % bufferSize;
+            buffer[ind] = input + (last * feedbackLevel);
+            bufferIndex++;
             return output;
         }
 
     private:
         static constexpr int bufferAllocatedSize = (1617 + stereoSpread) * (MaximumSampleRate / 44100.0);
         std::array<FloatType, bufferAllocatedSize> buffer {};
-        int bufferIndex = 0;
-        int bufferSize = 0;
+        ame::Wrap<int> bufferIndex { 0 };
         FloatType last = 0.0;
     };
 
@@ -228,12 +219,8 @@ private:
 
         void setSize (const int size)
         {
-            if (size != bufferSize)
-            {
-                bufferIndex = 0;
-                bufferSize = size;
-            }
-
+            bufferIndex.set (0);
+            bufferIndex.changeLength (size);
             clear();
         }
 
@@ -244,19 +231,17 @@ private:
 
         FloatType process (const FloatType input) noexcept
         {
-            const FloatType bufferedValue = buffer[bufferIndex];
-            float temp = input + (bufferedValue * 0.5f);
-            //JUCE_UNDENORMALISE (temp);
-            buffer[bufferIndex] = temp;
-            bufferIndex = (bufferIndex + 1) % bufferSize;
+            const auto ind = bufferIndex.get();
+            const FloatType bufferedValue = buffer[ind];
+            buffer[ind] = input + (bufferedValue * 0.5f);
+            bufferIndex++;
             return bufferedValue - input;
         }
 
     private:
         static constexpr int bufferAllocatedSize = (556 + stereoSpread) * (MaximumSampleRate / 44100.0);
         std::array<FloatType, bufferAllocatedSize> buffer;
-        int bufferSize = 0;
-        int bufferIndex = 0;
+        ame::Wrap<int> bufferIndex { 0 };
     };
 
     //==============================================================================
