@@ -234,6 +234,8 @@ TEST_CASE ("Wrap")
     SUBCASE ("set")
     {
         ame::Wrap<int32_t> w { 10 };
+        w.set (0);
+        CHECK_EQ (w.get(), 0);
         w.set (12);
         CHECK_EQ (w.get(), 2);
         w.set (-9);

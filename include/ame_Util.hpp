@@ -241,6 +241,7 @@ public:
     */
     explicit Wrap (const T length) : length (length)
     {
+        assert (length > 0); //length is must greater than 0
     }
 
     Wrap() = default;
