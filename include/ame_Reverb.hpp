@@ -105,16 +105,16 @@ public:
     /** Clears the reverb's buffers. */
     void reset()
     {
-        for (int j = 0; j < MaximumChannels; ++j)
+        for (int ch = 0; ch < MaximumChannels; ++ch)
         {
             for (int i = 0; i < numCombs; ++i)
             {
-                comb[j][i].clear();
+                comb[ch][i].clear();
             }
 
             for (int i = 0; i < numAllPasses; ++i)
             {
-                allPass[j][i].clear();
+                allPass[ch][i].clear();
             }
         }
     }
