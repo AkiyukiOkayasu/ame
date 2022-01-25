@@ -40,12 +40,11 @@ public:
     /// Holds the parameters being used by a Reverb object.
     struct Parameters
     {
-        FloatType roomSize = 0.5;   ///< Room size, 0 to 1.0, where 1.0 is big, 0 is small.
-        FloatType damping = 0.5;    ///< Damping, 0 to 1.0, where 0 is not damped, 1.0 is fully damped.
-        FloatType wetLevel = 0.33;  ///< Wet level, 0 to 1.0
-        FloatType dryLevel = 0.4;   ///< Dry level, 0 to 1.0
-        FloatType width = 1.0;      ///< Reverb width, 0 to 1.0, where 1.0 is very wide.
-        FloatType freezeMode = 0.0; ///< Freeze mode - values < 0.5 are "normal" mode, values > 0.5 put the reverb into a continuous feedback loop.
+        FloatType roomSize = 0.5;  ///< Room size, 0 to 1.0, where 1.0 is big, 0 is small.
+        FloatType damping = 0.5;   ///< Damping, 0 to 1.0, where 0 is not damped, 1.0 is fully damped.
+        FloatType wetLevel = 0.33; ///< Wet level, 0 to 1.0
+        FloatType dryLevel = 0.4;  ///< Dry level, 0 to 1.0
+        FloatType width = 1.0;     ///< Reverb width, 0 to 1.0, where 1.0 is very wide.
     };
 
     //==============================================================================
@@ -65,7 +64,7 @@ public:
         wetGain1.setTargetValue (FloatType (0.5) * wet * (1.0 + newParams.width));
         wetGain2.setTargetValue (FloatType (0.5) * wet * (1.0 - newParams.width));
 
-        gain = isFrozen (newParams.freezeMode) ? 0.0f : 0.015f;
+        gain = 0.015f;
         parameters = newParams;
         updateDamping();
     }
@@ -160,26 +159,14 @@ private:
     static constexpr int stereoSpread = 23;
 
     //==============================================================================
-    static bool isFrozen (const FloatType freezeMode) noexcept
-    {
-        return freezeMode >= 0.5f;
-    }
-
     void updateDamping() noexcept
     {
         static constexpr FloatType roomScaleFactor = 0.28;
         static constexpr FloatType roomOffset = 0.7;
         static constexpr FloatType dampScaleFactor = 0.4;
 
-        if (isFrozen (parameters.freezeMode))
-        {
-            setDamping (0.0f, 1.0f);
-        }
-        else
-        {
-            setDamping (parameters.damping * dampScaleFactor,
-                        parameters.roomSize * roomScaleFactor + roomOffset);
-        }
+        setDamping (parameters.damping * dampScaleFactor,
+                    parameters.roomSize * roomScaleFactor + roomOffset);
     }
 
     void setDamping (const float dampingToUse, const float roomSizeToUse) noexcept
