@@ -78,20 +78,20 @@ public:
         assert (0 < sampleRate);
         assert (sampleRate <= MaximumSampleRate);
 
-        static const short combTunings[] = { 1116, 1188, 1277, 1356, 1422, 1491, 1557, 1617 }; ///< (at 44100Hz)
-        static const short allPassTunings[] = { 556, 441, 341, 225 };                          ///< (at 44100Hz)
-        const int intSampleRate = (int) sampleRate;
+        static constexpr int combTunings[] = { 1116, 1188, 1277, 1356, 1422, 1491, 1557, 1617 }; ///< (at 44100Hz)
+        static constexpr int allPassTunings[] = { 556, 441, 341, 225 };                          ///< (at 44100Hz)
+        const float sampleRateRatio = sampleRate / 44100.0;
 
         for (int i = 0; i < numCombs; ++i)
         {
-            comb[0][i].setSize ((intSampleRate * combTunings[i]) / 44100);
-            comb[1][i].setSize ((intSampleRate * (combTunings[i] + stereoSpread)) / 44100);
+            comb[0][i].setSize (std::round (combTunings[i] * sampleRateRatio));
+            comb[1][i].setSize (std::round ((combTunings[i] + stereoSpread) * sampleRateRatio));
         }
 
         for (int i = 0; i < numAllPasses; ++i)
         {
-            allPass[0][i].setSize ((intSampleRate * allPassTunings[i]) / 44100);
-            allPass[1][i].setSize ((intSampleRate * (allPassTunings[i] + stereoSpread)) / 44100);
+            allPass[0][i].setSize (std::round (allPassTunings[i] * sampleRateRatio));
+            allPass[1][i].setSize (std::round ((allPassTunings[i] + stereoSpread) * sampleRateRatio));
         }
 
         const int smoothSteps = 0.01 * sampleRate; //10ms
