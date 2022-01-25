@@ -183,8 +183,8 @@ private:
         void setSize (const int size)
         {
             assert (size <= buffer.size());
-            bufferIndex.set (0);
             bufferIndex.changeLength (size);
+            bufferIndex.set (0);
             clear();
         }
 
@@ -207,7 +207,7 @@ private:
     private:
         static constexpr int bufferAllocatedSize = (1617 + stereoSpread) * (MaximumSampleRate / 44100.0);
         std::array<FloatType, bufferAllocatedSize> buffer {};
-        ame::Wrap<int> bufferIndex { 0 };
+        ame::Wrap<int> bufferIndex { bufferAllocatedSize };
         FloatType last = 0.0;
     };
 
@@ -219,8 +219,8 @@ private:
 
         void setSize (const int size)
         {
-            bufferIndex.set (0);
             bufferIndex.changeLength (size);
+            bufferIndex.set (0);
             clear();
         }
 
@@ -241,7 +241,7 @@ private:
     private:
         static constexpr int bufferAllocatedSize = (556 + stereoSpread) * (MaximumSampleRate / 44100.0);
         std::array<FloatType, bufferAllocatedSize> buffer;
-        ame::Wrap<int> bufferIndex { 0 };
+        ame::Wrap<int> bufferIndex { bufferAllocatedSize };
     };
 
     //==============================================================================

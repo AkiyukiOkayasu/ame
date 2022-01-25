@@ -14,12 +14,18 @@ using doctest::Approx;
 TEST_CASE ("Freeverb")
 {
     ame::dsp::Freeverb<float, 2, 48000> reverb { 48000 };
-    reverb.getParameters();
-    reverb.reset();
-    reverb.setSampleRate (44100);
+    SUBCASE ("params")
+    {
+        reverb.getParameters();
+        reverb.reset();
+        reverb.setSampleRate (44100);
+    }
     ame::AudioBuffer<float, 100> buf { 2 };
     auto view = buf.makeAudioBlockView();
-    reverb.process (view);
+    SUBCASE ("process")
+    {
+        reverb.process (view);
+    }
 }
 
 TEST_CASE ("LinearSmoothedValue")
