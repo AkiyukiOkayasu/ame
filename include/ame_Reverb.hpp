@@ -129,12 +129,14 @@ public:
         uint_fast32_t i = 0;
         for (uint_fast32_t samp = 0; samp < block.getNumSamplesPerChannel(); ++samp)
         {
+            const FloatType damp = damping.getNextValue();
+            const FloatType feedbck = feedback.getNextValue();
+            const FloatType dry = dryGain.getNextValue();
+            const FloatType wet = wetGain1.getNextValue();
             for (uint_fast32_t ch = 0; ch < block.getNumChannels(); ++ch)
             {
                 const FloatType input = block.view[i] * gain;
                 FloatType output {};
-                const FloatType damp = damping.getNextValue();
-                const FloatType feedbck = feedback.getNextValue();
 
                 for (int cmb = 0; cmb < numCombs; ++cmb) //accumulate the comb filters in parallel
                 {
@@ -145,9 +147,6 @@ public:
                 {
                     output = allPass[ch][ap].process (output);
                 }
-
-                const FloatType dry = dryGain.getNextValue();
-                const FloatType wet = wetGain1.getNextValue();
 
                 block.view[i] = output * wet + input * dry;
                 ++i;
