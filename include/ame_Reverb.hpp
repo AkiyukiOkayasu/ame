@@ -32,6 +32,7 @@ public:
     explicit Freeverb (const FloatType sampleRate)
     {
         setSampleRate (sampleRate);
+        setRoomSize (0.5, 0.5);
     }
     ~Freeverb() = default;
 
@@ -121,8 +122,8 @@ public:
             for (uint_fast32_t ch = 0; ch < block.getNumChannels(); ++ch)
             {
                 const FloatType input = block.view[i];
+                FloatType output = 0.0;
 
-                FloatType output {};
                 for (int cmb = 0; cmb < numCombs; ++cmb) //accumulate the comb filters in parallel
                 {
                     output += comb[ch][cmb].process (input, damping, feedback);
