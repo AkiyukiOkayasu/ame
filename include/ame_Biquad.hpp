@@ -19,6 +19,7 @@
 #include <atomic>
 #include <cassert>
 #include <cmath>
+#include <cstdint>
 #include <type_traits>
 
 namespace ame::dsp
@@ -203,11 +204,13 @@ public:
     void process (AudioBlockView<SampleType, N>& block)
     {
         assert (block.getNumChannels() <= MaximumChannels);
+        const uint_fast32_t numChannels = block.getNumChannels();
+        const uint_fast32_t bufferSize = block.getNumSamplesPerChannel();
 
         uint_fast32_t i = 0;
-        for (uint_fast32_t samp = 0; samp < block.getNumSamplesPerChannel(); ++samp)
+        for (uint_fast32_t samp = 0; samp < bufferSize; ++samp)
         {
-            for (uint_fast32_t ch = 0; ch < block.getNumChannels(); ++ch)
+            for (uint_fast32_t ch = 0; ch < numChannels; ++ch)
             {
                 const FloatType input = block.view[i];
                 const FloatType output = coef.b0 * input + coef.b1 * x1[ch] + coef.b2 * x2[ch] - coef.a1 * y1[ch] - coef.a2 * y2[ch];
