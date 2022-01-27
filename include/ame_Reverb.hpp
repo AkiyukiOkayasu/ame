@@ -59,7 +59,7 @@ public:
 
         static constexpr int_fast16_t combTunings[] = { 1116, 1188, 1277, 1356, 1422, 1491, 1557, 1617 }; ///< (at 44100Hz)
         static constexpr int_fast16_t allPassTunings[] = { 556, 441, 341, 225 };                          ///< (at 44100Hz)
-        static constexpr FloatType sampleRateRatio = sampleRate / 44100.0f;
+        static const FloatType sampleRateRatio = sampleRate / 44100.0f;
 
         for (int i = 0; i < numCombs; ++i)
         {
