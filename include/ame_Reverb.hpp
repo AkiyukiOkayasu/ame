@@ -32,19 +32,19 @@ public:
     explicit Freeverb (const FloatType sampleRate)
     {
         setSampleRate (sampleRate);
-        setRoomSize (0.5, 0.5);
+        setRoomSize (0.5f, 0.5f);
     }
     ~Freeverb() = default;
 
     /** Room size and damping.
-        @param roomSize [0 1]
-        @param damp [0 1]
+        @param roomSize 1.0 is big, 0 is small [0.0 1.0]
+        @param damp 0 is not damped, 1.0 is fully damped [0.0 1.0]
     */
     void setRoomSize (const FloatType roomSize, const FloatType damp) noexcept
     {
-        static constexpr FloatType roomScaleFactor = 0.28;
-        static constexpr FloatType roomOffset = 0.7;
-        static constexpr FloatType dampScaleFactor = 0.4;
+        static constexpr FloatType roomScaleFactor = 0.28f;
+        static constexpr FloatType roomOffset = 0.7f;
+        static constexpr FloatType dampScaleFactor = 0.4f;
         damping = damp * dampScaleFactor;
         feedback = roomSize * roomScaleFactor + roomOffset;
     }
@@ -57,9 +57,9 @@ public:
         assert (0 < sampleRate);
         assert (sampleRate <= MaximumSampleRate);
 
-        static constexpr int combTunings[] = { 1116, 1188, 1277, 1356, 1422, 1491, 1557, 1617 }; ///< (at 44100Hz)
-        static constexpr int allPassTunings[] = { 556, 441, 341, 225 };                          ///< (at 44100Hz)
-        const float sampleRateRatio = sampleRate / 44100.0;
+        static constexpr int_fast16_t combTunings[] = { 1116, 1188, 1277, 1356, 1422, 1491, 1557, 1617 }; ///< (at 44100Hz)
+        static constexpr int_fast16_t allPassTunings[] = { 556, 441, 341, 225 };                          ///< (at 44100Hz)
+        static constexpr FloatType sampleRateRatio = sampleRate / 44100.0f;
 
         for (int i = 0; i < numCombs; ++i)
         {
@@ -110,19 +110,21 @@ public:
     template <size_t N>
     void process (AudioBlockView<FloatType, N> block)
     {
-        assert (block.getNumChannels() <= MaximumChannels);
+        const uint_fast32_t numChannels = block.getNumChannels();
+        const uint_fast32_t bufferSize = block.getNumSamplesPerChannel();
+        assert (numChannels <= MaximumChannels);
 
         block.applyGain (inputGain);
 
         uint_fast32_t i = 0;
-        for (uint_fast32_t samp = 0; samp < block.getNumSamplesPerChannel(); ++samp)
+        for (uint_fast32_t samp = 0; samp < bufferSize; ++samp)
         {
             const FloatType dry = dryGain.getNextValue();
             const FloatType wet = wetGain.getNextValue();
             for (uint_fast32_t ch = 0; ch < block.getNumChannels(); ++ch)
             {
                 const FloatType input = block.view[i];
-                FloatType output = 0.0;
+                FloatType output = 0.0f;
 
                 for (int cmb = 0; cmb < numCombs; ++cmb) //accumulate the comb filters in parallel
                 {
@@ -142,7 +144,7 @@ public:
 
 private:
     static constexpr int stereoSpread = 23;
-    static constexpr FloatType inputGain = 0.015;
+    static constexpr FloatType inputGain = 0.015f;
     static constexpr int numCombs = 8;
     static constexpr int numAllPasses = 4;
 
@@ -162,24 +164,24 @@ private:
         void clear() noexcept
         {
             last = 0;
-            buffer.fill (0.0);
+            buffer.fill (0.0f);
         }
 
         FloatType process (const FloatType input, const FloatType damp, const FloatType feedbackLevel) noexcept
         {
             const auto ind = bufferIndex.get();
             const FloatType output = buffer[ind];
-            last = (output * FloatType (1.0 - damp)) + (last * damp);
+            last = (output * (1.0f - damp)) + (last * damp);
             buffer[ind] = input + (last * feedbackLevel);
             bufferIndex++;
             return output;
         }
 
     private:
-        static constexpr int bufferAllocatedSize = (1617 + stereoSpread) * (MaximumSampleRate / 44100.0);
+        static constexpr int bufferAllocatedSize = (1617 + stereoSpread) * (MaximumSampleRate / 44100.0f);
         std::array<FloatType, bufferAllocatedSize> buffer {};
         ame::Wrap<int> bufferIndex { bufferAllocatedSize };
-        FloatType last = 0.0;
+        FloatType last {};
     };
 
     //==============================================================================
@@ -197,7 +199,7 @@ private:
 
         void clear() noexcept
         {
-            buffer.fill (0.0);
+            buffer.fill (0.0f);
         }
 
         FloatType process (const FloatType input) noexcept
@@ -210,7 +212,7 @@ private:
         }
 
     private:
-        static constexpr int bufferAllocatedSize = (556 + stereoSpread) * (MaximumSampleRate / 44100.0);
+        static constexpr int bufferAllocatedSize = (556 + stereoSpread) * (MaximumSampleRate / 44100.0f);
         std::array<FloatType, bufferAllocatedSize> buffer;
         ame::Wrap<int> bufferIndex { bufferAllocatedSize };
     };
@@ -219,7 +221,7 @@ private:
     AllPassFilter allPass[MaximumChannels][numAllPasses] {};
     LinearSmoothedValue<FloatType> dryGain { 0.5, 100 };
     LinearSmoothedValue<FloatType> wetGain { 0.5, 100 };
-    FloatType damping = 0;
-    FloatType feedback = 0;
+    FloatType damping {};
+    FloatType feedback {};
 };
 } // namespace ame::dsp
