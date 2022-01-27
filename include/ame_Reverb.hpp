@@ -141,7 +141,7 @@ public:
 private:
     static constexpr int stereoSpread = 23;
     static constexpr FloatType inputGain = 0.06f;
-    static constexpr int numCombs = 8;
+    static constexpr int numCombs = 4;
     static constexpr int numAllPasses = 4;
 
     class CombFilter
