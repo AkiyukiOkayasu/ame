@@ -73,19 +73,16 @@ public:
             allPass[1][i].setSize (std::round ((allPassTunings[i] + stereoSpread) * sampleRateRatio));
         }
 
-        const int smoothSteps = 0.01 * sampleRate; //10ms
-        dryGain.setRampLength (smoothSteps);
-        wetGain.setRampLength (smoothSteps);
+        const int_fast16_t smoothSteps = static_cast<int_fast16_t> (sampleRate * 0.01f); //10ms
+        dryWet.setRampLength (smoothSteps);
     }
 
     /** Dry/Wet balance.
-        @param dry [0 1]
-        @param wet [0 1]
+        @param mix 0: dry only, 1: wet only [0.0, 1.0]
     */
-    void setMix (const FloatType dry, const FloatType wet)
+    void setDryWet (const FloatType mix)
     {
-        dryGain.setTargetValue (dry);
-        wetGain.setTargetValue (wet);
+        dryWet.setTargetValue (mix);
     }
 
     /** Clears the reverb's buffers. */
@@ -119,9 +116,8 @@ public:
         uint_fast32_t i = 0;
         for (uint_fast32_t samp = 0; samp < bufferSize; ++samp)
         {
-            const FloatType dry = dryGain.getNextValue();
-            const FloatType wet = wetGain.getNextValue();
-            for (uint_fast32_t ch = 0; ch < block.getNumChannels(); ++ch)
+            const FloatType mix = dryWet.getNextValue();
+            for (uint_fast32_t ch = 0; ch < numChannels; ++ch)
             {
                 const FloatType input = block.view[i];
                 FloatType output = 0.0f;
@@ -136,7 +132,7 @@ public:
                     output = allPass[ch][ap].process (output);
                 }
 
-                block.view[i] = output * wet + input * dry;
+                block.view[i] = std::lerp (input, output, mix);
                 ++i;
             }
         }
@@ -219,8 +215,7 @@ private:
 
     CombFilter comb[MaximumChannels][numCombs] {};
     AllPassFilter allPass[MaximumChannels][numAllPasses] {};
-    LinearSmoothedValue<FloatType> dryGain { 0.5, 100 };
-    LinearSmoothedValue<FloatType> wetGain { 0.5, 100 };
+    LinearSmoothedValue<FloatType> dryWet { 0.5f, 100 };
     FloatType damping {};
     FloatType feedback {};
 };
