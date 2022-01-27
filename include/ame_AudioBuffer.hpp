@@ -192,6 +192,14 @@ public:
                        { e *= gain; });
     }
 
+    /** Returns an AudioBlockView that references N elements from an arbitrary position.
+        @param offset Start location
+        @param size Number of elements
+        @return ame::AudioBlockView
+        @see std::span::subspan()
+        @see ame::AudioBlockView::subView()
+        @attention Be careful that size is NOT the number of samples per channel, but the size of std::span.
+    */
     auto makeAudioBlockView (uint_fast32_t offset = 0, uint_fast32_t size = Size)
     {
         std::span sp { buffer.data() + offset, size };
