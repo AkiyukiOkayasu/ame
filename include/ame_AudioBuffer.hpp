@@ -130,6 +130,14 @@ public:
         return std::sqrt (sum / numSamplesPerChannel);
     }
 
+    /** Returns an AudioBlockView that references N elements from an arbitrary position.
+        @param offset Start location
+        @param size Number of elements
+        @return ame::AudioBlockView
+        @see std::span::subspan()
+        @see ame::AudioBuffer::makeAudioBlockView()
+        @attention Be careful that size is NOT the number of samples per channel, but the size of std::span.
+    */
     auto subView (uint_fast32_t offset, uint_fast32_t size)
     {
         return AudioBlockView { view.subspan (offset, size), numChannels };
