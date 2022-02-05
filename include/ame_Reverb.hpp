@@ -127,12 +127,16 @@ public:
                     output += comb[ch][cmb].process (input, damping, feedback);
                 }
 
+//Allpass filterを使うか
+#if 0
                 for (int ap = 0; ap < numAllPasses; ++ap) // run the allpass filters in series
                 {
                     output = allPass[ch][ap].process (output);
                 }
-
                 block.view[i] = std::lerp (input, output, mix);
+#else
+                block.view[i] = output;
+#endif
                 ++i;
             }
         }
