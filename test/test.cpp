@@ -1,5 +1,3 @@
-#include "ame_AudioBuffer.hpp"
-#include "ame_Oscillator.hpp"
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include "Tamtam.hpp"
 #include "ame.hpp"
@@ -10,6 +8,21 @@
 #include <span>
 
 using doctest::Approx;
+
+TEST_CASE ("DcBlock")
+{
+    ame::dsp::DcBlock<float, 2> dcblock {};
+    ame::AudioBuffer<float, 200000> buf { 2 };
+    buf.buffer.fill (0.3f); //Add DC offset
+    auto view = buf.makeAudioBlockView();
+    dcblock.process (view);
+    CHECK_LT (view.view[20], view.view[10]);
+    CHECK_LT (view.view[40], view.view[30]);
+    CHECK_LT (view.view[110], view.view[100]);
+    CHECK_LT (view.view[10000], 0.1f);
+    CHECK_LT (view.view[100000], 0.05f);
+    CHECK_LT (view.view[150000], 0.02f);
+}
 
 TEST_CASE ("Freeverb")
 {

@@ -29,6 +29,7 @@
 #include "ame_AudioBuffer.hpp"
 #include "ame_Biquad.hpp"
 #include "ame_Conversion.hpp"
+#include "ame_DcBlock.hpp"
 #include "ame_Delay.hpp"
 #include "ame_Math.hpp"
 #include "ame_Oscillator.hpp"
