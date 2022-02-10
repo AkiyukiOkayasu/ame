@@ -1,3 +1,4 @@
+#include "ame_Ambisonics.hpp"
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include "Tamtam.hpp"
 #include "ame.hpp"
@@ -8,6 +9,15 @@
 #include <span>
 
 using doctest::Approx;
+
+TEST_CASE ("Ambisonics")
+{
+    ame::dsp::Ambisonics1st<float> ambi {};
+    ame::dsp::Polar<float> pos { .azimuth = 0.0f, .elevation = 0.0f };
+    ame::dsp::encodeAmbisonics1st (0.5f, ambi, pos);
+    const auto f = ame::dsp::decodeAmbisonics1st (ambi, pos);
+    // CHECK_EQ (f, 0.5f);
+}
 
 TEST_CASE ("DcBlock")
 {

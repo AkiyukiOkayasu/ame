@@ -26,6 +26,7 @@
 
 #pragma once
 
+#include "ame_Ambisonics.hpp"
 #include "ame_AudioBuffer.hpp"
 #include "ame_Biquad.hpp"
 #include "ame_Conversion.hpp"
