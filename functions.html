@@ -121,23 +121,6 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 </ul>
 
 
-<h3><a id="index_d"></a>- d -</h3><ul>
-<li>damping
-: <a class="el" href="structame_1_1dsp_1_1_freeverb_1_1_parameters.html#ae620340cf6ec2053f04f4b3c24586e1f">ame::dsp::Freeverb&lt; FloatType, MaximumChannels, MaximumSampleRate &gt;::Parameters</a>
-</li>
-<li>dryLevel
-: <a class="el" href="structame_1_1dsp_1_1_freeverb_1_1_parameters.html#a599e23b913c92e27ad1588387c2ba0f4">ame::dsp::Freeverb&lt; FloatType, MaximumChannels, MaximumSampleRate &gt;::Parameters</a>
-</li>
-</ul>
-
-
-<h3><a id="index_f"></a>- f -</h3><ul>
-<li>freezeMode
-: <a class="el" href="structame_1_1dsp_1_1_freeverb_1_1_parameters.html#adea44fcfa87a13d58fee127661bc4e5c">ame::dsp::Freeverb&lt; FloatType, MaximumChannels, MaximumSampleRate &gt;::Parameters</a>
-</li>
-</ul>
-
-
 <h3><a id="index_g"></a>- g -</h3><ul>
 <li>get()
 : <a class="el" href="classame_1_1_wrap.html#af63da6ae8e23fb36ffc538b677c47304">ame::Wrap&lt; T &gt;</a>
@@ -169,9 +152,6 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 : <a class="el" href="classame_1_1_audio_block_view.html#afc201f67ef0f395695fbef8ac985fa11">ame::AudioBlockView&lt; ElementType, Extent &gt;</a>
 , <a class="el" href="classame_1_1_audio_buffer.html#ab4f37b2d7eaf85e166229456ece5da4f">ame::AudioBuffer&lt; FloatType, Size &gt;</a>
 </li>
-<li>getParameters()
-: <a class="el" href="classame_1_1dsp_1_1_freeverb.html#a387aaec15657f1ab92ab82adf631754e">ame::dsp::Freeverb&lt; FloatType, MaximumChannels, MaximumSampleRate &gt;</a>
-</li>
 <li>getPeak()
 : <a class="el" href="classame_1_1_audio_block_view.html#a72899fd26da50c9656024d9e8acffffb">ame::AudioBlockView&lt; ElementType, Extent &gt;</a>
 , <a class="el" href="classame_1_1_audio_buffer.html#a14426152feb6882a5f353c89e70de9e9">ame::AudioBuffer&lt; FloatType, Size &gt;</a>
@@ -200,6 +180,9 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <h3><a id="index_m"></a>- m -</h3><ul>
 <li>makeAllPass()
 : <a class="el" href="classame_1_1dsp_1_1_biquad.html#af71bc133fd6abaa1df46be91d8d641f9">ame::dsp::Biquad&lt; FloatType, MaximumChannels &gt;</a>
+</li>
+<li>makeAudioBlockView()
+: <a class="el" href="classame_1_1_audio_buffer.html#a5a2bebfb7a1e885a445057e2b40a10c1">ame::AudioBuffer&lt; FloatType, Size &gt;</a>
 </li>
 <li>makeBandPass()
 : <a class="el" href="classame_1_1dsp_1_1_biquad.html#a80897dac04f51b62c2e88f9932d8ee9e">ame::dsp::Biquad&lt; FloatType, MaximumChannels &gt;</a>
@@ -252,6 +235,7 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 </li>
 <li>process()
 : <a class="el" href="classame_1_1dsp_1_1_biquad.html#afee8e23cc320c16040300b4ab81cb427">ame::dsp::Biquad&lt; FloatType, MaximumChannels &gt;</a>
+, <a class="el" href="classame_1_1dsp_1_1_dc_block.html#ad7a711bd7792dfa05401765a6ee47a85">ame::dsp::DcBlock&lt; FloatType, MaximumChannels &gt;</a>
 , <a class="el" href="classame_1_1dsp_1_1_delay.html#a6773236e5fd5dab3d1751e6d9d6055af">ame::dsp::Delay&lt; MaximumChannels, MaximumDelayInSamples &gt;</a>
 , <a class="el" href="classame_1_1dsp_1_1_freeverb.html#a4c725e1640fe8c5f9c82d624b65e100d">ame::dsp::Freeverb&lt; FloatType, MaximumChannels, MaximumSampleRate &gt;</a>
 , <a class="el" href="classame_1_1_slide.html#acc67bfb18cb121aaef228d2ab743a17a">ame::Slide&lt; FloatType &gt;</a>
@@ -268,9 +252,6 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <li>resetPhase()
 : <a class="el" href="classame_1_1_sine_oscillator.html#add95f46fbe274fd51228fbee622bcb20">ame::SineOscillator&lt; FloatType &gt;</a>
 </li>
-<li>roomSize
-: <a class="el" href="structame_1_1dsp_1_1_freeverb_1_1_parameters.html#a44683e2ebc2ca08de42987caa30cd201">ame::dsp::Freeverb&lt; FloatType, MaximumChannels, MaximumSampleRate &gt;::Parameters</a>
-</li>
 </ul>
 
 
@@ -284,6 +265,9 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <li>setDelay()
 : <a class="el" href="classame_1_1dsp_1_1_delay.html#af44e76311af60a8ae8b33ea9f3cfe1fa">ame::dsp::Delay&lt; MaximumChannels, MaximumDelayInSamples &gt;</a>
 </li>
+<li>setDryWet()
+: <a class="el" href="classame_1_1dsp_1_1_freeverb.html#afec423337bef6799f652a00b8f62400d">ame::dsp::Freeverb&lt; FloatType, MaximumChannels, MaximumSampleRate &gt;</a>
+</li>
 <li>setFrequency()
 : <a class="el" href="classame_1_1_sine_oscillator.html#a8288a0456d4ff1a0223c9ebafcd7c5d5">ame::SineOscillator&lt; FloatType &gt;</a>
 , <a class="el" href="classame_1_1_wavetable_oscillator.html#a5b97d8754ae543a4678fc77a965036d5">ame::WavetableOscillator&lt; FloatType, N &gt;</a>
@@ -291,11 +275,11 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <li>setNumChannels()
 : <a class="el" href="classame_1_1_audio_buffer.html#a102730d8aa90fc8445255845e94450c7">ame::AudioBuffer&lt; FloatType, Size &gt;</a>
 </li>
-<li>setParameters()
-: <a class="el" href="classame_1_1dsp_1_1_freeverb.html#a960938e2fb14f32d90e2e18a2e911ed6">ame::dsp::Freeverb&lt; FloatType, MaximumChannels, MaximumSampleRate &gt;</a>
-</li>
 <li>setRampLength()
 : <a class="el" href="classame_1_1_linear_smoothed_value.html#a0433fc18d17f928868f2cb1c16e65dc3">ame::LinearSmoothedValue&lt; FloatType &gt;</a>
+</li>
+<li>setRoomSize()
+: <a class="el" href="classame_1_1dsp_1_1_freeverb.html#a7efe5a8b2acde64e5903eae4d3fdf19c">ame::dsp::Freeverb&lt; FloatType, MaximumChannels, MaximumSampleRate &gt;</a>
 </li>
 <li>setSample()
 : <a class="el" href="classame_1_1_audio_block_view.html#a1386f0c84312618a59a6d6c1a3c4f9f9">ame::AudioBlockView&lt; ElementType, Extent &gt;</a>
@@ -327,16 +311,13 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <li>Slide()
 : <a class="el" href="classame_1_1_slide.html#a6ff00e88fed8633ac3190d7dd8ccbd5f">ame::Slide&lt; FloatType &gt;</a>
 </li>
+<li>subView()
+: <a class="el" href="classame_1_1_audio_block_view.html#af5b758ac19fc9bfde64311ca2e7b6f80">ame::AudioBlockView&lt; ElementType, Extent &gt;</a>
+</li>
 </ul>
 
 
 <h3><a id="index_w"></a>- w -</h3><ul>
-<li>wetLevel
-: <a class="el" href="structame_1_1dsp_1_1_freeverb_1_1_parameters.html#a398eb775b6109bace68a232e7da814fe">ame::dsp::Freeverb&lt; FloatType, MaximumChannels, MaximumSampleRate &gt;::Parameters</a>
-</li>
-<li>width
-: <a class="el" href="structame_1_1dsp_1_1_freeverb_1_1_parameters.html#a9253f202690d837638815ad518d7ac78">ame::dsp::Freeverb&lt; FloatType, MaximumChannels, MaximumSampleRate &gt;::Parameters</a>
-</li>
 <li>Wrap()
 : <a class="el" href="classame_1_1_wrap.html#ad39de8126b07a5fd7f26a8cc68f7e165">ame::Wrap&lt; T &gt;</a>
 </li>

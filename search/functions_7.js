@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['makeallpass_175',['makeAllPass',['../classame_1_1dsp_1_1_biquad.html#af71bc133fd6abaa1df46be91d8d641f9',1,'ame::dsp::Biquad']]],
+  ['makeallpass_174',['makeAllPass',['../classame_1_1dsp_1_1_biquad.html#af71bc133fd6abaa1df46be91d8d641f9',1,'ame::dsp::Biquad']]],
+  ['makeaudioblockview_175',['makeAudioBlockView',['../classame_1_1_audio_buffer.html#a5a2bebfb7a1e885a445057e2b40a10c1',1,'ame::AudioBuffer']]],
   ['makebandpass_176',['makeBandPass',['../classame_1_1dsp_1_1_biquad.html#a80897dac04f51b62c2e88f9932d8ee9e',1,'ame::dsp::Biquad']]],
   ['makebytes_177',['makeBytes',['../ame___util_8hpp.html#a291016f1c0ea2093f1729d550746b7cd',1,'ame']]],
   ['makehighpass_178',['makeHighPass',['../classame_1_1dsp_1_1_biquad.html#ab1da62e30035179f5d3732b0dc76dcc7',1,'ame::dsp::Biquad']]],

@@ -3,6 +3,7 @@ var annotated_dup =
     [ "ame", null, [
       [ "dsp", null, [
         [ "Biquad", "classame_1_1dsp_1_1_biquad.html", "classame_1_1dsp_1_1_biquad" ],
+        [ "DcBlock", "classame_1_1dsp_1_1_dc_block.html", "classame_1_1dsp_1_1_dc_block" ],
         [ "Delay", "classame_1_1dsp_1_1_delay.html", "classame_1_1dsp_1_1_delay" ],
         [ "Freeverb", "classame_1_1dsp_1_1_freeverb.html", "classame_1_1dsp_1_1_freeverb" ]
       ] ],

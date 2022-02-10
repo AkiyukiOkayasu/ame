@@ -105,27 +105,20 @@ $(document).ready(function(){initNavTree('classame_1_1dsp_1_1_freeverb.html','')
 
 <p><code>#include &lt;<a class="el" href="ame___reverb_8hpp_source.html">ame_Reverb.hpp</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structame_1_1dsp_1_1_freeverb_1_1_parameters.html">Parameters</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Holds the parameters being used by a Reverb object.  <a href="structame_1_1dsp_1_1_freeverb_1_1_parameters.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a43a38d0a60e87459e62f046df9b21cd0"><td class="memItemLeft" align="right" valign="top"><a id="a43a38d0a60e87459e62f046df9b21cd0"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>Freeverb</b> (const FloatType sampleRate)</td></tr>
 <tr class="separator:a43a38d0a60e87459e62f046df9b21cd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a387aaec15657f1ab92ab82adf631754e"><td class="memItemLeft" align="right" valign="top"><a id="a387aaec15657f1ab92ab82adf631754e"></a>
-const <a class="el" href="structame_1_1dsp_1_1_freeverb_1_1_parameters.html">Parameters</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1dsp_1_1_freeverb.html#a387aaec15657f1ab92ab82adf631754e">getParameters</a> () const noexcept</td></tr>
-<tr class="memdesc:a387aaec15657f1ab92ab82adf631754e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the reverb's current parameters. <br /></td></tr>
-<tr class="separator:a387aaec15657f1ab92ab82adf631754e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a960938e2fb14f32d90e2e18a2e911ed6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1dsp_1_1_freeverb.html#a960938e2fb14f32d90e2e18a2e911ed6">setParameters</a> (const <a class="el" href="structame_1_1dsp_1_1_freeverb_1_1_parameters.html">Parameters</a> &amp;newParams)</td></tr>
-<tr class="memdesc:a960938e2fb14f32d90e2e18a2e911ed6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies a new set of parameters to the reverb.  <a href="classame_1_1dsp_1_1_freeverb.html#a960938e2fb14f32d90e2e18a2e911ed6">More...</a><br /></td></tr>
-<tr class="separator:a960938e2fb14f32d90e2e18a2e911ed6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7efe5a8b2acde64e5903eae4d3fdf19c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1dsp_1_1_freeverb.html#a7efe5a8b2acde64e5903eae4d3fdf19c">setRoomSize</a> (const FloatType roomSize, const FloatType damp) noexcept</td></tr>
+<tr class="memdesc:a7efe5a8b2acde64e5903eae4d3fdf19c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Room size and damping.  <a href="classame_1_1dsp_1_1_freeverb.html#a7efe5a8b2acde64e5903eae4d3fdf19c">More...</a><br /></td></tr>
+<tr class="separator:a7efe5a8b2acde64e5903eae4d3fdf19c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e0d7e5d85e3b853b6afea1c4ca082a9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1dsp_1_1_freeverb.html#a1e0d7e5d85e3b853b6afea1c4ca082a9">setSampleRate</a> (const FloatType sampleRate)</td></tr>
 <tr class="memdesc:a1e0d7e5d85e3b853b6afea1c4ca082a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the sample rate that will be used for the reverb.  <a href="classame_1_1dsp_1_1_freeverb.html#a1e0d7e5d85e3b853b6afea1c4ca082a9">More...</a><br /></td></tr>
 <tr class="separator:a1e0d7e5d85e3b853b6afea1c4ca082a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afec423337bef6799f652a00b8f62400d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1dsp_1_1_freeverb.html#afec423337bef6799f652a00b8f62400d">setDryWet</a> (const FloatType mix)</td></tr>
+<tr class="memdesc:afec423337bef6799f652a00b8f62400d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dry/Wet balance.  <a href="classame_1_1dsp_1_1_freeverb.html#afec423337bef6799f652a00b8f62400d">More...</a><br /></td></tr>
+<tr class="separator:afec423337bef6799f652a00b8f62400d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af8b01db06ba5c65ccd64869e91604526"><td class="memItemLeft" align="right" valign="top"><a id="af8b01db06ba5c65ccd64869e91604526"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1dsp_1_1_freeverb.html#af8b01db06ba5c65ccd64869e91604526">reset</a> ()</td></tr>
 <tr class="memdesc:af8b01db06ba5c65ccd64869e91604526"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the reverb's buffers. <br /></td></tr>
@@ -149,8 +142,8 @@ class ame::dsp::Freeverb&lt; FloatType, MaximumChannels, MaximumSampleRate &gt;<
   </dd>
 </dl>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a960938e2fb14f32d90e2e18a2e911ed6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a960938e2fb14f32d90e2e18a2e911ed6">&#9670;&nbsp;</a></span>setParameters()</h2>
+<a id="afec423337bef6799f652a00b8f62400d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afec423337bef6799f652a00b8f62400d">&#9670;&nbsp;</a></span>setDryWet()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -161,10 +154,10 @@ template&lt;typename FloatType , size_t MaximumChannels, size_t MaximumSampleRat
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classame_1_1dsp_1_1_freeverb.html">ame::dsp::Freeverb</a>&lt; FloatType, MaximumChannels, MaximumSampleRate &gt;::setParameters </td>
+          <td class="memname">void <a class="el" href="classame_1_1dsp_1_1_freeverb.html">ame::dsp::Freeverb</a>&lt; FloatType, MaximumChannels, MaximumSampleRate &gt;::setDryWet </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structame_1_1dsp_1_1_freeverb_1_1_parameters.html">Parameters</a> &amp;&#160;</td>
-          <td class="paramname"><em>newParams</em></td><td>)</td>
+          <td class="paramtype">const FloatType&#160;</td>
+          <td class="paramname"><em>mix</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -175,8 +168,60 @@ template&lt;typename FloatType , size_t MaximumChannels, size_t MaximumSampleRat
 </table>
 </div><div class="memdoc">
 
-<p>Applies a new set of parameters to the reverb. </p>
-<dl class="section note"><dt>Note</dt><dd>If you call this in parallel with the process method, you may get artifacts. </dd></dl>
+<p>Dry/Wet balance. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mix</td><td>0: dry only, 1: wet only [0.0, 1.0] </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7efe5a8b2acde64e5903eae4d3fdf19c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7efe5a8b2acde64e5903eae4d3fdf19c">&#9670;&nbsp;</a></span>setRoomSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename FloatType , size_t MaximumChannels, size_t MaximumSampleRate&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classame_1_1dsp_1_1_freeverb.html">ame::dsp::Freeverb</a>&lt; FloatType, MaximumChannels, MaximumSampleRate &gt;::setRoomSize </td>
+          <td>(</td>
+          <td class="paramtype">const FloatType&#160;</td>
+          <td class="paramname"><em>roomSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const FloatType&#160;</td>
+          <td class="paramname"><em>damp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Room size and damping. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">roomSize</td><td>1.0 is big, 0 is small [0.0 1.0] </td></tr>
+    <tr><td class="paramname">damp</td><td>0 is not damped, 1.0 is fully damped [0.0 1.0] </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

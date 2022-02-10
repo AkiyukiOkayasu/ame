@@ -9,7 +9,7 @@ var classame_1_1_audio_buffer =
     [ "getNumSamplesPerChannel", "classame_1_1_audio_buffer.html#ab4f37b2d7eaf85e166229456ece5da4f", null ],
     [ "getPeak", "classame_1_1_audio_buffer.html#a14426152feb6882a5f353c89e70de9e9", null ],
     [ "getRMSLevel", "classame_1_1_audio_buffer.html#a2853b035888fee086502117b93004b9a", null ],
-    [ "makeAudioBlockView", "classame_1_1_audio_buffer.html#a20388eefeb49fbe6dd4b8d2f755b0fc4", null ],
+    [ "makeAudioBlockView", "classame_1_1_audio_buffer.html#a5a2bebfb7a1e885a445057e2b40a10c1", null ],
     [ "setNumChannels", "classame_1_1_audio_buffer.html#a102730d8aa90fc8445255845e94450c7", null ],
     [ "buffer", "classame_1_1_audio_buffer.html#a7be24cc3bd51703c73435b613bab4da6", null ]
 ];

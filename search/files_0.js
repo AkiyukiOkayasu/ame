@@ -1,9 +1,10 @@
 var searchData=
 [
-  ['ame_2ehpp_132',['ame.hpp',['../ame_8hpp.html',1,'']]],
-  ['ame_5faudiobuffer_2ehpp_133',['ame_AudioBuffer.hpp',['../ame___audio_buffer_8hpp.html',1,'']]],
-  ['ame_5fbiquad_2ehpp_134',['ame_Biquad.hpp',['../ame___biquad_8hpp.html',1,'']]],
-  ['ame_5fconversion_2ehpp_135',['ame_Conversion.hpp',['../ame___conversion_8hpp.html',1,'']]],
+  ['ame_2ehpp_131',['ame.hpp',['../ame_8hpp.html',1,'']]],
+  ['ame_5faudiobuffer_2ehpp_132',['ame_AudioBuffer.hpp',['../ame___audio_buffer_8hpp.html',1,'']]],
+  ['ame_5fbiquad_2ehpp_133',['ame_Biquad.hpp',['../ame___biquad_8hpp.html',1,'']]],
+  ['ame_5fconversion_2ehpp_134',['ame_Conversion.hpp',['../ame___conversion_8hpp.html',1,'']]],
+  ['ame_5fdcblock_2ehpp_135',['ame_DcBlock.hpp',['../ame___dc_block_8hpp.html',1,'']]],
   ['ame_5fdelay_2ehpp_136',['ame_Delay.hpp',['../ame___delay_8hpp.html',1,'']]],
   ['ame_5fmath_2ehpp_137',['ame_Math.hpp',['../ame___math_8hpp.html',1,'']]],
   ['ame_5foscillator_2ehpp_138',['ame_Oscillator.hpp',['../ame___oscillator_8hpp.html',1,'']]],

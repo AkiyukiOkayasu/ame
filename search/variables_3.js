@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['invsqrt2_225',['invSqrt2',['../ame___math_8hpp.html#a4dbee2ada22ee0a007493899a8ba6519',1,'ame']]]
+  ['sqrt2_226',['sqrt2',['../ame___math_8hpp.html#a51ccce317b47448c3d8bde35e5c4e299',1,'ame']]]
 ];

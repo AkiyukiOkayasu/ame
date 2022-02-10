@@ -129,9 +129,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_audio_buffer.html#a34fb341157887e60ad4cd01bd4094d9d">applyGain</a> (const float gain)</td></tr>
 <tr class="memdesc:a34fb341157887e60ad4cd01bd4094d9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies a gain multiple to all the audio data. <br /></td></tr>
 <tr class="separator:a34fb341157887e60ad4cd01bd4094d9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a20388eefeb49fbe6dd4b8d2f755b0fc4"><td class="memItemLeft" align="right" valign="top"><a id="a20388eefeb49fbe6dd4b8d2f755b0fc4"></a>
-auto&#160;</td><td class="memItemRight" valign="bottom"><b>makeAudioBlockView</b> ()</td></tr>
-<tr class="separator:a20388eefeb49fbe6dd4b8d2f755b0fc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a2bebfb7a1e885a445057e2b40a10c1"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_audio_buffer.html#a5a2bebfb7a1e885a445057e2b40a10c1">makeAudioBlockView</a> (uint_fast32_t offset=0, uint_fast32_t size=Size)</td></tr>
+<tr class="memdesc:a5a2bebfb7a1e885a445057e2b40a10c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an <a class="el" href="classame_1_1_audio_block_view.html" title="A lightweight data structure that stores a pointer to an audio buffer.">AudioBlockView</a> that references N elements from an arbitrary position.  <a href="classame_1_1_audio_buffer.html#a5a2bebfb7a1e885a445057e2b40a10c1">More...</a><br /></td></tr>
+<tr class="separator:a5a2bebfb7a1e885a445057e2b40a10c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:add5249d475af26ca08fa46d709ac95a4"><td class="memTemplParams" colspan="2"><a id="add5249d475af26ca08fa46d709ac95a4"></a>
 template&lt;size_t Extent&gt; </td></tr>
 <tr class="memitem:add5249d475af26ca08fa46d709ac95a4"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classame_1_1_audio_buffer.html#add5249d475af26ca08fa46d709ac95a4">addFrom</a> (const uint_fast32_t destChannel, const uint_fast32_t destStartSample, const <a class="el" href="classame_1_1_audio_block_view.html">AudioBlockView</a>&lt; FloatType, Extent &gt; &amp;source, const uint_fast32_t sourceChannel, const uint_fast32_t sourceStartSample, const uint_fast32_t numSamplesToAdd)</td></tr>
@@ -235,6 +235,58 @@ template&lt;typename FloatType , size_t Size&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>FloatType RMS level [0.0, FloatTypeMax] </dd></dl>
+
+</div>
+</div>
+<a id="a5a2bebfb7a1e885a445057e2b40a10c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a2bebfb7a1e885a445057e2b40a10c1">&#9670;&nbsp;</a></span>makeAudioBlockView()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename FloatType , size_t Size&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classame_1_1_audio_buffer.html">ame::AudioBuffer</a>&lt; FloatType, Size &gt;::makeAudioBlockView </td>
+          <td>(</td>
+          <td class="paramtype">uint_fast32_t&#160;</td>
+          <td class="paramname"><em>offset</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint_fast32_t&#160;</td>
+          <td class="paramname"><em>size</em> = <code>Size</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns an <a class="el" href="classame_1_1_audio_block_view.html" title="A lightweight data structure that stores a pointer to an audio buffer.">AudioBlockView</a> that references N elements from an arbitrary position. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">offset</td><td>Start location </td></tr>
+    <tr><td class="paramname">size</td><td>Number of elements </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classame_1_1_audio_block_view.html" title="A lightweight data structure that stores a pointer to an audio buffer.">ame::AudioBlockView</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd>std::span::subspan() </dd>
+<dd>
+<a class="el" href="classame_1_1_audio_block_view.html#af5b758ac19fc9bfde64311ca2e7b6f80" title="Returns an AudioBlockView that references N elements from an arbitrary position.">ame::AudioBlockView::subView()</a> </dd></dl>
+<dl class="section attention"><dt>Attention</dt><dd>Be careful that size is NOT the number of samples per channel, but the size of std::span. </dd></dl>
 
 </div>
 </div>

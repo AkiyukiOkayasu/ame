@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>AME: include/ame_Reverb.hpp File Reference</title>
+<title>AME: include/ame_DcBlock.hpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -72,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('ame___reverb_8hpp.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('ame___dc_block_8hpp.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -94,59 +94,60 @@ $(document).ready(function(){initNavTree('ame___reverb_8hpp.html',''); initResiz
   <div class="summary">
 <a href="#nested-classes">Classes</a>  </div>
   <div class="headertitle">
-<div class="title">ame_Reverb.hpp File Reference</div>  </div>
+<div class="title">ame_DcBlock.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Reverb.  
+<p>DC block filter.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="ame___audio_buffer_8hpp_source.html">ame_AudioBuffer.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ame___math_8hpp_source.html">ame_Math.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ame___util_8hpp_source.html">ame_Util.hpp</a>&quot;</code><br />
 <code>#include &lt;array&gt;</code><br />
 <code>#include &lt;cassert&gt;</code><br />
+<code>#include &lt;cmath&gt;</code><br />
 <code>#include &lt;cstdint&gt;</code><br />
-<code>#include &lt;type_traits&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for ame_Reverb.hpp:</div>
+Include dependency graph for ame_DcBlock.hpp:</div>
 <div class="dyncontent">
-<div class="center"><img src="ame___reverb_8hpp__incl.png" border="0" usemap="#ainclude_2ame___reverb_8hpp" alt=""/></div>
-<map name="ainclude_2ame___reverb_8hpp" id="ainclude_2ame___reverb_8hpp">
-<area shape="rect" title="Reverb." alt="" coords="331,5,495,32"/>
-<area shape="rect" href="ame___audio_buffer_8hpp.html" title="Audio buffer." alt="" coords="205,80,350,107"/>
-<area shape="rect" title=" " alt="" coords="315,155,365,181"/>
-<area shape="rect" title=" " alt="" coords="479,155,545,181"/>
-<area shape="rect" title=" " alt="" coords="5,155,67,181"/>
-<area shape="rect" href="ame___util_8hpp.html" title="Some utilities functions." alt="" coords="476,80,575,107"/>
-<area shape="rect" title=" " alt="" coords="763,229,845,256"/>
-<area shape="rect" title=" " alt="" coords="165,155,240,181"/>
-<area shape="rect" title=" " alt="" coords="419,229,477,256"/>
-<area shape="rect" title=" " alt="" coords="390,155,455,181"/>
-<area shape="rect" title=" " alt="" coords="91,155,141,181"/>
-<area shape="rect" href="ame___math_8hpp.html" title="Math functions." alt="" coords="655,155,761,181"/>
-<area shape="rect" title=" " alt="" coords="569,155,631,181"/>
-<area shape="rect" title=" " alt="" coords="667,229,739,256"/>
+<div class="center"><img src="ame___dc_block_8hpp__incl.png" border="0" usemap="#ainclude_2ame___dc_block_8hpp" alt=""/></div>
+<map name="ainclude_2ame___dc_block_8hpp" id="ainclude_2ame___dc_block_8hpp">
+<area shape="rect" title="DC block filter." alt="" coords="303,5,475,32"/>
+<area shape="rect" href="ame___audio_buffer_8hpp.html" title="Audio buffer." alt="" coords="205,80,351,107"/>
+<area shape="rect" title=" " alt="" coords="331,155,382,181"/>
+<area shape="rect" title=" " alt="" coords="407,155,472,181"/>
+<area shape="rect" title=" " alt="" coords="91,229,150,256"/>
+<area shape="rect" title=" " alt="" coords="22,155,83,181"/>
+<area shape="rect" href="ame___math_8hpp.html" title="Math functions." alt="" coords="722,155,829,181"/>
+<area shape="rect" href="ame___util_8hpp.html" title="Some utilities functions." alt="" coords="479,80,578,107"/>
+<area shape="rect" title=" " alt="" coords="158,155,233,181"/>
+<area shape="rect" title=" " alt="" coords="496,155,561,181"/>
+<area shape="rect" title=" " alt="" coords="257,155,307,181"/>
+<area shape="rect" title=" " alt="" coords="750,229,822,256"/>
+<area shape="rect" title=" " alt="" coords="643,229,726,256"/>
+<area shape="rect" title=" " alt="" coords="586,155,647,181"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><img src="ame___reverb_8hpp__dep__incl.png" border="0" usemap="#ainclude_2ame___reverb_8hppdep" alt=""/></div>
-<map name="ainclude_2ame___reverb_8hppdep" id="ainclude_2ame___reverb_8hppdep">
-<area shape="rect" title="Reverb." alt="" coords="5,5,169,32"/>
-<area shape="rect" href="ame_8hpp.html" title="main header file." alt="" coords="29,80,145,107"/>
+<div class="center"><img src="ame___dc_block_8hpp__dep__incl.png" border="0" usemap="#ainclude_2ame___dc_block_8hppdep" alt=""/></div>
+<map name="ainclude_2ame___dc_block_8hppdep" id="ainclude_2ame___dc_block_8hppdep">
+<area shape="rect" title="DC block filter." alt="" coords="5,5,177,32"/>
+<area shape="rect" href="ame_8hpp.html" title="main header file." alt="" coords="33,80,149,107"/>
 </map>
 </div>
 </div>
-<p><a href="ame___reverb_8hpp_source.html">Go to the source code of this file.</a></p>
+<p><a href="ame___dc_block_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1dsp_1_1_freeverb.html">ame::dsp::Freeverb&lt; FloatType, MaximumChannels, MaximumSampleRate &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reverb.  <a href="classame_1_1dsp_1_1_freeverb.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1dsp_1_1_dc_block.html">ame::dsp::DcBlock&lt; FloatType, MaximumChannels &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">DC block filter.  <a href="classame_1_1dsp_1_1_dc_block.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Reverb. </p>
+<div class="textblock"><p>DC block filter. </p>
 <dl class="section author"><dt>Author</dt><dd>Akiyuki Okayasu (<a href="#" onclick="location.href='mai'+'lto:'+'aki'+'yu'+'ki.'+'ok'+'aya'+'su'+'@gm'+'ai'+'l.c'+'om'; return false;">akiyu<span style="display: none;">.nosp@m.</span>ki.o<span style="display: none;">.nosp@m.</span>kayas<span style="display: none;">.nosp@m.</span>u@gm<span style="display: none;">.nosp@m.</span>ail.c<span style="display: none;">.nosp@m.</span>om</a>) </dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2021 - Akiyuki Okayasu</dd></dl>
 <p>AME is released under the MIT license. </p>
@@ -155,7 +156,7 @@ Classes</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="ame___reverb_8hpp.html">ame_Reverb.hpp</a></li>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="ame___dc_block_8hpp.html">ame_DcBlock.hpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>

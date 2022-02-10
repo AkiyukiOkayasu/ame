@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['freeverb_121',['Freeverb',['../classame_1_1dsp_1_1_freeverb.html',1,'ame::dsp']]]
+  ['freeverb_120',['Freeverb',['../classame_1_1dsp_1_1_freeverb.html',1,'ame::dsp']]]
 ];

@@ -10,5 +10,6 @@ var classame_1_1_audio_block_view =
     [ "getPeak", "classame_1_1_audio_block_view.html#a72899fd26da50c9656024d9e8acffffb", null ],
     [ "getRMSLevel", "classame_1_1_audio_block_view.html#a70b70ca8632cbec3bccf79426251138d", null ],
     [ "setSample", "classame_1_1_audio_block_view.html#a1386f0c84312618a59a6d6c1a3c4f9f9", null ],
+    [ "subView", "classame_1_1_audio_block_view.html#af5b758ac19fc9bfde64311ca2e7b6f80", null ],
     [ "view", "classame_1_1_audio_block_view.html#ad18b0cb336f190a40736cadd1eae3760", null ]
 ];
