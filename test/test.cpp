@@ -1,4 +1,3 @@
-#include "ame_Ambisonics.hpp"
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include "Tamtam.hpp"
 #include "ame.hpp"
@@ -9,6 +8,18 @@
 #include <span>
 
 using doctest::Approx;
+
+TEST_CASE ("Radian / Degree")
+{
+    CHECK_EQ (ame::rad2deg (0.0f), Approx (0.0f));
+    CHECK_EQ (ame::rad2deg (ame::halfPi<float>), Approx (90.0f));
+    CHECK_EQ (ame::rad2deg (ame::pi<float>), Approx (180.0f));
+    CHECK_EQ (ame::rad2deg (ame::twoPi<float>), Approx (360.0f));
+    CHECK_EQ (ame::deg2rad (0.0f), Approx (0.0f));
+    CHECK_EQ (ame::deg2rad (90.0f), Approx (ame::halfPi<float>));
+    CHECK_EQ (ame::deg2rad (180.0f), Approx (ame::pi<float>));
+    CHECK_EQ (ame::deg2rad (360.0f), Approx (ame::twoPi<float>));
+}
 
 TEST_CASE ("Ambisonics")
 {

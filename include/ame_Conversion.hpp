@@ -9,8 +9,11 @@
 
 #pragma once
 
+#include "ame_Math.hpp"
+
 #include <algorithm>
 #include <cmath>
+#include <type_traits>
 
 namespace ame
 {
@@ -246,5 +249,30 @@ constexpr float gainToDecibels (const float gain) noexcept
     return gain > 0.00001f
                ? std::log10 (gain) * 20.0f
                : -100.0f; // Minimum output value -100dB
+}
+
+//==============================================================================
+/** Degree to Radians.
+@tparam FloatType 
+@param degree
+@return constexpr FloatType Radian
+*/
+template <typename FloatType>
+constexpr FloatType deg2rad (FloatType degree) noexcept
+{
+    static_assert (std::is_floating_point<FloatType>::value, "FloatType is must be floating point type.");
+    return degree * (ame::pi<FloatType> / static_cast<FloatType> (180.0));
+}
+
+/** Radian to Degree
+@tparam FloatType 
+@param radian 
+@return constexpr FloatType 
+*/
+template <typename FloatType>
+constexpr FloatType rad2deg (FloatType radian) noexcept
+{
+    static_assert (std::is_floating_point<FloatType>::value, "FloatType is must be floating point type.");
+    return radian * (static_cast<FloatType> (180.0) / ame::pi<FloatType>);
 }
 } // namespace ame
