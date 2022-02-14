@@ -19,6 +19,19 @@
 
 namespace ame
 {
+/** 範囲を表す構造体.
+
+@tparam T 
+*/
+template <typename T>
+struct Range
+{
+    T min;
+    T Max;
+    T init;
+    T step;
+};
+
 /** Increment the phase and returns in the range of 0~2pi.
     @param phase
     @param increment Amount to add to phase
