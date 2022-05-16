@@ -56,11 +56,12 @@ public:
     }
 
     /** Set raw coefficient value.
-        @param newRawCoefficient [0, 1]
+        @param newRawCoefficient [0.0 < newRawCoefficient <= 1.0]
+        @attention 0より大きな、1以下の値でないといけない。0だとy[t-1]のみがバイアスとして出力されてしまうし、1以上だと発散してしまう。
     */
     void setRawCoefficient (const FloatType newRawCoefficient)
     {
-        assert (0.0f <= newRawCoefficient && newRawCoefficient <= 1.0f);
+        assert (0.0f < newRawCoefficient && newRawCoefficient <= 1.0f);
         coef = newRawCoefficient;
     }
 
