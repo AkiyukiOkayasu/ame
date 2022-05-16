@@ -18,7 +18,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       
-      - uses: langroodi/doxygenize@v1.3
+      - uses: langroodi/doxygenize@v1.6.2
         with:
           doxygenconf: ./Doxyfile
           htmloutput: ./docs/
