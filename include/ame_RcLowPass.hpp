@@ -12,18 +12,14 @@
 
 #include "ame_Math.hpp"
 
-#include <array>
-#include <atomic>
 #include <cassert>
-#include <cmath>
-#include <cstdint>
 #include <type_traits>
 
 namespace ame::dsp
 {
 /** RC lowpass filter for parameter smoothing.
     y[t] = x[t] * coef + (1-coef) * y[t-1]
-    
+
     @tparam FloatType float or double
 */
 template <typename FloatType>
