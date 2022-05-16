@@ -36,6 +36,7 @@
 #include "ame_Oscillator.hpp"
 #include "ame_Pcm.hpp"
 #include "ame_Random.hpp"
+#include "ame_RcLowPass.hpp"
 #include "ame_Reverb.hpp"
 #include "ame_String.hpp"
 #include "ame_Util.hpp"

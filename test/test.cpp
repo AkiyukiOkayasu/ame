@@ -21,6 +21,23 @@ TEST_CASE ("Radian / Degree")
     CHECK_EQ (ame::deg2rad (360.0f), Approx (ame::twoPi<float>));
 }
 
+TEST_CASE ("Rc lowpass")
+{
+    ame::dsp::RcLowPass<float> rcf { 48000 }; //sample rate: 48kHz
+    rcf.setCutOffFrequency (20.0f);           //LPF cutoff freq: 20Hz
+    rcf.process (0.0f);
+    float lastOutput = 0.0f;
+    for (int i = 0; i < 100; ++i)
+    {
+        float o = rcf.process (1.0f);
+        CHECK_GT (o, Approx (lastOutput));
+        lastOutput = o;
+    }
+
+    rcf.setRawCoefficient (1.0f); //No filter
+    CHECK_EQ (rcf.getRawCoefficient(), Approx (1.0f));
+}
+
 TEST_CASE ("Ambisonics")
 {
     SUBCASE ("3D")
