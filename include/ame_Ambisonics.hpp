@@ -100,7 +100,7 @@ constexpr FloatType decodeAmbisonics1st (const Ambisonics3D1st<FloatType>& in, c
 /** Ambisonics 1st to Mono decode.
     @tparam FloatType float or double
     @param in Ambisonics 1st audio
-    @param pos Speaker position in radian [-π, π]
+    @param azimuth Speaker position in radian [-π, π]
     @return constexpr FloatType 
 */
 template <typename FloatType>

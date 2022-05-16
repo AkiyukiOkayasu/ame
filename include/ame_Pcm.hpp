@@ -45,6 +45,9 @@ enum class ChunkId : uint_fast8_t
     data
 };
 
+/** WaveChunk.
+    @tparam BytePointerType 
+*/
 template <class BytePointerType>
 struct Chunk
 {
@@ -83,6 +86,9 @@ namespace
     } // namespace wavChunkId
 } // namespace
 
+/** WAVE file reader.
+    @tparam BytePointerType 
+*/
 template <typename BytePointerType>
 class WavReader
 {
@@ -236,6 +242,9 @@ private:
     Chunk<BytePointerType> dataChunk {};
 };
 
+/** WAVE file player.
+    @tparam BytePointerType 
+*/
 template <typename BytePointerType>
 class WavPlayer
 {
