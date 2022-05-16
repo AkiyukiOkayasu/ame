@@ -22,9 +22,8 @@
 namespace ame::dsp
 {
 /** RC lowpass filter for parameter smoothing.
-
     y[t] = x[t] * coef + (1-coef) * y[t-1]
-
+    
     @tparam FloatType float or double
 */
 template <typename FloatType>
@@ -47,7 +46,6 @@ public:
 
     /** LPF cutoff.
         a=\frac{2\pi\cdotΔT\cdot f_{c}}{2\pi\cdotΔT\cdot f_{c}+1}
-    
         @param cutOffFrequency cutoff frequency in Hz        
     */
     void setCutOffFrequency (const FloatType cutOffFrequency) noexcept
