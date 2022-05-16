@@ -1,9 +1,10 @@
 <map id="include/ame_AudioBuffer.hpp" name="include/ame_AudioBuffer.hpp">
-<area shape="rect" id="node1" title="Audio buffer." alt="" coords="294,5,485,32"/>
-<area shape="rect" id="node2" href="$ame_8hpp.html" title="main header file." alt="" coords="332,155,448,181"/>
-<area shape="rect" id="node3" href="$ame___biquad_8hpp.html" title="Biquad filter." alt="" coords="23,80,186,107"/>
-<area shape="rect" id="node4" href="$ame___dc_block_8hpp.html" title="DC block filter." alt="" coords="210,80,382,107"/>
-<area shape="rect" id="node5" href="$ame___delay_8hpp.html" title="Fractional delay." alt="" coords="407,80,562,107"/>
-<area shape="rect" id="node6" href="$ame___pcm_8hpp.html" title="PCM." alt="" coords="586,80,737,107"/>
-<area shape="rect" id="node7" href="$ame___reverb_8hpp.html" title="Reverb." alt="" coords="761,80,925,107"/>
+<area shape="rect" id="node1" title="Audio buffer." alt="" coords="419,5,609,32"/>
+<area shape="rect" id="node2" href="$ame_8hpp.html" title="main header file." alt="" coords="456,155,572,181"/>
+<area shape="rect" id="node3" href="$ame___ambisonics_8hpp.html" title="Ambisonics functions." alt="" coords="25,80,216,107"/>
+<area shape="rect" id="node4" href="$ame___biquad_8hpp.html" title="Biquad filter." alt="" coords="241,80,403,107"/>
+<area shape="rect" id="node5" href="$ame___dc_block_8hpp.html" title="DC block filter." alt="" coords="428,80,600,107"/>
+<area shape="rect" id="node6" href="$ame___delay_8hpp.html" title="Fractional delay." alt="" coords="625,80,779,107"/>
+<area shape="rect" id="node7" href="$ame___pcm_8hpp.html" title="PCM." alt="" coords="804,80,955,107"/>
+<area shape="rect" id="node8" href="$ame___reverb_8hpp.html" title="Reverb." alt="" coords="979,80,1143,107"/>
 </map>

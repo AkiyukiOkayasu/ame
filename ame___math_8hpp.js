@@ -1,6 +1,5 @@
 var ame___math_8hpp =
 [
-    [ "cos", "ame___math_8hpp.html#adea25ce1911894aba888279b4474a8ef", null ],
     [ "cos", "ame___math_8hpp.html#a94dc9019e3b2a7df78f4141dfe77d001", null ],
     [ "sin", "ame___math_8hpp.html#a20c2e263673378c1647a84c9d01adcb2", null ],
     [ "sin", "ame___math_8hpp.html#ac7efb0db07c77c7b1cb6f1f76e6ca98e", null ],

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['invsqrt2_224',['invSqrt2',['../ame___math_8hpp.html#a4dbee2ada22ee0a007493899a8ba6519',1,'ame']]]
+  ['elevation_0',['elevation',['../structame_1_1dsp_1_1_polar.html#a88e56a2e3b3c41e80445390d1670c1ff',1,'ame::dsp::Polar']]]
 ];

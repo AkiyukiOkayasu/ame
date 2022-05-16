@@ -1,9 +1,6 @@
 var classame_1_1dsp_1_1_biquad =
 [
-    [ "Coefficients", "structame_1_1dsp_1_1_biquad_1_1_coefficients.html", "structame_1_1dsp_1_1_biquad_1_1_coefficients" ],
-    [ "Biquad", "classame_1_1dsp_1_1_biquad.html#ab387ae431a6c9514fe1637af0ebd23b9", null ],
-    [ "~Biquad", "classame_1_1dsp_1_1_biquad.html#af0d2e3d90b80fac1770cda653fdfbe50", null ],
-    [ "getCoefficients", "classame_1_1dsp_1_1_biquad.html#a36075bde1d3e7e4bfa94fed31de47e9d", null ],
+    [ "Coefficients", "structame_1_1dsp_1_1_biquad_1_1_coefficients.html", null ],
     [ "getSampleRate", "classame_1_1dsp_1_1_biquad.html#a6179cd8df215dff5932bff4330b17282", null ],
     [ "makeAllPass", "classame_1_1dsp_1_1_biquad.html#af71bc133fd6abaa1df46be91d8d641f9", null ],
     [ "makeBandPass", "classame_1_1dsp_1_1_biquad.html#a80897dac04f51b62c2e88f9932d8ee9e", null ],

@@ -1,8 +1,9 @@
 <map id="include/ame_Util.hpp" name="include/ame_Util.hpp">
-<area shape="rect" id="node1" title="Some utilities functions." alt="" coords="233,5,376,32"/>
-<area shape="rect" id="node2" href="$ame_8hpp.html" title="main header file." alt="" coords="247,155,363,181"/>
-<area shape="rect" id="node3" href="$ame___dc_block_8hpp.html" title="DC block filter." alt="" coords="31,80,203,107"/>
-<area shape="rect" id="node4" href="$ame___delay_8hpp.html" title="Fractional delay." alt="" coords="227,80,382,107"/>
-<area shape="rect" id="node5" href="$ame___oscillator_8hpp.html" title=" " alt="" coords="406,80,585,107"/>
-<area shape="rect" id="node6" href="$ame___reverb_8hpp.html" title="Reverb." alt="" coords="609,80,773,107"/>
+<area shape="rect" id="node1" title="Some utilities functions." alt="" coords="346,5,489,32"/>
+<area shape="rect" id="node2" href="$ame_8hpp.html" title="main header file." alt="" coords="360,155,476,181"/>
+<area shape="rect" id="node3" href="$ame___ambisonics_8hpp.html" title="Ambisonics functions." alt="" coords="24,80,214,107"/>
+<area shape="rect" id="node4" href="$ame___dc_block_8hpp.html" title="DC block filter." alt="" coords="238,80,410,107"/>
+<area shape="rect" id="node5" href="$ame___delay_8hpp.html" title="Fractional delay." alt="" coords="435,80,590,107"/>
+<area shape="rect" id="node6" href="$ame___oscillator_8hpp.html" title=" " alt="" coords="614,80,792,107"/>
+<area shape="rect" id="node7" href="$ame___reverb_8hpp.html" title="Reverb." alt="" coords="817,80,981,107"/>
 </map>

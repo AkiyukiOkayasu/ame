@@ -1,7 +1,5 @@
 var classame_1_1_linear_smoothed_value =
 [
-    [ "LinearSmoothedValue", "classame_1_1_linear_smoothed_value.html#a82587bff692b1ef6c8d6a6f23f2d3f85", null ],
-    [ "~LinearSmoothedValue", "classame_1_1_linear_smoothed_value.html#a0f154514590b7d4a307e402e13002be1", null ],
     [ "getCurrentValue", "classame_1_1_linear_smoothed_value.html#ad1fc86f169d2dcc94e968d8fa4de0d6e", null ],
     [ "getNextValue", "classame_1_1_linear_smoothed_value.html#a927a6c7b58123d67e425ee83e1e238d4", null ],
     [ "getTargetValue", "classame_1_1_linear_smoothed_value.html#ac7efe0c8329e70735d5e8cb1fe88bed1", null ],

@@ -1,16 +1,16 @@
 <map id="include/ame_DcBlock.hpp" name="include/ame_DcBlock.hpp">
-<area shape="rect" id="node1" title="DC block filter." alt="" coords="303,5,475,32"/>
-<area shape="rect" id="node2" href="$ame___audio_buffer_8hpp.html" title="Audio buffer." alt="" coords="205,80,351,107"/>
-<area shape="rect" id="node4" title=" " alt="" coords="331,155,382,181"/>
-<area shape="rect" id="node5" title=" " alt="" coords="407,155,472,181"/>
-<area shape="rect" id="node6" title=" " alt="" coords="91,229,150,256"/>
-<area shape="rect" id="node8" title=" " alt="" coords="22,155,83,181"/>
-<area shape="rect" id="node10" href="$ame___math_8hpp.html" title="Math functions." alt="" coords="722,155,829,181"/>
-<area shape="rect" id="node13" href="$ame___util_8hpp.html" title="Some utilities functions." alt="" coords="479,80,578,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="158,155,233,181"/>
-<area shape="rect" id="node7" title=" " alt="" coords="496,155,561,181"/>
-<area shape="rect" id="node9" title=" " alt="" coords="257,155,307,181"/>
-<area shape="rect" id="node11" title=" " alt="" coords="750,229,822,256"/>
-<area shape="rect" id="node12" title=" " alt="" coords="643,229,726,256"/>
-<area shape="rect" id="node14" title=" " alt="" coords="586,155,647,181"/>
+<area shape="rect" id="node1" title="DC block filter." alt="" coords="313,5,485,32"/>
+<area shape="rect" id="node2" href="$ame___audio_buffer_8hpp.html" title="Audio buffer." alt="" coords="190,80,335,107"/>
+<area shape="rect" id="node4" title=" " alt="" coords="315,155,365,181"/>
+<area shape="rect" id="node5" title=" " alt="" coords="390,155,455,181"/>
+<area shape="rect" id="node8" title=" " alt="" coords="5,155,67,181"/>
+<area shape="rect" id="node10" href="$ame___math_8hpp.html" title="Math functions." alt="" coords="705,155,812,181"/>
+<area shape="rect" id="node13" href="$ame___util_8hpp.html" title="Some utilities functions." alt="" coords="463,80,561,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="165,155,240,181"/>
+<area shape="rect" id="node6" title=" " alt="" coords="396,229,455,256"/>
+<area shape="rect" id="node7" title=" " alt="" coords="479,155,545,181"/>
+<area shape="rect" id="node9" title=" " alt="" coords="91,155,141,181"/>
+<area shape="rect" id="node11" title=" " alt="" coords="733,229,805,256"/>
+<area shape="rect" id="node12" title=" " alt="" coords="627,229,709,256"/>
+<area shape="rect" id="node14" title=" " alt="" coords="569,155,631,181"/>
 </map>

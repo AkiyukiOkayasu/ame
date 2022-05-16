@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['operator_2b_2b_71',['operator++',['../classame_1_1_wrap.html#a82f76b83e647c18e891b0f0740088d3c',1,'ame::Wrap::operator++()'],['../classame_1_1_wrap.html#af1eaa8c385b3fafa943adf2a1b8b45f9',1,'ame::Wrap::operator++(int)']]],
-  ['operator_2b_3d_72',['operator+=',['../classame_1_1_wrap.html#a69801c0654503b548c06887e6117b788',1,'ame::Wrap']]]
+  ['n4_0',['N4',['../ame___conversion_8hpp.html#a7585c74ea4475a4b0750597223e0410dab1c49f839832f51f6d687a04db101d4c',1,'ame']]],
+  ['nextsample_1',['nextSample',['../classame_1_1_wavetable_oscillator.html#aa48f9f5c765f916d623016b9922eabf7',1,'ame::WavetableOscillator::nextSample()'],['../classame_1_1_sine_oscillator.html#a3a43609fa5d9f7516739e96692e4b861',1,'ame::SineOscillator::nextSample()']]],
+  ['noise_2',['noise',['../ame___random_8hpp.html#a1a67c3556492fe36f2e188b570829f85',1,'ame']]],
+  ['notevalue_3',['NoteValue',['../ame___conversion_8hpp.html#a7585c74ea4475a4b0750597223e0410d',1,'ame']]]
 ];

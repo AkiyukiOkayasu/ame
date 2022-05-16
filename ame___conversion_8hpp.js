@@ -26,10 +26,10 @@ var ame___conversion_8hpp =
       [ "N128_TRIPLET", "ame___conversion_8hpp.html#a7585c74ea4475a4b0750597223e0410da111ebf97e82422e0f992b0af2e0122bb", null ]
     ] ],
     [ "bpmToMs", "ame___conversion_8hpp.html#a1668c6357a562bfa433b29d265277692", null ],
-    [ "cartopol", "ame___conversion_8hpp.html#ad842793ae2035f1ceb410e2c3c0e4645", null ],
+    [ "cartopol", "ame___conversion_8hpp.html#aa5837c09424569ab8a27a9906ef1a1d7", null ],
     [ "decibelsToGain", "ame___conversion_8hpp.html#ae50044432f13ab0bd9b0b284b5431652", null ],
+    [ "deg2rad", "ame___conversion_8hpp.html#ac5e53bed1dc3b0609243a728fcad3779", null ],
     [ "deinterleaveSamples", "ame___conversion_8hpp.html#a3ad63aa32298fb1b9c91f09c0a03fadf", null ],
-    [ "floatToQ23", "ame___conversion_8hpp.html#ab5f82f858dad9bc4bb901cec3ddda21d", null ],
     [ "freqToMidi", "ame___conversion_8hpp.html#a7f69dfed319a8a702a445d1880cbe9f8", null ],
     [ "freqToPeriod", "ame___conversion_8hpp.html#aa31fd9c4839dd2a12db428f44832b0aa", null ],
     [ "gainToDecibels", "ame___conversion_8hpp.html#a436f4dee126a9ae49c51e849f7905df8", null ],
@@ -37,10 +37,7 @@ var ame___conversion_8hpp =
     [ "midiToFreq", "ame___conversion_8hpp.html#a5b4357245e3088bdf7fb7977c1ef1ced", null ],
     [ "msToBpm", "ame___conversion_8hpp.html#a272314d1a1861cde617c106b77b0d721", null ],
     [ "periodToFreq", "ame___conversion_8hpp.html#ab591aa8a6792fdc6fd5e8c3838e875a8", null ],
-    [ "poltocar", "ame___conversion_8hpp.html#a3efcc056b1b635b37f37e601f1c4dbd4", null ],
-    [ "q23ToFloat", "ame___conversion_8hpp.html#a67a47b644764f7c144da86c1541b5d2e", null ],
-    [ "semitoneToRatio", "ame___conversion_8hpp.html#a8b31e4517e783b663825105c5543f584", null ],
-    [ "Q23_ABSMAX", "ame___conversion_8hpp.html#a896d18953a0a317d130d60a0937ec6a5", null ],
-    [ "Q23_MAX", "ame___conversion_8hpp.html#acc351c5af5a8c54c8b4a1f0dce4b4c0f", null ],
-    [ "Q23_MIN", "ame___conversion_8hpp.html#a00053b81d9a26a531b3068d80b18b648", null ]
+    [ "poltocar", "ame___conversion_8hpp.html#a06d142ca47916d5984aff35acf4d1d12", null ],
+    [ "rad2deg", "ame___conversion_8hpp.html#a2c3ea6c4184f1d2dfd324636b8e97e8b", null ],
+    [ "semitoneToRatio", "ame___conversion_8hpp.html#a8b31e4517e783b663825105c5543f584", null ]
 ];
