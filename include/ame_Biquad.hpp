@@ -19,17 +19,15 @@
 #include <atomic>
 #include <cassert>
 #include <cmath>
+#include <concepts>
 #include <cstdint>
-#include <type_traits>
 
 namespace ame::dsp
 {
 /// BiQuad filter.
-template <typename FloatType, size_t MaximumChannels>
+template <std::floating_point FloatType, size_t MaximumChannels>
 class Biquad
 {
-    static_assert (std::is_floating_point<FloatType>::value, "FloatType is must be floating point type.");
-
 public:
     explicit Biquad (const FloatType sampleRate)
         : sampleRate (sampleRate)
