@@ -1,8 +1,9 @@
 <map id="include/ame_Conversion.hpp" name="include/ame_Conversion.hpp">
-<area shape="rect" id="node1" title="Audio friendly conversion functions." alt="" coords="77,5,265,32"/>
-<area shape="rect" id="node2" href="$ame___math_8hpp.html" title="Math functions." alt="" coords="72,80,179,107"/>
+<area shape="rect" id="node1" title="Audio friendly conversion functions." alt="" coords="65,5,253,32"/>
+<area shape="rect" id="node2" href="$ame___math_8hpp.html" title="Math functions." alt="" coords="151,80,257,107"/>
 <area shape="rect" id="node3" title=" " alt="" coords="5,155,64,181"/>
-<area shape="rect" id="node5" title=" " alt="" coords="184,155,267,181"/>
-<area shape="rect" id="node6" title=" " alt="" coords="253,80,328,107"/>
-<area shape="rect" id="node4" title=" " alt="" coords="88,155,160,181"/>
+<area shape="rect" id="node4" title=" " alt="" coords="88,155,163,181"/>
+<area shape="rect" id="node7" title=" " alt="" coords="281,80,356,107"/>
+<area shape="rect" id="node5" title=" " alt="" coords="187,155,240,181"/>
+<area shape="rect" id="node6" title=" " alt="" coords="264,155,336,181"/>
 </map>

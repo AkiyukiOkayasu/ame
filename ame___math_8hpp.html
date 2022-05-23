@@ -101,17 +101,19 @@ $(document).ready(function(){initNavTree('ame___math_8hpp.html',''); initResizab
 <p>Math functions.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;cmath&gt;</code><br />
+<code>#include &lt;concepts&gt;</code><br />
+<code>#include &lt;limits&gt;</code><br />
 <code>#include &lt;numbers&gt;</code><br />
-<code>#include &lt;type_traits&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for ame_Math.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="ame___math_8hpp__incl.png" border="0" usemap="#ainclude_2ame___math_8hpp" alt=""/></div>
 <map name="ainclude_2ame___math_8hpp" id="ainclude_2ame___math_8hpp">
-<area shape="rect" title="Math functions." alt="" coords="48,5,200,32"/>
+<area shape="rect" title="Math functions." alt="" coords="93,5,245,32"/>
 <area shape="rect" title=" " alt="" coords="5,80,64,107"/>
-<area shape="rect" title=" " alt="" coords="88,80,160,107"/>
-<area shape="rect" title=" " alt="" coords="184,80,267,107"/>
+<area shape="rect" title=" " alt="" coords="88,80,163,107"/>
+<area shape="rect" title=" " alt="" coords="187,80,240,107"/>
+<area shape="rect" title=" " alt="" coords="264,80,336,107"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -153,27 +155,27 @@ constexpr double&#160;</td><td class="memItemRight" valign="bottom"><b>ame::cos<
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:a293360c6858860117a43a7afe494965f"><td class="memTemplParams" colspan="2"><a id="a293360c6858860117a43a7afe494965f" name="a293360c6858860117a43a7afe494965f"></a>
-template&lt;typename FloatType &gt; </td></tr>
+template&lt;std::floating_point FloatType&gt; </td></tr>
 <tr class="memitem:a293360c6858860117a43a7afe494965f"><td class="memTemplItemLeft" align="right" valign="top">constexpr FloatType&#160;</td><td class="memTemplItemRight" valign="bottom"><b>ame::pi</b> = std::numbers::pi_v&lt;FloatType&gt;</td></tr>
 <tr class="memdesc:a293360c6858860117a43a7afe494965f"><td class="mdescLeft">&#160;</td><td class="mdescRight">π <br /></td></tr>
 <tr class="separator:a293360c6858860117a43a7afe494965f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1afb257f21a588aaae40191d0e7c2496"><td class="memTemplParams" colspan="2"><a id="a1afb257f21a588aaae40191d0e7c2496" name="a1afb257f21a588aaae40191d0e7c2496"></a>
-template&lt;typename FloatType &gt; </td></tr>
+template&lt;std::floating_point FloatType&gt; </td></tr>
 <tr class="memitem:a1afb257f21a588aaae40191d0e7c2496"><td class="memTemplItemLeft" align="right" valign="top">constexpr FloatType&#160;</td><td class="memTemplItemRight" valign="bottom"><b>ame::twoPi</b> = 2.0 * std::numbers::pi_v&lt;FloatType&gt;</td></tr>
 <tr class="memdesc:a1afb257f21a588aaae40191d0e7c2496"><td class="mdescLeft">&#160;</td><td class="mdescRight">2π <br /></td></tr>
 <tr class="separator:a1afb257f21a588aaae40191d0e7c2496"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b3c2137ce9d299388750c7731ffbe30"><td class="memTemplParams" colspan="2"><a id="a9b3c2137ce9d299388750c7731ffbe30" name="a9b3c2137ce9d299388750c7731ffbe30"></a>
-template&lt;typename FloatType &gt; </td></tr>
+template&lt;std::floating_point FloatType&gt; </td></tr>
 <tr class="memitem:a9b3c2137ce9d299388750c7731ffbe30"><td class="memTemplItemLeft" align="right" valign="top">constexpr FloatType&#160;</td><td class="memTemplItemRight" valign="bottom"><b>ame::halfPi</b> = std::numbers::pi_v&lt;FloatType&gt; / 2.0</td></tr>
 <tr class="memdesc:a9b3c2137ce9d299388750c7731ffbe30"><td class="mdescLeft">&#160;</td><td class="mdescRight">π/2 <br /></td></tr>
 <tr class="separator:a9b3c2137ce9d299388750c7731ffbe30"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a51ccce317b47448c3d8bde35e5c4e299"><td class="memTemplParams" colspan="2"><a id="a51ccce317b47448c3d8bde35e5c4e299" name="a51ccce317b47448c3d8bde35e5c4e299"></a>
-template&lt;typename FloatType &gt; </td></tr>
+template&lt;std::floating_point FloatType&gt; </td></tr>
 <tr class="memitem:a51ccce317b47448c3d8bde35e5c4e299"><td class="memTemplItemLeft" align="right" valign="top">constexpr FloatType&#160;</td><td class="memTemplItemRight" valign="bottom"><b>ame::sqrt2</b> = std::numbers::sqrt2_v&lt;FloatType&gt;</td></tr>
 <tr class="memdesc:a51ccce317b47448c3d8bde35e5c4e299"><td class="mdescLeft">&#160;</td><td class="mdescRight">sqrt2 <br /></td></tr>
 <tr class="separator:a51ccce317b47448c3d8bde35e5c4e299"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4dbee2ada22ee0a007493899a8ba6519"><td class="memTemplParams" colspan="2"><a id="a4dbee2ada22ee0a007493899a8ba6519" name="a4dbee2ada22ee0a007493899a8ba6519"></a>
-template&lt;typename FloatType &gt; </td></tr>
+template&lt;std::floating_point FloatType&gt; </td></tr>
 <tr class="memitem:a4dbee2ada22ee0a007493899a8ba6519"><td class="memTemplItemLeft" align="right" valign="top">constexpr FloatType&#160;</td><td class="memTemplItemRight" valign="bottom"><b>ame::invSqrt2</b> = 1.0 / std::numbers::sqrt2_v&lt;FloatType&gt;</td></tr>
 <tr class="memdesc:a4dbee2ada22ee0a007493899a8ba6519"><td class="mdescLeft">&#160;</td><td class="mdescRight">1/sqrt2 <br /></td></tr>
 <tr class="separator:a4dbee2ada22ee0a007493899a8ba6519"><td class="memSeparator" colspan="2">&#160;</td></tr>

@@ -104,18 +104,19 @@ $(document).ready(function(){initNavTree('ame___conversion_8hpp.html',''); initR
 <div class="textblock"><code>#include &quot;<a class="el" href="ame___math_8hpp_source.html">ame_Math.hpp</a>&quot;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;cmath&gt;</code><br />
-<code>#include &lt;type_traits&gt;</code><br />
+<code>#include &lt;concepts&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for ame_Conversion.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="ame___conversion_8hpp__incl.png" border="0" usemap="#ainclude_2ame___conversion_8hpp" alt=""/></div>
 <map name="ainclude_2ame___conversion_8hpp" id="ainclude_2ame___conversion_8hpp">
-<area shape="rect" title="Audio friendly conversion functions." alt="" coords="77,5,265,32"/>
-<area shape="rect" href="ame___math_8hpp.html" title="Math functions." alt="" coords="72,80,179,107"/>
+<area shape="rect" title="Audio friendly conversion functions." alt="" coords="65,5,253,32"/>
+<area shape="rect" href="ame___math_8hpp.html" title="Math functions." alt="" coords="151,80,257,107"/>
 <area shape="rect" title=" " alt="" coords="5,155,64,181"/>
-<area shape="rect" title=" " alt="" coords="184,155,267,181"/>
-<area shape="rect" title=" " alt="" coords="253,80,328,107"/>
-<area shape="rect" title=" " alt="" coords="88,155,160,181"/>
+<area shape="rect" title=" " alt="" coords="88,155,163,181"/>
+<area shape="rect" title=" " alt="" coords="281,80,356,107"/>
+<area shape="rect" title=" " alt="" coords="187,155,240,181"/>
+<area shape="rect" title=" " alt="" coords="264,155,336,181"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -214,11 +215,11 @@ constexpr void&#160;</td><td class="memItemRight" valign="bottom"><b>ame::q23ToF
 <tr class="memitem:a436f4dee126a9ae49c51e849f7905df8"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ame___conversion_8hpp.html#a436f4dee126a9ae49c51e849f7905df8">ame::gainToDecibels</a> (const float gain) noexcept</td></tr>
 <tr class="memdesc:a436f4dee126a9ae49c51e849f7905df8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a gain level into a dBFS value.  <a href="ame___conversion_8hpp.html#a436f4dee126a9ae49c51e849f7905df8">More...</a><br /></td></tr>
 <tr class="separator:a436f4dee126a9ae49c51e849f7905df8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac5e53bed1dc3b0609243a728fcad3779"><td class="memTemplParams" colspan="2">template&lt;typename FloatType &gt; </td></tr>
+<tr class="memitem:ac5e53bed1dc3b0609243a728fcad3779"><td class="memTemplParams" colspan="2">template&lt;std::floating_point FloatType&gt; </td></tr>
 <tr class="memitem:ac5e53bed1dc3b0609243a728fcad3779"><td class="memTemplItemLeft" align="right" valign="top">constexpr FloatType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="ame___conversion_8hpp.html#ac5e53bed1dc3b0609243a728fcad3779">ame::deg2rad</a> (FloatType degree) noexcept</td></tr>
 <tr class="memdesc:ac5e53bed1dc3b0609243a728fcad3779"><td class="mdescLeft">&#160;</td><td class="mdescRight">Degree to Radians.  <a href="ame___conversion_8hpp.html#ac5e53bed1dc3b0609243a728fcad3779">More...</a><br /></td></tr>
 <tr class="separator:ac5e53bed1dc3b0609243a728fcad3779"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c3ea6c4184f1d2dfd324636b8e97e8b"><td class="memTemplParams" colspan="2">template&lt;typename FloatType &gt; </td></tr>
+<tr class="memitem:a2c3ea6c4184f1d2dfd324636b8e97e8b"><td class="memTemplParams" colspan="2">template&lt;std::floating_point FloatType&gt; </td></tr>
 <tr class="memitem:a2c3ea6c4184f1d2dfd324636b8e97e8b"><td class="memTemplItemLeft" align="right" valign="top">constexpr FloatType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="ame___conversion_8hpp.html#a2c3ea6c4184f1d2dfd324636b8e97e8b">ame::rad2deg</a> (FloatType radian) noexcept</td></tr>
 <tr class="memdesc:a2c3ea6c4184f1d2dfd324636b8e97e8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Radian to Degree.  <a href="ame___conversion_8hpp.html#a2c3ea6c4184f1d2dfd324636b8e97e8b">More...</a><br /></td></tr>
 <tr class="separator:a2c3ea6c4184f1d2dfd324636b8e97e8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -403,7 +404,7 @@ constexpr float&#160;</td><td class="memItemRight" valign="bottom"><b>ame::Q23_A
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename FloatType &gt; </div>
+template&lt;std::floating_point FloatType&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -426,7 +427,7 @@ template&lt;typename FloatType &gt; </div>
 <p>Degree to Radians. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">FloatType</td><td></td></tr>
+    <tr><td class="paramname">FloatType</td><td>float or double </td></tr>
   </table>
   </dd>
 </dl>
@@ -850,7 +851,7 @@ template&lt;typename FloatType &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename FloatType &gt; </div>
+template&lt;std::floating_point FloatType&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -873,7 +874,7 @@ template&lt;typename FloatType &gt; </div>
 <p>Radian to Degree. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">FloatType</td><td></td></tr>
+    <tr><td class="paramname">FloatType</td><td>float or double </td></tr>
   </table>
   </dd>
 </dl>
@@ -883,7 +884,7 @@ template&lt;typename FloatType &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>constexpr FloatType </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>constexpr FloatType degree </dd></dl>
 
 </div>
 </div>

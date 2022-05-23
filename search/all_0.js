@@ -1,7 +1,7 @@
 var searchData=
 [
   ['addfrom_0',['addFrom',['../classame_1_1_audio_buffer.html#add5249d475af26ca08fa46d709ac95a4',1,'ame::AudioBuffer']]],
-  ['addmodulo2pi_1',['addModulo2Pi',['../ame___util_8hpp.html#a00e27da08077a35c431f19e445dd1afb',1,'ame']]],
+  ['addmodulo2pi_1',['addModulo2Pi',['../ame___util_8hpp.html#a110f83e45b1f988746057863af0e42e4',1,'ame']]],
   ['addsample_2',['addSample',['../classame_1_1_audio_block_view.html#ab99a4a2a04ceb9eb1da003658ea6a468',1,'ame::AudioBlockView']]],
   ['ambisonics2d1st_3',['Ambisonics2D1st',['../structame_1_1dsp_1_1_ambisonics2_d1st.html',1,'ame::dsp']]],
   ['ambisonics3d1st_4',['Ambisonics3D1st',['../structame_1_1dsp_1_1_ambisonics3_d1st.html',1,'ame::dsp']]],

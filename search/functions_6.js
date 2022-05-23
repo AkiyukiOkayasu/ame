@@ -1,7 +1,7 @@
 var searchData=
 [
   ['gaintodecibels_0',['gainToDecibels',['../ame___conversion_8hpp.html#a436f4dee126a9ae49c51e849f7905df8',1,'ame']]],
-  ['get_1',['get',['../classame_1_1_wrap.html#af63da6ae8e23fb36ffc538b677c47304',1,'ame::Wrap']]],
+  ['get_1',['get',['../classame_1_1_wrap.html#a675585507ebf48797ce66fa59d3cf926',1,'ame::Wrap']]],
   ['getbitrate_2',['getBitRate',['../classame_1_1wav_1_1_wav_reader.html#a877d3de79ff5ae949a51fdb55bd2ccaa',1,'ame::wav::WavReader']]],
   ['getcurrentvalue_3',['getCurrentValue',['../classame_1_1_linear_smoothed_value.html#ad1fc86f169d2dcc94e968d8fa4de0d6e',1,'ame::LinearSmoothedValue']]],
   ['getdatachunk_4',['getDataChunk',['../classame_1_1wav_1_1_wav_reader.html#af15fc94df4f8a00b00e6146cda8024a4',1,'ame::wav::WavReader']]],

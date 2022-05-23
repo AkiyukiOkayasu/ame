@@ -168,7 +168,7 @@ template&lt;typename SampleType , size_t N&gt; </td></tr>
 <tr class="separator:afee8e23cc320c16040300b4ab81cb427"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename FloatType, size_t MaximumChannels&gt;<br />
+<div class="textblock"><div class="compoundTemplParams">template&lt;std::floating_point FloatType, size_t MaximumChannels&gt;<br />
 class ame::dsp::Biquad&lt; FloatType, MaximumChannels &gt;</div><p >BiQuad filter. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a37a5b030b445f6589c4ac85e72a23789" name="a37a5b030b445f6589c4ac85e72a23789"></a>
@@ -177,7 +177,7 @@ class ame::dsp::Biquad&lt; FloatType, MaximumChannels &gt;</div><p >BiQuad filte
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename FloatType , size_t MaximumChannels&gt; </div>
+template&lt;std::floating_point FloatType, size_t MaximumChannels&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -202,7 +202,7 @@ template&lt;typename FloatType , size_t MaximumChannels&gt; </div>
   <table class="params">
     <tr><td class="paramname">c</td><td>BiQuad coefficients <br  />
  <div class="fragment"><div class="line">filter.setCoefficients(<a class="code hl_function" href="classame_1_1dsp_1_1_biquad.html#ad6ff2f798d0206990d49fc50824fac4f">makeLowPass</a>(48000.0f, 440.0f, 0.707f));</div>
-<div class="ttc" id="aclassame_1_1dsp_1_1_biquad_html_ad6ff2f798d0206990d49fc50824fac4f"><div class="ttname"><a href="classame_1_1dsp_1_1_biquad.html#ad6ff2f798d0206990d49fc50824fac4f">ame::dsp::Biquad::makeLowPass</a></div><div class="ttdeci">void makeLowPass(const FloatType cutOffFrequency, const FloatType Q) noexcept</div><div class="ttdoc">LowPass coefficients calculation from RBJ cookbook.</div><div class="ttdef"><b>Definition:</b> ame_Biquad.hpp:80</div></div>
+<div class="ttc" id="aclassame_1_1dsp_1_1_biquad_html_ad6ff2f798d0206990d49fc50824fac4f"><div class="ttname"><a href="classame_1_1dsp_1_1_biquad.html#ad6ff2f798d0206990d49fc50824fac4f">ame::dsp::Biquad::makeLowPass</a></div><div class="ttdeci">void makeLowPass(const FloatType cutOffFrequency, const FloatType Q) noexcept</div><div class="ttdoc">LowPass coefficients calculation from RBJ cookbook.</div><div class="ttdef"><b>Definition:</b> ame_Biquad.hpp:78</div></div>
 </div><!-- fragment --> </td></tr>
   </table>
   </dd>

@@ -1,10 +1,11 @@
 <map id="include/ame_Pcm.hpp" name="include/ame_Pcm.hpp">
-<area shape="rect" id="node1" title="PCM." alt="" coords="361,5,512,32"/>
+<area shape="rect" id="node1" title="PCM." alt="" coords="408,5,559,32"/>
 <area shape="rect" id="node2" href="$ame___audio_buffer_8hpp.html" title="Audio buffer." alt="" coords="221,80,367,107"/>
 <area shape="rect" id="node5" title=" " alt="" coords="5,155,71,181"/>
 <area shape="rect" id="node7" title=" " alt="" coords="427,155,492,181"/>
 <area shape="rect" id="node10" href="$ame___string_8hpp.html" title="String utilities." alt="" coords="474,80,586,107"/>
-<area shape="rect" id="node11" title=" " alt="" coords="610,80,693,107"/>
+<area shape="rect" id="node11" title=" " alt="" coords="610,80,685,107"/>
+<area shape="rect" id="node12" title=" " alt="" coords="709,80,791,107"/>
 <area shape="rect" id="node3" title=" " alt="" coords="327,155,402,181"/>
 <area shape="rect" id="node4" title=" " alt="" coords="95,155,146,181"/>
 <area shape="rect" id="node6" title=" " alt="" coords="170,155,229,181"/>

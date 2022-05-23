@@ -93,6 +93,7 @@ $(document).ready(function(){initNavTree('ame___util_8hpp.html',''); initResizab
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
+<a href="#concepts">Concepts</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">ame_Util.hpp File Reference</div></div>
 </div><!--header-->
@@ -104,6 +105,7 @@ $(document).ready(function(){initNavTree('ame___util_8hpp.html',''); initResizab
 <code>#include &lt;array&gt;</code><br />
 <code>#include &lt;atomic&gt;</code><br />
 <code>#include &lt;cassert&gt;</code><br />
+<code>#include &lt;concepts&gt;</code><br />
 <code>#include &lt;cstddef&gt;</code><br />
 <code>#include &lt;type_traits&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -111,15 +113,17 @@ Include dependency graph for ame_Util.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="ame___util_8hpp__incl.png" border="0" usemap="#ainclude_2ame___util_8hpp" alt=""/></div>
 <map name="ainclude_2ame___util_8hpp" id="ainclude_2ame___util_8hpp">
-<area shape="rect" title="Some utilities functions." alt="" coords="254,5,397,32"/>
-<area shape="rect" href="ame___math_8hpp.html" title="Math functions." alt="" coords="76,80,183,107"/>
-<area shape="rect" title=" " alt="" coords="184,155,267,181"/>
-<area shape="rect" title=" " alt="" coords="260,80,311,107"/>
-<area shape="rect" title=" " alt="" coords="335,80,396,107"/>
-<area shape="rect" title=" " alt="" coords="421,80,486,107"/>
-<area shape="rect" title=" " alt="" coords="510,80,575,107"/>
-<area shape="rect" title=" " alt="" coords="5,155,64,181"/>
-<area shape="rect" title=" " alt="" coords="88,155,160,181"/>
+<area shape="rect" title="Some utilities functions." alt="" coords="245,5,387,32"/>
+<area shape="rect" href="ame___math_8hpp.html" title="Math functions." alt="" coords="80,80,187,107"/>
+<area shape="rect" title=" " alt="" coords="5,155,80,181"/>
+<area shape="rect" title=" " alt="" coords="211,80,261,107"/>
+<area shape="rect" title=" " alt="" coords="285,80,347,107"/>
+<area shape="rect" title=" " alt="" coords="371,80,437,107"/>
+<area shape="rect" title=" " alt="" coords="461,80,526,107"/>
+<area shape="rect" title=" " alt="" coords="551,80,633,107"/>
+<area shape="rect" title=" " alt="" coords="104,155,163,181"/>
+<area shape="rect" title=" " alt="" coords="187,155,240,181"/>
+<area shape="rect" title=" " alt="" coords="264,155,336,181"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -156,14 +160,14 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a00e27da08077a35c431f19e445dd1afb"><td class="memTemplParams" colspan="2">template&lt;typename FloatType &gt; </td></tr>
-<tr class="memitem:a00e27da08077a35c431f19e445dd1afb"><td class="memTemplItemLeft" align="right" valign="top">constexpr FloatType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="ame___util_8hpp.html#a00e27da08077a35c431f19e445dd1afb">ame::addModulo2Pi</a> (FloatType phase, const FloatType increment) noexcept</td></tr>
-<tr class="memdesc:a00e27da08077a35c431f19e445dd1afb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increment the phase and returns in the range of 0~2pi.  <a href="ame___util_8hpp.html#a00e27da08077a35c431f19e445dd1afb">More...</a><br /></td></tr>
-<tr class="separator:a00e27da08077a35c431f19e445dd1afb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65d50ef6f9a8a3595a8b092cffef2d44"><td class="memTemplParams" colspan="2">template&lt;typename FloatType &gt; </td></tr>
-<tr class="memitem:a65d50ef6f9a8a3595a8b092cffef2d44"><td class="memTemplItemLeft" align="right" valign="top">constexpr FloatType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="ame___util_8hpp.html#a65d50ef6f9a8a3595a8b092cffef2d44">ame::scale</a> (const FloatType sourceValue, const FloatType sourceRangeMin, const FloatType sourceRangeMax, const FloatType targetRangeMin, const FloatType targetRangeMax)</td></tr>
-<tr class="memdesc:a65d50ef6f9a8a3595a8b092cffef2d44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Map values to an output range.  <a href="ame___util_8hpp.html#a65d50ef6f9a8a3595a8b092cffef2d44">More...</a><br /></td></tr>
-<tr class="separator:a65d50ef6f9a8a3595a8b092cffef2d44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a110f83e45b1f988746057863af0e42e4"><td class="memTemplParams" colspan="2">template&lt;std::floating_point FloatType&gt; </td></tr>
+<tr class="memitem:a110f83e45b1f988746057863af0e42e4"><td class="memTemplItemLeft" align="right" valign="top">constexpr FloatType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="ame___util_8hpp.html#a110f83e45b1f988746057863af0e42e4">ame::addModulo2Pi</a> (FloatType phase, FloatType increment) noexcept</td></tr>
+<tr class="memdesc:a110f83e45b1f988746057863af0e42e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increment the phase and returns in the range of 0~2pi.  <a href="ame___util_8hpp.html#a110f83e45b1f988746057863af0e42e4">More...</a><br /></td></tr>
+<tr class="separator:a110f83e45b1f988746057863af0e42e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef40110c13a858fff7c47b88d96e149e"><td class="memTemplParams" colspan="2">template&lt;std::floating_point FloatType&gt; </td></tr>
+<tr class="memitem:aef40110c13a858fff7c47b88d96e149e"><td class="memTemplItemLeft" align="right" valign="top">constexpr FloatType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="ame___util_8hpp.html#aef40110c13a858fff7c47b88d96e149e">ame::scale</a> (FloatType sourceValue, FloatType sourceRangeMin, FloatType sourceRangeMax, FloatType targetRangeMin, FloatType targetRangeMax)</td></tr>
+<tr class="memdesc:aef40110c13a858fff7c47b88d96e149e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Map values to an output range.  <a href="ame___util_8hpp.html#aef40110c13a858fff7c47b88d96e149e">More...</a><br /></td></tr>
+<tr class="separator:aef40110c13a858fff7c47b88d96e149e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae69d9f9de12d49f9aef797b5c57c372b"><td class="memTemplParams" colspan="2">template&lt;typename... Ts&gt; </td></tr>
 <tr class="memitem:ae69d9f9de12d49f9aef797b5c57c372b"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::array&lt; std::byte, sizeof...(Ts)&gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="ame___util_8hpp.html#ae69d9f9de12d49f9aef797b5c57c372b">ame::makeBytes</a> (Ts &amp;&amp;... args) noexcept</td></tr>
 <tr class="memdesc:ae69d9f9de12d49f9aef797b5c57c372b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a std::array&lt;std::byte, N&gt;  <a href="ame___util_8hpp.html#ae69d9f9de12d49f9aef797b5c57c372b">More...</a><br /></td></tr>
@@ -175,13 +179,13 @@ Functions</h2></td></tr>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2021 - Akiyuki Okayasu</dd></dl>
 <p>AME is released under the MIT license. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a00e27da08077a35c431f19e445dd1afb" name="a00e27da08077a35c431f19e445dd1afb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a00e27da08077a35c431f19e445dd1afb">&#9670;&nbsp;</a></span>addModulo2Pi()</h2>
+<a id="a110f83e45b1f988746057863af0e42e4" name="a110f83e45b1f988746057863af0e42e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a110f83e45b1f988746057863af0e42e4">&#9670;&nbsp;</a></span>addModulo2Pi()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename FloatType &gt; </div>
+template&lt;std::floating_point FloatType&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -195,7 +199,7 @@ template&lt;typename FloatType &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const FloatType&#160;</td>
+          <td class="paramtype">FloatType&#160;</td>
           <td class="paramname"><em>increment</em>&#160;</td>
         </tr>
         <tr>
@@ -212,6 +216,12 @@ template&lt;typename FloatType &gt; </div>
 </div><div class="memdoc">
 
 <p>Increment the phase and returns in the range of 0~2pi. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">FloatType</td><td>float or double </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">phase</td><td></td></tr>
@@ -254,7 +264,7 @@ template&lt;typename... Ts&gt; </div>
 <div class="fragment"><div class="line"><span class="keyword">constexpr</span> std::array&lt;std::byte, 2&gt; arr = <a class="code hl_function" href="ame___util_8hpp.html#ae69d9f9de12d49f9aef797b5c57c372b">makeBytes</a>(0x00, 0xFF);</div>
 <div class="line"><span class="comment">// or</span></div>
 <div class="line"><span class="keyword">constexpr</span> <span class="keyword">auto</span> arr = <a class="code hl_function" href="ame___util_8hpp.html#ae69d9f9de12d49f9aef797b5c57c372b">makeBytes</a>(0x00, 0xFF);</div>
-<div class="ttc" id="aame___util_8hpp_html_ae69d9f9de12d49f9aef797b5c57c372b"><div class="ttname"><a href="ame___util_8hpp.html#ae69d9f9de12d49f9aef797b5c57c372b">ame::makeBytes</a></div><div class="ttdeci">constexpr std::array&lt; std::byte, sizeof...(Ts)&gt; makeBytes(Ts &amp;&amp;... args) noexcept</div><div class="ttdoc">Generate a std::array&lt;std::byte, N&gt;</div><div class="ttdef"><b>Definition:</b> ame_Util.hpp:376</div></div>
+<div class="ttc" id="aame___util_8hpp_html_ae69d9f9de12d49f9aef797b5c57c372b"><div class="ttname"><a href="ame___util_8hpp.html#ae69d9f9de12d49f9aef797b5c57c372b">ame::makeBytes</a></div><div class="ttdeci">constexpr std::array&lt; std::byte, sizeof...(Ts)&gt; makeBytes(Ts &amp;&amp;... args) noexcept</div><div class="ttdoc">Generate a std::array&lt;std::byte, N&gt;</div><div class="ttdef"><b>Definition:</b> ame_Util.hpp:380</div></div>
 </div><!-- fragment --> <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">Ts</td><td>Integer types. It must be able to be cast to std::byte. </td></tr>
@@ -271,13 +281,13 @@ template&lt;typename... Ts&gt; </div>
 
 </div>
 </div>
-<a id="a65d50ef6f9a8a3595a8b092cffef2d44" name="a65d50ef6f9a8a3595a8b092cffef2d44"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a65d50ef6f9a8a3595a8b092cffef2d44">&#9670;&nbsp;</a></span>scale()</h2>
+<a id="aef40110c13a858fff7c47b88d96e149e" name="aef40110c13a858fff7c47b88d96e149e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef40110c13a858fff7c47b88d96e149e">&#9670;&nbsp;</a></span>scale()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename FloatType &gt; </div>
+template&lt;std::floating_point FloatType&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -285,31 +295,31 @@ template&lt;typename FloatType &gt; </div>
         <tr>
           <td class="memname">constexpr FloatType ame::scale </td>
           <td>(</td>
-          <td class="paramtype">const FloatType&#160;</td>
+          <td class="paramtype">FloatType&#160;</td>
           <td class="paramname"><em>sourceValue</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const FloatType&#160;</td>
+          <td class="paramtype">FloatType&#160;</td>
           <td class="paramname"><em>sourceRangeMin</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const FloatType&#160;</td>
+          <td class="paramtype">FloatType&#160;</td>
           <td class="paramname"><em>sourceRangeMax</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const FloatType&#160;</td>
+          <td class="paramtype">FloatType&#160;</td>
           <td class="paramname"><em>targetRangeMin</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const FloatType&#160;</td>
+          <td class="paramtype">FloatType&#160;</td>
           <td class="paramname"><em>targetRangeMax</em>&#160;</td>
         </tr>
         <tr>
@@ -326,6 +336,12 @@ template&lt;typename FloatType &gt; </div>
 </div><div class="memdoc">
 
 <p>Map values to an output range. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">FloatType</td><td>float or double </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">sourceValue</td><td>input value </td></tr>

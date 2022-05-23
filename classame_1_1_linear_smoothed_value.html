@@ -105,9 +105,9 @@ $(document).ready(function(){initNavTree('classame_1_1_linear_smoothed_value.htm
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a82587bff692b1ef6c8d6a6f23f2d3f85"><td class="memItemLeft" align="right" valign="top"><a id="a82587bff692b1ef6c8d6a6f23f2d3f85" name="a82587bff692b1ef6c8d6a6f23f2d3f85"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>LinearSmoothedValue</b> (const FloatType initialValue, const int rampSteps)</td></tr>
-<tr class="separator:a82587bff692b1ef6c8d6a6f23f2d3f85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bdb7eca4db7d71bc6a5701f17952881"><td class="memItemLeft" align="right" valign="top"><a id="a9bdb7eca4db7d71bc6a5701f17952881" name="a9bdb7eca4db7d71bc6a5701f17952881"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>LinearSmoothedValue</b> (FloatType initialValue, const int rampSteps)</td></tr>
+<tr class="separator:a9bdb7eca4db7d71bc6a5701f17952881"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad904b87832c03ccd3f399d9d2dcc4965"><td class="memItemLeft" align="right" valign="top"><a id="ad904b87832c03ccd3f399d9d2dcc4965" name="ad904b87832c03ccd3f399d9d2dcc4965"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>isSmoothing</b> () const noexcept</td></tr>
 <tr class="memdesc:ad904b87832c03ccd3f399d9d2dcc4965"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the current value is currently being interpolated. <br /></td></tr>
@@ -120,9 +120,9 @@ FloatType&#160;</td><td class="memItemRight" valign="bottom"><b>getCurrentValue<
 FloatType&#160;</td><td class="memItemRight" valign="bottom"><b>getTargetValue</b> () const noexcept</td></tr>
 <tr class="memdesc:ac7efe0c8329e70735d5e8cb1fe88bed1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the target value towards which the smoothed value is currently moving. <br /></td></tr>
 <tr class="separator:ac7efe0c8329e70735d5e8cb1fe88bed1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e5123de0427a8c898fa285437af17b9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_linear_smoothed_value.html#a0e5123de0427a8c898fa285437af17b9">reset</a> (const FloatType newValue) noexcept</td></tr>
-<tr class="memdesc:a0e5123de0427a8c898fa285437af17b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the currentValue, targetValue and ramp count.  <a href="classame_1_1_linear_smoothed_value.html#a0e5123de0427a8c898fa285437af17b9">More...</a><br /></td></tr>
-<tr class="separator:a0e5123de0427a8c898fa285437af17b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e18b1940564bede5c7daff980584163"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_linear_smoothed_value.html#a3e18b1940564bede5c7daff980584163">reset</a> (FloatType newValue) noexcept</td></tr>
+<tr class="memdesc:a3e18b1940564bede5c7daff980584163"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the currentValue, targetValue and ramp count.  <a href="classame_1_1_linear_smoothed_value.html#a3e18b1940564bede5c7daff980584163">More...</a><br /></td></tr>
+<tr class="separator:a3e18b1940564bede5c7daff980584163"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0433fc18d17f928868f2cb1c16e65dc3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1_linear_smoothed_value.html#a0433fc18d17f928868f2cb1c16e65dc3">setRampLength</a> (const int numSteps) noexcept</td></tr>
 <tr class="memdesc:a0433fc18d17f928868f2cb1c16e65dc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a new ramp length in samples.  <a href="classame_1_1_linear_smoothed_value.html#a0433fc18d17f928868f2cb1c16e65dc3">More...</a><br /></td></tr>
 <tr class="separator:a0433fc18d17f928868f2cb1c16e65dc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -134,7 +134,7 @@ FloatType&#160;</td><td class="memItemRight" valign="bottom"><b>getTargetValue</
 <tr class="separator:a927a6c7b58123d67e425ee83e1e238d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename FloatType&gt;<br />
+<div class="textblock"><div class="compoundTemplParams">template&lt;std::floating_point FloatType&gt;<br />
 class ame::LinearSmoothedValue&lt; FloatType &gt;</div><p >Smooth values linearly. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
@@ -149,7 +149,7 @@ class ame::LinearSmoothedValue&lt; FloatType &gt;</div><p >Smooth values linearl
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename FloatType &gt; </div>
+template&lt;std::floating_point FloatType&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -173,13 +173,13 @@ template&lt;typename FloatType &gt; </div>
 
 </div>
 </div>
-<a id="a0e5123de0427a8c898fa285437af17b9" name="a0e5123de0427a8c898fa285437af17b9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0e5123de0427a8c898fa285437af17b9">&#9670;&nbsp;</a></span>reset()</h2>
+<a id="a3e18b1940564bede5c7daff980584163" name="a3e18b1940564bede5c7daff980584163"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e18b1940564bede5c7daff980584163">&#9670;&nbsp;</a></span>reset()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename FloatType &gt; </div>
+template&lt;std::floating_point FloatType&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -187,7 +187,7 @@ template&lt;typename FloatType &gt; </div>
         <tr>
           <td class="memname">void <a class="el" href="classame_1_1_linear_smoothed_value.html">ame::LinearSmoothedValue</a>&lt; FloatType &gt;::reset </td>
           <td>(</td>
-          <td class="paramtype">const FloatType&#160;</td>
+          <td class="paramtype">FloatType&#160;</td>
           <td class="paramname"><em>newValue</em></td><td>)</td>
           <td></td>
         </tr>
@@ -215,7 +215,7 @@ template&lt;typename FloatType &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename FloatType &gt; </div>
+template&lt;std::floating_point FloatType&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -252,7 +252,7 @@ template&lt;typename FloatType &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename FloatType &gt; </div>
+template&lt;std::floating_point FloatType&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">

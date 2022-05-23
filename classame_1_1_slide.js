@@ -1,7 +1,7 @@
 var classame_1_1_slide =
 [
-    [ "Slide", "classame_1_1_slide.html#a6ff00e88fed8633ac3190d7dd8ccbd5f", null ],
-    [ "process", "classame_1_1_slide.html#acc67bfb18cb121aaef228d2ab743a17a", null ],
-    [ "setSlownessOfDecrease", "classame_1_1_slide.html#a78420eee99ff1a625198980ec702b451", null ],
-    [ "setSlownessOfIncrease", "classame_1_1_slide.html#acccda788f50262bbd647183c6ec729f5", null ]
+    [ "Slide", "classame_1_1_slide.html#a8af8c8302f7487cd9f47280c9fe0e6e6", null ],
+    [ "process", "classame_1_1_slide.html#ab3e2485516ce0da0f9e4096756c2a4a6", null ],
+    [ "setSlownessOfDecrease", "classame_1_1_slide.html#ad44073fabaf790284dfaf9a1b189bd0d", null ],
+    [ "setSlownessOfIncrease", "classame_1_1_slide.html#a318eebc585b3569b52312ffcdb2421f2", null ]
 ];
