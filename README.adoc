@@ -12,7 +12,7 @@ Major changes may be added to this project. +
 == Dependencies
 * C++20
 
-==== Optional
+=== Optional
 * https://arm-software.github.io/CMSIS_5/DSP/html/index.html[ARM CMSIS-DSP] +
 
 
@@ -24,6 +24,7 @@ Major changes may be added to this project. +
 * Reverb
 * WAV reader
 * Interpolate functions
+* Ambisonics
 * Conversion functions
 ** Float and Q23
 ** Decibel and Amplitude
@@ -45,7 +46,8 @@ project(example_project)
 add_executable(example_project main.cpp)
 
 include(FetchContent)
-FetchContent_Declare(ame GIT_REPOSITORY https://github.com/AkiyukiOkayasu/ame GIT_TAG v1.0.1)
+FetchContent_Declare(ame GIT_REPOSITORY https://github.com/AkiyukiOkayasu/ame GIT_TAG origin/master)
+# FetchContent_Declare(ame GIT_REPOSITORY https://github.com/AkiyukiOkayasu/ame GIT_TAG v1.2.2)
 FetchContent_MakeAvailable(ame)
 target_compile_features(example_project PUBLIC cxx_std_20)
 target_link_libraries(example_project PRIVATE ame)
