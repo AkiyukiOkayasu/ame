@@ -45,13 +45,13 @@ TEST_CASE ("Ambisonics")
         ame::dsp::Ambisonics3D1st<float> ambi {};
         ame::dsp::Polar<float> pos { .azimuth = 0.0f, .elevation = 0.0f };
         ame::dsp::encodeAmbisonics1st (0.5f, ambi, pos);
-        const auto f = ame::dsp::decodeAmbisonics1st (ambi, pos);
+        [[maybe_unused]] const auto f = ame::dsp::decodeAmbisonics1st (ambi, pos);
     }
     SUBCASE ("2D")
     {
         ame::dsp::Ambisonics2D1st<float> ambi {};
         ame::dsp::encodeAmbisonics1st (0.5f, ambi, -30.0f);
-        const auto f = ame::dsp::decodeAmbisonics1st (ambi, -60.0f);
+        [[maybe_unused]] const auto f = ame::dsp::decodeAmbisonics1st (ambi, -60.0f);
     }
 }
 
