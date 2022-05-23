@@ -305,6 +305,30 @@ TEST_CASE ("Wrap")
         w.set (-9);
         CHECK_EQ (w.get(), 1);
     }
+
+    SUBCASE ("float_increment")
+    {
+        ame::Wrap<float> w { 10.0f };
+        CHECK_EQ (w.get(), Approx (0.0f));
+        CHECK_EQ (w++, Approx (1.0f));
+        CHECK_EQ (++w, Approx (2.0f));
+        w += 2.0f;
+        CHECK_EQ (w.get(), Approx (4.0f));
+        w += 9.0f;
+        CHECK_EQ (w.get(), Approx (3.0f));
+    }
+
+    SUBCASE ("float_set")
+    {
+        ame::Wrap<float> w { 10.0f };
+        w.set (0.0f);
+        CHECK_EQ (w.get(), Approx (0.0f));
+        w.set (12.0f);
+        CHECK_EQ (w.get(), Approx (2.0f));
+        w.set (-9.0f);
+        CHECK_EQ (w.get(), Approx (1.0f));
+    }
+    //ame::Wrap<uint32_t> wu { 11 }; //NG. Type is must be signed number(int32_t, float etc...)
 }
 
 TEST_CASE ("AudioBuffer")
