@@ -13,7 +13,7 @@
 
 #include <algorithm>
 #include <cmath>
-#include <type_traits>
+#include <concepts>
 
 namespace ame
 {
@@ -253,26 +253,24 @@ constexpr float gainToDecibels (const float gain) noexcept
 
 //==============================================================================
 /** Degree to Radians.
-@tparam FloatType 
+@tparam FloatType float or double
 @param degree
 @return constexpr FloatType Radian
 */
-template <typename FloatType>
+template <std::floating_point FloatType>
 constexpr FloatType deg2rad (FloatType degree) noexcept
 {
-    static_assert (std::is_floating_point<FloatType>::value, "FloatType is must be floating point type.");
     return degree * (ame::pi<FloatType> / static_cast<FloatType> (180.0));
 }
 
 /** Radian to Degree
-@tparam FloatType 
+@tparam FloatType float or double
 @param radian 
-@return constexpr FloatType 
+@return constexpr FloatType degree
 */
-template <typename FloatType>
+template <std::floating_point FloatType>
 constexpr FloatType rad2deg (FloatType radian) noexcept
 {
-    static_assert (std::is_floating_point<FloatType>::value, "FloatType is must be floating point type.");
     return radian * (static_cast<FloatType> (180.0) / ame::pi<FloatType>);
 }
 } // namespace ame

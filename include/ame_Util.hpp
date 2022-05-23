@@ -14,6 +14,7 @@
 #include <array>
 #include <atomic>
 #include <cassert>
+#include <concepts>
 #include <cstddef>
 #include <type_traits>
 
@@ -33,14 +34,14 @@ struct Range
 };
 
 /** Increment the phase and returns in the range of 0~2pi.
+    @tparam FloatType float or double
     @param phase
     @param increment Amount to add to phase
     @return [0, 2pi]
 */
-template <typename FloatType>
-constexpr FloatType addModulo2Pi (FloatType phase, const FloatType increment) noexcept
+template <std::floating_point FloatType>
+constexpr FloatType addModulo2Pi (FloatType phase, FloatType increment) noexcept
 {
-    static_assert (std::is_floating_point<FloatType>::value, "FloatType is must be floating point type.");
     phase += increment;
     while (phase > twoPi<FloatType>)
     {
@@ -50,6 +51,7 @@ constexpr FloatType addModulo2Pi (FloatType phase, const FloatType increment) no
 }
 
 /** Map values to an output range.
+    @tparam FloatType float or double
     @param sourceValue input value
     @param sourceRangeMin input range min
     @param sourceRangeMax input range Max
@@ -57,14 +59,13 @@ constexpr FloatType addModulo2Pi (FloatType phase, const FloatType increment) no
     @param targetRangeMax output range Max
     @return scaled value
 */
-template <typename FloatType>
-constexpr FloatType scale (const FloatType sourceValue,
-                           const FloatType sourceRangeMin,
-                           const FloatType sourceRangeMax,
-                           const FloatType targetRangeMin,
-                           const FloatType targetRangeMax)
+template <std::floating_point FloatType>
+constexpr FloatType scale (FloatType sourceValue,
+                           FloatType sourceRangeMin,
+                           FloatType sourceRangeMax,
+                           FloatType targetRangeMin,
+                           FloatType targetRangeMax)
 {
-    static_assert (std::is_floating_point<FloatType>::value, "FloatType is must be floating point type.");
     return targetRangeMin
            + ((targetRangeMax - targetRangeMin) * (sourceValue - sourceRangeMin)) / (sourceRangeMax - sourceRangeMin);
 }
@@ -72,13 +73,13 @@ constexpr FloatType scale (const FloatType sourceValue,
 /** Smooth values linearly.
     @tparam FloatType float or double
 */
-template <typename FloatType>
+template <std::floating_point FloatType>
 class LinearSmoothedValue
 {
-    static_assert (std::is_floating_point<FloatType>::value, "FloatType is must be floating point type.");
+    static_assert (! std::is_const<FloatType>::value, "FloatType is must NOT be const.");
 
 public:
-    LinearSmoothedValue (const FloatType initialValue, const int rampSteps)
+    LinearSmoothedValue (FloatType initialValue, const int rampSteps)
     {
         reset (initialValue);
         setRampLength (rampSteps);
@@ -106,7 +107,7 @@ public:
     /** Reset the currentValue, targetValue and ramp count.
         @param newValue The new current and target value.
     */
-    void reset (const FloatType newValue) noexcept
+    void reset (FloatType newValue) noexcept
     {
         target = newValue;
         currentValue = newValue;
@@ -177,16 +178,15 @@ private:
     int stepsToTarget {};
 };
 
-/** 
-    Smooth values logarithmically.
+/** Smooth values logarithmically.
 
     y (n) = y (n-1) + ((x (n) - y (n-1))/slide)
     @note SlideUp and SlideDown are affected by the update interval of the process.
 */
-template <typename FloatType>
+template <std::floating_point FloatType>
 class Slide
 {
-    static_assert (std::is_floating_point<FloatType>::value, "FloatType is must be floating point type.");
+    static_assert (! std::is_const<FloatType>::value, "FloatType is must NOT be const.");
 
 public:
     Slide() {}
@@ -195,7 +195,7 @@ public:
         @param slownessOfDecrease The larger the value, the more slowly the decrease. If 1, no effect is applied to the decrease.
         @attention DO NOT set less than 1.
     */
-    Slide (const FloatType slownessOfIncrease, const FloatType slownessOfDecrease)
+    Slide (FloatType slownessOfIncrease, FloatType slownessOfDecrease) noexcept
     {
         slideUp.store (slownessOfIncrease);
         slideDown.store (slownessOfDecrease);
@@ -206,7 +206,7 @@ public:
         @param slownessIncrease The larger the value, the more slowly the increase.  If 1, no effect is applied to the increase.
         @attention DO NOT set newSlideUp to less than 1.
     */
-    void setSlownessOfIncrease (const FloatType slownessIncrease)
+    void setSlownessOfIncrease (FloatType slownessIncrease)
     {
         assert (slownessIncrease >= 1.0f);
         slideUp.store (slownessIncrease);
@@ -216,7 +216,7 @@ public:
         @param slownessDecrease The larger the value, the more slowly the decrease. If 1, no effect is applied to the decrease.
         @attention DO NOT set newSlideDown to less than 1.
     */
-    void setSlownessOfDecrease (const FloatType slownessDecrease)
+    void setSlownessOfDecrease (FloatType slownessDecrease)
     {
         assert (slownessDecrease >= 1.0f);
         slideDown.store (slownessDecrease);
@@ -226,7 +226,7 @@ public:
         @param input Value to smooth
         @return Smoothed value
     */
-    FloatType process (const FloatType input)
+    FloatType process (FloatType input) noexcept
     {
         const auto dt = input - lastOutput;
         const auto s = dt > FloatType (0.0) ? slideUp.load() : slideDown.load();
@@ -240,19 +240,23 @@ private:
     std::atomic<FloatType> slideDown { 1.0 };
 };
 
+namespace
+{
+    template <typename T>
+    concept signed_number = std::signed_integral<T> || std::floating_point<T>;
+}
+
 /** A number to wrap between 0~length.
-    @tparam T T is must to be signed type(int32_t, float etc...)
+    @tparam T signed number (int32_t, float etc...)
 */
-template <typename T>
+template <signed_number T>
 class Wrap
 {
-    static_assert (std::is_signed<T>::value, "Wrap type is must to be signed");
-
 public:
     /**    
     @param length The number to automatically wrap in the range [0, length-1].
     */
-    explicit Wrap (const T length) : length (length)
+    explicit Wrap (T length) : length (length)
     {
         assert (length > 0); //length is must greater than 0
     }
@@ -283,7 +287,7 @@ public:
         @param offset 
         @return int_fast32_t [0, length-1]
     */
-    T get (const T offset = 0) const noexcept
+    T get (T offset = 0) const noexcept
     {
         auto n = num + offset;
         while (n >= length)
@@ -301,7 +305,7 @@ public:
     /** The number to automatically wrap in the range [0, length-1].
         @param newLength 
     */
-    void changeLength (const T newLength)
+    void changeLength (T newLength) noexcept
     {
         length = newLength;
     }
@@ -314,7 +318,7 @@ public:
     /** Prefix increment.
         @return [0, length-1]
     */
-    T operator++()
+    T operator++() noexcept
     {
         ++num;
         if (num >= length)
@@ -327,7 +331,7 @@ public:
     /** Postfix increment.
         @return [0, length-1]
     */
-    T operator++ (int)
+    T operator++ (int) noexcept
     {
         num++;
         if (num >= length)
@@ -342,7 +346,7 @@ public:
         @param add 
         @return [0, length-1]
     */
-    T operator+= (T add)
+    T operator+= (T add) noexcept
     {
         num += add;
         while (num >= length)

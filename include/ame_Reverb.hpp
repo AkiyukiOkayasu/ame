@@ -14,6 +14,7 @@
 
 #include <array>
 #include <cassert>
+#include <concepts>
 #include <cstdint>
 #include <type_traits>
 
@@ -23,13 +24,13 @@ namespace ame::dsp
     @tparam FloatType float or double
     @tparam MaximumSampleRate 
 */
-template <typename FloatType, size_t MaximumChannels, size_t MaximumSampleRate>
+template <std::floating_point FloatType, size_t MaximumChannels, size_t MaximumSampleRate>
 class Freeverb
 {
-    static_assert (std::is_floating_point<FloatType>::value, "FloatType is must be floating point type.");
+    static_assert (! std::is_const<FloatType>::value, "FloatType is must NOT be const.");
 
 public:
-    explicit Freeverb (const FloatType sampleRate)
+    explicit Freeverb (FloatType sampleRate)
     {
         setSampleRate (sampleRate);
         setRoomSize (0.5f, 0.5f);
@@ -40,7 +41,7 @@ public:
         @param roomSize 1.0 is big, 0 is small [0.0 1.0]
         @param damp 0 is not damped, 1.0 is fully damped [0.0 1.0]
     */
-    void setRoomSize (const FloatType roomSize, const FloatType damp) noexcept
+    void setRoomSize (FloatType roomSize, FloatType damp) noexcept
     {
         static constexpr FloatType roomScaleFactor = 0.28f;
         static constexpr FloatType roomOffset = 0.7f;
@@ -52,7 +53,7 @@ public:
     /** Sets the sample rate that will be used for the reverb.
         You must call this before the process methods, in order to tell it the correct sample rate.
     */
-    void setSampleRate (const FloatType sampleRate)
+    void setSampleRate (FloatType sampleRate)
     {
         assert (0 < sampleRate);
         assert (sampleRate <= MaximumSampleRate);
@@ -80,7 +81,7 @@ public:
     /** Dry/Wet balance.
         @param mix 0: dry only, 1: wet only [0.0, 1.0]
     */
-    void setDryWet (const FloatType mix)
+    void setDryWet (FloatType mix)
     {
         dryWet.setTargetValue (mix);
     }
@@ -162,7 +163,7 @@ private:
             buffer.fill (0.0f);
         }
 
-        FloatType process (const FloatType input, const FloatType damp, const FloatType feedbackLevel) noexcept
+        FloatType process (FloatType input, FloatType damp, FloatType feedbackLevel) noexcept
         {
             const auto ind = bufferIndex.get();
             const FloatType output = buffer[ind];
@@ -197,7 +198,7 @@ private:
             buffer.fill (0.0f);
         }
 
-        FloatType process (const FloatType input) noexcept
+        FloatType process (FloatType input) noexcept
         {
             const auto ind = bufferIndex.get();
             const FloatType bufferedValue = buffer[ind];

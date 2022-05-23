@@ -12,6 +12,7 @@
 #include "ame_String.hpp"
 
 #include <cassert>
+#include <concepts>
 #include <cstddef>
 #include <type_traits>
 
@@ -20,6 +21,9 @@
 namespace
 {
 // clang-format off
+/** IMA-ADPCM step table.
+    @todo ADPCMのデコード実装
+*/
 inline constexpr int16_t imaStepTable[89] = { 
   7, 8, 9, 10, 11, 12, 13, 14, 16, 17, 
   19, 21, 23, 25, 28, 31, 34, 37, 41, 45, 
@@ -46,7 +50,7 @@ enum class ChunkId : uint_fast8_t
 };
 
 /** WaveChunk.
-    @tparam BytePointerType 
+    @tparam BytePointerType unsigned char* (or CV-qualified)
 */
 template <class BytePointerType>
 struct Chunk
@@ -87,7 +91,7 @@ namespace
 } // namespace
 
 /** WAVE file reader.
-    @tparam BytePointerType 
+    @tparam BytePointerType unsigned char* (or CV-qualified)
 */
 template <typename BytePointerType>
 class WavReader
@@ -243,7 +247,7 @@ private:
 };
 
 /** WAVE file player.
-    @tparam BytePointerType 
+    @tparam BytePointerType unsigned char* (or CV-qualified)
 */
 template <typename BytePointerType>
 class WavPlayer

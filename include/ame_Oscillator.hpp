@@ -16,9 +16,9 @@
 #include <atomic>
 #include <cassert>
 #include <cmath>
+#include <concepts>
 #include <numeric>
 #include <span>
-#include <type_traits>
 
 namespace ame
 {
@@ -29,7 +29,7 @@ namespace ame
     @note Functionの入力は0~1範囲の配列です    
     @see make_sineTable()    
 */
-template <typename FloatType, size_t NumSamples, class Function>
+template <std::floating_point FloatType, size_t NumSamples, class Function>
 constexpr std::array<FloatType, NumSamples> makeWaveTable (Function func)
 {
     std::array<FloatType, NumSamples> ar;
@@ -41,10 +41,11 @@ constexpr std::array<FloatType, NumSamples> makeWaveTable (Function func)
 }
 
 /** Sine wave wavetable generator.
+    @tparam FloatType float or double
     @tparam N array size
     @return constexpr std::array<float, N> sine wave table    
 */
-template <typename FloatType, size_t N>
+template <std::floating_point FloatType, size_t N>
 constexpr std::array<FloatType, N> makeSineTable()
 {
     auto f = [] (auto& x)
@@ -58,10 +59,9 @@ constexpr std::array<FloatType, N> makeSineTable()
     @tparam FloatType float or double
     @tparam numSamples     
 */
-template <typename FloatType, size_t N>
+template <std::floating_point FloatType, size_t N>
 class WavetableOscillator
 {
-    static_assert (std::is_floating_point<FloatType>::value, "FloatType is must be floating point type.");
     using FloatTypeBase = typename std::remove_cv<FloatType>::type;
 
 public:
@@ -124,10 +124,9 @@ private:
 /** Sine wave oscillator.
     Generates a sine between -1.0~1.0.
 */
-template <typename FloatType>
+template <std::floating_point FloatType>
 class SineOscillator
 {
-    static_assert (std::is_floating_point<FloatType>::value, "FloatType is must be floating point type.");
     static_assert (! std::is_const<FloatType>::value, "FloatType is must NOT be const.");
 
 public:
@@ -135,7 +134,7 @@ public:
         @param sampleRate The sample rate that will be used for calclate the oscillator phase  increment.
         @param frequency Initial frequency
     */
-    SineOscillator (const FloatType sampleRate)
+    SineOscillator (FloatType sampleRate) noexcept
     {
         setSampleRate (sampleRate);
     }
@@ -144,7 +143,7 @@ public:
     /** Set sampling rate.   
         @param sampleRate new sampling rate in Hz
    */
-    void setSampleRate (const FloatType sampleRate)
+    void setSampleRate (FloatType sampleRate)
     {
         samplingPeriod = FloatType (1.0) / sampleRate;
     }
@@ -152,7 +151,7 @@ public:
     /** Set the sine wave frequency.
         @param freq frequency in Hz
     */
-    void setFrequency (const FloatType freq) noexcept
+    void setFrequency (FloatType freq) noexcept
     {
         phaseIncrement = freq * twoPi<FloatType> * samplingPeriod;
     }
@@ -170,7 +169,7 @@ public:
     /** Reset the phase to any value.    
         @param newPhase [0, 2pi]
     */
-    void resetPhase (const FloatType newPhase = 0.0f)
+    void resetPhase (FloatType newPhase = 0.0f)
     {
         assert (0 <= newPhase && newPhase <= twoPi<FloatType>);
         if (FloatType (0.0) <= newPhase && newPhase <= twoPi<FloatType>)

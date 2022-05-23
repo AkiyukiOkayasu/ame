@@ -13,6 +13,7 @@
 #include "ame_Math.hpp"
 
 #include <cassert>
+#include <concepts>
 #include <type_traits>
 
 namespace ame::dsp
@@ -22,20 +23,20 @@ namespace ame::dsp
 
     @tparam FloatType float or double
 */
-template <typename FloatType>
+template <std::floating_point FloatType>
 class RcLowPass
 {
-    static_assert (std::is_floating_point<FloatType>::value, "FloatType is must be floating point type.");
+    static_assert (! std::is_const<FloatType>::value, "FloatType is must NOT be const.");
 
 public:
-    explicit RcLowPass (const FloatType sampleRate)
+    explicit RcLowPass (FloatType sampleRate)
         : samplePeriod (FloatType (1.0) / sampleRate)
     {
     }
     ~RcLowPass() = default;
 
     /// Set new sampleRate.
-    void setSampleRate (const FloatType newSampleRate) noexcept
+    void setSampleRate (FloatType newSampleRate) noexcept
     {
         samplePeriod = FloatType (1.0) / newSampleRate;
     }
@@ -44,7 +45,7 @@ public:
         a=\frac{2\pi\cdotΔT\cdot f_{c}}{2\pi\cdotΔT\cdot f_{c}+1}
         @param cutOffFrequency cutoff frequency in Hz        
     */
-    void setCutOffFrequency (const FloatType cutOffFrequency) noexcept
+    void setCutOffFrequency (FloatType cutOffFrequency) noexcept
     {
         coef = (ame::twoPi<FloatType> * cutOffFrequency * samplePeriod) / (ame::twoPi<FloatType> * cutOffFrequency * samplePeriod + 1);
     }
@@ -53,7 +54,7 @@ public:
         @param newRawCoefficient [0.0 < newRawCoefficient <= 1.0]
         @attention 0より大きな、1以下の値でないといけない。0だとy[t-1]のみがバイアスとして出力されてしまうし、1以上だと発散してしまう。
     */
-    void setRawCoefficient (const FloatType newRawCoefficient)
+    void setRawCoefficient (FloatType newRawCoefficient)
     {
         assert (0.0f < newRawCoefficient && newRawCoefficient <= 1.0f);
         coef = newRawCoefficient;

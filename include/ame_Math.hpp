@@ -27,24 +27,25 @@ extern "C"
     #include <cmath>
 #endif
 
+#include <concepts>
+#include <limits>
 #include <numbers>
-#include <type_traits>
 
 namespace ame
 {
-template <typename FloatType>
+template <std::floating_point FloatType>
 inline constexpr FloatType pi = std::numbers::pi_v<FloatType>; ///<π
 
-template <typename FloatType>
+template <std::floating_point FloatType>
 inline constexpr FloatType twoPi = 2.0 * std::numbers::pi_v<FloatType>; ///< 2π
 
-template <typename FloatType>
+template <std::floating_point FloatType>
 inline constexpr FloatType halfPi = std::numbers::pi_v<FloatType> / 2.0; ///< π/2
 
-template <typename FloatType>
+template <std::floating_point FloatType>
 inline constexpr FloatType sqrt2 = std::numbers::sqrt2_v<FloatType>; ///< sqrt2
 
-template <typename FloatType>
+template <std::floating_point FloatType>
 inline constexpr FloatType invSqrt2 = 1.0 / std::numbers::sqrt2_v<FloatType>; ///< 1/sqrt2
 
 /** sin for float
