@@ -27,6 +27,7 @@ if(MAIN_PROJECT)
         PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/test
     )
 
+    # add_link_options("-fuse-ld=mold") # How to use custom linker (mold, lld, gold etc..)
     target_compile_options(tests PUBLIC -O2 -Wall -fconstexpr-depth=2147483647)
     target_compile_features(tests PUBLIC cxx_std_20)
     target_link_libraries(tests PRIVATE doctest::doctest)
