@@ -1,12 +1,13 @@
 # Determine if doctest is built as a subproject (using add_subdirectory) or if it is the main project.
 set(MAIN_PROJECT OFF)
+
 if(CMAKE_CURRENT_SOURCE_DIR STREQUAL CMAKE_SOURCE_DIR)
     set(MAIN_PROJECT ON)
 endif()
 
 if(MAIN_PROJECT)    
     message(STATUS "AME Unit test settings begin")
-    cmake_minimum_required(VERSION 3.14)
+    cmake_minimum_required(VERSION 3.16)
     project(ame LANGUAGES CXX)
     set(CMAKE_CXX_STANDARD 20)#C++20
 
