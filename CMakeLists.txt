@@ -5,11 +5,11 @@ if(CMAKE_CURRENT_SOURCE_DIR STREQUAL CMAKE_SOURCE_DIR)
     set(MAIN_PROJECT ON)
 endif()
 
-if(MAIN_PROJECT)    
+if(MAIN_PROJECT)
     message(STATUS "AME Unit test settings begin")
     cmake_minimum_required(VERSION 3.16)
     project(ame LANGUAGES CXX)
-    set(CMAKE_CXX_STANDARD 20)#C++20
+    set(CMAKE_CXX_STANDARD 20) # C++20
 
     include(CTest)
     include(FetchContent)
@@ -32,7 +32,7 @@ if(MAIN_PROJECT)
     target_link_libraries(tests PRIVATE doctest::doctest)
     message(STATUS "AME Unit test settings end")
 else()
-    message(STATUS "AME - C++ header-only DSP library for Cortex-M")    
-    add_library(ame INTERFACE)            
+    message(STATUS "AME - C++ header-only DSP library for Cortex-M")
+    add_library(ame INTERFACE)
     target_include_directories(ame INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/include)
 endif()
