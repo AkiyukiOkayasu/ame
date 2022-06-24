@@ -12,7 +12,7 @@ if(MAIN_PROJECT)
 
     include(CTest)
     include(FetchContent)
-    FetchContent_Declare(doctest GIT_REPOSITORY https://github.com/onqtam/doctest GIT_TAG 2.4.5)
+    FetchContent_Declare(doctest GIT_REPOSITORY https://github.com/onqtam/doctest GIT_TAG v2.4.9)
     FetchContent_MakeAvailable(doctest)
     enable_testing()
     include(${doctest_SOURCE_DIR}/scripts/cmake/doctest.cmake)
