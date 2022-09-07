@@ -39,9 +39,9 @@ public:
     */
     AudioBlockView (std::span<ElementType, Extent> view, const uint_fast32_t numChannels) noexcept
         : view (view),
-          numChannels (numChannels)
+          numChannels (numChannels),
+          numSamplesPerChannel (view.size() / numChannels)
     {
-        numSamplesPerChannel = view.size() / numChannels;
     }
     ~AudioBlockView() = default;
 
@@ -146,8 +146,8 @@ public:
     std::span<ElementType, Extent> view;
 
 private:
-    uint_fast32_t numSamplesPerChannel;
     uint_fast32_t numChannels;
+    uint_fast32_t numSamplesPerChannel;
 };
 
 /** 
