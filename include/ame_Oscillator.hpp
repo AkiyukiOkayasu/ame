@@ -131,7 +131,7 @@ class SineOscillator
 
 public:
     /** Create sine wave oscillator instance.
-        @param sampleRate The sample rate that will be used for calclate the oscillator phase  increment.
+        @param sampleRate The sample rate that will be used for calculate the oscillator phase  increment.
         @param frequency Initial frequency
     */
     SineOscillator (FloatType sampleRate) noexcept
