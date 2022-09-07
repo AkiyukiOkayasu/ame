@@ -102,7 +102,7 @@ public:
     /** Generate single sample.
         @return generated latest sample
     */
-    FloatType nextSample() noexcept
+    FloatTypeBase nextSample() noexcept
     {
         const uint32_t aIndex = std::floor (tableIndex.get());
         const uint32_t bIndex = std::floor (tableIndex.get (1));
