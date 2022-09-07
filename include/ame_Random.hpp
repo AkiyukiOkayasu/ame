@@ -39,20 +39,19 @@ inline uint32_t next (void)
 
 namespace ame
 {
-/** random.
-@return float [0, 1]
-@see ame::noise()
-@note Adapted from David Blackman and Sebastiano Vigna's xoshiro128+
-https://prng.di.unimi.it/xoshiro128plus.c
+/** Random.
+    @return float [0, 1]
+    @see ame::noise()
+    @note Adapted from David Blackman and Sebastiano Vigna's xoshiro128+ https://prng.di.unimi.it/xoshiro128plus.c
 */
 inline float random()
 {
     return (next() >> 8) * FLOAT_UNIT;
 }
 
-/** white noise.
-@return float [-1, 1]
-@see ame::random()
+/** White noise.
+    @return float [-1, 1]
+    @see ame::random()
 */
 inline float noise()
 {

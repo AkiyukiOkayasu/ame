@@ -128,7 +128,7 @@ public:
                     output += comb[ch][cmb].process (input, damping, feedback);
                 }
 
-                for (int ap = 0; ap < numAllPasses; ++ap) // run the allpass filters in series
+                for (int ap = 0; ap < numAllPasses; ++ap) // run the all-pass filters in series
                 {
                     output = allPass[ch][ap].process (output);
                 }

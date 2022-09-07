@@ -77,8 +77,7 @@ constexpr void q23ToFloat (const int32_t src[], float dest[], const uint32_t blo
     }
 }
 
-/** 
-    Split channel→Interleave convertion.
+/** Split channel→Interleave conversion.
     @param source Split channel samples
     @param dest Interleave array
     @param numSamples 
@@ -99,8 +98,7 @@ constexpr void interleaveSamples (const float** source, float* dest, const uint_
     }
 }
 
-/** 
-    Interleave→Split channel convertion.
+/** Interleave→Split channel conversion.
     @param source Interleave samples
     @param dest Split channel array
     @param numSamples 
@@ -127,8 +125,8 @@ inline void deinterleaveSamples (const float* source, float** dest, const uint_f
     @param semitone
     @return frequency ratio
     @code
-    semitoneToRatio(12.0f)//  2.0f
-    semitoneToRatio(-12.0f)// 0.5f
+    semitoneToRatio(12.0f); // 2.0f
+    semitoneToRatio(-12.0f);// 0.5f
     @endcode
 */
 inline float semitoneToRatio (const float semitone)
@@ -149,19 +147,19 @@ constexpr float freqToPeriod (const float freq) noexcept { return 1.0f / freq; }
 constexpr float periodToFreq (const float period) noexcept { return 1.0f / period; }
 
 /** Convert frequency to MIDI note number.
-        @param frequency
-        @param A3Freq Frequency for A3 (MIDI note 69). 440Hz is default.
-        @return MIDI note
-    */
+    @param frequency
+    @param A3Freq Frequency for A3 (MIDI note 69). 440Hz is default.
+    @return MIDI note
+*/
 inline float freqToMidi (const float freq, const float A3Freq = 440.0f)
 {
     return 12.0f * std::log2f (freq / A3Freq) + 69.0f;
 }
 
 /** Convert MIDI note number to frequency.
-        @param midiNote
-        @param A3Freq Frequency for A3 (MIDI note 69). 440Hz is default.
-        @return frequency in Hz
+    @param midiNote
+    @param A3Freq Frequency for A3 (MIDI note 69). 440Hz is default.
+    @return frequency in Hz
 */
 inline float midiToFreq (const float midiNote, const float A3Freq = 440.0f)
 {
@@ -199,7 +197,7 @@ inline std::pair<float, float> poltocar (const float amplitude, const float angl
 //==============================================================================
 //time
 
-/** Convert BPM to ms     
+/** Convert BPM to ms.    
     @param bpm
     @return ms
     @code
@@ -208,7 +206,7 @@ inline std::pair<float, float> poltocar (const float amplitude, const float angl
 */
 constexpr float bpmToMs (float bpm) { return 60000.0f / bpm; }
 
-/** Convert ms to BPM
+/** Convert ms to BPM.
     @param ms
     @return BPM
     @code
@@ -240,8 +238,8 @@ constexpr float decibelsToGain (const float dB) noexcept
     @return dB decibels value
     @note Outputs Outputs -100dB if the input is less than 0.00001.
     @code
-    gainToDecibels (1.0f); // 0.0f
-    gainToDecibels (0.1f); // -20.0f
+    gainToDecibels (1.0f); // 0dB
+    gainToDecibels (0.1f); // -20.0dB
     @endcode
 */
 constexpr float gainToDecibels (const float gain) noexcept
@@ -253,9 +251,9 @@ constexpr float gainToDecibels (const float gain) noexcept
 
 //==============================================================================
 /** Degree to Radians.
-@tparam FloatType float or double
-@param degree
-@return constexpr FloatType Radian
+    @tparam FloatType float or double
+    @param degree
+    @return constexpr FloatType Radian
 */
 template <std::floating_point FloatType>
 constexpr FloatType deg2rad (FloatType degree) noexcept
@@ -263,10 +261,10 @@ constexpr FloatType deg2rad (FloatType degree) noexcept
     return degree * (ame::pi<FloatType> / static_cast<FloatType> (180.0));
 }
 
-/** Radian to Degree
-@tparam FloatType float or double
-@param radian 
-@return constexpr FloatType degree
+/** Radian to Degree.
+    @tparam FloatType float or double
+    @param radian 
+    @return constexpr FloatType degree
 */
 template <std::floating_point FloatType>
 constexpr FloatType rad2deg (FloatType radian) noexcept

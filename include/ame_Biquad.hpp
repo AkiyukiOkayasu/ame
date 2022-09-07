@@ -74,7 +74,7 @@ public:
         return coef;
     }
 
-    /// LowPass coefficients calculation from RBJ cookbook.
+    /// Low-pass coefficients calculation from RBJ cookbook.
     void makeLowPass (const FloatType cutOffFrequency, const FloatType Q) noexcept
     {
         const FloatType w0 = twoPi<FloatType> * cutOffFrequency / sampleRate;
@@ -89,7 +89,7 @@ public:
         normalizeCoefficientsByA0();
     }
 
-    /// HighPass coefficients calculation from RBJ cookbook.
+    /// High-pass coefficients calculation from RBJ cookbook.
     void makeHighPass (const FloatType cutOffFrequency, const FloatType Q) noexcept
     {
         const FloatType w0 = twoPi<FloatType> * cutOffFrequency / sampleRate;
