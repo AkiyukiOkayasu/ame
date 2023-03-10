@@ -102,7 +102,7 @@ public:
     /** Generate single sample.
         @return generated latest sample
     */
-    FloatType nextSample() noexcept
+    FloatTypeBase nextSample() noexcept
     {
         const uint32_t aIndex = std::floor (tableIndex.get());
         const uint32_t bIndex = std::floor (tableIndex.get (1));
@@ -131,7 +131,7 @@ class SineOscillator
 
 public:
     /** Create sine wave oscillator instance.
-        @param sampleRate The sample rate that will be used for calclate the oscillator phase  increment.
+        @param sampleRate The sample rate that will be used for calculate the oscillator phase  increment.
         @param frequency Initial frequency
     */
     SineOscillator (FloatType sampleRate) noexcept

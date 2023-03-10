@@ -20,11 +20,14 @@ extern "C"
     #ifdef __cplusplus
 }
     #endif
+
     #ifndef USE_CMSIS_DSP
         #define USE_CMSIS_DSP
+        #pragma message("CMSIS-DSP is used.")
     #endif
 #else
     #include <cmath>
+    #pragma message("CMSIS-DSP is NOT used. cmath is used instead.")
 #endif
 
 #include <concepts>

@@ -1,4 +1,4 @@
-Checks: '-*,bugprone-*,clang-analyzer-*,-cppcoreguidelines-*,performance-*,portability-*,readability-*,-readability-uppercase-literal-suffix,-readability-magic-numbers, -readability-else-after-return'
+Checks: '-*,bugprone-*,clang-analyzer-*,-cppcoreguidelines-*,performance-*,portability-*,readability-*,-readability-uppercase-literal-suffix,-readability-magic-numbers, -readability-else-after-return, -readability-identifier-length, -readability-identifier-naming, -bugprone-easily-swappable-parameters'
 HeaderFilterRegex: '.*'
 CheckOptions:
   - key: readability-identifier-naming.ClassCase

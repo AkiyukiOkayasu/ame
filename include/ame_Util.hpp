@@ -287,7 +287,7 @@ public:
         @param offset 
         @return int_fast32_t [0, length-1]
     */
-    T get (T offset = 0) const noexcept
+    [[nodiscard]] T get (T offset = 0) const noexcept
     {
         auto n = num + offset;
         while (n >= length)
@@ -310,7 +310,7 @@ public:
         length = newLength;
     }
 
-    T getLength() const noexcept
+    [[nodiscard]] T getLength() const noexcept
     {
         return length;
     }

@@ -9,6 +9,20 @@
 
 using doctest::Approx;
 
+TEST_CASE ("Circuit modeling")
+{
+    SUBCASE ("Diode")
+    {
+        CHECK_GT (ame::diode (1.0f), 1.0);
+        CHECK_EQ (ame::diode (0.5f), Approx (0.325089f));
+        CHECK_EQ (ame::diode (0.1f), Approx (0.042589f));
+        CHECK_EQ (ame::diode (0.0f), Approx (0.0f));
+        CHECK_EQ (ame::diode (-0.25f), Approx (-0.076568f));
+        CHECK_EQ (ame::diode (-0.8f), Approx (-0.157312f));
+        CHECK_GT (0.0f, ame::diode (-1.0f));
+    }
+}
+
 TEST_CASE ("Radian / Degree")
 {
     CHECK_EQ (ame::rad2deg (0.0f), Approx (0.0f));

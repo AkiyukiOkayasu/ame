@@ -18,7 +18,7 @@
 
 namespace ame::dsp
 {
-/** RC lowpass filter for parameter smoothing.
+/** RC low-pass filter for parameter smoothing.
     y[t] = x[t] * coef + (1-coef) * y[t-1]
 
     @tparam FloatType float or double

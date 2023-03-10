@@ -297,7 +297,7 @@ public:
     template <typename FloatType, size_t N>
     void process (AudioBlockView<FloatType, N>& block)
     {
-        if (playing.load() == false)
+        if (! playing.load())
         {
             return;
         }

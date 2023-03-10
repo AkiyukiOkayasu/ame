@@ -2,7 +2,7 @@
 
 image:https://github.com/AkiyukiOkayasu/ame/actions/workflows/cmake.yml/badge.svg[UnitTest] image:https://github.com/AkiyukiOkayasu/ame/actions/workflows/doxygen.yml/badge.svg[link=https://akiyukiokayasu.github.io/ame/] image:https://img.shields.io/github/v/release/AkiyukiOkayasu/ame[link=https://github.com/AkiyukiOkayasu/ame/releases/latest] image:https://img.shields.io/github/license/AkiyukiOkayasu/ame[link=LICENSE] 
 
-AME is a C++ header-only library focused on fast audio processing on Cortex-M, such as i.MXRT. +
+AME is a C++ header-only library focused on fast audio processing on Cortex-M. +
 Specifically, AME provides a function that is missing from the CMSIS-DSP for audio processing. +
 If CMSIS-DSP is available, use it, but it is not required. This means that ame can run on non-Cortex-M environments. +
 
@@ -16,7 +16,7 @@ Major changes may be added to this project. +
 * https://arm-software.github.io/CMSIS_5/DSP/html/index.html[ARM CMSIS-DSP] +
 
 
-== Feautures
+== Features
 * Audio buffer that can only be allocatable at compile time
 * Oscillator and noise generator
 * Filters
@@ -30,6 +30,7 @@ Major changes may be added to this project. +
 ** Decibel and Amplitude
 ** Frequency and Period
 ** MIDI note and Frequency
+** Radian and Degree
 
 
 == How to use
@@ -41,7 +42,7 @@ If you are using CMake, you can install ame using https://cmake.org/cmake/help/l
 [source,cmake]
 ----
 # CMakeLists.txt
-cmake_minimum_required(VERSION 3.15)
+cmake_minimum_required(VERSION 3.16)
 project(example_project)
 add_executable(example_project main.cpp)
 
@@ -61,3 +62,8 @@ Be aware that the order of audio samples in ame is interleaved. +
 
 == Other document
 See the https://akiyukiokayasu.github.io/ame/[document] for details.
+
+== Contribution
+Contributions are welcome. +
+To keep your source code clean, remember to run clang-format before submitting your PR and check it with clang-tidy. The configuration files are located in the root of Project. +
+Refer to the https://www.aes.org/par/guide/[Pro Audio Style Guide] for the technical terms used in doxygen comments.
