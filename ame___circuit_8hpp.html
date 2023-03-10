@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>AME: include/ame_RcLowPass.hpp File Reference</title>
+<title>AME: include/ame_Circuit.hpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -72,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",'Search','.html');
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('ame___rc_low_pass_8hpp.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('ame___circuit_8hpp.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -92,63 +92,94 @@ $(document).ready(function(){initNavTree('ame___rc_low_pass_8hpp.html',''); init
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
-  <div class="headertitle"><div class="title">ame_RcLowPass.hpp File Reference</div></div>
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle"><div class="title">ame_Circuit.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>RC LowPass filter.  
+<p>Analog circuit modelings.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="ame___math_8hpp_source.html">ame_Math.hpp</a>&quot;</code><br />
-<code>#include &lt;cassert&gt;</code><br />
-<code>#include &lt;concepts&gt;</code><br />
-<code>#include &lt;type_traits&gt;</code><br />
+<div class="textblock"><code>#include &lt;concepts&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for ame_RcLowPass.hpp:</div>
+Include dependency graph for ame_Circuit.hpp:</div>
 <div class="dyncontent">
-<div class="center"><img src="ame___rc_low_pass_8hpp__incl.png" border="0" usemap="#ainclude_2ame___rc_low_pass_8hpp" alt=""/></div>
-<map name="ainclude_2ame___rc_low_pass_8hpp" id="ainclude_2ame___rc_low_pass_8hpp">
-<area shape="rect" title="RC LowPass filter." alt="" coords="91,5,285,32"/>
-<area shape="rect" href="ame___math_8hpp.html" title="Math functions." alt="" coords="80,80,187,107"/>
-<area shape="rect" title=" " alt="" coords="5,155,80,181"/>
-<area shape="rect" title=" " alt="" coords="211,80,277,107"/>
-<area shape="rect" title=" " alt="" coords="301,80,384,107"/>
-<area shape="rect" title=" " alt="" coords="104,155,163,181"/>
-<area shape="rect" title=" " alt="" coords="187,155,240,181"/>
-<area shape="rect" title=" " alt="" coords="264,155,336,181"/>
+<div class="center"><img src="ame___circuit_8hpp__incl.png" border="0" usemap="#ainclude_2ame___circuit_8hpp" alt=""/></div>
+<map name="ainclude_2ame___circuit_8hpp" id="ainclude_2ame___circuit_8hpp">
+<area shape="rect" title="Analog circuit modelings." alt="" coords="5,5,165,32"/>
+<area shape="rect" title=" " alt="" coords="48,80,123,107"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><img src="ame___rc_low_pass_8hpp__dep__incl.png" border="0" usemap="#ainclude_2ame___rc_low_pass_8hppdep" alt=""/></div>
-<map name="ainclude_2ame___rc_low_pass_8hppdep" id="ainclude_2ame___rc_low_pass_8hppdep">
-<area shape="rect" title="RC LowPass filter." alt="" coords="5,5,200,32"/>
-<area shape="rect" href="ame_8hpp.html" title="main header file." alt="" coords="45,80,161,107"/>
+<div class="center"><img src="ame___circuit_8hpp__dep__incl.png" border="0" usemap="#ainclude_2ame___circuit_8hppdep" alt=""/></div>
+<map name="ainclude_2ame___circuit_8hppdep" id="ainclude_2ame___circuit_8hppdep">
+<area shape="rect" title="Analog circuit modelings." alt="" coords="5,5,165,32"/>
+<area shape="rect" href="ame_8hpp.html" title="main header file." alt="" coords="27,80,143,107"/>
 </map>
 </div>
 </div>
-<p><a href="ame___rc_low_pass_8hpp_source.html">Go to the source code of this file.</a></p>
+<p><a href="ame___circuit_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1dsp_1_1_rc_low_pass.html">ame::dsp::RcLowPass&lt; FloatType &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">RC low-pass filter for parameter smoothing.  <a href="classame_1_1dsp_1_1_rc_low_pass.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ac0f2a9825c80fa38f00aba7eaa7ff080"><td class="memTemplParams" colspan="2">template&lt;std::floating_point FloatType&gt; </td></tr>
+<tr class="memitem:ac0f2a9825c80fa38f00aba7eaa7ff080"><td class="memTemplItemLeft" align="right" valign="top">FloatType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="ame___circuit_8hpp.html#ac0f2a9825c80fa38f00aba7eaa7ff080">ame::diode</a> (FloatType x)</td></tr>
+<tr class="memdesc:ac0f2a9825c80fa38f00aba7eaa7ff080"><td class="mdescLeft">&#160;</td><td class="mdescRight">diode modeling.  <a href="ame___circuit_8hpp.html#ac0f2a9825c80fa38f00aba7eaa7ff080">More...</a><br /></td></tr>
+<tr class="separator:ac0f2a9825c80fa38f00aba7eaa7ff080"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >RC LowPass filter. </p>
-<p ><br  />
-</p>
+<div class="textblock"><p >Analog circuit modelings. </p>
 <dl class="section author"><dt>Author</dt><dd>Akiyuki Okayasu (<a href="#" onclick="location.href='mai'+'lto:'+'aki'+'yu'+'ki.'+'ok'+'aya'+'su'+'@gm'+'ai'+'l.c'+'om'; return false;">akiyu<span style="display: none;">.nosp@m.</span>ki.o<span style="display: none;">.nosp@m.</span>kayas<span style="display: none;">.nosp@m.</span>u@gm<span style="display: none;">.nosp@m.</span>ail.c<span style="display: none;">.nosp@m.</span>om</a>) </dd></dl>
-<dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2022 - Akiyuki Okayasu</dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2021 - Akiyuki Okayasu</dd></dl>
 <p>AME is released under the MIT license. </p>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="ac0f2a9825c80fa38f00aba7eaa7ff080" name="ac0f2a9825c80fa38f00aba7eaa7ff080"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0f2a9825c80fa38f00aba7eaa7ff080">&#9670;&nbsp;</a></span>diode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;std::floating_point FloatType&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">FloatType ame::diode </td>
+          <td>(</td>
+          <td class="paramtype">FloatType&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>diode modeling. </p>
+<p ><a href="https://jatinchowdhury18.medium.com/complex-nonlinearities-epsiode-2-harmonic-exciter-cd883d888a43">https://jatinchowdhury18.medium.com/complex-nonlinearities-epsiode-2-harmonic-exciter-cd883d888a43</a></p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>FloatType </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>When the input is 1.0, the output is larger than 1.0 <br  />
+ </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="ame___rc_low_pass_8hpp.html">ame_RcLowPass.hpp</a></li>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="ame___circuit_8hpp.html">ame_Circuit.hpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
   </ul>
 </div>

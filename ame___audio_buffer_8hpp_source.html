@@ -113,9 +113,9 @@ $(document).ready(function(){initNavTree('ame___audio_buffer_8hpp_source.html','
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">public</span>:</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="classame_1_1_audio_block_view.html#a4db9073fa24542608b044666f3a885ba">   40</a></span>    <a class="code hl_function" href="classame_1_1_audio_block_view.html#a4db9073fa24542608b044666f3a885ba">AudioBlockView</a> (std::span&lt;ElementType, Extent&gt; view, <span class="keyword">const</span> uint_fast32_t numChannels) noexcept</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        : view (view),</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>          numChannels (numChannels)</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    {</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        numSamplesPerChannel = view.size() / numChannels;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>          numChannels (numChannels),</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>          numSamplesPerChannel (view.size() / numChannels)</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    {</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    }</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <a class="code hl_class" href="classame_1_1_audio_block_view.html">~AudioBlockView</a>() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
@@ -190,8 +190,8 @@ $(document).ready(function(){initNavTree('ame___audio_buffer_8hpp_source.html','
 <div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    std::span&lt;ElementType, Extent&gt; view;</div>
 <div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span> </div>
 <div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    uint_fast32_t numSamplesPerChannel;</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    uint_fast32_t numChannels;</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    uint_fast32_t numChannels;</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    uint_fast32_t numSamplesPerChannel;</div>
 <div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>};</div>
 <div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
 <div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> FloatType, <span class="keywordtype">size_t</span> Size&gt;</div>

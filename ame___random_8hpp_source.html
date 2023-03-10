@@ -127,21 +127,21 @@ $(document).ready(function(){initNavTree('ame___random_8hpp_source.html',''); in
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="keyword">namespace </span>ame</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>{</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="ame___random_8hpp.html#ab3a0c0c4f501f46a46bb1430150e9373">   48</a></span><span class="keyword">inline</span> <span class="keywordtype">float</span> <a class="code hl_function" href="ame___random_8hpp.html#ab3a0c0c4f501f46a46bb1430150e9373">random</a>()</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>{</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordflow">return</span> (next() &gt;&gt; 8) * FLOAT_UNIT;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>}</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="ame___random_8hpp.html#a1a67c3556492fe36f2e188b570829f85">   57</a></span><span class="keyword">inline</span> <span class="keywordtype">float</span> <a class="code hl_function" href="ame___random_8hpp.html#a1a67c3556492fe36f2e188b570829f85">noise</a>()</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>{</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordflow">return</span> (next() &gt;&gt; 7) * FLOAT_UNIT - 1.0f; <span class="comment">//[-1, 1]</span></div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="comment">/* もうひとつの方法. 負荷はほぼ同じ.</span></div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="comment">    return (static_cast&lt;int32_t&gt;(next()) &gt;&gt; 8) * 0x1.0p-23f;//[-1, 1]</span></div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="comment">    */</span></div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>}</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>} <span class="comment">// namespace ame</span></div>
-<div class="ttc" id="aame___random_8hpp_html_a1a67c3556492fe36f2e188b570829f85"><div class="ttname"><a href="ame___random_8hpp.html#a1a67c3556492fe36f2e188b570829f85">ame::noise</a></div><div class="ttdeci">float noise()</div><div class="ttdoc">white noise.</div><div class="ttdef"><b>Definition:</b> ame_Random.hpp:57</div></div>
-<div class="ttc" id="aame___random_8hpp_html_ab3a0c0c4f501f46a46bb1430150e9373"><div class="ttname"><a href="ame___random_8hpp.html#ab3a0c0c4f501f46a46bb1430150e9373">ame::random</a></div><div class="ttdeci">float random()</div><div class="ttdoc">random.</div><div class="ttdef"><b>Definition:</b> ame_Random.hpp:48</div></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="ame___random_8hpp.html#ab3a0c0c4f501f46a46bb1430150e9373">   47</a></span><span class="keyword">inline</span> <span class="keywordtype">float</span> <a class="code hl_function" href="ame___random_8hpp.html#ab3a0c0c4f501f46a46bb1430150e9373">random</a>()</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>{</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordflow">return</span> (next() &gt;&gt; 8) * FLOAT_UNIT;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>}</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="ame___random_8hpp.html#a1a67c3556492fe36f2e188b570829f85">   56</a></span><span class="keyword">inline</span> <span class="keywordtype">float</span> <a class="code hl_function" href="ame___random_8hpp.html#a1a67c3556492fe36f2e188b570829f85">noise</a>()</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>{</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordflow">return</span> (next() &gt;&gt; 7) * FLOAT_UNIT - 1.0f; <span class="comment">//[-1, 1]</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="comment">/* もうひとつの方法. 負荷はほぼ同じ.</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="comment">    return (static_cast&lt;int32_t&gt;(next()) &gt;&gt; 8) * 0x1.0p-23f;//[-1, 1]</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="comment">    */</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>}</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>} <span class="comment">// namespace ame</span></div>
+<div class="ttc" id="aame___random_8hpp_html_a1a67c3556492fe36f2e188b570829f85"><div class="ttname"><a href="ame___random_8hpp.html#a1a67c3556492fe36f2e188b570829f85">ame::noise</a></div><div class="ttdeci">float noise()</div><div class="ttdoc">White noise.</div><div class="ttdef"><b>Definition:</b> ame_Random.hpp:56</div></div>
+<div class="ttc" id="aame___random_8hpp_html_ab3a0c0c4f501f46a46bb1430150e9373"><div class="ttname"><a href="ame___random_8hpp.html#ab3a0c0c4f501f46a46bb1430150e9373">ame::random</a></div><div class="ttdeci">float random()</div><div class="ttdoc">Random.</div><div class="ttdef"><b>Definition:</b> ame_Random.hpp:47</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

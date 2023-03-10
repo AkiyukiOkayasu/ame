@@ -359,7 +359,7 @@ $(document).ready(function(){initNavTree('ame___pcm_8hpp_source.html',''); initR
 <div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> FloatType, <span class="keywordtype">size_t</span> N&gt;</div>
 <div class="line"><a id="l00298" name="l00298"></a><span class="lineno"><a class="line" href="classame_1_1wav_1_1_wav_player.html#a7fff5f3666a76beccca12f271e6d61fd">  298</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classame_1_1wav_1_1_wav_player.html#a7fff5f3666a76beccca12f271e6d61fd">process</a> (<a class="code hl_class" href="classame_1_1_audio_block_view.html">AudioBlockView&lt;FloatType, N&gt;</a>&amp; block)</div>
 <div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>    {</div>
-<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>        <span class="keywordflow">if</span> (playing.load() == <span class="keyword">false</span>)</div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>        <span class="keywordflow">if</span> (! playing.load())</div>
 <div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>        {</div>
 <div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>            <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>        }</div>

@@ -200,7 +200,7 @@ $(document).ready(function(){initNavTree('ame___reverb_8hpp_source.html',''); in
 <div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>                    output += comb[ch][cmb].process (input, damping, feedback);</div>
 <div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>                }</div>
 <div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ap = 0; ap &lt; numAllPasses; ++ap) <span class="comment">// run the allpass filters in series</span></div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ap = 0; ap &lt; numAllPasses; ++ap) <span class="comment">// run the all-pass filters in series</span></div>
 <div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>                {</div>
 <div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>                    output = allPass[ch][ap].process (output);</div>
 <div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>                }</div>

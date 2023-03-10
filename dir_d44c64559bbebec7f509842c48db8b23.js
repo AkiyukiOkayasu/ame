@@ -10,6 +10,7 @@ var dir_d44c64559bbebec7f509842c48db8b23 =
       [ "ame::dsp::Biquad< FloatType, MaximumChannels >", "classame_1_1dsp_1_1_biquad.html", "classame_1_1dsp_1_1_biquad" ],
       [ "ame::dsp::Biquad< FloatType, MaximumChannels >::Coefficients", "structame_1_1dsp_1_1_biquad_1_1_coefficients.html", null ]
     ] ],
+    [ "ame_Circuit.hpp", "ame___circuit_8hpp.html", "ame___circuit_8hpp" ],
     [ "ame_Conversion.hpp", "ame___conversion_8hpp.html", "ame___conversion_8hpp" ],
     [ "ame_DcBlock.hpp", "ame___dc_block_8hpp.html", [
       [ "ame::dsp::DcBlock< FloatType, MaximumChannels >", "classame_1_1dsp_1_1_dc_block.html", "classame_1_1dsp_1_1_dc_block" ]

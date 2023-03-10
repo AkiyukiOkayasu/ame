@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>AME: include/ame_RcLowPass.hpp File Reference</title>
+<title>AME: include/ame_Circuit.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -72,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",'Search','.html');
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('ame___rc_low_pass_8hpp.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('ame___circuit_8hpp_source.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -91,64 +91,29 @@ $(document).ready(function(){initNavTree('ame___rc_low_pass_8hpp.html',''); init
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
-  <div class="headertitle"><div class="title">ame_RcLowPass.hpp File Reference</div></div>
+  <div class="headertitle"><div class="title">ame_Circuit.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>RC LowPass filter.  
-<a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="ame___math_8hpp_source.html">ame_Math.hpp</a>&quot;</code><br />
-<code>#include &lt;cassert&gt;</code><br />
-<code>#include &lt;concepts&gt;</code><br />
-<code>#include &lt;type_traits&gt;</code><br />
-</div><div class="textblock"><div class="dynheader">
-Include dependency graph for ame_RcLowPass.hpp:</div>
-<div class="dyncontent">
-<div class="center"><img src="ame___rc_low_pass_8hpp__incl.png" border="0" usemap="#ainclude_2ame___rc_low_pass_8hpp" alt=""/></div>
-<map name="ainclude_2ame___rc_low_pass_8hpp" id="ainclude_2ame___rc_low_pass_8hpp">
-<area shape="rect" title="RC LowPass filter." alt="" coords="91,5,285,32"/>
-<area shape="rect" href="ame___math_8hpp.html" title="Math functions." alt="" coords="80,80,187,107"/>
-<area shape="rect" title=" " alt="" coords="5,155,80,181"/>
-<area shape="rect" title=" " alt="" coords="211,80,277,107"/>
-<area shape="rect" title=" " alt="" coords="301,80,384,107"/>
-<area shape="rect" title=" " alt="" coords="104,155,163,181"/>
-<area shape="rect" title=" " alt="" coords="187,155,240,181"/>
-<area shape="rect" title=" " alt="" coords="264,155,336,181"/>
-</map>
-</div>
-</div><div class="textblock"><div class="dynheader">
-This graph shows which files directly or indirectly include this file:</div>
-<div class="dyncontent">
-<div class="center"><img src="ame___rc_low_pass_8hpp__dep__incl.png" border="0" usemap="#ainclude_2ame___rc_low_pass_8hppdep" alt=""/></div>
-<map name="ainclude_2ame___rc_low_pass_8hppdep" id="ainclude_2ame___rc_low_pass_8hppdep">
-<area shape="rect" title="RC LowPass filter." alt="" coords="5,5,200,32"/>
-<area shape="rect" href="ame_8hpp.html" title="main header file." alt="" coords="45,80,161,107"/>
-</map>
-</div>
-</div>
-<p><a href="ame___rc_low_pass_8hpp_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classame_1_1dsp_1_1_rc_low_pass.html">ame::dsp::RcLowPass&lt; FloatType &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">RC low-pass filter for parameter smoothing.  <a href="classame_1_1dsp_1_1_rc_low_pass.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >RC LowPass filter. </p>
-<p ><br  />
-</p>
-<dl class="section author"><dt>Author</dt><dd>Akiyuki Okayasu (<a href="#" onclick="location.href='mai'+'lto:'+'aki'+'yu'+'ki.'+'ok'+'aya'+'su'+'@gm'+'ai'+'l.c'+'om'; return false;">akiyu<span style="display: none;">.nosp@m.</span>ki.o<span style="display: none;">.nosp@m.</span>kayas<span style="display: none;">.nosp@m.</span>u@gm<span style="display: none;">.nosp@m.</span>ail.c<span style="display: none;">.nosp@m.</span>om</a>) </dd></dl>
-<dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2022 - Akiyuki Okayasu</dd></dl>
-<p>AME is released under the MIT license. </p>
-</div></div><!-- contents -->
+<a href="ame___circuit_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;concepts&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">namespace </span>ame</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>{</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">template</span> &lt;std::<span class="keywordtype">float</span>ing_po<span class="keywordtype">int</span> FloatType&gt;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="ame___circuit_8hpp.html#ac0f2a9825c80fa38f00aba7eaa7ff080">   24</a></span><span class="keyword">inline</span> FloatType <a class="code hl_function" href="ame___circuit_8hpp.html#ac0f2a9825c80fa38f00aba7eaa7ff080">diode</a> (FloatType x)</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>{</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>FloatType<span class="keyword">&gt;</span> (0.2) * (std::exp (x * <span class="keyword">static_cast&lt;</span>FloatType<span class="keyword">&gt;</span> (0.05 / 0.0259)) - <span class="keyword">static_cast&lt;</span>FloatType<span class="keyword">&gt;</span> (1.0));</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>}</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>} <span class="comment">// namespace ame</span></div>
+<div class="ttc" id="aame___circuit_8hpp_html_ac0f2a9825c80fa38f00aba7eaa7ff080"><div class="ttname"><a href="ame___circuit_8hpp.html#ac0f2a9825c80fa38f00aba7eaa7ff080">ame::diode</a></div><div class="ttdeci">FloatType diode(FloatType x)</div><div class="ttdoc">diode modeling.</div><div class="ttdef"><b>Definition:</b> ame_Circuit.hpp:24</div></div>
+</div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="ame___rc_low_pass_8hpp.html">ame_RcLowPass.hpp</a></li>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="ame___circuit_8hpp.html">ame_Circuit.hpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
   </ul>
 </div>
